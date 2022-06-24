@@ -48,6 +48,7 @@ dependencies:
   equatable: ^2.0.3
   json_annotation: ^4.5.0
   flutter_bloc: ^8.0.1
+  shared_preferences: ^2.0.15
 
 dev_dependencies:
   flutter_test:
