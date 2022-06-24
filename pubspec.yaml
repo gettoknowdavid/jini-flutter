@@ -43,6 +43,7 @@ dependencies:
   get: ^4.6.5
   firebase_storage: ^10.2.18
   phosphor_flutter: ^1.4.0
+  firebase_analytics: ^9.1.10
 
 dev_dependencies:
   flutter_test:
