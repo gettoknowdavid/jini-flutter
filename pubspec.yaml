@@ -44,6 +44,8 @@ dependencies:
   firebase_storage: ^10.2.18
   phosphor_flutter: ^1.4.0
   firebase_analytics: ^9.1.10
+  bloc: ^8.0.3
+  equatable: ^2.0.3
 
 dev_dependencies:
   flutter_test:
