@@ -1,56 +1,52 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:jini/common/app_constants.dart';
+import 'package:jini/core/enums/gender.dart';
+import 'package:jini/core/enums/user_type.dart';
+import 'package:jini/features/auth/app/auth_result.dart';
 import 'package:jini/features/auth/domain/entities/j_user.dart';
 import 'package:logger/logger.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthService {
+  final CollectionReference<JUser> ref;
   final Logger _log = Logger();
   final FirebaseAuth _auth = FirebaseAuth.instance;
-}
 
-class AuthResult {
-  /// The [FirebaseAuth] user
-  final User? user;
+  AuthService(this.ref);
 
-  /// The [JUser] registered with the [FirebaseAuth]
-  /// user uid
-  final JUser? jUser;
+  Future<AuthResult> signUp({
+    required String name,
+    required String email,
+    required String password,
+    required UserType userType,
+    required Gender gender,
+  }) async {
+    try {
+      UserCredential _authUser = await _auth.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
 
-  /// Contains the error message for the request
-  /// if any
-  final String? errorMessage;
+      await _auth.currentUser!.updateDisplayName(name);
 
-  /// Contains the error code for the request
-  /// if any
-  final String? exceptionCode;
+      final _jUser = JUser(
+        uid: _authUser.user!.uid,
+        name: name,
+        email: email,
+        userType: userType,
+        gender: gender,
+        formComplete: false,
+      );
 
-  AuthResult({this.user, this.jUser})
-      : errorMessage = null,
-        exceptionCode = null;
+      await ref.doc(_authUser.user!.uid).set(_jUser).timeout(AUTH_TIMEOUT);
 
-  AuthResult.error({this.errorMessage, this.exceptionCode})
-      : user = null,
-        jUser = null;
-
-  /// Returns true if the response has an error associated with it
-  bool get hasError => errorMessage != null && errorMessage!.isNotEmpty;
-}
-
-String getErrorMessage(FirebaseAuthException exception) {
-  switch (exception.code.toLowerCase()) {
-    case 'email-already-in-use':
-      return 'An account with this email already exists.\n Try signing in.';
-    case 'invalid-email':
-      return 'The email you\'re using is invalid. Please use a valid email.';
-    case 'operation-not-allowed':
-      return 'The authentication is not enabled on Firebase.';
-    case 'weak-password':
-      return 'Your password is too weak. Please use a stronger password.';
-    case 'wrong-password':
-      return "Urm, wrong email or password";
-    case 'user-not-found':
-      return 'Oops! We have no record of this user';
-    default:
-      return exception.message ??
-          'Something went wrong on our side. Please try again';
+      return AuthResult(user: _authUser.user, jUser: _jUser);
+    } on FirebaseAuthException catch (e) {
+      _log.e(e.message);
+      return AuthResult.error(
+        errorMessage: getErrorMessage(e),
+        exceptionCode: e.code,
+      );
+    }
   }
 }
