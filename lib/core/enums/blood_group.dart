@@ -33,3 +33,14 @@ extension BloodGroupExtension on BloodGroup {
     }
   }
 }
+
+const $BloodGroupEnumMap = {
+  BloodGroup.aPlus: 'A+',
+  BloodGroup.aMinus: 'A-',
+  BloodGroup.bPlus: 'B+',
+  BloodGroup.bMinus: 'B-',
+  BloodGroup.oPlus: 'O+',
+  BloodGroup.oMinus: 'O-',
+  BloodGroup.abPlus: 'AB+',
+  BloodGroup.abMinus: 'AB-',
+};
