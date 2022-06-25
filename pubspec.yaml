@@ -54,6 +54,7 @@ dependencies:
   intl: ^0.17.0
   internet_connection_checker: ^0.0.1+4
   dartz: ^0.10.1
+  cloud_firestore_odm: ^1.0.0-dev.18
 
 dev_dependencies:
   flutter_test:
