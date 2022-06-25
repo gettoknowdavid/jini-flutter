@@ -31,22 +31,4 @@ class AuthResult {
   bool get hasError => errorMessage != null && errorMessage!.isNotEmpty;
 }
 
-String getErrorMessage(FirebaseAuthException exception) {
-  switch (exception.code.toLowerCase()) {
-    case 'email-already-in-use':
-      return 'An account with this email already exists.\n Try signing in.';
-    case 'invalid-email':
-      return 'The email you\'re using is invalid. Please use a valid email.';
-    case 'operation-not-allowed':
-      return 'The authentication is not enabled on Firebase.';
-    case 'weak-password':
-      return 'Your password is too weak. Please use a stronger password.';
-    case 'wrong-password':
-      return "Urm, wrong email or password";
-    case 'user-not-found':
-      return 'Oops! We have no record of this user';
-    default:
-      return exception.message ??
-          'Something went wrong on our side. Please try again';
-  }
-}
+
