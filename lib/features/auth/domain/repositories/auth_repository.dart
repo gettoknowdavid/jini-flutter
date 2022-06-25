@@ -5,7 +5,7 @@ import 'package:jini/core/error/failure.dart';
 import 'package:jini/features/auth/app/auth_result.dart';
 
 abstract class AuthRepository {
-  Future<Either<Failure, AuthResult>>? signUp(
+  Future<Either<Failure, AuthResult?>> signUp(
     String name,
     String email,
     String password,
@@ -13,7 +13,7 @@ abstract class AuthRepository {
     Gender gender,
   );
 
-  Future<Either<Failure, AuthResult>>? signIn(String email, String password);
+  Future<Either<Failure, AuthResult?>> signIn(String email, String password);
 
-  Future<Either<Failure, AuthResult>>? signOut();
+  Future<Either<Failure, AuthResult?>> signOut();
 }
