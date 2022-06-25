@@ -6,8 +6,8 @@ import 'package:jini/core/enums/blood_group.dart';
 import 'package:jini/core/enums/gender.dart';
 import 'package:jini/core/enums/user_type.dart';
 
-class JiniUser extends Equatable {
-  const JiniUser({
+class JUser extends Equatable {
+  const JUser({
     required this.uid,
     this.name,
     this.gender,
