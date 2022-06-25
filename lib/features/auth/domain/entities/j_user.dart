@@ -1,7 +1,6 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:jini/core/converters/geo_point_converter.dart';
+import 'package:jini/common/models/geo.dart';
 import 'package:jini/core/enums/blood_group.dart';
 import 'package:jini/core/enums/gender.dart';
 import 'package:jini/core/enums/user_type.dart';
@@ -54,10 +53,9 @@ class JUser extends Equatable {
   final String? city;
 
   /// The current location of the user
-  @GeoPointConverter()
-  final GeoPoint? location;
+  final Geo? location;
 
-  /// The [BloogGroup] of the user
+  /// The [BloodGroup] of the user
   final BloodGroup? bloodGroup;
 
   // / The [UserType] of the user / Can be a [UserType.donor] or a
