@@ -13,7 +13,7 @@ extension GenderExtension on Gender {
   }
 }
 
-const $GenderEnum = {
+const $GenderEnumMap = {
   Gender.male: 'male',
   Gender.female: 'female',
   Gender.other: 'other',
