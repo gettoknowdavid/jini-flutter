@@ -14,6 +14,7 @@ class JUser extends Equatable {
     this.age,
     this.height,
     this.weight,
+    required this.email,
     this.phone,
     this.city,
     this.location,
@@ -24,8 +25,7 @@ class JUser extends Equatable {
     this.initEdit,
   });
 
-  /// The unique ID of the user
-  /// from [FirebaseAuth]
+  /// The unique ID of the user / from [FirebaseAuth]
   final String uid;
 
   /// The name of the user
@@ -34,19 +34,18 @@ class JUser extends Equatable {
   /// The [Gender] of the user
   final Gender? gender;
 
-  /// The age of the user
-  /// Users who are of [UserType.donor] must be 18 years
-  /// and above; [UserType.recipient] users can be of any
-  /// age
+  // / The age of the user / Users who are of [UserType.donor] must be 18 years /
+  // and above; [UserType.recipient] users can be of any / age
   final num? age;
 
   /// The hight of the user
   final num? height;
 
-  /// The weight of the user.
-  /// Users registered as [UserType.donor] must weigh greater
-  /// than 45kg
+  // / The weight of the user. / Users registered as [UserType.donor] must weigh
   final num? weight;
+
+  /// The mobile phone of the user
+  final String email;
 
   /// The mobile phone of the user
   final String? phone;
@@ -61,21 +60,19 @@ class JUser extends Equatable {
   /// The [BloogGroup] of the user
   final BloodGroup? bloodGroup;
 
-  /// The [UserType] of the user
-  /// Can be a [UserType.donor] or a [UserType.recipient]
+  // / The [UserType] of the user / Can be a [UserType.donor] or a
+  // [UserType.recipient]
   final UserType userType;
 
-  /// Bool to check if user registered as a donor is
-  /// eligible to be a donor or not
+  // / Bool to check if user registered as a donor is / eligible to be a donor or
+  // not
   final bool? eligible;
 
-  /// Returns true if the user registered as a donor
-  ///  has filled the donor requirements form.
-  /// Will return false otherwise.
+  // / Returns true if the user registered as a donor /  has filled the donor
+  // requirements form. / Will return false otherwise.
   final bool? formComplete;
 
-  /// Checks for initial profile edit for each newly register
-  /// user
+  /// Checks for initial profile edit for each newly register / user
   final int? initEdit;
 
   @override
@@ -86,6 +83,7 @@ class JUser extends Equatable {
         age,
         height,
         weight,
+        email,
         phone,
         city,
         location,
@@ -93,6 +91,6 @@ class JUser extends Equatable {
         userType,
         eligible,
         formComplete,
-        initEdit,
+        initEdit
       ];
 }
