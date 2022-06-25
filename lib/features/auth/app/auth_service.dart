@@ -8,11 +8,17 @@ import 'package:logger/logger.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthService {
+  AuthService(this.ref);
+
   final CollectionReference<JUser> ref;
   final Logger _log = Logger();
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  AuthService(this.ref);
+  User? get authUser => _auth.currentUser;
+
+  String? get authUserUid => _auth.currentUser!.uid;
+
+  bool get hasUser => _auth.currentUser != null;
 
   Future<AuthResult> signUp({
     required String name,
@@ -46,6 +52,53 @@ class AuthService {
       return AuthResult.error(
         errorMessage: getErrorMessage(e),
         exceptionCode: e.code,
+      );
+    } on Exception catch (e) {
+      _log.e('A general exception has occurred. $e');
+      return AuthResult.error(
+        errorMessage: 'Seems like we an issue. Please try again.',
+      );
+    }
+  }
+
+  Future<AuthResult> signIn(String email, String password) async {
+    try {
+      UserCredential _authUser = await _auth.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+
+      final _jUserDoc =
+          await ref.doc(_authUser.user!.uid).get().timeout(AUTH_TIMEOUT);
+
+      return AuthResult(user: _authUser.user, jUser: _jUserDoc.data());
+    } on FirebaseAuthException catch (e) {
+      _log.e(e.message);
+      return AuthResult.error(
+        errorMessage: getErrorMessage(e),
+        exceptionCode: e.code,
+      );
+    } on Exception catch (e) {
+      _log.e('A general exception has occurred. $e');
+      return AuthResult.error(
+        errorMessage: 'Seems like we an issue. Please try again.',
+      );
+    }
+  }
+
+  Future<AuthResult> signOut() async {
+    try {
+      await _auth.signOut();
+      return AuthResult(user: null, jUser: null);
+    } on FirebaseAuthException catch (e) {
+      return AuthResult.error(
+        errorMessage: getErrorMessage(e),
+        exceptionCode: e.code,
+      );
+    } on Exception catch (e) {
+      _log.e('A general exception has occurred. $e');
+      return AuthResult.error(
+        errorMessage: 'Seems like we an issue. Please try again.',
       );
     }
   }
