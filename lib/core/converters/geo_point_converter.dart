@@ -7,8 +7,8 @@ class GeoPointConverter
 
   @override
   GeoPoint fromJson(Map<String, dynamic> json) => GeoPoint(
-        json['latitude'],
-        json['longitude'],
+        (json['latitude'] as num).toDouble(),
+        (json['longitude'] as num).toDouble(),
       );
 
   @override
