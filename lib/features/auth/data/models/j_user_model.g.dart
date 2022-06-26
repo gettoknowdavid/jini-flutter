@@ -317,18 +317,16 @@ class JUserModelQueryDocumentSnapshot extends FirestoreQueryDocumentSnapshot
 JUserModel _$JUserModelFromJson(Map<String, dynamic> json) => JUserModel(
       uid: json['uid'] as String,
       name: json['name'] as String?,
-      gender: $enumDecodeNullable($GenderEnumMap, json['gender']),
+      gender: $enumDecodeNullable(_$GenderEnumMap, json['gender']),
       age: json['age'] as num?,
       height: json['height'] as num?,
       weight: json['weight'] as num?,
       email: json['email'] as String,
       phone: json['phone'] as String?,
       city: json['city'] as String?,
-      location: json['location'] == null
-          ? null
-          : Geo.fromJson(json['location'] as Map<String, dynamic>),
-      bloodGroup: $enumDecodeNullable($BloodGroupEnumMap, json['bloodGroup']),
-      userType: $enumDecode($UserTypeEnumMap, json['userType']),
+      location: json['location'],
+      bloodGroup: $enumDecodeNullable(_$BloodGroupEnumMap, json['bloodGroup']),
+      userType: $enumDecode(_$UserTypeEnumMap, json['userType']),
       eligible: json['eligible'] as bool?,
       formComplete: json['formComplete'] as bool?,
       initEdit: json['initEdit'] as int?,
@@ -338,7 +336,7 @@ Map<String, dynamic> _$JUserModelToJson(JUserModel instance) =>
     <String, dynamic>{
       'uid': instance.uid,
       'name': instance.name,
-      'gender': $GenderEnumMap[instance.gender],
+      'gender': _$GenderEnumMap[instance.gender],
       'age': instance.age,
       'height': instance.height,
       'weight': instance.weight,
@@ -346,9 +344,31 @@ Map<String, dynamic> _$JUserModelToJson(JUserModel instance) =>
       'phone': instance.phone,
       'city': instance.city,
       'location': instance.location?.toJson(),
-      'bloodGroup': $BloodGroupEnumMap[instance.bloodGroup],
-      'userType': $UserTypeEnumMap[instance.userType],
+      'bloodGroup': _$BloodGroupEnumMap[instance.bloodGroup],
+      'userType': _$UserTypeEnumMap[instance.userType],
       'eligible': instance.eligible,
       'formComplete': instance.formComplete,
       'initEdit': instance.initEdit,
     };
+
+const _$GenderEnumMap = {
+  Gender.male: 'male',
+  Gender.female: 'female',
+  Gender.other: 'other',
+};
+
+const _$BloodGroupEnumMap = {
+  BloodGroup.aPlus: 'aPlus',
+  BloodGroup.aMinus: 'aMinus',
+  BloodGroup.bPlus: 'bPlus',
+  BloodGroup.bMinus: 'bMinus',
+  BloodGroup.oPlus: 'oPlus',
+  BloodGroup.oMinus: 'oMinus',
+  BloodGroup.abPlus: 'abPlus',
+  BloodGroup.abMinus: 'abMinus',
+};
+
+const _$UserTypeEnumMap = {
+  UserType.donor: 'donor',
+  UserType.recipient: 'recipient',
+};

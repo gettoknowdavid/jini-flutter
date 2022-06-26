@@ -36,5 +36,5 @@ class JUserModel extends JUser {
   Map<String, Object?> toJson() => _$JUserModelToJson(this);
 }
 
-@Collection<JUser>('users')
+@Collection<JUserModel>('users')
 final usersRef = JUserModelCollectionReference();
