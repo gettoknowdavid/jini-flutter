@@ -1,9 +1,11 @@
+import 'package:dartz/dartz.dart';
 import 'package:jini/core/enums/gender.dart';
 import 'package:jini/core/enums/user_type.dart';
+import 'package:jini/src/domain/auth/auth_failure.dart';
 import 'package:jini/src/domain/auth/value_objects.dart';
 
 abstract class IAuthFacade {
-  Future<void> signUp({
+  Future<Either<AuthFailure, Unit>> signUp({
     required String name,
     required EmailAddress email,
     required Password password,
@@ -11,7 +13,7 @@ abstract class IAuthFacade {
     required UserType userType,
   });
 
-  Future<void> signIn({
+  Future<Either<AuthFailure, Unit>> signIn({
     required EmailAddress email,
     required Password password,
   });
