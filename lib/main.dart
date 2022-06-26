@@ -2,6 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:injectable/injectable.dart';
+import 'package:jini/di/injection.dart';
 import 'package:jini/firebase_options.dart';
 import 'package:jini/src/presentation/core/app.dart';
 
@@ -11,6 +13,8 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  configureInjection(Environment.prod);
 
   LicenseRegistry.addLicense(() async* {
     final license = await rootBundle.loadString('assets/google_fonts/OFL.txt');

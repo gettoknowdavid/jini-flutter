@@ -37,9 +37,7 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i5.FirebaseFirestore>(
       () => firebaseInjectableModule.firestore);
   gh.lazySingleton<_i6.IAuthFacade>(() => _i7.FirebaseAuthFacade(
-      get<_i4.FirebaseAuth>(),
-      get<_i5.FirebaseFirestore>(),
-      get<_i5.CollectionReference<Object?>>()));
+      get<_i4.FirebaseAuth>(), get<_i5.CollectionReference<Object?>>()));
   gh.lazySingleton<_i8.InternetConnectionChecker>(
       () => registerModule.connection);
   await gh.lazySingletonAsync<_i9.SharedPreferences>(

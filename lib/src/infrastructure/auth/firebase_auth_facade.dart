@@ -12,9 +12,8 @@ import 'package:jini/src/domain/auth/value_objects.dart';
 
 @LazySingleton(as: IAuthFacade)
 class FirebaseAuthFacade implements IAuthFacade {
-  FirebaseAuthFacade(this._firebaseAuth, this._firestore, this._ref);
+  FirebaseAuthFacade(this._firebaseAuth, this._ref);
   final FirebaseAuth _firebaseAuth;
-  final FirebaseFirestore _firestore;
   final CollectionReference _ref;
 
   @override
@@ -64,7 +63,7 @@ class FirebaseAuthFacade implements IAuthFacade {
           initEdit: 0,
         );
 
-        _firestore.doc(value.user!.uid).set(_user.toJson());
+        _ref.doc(value.user!.uid).set(_user.toJson());
 
         return right(unit);
       });

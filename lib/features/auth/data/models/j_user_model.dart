@@ -1,7 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:cloud_firestore_odm/annotation.dart';
 import 'package:cloud_firestore_odm/cloud_firestore_odm.dart';
-import 'package:jini/common/models/geo.dart';
 import 'package:jini/core/enums/blood_group.dart';
 import 'package:jini/core/enums/gender.dart';
 import 'package:jini/core/enums/user_type.dart';
