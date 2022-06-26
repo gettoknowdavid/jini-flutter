@@ -18,21 +18,21 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$AuthFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() severError,
+    required TResult Function() serverError,
     required TResult Function() emailInUse,
     required TResult Function() invalidEmailOrPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? severError,
+    TResult Function()? serverError,
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? severError,
+    TResult Function()? serverError,
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     required TResult orElse(),
@@ -40,7 +40,7 @@ mixin _$AuthFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ServerError value) severError,
+    required TResult Function(ServerError value) serverError,
     required TResult Function(EmailInUse value) emailInUse,
     required TResult Function(InvalidEmailOrPassword value)
         invalidEmailOrPassword,
@@ -48,14 +48,14 @@ mixin _$AuthFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ServerError value)? severError,
+    TResult Function(ServerError value)? serverError,
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ServerError value)? severError,
+    TResult Function(ServerError value)? serverError,
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     required TResult orElse(),
@@ -104,7 +104,7 @@ class _$ServerError implements ServerError {
 
   @override
   String toString() {
-    return 'AuthFailure.severError()';
+    return 'AuthFailure.serverError()';
   }
 
   @override
@@ -119,33 +119,33 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() severError,
+    required TResult Function() serverError,
     required TResult Function() emailInUse,
     required TResult Function() invalidEmailOrPassword,
   }) {
-    return severError();
+    return serverError();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? severError,
+    TResult Function()? serverError,
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
   }) {
-    return severError?.call();
+    return serverError?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? severError,
+    TResult Function()? serverError,
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     required TResult orElse(),
   }) {
-    if (severError != null) {
-      return severError();
+    if (serverError != null) {
+      return serverError();
     }
     return orElse();
   }
@@ -153,34 +153,34 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ServerError value) severError,
+    required TResult Function(ServerError value) serverError,
     required TResult Function(EmailInUse value) emailInUse,
     required TResult Function(InvalidEmailOrPassword value)
         invalidEmailOrPassword,
   }) {
-    return severError(this);
+    return serverError(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ServerError value)? severError,
+    TResult Function(ServerError value)? serverError,
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
   }) {
-    return severError?.call(this);
+    return serverError?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ServerError value)? severError,
+    TResult Function(ServerError value)? serverError,
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     required TResult orElse(),
   }) {
-    if (severError != null) {
-      return severError(this);
+    if (serverError != null) {
+      return serverError(this);
     }
     return orElse();
   }
@@ -230,7 +230,7 @@ class _$EmailInUse implements EmailInUse {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() severError,
+    required TResult Function() serverError,
     required TResult Function() emailInUse,
     required TResult Function() invalidEmailOrPassword,
   }) {
@@ -240,7 +240,7 @@ class _$EmailInUse implements EmailInUse {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? severError,
+    TResult Function()? serverError,
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
   }) {
@@ -250,7 +250,7 @@ class _$EmailInUse implements EmailInUse {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? severError,
+    TResult Function()? serverError,
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     required TResult orElse(),
@@ -264,7 +264,7 @@ class _$EmailInUse implements EmailInUse {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ServerError value) severError,
+    required TResult Function(ServerError value) serverError,
     required TResult Function(EmailInUse value) emailInUse,
     required TResult Function(InvalidEmailOrPassword value)
         invalidEmailOrPassword,
@@ -275,7 +275,7 @@ class _$EmailInUse implements EmailInUse {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ServerError value)? severError,
+    TResult Function(ServerError value)? serverError,
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
   }) {
@@ -285,7 +285,7 @@ class _$EmailInUse implements EmailInUse {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ServerError value)? severError,
+    TResult Function(ServerError value)? serverError,
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     required TResult orElse(),
@@ -343,7 +343,7 @@ class _$InvalidEmailOrPassword implements InvalidEmailOrPassword {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() severError,
+    required TResult Function() serverError,
     required TResult Function() emailInUse,
     required TResult Function() invalidEmailOrPassword,
   }) {
@@ -353,7 +353,7 @@ class _$InvalidEmailOrPassword implements InvalidEmailOrPassword {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? severError,
+    TResult Function()? serverError,
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
   }) {
@@ -363,7 +363,7 @@ class _$InvalidEmailOrPassword implements InvalidEmailOrPassword {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? severError,
+    TResult Function()? serverError,
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     required TResult orElse(),
@@ -377,7 +377,7 @@ class _$InvalidEmailOrPassword implements InvalidEmailOrPassword {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ServerError value) severError,
+    required TResult Function(ServerError value) serverError,
     required TResult Function(EmailInUse value) emailInUse,
     required TResult Function(InvalidEmailOrPassword value)
         invalidEmailOrPassword,
@@ -388,7 +388,7 @@ class _$InvalidEmailOrPassword implements InvalidEmailOrPassword {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ServerError value)? severError,
+    TResult Function(ServerError value)? serverError,
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
   }) {
@@ -398,7 +398,7 @@ class _$InvalidEmailOrPassword implements InvalidEmailOrPassword {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ServerError value)? severError,
+    TResult Function(ServerError value)? serverError,
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     required TResult orElse(),
