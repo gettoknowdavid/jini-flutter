@@ -1,24 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart' as bloc;
 import 'package:get/get.dart';
+import 'package:jini/src/application/core/bottom_nav/bottom_nav_cubit.dart';
 
 class JiniApp extends StatelessWidget {
   const JiniApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: 'Jini Donation',
-      defaultTransition: Transition.fade,
-      opaqueRoute: Get.isOpaqueRouteDefault,
-      popGesture: Get.isPopGestureEnable,
-      theme: ThemeData(primarySwatch: Colors.orange),
-      initialRoute: '/',
-      getPages: [
-        GetPage(
-          name: '/',
-          page: () => const MyHomePage(title: 'Flutter Demo Home Page'),
-        ),
+    return bloc.MultiBlocProvider(
+      providers: [
+        bloc.BlocProvider<BottomNavCubit>(
+          create: (context) => BottomNavCubit(),
+        )
       ],
+      child: GetMaterialApp(
+        title: 'Jini Donation',
+        defaultTransition: Transition.fade,
+        opaqueRoute: Get.isOpaqueRouteDefault,
+        popGesture: Get.isPopGestureEnable,
+        theme: ThemeData(primarySwatch: Colors.orange),
+        initialRoute: '/',
+        getPages: [
+          GetPage(
+            name: '/',
+            page: () => const MyHomePage(title: 'Flutter Demo Home Page'),
+          ),
+        ],
+      ),
     );
   }
 }
