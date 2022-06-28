@@ -1,6 +1,6 @@
 part of 'bottom_nav_cubit.dart';
 
 @freezed
-class BottomNavState with _$BottomNavState {
-  const factory BottomNavState.initial() = _Initial;
+abstract class BottomNavState with _$BottomNavState {
+  const factory BottomNavState({required Widget view}) = _BottomNavState;
 }

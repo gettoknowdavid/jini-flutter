@@ -16,37 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$BottomNavState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    required TResult orElse(),
-  }) =>
+  Widget get view => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $BottomNavStateCopyWith<BottomNavState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -55,6 +28,7 @@ abstract class $BottomNavStateCopyWith<$Res> {
   factory $BottomNavStateCopyWith(
           BottomNavState value, $Res Function(BottomNavState) then) =
       _$BottomNavStateCopyWithImpl<$Res>;
+  $Res call({Widget view});
 }
 
 /// @nodoc
@@ -65,101 +39,93 @@ class _$BottomNavStateCopyWithImpl<$Res>
   final BottomNavState _value;
   // ignore: unused_field
   final $Res Function(BottomNavState) _then;
-}
-
-/// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_InitialCopyWithImpl<$Res> extends _$BottomNavStateCopyWithImpl<$Res>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, (v) => _then(v as _$_Initial));
 
   @override
-  _$_Initial get _value => super._value as _$_Initial;
+  $Res call({
+    Object? view = freezed,
+  }) {
+    return _then(_value.copyWith(
+      view: view == freezed
+          ? _value.view
+          : view // ignore: cast_nullable_to_non_nullable
+              as Widget,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$$_BottomNavStateCopyWith<$Res>
+    implements $BottomNavStateCopyWith<$Res> {
+  factory _$$_BottomNavStateCopyWith(
+          _$_BottomNavState value, $Res Function(_$_BottomNavState) then) =
+      __$$_BottomNavStateCopyWithImpl<$Res>;
+  @override
+  $Res call({Widget view});
+}
+
+/// @nodoc
+class __$$_BottomNavStateCopyWithImpl<$Res>
+    extends _$BottomNavStateCopyWithImpl<$Res>
+    implements _$$_BottomNavStateCopyWith<$Res> {
+  __$$_BottomNavStateCopyWithImpl(
+      _$_BottomNavState _value, $Res Function(_$_BottomNavState) _then)
+      : super(_value, (v) => _then(v as _$_BottomNavState));
+
+  @override
+  _$_BottomNavState get _value => super._value as _$_BottomNavState;
+
+  @override
+  $Res call({
+    Object? view = freezed,
+  }) {
+    return _then(_$_BottomNavState(
+      view: view == freezed
+          ? _value.view
+          : view // ignore: cast_nullable_to_non_nullable
+              as Widget,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$_BottomNavState implements _BottomNavState {
+  const _$_BottomNavState({required this.view});
+
+  @override
+  final Widget view;
 
   @override
   String toString() {
-    return 'BottomNavState.initial()';
+    return 'BottomNavState(view: $view)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType &&
+            other is _$_BottomNavState &&
+            const DeepCollectionEquality().equals(other.view, view));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(view));
 
+  @JsonKey(ignore: true)
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
+  _$$_BottomNavStateCopyWith<_$_BottomNavState> get copyWith =>
+      __$$_BottomNavStateCopyWithImpl<_$_BottomNavState>(this, _$identity);
 }
 
-abstract class _Initial implements BottomNavState {
-  const factory _Initial() = _$_Initial;
+abstract class _BottomNavState implements BottomNavState {
+  const factory _BottomNavState({required final Widget view}) =
+      _$_BottomNavState;
+
+  @override
+  Widget get view => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$$_BottomNavStateCopyWith<_$_BottomNavState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
