@@ -1,11 +1,13 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:jini/src/presentation/core/app.dart';
 
 part 'bottom_nav_state.dart';
 part 'bottom_nav_cubit.freezed.dart';
 
+@lazySingleton
 class BottomNavCubit extends Cubit<BottomNavState> {
   BottomNavCubit() : super(BottomNavState(view: MyHomePage(title: '')));
 
