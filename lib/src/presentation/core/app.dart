@@ -9,6 +9,7 @@ class JiniApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = ThemeData.dark();
     return ScreenUtilInit(
       designSize: const Size(393, 830),
       minTextAdapt: true,
@@ -17,14 +18,15 @@ class JiniApp extends StatelessWidget {
         return MaterialApp(
           title: 'Jini Donation',
           home: child,
-          theme: ThemeData(
-            primarySwatch: AppColors.swatch,
+          theme: theme.copyWith(
             primaryColor: AppColors.primary,
             canvasColor: AppColors.background,
+            backgroundColor: AppColors.background,
+            scaffoldBackgroundColor: AppColors.background,
             brightness: Brightness.dark,
-            textTheme: TextTheme().copyWith().apply(
-                  fontFamily: GoogleFonts.spaceGrotesk().fontFamily,
-                ),
+            textTheme: theme.textTheme
+                .copyWith()
+                .apply(fontFamily: GoogleFonts.spaceGrotesk().fontFamily),
           ),
         );
       },
