@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 class AppColors {
   static final Color primary = Color(0xFFF25774);
   static final Color primaryDark = Color(0xFFF25774);
-  static final Color secondary = Color(0xFF57AAF2);
+  static final Color secondary = Color(0xFF1723FD);
   static final Color secondaryDark = Color(0xFF1D1340);
   static final Color black = Color(0xFF000000);
   static final Color white = Color(0xFFFFFFFF);
-  static final Color background = Color(0xFFF0F1F2);
+  static final Color background = Color(0xFF090911);
   static const swatch = MaterialColor(0xFFF25774, {
     50: Color.fromRGBO(250, 99, 147, .1),
     100: Color.fromRGBO(250, 99, 147, .2),
