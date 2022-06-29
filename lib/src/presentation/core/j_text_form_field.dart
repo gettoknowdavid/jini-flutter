@@ -24,11 +24,8 @@ class JTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(18.r),
-        color: color ?? Colors.white24,
-      ),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(18.r),
       child: TextFormField(
         keyboardType: keyboardType,
         autocorrect: autocorrect,
@@ -43,6 +40,8 @@ class JTextFormField extends StatelessWidget {
           border: InputBorder.none,
           contentPadding: EdgeInsets.fromLTRB(18, 24, 18, 24).r,
           hintText: hint,
+          fillColor: color ?? Colors.white24,
+          filled: true,
         ),
       ),
     );
