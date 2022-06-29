@@ -6,7 +6,7 @@ import 'package:jini/src/presentation/core/layout/layout.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class JiniApp extends StatelessWidget {
-  const JiniApp({Key? key}) : super(key: key);
+const JiniApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
