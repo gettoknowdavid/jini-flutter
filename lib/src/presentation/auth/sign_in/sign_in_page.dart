@@ -3,8 +3,7 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jini/common/image_resources.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jini/src/presentation/core/j_button.dart';
-import 'package:jini/src/presentation/core/j_text_form_field.dart';
+import 'package:jini/src/presentation/auth/sign_in/widgets/sign_in_form.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);
@@ -57,27 +56,7 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                   ),
                   40.verticalSpace,
-                  JTextFormField(
-                    hint: 'Email address',
-                    keyboardType: TextInputType.emailAddress,
-                  ),
-                  20.verticalSpace,
-                  JTextFormField(hint: 'Password', isPassword: true),
-                  16.verticalSpace,
-                  GestureDetector(
-                    onTap: () {},
-                    child: Text(
-                      'Forgot Password?',
-                      textAlign: TextAlign.right,
-                      style: GoogleFonts.spaceGrotesk(
-                        color: Colors.white60,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14.sp,
-                      ),
-                    ),
-                  ),
-                  40.verticalSpace,
-                  JButton(title: 'Sign In', onPressed: () {}),
+                  SignInForm(),
                   20.verticalSpace,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
