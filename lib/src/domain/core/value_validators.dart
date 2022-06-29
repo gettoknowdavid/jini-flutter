@@ -20,6 +20,6 @@ Either<ValueFailure<String>, String> validatePassword(String input) {
   if (RegExp(pRegEx).hasMatch(input)) {
     return right(input);
   } else {
-    return left(ValueFailure.invalidEmail(failedValue: input));
+    return left(ValueFailure.invalidPassword(failedValue: input));
   }
 }
