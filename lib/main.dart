@@ -8,6 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:injectable/injectable.dart';
 import 'package:jini/di/injection.dart';
 import 'package:jini/firebase_options.dart';
+import 'package:jini/src/application/auth/sign_in/sign_in_bloc.dart';
 import 'package:jini/src/application/core/bottom_nav/bottom_nav_cubit.dart';
 import 'package:jini/src/presentation/core/app.dart';
 
@@ -31,7 +32,8 @@ void main() async {
   runApp(
     MultiBlocProvider(
       providers: [
-        BlocProvider<BottomNavCubit>(create: (context) => BottomNavCubit())
+        BlocProvider<BottomNavCubit>(create: (context) => BottomNavCubit()),
+        BlocProvider<SignInBloc>(create: (context) => getIt<SignInBloc>()),
       ],
       child: JiniApp(),
     ),
