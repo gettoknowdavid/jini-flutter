@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart' as bloc;
 import 'package:get/get.dart';
+import 'package:jini/common/app_colors.dart';
 import 'package:jini/src/application/core/bottom_nav/bottom_nav_cubit.dart';
 import 'package:jini/src/presentation/core/layout/layout.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class JiniApp extends StatelessWidget {
-const JiniApp({Key? key}) : super(key: key);
+  const JiniApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,10 @@ const JiniApp({Key? key}) : super(key: key);
             defaultTransition: Transition.fade,
             opaqueRoute: Get.isOpaqueRouteDefault,
             popGesture: Get.isPopGestureEnable,
-            theme: ThemeData(primarySwatch: Colors.orange),
+            theme: ThemeData(
+              primarySwatch: AppColors.swatch,
+              primaryColor: AppColors.primary,
+            ),
             initialRoute: '/',
             getPages: [GetPage(name: '/', page: () => const Layout())],
           );
