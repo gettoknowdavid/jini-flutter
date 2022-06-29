@@ -2,11 +2,13 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:injectable/injectable.dart';
 import 'package:jini/di/injection.dart';
 import 'package:jini/firebase_options.dart';
+import 'package:jini/src/application/core/bottom_nav/bottom_nav_cubit.dart';
 import 'package:jini/src/presentation/core/app.dart';
 
 void main() async {
@@ -26,5 +28,12 @@ void main() async {
     yield LicenseEntryWithLineBreaks(['google_fonts'], license);
   });
 
-  runApp(const JiniApp());
+  runApp(
+    MultiBlocProvider(
+      providers: [
+        BlocProvider<BottomNavCubit>(create: (context) => BottomNavCubit())
+      ],
+      child: JiniApp(),
+    ),
+  );
 }
