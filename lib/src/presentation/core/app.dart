@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart' as bloc;
 import 'package:get/get.dart';
 import 'package:jini/common/app_colors.dart';
-import 'package:jini/src/application/core/bottom_nav/bottom_nav_cubit.dart';
+import 'package:jini/src/presentation/auth/sign_in/sign_in_page.dart';
 import 'package:jini/src/presentation/core/layout/layout.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -11,31 +10,27 @@ class JiniApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return bloc.MultiBlocProvider(
-      providers: [
-        bloc.BlocProvider<BottomNavCubit>(
-          create: (context) => BottomNavCubit(),
-        )
-      ],
-      child: ScreenUtilInit(
-        designSize: const Size(393, 830),
-        minTextAdapt: true,
-        splitScreenMode: true,
-        builder: (context, child) {
-          return GetMaterialApp(
-            title: 'Jini Donation',
-            defaultTransition: Transition.fade,
-            opaqueRoute: Get.isOpaqueRouteDefault,
-            popGesture: Get.isPopGestureEnable,
-            theme: ThemeData(
-              primarySwatch: AppColors.swatch,
-              primaryColor: AppColors.primary,
-            ),
-            initialRoute: '/',
-            getPages: [GetPage(name: '/', page: () => const Layout())],
-          );
-        },
-      ),
+    return ScreenUtilInit(
+      designSize: const Size(393, 830),
+      minTextAdapt: true,
+      child: const SignInPage(),
+      builder: (context, child) {
+        return GetMaterialApp(
+          title: 'Jini Donation',
+          defaultTransition: Transition.fade,
+          opaqueRoute: Get.isOpaqueRouteDefault,
+          popGesture: Get.isPopGestureEnable,
+          theme: ThemeData(
+            primarySwatch: AppColors.swatch,
+            primaryColor: AppColors.primary,
+          ),
+          home: child,
+          getPages: [
+            GetPage(name: '/', page: () => const Layout()),
+            GetPage(name: '/signIn', page: () => const SignInPage())
+          ],
+        );
+      },
     );
   }
 }
