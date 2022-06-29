@@ -1,8 +1,6 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
-import 'package:jini/features/auth/data/models/j_user_model.dart';
 import 'package:jini/src/domain/auth/auth_failure.dart';
 import 'package:jini/core/enums/user_type.dart';
 import 'package:jini/core/enums/gender.dart';
@@ -12,9 +10,8 @@ import 'package:jini/src/domain/auth/value_objects.dart';
 
 @LazySingleton(as: IAuthFacade)
 class FirebaseAuthFacade implements IAuthFacade {
-  FirebaseAuthFacade(this._firebaseAuth, this._ref);
+  FirebaseAuthFacade(this._firebaseAuth);
   final FirebaseAuth _firebaseAuth;
-  final CollectionReference _ref;
 
   @override
   Future<Either<AuthFailure, Unit>> signIn({
@@ -53,17 +50,17 @@ class FirebaseAuthFacade implements IAuthFacade {
           .then((value) {
         _firebaseAuth.currentUser!.updateDisplayName(name);
 
-        final _user = JUserModel(
-          uid: value.user!.uid,
-          name: name,
-          email: _email,
-          userType: userType,
-          formComplete: false,
-          gender: gender,
-          initEdit: 0,
-        );
+        // final _user = JUserModel(
+        //   uid: value.user!.uid,
+        //   name: name,
+        //   email: _email,
+        //   userType: userType,
+        //   formComplete: false,
+        //   gender: gender,
+        //   initEdit: 0,
+        // );
 
-        _ref.doc(value.user!.uid).set(_user.toJson());
+        // _ref.doc(value.user!.uid).set(_user.toJson());
 
         return right(unit);
       });
