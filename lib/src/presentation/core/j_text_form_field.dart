@@ -11,6 +11,7 @@ class JTextFormField extends StatelessWidget {
     this.color,
     this.autocorrect = false,
     this.onChanged,
+    this.validator,
   }) : super(key: key);
 
   final String? hint;
@@ -19,6 +20,7 @@ class JTextFormField extends StatelessWidget {
   final Color? color;
   final bool autocorrect;
   final void Function(String)? onChanged;
+  final String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +34,7 @@ class JTextFormField extends StatelessWidget {
         autocorrect: autocorrect,
         obscureText: isPassword,
         onChanged: onChanged,
+        validator: validator,
         style: GoogleFonts.spaceGrotesk(
           fontSize: 16.sp,
           fontWeight: FontWeight.w500,
