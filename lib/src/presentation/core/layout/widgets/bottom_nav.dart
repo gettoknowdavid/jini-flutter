@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jini/common/app_colors.dart';
 import 'package:jini/src/application/core/bottom_nav/bottom_nav_cubit.dart';
 
 class BottomNav extends StatelessWidget {
@@ -9,6 +10,7 @@ class BottomNav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of<BottomNavCubit>(context);
+    final theme = Theme.of(context);
 
     return BlocBuilder<BottomNavCubit, Widget>(
       builder: (context, state) {
@@ -31,21 +33,21 @@ class BottomNav extends StatelessWidget {
                   label: bloc.items[i].title,
                   icon: i == 2
                       ? Container(
-                          height: 50.w,
-                          width: 50.w,
+                          height: 60.w,
+                          width: 60.w,
+                          child: Icon(bloc.items[i].icon, color: Colors.white),
                           decoration: BoxDecoration(
-                            color: Colors.pink,
+                            color: theme.primaryColor,
                             borderRadius: BorderRadius.circular(20).r,
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.black26,
+                                color: AppColors.secondaryDark.withOpacity(0.4),
                                 spreadRadius: 1,
                                 blurRadius: 12,
                                 offset: Offset(0.w, 5.h),
                               ),
                             ],
                           ),
-                          child: Icon(bloc.items[i].icon),
                         )
                       : Stack(
                           clipBehavior: Clip.none,
