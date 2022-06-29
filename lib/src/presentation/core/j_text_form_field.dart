@@ -3,18 +3,22 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class JTextFormField extends StatelessWidget {
-  const JTextFormField(
-      {Key? key,
-      this.hint,
-      this.isPassword = false,
-      this.keyboardType,
-      this.color})
-      : super(key: key);
+  const JTextFormField({
+    Key? key,
+    this.hint,
+    this.isPassword = false,
+    this.keyboardType,
+    this.color,
+    this.autocorrect = false,
+    this.onChanged,
+  }) : super(key: key);
 
   final String? hint;
   final bool isPassword;
   final TextInputType? keyboardType;
   final Color? color;
+  final bool autocorrect;
+  final void Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +29,9 @@ class JTextFormField extends StatelessWidget {
       ),
       child: TextFormField(
         keyboardType: keyboardType,
+        autocorrect: autocorrect,
         obscureText: isPassword,
+        onChanged: onChanged,
         style: GoogleFonts.spaceGrotesk(
           fontSize: 16.sp,
           fontWeight: FontWeight.w500,
