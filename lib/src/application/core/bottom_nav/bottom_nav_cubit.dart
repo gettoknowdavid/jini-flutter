@@ -6,7 +6,7 @@ import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 @lazySingleton
 class BottomNavCubit extends Cubit<Widget> {
-  BottomNavCubit(Widget view) : super(view);
+  BottomNavCubit() : super(MyHomePage(title: 'Home'));
 
   int currentIndex = 0;
 
@@ -33,12 +33,12 @@ class BottomNavCubit extends Cubit<Widget> {
     }
   }
 
-  List<BottomNavItem> navItems = [
-    BottomNavItem(title: 'Home', icon: PhosphorIcons.houseSimple),
-    BottomNavItem(title: 'Profile', icon: PhosphorIcons.user),
-    BottomNavItem(title: 'Make Request', icon: PhosphorIcons.drop),
-    BottomNavItem(title: 'Events', icon: PhosphorIcons.calendar),
-    BottomNavItem(title: 'About', icon: PhosphorIcons.info),
+  List<BottomNavItem> items = [
+    BottomNavItem(title: 'Home', icon: PhosphorIcons.houseSimpleBold),
+    BottomNavItem(title: 'Profile', icon: PhosphorIcons.userBold),
+    BottomNavItem(title: 'Make Request', icon: PhosphorIcons.dropBold),
+    BottomNavItem(title: 'Events', icon: PhosphorIcons.calendarBold),
+    BottomNavItem(title: 'About', icon: PhosphorIcons.infoBold),
   ];
 }
 
