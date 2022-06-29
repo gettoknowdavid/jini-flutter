@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:jini/common/app_colors.dart';
 import 'package:jini/src/presentation/auth/sign_in/sign_in_page.dart';
-import 'package:jini/src/presentation/core/layout/layout.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class JiniApp extends StatelessWidget {
@@ -15,20 +14,18 @@ class JiniApp extends StatelessWidget {
       minTextAdapt: true,
       child: const SignInPage(),
       builder: (context, child) {
-        return GetMaterialApp(
+        return MaterialApp(
           title: 'Jini Donation',
-          defaultTransition: Transition.fade,
-          opaqueRoute: Get.isOpaqueRouteDefault,
-          popGesture: Get.isPopGestureEnable,
+          home: child,
           theme: ThemeData(
             primarySwatch: AppColors.swatch,
             primaryColor: AppColors.primary,
+            canvasColor: AppColors.background,
+            brightness: Brightness.dark,
+            textTheme: TextTheme().copyWith().apply(
+                  fontFamily: GoogleFonts.spaceGrotesk().fontFamily,
+                ),
           ),
-          home: child,
-          getPages: [
-            GetPage(name: '/', page: () => const Layout()),
-            GetPage(name: '/signIn', page: () => const SignInPage())
-          ],
         );
       },
     );
