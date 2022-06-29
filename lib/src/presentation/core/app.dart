@@ -13,7 +13,7 @@ class JiniApp extends StatelessWidget {
     return bloc.MultiBlocProvider(
       providers: [
         bloc.BlocProvider<BottomNavCubit>(
-          create: (context) => BottomNavCubit(MyHomePage(title: 'Home')),
+          create: (context) => BottomNavCubit(),
         )
       ],
       child: ScreenUtilInit(
