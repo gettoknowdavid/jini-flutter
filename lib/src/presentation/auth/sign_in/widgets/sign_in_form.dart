@@ -26,7 +26,7 @@ class SignInForm extends StatelessWidget {
               JTextFormField(
                 hint: 'Email address',
                 keyboardType: TextInputType.emailAddress,
-                onChanged: (value) => bloc.add(SignInEvent.emailChanged(value)),
+                onChanged: (e) => bloc.add(SignInEvent.emailChanged(e)),
                 validator: (_) => bloc.state.email.value.fold(
                   (f) => f.maybeMap(
                     invalidEmail: (_) => 'Invalid Email',
@@ -36,7 +36,18 @@ class SignInForm extends StatelessWidget {
                 ),
               ),
               20.verticalSpace,
-              JTextFormField(hint: 'Password', isPassword: true),
+              JTextFormField(
+                hint: 'Password',
+                isPassword: true,
+                onChanged: (p) => bloc.add(SignInEvent.passwordChanged(p)),
+                validator: (_) => bloc.state.password.value.fold(
+                  (f) => f.maybeMap(
+                    empty: (_) => 'Cannot be empty',
+                    orElse: () => null,
+                  ),
+                  (_) => null,
+                ),
+              ),
               16.verticalSpace,
               GestureDetector(
                 onTap: () {},
