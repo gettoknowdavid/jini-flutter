@@ -1,3 +1,3 @@
 class ImageResources {
-	//static final String loginBackground = "assets/images/bg.png";
+  static final String logo = "assets/images/logo.png";
 }
