@@ -62,7 +62,10 @@ class SignInForm extends StatelessWidget {
                 ),
               ),
               40.verticalSpace,
-              JButton(title: 'Sign In', onPressed: () {}),
+              JButton(
+                title: 'Sign In',
+                onPressed: () => bloc.add(SignInEvent.signInPressed()),
+              ),
             ],
           ),
         );
