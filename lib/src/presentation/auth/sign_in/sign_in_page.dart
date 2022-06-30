@@ -62,7 +62,6 @@ class _SignInPageState extends State<SignInPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('Don\'t have an account?'),
-                      4.horizontalSpace,
                       TextButton(
                         onPressed: () {},
                         child: Text('Sign Up'),
