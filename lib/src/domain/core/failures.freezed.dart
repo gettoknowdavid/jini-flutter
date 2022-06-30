@@ -65,7 +65,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(NumberTooLarge<T> value) numberTooLarge,
     required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(InvalidEmail<T> value) invalidPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
   }) =>
@@ -78,7 +78,7 @@ mixin _$ValueFailure<T> {
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidEmail<T> value)? invalidPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
   }) =>
@@ -91,7 +91,7 @@ mixin _$ValueFailure<T> {
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidEmail<T> value)? invalidPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
     required TResult orElse(),
@@ -270,7 +270,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     required TResult Function(NumberTooLarge<T> value) numberTooLarge,
     required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(InvalidEmail<T> value) invalidPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
   }) {
@@ -286,7 +286,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidEmail<T> value)? invalidPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
   }) {
@@ -302,7 +302,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidEmail<T> value)? invalidPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
     required TResult orElse(),
@@ -451,7 +451,7 @@ class _$Empty<T> implements Empty<T> {
     required TResult Function(NumberTooLarge<T> value) numberTooLarge,
     required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(InvalidEmail<T> value) invalidPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
   }) {
@@ -467,7 +467,7 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidEmail<T> value)? invalidPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
   }) {
@@ -483,7 +483,7 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidEmail<T> value)? invalidPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
     required TResult orElse(),
@@ -632,7 +632,7 @@ class _$Multiline<T> implements Multiline<T> {
     required TResult Function(NumberTooLarge<T> value) numberTooLarge,
     required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(InvalidEmail<T> value) invalidPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
   }) {
@@ -648,7 +648,7 @@ class _$Multiline<T> implements Multiline<T> {
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidEmail<T> value)? invalidPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
   }) {
@@ -664,7 +664,7 @@ class _$Multiline<T> implements Multiline<T> {
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidEmail<T> value)? invalidPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
     required TResult orElse(),
@@ -823,7 +823,7 @@ class _$NumberTooLarge<T> implements NumberTooLarge<T> {
     required TResult Function(NumberTooLarge<T> value) numberTooLarge,
     required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(InvalidEmail<T> value) invalidPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
   }) {
@@ -839,7 +839,7 @@ class _$NumberTooLarge<T> implements NumberTooLarge<T> {
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidEmail<T> value)? invalidPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
   }) {
@@ -855,7 +855,7 @@ class _$NumberTooLarge<T> implements NumberTooLarge<T> {
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidEmail<T> value)? invalidPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
     required TResult orElse(),
@@ -1017,7 +1017,7 @@ class _$ListTooLong<T> implements ListTooLong<T> {
     required TResult Function(NumberTooLarge<T> value) numberTooLarge,
     required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(InvalidEmail<T> value) invalidPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
   }) {
@@ -1033,7 +1033,7 @@ class _$ListTooLong<T> implements ListTooLong<T> {
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidEmail<T> value)? invalidPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
   }) {
@@ -1049,7 +1049,7 @@ class _$ListTooLong<T> implements ListTooLong<T> {
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidEmail<T> value)? invalidPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
     required TResult orElse(),
@@ -1201,7 +1201,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(NumberTooLarge<T> value) numberTooLarge,
     required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(InvalidEmail<T> value) invalidPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
   }) {
@@ -1217,7 +1217,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidEmail<T> value)? invalidPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
   }) {
@@ -1233,7 +1233,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidEmail<T> value)? invalidPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
     required TResult orElse(),
@@ -1258,31 +1258,31 @@ abstract class InvalidEmail<T> implements ValueFailure<T> {
 }
 
 /// @nodoc
-abstract class _$$InvalidEmailCopyWith<T, $Res>
+abstract class _$$InvalidPasswordCopyWith<T, $Res>
     implements $ValueFailureCopyWith<T, $Res> {
-  factory _$$InvalidEmailCopyWith(
-          _$InvalidEmail<T> value, $Res Function(_$InvalidEmail<T>) then) =
-      __$$InvalidEmailCopyWithImpl<T, $Res>;
+  factory _$$InvalidPasswordCopyWith(_$InvalidPassword<T> value,
+          $Res Function(_$InvalidPassword<T>) then) =
+      __$$InvalidPasswordCopyWithImpl<T, $Res>;
   @override
   $Res call({T failedValue});
 }
 
 /// @nodoc
-class __$$InvalidEmailCopyWithImpl<T, $Res>
+class __$$InvalidPasswordCopyWithImpl<T, $Res>
     extends _$ValueFailureCopyWithImpl<T, $Res>
-    implements _$$InvalidEmailCopyWith<T, $Res> {
-  __$$InvalidEmailCopyWithImpl(
-      _$InvalidEmail<T> _value, $Res Function(_$InvalidEmail<T>) _then)
-      : super(_value, (v) => _then(v as _$InvalidEmail<T>));
+    implements _$$InvalidPasswordCopyWith<T, $Res> {
+  __$$InvalidPasswordCopyWithImpl(
+      _$InvalidPassword<T> _value, $Res Function(_$InvalidPassword<T>) _then)
+      : super(_value, (v) => _then(v as _$InvalidPassword<T>));
 
   @override
-  _$InvalidEmail<T> get _value => super._value as _$InvalidEmail<T>;
+  _$InvalidPassword<T> get _value => super._value as _$InvalidPassword<T>;
 
   @override
   $Res call({
     Object? failedValue = freezed,
   }) {
-    return _then(_$InvalidEmail<T>(
+    return _then(_$InvalidPassword<T>(
       failedValue: failedValue == freezed
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
@@ -1293,8 +1293,8 @@ class __$$InvalidEmailCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$InvalidEmail<T> implements InvalidEmail<T> {
-  const _$InvalidEmail({required this.failedValue});
+class _$InvalidPassword<T> implements InvalidPassword<T> {
+  const _$InvalidPassword({required this.failedValue});
 
   @override
   final T failedValue;
@@ -1308,7 +1308,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$InvalidEmail<T> &&
+            other is _$InvalidPassword<T> &&
             const DeepCollectionEquality()
                 .equals(other.failedValue, failedValue));
   }
@@ -1319,8 +1319,9 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
 
   @JsonKey(ignore: true)
   @override
-  _$$InvalidEmailCopyWith<T, _$InvalidEmail<T>> get copyWith =>
-      __$$InvalidEmailCopyWithImpl<T, _$InvalidEmail<T>>(this, _$identity);
+  _$$InvalidPasswordCopyWith<T, _$InvalidPassword<T>> get copyWith =>
+      __$$InvalidPasswordCopyWithImpl<T, _$InvalidPassword<T>>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1383,7 +1384,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(NumberTooLarge<T> value) numberTooLarge,
     required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(InvalidEmail<T> value) invalidPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
   }) {
@@ -1399,7 +1400,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidEmail<T> value)? invalidPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
   }) {
@@ -1415,7 +1416,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidEmail<T> value)? invalidPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
     required TResult orElse(),
@@ -1427,15 +1428,15 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   }
 }
 
-abstract class InvalidEmail<T> implements ValueFailure<T> {
-  const factory InvalidEmail({required final T failedValue}) =
-      _$InvalidEmail<T>;
+abstract class InvalidPassword<T> implements ValueFailure<T> {
+  const factory InvalidPassword({required final T failedValue}) =
+      _$InvalidPassword<T>;
 
   @override
   T get failedValue => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$$InvalidEmailCopyWith<T, _$InvalidEmail<T>> get copyWith =>
+  _$$InvalidPasswordCopyWith<T, _$InvalidPassword<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1565,7 +1566,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function(NumberTooLarge<T> value) numberTooLarge,
     required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(InvalidEmail<T> value) invalidPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
   }) {
@@ -1581,7 +1582,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidEmail<T> value)? invalidPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
   }) {
@@ -1597,7 +1598,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidEmail<T> value)? invalidPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
     required TResult orElse(),
@@ -1748,7 +1749,7 @@ class _$InvalidPhotoUrl<T> implements InvalidPhotoUrl<T> {
     required TResult Function(NumberTooLarge<T> value) numberTooLarge,
     required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(InvalidEmail<T> value) invalidPassword,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
   }) {
@@ -1764,7 +1765,7 @@ class _$InvalidPhotoUrl<T> implements InvalidPhotoUrl<T> {
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidEmail<T> value)? invalidPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
   }) {
@@ -1780,7 +1781,7 @@ class _$InvalidPhotoUrl<T> implements InvalidPhotoUrl<T> {
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidEmail<T> value)? invalidPassword,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
     required TResult orElse(),
