@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jini/common/image_resources.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jini/src/presentation/auth/sign_in/widgets/sign_in_form.dart';
 import 'package:jini/src/presentation/auth/sign_up/widgets/sign_up_form.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -62,10 +62,10 @@ class _SignUpPageState extends State<SignUpPage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('Don\'t have an account?'),
+                      Text('Already have an account?'),
                       TextButton(
-                        onPressed: () {},
-                        child: Text('Sign Up'),
+                        onPressed: () => Get.back(),
+                        child: Text('Sign In'),
                       ),
                     ],
                   )
