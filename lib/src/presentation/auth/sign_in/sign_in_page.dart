@@ -55,7 +55,7 @@ class _SignInPageState extends State<SignInPage> {
                       letterSpacing: -0.5.sp,
                     ),
                   ),
-                  40.verticalSpace,
+                  46.verticalSpace,
                   SignInForm(),
                   20.verticalSpace,
                   Row(
