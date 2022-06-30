@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:jini/common/image_resources.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jini/src/presentation/auth/sign_up/widgets/sign_up_form.dart';
+import 'package:jini/src/presentation/core/j_back_button.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -28,6 +29,10 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        leading: const JBackButton(),
+      ),
       body: Stack(
         alignment: Alignment.center,
         children: [
@@ -56,19 +61,9 @@ class _SignUpPageState extends State<SignUpPage> {
                       letterSpacing: -0.5.sp,
                     ),
                   ),
-                  46.verticalSpace,
+                  20.verticalSpace,
                   SignUpForm(),
                   20.verticalSpace,
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text('Already have an account?'),
-                      TextButton(
-                        onPressed: () => Get.back(),
-                        child: Text('Sign In'),
-                      ),
-                    ],
-                  )
                 ],
               ),
             ),
