@@ -25,7 +25,8 @@ class JiniApp extends StatelessWidget {
             GetPage(name: AppRoutes.root, page: () => SignInPage()),
             GetPage(name: AppRoutes.signUp, page: () => SignUpPage()),
           ],
-          theme: theme.copyWith(
+          theme: ThemeData(
+            primarySwatch: AppColors.swatch,
             primaryColor: AppColors.primary,
             canvasColor: AppColors.background,
             backgroundColor: AppColors.background,
