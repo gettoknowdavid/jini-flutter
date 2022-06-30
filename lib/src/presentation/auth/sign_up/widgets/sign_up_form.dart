@@ -7,8 +7,8 @@ import 'package:jini/src/application/auth/sign_up/sign_up_bloc.dart';
 import 'package:jini/src/presentation/core/j_button.dart';
 import 'package:jini/src/presentation/core/j_text_form_field.dart';
 
-class SignInForm extends StatelessWidget {
-  const SignInForm({Key? key}) : super(key: key);
+class SignUpForm extends StatelessWidget {
+  const SignUpForm({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
