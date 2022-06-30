@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:jini/common/app_routes.dart';
 import 'package:jini/common/image_resources.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jini/src/presentation/auth/sign_in/widgets/sign_in_form.dart';
@@ -63,7 +65,7 @@ class _SignInPageState extends State<SignInPage> {
                     children: [
                       Text('Don\'t have an account?'),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () => Get.toNamed(AppRoutes.signUp),
                         child: Text('Sign Up'),
                       ),
                     ],
