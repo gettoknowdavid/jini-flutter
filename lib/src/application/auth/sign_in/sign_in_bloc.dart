@@ -15,15 +15,9 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
   final IAuthFacade _authFacade;
 
   SignInBloc(this._authFacade) : super(SignInState.initial()) {
-    on<SignInEvent>((event, emit) {
-      emit(
-        event.map(
-          emailChanged: (EmailChanged e) => _emailChanged(e, emit),
-          passwordChanged: (PasswordChanged e) => _passwordChanged(e, emit),
-          signInPressed: (SignInPressed e) => _signInPressed(e, emit),
-        ),
-      );
-    });
+    on<EmailChanged>((event, emit) => _emailChanged(event, emit));
+    on<PasswordChanged>((event, emit) => _passwordChanged(event, emit));
+    on<SignInPressed>((event, emit) => _signInPressed(event, emit));
   }
 
   _emailChanged(EmailChanged e, Emitter<SignInState> emit) async {
