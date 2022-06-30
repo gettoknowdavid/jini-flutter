@@ -22,6 +22,8 @@ class SignUpForm extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              JTextFormField(hint: 'Name'),
+              20.verticalSpace,
               JTextFormField(
                 hint: 'Email address',
                 enabled: !bloc.state.isSubmitting,
@@ -32,19 +34,6 @@ class SignUpForm extends StatelessWidget {
                 hint: 'Password',
                 enabled: !bloc.state.isSubmitting,
                 isPassword: true,
-              ),
-              16.verticalSpace,
-              GestureDetector(
-                onTap: () {},
-                child: Text(
-                  'Forgot Password?',
-                  textAlign: TextAlign.right,
-                  style: GoogleFonts.spaceGrotesk(
-                    color: Colors.white60,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 14.sp,
-                  ),
-                ),
               ),
               40.verticalSpace,
               JButton(
