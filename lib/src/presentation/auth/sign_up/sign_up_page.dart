@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jini/common/image_resources.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
