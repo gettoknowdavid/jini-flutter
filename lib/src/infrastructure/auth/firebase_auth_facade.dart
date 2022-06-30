@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
 import 'package:jini/src/domain/auth/auth_failure.dart';
 import 'package:jini/core/enums/user_type.dart';
@@ -25,7 +24,7 @@ class FirebaseAuthFacade implements IAuthFacade {
       return await _firebaseAuth
           .signInWithEmailAndPassword(email: _email, password: _password)
           .then((_) => right(unit));
-    } on PlatformException catch (e) {
+    } on FirebaseAuthException catch (e) {
       if (e.code == 'wrong-password' || e.code == 'user-not-found') {
         return left(const AuthFailure.invalidEmailOrPassword());
       }
@@ -64,7 +63,7 @@ class FirebaseAuthFacade implements IAuthFacade {
 
         return right(unit);
       });
-    } on PlatformException catch (e) {
+    } on FirebaseAuthException catch (e) {
       if (e.code == 'email-already-in-use') {
         return left(const AuthFailure.emailInUse());
       } else {
