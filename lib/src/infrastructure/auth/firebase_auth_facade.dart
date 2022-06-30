@@ -5,6 +5,7 @@ import 'package:jini/core/enums/user_type.dart';
 import 'package:jini/core/enums/gender.dart';
 import 'package:dartz/dartz.dart';
 import 'package:jini/src/domain/auth/i_auth_facade.dart';
+import 'package:jini/src/domain/auth/j_user.dart';
 import 'package:jini/src/domain/auth/value_objects.dart';
 
 @LazySingleton(as: IAuthFacade)
@@ -70,5 +71,17 @@ class FirebaseAuthFacade implements IAuthFacade {
         return left(const AuthFailure.serverError());
       }
     }
+  }
+
+  @override
+  Future<Option<JUser>> getUser() {
+    // TODO: implement getUser
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> signOut() {
+    // TODO: implement signOut
+    throw UnimplementedError();
   }
 }
