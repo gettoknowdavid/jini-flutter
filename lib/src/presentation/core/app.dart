@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jini/common/app_colors.dart';
 import 'package:jini/src/presentation/auth/sign_in/sign_in_page.dart';
@@ -15,7 +16,7 @@ class JiniApp extends StatelessWidget {
       minTextAdapt: true,
       child: const SignInPage(),
       builder: (context, child) {
-        return MaterialApp(
+        return GetMaterialApp(
           title: 'Jini Donation',
           home: child,
           theme: theme.copyWith(
@@ -24,6 +25,9 @@ class JiniApp extends StatelessWidget {
             backgroundColor: AppColors.background,
             scaffoldBackgroundColor: AppColors.background,
             brightness: Brightness.dark,
+            progressIndicatorTheme: ProgressIndicatorThemeData(
+              color: AppColors.background,
+            ),
             textTheme: theme.textTheme
                 .copyWith()
                 .apply(fontFamily: GoogleFonts.spaceGrotesk().fontFamily),
