@@ -17,58 +17,6 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   final IAuthFacade _authFacade;
 
   SignUpBloc(this._authFacade) : super(SignUpState.initial()) {
-    on<SignUpEvent>((event, emit) {
-      emit(
-        event.map(
-          emailChanged: (EmailChanged e) => _emailChanged(e, emit),
-          passwordChanged: (PasswordChanged e) => _passwordChanged(e, emit),
-          signUpPressed: (SignUpPressed e) => _signUpPressed(e, emit),
-        ),
-      );
-    });
-  }
-
-  _emailChanged(EmailChanged e, Emitter<SignUpState> emit) async {
-    emit(state.copyWith(
-      email: EmailAddress(e.email),
-      authFailureOrSuccess: none(),
-    ));
-  }
-
-  _passwordChanged(PasswordChanged e, Emitter<SignUpState> emit) async {
-    emit(state.copyWith(
-      password: Password(e.password),
-      authFailureOrSuccess: none(),
-    ));
-  }
-
-  _signUpPressed(SignUpPressed e, Emitter<SignUpState> emit) async {
-    Either<AuthFailure, Unit> _r;
-
-    final isEmailValid = state.email.isValid();
-    final isPasswordValid = state.password.isValid();
-
-    if (isEmailValid && isPasswordValid) {
-      emit(state.copyWith(isSubmitting: true, authFailureOrSuccess: none()));
-
-      _r = await _authFacade.signUp(
-        name: state.name,
-        email: state.email,
-        password: state.password,
-        gender: state.gender,
-        userType: state.userType,
-      );
-
-      emit(state.copyWith(
-        isSubmitting: false,
-        authFailureOrSuccess: some(_r),
-      ));
-    }
-
-    emit(state.copyWith(
-      isSubmitting: false,
-      showErrorMessages: true,
-      authFailureOrSuccess: none(),
-    ));
+    on<SignUpEvent>((event, emit) {});
   }
 }
