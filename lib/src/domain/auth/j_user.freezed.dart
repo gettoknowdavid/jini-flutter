@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$JUser {
-  String get uid => throw _privateConstructorUsedError;
+  Uid get uid => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $JUserCopyWith<JUser> get copyWith => throw _privateConstructorUsedError;
@@ -26,7 +26,7 @@ mixin _$JUser {
 abstract class $JUserCopyWith<$Res> {
   factory $JUserCopyWith(JUser value, $Res Function(JUser) then) =
       _$JUserCopyWithImpl<$Res>;
-  $Res call({String uid});
+  $Res call({Uid uid});
 }
 
 /// @nodoc
@@ -45,7 +45,7 @@ class _$JUserCopyWithImpl<$Res> implements $JUserCopyWith<$Res> {
       uid: uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Uid,
     ));
   }
 }
@@ -55,7 +55,7 @@ abstract class _$$_JUserCopyWith<$Res> implements $JUserCopyWith<$Res> {
   factory _$$_JUserCopyWith(_$_JUser value, $Res Function(_$_JUser) then) =
       __$$_JUserCopyWithImpl<$Res>;
   @override
-  $Res call({String uid});
+  $Res call({Uid uid});
 }
 
 /// @nodoc
@@ -75,7 +75,7 @@ class __$$_JUserCopyWithImpl<$Res> extends _$JUserCopyWithImpl<$Res>
       uid: uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Uid,
     ));
   }
 }
@@ -86,7 +86,7 @@ class _$_JUser implements _JUser {
   _$_JUser({required this.uid});
 
   @override
-  final String uid;
+  final Uid uid;
 
   @override
   String toString() {
@@ -112,10 +112,10 @@ class _$_JUser implements _JUser {
 }
 
 abstract class _JUser implements JUser {
-  factory _JUser({required final String uid}) = _$_JUser;
+  factory _JUser({required final Uid uid}) = _$_JUser;
 
   @override
-  String get uid => throw _privateConstructorUsedError;
+  Uid get uid => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_JUserCopyWith<_$_JUser> get copyWith =>
