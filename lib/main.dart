@@ -32,8 +32,8 @@ void main() async {
   runApp(
     MultiBlocProvider(
       providers: [
-        BlocProvider<BottomNavCubit>(create: (context) => BottomNavCubit()),
-        BlocProvider<SignInBloc>(create: (context) => getIt<SignInBloc>()),
+        BlocProvider(create: (context) => BottomNavCubit()),
+        BlocProvider(create: (context) => getIt<SignInBloc>()),
       ],
       child: JiniApp(),
     ),
