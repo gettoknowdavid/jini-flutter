@@ -22,7 +22,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  configureInjection(Environment.prod);
+  await configureInjection(Environment.prod);
 
   LicenseRegistry.addLicense(() async* {
     final license = await rootBundle.loadString('assets/google_fonts/OFL.txt');
@@ -32,8 +32,8 @@ void main() async {
   runApp(
     MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => BottomNavCubit()),
-        BlocProvider(create: (context) => getIt<SignInBloc>()),
+        BlocProvider<BottomNavCubit>(create: (context) => BottomNavCubit()),
+        BlocProvider<SignInBloc>(create: (context) => getIt<SignInBloc>()),
       ],
       child: JiniApp(),
     ),
