@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:jini/common/app_colors.dart';
 import 'package:jini/src/application/auth/sign_in/sign_in_bloc.dart';
 import 'package:jini/src/presentation/core/j_button.dart';
 import 'package:jini/src/presentation/core/j_text_form_field.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class SignInForm extends StatelessWidget {
   const SignInForm({Key? key}) : super(key: key);
@@ -15,7 +18,22 @@ class SignInForm extends StatelessWidget {
 
     return BlocConsumer<SignInBloc, SignInState>(
       listener: (context, state) {
-        // TODO: implement listener
+        state.authFailureOrSuccess.fold(
+          () {},
+          (either) => either.fold((f) {
+            Get.snackbar(
+              'Authentication Failure',
+              f.map(
+                serverError: (_) => 'Looks like there\'s a server error.',
+                emailInUse: (_) => 'Email is already in use.',
+                invalidEmailOrPassword: (_) => 'Invalid email or password.',
+              ),
+              icon: Icon(PhosphorIcons.warningCircleBold),
+              snackPosition: SnackPosition.BOTTOM,
+              backgroundColor: AppColors.primary,
+            );
+          }, (r) => null),
+        );
       },
       builder: (context, state) {
         return Form(
@@ -25,6 +43,7 @@ class SignInForm extends StatelessWidget {
             children: [
               JTextFormField(
                 hint: 'Email address',
+                enabled: !bloc.state.isSubmitting,
                 keyboardType: TextInputType.emailAddress,
                 onChanged: (e) => bloc.add(SignInEvent.emailChanged(e)),
                 validator: (_) => bloc.state.email.value.fold(
@@ -38,11 +57,13 @@ class SignInForm extends StatelessWidget {
               20.verticalSpace,
               JTextFormField(
                 hint: 'Password',
+                enabled: !bloc.state.isSubmitting,
                 isPassword: true,
                 onChanged: (p) => bloc.add(SignInEvent.passwordChanged(p)),
                 validator: (_) => bloc.state.password.value.fold(
                   (f) => f.maybeMap(
-                    empty: (_) => 'Cannot be empty',
+                    invalidPassword: (_) =>
+                        'Password must contain at least 8 characters, one uppercase letter, one number and one special character.',
                     orElse: () => null,
                   ),
                   (_) => null,
@@ -56,7 +77,7 @@ class SignInForm extends StatelessWidget {
                   textAlign: TextAlign.right,
                   style: GoogleFonts.spaceGrotesk(
                     color: Colors.white60,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w400,
                     fontSize: 14.sp,
                   ),
                 ),
@@ -64,7 +85,11 @@ class SignInForm extends StatelessWidget {
               40.verticalSpace,
               JButton(
                 title: 'Sign In',
-                onPressed: () => bloc.add(SignInEvent.signInPressed()),
+                loading: bloc.state.isSubmitting,
+                indicatorColor: AppColors.primary,
+                onPressed: !bloc.state.isSubmitting
+                    ? () => bloc.add(SignInEvent.signInPressed())
+                    : null,
               ),
             ],
           ),
