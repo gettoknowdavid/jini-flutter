@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:jini/common/image_resources.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jini/src/presentation/auth/sign_in/widgets/sign_in_form.dart';
+import 'package:jini/src/presentation/auth/sign_up/widgets/sign_up_form.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -56,7 +57,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                   ),
                   46.verticalSpace,
-                  SignInForm(),
+                  SignUpForm(),
                   20.verticalSpace,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
