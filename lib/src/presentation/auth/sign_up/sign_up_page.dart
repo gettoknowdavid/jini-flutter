@@ -38,7 +38,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
-                    'Welcome \nBack!',
+                    'Create a new Account',
                     style: GoogleFonts.spaceGrotesk(
                       fontSize: 40.sp,
                       fontWeight: FontWeight.w600,
@@ -47,7 +47,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                   ),
                   Text(
-                    'Welcome back. You have been missed. \nPlease, sign into your account.',
+                    'Sign up to create your new account.',
                     style: GoogleFonts.spaceGrotesk(
                       color: Colors.white60,
                       fontSize: 18.sp,
