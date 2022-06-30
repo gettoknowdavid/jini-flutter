@@ -13,7 +13,7 @@ class Layout extends StatefulWidget {
 
 class _LayoutState extends State<Layout> {
   void initialization() async {
-    await Future.delayed(const Duration(seconds: 5));
+    await Future.delayed(const Duration(seconds: 3));
     FlutterNativeSplash.remove();
   }
 
