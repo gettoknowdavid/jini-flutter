@@ -7,11 +7,13 @@ import 'package:dartz/dartz.dart';
 import 'package:jini/src/domain/auth/i_auth_facade.dart';
 import 'package:jini/src/domain/auth/j_user.dart';
 import 'package:jini/src/domain/auth/value_objects.dart';
+import 'package:jini/src/infrastructure/auth/firebase_user_mapper.dart';
 
 @LazySingleton(as: IAuthFacade)
 class FirebaseAuthFacade implements IAuthFacade {
-  FirebaseAuthFacade(this._firebaseAuth);
+  FirebaseAuthFacade(this._firebaseAuth, this._firebaseUserMapper);
   final FirebaseAuth _firebaseAuth;
+  final FirebaseUserMapper _firebaseUserMapper;
 
   @override
   Future<Either<AuthFailure, Unit>> signIn({
@@ -74,14 +76,11 @@ class FirebaseAuthFacade implements IAuthFacade {
   }
 
   @override
-  Future<Option<JUser>> getUser() {
-    // TODO: implement getUser
-    throw UnimplementedError();
+  Future<Option<JUser>> getUser() async {
+    final _fUser = await _firebaseAuth.currentUser;
+    return await optionOf(_firebaseUserMapper.toDomain(_fUser));
   }
 
   @override
-  Future<void> signOut() {
-    // TODO: implement signOut
-    throw UnimplementedError();
-  }
+  Future<void> signOut() => Future.wait([_firebaseAuth.signOut()]);
 }
