@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jini/common/app_colors.dart';
+import 'package:jini/common/jini_routes.dart';
 import 'package:jini/src/presentation/auth/sign_in/sign_in_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jini/src/presentation/auth/sign_up/sign_up_page.dart';
 
 class JiniApp extends StatelessWidget {
   const JiniApp({Key? key}) : super(key: key);
@@ -19,6 +21,10 @@ class JiniApp extends StatelessWidget {
         return GetMaterialApp(
           title: 'Jini Donation',
           home: child,
+          getPages: [
+            GetPage(name: JiniRoutes.root, page: () => SignInPage()),
+            GetPage(name: JiniRoutes.signUp, page: () => SignUpPage()),
+          ],
           theme: theme.copyWith(
             primaryColor: AppColors.primary,
             canvasColor: AppColors.background,
