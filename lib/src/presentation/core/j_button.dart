@@ -12,6 +12,8 @@ class JButton extends StatelessWidget {
     this.backgroundColor,
     this.textColor = Colors.white,
     this.padding,
+    this.loading = false,
+    this.indicatorColor,
   }) : super(key: key);
 
   final String title;
@@ -20,17 +22,32 @@ class JButton extends StatelessWidget {
   final Color? backgroundColor;
   final Color? textColor;
   final EdgeInsetsGeometry? padding;
+  final bool loading;
+  final Color? indicatorColor;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
-      child: Text(title),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(title),
+          10.horizontalSpace,
+          !loading
+              ? const SizedBox()
+              : SizedBox(
+                  height: 18.w,
+                  width: 18.w,
+                  child: CircularProgressIndicator(color: indicatorColor),
+                ),
+        ],
+      ),
       style: ElevatedButton.styleFrom(
         elevation: 16,
         shadowColor: AppColors.swatch.shade700,
         primary: backgroundColor ?? AppColors.primary,
-        padding: padding ?? EdgeInsets.all(20).r,
+        padding: padding ?? EdgeInsets.all(24).r,
         textStyle: GoogleFonts.spaceGrotesk(
           color: textColor,
           fontSize: fontSize ?? 18.sp,
