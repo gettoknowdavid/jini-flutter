@@ -1,9 +1,38 @@
 import 'package:dartz/dartz.dart';
+import 'package:jini/src/domain/core/blood_group.dart';
 import 'package:jini/src/domain/core/failures.dart';
+import 'package:jini/src/domain/core/gender.dart';
+import 'package:jini/src/domain/core/user_type.dart';
 
 Either<ValueFailure<String>, String> validateStringNotEmpty(String input) {
   if (input.isEmpty) {
     return left(ValueFailure.empty(failedValue: input));
+  } else {
+    return right(input);
+  }
+}
+
+Either<ValueFailure<UserType>, UserType> validateUserTypeNotNull(
+    UserType? input) {
+  if (input == null) {
+    return left(ValueFailure.nullValue());
+  } else {
+    return right(input);
+  }
+}
+
+Either<ValueFailure<BloodGroup>, BloodGroup> validateBloodGroupNotNull(
+    BloodGroup? input) {
+  if (input == null) {
+    return left(ValueFailure.nullValue());
+  } else {
+    return right(input);
+  }
+}
+
+Either<ValueFailure<Gender>, Gender> validateGenderNotNull(Gender? input) {
+  if (input == null) {
+    return left(ValueFailure.nullValue());
   } else {
     return right(input);
   }
