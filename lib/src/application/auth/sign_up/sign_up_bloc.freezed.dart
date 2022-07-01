@@ -470,11 +470,11 @@ abstract class SignUpPressed implements SignUpEvent {
 
 /// @nodoc
 mixin _$SignUpState {
-  String get name => throw _privateConstructorUsedError;
-  EmailAddress get email => throw _privateConstructorUsedError;
-  Password get password => throw _privateConstructorUsedError;
-  Gender get gender => throw _privateConstructorUsedError;
-  UserType get userType => throw _privateConstructorUsedError;
+  IName get name => throw _privateConstructorUsedError;
+  IEmailAddress get email => throw _privateConstructorUsedError;
+  IPassword get password => throw _privateConstructorUsedError;
+  IGender get gender => throw _privateConstructorUsedError;
+  IUserType get userType => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
   Option<Either<AuthFailure, Unit>> get authFailureOrSuccess =>
@@ -491,11 +491,11 @@ abstract class $SignUpStateCopyWith<$Res> {
           SignUpState value, $Res Function(SignUpState) then) =
       _$SignUpStateCopyWithImpl<$Res>;
   $Res call(
-      {String name,
-      EmailAddress email,
-      Password password,
-      Gender gender,
-      UserType userType,
+      {IName name,
+      IEmailAddress email,
+      IPassword password,
+      IGender gender,
+      IUserType userType,
       bool showErrorMessages,
       bool isSubmitting,
       Option<Either<AuthFailure, Unit>> authFailureOrSuccess});
@@ -524,23 +524,23 @@ class _$SignUpStateCopyWithImpl<$Res> implements $SignUpStateCopyWith<$Res> {
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as IName,
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as EmailAddress,
+              as IEmailAddress,
       password: password == freezed
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
-              as Password,
+              as IPassword,
       gender: gender == freezed
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
-              as Gender,
+              as IGender,
       userType: userType == freezed
           ? _value.userType
           : userType // ignore: cast_nullable_to_non_nullable
-              as UserType,
+              as IUserType,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -565,11 +565,11 @@ abstract class _$$_SignUpStateCopyWith<$Res>
       __$$_SignUpStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String name,
-      EmailAddress email,
-      Password password,
-      Gender gender,
-      UserType userType,
+      {IName name,
+      IEmailAddress email,
+      IPassword password,
+      IGender gender,
+      IUserType userType,
       bool showErrorMessages,
       bool isSubmitting,
       Option<Either<AuthFailure, Unit>> authFailureOrSuccess});
@@ -600,23 +600,23 @@ class __$$_SignUpStateCopyWithImpl<$Res> extends _$SignUpStateCopyWithImpl<$Res>
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as IName,
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as EmailAddress,
+              as IEmailAddress,
       password: password == freezed
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
-              as Password,
+              as IPassword,
       gender: gender == freezed
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
-              as Gender,
+              as IGender,
       userType: userType == freezed
           ? _value.userType
           : userType // ignore: cast_nullable_to_non_nullable
-              as UserType,
+              as IUserType,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -647,15 +647,15 @@ class _$_SignUpState implements _SignUpState {
       required this.authFailureOrSuccess});
 
   @override
-  final String name;
+  final IName name;
   @override
-  final EmailAddress email;
+  final IEmailAddress email;
   @override
-  final Password password;
+  final IPassword password;
   @override
-  final Gender gender;
+  final IGender gender;
   @override
-  final UserType userType;
+  final IUserType userType;
   @override
   final bool showErrorMessages;
   @override
@@ -706,26 +706,26 @@ class _$_SignUpState implements _SignUpState {
 
 abstract class _SignUpState implements SignUpState {
   const factory _SignUpState(
-      {required final String name,
-      required final EmailAddress email,
-      required final Password password,
-      required final Gender gender,
-      required final UserType userType,
+      {required final IName name,
+      required final IEmailAddress email,
+      required final IPassword password,
+      required final IGender gender,
+      required final IUserType userType,
       required final bool showErrorMessages,
       required final bool isSubmitting,
       required final Option<Either<AuthFailure, Unit>>
           authFailureOrSuccess}) = _$_SignUpState;
 
   @override
-  String get name => throw _privateConstructorUsedError;
+  IName get name => throw _privateConstructorUsedError;
   @override
-  EmailAddress get email => throw _privateConstructorUsedError;
+  IEmailAddress get email => throw _privateConstructorUsedError;
   @override
-  Password get password => throw _privateConstructorUsedError;
+  IPassword get password => throw _privateConstructorUsedError;
   @override
-  Gender get gender => throw _privateConstructorUsedError;
+  IGender get gender => throw _privateConstructorUsedError;
   @override
-  UserType get userType => throw _privateConstructorUsedError;
+  IUserType get userType => throw _privateConstructorUsedError;
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
