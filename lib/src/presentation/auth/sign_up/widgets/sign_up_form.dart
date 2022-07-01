@@ -60,7 +60,7 @@ class SignUpForm extends StatelessWidget {
                   (_) => null,
                 ),
               ),
-              14.verticalSpace,
+              12.verticalSpace,
               JTextFormField(
                 hint: 'Email address',
                 enabled: !bloc.state.isSubmitting,
@@ -74,7 +74,7 @@ class SignUpForm extends StatelessWidget {
                   (_) => null,
                 ),
               ),
-              14.verticalSpace,
+              12.verticalSpace,
               JTextFormField(
                 hint: 'Password',
                 enabled: !bloc.state.isSubmitting,
@@ -89,98 +89,67 @@ class SignUpForm extends StatelessWidget {
                   (_) => null,
                 ),
               ),
-              14.verticalSpace,
-              DropdownButtonHideUnderline(
-                child: DropdownButton2<Gender>(
-                  hint: Text('Gender'),
-                  value: state.bloodGroup.getOrCrash(),
-                  buttonHeight: 65.h,
-                  onChanged: (e) {
-                    bloc.add(SignUpEvent.bloodGroupChanged(e!));
-                  },
-                  buttonPadding: EdgeInsets.fromLTRB(18, 10, 18, 10).r,
-                  buttonDecoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(18.r),
-                    color: Colors.white24,
-                    border: Border(bottom: BorderSide.none),
+              12.verticalSpace,
+              JDropdown<Gender>(
+                value: state.gender.getOrCrash(),
+                onChanged: (e) {
+                  bloc.add(SignUpEvent.genderChanged(e!));
+                },
+                validator: (_) => bloc.state.gender.value.fold(
+                  (f) => f.maybeMap(
+                    orElse: () => null,
+                    nullValue: (_) => 'Select your gender',
                   ),
-                  dropdownDecoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(18.r),
-                    color: AppColors.primary,
-                  ),
-                  items: Gender.values.map((bloodGroup) {
-                    return DropdownMenuItem<Gender>(
-                      value: bloodGroup,
-                      child: Text(bloodGroup.value),
-                    );
-                  }).toList(),
-                  style: GoogleFonts.spaceGrotesk(
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w500,
-                  ),
+                  (_) => null,
                 ),
+                items: Gender.values.map((gender) {
+                  return DropdownMenuItem<Gender>(
+                    value: gender,
+                    child: Text(gender.value),
+                  );
+                }).toList(),
               ),
-              14.verticalSpace,
-              DropdownButtonHideUnderline(
-                child: DropdownButton2<BloodGroup>(
-                  hint: Text('Blood Group'),
-                  value: state.bloodGroup.getOrCrash(),
-                  buttonHeight: 65.h,
-                  onChanged: (e) {
-                    bloc.add(SignUpEvent.bloodGroupChanged(e!));
-                  },
-                  buttonPadding: EdgeInsets.fromLTRB(18, 10, 18, 10).r,
-                  buttonDecoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(18.r),
-                    color: Colors.white24,
-                    border: Border(bottom: BorderSide.none),
+              12.verticalSpace,
+              JDropdown<BloodGroup>(
+                value: state.bloodGroup.getOrCrash(),
+                onChanged: (e) {
+                  bloc.add(SignUpEvent.bloodGroupChanged(e!));
+                },
+                validator: (_) => bloc.state.bloodGroup.value.fold(
+                  (f) => f.maybeMap(
+                    orElse: () => null,
+                    nullValue: (_) => 'Select your blood group',
                   ),
-                  dropdownDecoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(18.r),
-                    color: AppColors.primary,
-                  ),
-                  items: BloodGroup.values.map((bloodGroup) {
-                    return DropdownMenuItem<BloodGroup>(
-                      value: bloodGroup,
-                      child: Text(bloodGroup.value),
-                    );
-                  }).toList(),
-                  style: GoogleFonts.spaceGrotesk(
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w500,
-                  ),
+                  (_) => null,
                 ),
+                items: BloodGroup.values.map((bloodGroup) {
+                  return DropdownMenuItem<BloodGroup>(
+                    value: bloodGroup,
+                    child: Text(bloodGroup.value),
+                  );
+                }).toList(),
               ),
-              14.verticalSpace,
-              DropdownButtonHideUnderline(
-                child: DropdownButton2<UserType>(
-                  hint: Text('Register as a...'),
-                  value: state.userType.getOrCrash(),
-                  onChanged: (e) {
-                    bloc.add(SignUpEvent.userTypeChanged(e!));
-                  },
-                  buttonPadding: EdgeInsets.fromLTRB(18, 10, 18, 10).r,
-                  buttonDecoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(18.r),
-                    color: Colors.white24,
+              12.verticalSpace,
+              JDropdown<UserType>(
+                value: state.userType.getOrCrash(),
+                onChanged: (e) {
+                  bloc.add(SignUpEvent.userTypeChanged(e!));
+                },
+                validator: (_) => bloc.state.userType.value.fold(
+                  (f) => f.maybeMap(
+                    orElse: () => null,
+                    nullValue: (_) => 'Select your preferred account type',
                   ),
-                  dropdownDecoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(18.r),
-                    color: AppColors.primary,
-                  ),
-                  items: UserType.values.map((userType) {
-                    return DropdownMenuItem<UserType>(
-                      value: userType,
-                      child: Text(userType.value),
-                    );
-                  }).toList(),
-                  style: GoogleFonts.spaceGrotesk(
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w500,
-                  ),
+                  (_) => null,
                 ),
+                items: UserType.values.map((userType) {
+                  return DropdownMenuItem<UserType>(
+                    value: userType,
+                    child: Text(userType.value),
+                  );
+                }).toList(),
               ),
-              40.verticalSpace,
+              20.verticalSpace,
               JButton(
                 title: 'Sign Up',
                 loading: bloc.state.isSubmitting,
@@ -193,6 +162,48 @@ class SignUpForm extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+}
+
+class JDropdown<T> extends StatelessWidget {
+  const JDropdown({
+    Key? key,
+    required this.value,
+    required this.onChanged,
+    required this.items,
+    this.validator,
+  }) : super(key: key);
+
+  final T? value;
+  final void Function(T?) onChanged;
+  final String? Function(T?)? validator;
+  final List<DropdownMenuItem<T>> items;
+
+  @override
+  Widget build(BuildContext context) {
+    return DropdownButtonFormField<T>(
+      borderRadius: BorderRadius.circular(18.r),
+      dropdownColor: AppColors.primary,
+      hint: Text('Gender'),
+      value: value,
+      onChanged: onChanged,
+      validator: validator,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+      decoration: InputDecoration(
+        contentPadding: EdgeInsets.fromLTRB(18, 22, 18, 22).r,
+        border: OutlineInputBorder(
+          borderSide: BorderSide.none,
+          borderRadius: BorderRadius.circular(18.r),
+        ),
+        fillColor: Colors.white24,
+        filled: true,
+      ),
+      items: items,
+      style: GoogleFonts.spaceGrotesk(
+        fontSize: 16.sp,
+        fontWeight: FontWeight.w500,
+      ),
     );
   }
 }
