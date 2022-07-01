@@ -470,8 +470,8 @@ abstract class SignInPressed implements SignInEvent {
 
 /// @nodoc
 mixin _$SignInState {
-  EmailAddress get email => throw _privateConstructorUsedError;
-  Password get password => throw _privateConstructorUsedError;
+  IEmailAddress get email => throw _privateConstructorUsedError;
+  IPassword get password => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
   Option<Either<AuthFailure, Unit>> get authFailureOrSuccess =>
@@ -488,8 +488,8 @@ abstract class $SignInStateCopyWith<$Res> {
           SignInState value, $Res Function(SignInState) then) =
       _$SignInStateCopyWithImpl<$Res>;
   $Res call(
-      {EmailAddress email,
-      Password password,
+      {IEmailAddress email,
+      IPassword password,
       bool showErrorMessages,
       bool isSubmitting,
       Option<Either<AuthFailure, Unit>> authFailureOrSuccess});
@@ -515,11 +515,11 @@ class _$SignInStateCopyWithImpl<$Res> implements $SignInStateCopyWith<$Res> {
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as EmailAddress,
+              as IEmailAddress,
       password: password == freezed
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
-              as Password,
+              as IPassword,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -544,8 +544,8 @@ abstract class _$$_SignInStateCopyWith<$Res>
       __$$_SignInStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {EmailAddress email,
-      Password password,
+      {IEmailAddress email,
+      IPassword password,
       bool showErrorMessages,
       bool isSubmitting,
       Option<Either<AuthFailure, Unit>> authFailureOrSuccess});
@@ -573,11 +573,11 @@ class __$$_SignInStateCopyWithImpl<$Res> extends _$SignInStateCopyWithImpl<$Res>
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as EmailAddress,
+              as IEmailAddress,
       password: password == freezed
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
-              as Password,
+              as IPassword,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -605,9 +605,9 @@ class _$_SignInState implements _SignInState {
       required this.authFailureOrSuccess});
 
   @override
-  final EmailAddress email;
+  final IEmailAddress email;
   @override
-  final Password password;
+  final IPassword password;
   @override
   final bool showErrorMessages;
   @override
@@ -652,17 +652,17 @@ class _$_SignInState implements _SignInState {
 
 abstract class _SignInState implements SignInState {
   const factory _SignInState(
-      {required final EmailAddress email,
-      required final Password password,
+      {required final IEmailAddress email,
+      required final IPassword password,
       required final bool showErrorMessages,
       required final bool isSubmitting,
       required final Option<Either<AuthFailure, Unit>>
           authFailureOrSuccess}) = _$_SignInState;
 
   @override
-  EmailAddress get email => throw _privateConstructorUsedError;
+  IEmailAddress get email => throw _privateConstructorUsedError;
   @override
-  Password get password => throw _privateConstructorUsedError;
+  IPassword get password => throw _privateConstructorUsedError;
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
