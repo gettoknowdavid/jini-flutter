@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
-class JTextFormField extends StatelessWidget {
+class JTextFormField extends StatefulWidget {
   const JTextFormField({
     Key? key,
     this.hint,
@@ -25,16 +26,23 @@ class JTextFormField extends StatelessWidget {
   final bool enabled;
 
   @override
+  State<JTextFormField> createState() => _JTextFormFieldState();
+}
+
+class _JTextFormFieldState extends State<JTextFormField> {
+  bool _isObscure = false;
+
+  @override
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(18.r),
       child: TextFormField(
-        keyboardType: keyboardType,
-        autocorrect: autocorrect,
-        obscureText: isPassword,
-        onChanged: onChanged,
-        validator: validator,
-        enabled: enabled,
+        keyboardType: widget.keyboardType,
+        autocorrect: widget.autocorrect,
+        obscureText: widget.isPassword ? !_isObscure : _isObscure,
+        onChanged: widget.onChanged,
+        validator: widget.validator,
+        enabled: widget.enabled,
         style: GoogleFonts.spaceGrotesk(
           fontSize: 16.sp,
           fontWeight: FontWeight.w500,
@@ -42,10 +50,21 @@ class JTextFormField extends StatelessWidget {
         decoration: InputDecoration(
           border: InputBorder.none,
           contentPadding: EdgeInsets.fromLTRB(18, 24, 18, 24).r,
-          hintText: hint,
-          fillColor: color ?? Colors.white24,
+          hintText: widget.hint,
+          fillColor: widget.color ?? Colors.white24,
           filled: true,
           errorMaxLines: 3,
+          suffixIcon: !widget.isPassword
+              ? const SizedBox()
+              : IconButton(
+                  icon: Icon(
+                    _isObscure
+                        ? PhosphorIcons.eyeSlashBold
+                        : PhosphorIcons.eyeBold,
+                  ),
+                  padding: EdgeInsets.symmetric(horizontal: 18).r,
+                  onPressed: () => setState(() => _isObscure = !_isObscure),
+                ),
         ),
       ),
     );
