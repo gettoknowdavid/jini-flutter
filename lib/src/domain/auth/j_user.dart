@@ -4,7 +4,7 @@ import 'package:jini/src/domain/core/value_object.dart';
 part 'j_user.freezed.dart';
 
 @freezed
-abstract class JUser with _$JUser {
+class JUser with _$JUser {
   factory JUser({
     required Uid uid,
   }) = _JUser;
