@@ -11,15 +11,13 @@ abstract class ValueObject<T> {
 
   /// Throws [UnexpectedValueError] containing the [ValueFailure]
   // id = identity - same as writing (right) => right
-  T getOrCrash() => value.fold((l) => throw UnexpectedValueError(l), id);
+  // T getOrCrash() => value.fold((l) => throw UnexpectedValueError(l), id);
+  T? getOrCrash() => value.fold((l) => l.mapOrNull(), id);
 
   bool isValid() => value.isRight();
 
-  @override
-  bool operator ==(Object o) {
-    if (identical(this, o)) return true;
-
-    return o is ValueObject<T> && o.value == value;
+  T getOrElse(T dflt) {
+    return value.getOrElse(() => dflt);
   }
 
   @override
