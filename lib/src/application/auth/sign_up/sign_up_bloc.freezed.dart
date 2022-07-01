@@ -18,44 +18,62 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$SignUpEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String name) nameChanged,
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordChanged,
+    required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
+    required TResult Function(UserType userType) userTypeChanged,
     required TResult Function() signUpPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String name)? nameChanged,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
+    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
+    TResult Function(UserType userType)? userTypeChanged,
     TResult Function()? signUpPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name)? nameChanged,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
+    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
+    TResult Function(UserType userType)? userTypeChanged,
     TResult Function()? signUpPressed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(NameChanged value) nameChanged,
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(BloodGroupChanged value) bloodGroupChanged,
+    required TResult Function(UserTypeChanged value) userTypeChanged,
     required TResult Function(SignUpPressed value) signUpPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(NameChanged value)? nameChanged,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(BloodGroupChanged value)? bloodGroupChanged,
+    TResult Function(UserTypeChanged value)? userTypeChanged,
     TResult Function(SignUpPressed value)? signUpPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(NameChanged value)? nameChanged,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(BloodGroupChanged value)? bloodGroupChanged,
+    TResult Function(UserTypeChanged value)? userTypeChanged,
     TResult Function(SignUpPressed value)? signUpPressed,
     required TResult orElse(),
   }) =>
@@ -76,6 +94,163 @@ class _$SignUpEventCopyWithImpl<$Res> implements $SignUpEventCopyWith<$Res> {
   final SignUpEvent _value;
   // ignore: unused_field
   final $Res Function(SignUpEvent) _then;
+}
+
+/// @nodoc
+abstract class _$$NameChangedCopyWith<$Res> {
+  factory _$$NameChangedCopyWith(
+          _$NameChanged value, $Res Function(_$NameChanged) then) =
+      __$$NameChangedCopyWithImpl<$Res>;
+  $Res call({String name});
+}
+
+/// @nodoc
+class __$$NameChangedCopyWithImpl<$Res> extends _$SignUpEventCopyWithImpl<$Res>
+    implements _$$NameChangedCopyWith<$Res> {
+  __$$NameChangedCopyWithImpl(
+      _$NameChanged _value, $Res Function(_$NameChanged) _then)
+      : super(_value, (v) => _then(v as _$NameChanged));
+
+  @override
+  _$NameChanged get _value => super._value as _$NameChanged;
+
+  @override
+  $Res call({
+    Object? name = freezed,
+  }) {
+    return _then(_$NameChanged(
+      name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$NameChanged implements NameChanged {
+  const _$NameChanged(this.name);
+
+  @override
+  final String name;
+
+  @override
+  String toString() {
+    return 'SignUpEvent.nameChanged(name: $name)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NameChanged &&
+            const DeepCollectionEquality().equals(other.name, name));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(name));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$NameChangedCopyWith<_$NameChanged> get copyWith =>
+      __$$NameChangedCopyWithImpl<_$NameChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String email) emailChanged,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
+    required TResult Function(UserType userType) userTypeChanged,
+    required TResult Function() signUpPressed,
+  }) {
+    return nameChanged(name);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String name)? nameChanged,
+    TResult Function(String email)? emailChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
+    TResult Function(UserType userType)? userTypeChanged,
+    TResult Function()? signUpPressed,
+  }) {
+    return nameChanged?.call(name);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name)? nameChanged,
+    TResult Function(String email)? emailChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
+    TResult Function(UserType userType)? userTypeChanged,
+    TResult Function()? signUpPressed,
+    required TResult orElse(),
+  }) {
+    if (nameChanged != null) {
+      return nameChanged(name);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NameChanged value) nameChanged,
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(BloodGroupChanged value) bloodGroupChanged,
+    required TResult Function(UserTypeChanged value) userTypeChanged,
+    required TResult Function(SignUpPressed value) signUpPressed,
+  }) {
+    return nameChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(NameChanged value)? nameChanged,
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(BloodGroupChanged value)? bloodGroupChanged,
+    TResult Function(UserTypeChanged value)? userTypeChanged,
+    TResult Function(SignUpPressed value)? signUpPressed,
+  }) {
+    return nameChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NameChanged value)? nameChanged,
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(BloodGroupChanged value)? bloodGroupChanged,
+    TResult Function(UserTypeChanged value)? userTypeChanged,
+    TResult Function(SignUpPressed value)? signUpPressed,
+    required TResult orElse(),
+  }) {
+    if (nameChanged != null) {
+      return nameChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NameChanged implements SignUpEvent {
+  const factory NameChanged(final String name) = _$NameChanged;
+
+  String get name => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$NameChangedCopyWith<_$NameChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -142,8 +317,11 @@ class _$EmailChanged implements EmailChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String name) nameChanged,
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordChanged,
+    required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
+    required TResult Function(UserType userType) userTypeChanged,
     required TResult Function() signUpPressed,
   }) {
     return emailChanged(email);
@@ -152,8 +330,11 @@ class _$EmailChanged implements EmailChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String name)? nameChanged,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
+    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
+    TResult Function(UserType userType)? userTypeChanged,
     TResult Function()? signUpPressed,
   }) {
     return emailChanged?.call(email);
@@ -162,8 +343,11 @@ class _$EmailChanged implements EmailChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name)? nameChanged,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
+    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
+    TResult Function(UserType userType)? userTypeChanged,
     TResult Function()? signUpPressed,
     required TResult orElse(),
   }) {
@@ -176,8 +360,11 @@ class _$EmailChanged implements EmailChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(NameChanged value) nameChanged,
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(BloodGroupChanged value) bloodGroupChanged,
+    required TResult Function(UserTypeChanged value) userTypeChanged,
     required TResult Function(SignUpPressed value) signUpPressed,
   }) {
     return emailChanged(this);
@@ -186,8 +373,11 @@ class _$EmailChanged implements EmailChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(NameChanged value)? nameChanged,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(BloodGroupChanged value)? bloodGroupChanged,
+    TResult Function(UserTypeChanged value)? userTypeChanged,
     TResult Function(SignUpPressed value)? signUpPressed,
   }) {
     return emailChanged?.call(this);
@@ -196,8 +386,11 @@ class _$EmailChanged implements EmailChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(NameChanged value)? nameChanged,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(BloodGroupChanged value)? bloodGroupChanged,
+    TResult Function(UserTypeChanged value)? userTypeChanged,
     TResult Function(SignUpPressed value)? signUpPressed,
     required TResult orElse(),
   }) {
@@ -282,8 +475,11 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String name) nameChanged,
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordChanged,
+    required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
+    required TResult Function(UserType userType) userTypeChanged,
     required TResult Function() signUpPressed,
   }) {
     return passwordChanged(password);
@@ -292,8 +488,11 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String name)? nameChanged,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
+    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
+    TResult Function(UserType userType)? userTypeChanged,
     TResult Function()? signUpPressed,
   }) {
     return passwordChanged?.call(password);
@@ -302,8 +501,11 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name)? nameChanged,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
+    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
+    TResult Function(UserType userType)? userTypeChanged,
     TResult Function()? signUpPressed,
     required TResult orElse(),
   }) {
@@ -316,8 +518,11 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(NameChanged value) nameChanged,
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(BloodGroupChanged value) bloodGroupChanged,
+    required TResult Function(UserTypeChanged value) userTypeChanged,
     required TResult Function(SignUpPressed value) signUpPressed,
   }) {
     return passwordChanged(this);
@@ -326,8 +531,11 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(NameChanged value)? nameChanged,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(BloodGroupChanged value)? bloodGroupChanged,
+    TResult Function(UserTypeChanged value)? userTypeChanged,
     TResult Function(SignUpPressed value)? signUpPressed,
   }) {
     return passwordChanged?.call(this);
@@ -336,8 +544,11 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(NameChanged value)? nameChanged,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(BloodGroupChanged value)? bloodGroupChanged,
+    TResult Function(UserTypeChanged value)? userTypeChanged,
     TResult Function(SignUpPressed value)? signUpPressed,
     required TResult orElse(),
   }) {
@@ -354,6 +565,324 @@ abstract class PasswordChanged implements SignUpEvent {
   String get password => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$PasswordChangedCopyWith<_$PasswordChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$BloodGroupChangedCopyWith<$Res> {
+  factory _$$BloodGroupChangedCopyWith(
+          _$BloodGroupChanged value, $Res Function(_$BloodGroupChanged) then) =
+      __$$BloodGroupChangedCopyWithImpl<$Res>;
+  $Res call({BloodGroup bloodGroup});
+}
+
+/// @nodoc
+class __$$BloodGroupChangedCopyWithImpl<$Res>
+    extends _$SignUpEventCopyWithImpl<$Res>
+    implements _$$BloodGroupChangedCopyWith<$Res> {
+  __$$BloodGroupChangedCopyWithImpl(
+      _$BloodGroupChanged _value, $Res Function(_$BloodGroupChanged) _then)
+      : super(_value, (v) => _then(v as _$BloodGroupChanged));
+
+  @override
+  _$BloodGroupChanged get _value => super._value as _$BloodGroupChanged;
+
+  @override
+  $Res call({
+    Object? bloodGroup = freezed,
+  }) {
+    return _then(_$BloodGroupChanged(
+      bloodGroup == freezed
+          ? _value.bloodGroup
+          : bloodGroup // ignore: cast_nullable_to_non_nullable
+              as BloodGroup,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$BloodGroupChanged implements BloodGroupChanged {
+  const _$BloodGroupChanged(this.bloodGroup);
+
+  @override
+  final BloodGroup bloodGroup;
+
+  @override
+  String toString() {
+    return 'SignUpEvent.bloodGroupChanged(bloodGroup: $bloodGroup)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BloodGroupChanged &&
+            const DeepCollectionEquality()
+                .equals(other.bloodGroup, bloodGroup));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(bloodGroup));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$BloodGroupChangedCopyWith<_$BloodGroupChanged> get copyWith =>
+      __$$BloodGroupChangedCopyWithImpl<_$BloodGroupChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String email) emailChanged,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
+    required TResult Function(UserType userType) userTypeChanged,
+    required TResult Function() signUpPressed,
+  }) {
+    return bloodGroupChanged(bloodGroup);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String name)? nameChanged,
+    TResult Function(String email)? emailChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
+    TResult Function(UserType userType)? userTypeChanged,
+    TResult Function()? signUpPressed,
+  }) {
+    return bloodGroupChanged?.call(bloodGroup);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name)? nameChanged,
+    TResult Function(String email)? emailChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
+    TResult Function(UserType userType)? userTypeChanged,
+    TResult Function()? signUpPressed,
+    required TResult orElse(),
+  }) {
+    if (bloodGroupChanged != null) {
+      return bloodGroupChanged(bloodGroup);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NameChanged value) nameChanged,
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(BloodGroupChanged value) bloodGroupChanged,
+    required TResult Function(UserTypeChanged value) userTypeChanged,
+    required TResult Function(SignUpPressed value) signUpPressed,
+  }) {
+    return bloodGroupChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(NameChanged value)? nameChanged,
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(BloodGroupChanged value)? bloodGroupChanged,
+    TResult Function(UserTypeChanged value)? userTypeChanged,
+    TResult Function(SignUpPressed value)? signUpPressed,
+  }) {
+    return bloodGroupChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NameChanged value)? nameChanged,
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(BloodGroupChanged value)? bloodGroupChanged,
+    TResult Function(UserTypeChanged value)? userTypeChanged,
+    TResult Function(SignUpPressed value)? signUpPressed,
+    required TResult orElse(),
+  }) {
+    if (bloodGroupChanged != null) {
+      return bloodGroupChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BloodGroupChanged implements SignUpEvent {
+  const factory BloodGroupChanged(final BloodGroup bloodGroup) =
+      _$BloodGroupChanged;
+
+  BloodGroup get bloodGroup => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$BloodGroupChangedCopyWith<_$BloodGroupChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UserTypeChangedCopyWith<$Res> {
+  factory _$$UserTypeChangedCopyWith(
+          _$UserTypeChanged value, $Res Function(_$UserTypeChanged) then) =
+      __$$UserTypeChangedCopyWithImpl<$Res>;
+  $Res call({UserType userType});
+}
+
+/// @nodoc
+class __$$UserTypeChangedCopyWithImpl<$Res>
+    extends _$SignUpEventCopyWithImpl<$Res>
+    implements _$$UserTypeChangedCopyWith<$Res> {
+  __$$UserTypeChangedCopyWithImpl(
+      _$UserTypeChanged _value, $Res Function(_$UserTypeChanged) _then)
+      : super(_value, (v) => _then(v as _$UserTypeChanged));
+
+  @override
+  _$UserTypeChanged get _value => super._value as _$UserTypeChanged;
+
+  @override
+  $Res call({
+    Object? userType = freezed,
+  }) {
+    return _then(_$UserTypeChanged(
+      userType == freezed
+          ? _value.userType
+          : userType // ignore: cast_nullable_to_non_nullable
+              as UserType,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UserTypeChanged implements UserTypeChanged {
+  const _$UserTypeChanged(this.userType);
+
+  @override
+  final UserType userType;
+
+  @override
+  String toString() {
+    return 'SignUpEvent.userTypeChanged(userType: $userType)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserTypeChanged &&
+            const DeepCollectionEquality().equals(other.userType, userType));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(userType));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$UserTypeChangedCopyWith<_$UserTypeChanged> get copyWith =>
+      __$$UserTypeChangedCopyWithImpl<_$UserTypeChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String email) emailChanged,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
+    required TResult Function(UserType userType) userTypeChanged,
+    required TResult Function() signUpPressed,
+  }) {
+    return userTypeChanged(userType);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String name)? nameChanged,
+    TResult Function(String email)? emailChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
+    TResult Function(UserType userType)? userTypeChanged,
+    TResult Function()? signUpPressed,
+  }) {
+    return userTypeChanged?.call(userType);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name)? nameChanged,
+    TResult Function(String email)? emailChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
+    TResult Function(UserType userType)? userTypeChanged,
+    TResult Function()? signUpPressed,
+    required TResult orElse(),
+  }) {
+    if (userTypeChanged != null) {
+      return userTypeChanged(userType);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NameChanged value) nameChanged,
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(BloodGroupChanged value) bloodGroupChanged,
+    required TResult Function(UserTypeChanged value) userTypeChanged,
+    required TResult Function(SignUpPressed value) signUpPressed,
+  }) {
+    return userTypeChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(NameChanged value)? nameChanged,
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(BloodGroupChanged value)? bloodGroupChanged,
+    TResult Function(UserTypeChanged value)? userTypeChanged,
+    TResult Function(SignUpPressed value)? signUpPressed,
+  }) {
+    return userTypeChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NameChanged value)? nameChanged,
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(BloodGroupChanged value)? bloodGroupChanged,
+    TResult Function(UserTypeChanged value)? userTypeChanged,
+    TResult Function(SignUpPressed value)? signUpPressed,
+    required TResult orElse(),
+  }) {
+    if (userTypeChanged != null) {
+      return userTypeChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserTypeChanged implements SignUpEvent {
+  const factory UserTypeChanged(final UserType userType) = _$UserTypeChanged;
+
+  UserType get userType => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$UserTypeChangedCopyWith<_$UserTypeChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -398,8 +927,11 @@ class _$SignUpPressed implements SignUpPressed {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String name) nameChanged,
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordChanged,
+    required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
+    required TResult Function(UserType userType) userTypeChanged,
     required TResult Function() signUpPressed,
   }) {
     return signUpPressed();
@@ -408,8 +940,11 @@ class _$SignUpPressed implements SignUpPressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String name)? nameChanged,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
+    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
+    TResult Function(UserType userType)? userTypeChanged,
     TResult Function()? signUpPressed,
   }) {
     return signUpPressed?.call();
@@ -418,8 +953,11 @@ class _$SignUpPressed implements SignUpPressed {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name)? nameChanged,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
+    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
+    TResult Function(UserType userType)? userTypeChanged,
     TResult Function()? signUpPressed,
     required TResult orElse(),
   }) {
@@ -432,8 +970,11 @@ class _$SignUpPressed implements SignUpPressed {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(NameChanged value) nameChanged,
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(BloodGroupChanged value) bloodGroupChanged,
+    required TResult Function(UserTypeChanged value) userTypeChanged,
     required TResult Function(SignUpPressed value) signUpPressed,
   }) {
     return signUpPressed(this);
@@ -442,8 +983,11 @@ class _$SignUpPressed implements SignUpPressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(NameChanged value)? nameChanged,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(BloodGroupChanged value)? bloodGroupChanged,
+    TResult Function(UserTypeChanged value)? userTypeChanged,
     TResult Function(SignUpPressed value)? signUpPressed,
   }) {
     return signUpPressed?.call(this);
@@ -452,8 +996,11 @@ class _$SignUpPressed implements SignUpPressed {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(NameChanged value)? nameChanged,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(BloodGroupChanged value)? bloodGroupChanged,
+    TResult Function(UserTypeChanged value)? userTypeChanged,
     TResult Function(SignUpPressed value)? signUpPressed,
     required TResult orElse(),
   }) {
@@ -473,7 +1020,7 @@ mixin _$SignUpState {
   IName get name => throw _privateConstructorUsedError;
   IEmailAddress get email => throw _privateConstructorUsedError;
   IPassword get password => throw _privateConstructorUsedError;
-  IGender get gender => throw _privateConstructorUsedError;
+  IBloodGroup get bloodGroup => throw _privateConstructorUsedError;
   IUserType get userType => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
@@ -494,7 +1041,7 @@ abstract class $SignUpStateCopyWith<$Res> {
       {IName name,
       IEmailAddress email,
       IPassword password,
-      IGender gender,
+      IBloodGroup bloodGroup,
       IUserType userType,
       bool showErrorMessages,
       bool isSubmitting,
@@ -514,7 +1061,7 @@ class _$SignUpStateCopyWithImpl<$Res> implements $SignUpStateCopyWith<$Res> {
     Object? name = freezed,
     Object? email = freezed,
     Object? password = freezed,
-    Object? gender = freezed,
+    Object? bloodGroup = freezed,
     Object? userType = freezed,
     Object? showErrorMessages = freezed,
     Object? isSubmitting = freezed,
@@ -533,10 +1080,10 @@ class _$SignUpStateCopyWithImpl<$Res> implements $SignUpStateCopyWith<$Res> {
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as IPassword,
-      gender: gender == freezed
-          ? _value.gender
-          : gender // ignore: cast_nullable_to_non_nullable
-              as IGender,
+      bloodGroup: bloodGroup == freezed
+          ? _value.bloodGroup
+          : bloodGroup // ignore: cast_nullable_to_non_nullable
+              as IBloodGroup,
       userType: userType == freezed
           ? _value.userType
           : userType // ignore: cast_nullable_to_non_nullable
@@ -568,7 +1115,7 @@ abstract class _$$_SignUpStateCopyWith<$Res>
       {IName name,
       IEmailAddress email,
       IPassword password,
-      IGender gender,
+      IBloodGroup bloodGroup,
       IUserType userType,
       bool showErrorMessages,
       bool isSubmitting,
@@ -590,7 +1137,7 @@ class __$$_SignUpStateCopyWithImpl<$Res> extends _$SignUpStateCopyWithImpl<$Res>
     Object? name = freezed,
     Object? email = freezed,
     Object? password = freezed,
-    Object? gender = freezed,
+    Object? bloodGroup = freezed,
     Object? userType = freezed,
     Object? showErrorMessages = freezed,
     Object? isSubmitting = freezed,
@@ -609,10 +1156,10 @@ class __$$_SignUpStateCopyWithImpl<$Res> extends _$SignUpStateCopyWithImpl<$Res>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as IPassword,
-      gender: gender == freezed
-          ? _value.gender
-          : gender // ignore: cast_nullable_to_non_nullable
-              as IGender,
+      bloodGroup: bloodGroup == freezed
+          ? _value.bloodGroup
+          : bloodGroup // ignore: cast_nullable_to_non_nullable
+              as IBloodGroup,
       userType: userType == freezed
           ? _value.userType
           : userType // ignore: cast_nullable_to_non_nullable
@@ -640,7 +1187,7 @@ class _$_SignUpState implements _SignUpState {
       {required this.name,
       required this.email,
       required this.password,
-      required this.gender,
+      required this.bloodGroup,
       required this.userType,
       required this.showErrorMessages,
       required this.isSubmitting,
@@ -653,7 +1200,7 @@ class _$_SignUpState implements _SignUpState {
   @override
   final IPassword password;
   @override
-  final IGender gender;
+  final IBloodGroup bloodGroup;
   @override
   final IUserType userType;
   @override
@@ -665,7 +1212,7 @@ class _$_SignUpState implements _SignUpState {
 
   @override
   String toString() {
-    return 'SignUpState(name: $name, email: $email, password: $password, gender: $gender, userType: $userType, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, authFailureOrSuccess: $authFailureOrSuccess)';
+    return 'SignUpState(name: $name, email: $email, password: $password, bloodGroup: $bloodGroup, userType: $userType, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, authFailureOrSuccess: $authFailureOrSuccess)';
   }
 
   @override
@@ -676,7 +1223,8 @@ class _$_SignUpState implements _SignUpState {
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.email, email) &&
             const DeepCollectionEquality().equals(other.password, password) &&
-            const DeepCollectionEquality().equals(other.gender, gender) &&
+            const DeepCollectionEquality()
+                .equals(other.bloodGroup, bloodGroup) &&
             const DeepCollectionEquality().equals(other.userType, userType) &&
             const DeepCollectionEquality()
                 .equals(other.showErrorMessages, showErrorMessages) &&
@@ -692,7 +1240,7 @@ class _$_SignUpState implements _SignUpState {
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(email),
       const DeepCollectionEquality().hash(password),
-      const DeepCollectionEquality().hash(gender),
+      const DeepCollectionEquality().hash(bloodGroup),
       const DeepCollectionEquality().hash(userType),
       const DeepCollectionEquality().hash(showErrorMessages),
       const DeepCollectionEquality().hash(isSubmitting),
@@ -709,7 +1257,7 @@ abstract class _SignUpState implements SignUpState {
       {required final IName name,
       required final IEmailAddress email,
       required final IPassword password,
-      required final IGender gender,
+      required final IBloodGroup bloodGroup,
       required final IUserType userType,
       required final bool showErrorMessages,
       required final bool isSubmitting,
@@ -723,7 +1271,7 @@ abstract class _SignUpState implements SignUpState {
   @override
   IPassword get password => throw _privateConstructorUsedError;
   @override
-  IGender get gender => throw _privateConstructorUsedError;
+  IBloodGroup get bloodGroup => throw _privateConstructorUsedError;
   @override
   IUserType get userType => throw _privateConstructorUsedError;
   @override
