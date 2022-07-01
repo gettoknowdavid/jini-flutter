@@ -5,28 +5,28 @@ import 'package:jini/src/domain/core/user_type.dart';
 import 'package:jini/src/domain/core/value_object.dart';
 import 'package:jini/src/domain/core/value_validators.dart';
 
-class EmailAddress extends ValueObject<String> {
+class IEmailAddress extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
 
-  factory EmailAddress(String input) {
-    return EmailAddress._(
+  factory IEmailAddress(String input) {
+    return IEmailAddress._(
       validateEmailAddress(input),
     );
   }
 
-  const EmailAddress._(this.value);
+  const IEmailAddress._(this.value);
 }
 
-class Password extends ValueObject<String> {
+class IPassword extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
 
-  factory Password(String input) {
-    return Password._(
+  factory IPassword(String input) {
+    return IPassword._(
       validatePassword(input),
     );
   }
 
-  const Password._(this.value);
+  const IPassword._(this.value);
 }
 
 class IName extends ValueObject<String> {
