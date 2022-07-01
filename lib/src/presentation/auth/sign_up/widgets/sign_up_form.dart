@@ -4,9 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jini/common/app_colors.dart';
-import 'package:jini/core/enums/gender.dart';
-import 'package:jini/core/enums/user_type.dart';
 import 'package:jini/src/application/auth/sign_up/sign_up_bloc.dart';
+import 'package:jini/src/domain/core/gender.dart';
+import 'package:jini/src/domain/core/user_type.dart';
 import 'package:jini/src/presentation/core/j_button.dart';
 import 'package:jini/src/presentation/core/j_text_form_field.dart';
 
