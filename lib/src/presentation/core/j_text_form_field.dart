@@ -49,7 +49,7 @@ class _JTextFormFieldState extends State<JTextFormField> {
         ),
         decoration: InputDecoration(
           border: InputBorder.none,
-          contentPadding: EdgeInsets.fromLTRB(18, 24, 18, 24).r,
+          contentPadding: EdgeInsets.fromLTRB(18, 22, 18, 22).r,
           hintText: widget.hint,
           fillColor: widget.color ?? Colors.white24,
           filled: true,
