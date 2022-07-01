@@ -5,8 +5,6 @@ import 'package:dartz/dartz.dart';
 import 'package:jini/src/domain/auth/i_auth_facade.dart';
 import 'package:jini/src/domain/auth/j_user.dart';
 import 'package:jini/src/domain/auth/value_objects.dart';
-import 'package:jini/src/domain/core/gender.dart';
-import 'package:jini/src/domain/core/user_type.dart';
 import 'package:jini/src/infrastructure/auth/firebase_user_mapper.dart';
 
 @LazySingleton(as: IAuthFacade)
@@ -17,8 +15,8 @@ class FirebaseAuthFacade implements IAuthFacade {
 
   @override
   Future<Either<AuthFailure, Unit>> signIn({
-    required EmailAddress email,
-    required Password password,
+    required IEmailAddress email,
+    required IPassword password,
   }) async {
     final _email = email.getOrCrash();
     final _password = password.getOrCrash();
@@ -37,20 +35,21 @@ class FirebaseAuthFacade implements IAuthFacade {
 
   @override
   Future<Either<AuthFailure, Unit>> signUp({
-    required String name,
-    required EmailAddress email,
-    required Password password,
-    required Gender gender,
-    required UserType userType,
+    required IName name,
+    required IEmailAddress email,
+    required IPassword password,
+    required IGender gender,
+    required IUserType userType,
   }) async {
     final _email = email.getOrCrash();
     final _password = password.getOrCrash();
+    final _name = name.getOrCrash();
 
     try {
       return await _firebaseAuth
           .createUserWithEmailAndPassword(email: _email, password: _password)
           .then((value) {
-        _firebaseAuth.currentUser!.updateDisplayName(name);
+        _firebaseAuth.currentUser!.updateDisplayName(_name);
 
         // final _user = JUserModel(
         //   uid: value.user!.uid,
