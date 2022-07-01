@@ -21,6 +21,7 @@ mixin _$AuthFailure {
     required TResult Function() serverError,
     required TResult Function() emailInUse,
     required TResult Function() invalidEmailOrPassword,
+    required TResult Function() unableToUpdate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +29,7 @@ mixin _$AuthFailure {
     TResult Function()? serverError,
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
+    TResult Function()? unableToUpdate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +37,7 @@ mixin _$AuthFailure {
     TResult Function()? serverError,
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
+    TResult Function()? unableToUpdate,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -44,6 +47,7 @@ mixin _$AuthFailure {
     required TResult Function(EmailInUse value) emailInUse,
     required TResult Function(InvalidEmailOrPassword value)
         invalidEmailOrPassword,
+    required TResult Function(UnableToUpdate value) unableToUpdate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,6 +55,7 @@ mixin _$AuthFailure {
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
+    TResult Function(UnableToUpdate value)? unableToUpdate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -58,6 +63,7 @@ mixin _$AuthFailure {
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
+    TResult Function(UnableToUpdate value)? unableToUpdate,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -122,6 +128,7 @@ class _$ServerError implements ServerError {
     required TResult Function() serverError,
     required TResult Function() emailInUse,
     required TResult Function() invalidEmailOrPassword,
+    required TResult Function() unableToUpdate,
   }) {
     return serverError();
   }
@@ -132,6 +139,7 @@ class _$ServerError implements ServerError {
     TResult Function()? serverError,
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
+    TResult Function()? unableToUpdate,
   }) {
     return serverError?.call();
   }
@@ -142,6 +150,7 @@ class _$ServerError implements ServerError {
     TResult Function()? serverError,
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
+    TResult Function()? unableToUpdate,
     required TResult orElse(),
   }) {
     if (serverError != null) {
@@ -157,6 +166,7 @@ class _$ServerError implements ServerError {
     required TResult Function(EmailInUse value) emailInUse,
     required TResult Function(InvalidEmailOrPassword value)
         invalidEmailOrPassword,
+    required TResult Function(UnableToUpdate value) unableToUpdate,
   }) {
     return serverError(this);
   }
@@ -167,6 +177,7 @@ class _$ServerError implements ServerError {
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
+    TResult Function(UnableToUpdate value)? unableToUpdate,
   }) {
     return serverError?.call(this);
   }
@@ -177,6 +188,7 @@ class _$ServerError implements ServerError {
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
+    TResult Function(UnableToUpdate value)? unableToUpdate,
     required TResult orElse(),
   }) {
     if (serverError != null) {
@@ -233,6 +245,7 @@ class _$EmailInUse implements EmailInUse {
     required TResult Function() serverError,
     required TResult Function() emailInUse,
     required TResult Function() invalidEmailOrPassword,
+    required TResult Function() unableToUpdate,
   }) {
     return emailInUse();
   }
@@ -243,6 +256,7 @@ class _$EmailInUse implements EmailInUse {
     TResult Function()? serverError,
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
+    TResult Function()? unableToUpdate,
   }) {
     return emailInUse?.call();
   }
@@ -253,6 +267,7 @@ class _$EmailInUse implements EmailInUse {
     TResult Function()? serverError,
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
+    TResult Function()? unableToUpdate,
     required TResult orElse(),
   }) {
     if (emailInUse != null) {
@@ -268,6 +283,7 @@ class _$EmailInUse implements EmailInUse {
     required TResult Function(EmailInUse value) emailInUse,
     required TResult Function(InvalidEmailOrPassword value)
         invalidEmailOrPassword,
+    required TResult Function(UnableToUpdate value) unableToUpdate,
   }) {
     return emailInUse(this);
   }
@@ -278,6 +294,7 @@ class _$EmailInUse implements EmailInUse {
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
+    TResult Function(UnableToUpdate value)? unableToUpdate,
   }) {
     return emailInUse?.call(this);
   }
@@ -288,6 +305,7 @@ class _$EmailInUse implements EmailInUse {
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
+    TResult Function(UnableToUpdate value)? unableToUpdate,
     required TResult orElse(),
   }) {
     if (emailInUse != null) {
@@ -346,6 +364,7 @@ class _$InvalidEmailOrPassword implements InvalidEmailOrPassword {
     required TResult Function() serverError,
     required TResult Function() emailInUse,
     required TResult Function() invalidEmailOrPassword,
+    required TResult Function() unableToUpdate,
   }) {
     return invalidEmailOrPassword();
   }
@@ -356,6 +375,7 @@ class _$InvalidEmailOrPassword implements InvalidEmailOrPassword {
     TResult Function()? serverError,
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
+    TResult Function()? unableToUpdate,
   }) {
     return invalidEmailOrPassword?.call();
   }
@@ -366,6 +386,7 @@ class _$InvalidEmailOrPassword implements InvalidEmailOrPassword {
     TResult Function()? serverError,
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
+    TResult Function()? unableToUpdate,
     required TResult orElse(),
   }) {
     if (invalidEmailOrPassword != null) {
@@ -381,6 +402,7 @@ class _$InvalidEmailOrPassword implements InvalidEmailOrPassword {
     required TResult Function(EmailInUse value) emailInUse,
     required TResult Function(InvalidEmailOrPassword value)
         invalidEmailOrPassword,
+    required TResult Function(UnableToUpdate value) unableToUpdate,
   }) {
     return invalidEmailOrPassword(this);
   }
@@ -391,6 +413,7 @@ class _$InvalidEmailOrPassword implements InvalidEmailOrPassword {
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
+    TResult Function(UnableToUpdate value)? unableToUpdate,
   }) {
     return invalidEmailOrPassword?.call(this);
   }
@@ -401,6 +424,7 @@ class _$InvalidEmailOrPassword implements InvalidEmailOrPassword {
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
+    TResult Function(UnableToUpdate value)? unableToUpdate,
     required TResult orElse(),
   }) {
     if (invalidEmailOrPassword != null) {
@@ -412,4 +436,122 @@ class _$InvalidEmailOrPassword implements InvalidEmailOrPassword {
 
 abstract class InvalidEmailOrPassword implements AuthFailure {
   const factory InvalidEmailOrPassword() = _$InvalidEmailOrPassword;
+}
+
+/// @nodoc
+abstract class _$$UnableToUpdateCopyWith<$Res> {
+  factory _$$UnableToUpdateCopyWith(
+          _$UnableToUpdate value, $Res Function(_$UnableToUpdate) then) =
+      __$$UnableToUpdateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UnableToUpdateCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res>
+    implements _$$UnableToUpdateCopyWith<$Res> {
+  __$$UnableToUpdateCopyWithImpl(
+      _$UnableToUpdate _value, $Res Function(_$UnableToUpdate) _then)
+      : super(_value, (v) => _then(v as _$UnableToUpdate));
+
+  @override
+  _$UnableToUpdate get _value => super._value as _$UnableToUpdate;
+}
+
+/// @nodoc
+
+class _$UnableToUpdate implements UnableToUpdate {
+  const _$UnableToUpdate();
+
+  @override
+  String toString() {
+    return 'AuthFailure.unableToUpdate()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UnableToUpdate);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() serverError,
+    required TResult Function() emailInUse,
+    required TResult Function() invalidEmailOrPassword,
+    required TResult Function() unableToUpdate,
+  }) {
+    return unableToUpdate();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? serverError,
+    TResult Function()? emailInUse,
+    TResult Function()? invalidEmailOrPassword,
+    TResult Function()? unableToUpdate,
+  }) {
+    return unableToUpdate?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? serverError,
+    TResult Function()? emailInUse,
+    TResult Function()? invalidEmailOrPassword,
+    TResult Function()? unableToUpdate,
+    required TResult orElse(),
+  }) {
+    if (unableToUpdate != null) {
+      return unableToUpdate();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(EmailInUse value) emailInUse,
+    required TResult Function(InvalidEmailOrPassword value)
+        invalidEmailOrPassword,
+    required TResult Function(UnableToUpdate value) unableToUpdate,
+  }) {
+    return unableToUpdate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ServerError value)? serverError,
+    TResult Function(EmailInUse value)? emailInUse,
+    TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
+    TResult Function(UnableToUpdate value)? unableToUpdate,
+  }) {
+    return unableToUpdate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ServerError value)? serverError,
+    TResult Function(EmailInUse value)? emailInUse,
+    TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
+    TResult Function(UnableToUpdate value)? unableToUpdate,
+    required TResult orElse(),
+  }) {
+    if (unableToUpdate != null) {
+      return unableToUpdate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UnableToUpdate implements AuthFailure {
+  const factory UnableToUpdate() = _$UnableToUpdate;
 }
