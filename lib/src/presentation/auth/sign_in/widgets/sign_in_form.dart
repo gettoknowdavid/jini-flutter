@@ -54,7 +54,7 @@ class SignInForm extends StatelessWidget {
                   (_) => null,
                 ),
               ),
-              20.verticalSpace,
+              14.verticalSpace,
               JTextFormField(
                 hint: 'Password',
                 enabled: !bloc.state.isSubmitting,
