@@ -6,6 +6,7 @@ import 'package:jini/src/domain/auth/auth_failure.dart';
 import 'package:jini/src/domain/auth/i_auth_facade.dart';
 import 'package:jini/src/domain/auth/value_objects.dart';
 import 'package:jini/src/domain/core/blood_group.dart';
+import 'package:jini/src/domain/core/gender.dart';
 import 'package:jini/src/domain/core/user_type.dart';
 
 part 'sign_up_event.dart';
