@@ -7,4 +7,5 @@ class AuthFailure with _$AuthFailure {
   const factory AuthFailure.serverError() = ServerError;
   const factory AuthFailure.emailInUse() = EmailInUse;
   const factory AuthFailure.invalidEmailOrPassword() = InvalidEmailOrPassword;
+  const factory AuthFailure.unableToUpdate() = UnableToUpdate;
 }
