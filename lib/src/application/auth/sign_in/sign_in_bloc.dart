@@ -22,14 +22,14 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
 
   _emailChanged(EmailChanged e, Emitter<SignInState> emit) async {
     emit(state.copyWith(
-      email: EmailAddress(e.email),
+      email: IEmailAddress(e.email),
       authFailureOrSuccess: none(),
     ));
   }
 
   _passwordChanged(PasswordChanged e, Emitter<SignInState> emit) async {
     emit(state.copyWith(
-      password: Password(e.password),
+      password: IPassword(e.password),
       authFailureOrSuccess: none(),
     ));
   }
