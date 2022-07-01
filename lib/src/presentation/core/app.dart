@@ -21,6 +21,8 @@ class JiniApp extends StatelessWidget {
         return GetMaterialApp(
           title: 'Jini Donation',
           home: child,
+          defaultTransition: Transition.fadeIn,
+          transitionDuration: const Duration(milliseconds: 350),
           getPages: [
             GetPage(name: AppRoutes.root, page: () => SignInPage()),
             GetPage(name: AppRoutes.signUp, page: () => SignUpPage()),
