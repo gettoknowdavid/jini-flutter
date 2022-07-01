@@ -4,16 +4,24 @@ part 'failures.freezed.dart';
 
 @freezed
 class ValueFailure<T> with _$ValueFailure<T> {
-  const factory ValueFailure.exceedingLength({
-    required T failedValue,
-    required int max,
-  }) = ExceedingLength<T>;
   const factory ValueFailure.empty({
     required T failedValue,
   }) = Empty<T>;
   const factory ValueFailure.multiline({
     required T failedValue,
   }) = Multiline<T>;
+  const factory ValueFailure.tooYoung({
+    required T failedValue,
+  }) = AgeTooYoung<T>;
+  const factory ValueFailure.tooOld({
+    required T failedValue,
+  }) = AgeTooOld<T>;
+  const factory ValueFailure.weightTooSmall({
+    required T failedValue,
+  }) = WeightTooSmall<T>;
+  const factory ValueFailure.weightTooBig({
+    required T failedValue,
+  }) = WeightTooBig<T>;
   const factory ValueFailure.numberTooLarge({
     required T failedValue,
     required num max,
@@ -25,6 +33,9 @@ class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.invalidEmail({
     required T failedValue,
   }) = InvalidEmail<T>;
+  const factory ValueFailure.invalidPhone({
+    required T failedValue,
+  }) = InvalidPhone<T>;
   const factory ValueFailure.invalidPassword({
     required T failedValue,
   }) = InvalidPassword<T>;
