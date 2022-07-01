@@ -8,7 +8,7 @@ class SignUpEvent with _$SignUpEvent {
 
   const factory SignUpEvent.passwordChanged(String password) = PasswordChanged;
 
-  const factory SignUpEvent.genderChanged(Gender gender) = GenderChanged;
+  const factory SignUpEvent.genderChanged(Gender? gender) = GenderChanged;
 
   const factory SignUpEvent.bloodGroupChanged(BloodGroup bloodGroup) =
       BloodGroupChanged;
