@@ -21,8 +21,8 @@ class FirebaseAuthFacade implements IAuthFacade {
     required IEmailAddress email,
     required IPassword password,
   }) async {
-    final _email = email.getOrCrash();
-    final _password = password.getOrCrash();
+    final _email = email.getOrCrash()!;
+    final _password = password.getOrCrash()!;
 
     try {
       return await _firebaseAuth
@@ -41,14 +41,16 @@ class FirebaseAuthFacade implements IAuthFacade {
     required IName name,
     required IEmailAddress email,
     required IPassword password,
+    required IGender gender,
     required IBloodGroup bloodGroup,
     required IUserType userType,
   }) async {
-    final _email = email.getOrCrash();
-    final _password = password.getOrCrash();
-    final _name = name.getOrCrash();
-    final _bloodGroup = bloodGroup.getOrCrash();
-    final _userType = userType.getOrCrash();
+    final _email = email.getOrCrash()!;
+    final _password = password.getOrCrash()!;
+    final _name = name.getOrCrash()!;
+    final _gender = gender.getOrCrash()!;
+    final _bloodGroup = bloodGroup.getOrCrash()!;
+    final _userType = userType.getOrCrash()!;
 
     try {
       return await _firebaseAuth
@@ -60,9 +62,10 @@ class FirebaseAuthFacade implements IAuthFacade {
           uid: value.user!.uid,
           name: _name,
           email: _email,
-          userType: _userType,
-          formComplete: false,
           bloodGroup: _bloodGroup,
+          gender: _gender,
+          formComplete: false,
+          userType: _userType,
           initEdit: true,
         );
 
