@@ -21,6 +21,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     on<NameChanged>((event, emit) => _nameChanged(event, emit));
     on<EmailChanged>((event, emit) => _emailChanged(event, emit));
     on<PasswordChanged>((event, emit) => _passwordChanged(event, emit));
+    on<GenderChanged>((event, emit) => _genderChanged(event, emit));
     on<BloodGroupChanged>((event, emit) => _bloodGroupChanged(event, emit));
     on<UserTypeChanged>((event, emit) => _userTypeChanged(event, emit));
     on<SignUpPressed>((event, emit) => _signUpPressed(event, emit));
@@ -40,6 +41,13 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   _passwordChanged(PasswordChanged e, Emitter<SignUpState> emit) async {
     emit(state.copyWith(
       password: IPassword(e.password),
+      authFailureOrSuccess: none(),
+    ));
+  }
+
+  _genderChanged(GenderChanged e, Emitter<SignUpState> emit) async {
+    emit(state.copyWith(
+      gender: IGender(e.gender),
       authFailureOrSuccess: none(),
     ));
   }
@@ -72,6 +80,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
         name: state.name,
         email: state.email,
         password: state.password,
+        gender: state.gender,
         bloodGroup: state.bloodGroup,
         userType: state.userType,
       );
