@@ -16,10 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ValueFailure<T> {
-  T get failedValue => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T failedValue) empty,
+    required TResult Function(T? failedValue) empty,
+    required TResult Function(T? failedValue) nullValue,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
@@ -36,7 +36,8 @@ mixin _$ValueFailure<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? empty,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
@@ -53,7 +54,8 @@ mixin _$ValueFailure<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T failedValue)? empty,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
@@ -72,6 +74,7 @@ mixin _$ValueFailure<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
+    required TResult Function(NullValue<T> value) nullValue,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
@@ -89,6 +92,7 @@ mixin _$ValueFailure<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
@@ -106,6 +110,7 @@ mixin _$ValueFailure<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
@@ -121,10 +126,6 @@ mixin _$ValueFailure<T> {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $ValueFailureCopyWith<T, ValueFailure<T>> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -132,7 +133,6 @@ abstract class $ValueFailureCopyWith<T, $Res> {
   factory $ValueFailureCopyWith(
           ValueFailure<T> value, $Res Function(ValueFailure<T>) then) =
       _$ValueFailureCopyWithImpl<T, $Res>;
-  $Res call({T failedValue});
 }
 
 /// @nodoc
@@ -143,27 +143,13 @@ class _$ValueFailureCopyWithImpl<T, $Res>
   final ValueFailure<T> _value;
   // ignore: unused_field
   final $Res Function(ValueFailure<T>) _then;
-
-  @override
-  $Res call({
-    Object? failedValue = freezed,
-  }) {
-    return _then(_value.copyWith(
-      failedValue: failedValue == freezed
-          ? _value.failedValue
-          : failedValue // ignore: cast_nullable_to_non_nullable
-              as T,
-    ));
-  }
 }
 
 /// @nodoc
-abstract class _$$EmptyCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
+abstract class _$$EmptyCopyWith<T, $Res> {
   factory _$$EmptyCopyWith(_$Empty<T> value, $Res Function(_$Empty<T>) then) =
       __$$EmptyCopyWithImpl<T, $Res>;
-  @override
-  $Res call({T failedValue});
+  $Res call({T? failedValue});
 }
 
 /// @nodoc
@@ -183,7 +169,7 @@ class __$$EmptyCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
       failedValue: failedValue == freezed
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
-              as T,
+              as T?,
     ));
   }
 }
@@ -191,10 +177,10 @@ class __$$EmptyCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$Empty<T> implements Empty<T> {
-  const _$Empty({required this.failedValue});
+  const _$Empty({this.failedValue});
 
   @override
-  final T failedValue;
+  final T? failedValue;
 
   @override
   String toString() {
@@ -222,7 +208,8 @@ class _$Empty<T> implements Empty<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T failedValue) empty,
+    required TResult Function(T? failedValue) empty,
+    required TResult Function(T? failedValue) nullValue,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
@@ -242,7 +229,8 @@ class _$Empty<T> implements Empty<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? empty,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
@@ -262,7 +250,8 @@ class _$Empty<T> implements Empty<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T failedValue)? empty,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
@@ -287,6 +276,7 @@ class _$Empty<T> implements Empty<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
+    required TResult Function(NullValue<T> value) nullValue,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
@@ -307,6 +297,7 @@ class _$Empty<T> implements Empty<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
@@ -327,6 +318,7 @@ class _$Empty<T> implements Empty<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
@@ -349,23 +341,226 @@ class _$Empty<T> implements Empty<T> {
 }
 
 abstract class Empty<T> implements ValueFailure<T> {
-  const factory Empty({required final T failedValue}) = _$Empty<T>;
+  const factory Empty({final T? failedValue}) = _$Empty<T>;
 
-  @override
-  T get failedValue => throw _privateConstructorUsedError;
-  @override
+  T? get failedValue => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$EmptyCopyWith<T, _$Empty<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$MultilineCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
+abstract class _$$NullValueCopyWith<T, $Res> {
+  factory _$$NullValueCopyWith(
+          _$NullValue<T> value, $Res Function(_$NullValue<T>) then) =
+      __$$NullValueCopyWithImpl<T, $Res>;
+  $Res call({T? failedValue});
+}
+
+/// @nodoc
+class __$$NullValueCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$$NullValueCopyWith<T, $Res> {
+  __$$NullValueCopyWithImpl(
+      _$NullValue<T> _value, $Res Function(_$NullValue<T>) _then)
+      : super(_value, (v) => _then(v as _$NullValue<T>));
+
+  @override
+  _$NullValue<T> get _value => super._value as _$NullValue<T>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(_$NullValue<T>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$NullValue<T> implements NullValue<T> {
+  const _$NullValue({this.failedValue});
+
+  @override
+  final T? failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.nullValue(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NullValue<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$NullValueCopyWith<T, _$NullValue<T>> get copyWith =>
+      __$$NullValueCopyWithImpl<T, _$NullValue<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T? failedValue) empty,
+    required TResult Function(T? failedValue) nullValue,
+    required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) tooYoung,
+    required TResult Function(T failedValue) tooOld,
+    required TResult Function(T failedValue) weightTooSmall,
+    required TResult Function(T failedValue) weightTooBig,
+    required TResult Function(T failedValue, num max) numberTooLarge,
+    required TResult Function(T failedValue, int max) listTooLong,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) invalidPhone,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPhotoUrl,
+  }) {
+    return nullValue(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
+    TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? tooYoung,
+    TResult Function(T failedValue)? tooOld,
+    TResult Function(T failedValue)? weightTooSmall,
+    TResult Function(T failedValue)? weightTooBig,
+    TResult Function(T failedValue, num max)? numberTooLarge,
+    TResult Function(T failedValue, int max)? listTooLong,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? invalidPhone,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPhotoUrl,
+  }) {
+    return nullValue?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
+    TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? tooYoung,
+    TResult Function(T failedValue)? tooOld,
+    TResult Function(T failedValue)? weightTooSmall,
+    TResult Function(T failedValue)? weightTooBig,
+    TResult Function(T failedValue, num max)? numberTooLarge,
+    TResult Function(T failedValue, int max)? listTooLong,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? invalidPhone,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPhotoUrl,
+    required TResult orElse(),
+  }) {
+    if (nullValue != null) {
+      return nullValue(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(NullValue<T> value) nullValue,
+    required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(AgeTooYoung<T> value) tooYoung,
+    required TResult Function(AgeTooOld<T> value) tooOld,
+    required TResult Function(WeightTooSmall<T> value) weightTooSmall,
+    required TResult Function(WeightTooBig<T> value) weightTooBig,
+    required TResult Function(NumberTooLarge<T> value) numberTooLarge,
+    required TResult Function(ListTooLong<T> value) listTooLong,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidPhone<T> value) invalidPhone,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
+  }) {
+    return nullValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(Multiline<T> value)? multiline,
+    TResult Function(AgeTooYoung<T> value)? tooYoung,
+    TResult Function(AgeTooOld<T> value)? tooOld,
+    TResult Function(WeightTooSmall<T> value)? weightTooSmall,
+    TResult Function(WeightTooBig<T> value)? weightTooBig,
+    TResult Function(NumberTooLarge<T> value)? numberTooLarge,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPhone<T> value)? invalidPhone,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+  }) {
+    return nullValue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(Multiline<T> value)? multiline,
+    TResult Function(AgeTooYoung<T> value)? tooYoung,
+    TResult Function(AgeTooOld<T> value)? tooOld,
+    TResult Function(WeightTooSmall<T> value)? weightTooSmall,
+    TResult Function(WeightTooBig<T> value)? weightTooBig,
+    TResult Function(NumberTooLarge<T> value)? numberTooLarge,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPhone<T> value)? invalidPhone,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    required TResult orElse(),
+  }) {
+    if (nullValue != null) {
+      return nullValue(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NullValue<T> implements ValueFailure<T> {
+  const factory NullValue({final T? failedValue}) = _$NullValue<T>;
+
+  T? get failedValue => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$NullValueCopyWith<T, _$NullValue<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$MultilineCopyWith<T, $Res> {
   factory _$$MultilineCopyWith(
           _$Multiline<T> value, $Res Function(_$Multiline<T>) then) =
       __$$MultilineCopyWithImpl<T, $Res>;
-  @override
   $Res call({T failedValue});
 }
 
@@ -427,7 +622,8 @@ class _$Multiline<T> implements Multiline<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T failedValue) empty,
+    required TResult Function(T? failedValue) empty,
+    required TResult Function(T? failedValue) nullValue,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
@@ -447,7 +643,8 @@ class _$Multiline<T> implements Multiline<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? empty,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
@@ -467,7 +664,8 @@ class _$Multiline<T> implements Multiline<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T failedValue)? empty,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
@@ -492,6 +690,7 @@ class _$Multiline<T> implements Multiline<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
+    required TResult Function(NullValue<T> value) nullValue,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
@@ -512,6 +711,7 @@ class _$Multiline<T> implements Multiline<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
@@ -532,6 +732,7 @@ class _$Multiline<T> implements Multiline<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
@@ -556,21 +757,17 @@ class _$Multiline<T> implements Multiline<T> {
 abstract class Multiline<T> implements ValueFailure<T> {
   const factory Multiline({required final T failedValue}) = _$Multiline<T>;
 
-  @override
   T get failedValue => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$$MultilineCopyWith<T, _$Multiline<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$AgeTooYoungCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
+abstract class _$$AgeTooYoungCopyWith<T, $Res> {
   factory _$$AgeTooYoungCopyWith(
           _$AgeTooYoung<T> value, $Res Function(_$AgeTooYoung<T>) then) =
       __$$AgeTooYoungCopyWithImpl<T, $Res>;
-  @override
   $Res call({T failedValue});
 }
 
@@ -632,7 +829,8 @@ class _$AgeTooYoung<T> implements AgeTooYoung<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T failedValue) empty,
+    required TResult Function(T? failedValue) empty,
+    required TResult Function(T? failedValue) nullValue,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
@@ -652,7 +850,8 @@ class _$AgeTooYoung<T> implements AgeTooYoung<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? empty,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
@@ -672,7 +871,8 @@ class _$AgeTooYoung<T> implements AgeTooYoung<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T failedValue)? empty,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
@@ -697,6 +897,7 @@ class _$AgeTooYoung<T> implements AgeTooYoung<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
+    required TResult Function(NullValue<T> value) nullValue,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
@@ -717,6 +918,7 @@ class _$AgeTooYoung<T> implements AgeTooYoung<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
@@ -737,6 +939,7 @@ class _$AgeTooYoung<T> implements AgeTooYoung<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
@@ -761,21 +964,17 @@ class _$AgeTooYoung<T> implements AgeTooYoung<T> {
 abstract class AgeTooYoung<T> implements ValueFailure<T> {
   const factory AgeTooYoung({required final T failedValue}) = _$AgeTooYoung<T>;
 
-  @override
   T get failedValue => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$$AgeTooYoungCopyWith<T, _$AgeTooYoung<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$AgeTooOldCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
+abstract class _$$AgeTooOldCopyWith<T, $Res> {
   factory _$$AgeTooOldCopyWith(
           _$AgeTooOld<T> value, $Res Function(_$AgeTooOld<T>) then) =
       __$$AgeTooOldCopyWithImpl<T, $Res>;
-  @override
   $Res call({T failedValue});
 }
 
@@ -837,7 +1036,8 @@ class _$AgeTooOld<T> implements AgeTooOld<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T failedValue) empty,
+    required TResult Function(T? failedValue) empty,
+    required TResult Function(T? failedValue) nullValue,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
@@ -857,7 +1057,8 @@ class _$AgeTooOld<T> implements AgeTooOld<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? empty,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
@@ -877,7 +1078,8 @@ class _$AgeTooOld<T> implements AgeTooOld<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T failedValue)? empty,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
@@ -902,6 +1104,7 @@ class _$AgeTooOld<T> implements AgeTooOld<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
+    required TResult Function(NullValue<T> value) nullValue,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
@@ -922,6 +1125,7 @@ class _$AgeTooOld<T> implements AgeTooOld<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
@@ -942,6 +1146,7 @@ class _$AgeTooOld<T> implements AgeTooOld<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
@@ -966,21 +1171,17 @@ class _$AgeTooOld<T> implements AgeTooOld<T> {
 abstract class AgeTooOld<T> implements ValueFailure<T> {
   const factory AgeTooOld({required final T failedValue}) = _$AgeTooOld<T>;
 
-  @override
   T get failedValue => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$$AgeTooOldCopyWith<T, _$AgeTooOld<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$WeightTooSmallCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
+abstract class _$$WeightTooSmallCopyWith<T, $Res> {
   factory _$$WeightTooSmallCopyWith(
           _$WeightTooSmall<T> value, $Res Function(_$WeightTooSmall<T>) then) =
       __$$WeightTooSmallCopyWithImpl<T, $Res>;
-  @override
   $Res call({T failedValue});
 }
 
@@ -1042,7 +1243,8 @@ class _$WeightTooSmall<T> implements WeightTooSmall<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T failedValue) empty,
+    required TResult Function(T? failedValue) empty,
+    required TResult Function(T? failedValue) nullValue,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
@@ -1062,7 +1264,8 @@ class _$WeightTooSmall<T> implements WeightTooSmall<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? empty,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
@@ -1082,7 +1285,8 @@ class _$WeightTooSmall<T> implements WeightTooSmall<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T failedValue)? empty,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
@@ -1107,6 +1311,7 @@ class _$WeightTooSmall<T> implements WeightTooSmall<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
+    required TResult Function(NullValue<T> value) nullValue,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
@@ -1127,6 +1332,7 @@ class _$WeightTooSmall<T> implements WeightTooSmall<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
@@ -1147,6 +1353,7 @@ class _$WeightTooSmall<T> implements WeightTooSmall<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
@@ -1172,21 +1379,17 @@ abstract class WeightTooSmall<T> implements ValueFailure<T> {
   const factory WeightTooSmall({required final T failedValue}) =
       _$WeightTooSmall<T>;
 
-  @override
   T get failedValue => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$$WeightTooSmallCopyWith<T, _$WeightTooSmall<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$WeightTooBigCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
+abstract class _$$WeightTooBigCopyWith<T, $Res> {
   factory _$$WeightTooBigCopyWith(
           _$WeightTooBig<T> value, $Res Function(_$WeightTooBig<T>) then) =
       __$$WeightTooBigCopyWithImpl<T, $Res>;
-  @override
   $Res call({T failedValue});
 }
 
@@ -1248,7 +1451,8 @@ class _$WeightTooBig<T> implements WeightTooBig<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T failedValue) empty,
+    required TResult Function(T? failedValue) empty,
+    required TResult Function(T? failedValue) nullValue,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
@@ -1268,7 +1472,8 @@ class _$WeightTooBig<T> implements WeightTooBig<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? empty,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
@@ -1288,7 +1493,8 @@ class _$WeightTooBig<T> implements WeightTooBig<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T failedValue)? empty,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
@@ -1313,6 +1519,7 @@ class _$WeightTooBig<T> implements WeightTooBig<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
+    required TResult Function(NullValue<T> value) nullValue,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
@@ -1333,6 +1540,7 @@ class _$WeightTooBig<T> implements WeightTooBig<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
@@ -1353,6 +1561,7 @@ class _$WeightTooBig<T> implements WeightTooBig<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
@@ -1378,21 +1587,17 @@ abstract class WeightTooBig<T> implements ValueFailure<T> {
   const factory WeightTooBig({required final T failedValue}) =
       _$WeightTooBig<T>;
 
-  @override
   T get failedValue => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$$WeightTooBigCopyWith<T, _$WeightTooBig<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$NumberTooLargeCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
+abstract class _$$NumberTooLargeCopyWith<T, $Res> {
   factory _$$NumberTooLargeCopyWith(
           _$NumberTooLarge<T> value, $Res Function(_$NumberTooLarge<T>) then) =
       __$$NumberTooLargeCopyWithImpl<T, $Res>;
-  @override
   $Res call({T failedValue, num max});
 }
 
@@ -1464,7 +1669,8 @@ class _$NumberTooLarge<T> implements NumberTooLarge<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T failedValue) empty,
+    required TResult Function(T? failedValue) empty,
+    required TResult Function(T? failedValue) nullValue,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
@@ -1484,7 +1690,8 @@ class _$NumberTooLarge<T> implements NumberTooLarge<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? empty,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
@@ -1504,7 +1711,8 @@ class _$NumberTooLarge<T> implements NumberTooLarge<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T failedValue)? empty,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
@@ -1529,6 +1737,7 @@ class _$NumberTooLarge<T> implements NumberTooLarge<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
+    required TResult Function(NullValue<T> value) nullValue,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
@@ -1549,6 +1758,7 @@ class _$NumberTooLarge<T> implements NumberTooLarge<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
@@ -1569,6 +1779,7 @@ class _$NumberTooLarge<T> implements NumberTooLarge<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
@@ -1595,22 +1806,18 @@ abstract class NumberTooLarge<T> implements ValueFailure<T> {
       {required final T failedValue,
       required final num max}) = _$NumberTooLarge<T>;
 
-  @override
   T get failedValue => throw _privateConstructorUsedError;
   num get max => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$$NumberTooLargeCopyWith<T, _$NumberTooLarge<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ListTooLongCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
+abstract class _$$ListTooLongCopyWith<T, $Res> {
   factory _$$ListTooLongCopyWith(
           _$ListTooLong<T> value, $Res Function(_$ListTooLong<T>) then) =
       __$$ListTooLongCopyWithImpl<T, $Res>;
-  @override
   $Res call({T failedValue, int max});
 }
 
@@ -1682,7 +1889,8 @@ class _$ListTooLong<T> implements ListTooLong<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T failedValue) empty,
+    required TResult Function(T? failedValue) empty,
+    required TResult Function(T? failedValue) nullValue,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
@@ -1702,7 +1910,8 @@ class _$ListTooLong<T> implements ListTooLong<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? empty,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
@@ -1722,7 +1931,8 @@ class _$ListTooLong<T> implements ListTooLong<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T failedValue)? empty,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
@@ -1747,6 +1957,7 @@ class _$ListTooLong<T> implements ListTooLong<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
+    required TResult Function(NullValue<T> value) nullValue,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
@@ -1767,6 +1978,7 @@ class _$ListTooLong<T> implements ListTooLong<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
@@ -1787,6 +1999,7 @@ class _$ListTooLong<T> implements ListTooLong<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
@@ -1813,22 +2026,18 @@ abstract class ListTooLong<T> implements ValueFailure<T> {
       {required final T failedValue,
       required final int max}) = _$ListTooLong<T>;
 
-  @override
   T get failedValue => throw _privateConstructorUsedError;
   int get max => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$$ListTooLongCopyWith<T, _$ListTooLong<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$InvalidEmailCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
+abstract class _$$InvalidEmailCopyWith<T, $Res> {
   factory _$$InvalidEmailCopyWith(
           _$InvalidEmail<T> value, $Res Function(_$InvalidEmail<T>) then) =
       __$$InvalidEmailCopyWithImpl<T, $Res>;
-  @override
   $Res call({T failedValue});
 }
 
@@ -1890,7 +2099,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T failedValue) empty,
+    required TResult Function(T? failedValue) empty,
+    required TResult Function(T? failedValue) nullValue,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
@@ -1910,7 +2120,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? empty,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
@@ -1930,7 +2141,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T failedValue)? empty,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
@@ -1955,6 +2167,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
+    required TResult Function(NullValue<T> value) nullValue,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
@@ -1975,6 +2188,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
@@ -1995,6 +2209,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
@@ -2020,21 +2235,17 @@ abstract class InvalidEmail<T> implements ValueFailure<T> {
   const factory InvalidEmail({required final T failedValue}) =
       _$InvalidEmail<T>;
 
-  @override
   T get failedValue => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$$InvalidEmailCopyWith<T, _$InvalidEmail<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$InvalidPhoneCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
+abstract class _$$InvalidPhoneCopyWith<T, $Res> {
   factory _$$InvalidPhoneCopyWith(
           _$InvalidPhone<T> value, $Res Function(_$InvalidPhone<T>) then) =
       __$$InvalidPhoneCopyWithImpl<T, $Res>;
-  @override
   $Res call({T failedValue});
 }
 
@@ -2096,7 +2307,8 @@ class _$InvalidPhone<T> implements InvalidPhone<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T failedValue) empty,
+    required TResult Function(T? failedValue) empty,
+    required TResult Function(T? failedValue) nullValue,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
@@ -2116,7 +2328,8 @@ class _$InvalidPhone<T> implements InvalidPhone<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? empty,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
@@ -2136,7 +2349,8 @@ class _$InvalidPhone<T> implements InvalidPhone<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T failedValue)? empty,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
@@ -2161,6 +2375,7 @@ class _$InvalidPhone<T> implements InvalidPhone<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
+    required TResult Function(NullValue<T> value) nullValue,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
@@ -2181,6 +2396,7 @@ class _$InvalidPhone<T> implements InvalidPhone<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
@@ -2201,6 +2417,7 @@ class _$InvalidPhone<T> implements InvalidPhone<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
@@ -2226,21 +2443,17 @@ abstract class InvalidPhone<T> implements ValueFailure<T> {
   const factory InvalidPhone({required final T failedValue}) =
       _$InvalidPhone<T>;
 
-  @override
   T get failedValue => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$$InvalidPhoneCopyWith<T, _$InvalidPhone<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$InvalidPasswordCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
+abstract class _$$InvalidPasswordCopyWith<T, $Res> {
   factory _$$InvalidPasswordCopyWith(_$InvalidPassword<T> value,
           $Res Function(_$InvalidPassword<T>) then) =
       __$$InvalidPasswordCopyWithImpl<T, $Res>;
-  @override
   $Res call({T failedValue});
 }
 
@@ -2303,7 +2516,8 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T failedValue) empty,
+    required TResult Function(T? failedValue) empty,
+    required TResult Function(T? failedValue) nullValue,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
@@ -2323,7 +2537,8 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? empty,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
@@ -2343,7 +2558,8 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T failedValue)? empty,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
@@ -2368,6 +2584,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
+    required TResult Function(NullValue<T> value) nullValue,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
@@ -2388,6 +2605,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
@@ -2408,6 +2626,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
@@ -2433,21 +2652,17 @@ abstract class InvalidPassword<T> implements ValueFailure<T> {
   const factory InvalidPassword({required final T failedValue}) =
       _$InvalidPassword<T>;
 
-  @override
   T get failedValue => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$$InvalidPasswordCopyWith<T, _$InvalidPassword<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ShortPasswordCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
+abstract class _$$ShortPasswordCopyWith<T, $Res> {
   factory _$$ShortPasswordCopyWith(
           _$ShortPassword<T> value, $Res Function(_$ShortPassword<T>) then) =
       __$$ShortPasswordCopyWithImpl<T, $Res>;
-  @override
   $Res call({T failedValue});
 }
 
@@ -2509,7 +2724,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T failedValue) empty,
+    required TResult Function(T? failedValue) empty,
+    required TResult Function(T? failedValue) nullValue,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
@@ -2529,7 +2745,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? empty,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
@@ -2549,7 +2766,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T failedValue)? empty,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
@@ -2574,6 +2792,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
+    required TResult Function(NullValue<T> value) nullValue,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
@@ -2594,6 +2813,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
@@ -2614,6 +2834,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
@@ -2639,21 +2860,17 @@ abstract class ShortPassword<T> implements ValueFailure<T> {
   const factory ShortPassword({required final T failedValue}) =
       _$ShortPassword<T>;
 
-  @override
   T get failedValue => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$$ShortPasswordCopyWith<T, _$ShortPassword<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$InvalidPhotoUrlCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
+abstract class _$$InvalidPhotoUrlCopyWith<T, $Res> {
   factory _$$InvalidPhotoUrlCopyWith(_$InvalidPhotoUrl<T> value,
           $Res Function(_$InvalidPhotoUrl<T>) then) =
       __$$InvalidPhotoUrlCopyWithImpl<T, $Res>;
-  @override
   $Res call({T failedValue});
 }
 
@@ -2716,7 +2933,8 @@ class _$InvalidPhotoUrl<T> implements InvalidPhotoUrl<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T failedValue) empty,
+    required TResult Function(T? failedValue) empty,
+    required TResult Function(T? failedValue) nullValue,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
@@ -2736,7 +2954,8 @@ class _$InvalidPhotoUrl<T> implements InvalidPhotoUrl<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? empty,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
@@ -2756,7 +2975,8 @@ class _$InvalidPhotoUrl<T> implements InvalidPhotoUrl<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T failedValue)? empty,
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
@@ -2781,6 +3001,7 @@ class _$InvalidPhotoUrl<T> implements InvalidPhotoUrl<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
+    required TResult Function(NullValue<T> value) nullValue,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
@@ -2801,6 +3022,7 @@ class _$InvalidPhotoUrl<T> implements InvalidPhotoUrl<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
@@ -2821,6 +3043,7 @@ class _$InvalidPhotoUrl<T> implements InvalidPhotoUrl<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
@@ -2846,9 +3069,7 @@ abstract class InvalidPhotoUrl<T> implements ValueFailure<T> {
   const factory InvalidPhotoUrl({required final T failedValue}) =
       _$InvalidPhotoUrl<T>;
 
-  @override
   T get failedValue => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$$InvalidPhotoUrlCopyWith<T, _$InvalidPhotoUrl<T>> get copyWith =>
       throw _privateConstructorUsedError;
