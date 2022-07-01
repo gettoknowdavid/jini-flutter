@@ -91,6 +91,37 @@ class SignUpForm extends StatelessWidget {
               ),
               14.verticalSpace,
               DropdownButtonHideUnderline(
+                child: DropdownButton2<Gender>(
+                  hint: Text('Gender'),
+                  value: state.bloodGroup.getOrCrash(),
+                  buttonHeight: 65.h,
+                  onChanged: (e) {
+                    bloc.add(SignUpEvent.bloodGroupChanged(e!));
+                  },
+                  buttonPadding: EdgeInsets.fromLTRB(18, 10, 18, 10).r,
+                  buttonDecoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(18.r),
+                    color: Colors.white24,
+                    border: Border(bottom: BorderSide.none),
+                  ),
+                  dropdownDecoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(18.r),
+                    color: AppColors.primary,
+                  ),
+                  items: Gender.values.map((bloodGroup) {
+                    return DropdownMenuItem<Gender>(
+                      value: bloodGroup,
+                      child: Text(bloodGroup.value),
+                    );
+                  }).toList(),
+                  style: GoogleFonts.spaceGrotesk(
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+              14.verticalSpace,
+              DropdownButtonHideUnderline(
                 child: DropdownButton2<BloodGroup>(
                   hint: Text('Blood Group'),
                   value: state.bloodGroup.getOrCrash(),
