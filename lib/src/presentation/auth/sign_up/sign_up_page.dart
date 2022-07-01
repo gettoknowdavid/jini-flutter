@@ -43,7 +43,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
-                    'Create a new Account',
+                    'Create Account',
                     style: GoogleFonts.spaceGrotesk(
                       fontSize: 40.sp,
                       fontWeight: FontWeight.w600,
@@ -62,7 +62,6 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                   20.verticalSpace,
                   SignUpForm(),
-                  20.verticalSpace,
                 ],
               ),
             ),
