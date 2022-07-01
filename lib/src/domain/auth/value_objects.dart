@@ -36,31 +36,31 @@ class IName extends ValueObject<String> {
   const IName._(this.value);
 }
 
-class IBloodGroup extends ValueObject<BloodGroup> {
-  final Either<ValueFailure<BloodGroup>, BloodGroup> value;
+class IBloodGroup extends ValueObject<BloodGroup?> {
+  final Either<ValueFailure<BloodGroup?>, BloodGroup?> value;
 
-  factory IBloodGroup(BloodGroup input) {
-    return IBloodGroup._(right(input));
+  factory IBloodGroup(BloodGroup? input) {
+    return IBloodGroup._(validateBloodGroupNotNull(input));
   }
 
   const IBloodGroup._(this.value);
 }
 
-class IGender extends ValueObject<Gender> {
-  final Either<ValueFailure<Gender>, Gender> value;
+class IGender extends ValueObject<Gender?> {
+  final Either<ValueFailure<Gender?>, Gender?> value;
 
-  factory IGender(Gender input) {
-    return IGender._(right(input));
+  factory IGender(Gender? input) {
+    return IGender._(validateGenderNotNull(input));
   }
 
   const IGender._(this.value);
 }
 
-class IUserType extends ValueObject<UserType> {
-  final Either<ValueFailure<UserType>, UserType> value;
+class IUserType extends ValueObject<UserType?> {
+  final Either<ValueFailure<UserType?>, UserType?> value;
 
-  factory IUserType(UserType input) {
-    return IUserType._(right(input));
+  factory IUserType(UserType? input) {
+    return IUserType._(validateUserTypeNotNull(input));
   }
 
   const IUserType._(this.value);
