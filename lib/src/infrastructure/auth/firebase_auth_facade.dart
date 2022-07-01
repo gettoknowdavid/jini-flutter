@@ -6,6 +6,9 @@ import 'package:jini/src/domain/auth/i_auth_facade.dart';
 import 'package:jini/src/domain/auth/j_user.dart';
 import 'package:jini/src/domain/auth/value_objects.dart';
 import 'package:jini/src/infrastructure/auth/firebase_user_mapper.dart';
+import 'package:jini/src/infrastructure/auth/j_user_dtos.dart';
+
+final jUsersRef = JUserDtoCollectionReference();
 
 @LazySingleton(as: IAuthFacade)
 class FirebaseAuthFacade implements IAuthFacade {
@@ -38,12 +41,14 @@ class FirebaseAuthFacade implements IAuthFacade {
     required IName name,
     required IEmailAddress email,
     required IPassword password,
-    required IGender gender,
+    required IBloodGroup bloodGroup,
     required IUserType userType,
   }) async {
     final _email = email.getOrCrash();
     final _password = password.getOrCrash();
     final _name = name.getOrCrash();
+    final _bloodGroup = bloodGroup.getOrCrash();
+    final _userType = userType.getOrCrash();
 
     try {
       return await _firebaseAuth
@@ -51,17 +56,17 @@ class FirebaseAuthFacade implements IAuthFacade {
           .then((value) {
         _firebaseAuth.currentUser!.updateDisplayName(_name);
 
-        // final _user = JUserModel(
-        //   uid: value.user!.uid,
-        //   name: name,
-        //   email: _email,
-        //   userType: userType,
-        //   formComplete: false,
-        //   gender: gender,
-        //   initEdit: 0,
-        // );
+        final _user = JUserDto(
+          uid: value.user!.uid,
+          name: _name,
+          email: _email,
+          userType: _userType,
+          formComplete: false,
+          bloodGroup: _bloodGroup,
+          initEdit: true,
+        );
 
-        // _ref.doc(value.user!.uid).set(_user.toJson());
+        jUsersRef.doc(value.user!.uid).set(_user);
 
         return right(unit);
       });
@@ -76,10 +81,16 @@ class FirebaseAuthFacade implements IAuthFacade {
 
   @override
   Future<Option<JUser>> getUser() async {
-    final _fUser = await _firebaseAuth.currentUser;
-    return await optionOf(_firebaseUserMapper.toDomain(_fUser));
+    final _fUserId = await _firebaseAuth.currentUser!.uid;
+    final _jUser = await jUsersRef.doc(_fUserId).get().then((v) => v.data);
+    return await optionOf(_firebaseUserMapper.toDomain(_jUser));
   }
 
   @override
   Future<void> signOut() => Future.wait([_firebaseAuth.signOut()]);
+
+  @override
+  Future<Either<AuthFailure, Unit>> updateUser(JUser jUser) async {
+    throw UnimplementedError();
+  }
 }
