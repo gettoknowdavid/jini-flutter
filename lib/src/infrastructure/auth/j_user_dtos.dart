@@ -33,18 +33,18 @@ class JUserDto with _$JUserDto {
 
   factory JUserDto.fromDomain(JUser jUser) {
     return JUserDto(
-      uid: jUser.uid.getOrCrash(),
-      name: jUser.name.getOrCrash(),
+      uid: jUser.uid.getOrCrash()!,
+      name: jUser.name.getOrCrash()!,
       gender: jUser.gender != null ? jUser.gender!.getOrCrash() : null,
       age: jUser.age != null ? jUser.age!.getOrCrash() : null,
       height: jUser.height != null ? jUser.height!.getOrCrash() : null,
       weight: jUser.weight != null ? jUser.weight!.getOrCrash() : null,
-      email: jUser.email.getOrCrash(),
+      email: jUser.email.getOrCrash()!,
       phone: jUser.phone != null ? jUser.phone!.getOrCrash() : null,
       city: jUser.city,
       location: jUser.location,
-      bloodGroup: jUser.bloodGroup.getOrCrash(),
-      userType: jUser.userType.getOrCrash(),
+      bloodGroup: jUser.bloodGroup.getOrCrash()!,
+      userType: jUser.userType.getOrCrash()!,
       eligible: jUser.eligible,
       formComplete: jUser.formComplete,
       initEdit: jUser.initEdit,
