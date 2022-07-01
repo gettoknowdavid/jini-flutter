@@ -4,9 +4,8 @@ part 'failures.freezed.dart';
 
 @freezed
 class ValueFailure<T> with _$ValueFailure<T> {
-  const factory ValueFailure.empty({
-    required T failedValue,
-  }) = Empty<T>;
+  const factory ValueFailure.empty({T? failedValue}) = Empty<T>;
+  const factory ValueFailure.nullValue({T? failedValue}) = NullValue<T>;
   const factory ValueFailure.multiline({
     required T failedValue,
   }) = Multiline<T>;
