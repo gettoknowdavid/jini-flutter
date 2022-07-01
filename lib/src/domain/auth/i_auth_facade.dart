@@ -10,7 +10,7 @@ abstract class IAuthFacade {
     required IName name,
     required IEmailAddress email,
     required IPassword password,
-    required IGender gender,
+    required IBloodGroup bloodGroup,
     required IUserType userType,
   });
 
@@ -18,6 +18,8 @@ abstract class IAuthFacade {
     required IEmailAddress email,
     required IPassword password,
   });
+
+  Future<Either<AuthFailure, Unit>> updateUser(JUser jUser);
 
   Future<void> signOut();
 }
