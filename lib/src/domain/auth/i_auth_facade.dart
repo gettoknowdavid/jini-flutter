@@ -10,6 +10,7 @@ abstract class IAuthFacade {
     required IName name,
     required IEmailAddress email,
     required IPassword password,
+    required IGender gender,
     required IBloodGroup bloodGroup,
     required IUserType userType,
   });
