@@ -1,7 +1,7 @@
 part of 'sign_in_bloc.dart';
 
 @freezed
-abstract class SignInState with _$SignInState {
+class SignInState with _$SignInState {
   const factory SignInState({
     required IEmailAddress email,
     required IPassword password,
