@@ -23,9 +23,9 @@ class SignInForm extends StatelessWidget {
           (either) => either.fold((f) {
             Get.snackbar(
               'Authentication Failure',
-              f.map(
+              f.maybeMap(
+                orElse: () => '',
                 serverError: (_) => 'Looks like there\'s a server error.',
-                emailInUse: (_) => 'Email is already in use.',
                 invalidEmailOrPassword: (_) => 'Invalid email or password.',
               ),
               icon: Icon(PhosphorIcons.warningCircleBold),
@@ -62,8 +62,7 @@ class SignInForm extends StatelessWidget {
                 onChanged: (p) => bloc.add(SignInEvent.passwordChanged(p)),
                 validator: (_) => bloc.state.password.value.fold(
                   (f) => f.maybeMap(
-                    invalidPassword: (_) =>
-                        'Password must contain at least 8 characters, one uppercase letter, one number and one special character.',
+                    empty: (_) => 'Password cannot be empty',
                     orElse: () => null,
                   ),
                   (_) => null,
