@@ -19,24 +19,24 @@ mixin _$AuthEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() authCheckRequested,
-    required TResult Function() reload,
-    required TResult Function() sendEmailVerification,
+    required TResult Function() authCheckVerified,
+    required TResult Function() sendVerifiedEmail,
     required TResult Function() authSignedOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authCheckRequested,
-    TResult Function()? reload,
-    TResult Function()? sendEmailVerification,
+    TResult Function()? authCheckVerified,
+    TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authCheckRequested,
-    TResult Function()? reload,
-    TResult Function()? sendEmailVerification,
+    TResult Function()? authCheckVerified,
+    TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
     required TResult orElse(),
   }) =>
@@ -44,25 +44,24 @@ mixin _$AuthEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_AuthCheckRequested value) authCheckRequested,
-    required TResult Function(_AuthReload value) reload,
-    required TResult Function(_SendEmailVerification value)
-        sendEmailVerification,
+    required TResult Function(_AuthCheckVerified value) authCheckVerified,
+    required TResult Function(_SendVerifiedEmail value) sendVerifiedEmail,
     required TResult Function(_SignedOut value) authSignedOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_AuthCheckRequested value)? authCheckRequested,
-    TResult Function(_AuthReload value)? reload,
-    TResult Function(_SendEmailVerification value)? sendEmailVerification,
+    TResult Function(_AuthCheckVerified value)? authCheckVerified,
+    TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AuthCheckRequested value)? authCheckRequested,
-    TResult Function(_AuthReload value)? reload,
-    TResult Function(_SendEmailVerification value)? sendEmailVerification,
+    TResult Function(_AuthCheckVerified value)? authCheckVerified,
+    TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
     required TResult orElse(),
   }) =>
@@ -126,8 +125,8 @@ class _$_AuthCheckRequested implements _AuthCheckRequested {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() authCheckRequested,
-    required TResult Function() reload,
-    required TResult Function() sendEmailVerification,
+    required TResult Function() authCheckVerified,
+    required TResult Function() sendVerifiedEmail,
     required TResult Function() authSignedOut,
   }) {
     return authCheckRequested();
@@ -137,8 +136,8 @@ class _$_AuthCheckRequested implements _AuthCheckRequested {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authCheckRequested,
-    TResult Function()? reload,
-    TResult Function()? sendEmailVerification,
+    TResult Function()? authCheckVerified,
+    TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
   }) {
     return authCheckRequested?.call();
@@ -148,8 +147,8 @@ class _$_AuthCheckRequested implements _AuthCheckRequested {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authCheckRequested,
-    TResult Function()? reload,
-    TResult Function()? sendEmailVerification,
+    TResult Function()? authCheckVerified,
+    TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
     required TResult orElse(),
   }) {
@@ -163,9 +162,8 @@ class _$_AuthCheckRequested implements _AuthCheckRequested {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_AuthCheckRequested value) authCheckRequested,
-    required TResult Function(_AuthReload value) reload,
-    required TResult Function(_SendEmailVerification value)
-        sendEmailVerification,
+    required TResult Function(_AuthCheckVerified value) authCheckVerified,
+    required TResult Function(_SendVerifiedEmail value) sendVerifiedEmail,
     required TResult Function(_SignedOut value) authSignedOut,
   }) {
     return authCheckRequested(this);
@@ -175,8 +173,8 @@ class _$_AuthCheckRequested implements _AuthCheckRequested {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_AuthCheckRequested value)? authCheckRequested,
-    TResult Function(_AuthReload value)? reload,
-    TResult Function(_SendEmailVerification value)? sendEmailVerification,
+    TResult Function(_AuthCheckVerified value)? authCheckVerified,
+    TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
   }) {
     return authCheckRequested?.call(this);
@@ -186,8 +184,8 @@ class _$_AuthCheckRequested implements _AuthCheckRequested {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AuthCheckRequested value)? authCheckRequested,
-    TResult Function(_AuthReload value)? reload,
-    TResult Function(_SendEmailVerification value)? sendEmailVerification,
+    TResult Function(_AuthCheckVerified value)? authCheckVerified,
+    TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
     required TResult orElse(),
   }) {
@@ -203,156 +201,38 @@ abstract class _AuthCheckRequested implements AuthEvent {
 }
 
 /// @nodoc
-abstract class _$$_AuthReloadCopyWith<$Res> {
-  factory _$$_AuthReloadCopyWith(
-          _$_AuthReload value, $Res Function(_$_AuthReload) then) =
-      __$$_AuthReloadCopyWithImpl<$Res>;
+abstract class _$$_AuthCheckVerifiedCopyWith<$Res> {
+  factory _$$_AuthCheckVerifiedCopyWith(_$_AuthCheckVerified value,
+          $Res Function(_$_AuthCheckVerified) then) =
+      __$$_AuthCheckVerifiedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_AuthReloadCopyWithImpl<$Res> extends _$AuthEventCopyWithImpl<$Res>
-    implements _$$_AuthReloadCopyWith<$Res> {
-  __$$_AuthReloadCopyWithImpl(
-      _$_AuthReload _value, $Res Function(_$_AuthReload) _then)
-      : super(_value, (v) => _then(v as _$_AuthReload));
-
-  @override
-  _$_AuthReload get _value => super._value as _$_AuthReload;
-}
-
-/// @nodoc
-
-class _$_AuthReload implements _AuthReload {
-  const _$_AuthReload();
-
-  @override
-  String toString() {
-    return 'AuthEvent.reload()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_AuthReload);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() authCheckRequested,
-    required TResult Function() reload,
-    required TResult Function() sendEmailVerification,
-    required TResult Function() authSignedOut,
-  }) {
-    return reload();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? authCheckRequested,
-    TResult Function()? reload,
-    TResult Function()? sendEmailVerification,
-    TResult Function()? authSignedOut,
-  }) {
-    return reload?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? authCheckRequested,
-    TResult Function()? reload,
-    TResult Function()? sendEmailVerification,
-    TResult Function()? authSignedOut,
-    required TResult orElse(),
-  }) {
-    if (reload != null) {
-      return reload();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_AuthCheckRequested value) authCheckRequested,
-    required TResult Function(_AuthReload value) reload,
-    required TResult Function(_SendEmailVerification value)
-        sendEmailVerification,
-    required TResult Function(_SignedOut value) authSignedOut,
-  }) {
-    return reload(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_AuthCheckRequested value)? authCheckRequested,
-    TResult Function(_AuthReload value)? reload,
-    TResult Function(_SendEmailVerification value)? sendEmailVerification,
-    TResult Function(_SignedOut value)? authSignedOut,
-  }) {
-    return reload?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_AuthCheckRequested value)? authCheckRequested,
-    TResult Function(_AuthReload value)? reload,
-    TResult Function(_SendEmailVerification value)? sendEmailVerification,
-    TResult Function(_SignedOut value)? authSignedOut,
-    required TResult orElse(),
-  }) {
-    if (reload != null) {
-      return reload(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _AuthReload implements AuthEvent {
-  const factory _AuthReload() = _$_AuthReload;
-}
-
-/// @nodoc
-abstract class _$$_SendEmailVerificationCopyWith<$Res> {
-  factory _$$_SendEmailVerificationCopyWith(_$_SendEmailVerification value,
-          $Res Function(_$_SendEmailVerification) then) =
-      __$$_SendEmailVerificationCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_SendEmailVerificationCopyWithImpl<$Res>
+class __$$_AuthCheckVerifiedCopyWithImpl<$Res>
     extends _$AuthEventCopyWithImpl<$Res>
-    implements _$$_SendEmailVerificationCopyWith<$Res> {
-  __$$_SendEmailVerificationCopyWithImpl(_$_SendEmailVerification _value,
-      $Res Function(_$_SendEmailVerification) _then)
-      : super(_value, (v) => _then(v as _$_SendEmailVerification));
+    implements _$$_AuthCheckVerifiedCopyWith<$Res> {
+  __$$_AuthCheckVerifiedCopyWithImpl(
+      _$_AuthCheckVerified _value, $Res Function(_$_AuthCheckVerified) _then)
+      : super(_value, (v) => _then(v as _$_AuthCheckVerified));
 
   @override
-  _$_SendEmailVerification get _value =>
-      super._value as _$_SendEmailVerification;
+  _$_AuthCheckVerified get _value => super._value as _$_AuthCheckVerified;
 }
 
 /// @nodoc
 
-class _$_SendEmailVerification implements _SendEmailVerification {
-  const _$_SendEmailVerification();
+class _$_AuthCheckVerified implements _AuthCheckVerified {
+  const _$_AuthCheckVerified();
 
   @override
   String toString() {
-    return 'AuthEvent.sendEmailVerification()';
+    return 'AuthEvent.authCheckVerified()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SendEmailVerification);
+        (other.runtimeType == runtimeType && other is _$_AuthCheckVerified);
   }
 
   @override
@@ -362,35 +242,35 @@ class _$_SendEmailVerification implements _SendEmailVerification {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() authCheckRequested,
-    required TResult Function() reload,
-    required TResult Function() sendEmailVerification,
+    required TResult Function() authCheckVerified,
+    required TResult Function() sendVerifiedEmail,
     required TResult Function() authSignedOut,
   }) {
-    return sendEmailVerification();
+    return authCheckVerified();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authCheckRequested,
-    TResult Function()? reload,
-    TResult Function()? sendEmailVerification,
+    TResult Function()? authCheckVerified,
+    TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
   }) {
-    return sendEmailVerification?.call();
+    return authCheckVerified?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authCheckRequested,
-    TResult Function()? reload,
-    TResult Function()? sendEmailVerification,
+    TResult Function()? authCheckVerified,
+    TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
     required TResult orElse(),
   }) {
-    if (sendEmailVerification != null) {
-      return sendEmailVerification();
+    if (authCheckVerified != null) {
+      return authCheckVerified();
     }
     return orElse();
   }
@@ -399,43 +279,159 @@ class _$_SendEmailVerification implements _SendEmailVerification {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_AuthCheckRequested value) authCheckRequested,
-    required TResult Function(_AuthReload value) reload,
-    required TResult Function(_SendEmailVerification value)
-        sendEmailVerification,
+    required TResult Function(_AuthCheckVerified value) authCheckVerified,
+    required TResult Function(_SendVerifiedEmail value) sendVerifiedEmail,
     required TResult Function(_SignedOut value) authSignedOut,
   }) {
-    return sendEmailVerification(this);
+    return authCheckVerified(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_AuthCheckRequested value)? authCheckRequested,
-    TResult Function(_AuthReload value)? reload,
-    TResult Function(_SendEmailVerification value)? sendEmailVerification,
+    TResult Function(_AuthCheckVerified value)? authCheckVerified,
+    TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
   }) {
-    return sendEmailVerification?.call(this);
+    return authCheckVerified?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AuthCheckRequested value)? authCheckRequested,
-    TResult Function(_AuthReload value)? reload,
-    TResult Function(_SendEmailVerification value)? sendEmailVerification,
+    TResult Function(_AuthCheckVerified value)? authCheckVerified,
+    TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
     required TResult orElse(),
   }) {
-    if (sendEmailVerification != null) {
-      return sendEmailVerification(this);
+    if (authCheckVerified != null) {
+      return authCheckVerified(this);
     }
     return orElse();
   }
 }
 
-abstract class _SendEmailVerification implements AuthEvent {
-  const factory _SendEmailVerification() = _$_SendEmailVerification;
+abstract class _AuthCheckVerified implements AuthEvent {
+  const factory _AuthCheckVerified() = _$_AuthCheckVerified;
+}
+
+/// @nodoc
+abstract class _$$_SendVerifiedEmailCopyWith<$Res> {
+  factory _$$_SendVerifiedEmailCopyWith(_$_SendVerifiedEmail value,
+          $Res Function(_$_SendVerifiedEmail) then) =
+      __$$_SendVerifiedEmailCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_SendVerifiedEmailCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res>
+    implements _$$_SendVerifiedEmailCopyWith<$Res> {
+  __$$_SendVerifiedEmailCopyWithImpl(
+      _$_SendVerifiedEmail _value, $Res Function(_$_SendVerifiedEmail) _then)
+      : super(_value, (v) => _then(v as _$_SendVerifiedEmail));
+
+  @override
+  _$_SendVerifiedEmail get _value => super._value as _$_SendVerifiedEmail;
+}
+
+/// @nodoc
+
+class _$_SendVerifiedEmail implements _SendVerifiedEmail {
+  const _$_SendVerifiedEmail();
+
+  @override
+  String toString() {
+    return 'AuthEvent.sendVerifiedEmail()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_SendVerifiedEmail);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() authCheckRequested,
+    required TResult Function() authCheckVerified,
+    required TResult Function() sendVerifiedEmail,
+    required TResult Function() authSignedOut,
+  }) {
+    return sendVerifiedEmail();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? authCheckRequested,
+    TResult Function()? authCheckVerified,
+    TResult Function()? sendVerifiedEmail,
+    TResult Function()? authSignedOut,
+  }) {
+    return sendVerifiedEmail?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? authCheckRequested,
+    TResult Function()? authCheckVerified,
+    TResult Function()? sendVerifiedEmail,
+    TResult Function()? authSignedOut,
+    required TResult orElse(),
+  }) {
+    if (sendVerifiedEmail != null) {
+      return sendVerifiedEmail();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AuthCheckRequested value) authCheckRequested,
+    required TResult Function(_AuthCheckVerified value) authCheckVerified,
+    required TResult Function(_SendVerifiedEmail value) sendVerifiedEmail,
+    required TResult Function(_SignedOut value) authSignedOut,
+  }) {
+    return sendVerifiedEmail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_AuthCheckRequested value)? authCheckRequested,
+    TResult Function(_AuthCheckVerified value)? authCheckVerified,
+    TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
+    TResult Function(_SignedOut value)? authSignedOut,
+  }) {
+    return sendVerifiedEmail?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AuthCheckRequested value)? authCheckRequested,
+    TResult Function(_AuthCheckVerified value)? authCheckVerified,
+    TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
+    TResult Function(_SignedOut value)? authSignedOut,
+    required TResult orElse(),
+  }) {
+    if (sendVerifiedEmail != null) {
+      return sendVerifiedEmail(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SendVerifiedEmail implements AuthEvent {
+  const factory _SendVerifiedEmail() = _$_SendVerifiedEmail;
 }
 
 /// @nodoc
@@ -479,8 +475,8 @@ class _$_SignedOut implements _SignedOut {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() authCheckRequested,
-    required TResult Function() reload,
-    required TResult Function() sendEmailVerification,
+    required TResult Function() authCheckVerified,
+    required TResult Function() sendVerifiedEmail,
     required TResult Function() authSignedOut,
   }) {
     return authSignedOut();
@@ -490,8 +486,8 @@ class _$_SignedOut implements _SignedOut {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authCheckRequested,
-    TResult Function()? reload,
-    TResult Function()? sendEmailVerification,
+    TResult Function()? authCheckVerified,
+    TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
   }) {
     return authSignedOut?.call();
@@ -501,8 +497,8 @@ class _$_SignedOut implements _SignedOut {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authCheckRequested,
-    TResult Function()? reload,
-    TResult Function()? sendEmailVerification,
+    TResult Function()? authCheckVerified,
+    TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
     required TResult orElse(),
   }) {
@@ -516,9 +512,8 @@ class _$_SignedOut implements _SignedOut {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_AuthCheckRequested value) authCheckRequested,
-    required TResult Function(_AuthReload value) reload,
-    required TResult Function(_SendEmailVerification value)
-        sendEmailVerification,
+    required TResult Function(_AuthCheckVerified value) authCheckVerified,
+    required TResult Function(_SendVerifiedEmail value) sendVerifiedEmail,
     required TResult Function(_SignedOut value) authSignedOut,
   }) {
     return authSignedOut(this);
@@ -528,8 +523,8 @@ class _$_SignedOut implements _SignedOut {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_AuthCheckRequested value)? authCheckRequested,
-    TResult Function(_AuthReload value)? reload,
-    TResult Function(_SendEmailVerification value)? sendEmailVerification,
+    TResult Function(_AuthCheckVerified value)? authCheckVerified,
+    TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
   }) {
     return authSignedOut?.call(this);
@@ -539,8 +534,8 @@ class _$_SignedOut implements _SignedOut {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AuthCheckRequested value)? authCheckRequested,
-    TResult Function(_AuthReload value)? reload,
-    TResult Function(_SendEmailVerification value)? sendEmailVerification,
+    TResult Function(_AuthCheckVerified value)? authCheckVerified,
+    TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
     required TResult orElse(),
   }) {
@@ -562,6 +557,9 @@ mixin _$AuthState {
     required TResult Function() initial,
     required TResult Function() authenticated,
     required TResult Function() unauthenticated,
+    required TResult Function() verified,
+    required TResult Function() unverified,
+    required TResult Function() awaitingVerified,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -569,6 +567,9 @@ mixin _$AuthState {
     TResult Function()? initial,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
+    TResult Function()? verified,
+    TResult Function()? unverified,
+    TResult Function()? awaitingVerified,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -576,6 +577,9 @@ mixin _$AuthState {
     TResult Function()? initial,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
+    TResult Function()? verified,
+    TResult Function()? unverified,
+    TResult Function()? awaitingVerified,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -583,21 +587,30 @@ mixin _$AuthState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Authenticated value) authenticated,
-    required TResult Function(_Unanthenticated value) unauthenticated,
+    required TResult Function(_Unauthenticated value) unauthenticated,
+    required TResult Function(_Verified value) verified,
+    required TResult Function(_Unverified value) unverified,
+    required TResult Function(_AwaitingVerified value) awaitingVerified,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unanthenticated value)? unauthenticated,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+    TResult Function(_Verified value)? verified,
+    TResult Function(_Unverified value)? unverified,
+    TResult Function(_AwaitingVerified value)? awaitingVerified,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unanthenticated value)? unauthenticated,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+    TResult Function(_Verified value)? verified,
+    TResult Function(_Unverified value)? unverified,
+    TResult Function(_AwaitingVerified value)? awaitingVerified,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -660,6 +673,9 @@ class _$_Initial implements _Initial {
     required TResult Function() initial,
     required TResult Function() authenticated,
     required TResult Function() unauthenticated,
+    required TResult Function() verified,
+    required TResult Function() unverified,
+    required TResult Function() awaitingVerified,
   }) {
     return initial();
   }
@@ -670,6 +686,9 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
+    TResult Function()? verified,
+    TResult Function()? unverified,
+    TResult Function()? awaitingVerified,
   }) {
     return initial?.call();
   }
@@ -680,6 +699,9 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
+    TResult Function()? verified,
+    TResult Function()? unverified,
+    TResult Function()? awaitingVerified,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -693,7 +715,10 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Authenticated value) authenticated,
-    required TResult Function(_Unanthenticated value) unauthenticated,
+    required TResult Function(_Unauthenticated value) unauthenticated,
+    required TResult Function(_Verified value) verified,
+    required TResult Function(_Unverified value) unverified,
+    required TResult Function(_AwaitingVerified value) awaitingVerified,
   }) {
     return initial(this);
   }
@@ -703,7 +728,10 @@ class _$_Initial implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unanthenticated value)? unauthenticated,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+    TResult Function(_Verified value)? verified,
+    TResult Function(_Unverified value)? unverified,
+    TResult Function(_AwaitingVerified value)? awaitingVerified,
   }) {
     return initial?.call(this);
   }
@@ -713,7 +741,10 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unanthenticated value)? unauthenticated,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+    TResult Function(_Verified value)? verified,
+    TResult Function(_Unverified value)? unverified,
+    TResult Function(_AwaitingVerified value)? awaitingVerified,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -770,6 +801,9 @@ class _$_Authenticated implements _Authenticated {
     required TResult Function() initial,
     required TResult Function() authenticated,
     required TResult Function() unauthenticated,
+    required TResult Function() verified,
+    required TResult Function() unverified,
+    required TResult Function() awaitingVerified,
   }) {
     return authenticated();
   }
@@ -780,6 +814,9 @@ class _$_Authenticated implements _Authenticated {
     TResult Function()? initial,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
+    TResult Function()? verified,
+    TResult Function()? unverified,
+    TResult Function()? awaitingVerified,
   }) {
     return authenticated?.call();
   }
@@ -790,6 +827,9 @@ class _$_Authenticated implements _Authenticated {
     TResult Function()? initial,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
+    TResult Function()? verified,
+    TResult Function()? unverified,
+    TResult Function()? awaitingVerified,
     required TResult orElse(),
   }) {
     if (authenticated != null) {
@@ -803,7 +843,10 @@ class _$_Authenticated implements _Authenticated {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Authenticated value) authenticated,
-    required TResult Function(_Unanthenticated value) unauthenticated,
+    required TResult Function(_Unauthenticated value) unauthenticated,
+    required TResult Function(_Verified value) verified,
+    required TResult Function(_Unverified value) unverified,
+    required TResult Function(_AwaitingVerified value) awaitingVerified,
   }) {
     return authenticated(this);
   }
@@ -813,7 +856,10 @@ class _$_Authenticated implements _Authenticated {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unanthenticated value)? unauthenticated,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+    TResult Function(_Verified value)? verified,
+    TResult Function(_Unverified value)? unverified,
+    TResult Function(_AwaitingVerified value)? awaitingVerified,
   }) {
     return authenticated?.call(this);
   }
@@ -823,7 +869,10 @@ class _$_Authenticated implements _Authenticated {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unanthenticated value)? unauthenticated,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+    TResult Function(_Verified value)? verified,
+    TResult Function(_Unverified value)? unverified,
+    TResult Function(_AwaitingVerified value)? awaitingVerified,
     required TResult orElse(),
   }) {
     if (authenticated != null) {
@@ -838,28 +887,28 @@ abstract class _Authenticated implements AuthState {
 }
 
 /// @nodoc
-abstract class _$$_UnanthenticatedCopyWith<$Res> {
-  factory _$$_UnanthenticatedCopyWith(
-          _$_Unanthenticated value, $Res Function(_$_Unanthenticated) then) =
-      __$$_UnanthenticatedCopyWithImpl<$Res>;
+abstract class _$$_UnauthenticatedCopyWith<$Res> {
+  factory _$$_UnauthenticatedCopyWith(
+          _$_Unauthenticated value, $Res Function(_$_Unauthenticated) then) =
+      __$$_UnauthenticatedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_UnanthenticatedCopyWithImpl<$Res>
+class __$$_UnauthenticatedCopyWithImpl<$Res>
     extends _$AuthStateCopyWithImpl<$Res>
-    implements _$$_UnanthenticatedCopyWith<$Res> {
-  __$$_UnanthenticatedCopyWithImpl(
-      _$_Unanthenticated _value, $Res Function(_$_Unanthenticated) _then)
-      : super(_value, (v) => _then(v as _$_Unanthenticated));
+    implements _$$_UnauthenticatedCopyWith<$Res> {
+  __$$_UnauthenticatedCopyWithImpl(
+      _$_Unauthenticated _value, $Res Function(_$_Unauthenticated) _then)
+      : super(_value, (v) => _then(v as _$_Unauthenticated));
 
   @override
-  _$_Unanthenticated get _value => super._value as _$_Unanthenticated;
+  _$_Unauthenticated get _value => super._value as _$_Unauthenticated;
 }
 
 /// @nodoc
 
-class _$_Unanthenticated implements _Unanthenticated {
-  const _$_Unanthenticated();
+class _$_Unauthenticated implements _Unauthenticated {
+  const _$_Unauthenticated();
 
   @override
   String toString() {
@@ -869,7 +918,7 @@ class _$_Unanthenticated implements _Unanthenticated {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Unanthenticated);
+        (other.runtimeType == runtimeType && other is _$_Unauthenticated);
   }
 
   @override
@@ -881,6 +930,9 @@ class _$_Unanthenticated implements _Unanthenticated {
     required TResult Function() initial,
     required TResult Function() authenticated,
     required TResult Function() unauthenticated,
+    required TResult Function() verified,
+    required TResult Function() unverified,
+    required TResult Function() awaitingVerified,
   }) {
     return unauthenticated();
   }
@@ -891,6 +943,9 @@ class _$_Unanthenticated implements _Unanthenticated {
     TResult Function()? initial,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
+    TResult Function()? verified,
+    TResult Function()? unverified,
+    TResult Function()? awaitingVerified,
   }) {
     return unauthenticated?.call();
   }
@@ -901,6 +956,9 @@ class _$_Unanthenticated implements _Unanthenticated {
     TResult Function()? initial,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
+    TResult Function()? verified,
+    TResult Function()? unverified,
+    TResult Function()? awaitingVerified,
     required TResult orElse(),
   }) {
     if (unauthenticated != null) {
@@ -914,7 +972,10 @@ class _$_Unanthenticated implements _Unanthenticated {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Authenticated value) authenticated,
-    required TResult Function(_Unanthenticated value) unauthenticated,
+    required TResult Function(_Unauthenticated value) unauthenticated,
+    required TResult Function(_Verified value) verified,
+    required TResult Function(_Unverified value) unverified,
+    required TResult Function(_AwaitingVerified value) awaitingVerified,
   }) {
     return unauthenticated(this);
   }
@@ -924,7 +985,10 @@ class _$_Unanthenticated implements _Unanthenticated {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unanthenticated value)? unauthenticated,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+    TResult Function(_Verified value)? verified,
+    TResult Function(_Unverified value)? unverified,
+    TResult Function(_AwaitingVerified value)? awaitingVerified,
   }) {
     return unauthenticated?.call(this);
   }
@@ -934,7 +998,10 @@ class _$_Unanthenticated implements _Unanthenticated {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unanthenticated value)? unauthenticated,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+    TResult Function(_Verified value)? verified,
+    TResult Function(_Unverified value)? unverified,
+    TResult Function(_AwaitingVerified value)? awaitingVerified,
     required TResult orElse(),
   }) {
     if (unauthenticated != null) {
@@ -944,6 +1011,391 @@ class _$_Unanthenticated implements _Unanthenticated {
   }
 }
 
-abstract class _Unanthenticated implements AuthState {
-  const factory _Unanthenticated() = _$_Unanthenticated;
+abstract class _Unauthenticated implements AuthState {
+  const factory _Unauthenticated() = _$_Unauthenticated;
+}
+
+/// @nodoc
+abstract class _$$_VerifiedCopyWith<$Res> {
+  factory _$$_VerifiedCopyWith(
+          _$_Verified value, $Res Function(_$_Verified) then) =
+      __$$_VerifiedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_VerifiedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
+    implements _$$_VerifiedCopyWith<$Res> {
+  __$$_VerifiedCopyWithImpl(
+      _$_Verified _value, $Res Function(_$_Verified) _then)
+      : super(_value, (v) => _then(v as _$_Verified));
+
+  @override
+  _$_Verified get _value => super._value as _$_Verified;
+}
+
+/// @nodoc
+
+class _$_Verified implements _Verified {
+  const _$_Verified();
+
+  @override
+  String toString() {
+    return 'AuthState.verified()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Verified);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() authenticated,
+    required TResult Function() unauthenticated,
+    required TResult Function() verified,
+    required TResult Function() unverified,
+    required TResult Function() awaitingVerified,
+  }) {
+    return verified();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? authenticated,
+    TResult Function()? unauthenticated,
+    TResult Function()? verified,
+    TResult Function()? unverified,
+    TResult Function()? awaitingVerified,
+  }) {
+    return verified?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? authenticated,
+    TResult Function()? unauthenticated,
+    TResult Function()? verified,
+    TResult Function()? unverified,
+    TResult Function()? awaitingVerified,
+    required TResult orElse(),
+  }) {
+    if (verified != null) {
+      return verified();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Authenticated value) authenticated,
+    required TResult Function(_Unauthenticated value) unauthenticated,
+    required TResult Function(_Verified value) verified,
+    required TResult Function(_Unverified value) unverified,
+    required TResult Function(_AwaitingVerified value) awaitingVerified,
+  }) {
+    return verified(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+    TResult Function(_Verified value)? verified,
+    TResult Function(_Unverified value)? unverified,
+    TResult Function(_AwaitingVerified value)? awaitingVerified,
+  }) {
+    return verified?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+    TResult Function(_Verified value)? verified,
+    TResult Function(_Unverified value)? unverified,
+    TResult Function(_AwaitingVerified value)? awaitingVerified,
+    required TResult orElse(),
+  }) {
+    if (verified != null) {
+      return verified(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Verified implements AuthState {
+  const factory _Verified() = _$_Verified;
+}
+
+/// @nodoc
+abstract class _$$_UnverifiedCopyWith<$Res> {
+  factory _$$_UnverifiedCopyWith(
+          _$_Unverified value, $Res Function(_$_Unverified) then) =
+      __$$_UnverifiedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_UnverifiedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
+    implements _$$_UnverifiedCopyWith<$Res> {
+  __$$_UnverifiedCopyWithImpl(
+      _$_Unverified _value, $Res Function(_$_Unverified) _then)
+      : super(_value, (v) => _then(v as _$_Unverified));
+
+  @override
+  _$_Unverified get _value => super._value as _$_Unverified;
+}
+
+/// @nodoc
+
+class _$_Unverified implements _Unverified {
+  const _$_Unverified();
+
+  @override
+  String toString() {
+    return 'AuthState.unverified()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Unverified);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() authenticated,
+    required TResult Function() unauthenticated,
+    required TResult Function() verified,
+    required TResult Function() unverified,
+    required TResult Function() awaitingVerified,
+  }) {
+    return unverified();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? authenticated,
+    TResult Function()? unauthenticated,
+    TResult Function()? verified,
+    TResult Function()? unverified,
+    TResult Function()? awaitingVerified,
+  }) {
+    return unverified?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? authenticated,
+    TResult Function()? unauthenticated,
+    TResult Function()? verified,
+    TResult Function()? unverified,
+    TResult Function()? awaitingVerified,
+    required TResult orElse(),
+  }) {
+    if (unverified != null) {
+      return unverified();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Authenticated value) authenticated,
+    required TResult Function(_Unauthenticated value) unauthenticated,
+    required TResult Function(_Verified value) verified,
+    required TResult Function(_Unverified value) unverified,
+    required TResult Function(_AwaitingVerified value) awaitingVerified,
+  }) {
+    return unverified(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+    TResult Function(_Verified value)? verified,
+    TResult Function(_Unverified value)? unverified,
+    TResult Function(_AwaitingVerified value)? awaitingVerified,
+  }) {
+    return unverified?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+    TResult Function(_Verified value)? verified,
+    TResult Function(_Unverified value)? unverified,
+    TResult Function(_AwaitingVerified value)? awaitingVerified,
+    required TResult orElse(),
+  }) {
+    if (unverified != null) {
+      return unverified(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Unverified implements AuthState {
+  const factory _Unverified() = _$_Unverified;
+}
+
+/// @nodoc
+abstract class _$$_AwaitingVerifiedCopyWith<$Res> {
+  factory _$$_AwaitingVerifiedCopyWith(
+          _$_AwaitingVerified value, $Res Function(_$_AwaitingVerified) then) =
+      __$$_AwaitingVerifiedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_AwaitingVerifiedCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res>
+    implements _$$_AwaitingVerifiedCopyWith<$Res> {
+  __$$_AwaitingVerifiedCopyWithImpl(
+      _$_AwaitingVerified _value, $Res Function(_$_AwaitingVerified) _then)
+      : super(_value, (v) => _then(v as _$_AwaitingVerified));
+
+  @override
+  _$_AwaitingVerified get _value => super._value as _$_AwaitingVerified;
+}
+
+/// @nodoc
+
+class _$_AwaitingVerified implements _AwaitingVerified {
+  const _$_AwaitingVerified();
+
+  @override
+  String toString() {
+    return 'AuthState.awaitingVerified()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_AwaitingVerified);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() authenticated,
+    required TResult Function() unauthenticated,
+    required TResult Function() verified,
+    required TResult Function() unverified,
+    required TResult Function() awaitingVerified,
+  }) {
+    return awaitingVerified();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? authenticated,
+    TResult Function()? unauthenticated,
+    TResult Function()? verified,
+    TResult Function()? unverified,
+    TResult Function()? awaitingVerified,
+  }) {
+    return awaitingVerified?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? authenticated,
+    TResult Function()? unauthenticated,
+    TResult Function()? verified,
+    TResult Function()? unverified,
+    TResult Function()? awaitingVerified,
+    required TResult orElse(),
+  }) {
+    if (awaitingVerified != null) {
+      return awaitingVerified();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Authenticated value) authenticated,
+    required TResult Function(_Unauthenticated value) unauthenticated,
+    required TResult Function(_Verified value) verified,
+    required TResult Function(_Unverified value) unverified,
+    required TResult Function(_AwaitingVerified value) awaitingVerified,
+  }) {
+    return awaitingVerified(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+    TResult Function(_Verified value)? verified,
+    TResult Function(_Unverified value)? unverified,
+    TResult Function(_AwaitingVerified value)? awaitingVerified,
+  }) {
+    return awaitingVerified?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+    TResult Function(_Verified value)? verified,
+    TResult Function(_Unverified value)? unverified,
+    TResult Function(_AwaitingVerified value)? awaitingVerified,
+    required TResult orElse(),
+  }) {
+    if (awaitingVerified != null) {
+      return awaitingVerified(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AwaitingVerified implements AuthState {
+  const factory _AwaitingVerified() = _$_AwaitingVerified;
 }
