@@ -27,7 +27,10 @@ class FirebaseAuthFacade implements IAuthFacade {
     try {
       return await _firebaseAuth
           .signInWithEmailAndPassword(email: _email, password: _password)
-          .then((_) => right(unit));
+          .then((_) {
+        print(_);
+        return right(unit);
+      });
     } on FirebaseAuthException catch (e) {
       if (e.code == 'wrong-password' || e.code == 'user-not-found') {
         return left(const AuthFailure.invalidEmailOrPassword());
@@ -71,6 +74,8 @@ class FirebaseAuthFacade implements IAuthFacade {
 
         jUsersRef.doc(value.user!.uid).set(_user);
 
+        _firebaseAuth.currentUser!.sendEmailVerification();
+
         return right(unit);
       });
     } on FirebaseAuthException catch (e) {
@@ -83,10 +88,14 @@ class FirebaseAuthFacade implements IAuthFacade {
   }
 
   @override
-  Future<Option<JUser>> getUser() async {
-    final _fUserId = await _firebaseAuth.currentUser!.uid;
-    final _jUser = await jUsersRef.doc(_fUserId).get().then((v) => v.data);
-    return await optionOf(_firebaseUserMapper.toDomain(_jUser));
+  Future<Option<JUser?>> getUser() async {
+    final _fUser = await _firebaseAuth.currentUser;
+    if (_fUser != null) {
+      final _jUser = await jUsersRef.doc(_fUser.uid).get().then((v) => v.data);
+      return await optionOf(_firebaseUserMapper.toDomain(_jUser));
+    } else {
+      return await optionOf(_firebaseUserMapper.toDomain(null));
+    }
   }
 
   @override
