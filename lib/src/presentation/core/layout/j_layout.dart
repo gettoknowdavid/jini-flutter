@@ -30,7 +30,8 @@ class _JLayoutState extends State<JLayout> {
   Widget build(BuildContext context) {
     return BlocListener<AuthBloc, AuthState>(
       listener: (context, authState) {
-        authState.map(
+        authState.maybeMap(
+          orElse: () => null,
           initial: (_) {},
           authenticated: (_) => Get.offNamed(JRoutes.layout),
           unauthenticated: (_) => Get.offAllNamed(JRoutes.signIn),
