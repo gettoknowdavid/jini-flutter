@@ -13,7 +13,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   AuthBloc(this._authFacade) : super(_Initial()) {
     on<_AuthCheckRequested>((event, emit) => _authCheckRequested(event, emit));
-    on<_AuthCheckVerified>((event, emit) => _checkVerified(event, emit));
+    on<_AuthCheckVerified>((event, emit) => _authCheckVerified(event, emit));
     on<_SendVerifiedEmail>((event, emit) => _sendVerifiedEmail(event, emit));
     on<_SignedOut>((event, emit) => _signedOut(event, emit));
   }
@@ -28,11 +28,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     );
   }
 
-  _checkVerified(_AuthCheckVerified e, Emitter<AuthState> emit) async {
-    final _verifiedOption = await _authFacade.checkEmailVerified();
+  _authCheckVerified(_AuthCheckVerified e, Emitter<AuthState> emit) async {
+    final _verifiedEither = await _authFacade.checkEmailVerified();
     emit(
-      _verifiedOption.fold(
-        () => const AuthState.unverified(),
+      _verifiedEither.fold(
+        (_) => const AuthState.unverified(),
         (_) => const AuthState.verified(),
       ),
     );
