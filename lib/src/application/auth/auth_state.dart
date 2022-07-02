@@ -7,4 +7,5 @@ class AuthState with _$AuthState {
   const factory AuthState.unauthenticated() = _Unauthenticated;
   const factory AuthState.verified() = _Verified;
   const factory AuthState.unverified() = _Unverified;
+  const factory AuthState.awaitingVerified() = _AwaitingVerified;
 }
