@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:jini/common/app_routes.dart';
 import 'package:jini/common/image_resources.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jini/src/presentation/auth/sign_in/widgets/sign_in_form.dart';
+import 'package:jini/src/presentation/routes/j_router.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);
@@ -65,7 +65,7 @@ class _SignInPageState extends State<SignInPage> {
                     children: [
                       Text('Don\'t have an account?'),
                       TextButton(
-                        onPressed: () => Get.toNamed(AppRoutes.signUp),
+                        onPressed: () => Get.toNamed(JRoutes.signUp),
                         child: Text('Sign Up'),
                       ),
                     ],
