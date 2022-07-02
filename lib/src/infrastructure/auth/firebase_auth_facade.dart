@@ -107,12 +107,13 @@ class FirebaseAuthFacade implements IAuthFacade {
   }
 
   @override
-  Future<Option<bool?>> checkEmailVerified() async {
+  Future<Either<AuthFailure, bool?>> checkEmailVerified() async {
     await _firebaseAuth.currentUser!.reload();
-    if (_firebaseAuth.currentUser!.emailVerified) {
-      return optionOf(true);
+    final _value = await _firebaseAuth.currentUser!.emailVerified;
+    if (_value) {
+      return right(_value);
     } else {
-      return optionOf(false);
+      return left(const AuthFailure.emailNotVerified());
     }
   }
 
