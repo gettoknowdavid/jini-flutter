@@ -8,6 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jini/src/presentation/auth/sign_up/sign_up_page.dart';
 import 'package:jini/src/presentation/auth/verification/verification_page.dart';
 import 'package:jini/src/presentation/core/layout/j_layout.dart';
+import 'package:jini/src/presentation/donor_requirements/donor_requirements_page.dart';
 import 'package:jini/src/presentation/routes/j_router.dart';
 import 'package:jini/src/presentation/splash/splash_page.dart';
 
@@ -37,6 +38,10 @@ class JiniApp extends StatelessWidget {
             GetPage(name: JRoutes.signUp, page: () => SignUpPage()),
             GetPage(name: JRoutes.splash, page: () => SplashPage()),
             GetPage(name: JRoutes.verification, page: () => VerificationPage()),
+            GetPage(
+              name: JRoutes.donorRequirements,
+              page: () => DonorRequirementsPage(),
+            ),
           ],
           theme: ThemeData(
             primarySwatch: AppColors.swatch,
