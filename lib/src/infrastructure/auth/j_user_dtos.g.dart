@@ -323,6 +323,7 @@ class JUserDtoQueryDocumentSnapshot extends FirestoreQueryDocumentSnapshot
 //       email: json['email'] as String,
 //       phone: json['phone'] as String?,
 //       city: json['city'] as String?,
+//       avatar: json['avatar'] as String?,
 //       location: json['location'] == null
 //           ? null
 //           : Geo.fromJson(json['location'] as Map<String, dynamic>),
@@ -343,6 +344,7 @@ Map<String, dynamic> _$JUserDtoToJson(JUserDto instance) => <String, dynamic>{
       'email': instance.email,
       'phone': instance.phone,
       'city': instance.city,
+      'avatar': instance.avatar,
       'location': instance.location?.toJson(),
       'bloodGroup': _$BloodGroupEnumMap[instance.bloodGroup],
       'userType': _$UserTypeEnumMap[instance.userType],
@@ -383,6 +385,7 @@ _$_JUserDto _$$_JUserDtoFromJson(Map<String, dynamic> json) => _$_JUserDto(
       email: json['email'] as String,
       phone: json['phone'] as String?,
       city: json['city'] as String?,
+      avatar: json['avatar'] as String?,
       location: json['location'] == null
           ? null
           : Geo.fromJson(json['location'] as Map<String, dynamic>),
@@ -404,6 +407,7 @@ Map<String, dynamic> _$$_JUserDtoToJson(_$_JUserDto instance) =>
       'email': instance.email,
       'phone': instance.phone,
       'city': instance.city,
+      'avatar': instance.avatar,
       'location': instance.location,
       'bloodGroup': _$BloodGroupEnumMap[instance.bloodGroup],
       'userType': _$UserTypeEnumMap[instance.userType],
