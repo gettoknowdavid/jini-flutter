@@ -24,7 +24,9 @@ abstract class IAuthFacade {
 
   Future<void> sendVerificationEmail();
 
-  Future<Option<bool?>> checkEmailVerified();
+  Future<Either<AuthFailure, bool?>> checkEmailVerified();
+
+  Future<Either<AuthFailure, bool?>> donorRequirementsMet();
 
   Future<void> signOut();
 }
