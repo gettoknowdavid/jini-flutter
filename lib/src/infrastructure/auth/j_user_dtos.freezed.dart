@@ -29,6 +29,7 @@ mixin _$JUserDto {
   String get email => throw _privateConstructorUsedError;
   String? get phone => throw _privateConstructorUsedError;
   String? get city => throw _privateConstructorUsedError;
+  String? get avatar => throw _privateConstructorUsedError;
   Geo? get location => throw _privateConstructorUsedError;
   BloodGroup get bloodGroup => throw _privateConstructorUsedError;
   UserType get userType => throw _privateConstructorUsedError;
@@ -56,6 +57,7 @@ abstract class $JUserDtoCopyWith<$Res> {
       String email,
       String? phone,
       String? city,
+      String? avatar,
       Geo? location,
       BloodGroup bloodGroup,
       UserType userType,
@@ -83,6 +85,7 @@ class _$JUserDtoCopyWithImpl<$Res> implements $JUserDtoCopyWith<$Res> {
     Object? email = freezed,
     Object? phone = freezed,
     Object? city = freezed,
+    Object? avatar = freezed,
     Object? location = freezed,
     Object? bloodGroup = freezed,
     Object? userType = freezed,
@@ -126,6 +129,10 @@ class _$JUserDtoCopyWithImpl<$Res> implements $JUserDtoCopyWith<$Res> {
       city: city == freezed
           ? _value.city
           : city // ignore: cast_nullable_to_non_nullable
+              as String?,
+      avatar: avatar == freezed
+          ? _value.avatar
+          : avatar // ignore: cast_nullable_to_non_nullable
               as String?,
       location: location == freezed
           ? _value.location
@@ -171,6 +178,7 @@ abstract class _$$_JUserDtoCopyWith<$Res> implements $JUserDtoCopyWith<$Res> {
       String email,
       String? phone,
       String? city,
+      String? avatar,
       Geo? location,
       BloodGroup bloodGroup,
       UserType userType,
@@ -200,6 +208,7 @@ class __$$_JUserDtoCopyWithImpl<$Res> extends _$JUserDtoCopyWithImpl<$Res>
     Object? email = freezed,
     Object? phone = freezed,
     Object? city = freezed,
+    Object? avatar = freezed,
     Object? location = freezed,
     Object? bloodGroup = freezed,
     Object? userType = freezed,
@@ -244,6 +253,10 @@ class __$$_JUserDtoCopyWithImpl<$Res> extends _$JUserDtoCopyWithImpl<$Res>
           ? _value.city
           : city // ignore: cast_nullable_to_non_nullable
               as String?,
+      avatar: avatar == freezed
+          ? _value.avatar
+          : avatar // ignore: cast_nullable_to_non_nullable
+              as String?,
       location: location == freezed
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
@@ -285,6 +298,7 @@ class _$_JUserDto implements _JUserDto {
       required this.email,
       this.phone,
       this.city,
+      this.avatar,
       this.location,
       required this.bloodGroup,
       required this.userType,
@@ -314,6 +328,8 @@ class _$_JUserDto implements _JUserDto {
   @override
   final String? city;
   @override
+  final String? avatar;
+  @override
   final Geo? location;
   @override
   final BloodGroup bloodGroup;
@@ -328,7 +344,7 @@ class _$_JUserDto implements _JUserDto {
 
   @override
   String toString() {
-    return 'JUserDto(uid: $uid, name: $name, gender: $gender, age: $age, height: $height, weight: $weight, email: $email, phone: $phone, city: $city, location: $location, bloodGroup: $bloodGroup, userType: $userType, eligible: $eligible, formComplete: $formComplete, initEdit: $initEdit)';
+    return 'JUserDto(uid: $uid, name: $name, gender: $gender, age: $age, height: $height, weight: $weight, email: $email, phone: $phone, city: $city, avatar: $avatar, location: $location, bloodGroup: $bloodGroup, userType: $userType, eligible: $eligible, formComplete: $formComplete, initEdit: $initEdit)';
   }
 
   @override
@@ -345,6 +361,7 @@ class _$_JUserDto implements _JUserDto {
             const DeepCollectionEquality().equals(other.email, email) &&
             const DeepCollectionEquality().equals(other.phone, phone) &&
             const DeepCollectionEquality().equals(other.city, city) &&
+            const DeepCollectionEquality().equals(other.avatar, avatar) &&
             const DeepCollectionEquality().equals(other.location, location) &&
             const DeepCollectionEquality()
                 .equals(other.bloodGroup, bloodGroup) &&
@@ -368,6 +385,7 @@ class _$_JUserDto implements _JUserDto {
       const DeepCollectionEquality().hash(email),
       const DeepCollectionEquality().hash(phone),
       const DeepCollectionEquality().hash(city),
+      const DeepCollectionEquality().hash(avatar),
       const DeepCollectionEquality().hash(location),
       const DeepCollectionEquality().hash(bloodGroup),
       const DeepCollectionEquality().hash(userType),
@@ -397,6 +415,7 @@ abstract class _JUserDto implements JUserDto {
       required final String email,
       final String? phone,
       final String? city,
+      final String? avatar,
       final Geo? location,
       required final BloodGroup bloodGroup,
       required final UserType userType,
@@ -424,6 +443,8 @@ abstract class _JUserDto implements JUserDto {
   String? get phone => throw _privateConstructorUsedError;
   @override
   String? get city => throw _privateConstructorUsedError;
+  @override
+  String? get avatar => throw _privateConstructorUsedError;
   @override
   Geo? get location => throw _privateConstructorUsedError;
   @override
