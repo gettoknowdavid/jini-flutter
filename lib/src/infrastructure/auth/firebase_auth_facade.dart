@@ -105,4 +105,14 @@ class FirebaseAuthFacade implements IAuthFacade {
   Future<Either<AuthFailure, Unit>> updateUser(JUser jUser) async {
     throw UnimplementedError();
   }
+
+  @override
+  Future<void> reload() async {
+    return await _firebaseAuth.currentUser!.reload();
+  }
+
+  @override
+  Future<void> sendVerificationEmail() async {
+    return await _firebaseAuth.currentUser!.sendEmailVerification();
+  }
 }
