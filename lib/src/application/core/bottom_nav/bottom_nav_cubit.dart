@@ -1,12 +1,12 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:injectable/injectable.dart';
-import 'package:jini/src/presentation/core/app.dart';
+import 'package:jini/src/presentation/profile/profile_page.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 @lazySingleton
 class BottomNavCubit extends Cubit<Widget> {
-  BottomNavCubit() : super(MyHomePage(title: 'Home'));
+  BottomNavCubit() : super(ProfilePage(title: 'Home'));
 
   int currentIndex = 0;
 
@@ -14,13 +14,13 @@ class BottomNavCubit extends Cubit<Widget> {
     currentIndex = index;
     switch (index) {
       case 0:
-        emit(MyHomePage(title: 'Home'));
+        emit(ProfilePage(title: 'Home'));
         break;
       case 1:
         emit(ProfilePage(title: 'Profile'));
         break;
       case 2:
-        emit(ProfilePage(title: 'Make Requet'));
+        emit(ProfilePage(title: 'Make Request'));
         break;
       case 3:
         emit(ProfilePage(title: 'Events'));
