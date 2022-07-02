@@ -19,18 +19,24 @@ mixin _$AuthEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() authCheckRequested,
+    required TResult Function() reload,
+    required TResult Function() sendEmailVerification,
     required TResult Function() authSignedOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authCheckRequested,
+    TResult Function()? reload,
+    TResult Function()? sendEmailVerification,
     TResult Function()? authSignedOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authCheckRequested,
+    TResult Function()? reload,
+    TResult Function()? sendEmailVerification,
     TResult Function()? authSignedOut,
     required TResult orElse(),
   }) =>
@@ -38,18 +44,25 @@ mixin _$AuthEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_AuthCheckRequested value) authCheckRequested,
+    required TResult Function(_AuthReload value) reload,
+    required TResult Function(_SendEmailVerification value)
+        sendEmailVerification,
     required TResult Function(_SignedOut value) authSignedOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_AuthCheckRequested value)? authCheckRequested,
+    TResult Function(_AuthReload value)? reload,
+    TResult Function(_SendEmailVerification value)? sendEmailVerification,
     TResult Function(_SignedOut value)? authSignedOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AuthCheckRequested value)? authCheckRequested,
+    TResult Function(_AuthReload value)? reload,
+    TResult Function(_SendEmailVerification value)? sendEmailVerification,
     TResult Function(_SignedOut value)? authSignedOut,
     required TResult orElse(),
   }) =>
@@ -113,6 +126,8 @@ class _$_AuthCheckRequested implements _AuthCheckRequested {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() authCheckRequested,
+    required TResult Function() reload,
+    required TResult Function() sendEmailVerification,
     required TResult Function() authSignedOut,
   }) {
     return authCheckRequested();
@@ -122,6 +137,8 @@ class _$_AuthCheckRequested implements _AuthCheckRequested {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authCheckRequested,
+    TResult Function()? reload,
+    TResult Function()? sendEmailVerification,
     TResult Function()? authSignedOut,
   }) {
     return authCheckRequested?.call();
@@ -131,6 +148,8 @@ class _$_AuthCheckRequested implements _AuthCheckRequested {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authCheckRequested,
+    TResult Function()? reload,
+    TResult Function()? sendEmailVerification,
     TResult Function()? authSignedOut,
     required TResult orElse(),
   }) {
@@ -144,6 +163,9 @@ class _$_AuthCheckRequested implements _AuthCheckRequested {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_AuthCheckRequested value) authCheckRequested,
+    required TResult Function(_AuthReload value) reload,
+    required TResult Function(_SendEmailVerification value)
+        sendEmailVerification,
     required TResult Function(_SignedOut value) authSignedOut,
   }) {
     return authCheckRequested(this);
@@ -153,6 +175,8 @@ class _$_AuthCheckRequested implements _AuthCheckRequested {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_AuthCheckRequested value)? authCheckRequested,
+    TResult Function(_AuthReload value)? reload,
+    TResult Function(_SendEmailVerification value)? sendEmailVerification,
     TResult Function(_SignedOut value)? authSignedOut,
   }) {
     return authCheckRequested?.call(this);
@@ -162,6 +186,8 @@ class _$_AuthCheckRequested implements _AuthCheckRequested {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AuthCheckRequested value)? authCheckRequested,
+    TResult Function(_AuthReload value)? reload,
+    TResult Function(_SendEmailVerification value)? sendEmailVerification,
     TResult Function(_SignedOut value)? authSignedOut,
     required TResult orElse(),
   }) {
@@ -174,6 +200,242 @@ class _$_AuthCheckRequested implements _AuthCheckRequested {
 
 abstract class _AuthCheckRequested implements AuthEvent {
   const factory _AuthCheckRequested() = _$_AuthCheckRequested;
+}
+
+/// @nodoc
+abstract class _$$_AuthReloadCopyWith<$Res> {
+  factory _$$_AuthReloadCopyWith(
+          _$_AuthReload value, $Res Function(_$_AuthReload) then) =
+      __$$_AuthReloadCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_AuthReloadCopyWithImpl<$Res> extends _$AuthEventCopyWithImpl<$Res>
+    implements _$$_AuthReloadCopyWith<$Res> {
+  __$$_AuthReloadCopyWithImpl(
+      _$_AuthReload _value, $Res Function(_$_AuthReload) _then)
+      : super(_value, (v) => _then(v as _$_AuthReload));
+
+  @override
+  _$_AuthReload get _value => super._value as _$_AuthReload;
+}
+
+/// @nodoc
+
+class _$_AuthReload implements _AuthReload {
+  const _$_AuthReload();
+
+  @override
+  String toString() {
+    return 'AuthEvent.reload()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_AuthReload);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() authCheckRequested,
+    required TResult Function() reload,
+    required TResult Function() sendEmailVerification,
+    required TResult Function() authSignedOut,
+  }) {
+    return reload();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? authCheckRequested,
+    TResult Function()? reload,
+    TResult Function()? sendEmailVerification,
+    TResult Function()? authSignedOut,
+  }) {
+    return reload?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? authCheckRequested,
+    TResult Function()? reload,
+    TResult Function()? sendEmailVerification,
+    TResult Function()? authSignedOut,
+    required TResult orElse(),
+  }) {
+    if (reload != null) {
+      return reload();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AuthCheckRequested value) authCheckRequested,
+    required TResult Function(_AuthReload value) reload,
+    required TResult Function(_SendEmailVerification value)
+        sendEmailVerification,
+    required TResult Function(_SignedOut value) authSignedOut,
+  }) {
+    return reload(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_AuthCheckRequested value)? authCheckRequested,
+    TResult Function(_AuthReload value)? reload,
+    TResult Function(_SendEmailVerification value)? sendEmailVerification,
+    TResult Function(_SignedOut value)? authSignedOut,
+  }) {
+    return reload?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AuthCheckRequested value)? authCheckRequested,
+    TResult Function(_AuthReload value)? reload,
+    TResult Function(_SendEmailVerification value)? sendEmailVerification,
+    TResult Function(_SignedOut value)? authSignedOut,
+    required TResult orElse(),
+  }) {
+    if (reload != null) {
+      return reload(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AuthReload implements AuthEvent {
+  const factory _AuthReload() = _$_AuthReload;
+}
+
+/// @nodoc
+abstract class _$$_SendEmailVerificationCopyWith<$Res> {
+  factory _$$_SendEmailVerificationCopyWith(_$_SendEmailVerification value,
+          $Res Function(_$_SendEmailVerification) then) =
+      __$$_SendEmailVerificationCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_SendEmailVerificationCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res>
+    implements _$$_SendEmailVerificationCopyWith<$Res> {
+  __$$_SendEmailVerificationCopyWithImpl(_$_SendEmailVerification _value,
+      $Res Function(_$_SendEmailVerification) _then)
+      : super(_value, (v) => _then(v as _$_SendEmailVerification));
+
+  @override
+  _$_SendEmailVerification get _value =>
+      super._value as _$_SendEmailVerification;
+}
+
+/// @nodoc
+
+class _$_SendEmailVerification implements _SendEmailVerification {
+  const _$_SendEmailVerification();
+
+  @override
+  String toString() {
+    return 'AuthEvent.sendEmailVerification()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_SendEmailVerification);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() authCheckRequested,
+    required TResult Function() reload,
+    required TResult Function() sendEmailVerification,
+    required TResult Function() authSignedOut,
+  }) {
+    return sendEmailVerification();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? authCheckRequested,
+    TResult Function()? reload,
+    TResult Function()? sendEmailVerification,
+    TResult Function()? authSignedOut,
+  }) {
+    return sendEmailVerification?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? authCheckRequested,
+    TResult Function()? reload,
+    TResult Function()? sendEmailVerification,
+    TResult Function()? authSignedOut,
+    required TResult orElse(),
+  }) {
+    if (sendEmailVerification != null) {
+      return sendEmailVerification();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AuthCheckRequested value) authCheckRequested,
+    required TResult Function(_AuthReload value) reload,
+    required TResult Function(_SendEmailVerification value)
+        sendEmailVerification,
+    required TResult Function(_SignedOut value) authSignedOut,
+  }) {
+    return sendEmailVerification(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_AuthCheckRequested value)? authCheckRequested,
+    TResult Function(_AuthReload value)? reload,
+    TResult Function(_SendEmailVerification value)? sendEmailVerification,
+    TResult Function(_SignedOut value)? authSignedOut,
+  }) {
+    return sendEmailVerification?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AuthCheckRequested value)? authCheckRequested,
+    TResult Function(_AuthReload value)? reload,
+    TResult Function(_SendEmailVerification value)? sendEmailVerification,
+    TResult Function(_SignedOut value)? authSignedOut,
+    required TResult orElse(),
+  }) {
+    if (sendEmailVerification != null) {
+      return sendEmailVerification(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SendEmailVerification implements AuthEvent {
+  const factory _SendEmailVerification() = _$_SendEmailVerification;
 }
 
 /// @nodoc
@@ -217,6 +479,8 @@ class _$_SignedOut implements _SignedOut {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() authCheckRequested,
+    required TResult Function() reload,
+    required TResult Function() sendEmailVerification,
     required TResult Function() authSignedOut,
   }) {
     return authSignedOut();
@@ -226,6 +490,8 @@ class _$_SignedOut implements _SignedOut {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authCheckRequested,
+    TResult Function()? reload,
+    TResult Function()? sendEmailVerification,
     TResult Function()? authSignedOut,
   }) {
     return authSignedOut?.call();
@@ -235,6 +501,8 @@ class _$_SignedOut implements _SignedOut {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authCheckRequested,
+    TResult Function()? reload,
+    TResult Function()? sendEmailVerification,
     TResult Function()? authSignedOut,
     required TResult orElse(),
   }) {
@@ -248,6 +516,9 @@ class _$_SignedOut implements _SignedOut {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_AuthCheckRequested value) authCheckRequested,
+    required TResult Function(_AuthReload value) reload,
+    required TResult Function(_SendEmailVerification value)
+        sendEmailVerification,
     required TResult Function(_SignedOut value) authSignedOut,
   }) {
     return authSignedOut(this);
@@ -257,6 +528,8 @@ class _$_SignedOut implements _SignedOut {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_AuthCheckRequested value)? authCheckRequested,
+    TResult Function(_AuthReload value)? reload,
+    TResult Function(_SendEmailVerification value)? sendEmailVerification,
     TResult Function(_SignedOut value)? authSignedOut,
   }) {
     return authSignedOut?.call(this);
@@ -266,6 +539,8 @@ class _$_SignedOut implements _SignedOut {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AuthCheckRequested value)? authCheckRequested,
+    TResult Function(_AuthReload value)? reload,
+    TResult Function(_SendEmailVerification value)? sendEmailVerification,
     TResult Function(_SignedOut value)? authSignedOut,
     required TResult orElse(),
   }) {
