@@ -106,6 +106,15 @@ flutter:
     - assets/images/background.png
     - assets/images/splash-background.png
     - assets/images/splash-background-1.png
+    - assets/images/blood-donation.png
+    - assets/images/empty.png
+    - assets/images/forgot-email.png
+    - assets/images/verify-email.png
+    - assets/images/check-email.png
+    - assets/images/onboarding-1.png
+    - assets/images/onboarding-2.png
+    - assets/images/onboarding-3.png
+    - assets/images/offline.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
