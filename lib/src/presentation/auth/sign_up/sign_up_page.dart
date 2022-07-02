@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jini/common/image_resources.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jini/src/application/auth/sign_up/sign_up_bloc.dart';
 import 'package:jini/src/presentation/auth/sign_up/widgets/sign_up_form.dart';
 import 'package:jini/src/presentation/core/j_back_button.dart';
 
@@ -27,47 +29,53 @@ class _SignUpPageState extends State<SignUpPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        leading: const JBackButton(),
-      ),
-      body: Stack(
-        alignment: Alignment.center,
-        children: [
-          Opacity(opacity: 0.2, child: Image.asset(ImageResources.background)),
-          Center(
-            child: SingleChildScrollView(
-              padding: EdgeInsets.symmetric(horizontal: 18.r),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Create Account',
-                    style: GoogleFonts.spaceGrotesk(
-                      fontSize: 40.sp,
-                      fontWeight: FontWeight.w600,
-                      letterSpacing: -1.sp,
-                      height: 1.2.sp,
+    return BlocListener<SignUpBloc, SignUpState>(
+      listener: (context, state) {
+        // TODO: implement listener
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          leading: const JBackButton(),
+        ),
+        body: Stack(
+          alignment: Alignment.center,
+          children: [
+            Opacity(
+                opacity: 0.2, child: Image.asset(ImageResources.background)),
+            Center(
+              child: SingleChildScrollView(
+                padding: EdgeInsets.symmetric(horizontal: 18.r),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Create Account',
+                      style: GoogleFonts.spaceGrotesk(
+                        fontSize: 40.sp,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: -1.sp,
+                        height: 1.2.sp,
+                      ),
                     ),
-                  ),
-                  Text(
-                    'Sign up to create your new account.',
-                    style: GoogleFonts.spaceGrotesk(
-                      color: Colors.white60,
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w400,
-                      letterSpacing: -0.5.sp,
+                    Text(
+                      'Sign up to create your new account.',
+                      style: GoogleFonts.spaceGrotesk(
+                        color: Colors.white60,
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.w400,
+                        letterSpacing: -0.5.sp,
+                      ),
                     ),
-                  ),
-                  20.verticalSpace,
-                  SignUpForm(),
-                ],
+                    20.verticalSpace,
+                    SignUpForm(),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
