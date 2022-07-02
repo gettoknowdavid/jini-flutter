@@ -48,6 +48,7 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
         password: state.password,
       );
 
+
       emit(state.copyWith(
         isSubmitting: false,
         authFailureOrSuccess: some(_r),
