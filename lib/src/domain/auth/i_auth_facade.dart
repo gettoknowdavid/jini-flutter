@@ -4,7 +4,7 @@ import 'package:jini/src/domain/auth/j_user.dart';
 import 'package:jini/src/domain/auth/value_objects.dart';
 
 abstract class IAuthFacade {
-  Future<Option<JUser>> getUser();
+  Future<Option<JUser?>> getUser();
 
   Future<Either<AuthFailure, Unit>> signUp({
     required IName name,
