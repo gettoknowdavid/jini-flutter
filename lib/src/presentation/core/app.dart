@@ -6,6 +6,7 @@ import 'package:jini/common/app_colors.dart';
 import 'package:jini/src/presentation/auth/sign_in/sign_in_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jini/src/presentation/auth/sign_up/sign_up_page.dart';
+import 'package:jini/src/presentation/auth/verification/verification_page.dart';
 import 'package:jini/src/presentation/core/layout/j_layout.dart';
 import 'package:jini/src/presentation/routes/j_router.dart';
 import 'package:jini/src/presentation/splash/splash_page.dart';
@@ -35,6 +36,7 @@ class JiniApp extends StatelessWidget {
             GetPage(name: JRoutes.signIn, page: () => SignInPage()),
             GetPage(name: JRoutes.signUp, page: () => SignUpPage()),
             GetPage(name: JRoutes.splash, page: () => SplashPage()),
+            GetPage(name: JRoutes.verification, page: () => VerificationPage()),
           ],
           theme: ThemeData(
             primarySwatch: AppColors.swatch,
