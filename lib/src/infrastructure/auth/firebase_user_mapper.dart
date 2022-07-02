@@ -8,29 +8,30 @@ import 'package:jini/src/infrastructure/auth/j_user_dtos.dart';
 
 @lazySingleton
 class FirebaseUserMapper {
-  JUser? toDomain(JUserDto? _) {
-    if (_ == null) {
+  JUser? toDomain(JUserDto? user) {
+    if (user == null) {
       return null;
     }
 
     return JUser(
-      uid: Uid.fromUniqueString(_.uid),
-      age: _.age == null ? IAge(0) : IAge(_.age!),
-      bloodGroup: IBloodGroup(_.bloodGroup),
-      city: _.city == null ? null : _.city,
-      eligible: _.eligible == null ? null : _.eligible,
-      email: IEmailAddress(_.email),
-      formComplete: _.formComplete == null ? null : _.formComplete,
-      gender: _.gender == null ? IGender(Gender.other) : IGender(_.gender!),
-      height: _.height == null ? IHeight(0) : IHeight(5.6),
-      initEdit: _.initEdit == null ? null : _.initEdit,
-      location: _.location == null
+      uid: Uid.fromUniqueString(user.uid),
+      age: user.age == null ? IAge(0) : IAge(user.age!),
+      bloodGroup: IBloodGroup(user.bloodGroup),
+      city: user.city == null ? null : user.city,
+      eligible: user.eligible == null ? null : user.eligible,
+      email: IEmailAddress(user.email),
+      formComplete: user.formComplete == null ? null : user.formComplete,
+      gender:
+          user.gender == null ? IGender(Gender.other) : IGender(user.gender!),
+      height: user.height == null ? IHeight(0) : IHeight(5.6),
+      initEdit: user.initEdit == null ? null : user.initEdit,
+      location: user.location == null
           ? null
-          : Geo(_.location!.latitude, _.location!.latitude),
-      name: IName(_.name),
-      phone: _.phone == null ? IPhone('0180285225') : IPhone(_.phone!),
-      userType: IUserType(_.userType),
-      weight: _.weight == null ? IWeight(0) : IWeight(_.weight!),
+          : Geo(user.location!.latitude, user.location!.latitude),
+      name: IName(user.name),
+      phone: user.phone == null ? IPhone('01860285225') : IPhone(user.phone!),
+      userType: IUserType(user.userType),
+      weight: user.weight == null ? IWeight(0) : IWeight(user.weight!),
     );
   }
 }
