@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jini/common/image_resources.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -31,7 +32,24 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     return BlocListener<SignUpBloc, SignUpState>(
       listener: (context, state) {
-        // TODO: implement listener
+        state.authFailureOrSuccess.fold(
+          () {},
+          (either) => either.fold(
+            (f) {
+              Get.snackbar(
+                'Sign Up Failed',
+                f.maybeMap(
+                  orElse: () => '',
+                  emailInUse: (_)=> 'The email you provided is already in use.',
+                  serverError: (_) => 'Looks like there\'s a server error.',
+                ),
+              );
+            },
+            (r) {
+              
+            },
+          ),
+        );
       },
       child: Scaffold(
         appBar: AppBar(
