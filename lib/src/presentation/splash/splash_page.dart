@@ -30,13 +30,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return BlocListener<AuthBloc, AuthState>(
-      listener: (context, state) {
-        state.map(
-          initial: (_) {},
-          authenticated: (_) => Get.offNamed(JRoutes.layout),
-          unauthenticated: (_) {},
-        );
-      },
+      listener: (context, state) {},
       child: Scaffold(
         backgroundColor: AppColors.primaryDark,
         body: Stack(
