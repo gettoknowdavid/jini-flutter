@@ -40,14 +40,13 @@ class _SignUpPageState extends State<SignUpPage> {
                 'Sign Up Failed',
                 f.maybeMap(
                   orElse: () => '',
-                  emailInUse: (_)=> 'The email you provided is already in use.',
+                  emailInUse: (_) =>
+                      'The email you provided is already in use.',
                   serverError: (_) => 'Looks like there\'s a server error.',
                 ),
               );
             },
-            (r) {
-              
-            },
+            (r) {},
           ),
         );
       },
@@ -60,7 +59,9 @@ class _SignUpPageState extends State<SignUpPage> {
           alignment: Alignment.center,
           children: [
             Opacity(
-                opacity: 0.2, child: Image.asset(ImageResources.background)),
+              opacity: 0.2,
+              child: Image.asset(ImageResources.background),
+            ),
             Center(
               child: SingleChildScrollView(
                 padding: EdgeInsets.symmetric(horizontal: 18.r),
