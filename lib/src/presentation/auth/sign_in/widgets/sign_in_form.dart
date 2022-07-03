@@ -38,8 +38,19 @@ class SignInForm extends StatelessWidget {
               );
             },
             (_) {
-              Get.offAllNamed(JRoutes.layout);
               authBloc.add(const AuthEvent.authCheckRequested());
+              authBloc.add(const AuthEvent.authCheckVerified());
+              // authBloc.state.mapOrNull(
+              //   authenticated: (_) => Get.offAllNamed(JRoutes.layout),
+              //   verified: (_) => Get.offAllNamed(JRoutes.layout),
+              //   unauthenticated: (_) => Get.offAllNamed(JRoutes.signIn),
+              //   unverified: (_) => Get.offAllNamed(JRoutes.verification),
+              // );
+              if (authBloc.state is Unverified) {
+                Get.offAllNamed(JRoutes.verification);
+              } else {
+                Get.offAllNamed(JRoutes.layout);
+              }
             },
           ),
         );
