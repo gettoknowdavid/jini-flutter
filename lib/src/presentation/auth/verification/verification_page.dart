@@ -30,7 +30,6 @@ class _VerificationPageState extends State<VerificationPage> {
 
   @override
   void dispose() {
-    timer?.cancel();
     super.dispose();
   }
 
