@@ -23,6 +23,7 @@ mixin _$AuthEvent {
     required TResult Function() checkDonorRequirementsMet,
     required TResult Function() sendVerifiedEmail,
     required TResult Function() authSignedOut,
+    required TResult Function() openMailApp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +33,7 @@ mixin _$AuthEvent {
     TResult Function()? checkDonorRequirementsMet,
     TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
+    TResult Function()? openMailApp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +43,7 @@ mixin _$AuthEvent {
     TResult Function()? checkDonorRequirementsMet,
     TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
+    TResult Function()? openMailApp,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -52,6 +55,7 @@ mixin _$AuthEvent {
         checkDonorRequirementsMet,
     required TResult Function(_SendVerifiedEmail value) sendVerifiedEmail,
     required TResult Function(_SignedOut value) authSignedOut,
+    required TResult Function(_OpenMailApp value) openMailApp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,6 +66,7 @@ mixin _$AuthEvent {
         checkDonorRequirementsMet,
     TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
+    TResult Function(_OpenMailApp value)? openMailApp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,6 +77,7 @@ mixin _$AuthEvent {
         checkDonorRequirementsMet,
     TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
+    TResult Function(_OpenMailApp value)? openMailApp,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -138,6 +144,7 @@ class _$_AuthCheckRequested implements _AuthCheckRequested {
     required TResult Function() checkDonorRequirementsMet,
     required TResult Function() sendVerifiedEmail,
     required TResult Function() authSignedOut,
+    required TResult Function() openMailApp,
   }) {
     return authCheckRequested();
   }
@@ -150,6 +157,7 @@ class _$_AuthCheckRequested implements _AuthCheckRequested {
     TResult Function()? checkDonorRequirementsMet,
     TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
+    TResult Function()? openMailApp,
   }) {
     return authCheckRequested?.call();
   }
@@ -162,6 +170,7 @@ class _$_AuthCheckRequested implements _AuthCheckRequested {
     TResult Function()? checkDonorRequirementsMet,
     TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
+    TResult Function()? openMailApp,
     required TResult orElse(),
   }) {
     if (authCheckRequested != null) {
@@ -179,6 +188,7 @@ class _$_AuthCheckRequested implements _AuthCheckRequested {
         checkDonorRequirementsMet,
     required TResult Function(_SendVerifiedEmail value) sendVerifiedEmail,
     required TResult Function(_SignedOut value) authSignedOut,
+    required TResult Function(_OpenMailApp value) openMailApp,
   }) {
     return authCheckRequested(this);
   }
@@ -192,6 +202,7 @@ class _$_AuthCheckRequested implements _AuthCheckRequested {
         checkDonorRequirementsMet,
     TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
+    TResult Function(_OpenMailApp value)? openMailApp,
   }) {
     return authCheckRequested?.call(this);
   }
@@ -205,6 +216,7 @@ class _$_AuthCheckRequested implements _AuthCheckRequested {
         checkDonorRequirementsMet,
     TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
+    TResult Function(_OpenMailApp value)? openMailApp,
     required TResult orElse(),
   }) {
     if (authCheckRequested != null) {
@@ -264,6 +276,7 @@ class _$_AuthCheckVerified implements _AuthCheckVerified {
     required TResult Function() checkDonorRequirementsMet,
     required TResult Function() sendVerifiedEmail,
     required TResult Function() authSignedOut,
+    required TResult Function() openMailApp,
   }) {
     return authCheckVerified();
   }
@@ -276,6 +289,7 @@ class _$_AuthCheckVerified implements _AuthCheckVerified {
     TResult Function()? checkDonorRequirementsMet,
     TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
+    TResult Function()? openMailApp,
   }) {
     return authCheckVerified?.call();
   }
@@ -288,6 +302,7 @@ class _$_AuthCheckVerified implements _AuthCheckVerified {
     TResult Function()? checkDonorRequirementsMet,
     TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
+    TResult Function()? openMailApp,
     required TResult orElse(),
   }) {
     if (authCheckVerified != null) {
@@ -305,6 +320,7 @@ class _$_AuthCheckVerified implements _AuthCheckVerified {
         checkDonorRequirementsMet,
     required TResult Function(_SendVerifiedEmail value) sendVerifiedEmail,
     required TResult Function(_SignedOut value) authSignedOut,
+    required TResult Function(_OpenMailApp value) openMailApp,
   }) {
     return authCheckVerified(this);
   }
@@ -318,6 +334,7 @@ class _$_AuthCheckVerified implements _AuthCheckVerified {
         checkDonorRequirementsMet,
     TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
+    TResult Function(_OpenMailApp value)? openMailApp,
   }) {
     return authCheckVerified?.call(this);
   }
@@ -331,6 +348,7 @@ class _$_AuthCheckVerified implements _AuthCheckVerified {
         checkDonorRequirementsMet,
     TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
+    TResult Function(_OpenMailApp value)? openMailApp,
     required TResult orElse(),
   }) {
     if (authCheckVerified != null) {
@@ -394,6 +412,7 @@ class _$_CheckDonorRequirementsMet implements _CheckDonorRequirementsMet {
     required TResult Function() checkDonorRequirementsMet,
     required TResult Function() sendVerifiedEmail,
     required TResult Function() authSignedOut,
+    required TResult Function() openMailApp,
   }) {
     return checkDonorRequirementsMet();
   }
@@ -406,6 +425,7 @@ class _$_CheckDonorRequirementsMet implements _CheckDonorRequirementsMet {
     TResult Function()? checkDonorRequirementsMet,
     TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
+    TResult Function()? openMailApp,
   }) {
     return checkDonorRequirementsMet?.call();
   }
@@ -418,6 +438,7 @@ class _$_CheckDonorRequirementsMet implements _CheckDonorRequirementsMet {
     TResult Function()? checkDonorRequirementsMet,
     TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
+    TResult Function()? openMailApp,
     required TResult orElse(),
   }) {
     if (checkDonorRequirementsMet != null) {
@@ -435,6 +456,7 @@ class _$_CheckDonorRequirementsMet implements _CheckDonorRequirementsMet {
         checkDonorRequirementsMet,
     required TResult Function(_SendVerifiedEmail value) sendVerifiedEmail,
     required TResult Function(_SignedOut value) authSignedOut,
+    required TResult Function(_OpenMailApp value) openMailApp,
   }) {
     return checkDonorRequirementsMet(this);
   }
@@ -448,6 +470,7 @@ class _$_CheckDonorRequirementsMet implements _CheckDonorRequirementsMet {
         checkDonorRequirementsMet,
     TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
+    TResult Function(_OpenMailApp value)? openMailApp,
   }) {
     return checkDonorRequirementsMet?.call(this);
   }
@@ -461,6 +484,7 @@ class _$_CheckDonorRequirementsMet implements _CheckDonorRequirementsMet {
         checkDonorRequirementsMet,
     TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
+    TResult Function(_OpenMailApp value)? openMailApp,
     required TResult orElse(),
   }) {
     if (checkDonorRequirementsMet != null) {
@@ -520,6 +544,7 @@ class _$_SendVerifiedEmail implements _SendVerifiedEmail {
     required TResult Function() checkDonorRequirementsMet,
     required TResult Function() sendVerifiedEmail,
     required TResult Function() authSignedOut,
+    required TResult Function() openMailApp,
   }) {
     return sendVerifiedEmail();
   }
@@ -532,6 +557,7 @@ class _$_SendVerifiedEmail implements _SendVerifiedEmail {
     TResult Function()? checkDonorRequirementsMet,
     TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
+    TResult Function()? openMailApp,
   }) {
     return sendVerifiedEmail?.call();
   }
@@ -544,6 +570,7 @@ class _$_SendVerifiedEmail implements _SendVerifiedEmail {
     TResult Function()? checkDonorRequirementsMet,
     TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
+    TResult Function()? openMailApp,
     required TResult orElse(),
   }) {
     if (sendVerifiedEmail != null) {
@@ -561,6 +588,7 @@ class _$_SendVerifiedEmail implements _SendVerifiedEmail {
         checkDonorRequirementsMet,
     required TResult Function(_SendVerifiedEmail value) sendVerifiedEmail,
     required TResult Function(_SignedOut value) authSignedOut,
+    required TResult Function(_OpenMailApp value) openMailApp,
   }) {
     return sendVerifiedEmail(this);
   }
@@ -574,6 +602,7 @@ class _$_SendVerifiedEmail implements _SendVerifiedEmail {
         checkDonorRequirementsMet,
     TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
+    TResult Function(_OpenMailApp value)? openMailApp,
   }) {
     return sendVerifiedEmail?.call(this);
   }
@@ -587,6 +616,7 @@ class _$_SendVerifiedEmail implements _SendVerifiedEmail {
         checkDonorRequirementsMet,
     TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
+    TResult Function(_OpenMailApp value)? openMailApp,
     required TResult orElse(),
   }) {
     if (sendVerifiedEmail != null) {
@@ -645,6 +675,7 @@ class _$_SignedOut implements _SignedOut {
     required TResult Function() checkDonorRequirementsMet,
     required TResult Function() sendVerifiedEmail,
     required TResult Function() authSignedOut,
+    required TResult Function() openMailApp,
   }) {
     return authSignedOut();
   }
@@ -657,6 +688,7 @@ class _$_SignedOut implements _SignedOut {
     TResult Function()? checkDonorRequirementsMet,
     TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
+    TResult Function()? openMailApp,
   }) {
     return authSignedOut?.call();
   }
@@ -669,6 +701,7 @@ class _$_SignedOut implements _SignedOut {
     TResult Function()? checkDonorRequirementsMet,
     TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
+    TResult Function()? openMailApp,
     required TResult orElse(),
   }) {
     if (authSignedOut != null) {
@@ -686,6 +719,7 @@ class _$_SignedOut implements _SignedOut {
         checkDonorRequirementsMet,
     required TResult Function(_SendVerifiedEmail value) sendVerifiedEmail,
     required TResult Function(_SignedOut value) authSignedOut,
+    required TResult Function(_OpenMailApp value) openMailApp,
   }) {
     return authSignedOut(this);
   }
@@ -699,6 +733,7 @@ class _$_SignedOut implements _SignedOut {
         checkDonorRequirementsMet,
     TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
+    TResult Function(_OpenMailApp value)? openMailApp,
   }) {
     return authSignedOut?.call(this);
   }
@@ -712,6 +747,7 @@ class _$_SignedOut implements _SignedOut {
         checkDonorRequirementsMet,
     TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
+    TResult Function(_OpenMailApp value)? openMailApp,
     required TResult orElse(),
   }) {
     if (authSignedOut != null) {
@@ -723,6 +759,137 @@ class _$_SignedOut implements _SignedOut {
 
 abstract class _SignedOut implements AuthEvent {
   const factory _SignedOut() = _$_SignedOut;
+}
+
+/// @nodoc
+abstract class _$$_OpenMailAppCopyWith<$Res> {
+  factory _$$_OpenMailAppCopyWith(
+          _$_OpenMailApp value, $Res Function(_$_OpenMailApp) then) =
+      __$$_OpenMailAppCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_OpenMailAppCopyWithImpl<$Res> extends _$AuthEventCopyWithImpl<$Res>
+    implements _$$_OpenMailAppCopyWith<$Res> {
+  __$$_OpenMailAppCopyWithImpl(
+      _$_OpenMailApp _value, $Res Function(_$_OpenMailApp) _then)
+      : super(_value, (v) => _then(v as _$_OpenMailApp));
+
+  @override
+  _$_OpenMailApp get _value => super._value as _$_OpenMailApp;
+}
+
+/// @nodoc
+
+class _$_OpenMailApp implements _OpenMailApp {
+  const _$_OpenMailApp();
+
+  @override
+  String toString() {
+    return 'AuthEvent.openMailApp()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_OpenMailApp);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() authCheckRequested,
+    required TResult Function() authCheckVerified,
+    required TResult Function() checkDonorRequirementsMet,
+    required TResult Function() sendVerifiedEmail,
+    required TResult Function() authSignedOut,
+    required TResult Function() openMailApp,
+  }) {
+    return openMailApp();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? authCheckRequested,
+    TResult Function()? authCheckVerified,
+    TResult Function()? checkDonorRequirementsMet,
+    TResult Function()? sendVerifiedEmail,
+    TResult Function()? authSignedOut,
+    TResult Function()? openMailApp,
+  }) {
+    return openMailApp?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? authCheckRequested,
+    TResult Function()? authCheckVerified,
+    TResult Function()? checkDonorRequirementsMet,
+    TResult Function()? sendVerifiedEmail,
+    TResult Function()? authSignedOut,
+    TResult Function()? openMailApp,
+    required TResult orElse(),
+  }) {
+    if (openMailApp != null) {
+      return openMailApp();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AuthCheckRequested value) authCheckRequested,
+    required TResult Function(_AuthCheckVerified value) authCheckVerified,
+    required TResult Function(_CheckDonorRequirementsMet value)
+        checkDonorRequirementsMet,
+    required TResult Function(_SendVerifiedEmail value) sendVerifiedEmail,
+    required TResult Function(_SignedOut value) authSignedOut,
+    required TResult Function(_OpenMailApp value) openMailApp,
+  }) {
+    return openMailApp(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_AuthCheckRequested value)? authCheckRequested,
+    TResult Function(_AuthCheckVerified value)? authCheckVerified,
+    TResult Function(_CheckDonorRequirementsMet value)?
+        checkDonorRequirementsMet,
+    TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
+    TResult Function(_SignedOut value)? authSignedOut,
+    TResult Function(_OpenMailApp value)? openMailApp,
+  }) {
+    return openMailApp?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AuthCheckRequested value)? authCheckRequested,
+    TResult Function(_AuthCheckVerified value)? authCheckVerified,
+    TResult Function(_CheckDonorRequirementsMet value)?
+        checkDonorRequirementsMet,
+    TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
+    TResult Function(_SignedOut value)? authSignedOut,
+    TResult Function(_OpenMailApp value)? openMailApp,
+    required TResult orElse(),
+  }) {
+    if (openMailApp != null) {
+      return openMailApp(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OpenMailApp implements AuthEvent {
+  const factory _OpenMailApp() = _$_OpenMailApp;
 }
 
 /// @nodoc
