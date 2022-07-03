@@ -8,9 +8,9 @@ import 'package:jini/domain/core/blood_group.dart';
 import 'package:jini/domain/core/gender.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
 import 'package:jini/presentation/core/widgets/j_dropdown.dart';
+import 'package:jini/presentation/core/widgets/j_snackbars.dart';
 import 'package:jini/presentation/core/widgets/j_text_form_field.dart';
 import 'package:jini/presentation/routes/j_router.dart';
-import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class SignUpForm extends StatelessWidget {
   const SignUpForm({Key? key}) : super(key: key);
@@ -27,16 +27,13 @@ class SignUpForm extends StatelessWidget {
           () => () {},
           (either) => either.fold(
             (f) {
-              Get.snackbar(
-                'Sign Up Error',
-                f.maybeMap(
+              JSnackbars.errorSnackbar(
+                title: 'Sign Up Error',
+                message: f.maybeMap(
                   orElse: () => '',
                   emailInUse: (_) => 'Email is already in use.',
                   serverError: (_) => 'Looks like there\'s a server error.',
                 ),
-                icon: Icon(PhosphorIcons.warningCircleBold),
-                snackPosition: SnackPosition.BOTTOM,
-                backgroundColor: theme.primaryColor,
               );
             },
             (r) {
