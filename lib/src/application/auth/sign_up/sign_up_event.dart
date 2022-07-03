@@ -13,8 +13,5 @@ class SignUpEvent with _$SignUpEvent {
   const factory SignUpEvent.bloodGroupChanged(BloodGroup bloodGroup) =
       BloodGroupChanged;
 
-  const factory SignUpEvent.userTypeChanged(UserType userType) =
-      UserTypeChanged;
-
   const factory SignUpEvent.signUpPressed() = SignUpPressed;
 }
