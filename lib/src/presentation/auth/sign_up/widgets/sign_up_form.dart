@@ -8,7 +8,6 @@ import 'package:jini/src/application/auth/auth_bloc.dart';
 import 'package:jini/src/application/auth/sign_up/sign_up_bloc.dart';
 import 'package:jini/src/domain/core/blood_group.dart';
 import 'package:jini/src/domain/core/gender.dart';
-import 'package:jini/src/domain/core/user_type.dart';
 import 'package:jini/src/presentation/core/j_button.dart';
 import 'package:jini/src/presentation/core/j_text_form_field.dart';
 import 'package:jini/src/presentation/routes/j_router.dart';
@@ -133,27 +132,6 @@ class SignUpForm extends StatelessWidget {
                   return DropdownMenuItem<BloodGroup>(
                     value: bloodGroup,
                     child: Text(bloodGroup.value),
-                  );
-                }).toList(),
-              ),
-              12.verticalSpace,
-              JDropdown<UserType>(
-                hint: 'Register as a',
-                value: state.userType.getOrCrash(),
-                onChanged: (e) {
-                  bloc.add(SignUpEvent.userTypeChanged(e!));
-                },
-                validator: (_) => bloc.state.userType.value.fold(
-                  (f) => f.maybeMap(
-                    orElse: () => null,
-                    nullValue: (_) => 'Select your preferred account type',
-                  ),
-                  (_) => null,
-                ),
-                items: UserType.values.map((userType) {
-                  return DropdownMenuItem<UserType>(
-                    value: userType,
-                    child: Text(userType.value),
                   );
                 }).toList(),
               ),
