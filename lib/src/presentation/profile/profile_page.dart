@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jini/src/application/auth/auth_bloc.dart';
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({Key? key, required this.title}) : super(key: key);
+  const ProfilePage({Key? key, this.title = 'Jini App'}) : super(key: key);
   final String title;
 
   @override
