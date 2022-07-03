@@ -766,39 +766,39 @@ mixin _$AuthState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Authenticated value) authenticated,
-    required TResult Function(_Unauthenticated value) unauthenticated,
-    required TResult Function(_Verified value) verified,
-    required TResult Function(_Unverified value) unverified,
-    required TResult Function(_AwaitingVerified value) awaitingVerified,
-    required TResult Function(_DonorFormCompleted value) donorFormCompleted,
-    required TResult Function(_DonorFormNotCompleted value)
+    required TResult Function(Initial value) initial,
+    required TResult Function(Authenticated value) authenticated,
+    required TResult Function(Unauthenticated value) unauthenticated,
+    required TResult Function(Verified value) verified,
+    required TResult Function(Unverified value) unverified,
+    required TResult Function(AwaitingVerified value) awaitingVerified,
+    required TResult Function(DonorFormCompleted value) donorFormCompleted,
+    required TResult Function(DonorFormNotCompleted value)
         donorFormNotCompleted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unauthenticated value)? unauthenticated,
-    TResult Function(_Verified value)? verified,
-    TResult Function(_Unverified value)? unverified,
-    TResult Function(_AwaitingVerified value)? awaitingVerified,
-    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
-    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
+    TResult Function(Initial value)? initial,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(Verified value)? verified,
+    TResult Function(Unverified value)? unverified,
+    TResult Function(AwaitingVerified value)? awaitingVerified,
+    TResult Function(DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(DonorFormNotCompleted value)? donorFormNotCompleted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unauthenticated value)? unauthenticated,
-    TResult Function(_Verified value)? verified,
-    TResult Function(_Unverified value)? unverified,
-    TResult Function(_AwaitingVerified value)? awaitingVerified,
-    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
-    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
+    TResult Function(Initial value)? initial,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(Verified value)? verified,
+    TResult Function(Unverified value)? unverified,
+    TResult Function(AwaitingVerified value)? awaitingVerified,
+    TResult Function(DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(DonorFormNotCompleted value)? donorFormNotCompleted,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -820,26 +820,25 @@ class _$AuthStateCopyWithImpl<$Res> implements $AuthStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$InitialCopyWith<$Res> {
+  factory _$$InitialCopyWith(_$Initial value, $Res Function(_$Initial) then) =
+      __$$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, (v) => _then(v as _$_Initial));
+class __$$InitialCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
+    implements _$$InitialCopyWith<$Res> {
+  __$$InitialCopyWithImpl(_$Initial _value, $Res Function(_$Initial) _then)
+      : super(_value, (v) => _then(v as _$Initial));
 
   @override
-  _$_Initial get _value => super._value as _$_Initial;
+  _$Initial get _value => super._value as _$Initial;
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$Initial implements Initial {
+  const _$Initial();
 
   @override
   String toString() {
@@ -849,7 +848,7 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType && other is _$Initial);
   }
 
   @override
@@ -907,14 +906,14 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Authenticated value) authenticated,
-    required TResult Function(_Unauthenticated value) unauthenticated,
-    required TResult Function(_Verified value) verified,
-    required TResult Function(_Unverified value) unverified,
-    required TResult Function(_AwaitingVerified value) awaitingVerified,
-    required TResult Function(_DonorFormCompleted value) donorFormCompleted,
-    required TResult Function(_DonorFormNotCompleted value)
+    required TResult Function(Initial value) initial,
+    required TResult Function(Authenticated value) authenticated,
+    required TResult Function(Unauthenticated value) unauthenticated,
+    required TResult Function(Verified value) verified,
+    required TResult Function(Unverified value) unverified,
+    required TResult Function(AwaitingVerified value) awaitingVerified,
+    required TResult Function(DonorFormCompleted value) donorFormCompleted,
+    required TResult Function(DonorFormNotCompleted value)
         donorFormNotCompleted,
   }) {
     return initial(this);
@@ -923,14 +922,14 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unauthenticated value)? unauthenticated,
-    TResult Function(_Verified value)? verified,
-    TResult Function(_Unverified value)? unverified,
-    TResult Function(_AwaitingVerified value)? awaitingVerified,
-    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
-    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
+    TResult Function(Initial value)? initial,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(Verified value)? verified,
+    TResult Function(Unverified value)? unverified,
+    TResult Function(AwaitingVerified value)? awaitingVerified,
+    TResult Function(DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(DonorFormNotCompleted value)? donorFormNotCompleted,
   }) {
     return initial?.call(this);
   }
@@ -938,14 +937,14 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unauthenticated value)? unauthenticated,
-    TResult Function(_Verified value)? verified,
-    TResult Function(_Unverified value)? unverified,
-    TResult Function(_AwaitingVerified value)? awaitingVerified,
-    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
-    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
+    TResult Function(Initial value)? initial,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(Verified value)? verified,
+    TResult Function(Unverified value)? unverified,
+    TResult Function(AwaitingVerified value)? awaitingVerified,
+    TResult Function(DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(DonorFormNotCompleted value)? donorFormNotCompleted,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -955,32 +954,32 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements AuthState {
-  const factory _Initial() = _$_Initial;
+abstract class Initial implements AuthState {
+  const factory Initial() = _$Initial;
 }
 
 /// @nodoc
-abstract class _$$_AuthenticatedCopyWith<$Res> {
-  factory _$$_AuthenticatedCopyWith(
-          _$_Authenticated value, $Res Function(_$_Authenticated) then) =
-      __$$_AuthenticatedCopyWithImpl<$Res>;
+abstract class _$$AuthenticatedCopyWith<$Res> {
+  factory _$$AuthenticatedCopyWith(
+          _$Authenticated value, $Res Function(_$Authenticated) then) =
+      __$$AuthenticatedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_AuthenticatedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
-    implements _$$_AuthenticatedCopyWith<$Res> {
-  __$$_AuthenticatedCopyWithImpl(
-      _$_Authenticated _value, $Res Function(_$_Authenticated) _then)
-      : super(_value, (v) => _then(v as _$_Authenticated));
+class __$$AuthenticatedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
+    implements _$$AuthenticatedCopyWith<$Res> {
+  __$$AuthenticatedCopyWithImpl(
+      _$Authenticated _value, $Res Function(_$Authenticated) _then)
+      : super(_value, (v) => _then(v as _$Authenticated));
 
   @override
-  _$_Authenticated get _value => super._value as _$_Authenticated;
+  _$Authenticated get _value => super._value as _$Authenticated;
 }
 
 /// @nodoc
 
-class _$_Authenticated implements _Authenticated {
-  const _$_Authenticated();
+class _$Authenticated implements Authenticated {
+  const _$Authenticated();
 
   @override
   String toString() {
@@ -990,7 +989,7 @@ class _$_Authenticated implements _Authenticated {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Authenticated);
+        (other.runtimeType == runtimeType && other is _$Authenticated);
   }
 
   @override
@@ -1048,14 +1047,14 @@ class _$_Authenticated implements _Authenticated {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Authenticated value) authenticated,
-    required TResult Function(_Unauthenticated value) unauthenticated,
-    required TResult Function(_Verified value) verified,
-    required TResult Function(_Unverified value) unverified,
-    required TResult Function(_AwaitingVerified value) awaitingVerified,
-    required TResult Function(_DonorFormCompleted value) donorFormCompleted,
-    required TResult Function(_DonorFormNotCompleted value)
+    required TResult Function(Initial value) initial,
+    required TResult Function(Authenticated value) authenticated,
+    required TResult Function(Unauthenticated value) unauthenticated,
+    required TResult Function(Verified value) verified,
+    required TResult Function(Unverified value) unverified,
+    required TResult Function(AwaitingVerified value) awaitingVerified,
+    required TResult Function(DonorFormCompleted value) donorFormCompleted,
+    required TResult Function(DonorFormNotCompleted value)
         donorFormNotCompleted,
   }) {
     return authenticated(this);
@@ -1064,14 +1063,14 @@ class _$_Authenticated implements _Authenticated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unauthenticated value)? unauthenticated,
-    TResult Function(_Verified value)? verified,
-    TResult Function(_Unverified value)? unverified,
-    TResult Function(_AwaitingVerified value)? awaitingVerified,
-    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
-    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
+    TResult Function(Initial value)? initial,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(Verified value)? verified,
+    TResult Function(Unverified value)? unverified,
+    TResult Function(AwaitingVerified value)? awaitingVerified,
+    TResult Function(DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(DonorFormNotCompleted value)? donorFormNotCompleted,
   }) {
     return authenticated?.call(this);
   }
@@ -1079,14 +1078,14 @@ class _$_Authenticated implements _Authenticated {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unauthenticated value)? unauthenticated,
-    TResult Function(_Verified value)? verified,
-    TResult Function(_Unverified value)? unverified,
-    TResult Function(_AwaitingVerified value)? awaitingVerified,
-    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
-    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
+    TResult Function(Initial value)? initial,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(Verified value)? verified,
+    TResult Function(Unverified value)? unverified,
+    TResult Function(AwaitingVerified value)? awaitingVerified,
+    TResult Function(DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(DonorFormNotCompleted value)? donorFormNotCompleted,
     required TResult orElse(),
   }) {
     if (authenticated != null) {
@@ -1096,33 +1095,33 @@ class _$_Authenticated implements _Authenticated {
   }
 }
 
-abstract class _Authenticated implements AuthState {
-  const factory _Authenticated() = _$_Authenticated;
+abstract class Authenticated implements AuthState {
+  const factory Authenticated() = _$Authenticated;
 }
 
 /// @nodoc
-abstract class _$$_UnauthenticatedCopyWith<$Res> {
-  factory _$$_UnauthenticatedCopyWith(
-          _$_Unauthenticated value, $Res Function(_$_Unauthenticated) then) =
-      __$$_UnauthenticatedCopyWithImpl<$Res>;
+abstract class _$$UnauthenticatedCopyWith<$Res> {
+  factory _$$UnauthenticatedCopyWith(
+          _$Unauthenticated value, $Res Function(_$Unauthenticated) then) =
+      __$$UnauthenticatedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_UnauthenticatedCopyWithImpl<$Res>
+class __$$UnauthenticatedCopyWithImpl<$Res>
     extends _$AuthStateCopyWithImpl<$Res>
-    implements _$$_UnauthenticatedCopyWith<$Res> {
-  __$$_UnauthenticatedCopyWithImpl(
-      _$_Unauthenticated _value, $Res Function(_$_Unauthenticated) _then)
-      : super(_value, (v) => _then(v as _$_Unauthenticated));
+    implements _$$UnauthenticatedCopyWith<$Res> {
+  __$$UnauthenticatedCopyWithImpl(
+      _$Unauthenticated _value, $Res Function(_$Unauthenticated) _then)
+      : super(_value, (v) => _then(v as _$Unauthenticated));
 
   @override
-  _$_Unauthenticated get _value => super._value as _$_Unauthenticated;
+  _$Unauthenticated get _value => super._value as _$Unauthenticated;
 }
 
 /// @nodoc
 
-class _$_Unauthenticated implements _Unauthenticated {
-  const _$_Unauthenticated();
+class _$Unauthenticated implements Unauthenticated {
+  const _$Unauthenticated();
 
   @override
   String toString() {
@@ -1132,7 +1131,7 @@ class _$_Unauthenticated implements _Unauthenticated {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Unauthenticated);
+        (other.runtimeType == runtimeType && other is _$Unauthenticated);
   }
 
   @override
@@ -1190,14 +1189,14 @@ class _$_Unauthenticated implements _Unauthenticated {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Authenticated value) authenticated,
-    required TResult Function(_Unauthenticated value) unauthenticated,
-    required TResult Function(_Verified value) verified,
-    required TResult Function(_Unverified value) unverified,
-    required TResult Function(_AwaitingVerified value) awaitingVerified,
-    required TResult Function(_DonorFormCompleted value) donorFormCompleted,
-    required TResult Function(_DonorFormNotCompleted value)
+    required TResult Function(Initial value) initial,
+    required TResult Function(Authenticated value) authenticated,
+    required TResult Function(Unauthenticated value) unauthenticated,
+    required TResult Function(Verified value) verified,
+    required TResult Function(Unverified value) unverified,
+    required TResult Function(AwaitingVerified value) awaitingVerified,
+    required TResult Function(DonorFormCompleted value) donorFormCompleted,
+    required TResult Function(DonorFormNotCompleted value)
         donorFormNotCompleted,
   }) {
     return unauthenticated(this);
@@ -1206,14 +1205,14 @@ class _$_Unauthenticated implements _Unauthenticated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unauthenticated value)? unauthenticated,
-    TResult Function(_Verified value)? verified,
-    TResult Function(_Unverified value)? unverified,
-    TResult Function(_AwaitingVerified value)? awaitingVerified,
-    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
-    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
+    TResult Function(Initial value)? initial,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(Verified value)? verified,
+    TResult Function(Unverified value)? unverified,
+    TResult Function(AwaitingVerified value)? awaitingVerified,
+    TResult Function(DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(DonorFormNotCompleted value)? donorFormNotCompleted,
   }) {
     return unauthenticated?.call(this);
   }
@@ -1221,14 +1220,14 @@ class _$_Unauthenticated implements _Unauthenticated {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unauthenticated value)? unauthenticated,
-    TResult Function(_Verified value)? verified,
-    TResult Function(_Unverified value)? unverified,
-    TResult Function(_AwaitingVerified value)? awaitingVerified,
-    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
-    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
+    TResult Function(Initial value)? initial,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(Verified value)? verified,
+    TResult Function(Unverified value)? unverified,
+    TResult Function(AwaitingVerified value)? awaitingVerified,
+    TResult Function(DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(DonorFormNotCompleted value)? donorFormNotCompleted,
     required TResult orElse(),
   }) {
     if (unauthenticated != null) {
@@ -1238,32 +1237,31 @@ class _$_Unauthenticated implements _Unauthenticated {
   }
 }
 
-abstract class _Unauthenticated implements AuthState {
-  const factory _Unauthenticated() = _$_Unauthenticated;
+abstract class Unauthenticated implements AuthState {
+  const factory Unauthenticated() = _$Unauthenticated;
 }
 
 /// @nodoc
-abstract class _$$_VerifiedCopyWith<$Res> {
-  factory _$$_VerifiedCopyWith(
-          _$_Verified value, $Res Function(_$_Verified) then) =
-      __$$_VerifiedCopyWithImpl<$Res>;
+abstract class _$$VerifiedCopyWith<$Res> {
+  factory _$$VerifiedCopyWith(
+          _$Verified value, $Res Function(_$Verified) then) =
+      __$$VerifiedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_VerifiedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
-    implements _$$_VerifiedCopyWith<$Res> {
-  __$$_VerifiedCopyWithImpl(
-      _$_Verified _value, $Res Function(_$_Verified) _then)
-      : super(_value, (v) => _then(v as _$_Verified));
+class __$$VerifiedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
+    implements _$$VerifiedCopyWith<$Res> {
+  __$$VerifiedCopyWithImpl(_$Verified _value, $Res Function(_$Verified) _then)
+      : super(_value, (v) => _then(v as _$Verified));
 
   @override
-  _$_Verified get _value => super._value as _$_Verified;
+  _$Verified get _value => super._value as _$Verified;
 }
 
 /// @nodoc
 
-class _$_Verified implements _Verified {
-  const _$_Verified();
+class _$Verified implements Verified {
+  const _$Verified();
 
   @override
   String toString() {
@@ -1273,7 +1271,7 @@ class _$_Verified implements _Verified {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Verified);
+        (other.runtimeType == runtimeType && other is _$Verified);
   }
 
   @override
@@ -1331,14 +1329,14 @@ class _$_Verified implements _Verified {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Authenticated value) authenticated,
-    required TResult Function(_Unauthenticated value) unauthenticated,
-    required TResult Function(_Verified value) verified,
-    required TResult Function(_Unverified value) unverified,
-    required TResult Function(_AwaitingVerified value) awaitingVerified,
-    required TResult Function(_DonorFormCompleted value) donorFormCompleted,
-    required TResult Function(_DonorFormNotCompleted value)
+    required TResult Function(Initial value) initial,
+    required TResult Function(Authenticated value) authenticated,
+    required TResult Function(Unauthenticated value) unauthenticated,
+    required TResult Function(Verified value) verified,
+    required TResult Function(Unverified value) unverified,
+    required TResult Function(AwaitingVerified value) awaitingVerified,
+    required TResult Function(DonorFormCompleted value) donorFormCompleted,
+    required TResult Function(DonorFormNotCompleted value)
         donorFormNotCompleted,
   }) {
     return verified(this);
@@ -1347,14 +1345,14 @@ class _$_Verified implements _Verified {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unauthenticated value)? unauthenticated,
-    TResult Function(_Verified value)? verified,
-    TResult Function(_Unverified value)? unverified,
-    TResult Function(_AwaitingVerified value)? awaitingVerified,
-    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
-    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
+    TResult Function(Initial value)? initial,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(Verified value)? verified,
+    TResult Function(Unverified value)? unverified,
+    TResult Function(AwaitingVerified value)? awaitingVerified,
+    TResult Function(DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(DonorFormNotCompleted value)? donorFormNotCompleted,
   }) {
     return verified?.call(this);
   }
@@ -1362,14 +1360,14 @@ class _$_Verified implements _Verified {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unauthenticated value)? unauthenticated,
-    TResult Function(_Verified value)? verified,
-    TResult Function(_Unverified value)? unverified,
-    TResult Function(_AwaitingVerified value)? awaitingVerified,
-    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
-    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
+    TResult Function(Initial value)? initial,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(Verified value)? verified,
+    TResult Function(Unverified value)? unverified,
+    TResult Function(AwaitingVerified value)? awaitingVerified,
+    TResult Function(DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(DonorFormNotCompleted value)? donorFormNotCompleted,
     required TResult orElse(),
   }) {
     if (verified != null) {
@@ -1379,32 +1377,32 @@ class _$_Verified implements _Verified {
   }
 }
 
-abstract class _Verified implements AuthState {
-  const factory _Verified() = _$_Verified;
+abstract class Verified implements AuthState {
+  const factory Verified() = _$Verified;
 }
 
 /// @nodoc
-abstract class _$$_UnverifiedCopyWith<$Res> {
-  factory _$$_UnverifiedCopyWith(
-          _$_Unverified value, $Res Function(_$_Unverified) then) =
-      __$$_UnverifiedCopyWithImpl<$Res>;
+abstract class _$$UnverifiedCopyWith<$Res> {
+  factory _$$UnverifiedCopyWith(
+          _$Unverified value, $Res Function(_$Unverified) then) =
+      __$$UnverifiedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_UnverifiedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
-    implements _$$_UnverifiedCopyWith<$Res> {
-  __$$_UnverifiedCopyWithImpl(
-      _$_Unverified _value, $Res Function(_$_Unverified) _then)
-      : super(_value, (v) => _then(v as _$_Unverified));
+class __$$UnverifiedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
+    implements _$$UnverifiedCopyWith<$Res> {
+  __$$UnverifiedCopyWithImpl(
+      _$Unverified _value, $Res Function(_$Unverified) _then)
+      : super(_value, (v) => _then(v as _$Unverified));
 
   @override
-  _$_Unverified get _value => super._value as _$_Unverified;
+  _$Unverified get _value => super._value as _$Unverified;
 }
 
 /// @nodoc
 
-class _$_Unverified implements _Unverified {
-  const _$_Unverified();
+class _$Unverified implements Unverified {
+  const _$Unverified();
 
   @override
   String toString() {
@@ -1414,7 +1412,7 @@ class _$_Unverified implements _Unverified {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Unverified);
+        (other.runtimeType == runtimeType && other is _$Unverified);
   }
 
   @override
@@ -1472,14 +1470,14 @@ class _$_Unverified implements _Unverified {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Authenticated value) authenticated,
-    required TResult Function(_Unauthenticated value) unauthenticated,
-    required TResult Function(_Verified value) verified,
-    required TResult Function(_Unverified value) unverified,
-    required TResult Function(_AwaitingVerified value) awaitingVerified,
-    required TResult Function(_DonorFormCompleted value) donorFormCompleted,
-    required TResult Function(_DonorFormNotCompleted value)
+    required TResult Function(Initial value) initial,
+    required TResult Function(Authenticated value) authenticated,
+    required TResult Function(Unauthenticated value) unauthenticated,
+    required TResult Function(Verified value) verified,
+    required TResult Function(Unverified value) unverified,
+    required TResult Function(AwaitingVerified value) awaitingVerified,
+    required TResult Function(DonorFormCompleted value) donorFormCompleted,
+    required TResult Function(DonorFormNotCompleted value)
         donorFormNotCompleted,
   }) {
     return unverified(this);
@@ -1488,14 +1486,14 @@ class _$_Unverified implements _Unverified {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unauthenticated value)? unauthenticated,
-    TResult Function(_Verified value)? verified,
-    TResult Function(_Unverified value)? unverified,
-    TResult Function(_AwaitingVerified value)? awaitingVerified,
-    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
-    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
+    TResult Function(Initial value)? initial,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(Verified value)? verified,
+    TResult Function(Unverified value)? unverified,
+    TResult Function(AwaitingVerified value)? awaitingVerified,
+    TResult Function(DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(DonorFormNotCompleted value)? donorFormNotCompleted,
   }) {
     return unverified?.call(this);
   }
@@ -1503,14 +1501,14 @@ class _$_Unverified implements _Unverified {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unauthenticated value)? unauthenticated,
-    TResult Function(_Verified value)? verified,
-    TResult Function(_Unverified value)? unverified,
-    TResult Function(_AwaitingVerified value)? awaitingVerified,
-    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
-    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
+    TResult Function(Initial value)? initial,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(Verified value)? verified,
+    TResult Function(Unverified value)? unverified,
+    TResult Function(AwaitingVerified value)? awaitingVerified,
+    TResult Function(DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(DonorFormNotCompleted value)? donorFormNotCompleted,
     required TResult orElse(),
   }) {
     if (unverified != null) {
@@ -1520,33 +1518,33 @@ class _$_Unverified implements _Unverified {
   }
 }
 
-abstract class _Unverified implements AuthState {
-  const factory _Unverified() = _$_Unverified;
+abstract class Unverified implements AuthState {
+  const factory Unverified() = _$Unverified;
 }
 
 /// @nodoc
-abstract class _$$_AwaitingVerifiedCopyWith<$Res> {
-  factory _$$_AwaitingVerifiedCopyWith(
-          _$_AwaitingVerified value, $Res Function(_$_AwaitingVerified) then) =
-      __$$_AwaitingVerifiedCopyWithImpl<$Res>;
+abstract class _$$AwaitingVerifiedCopyWith<$Res> {
+  factory _$$AwaitingVerifiedCopyWith(
+          _$AwaitingVerified value, $Res Function(_$AwaitingVerified) then) =
+      __$$AwaitingVerifiedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_AwaitingVerifiedCopyWithImpl<$Res>
+class __$$AwaitingVerifiedCopyWithImpl<$Res>
     extends _$AuthStateCopyWithImpl<$Res>
-    implements _$$_AwaitingVerifiedCopyWith<$Res> {
-  __$$_AwaitingVerifiedCopyWithImpl(
-      _$_AwaitingVerified _value, $Res Function(_$_AwaitingVerified) _then)
-      : super(_value, (v) => _then(v as _$_AwaitingVerified));
+    implements _$$AwaitingVerifiedCopyWith<$Res> {
+  __$$AwaitingVerifiedCopyWithImpl(
+      _$AwaitingVerified _value, $Res Function(_$AwaitingVerified) _then)
+      : super(_value, (v) => _then(v as _$AwaitingVerified));
 
   @override
-  _$_AwaitingVerified get _value => super._value as _$_AwaitingVerified;
+  _$AwaitingVerified get _value => super._value as _$AwaitingVerified;
 }
 
 /// @nodoc
 
-class _$_AwaitingVerified implements _AwaitingVerified {
-  const _$_AwaitingVerified();
+class _$AwaitingVerified implements AwaitingVerified {
+  const _$AwaitingVerified();
 
   @override
   String toString() {
@@ -1556,7 +1554,7 @@ class _$_AwaitingVerified implements _AwaitingVerified {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_AwaitingVerified);
+        (other.runtimeType == runtimeType && other is _$AwaitingVerified);
   }
 
   @override
@@ -1614,14 +1612,14 @@ class _$_AwaitingVerified implements _AwaitingVerified {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Authenticated value) authenticated,
-    required TResult Function(_Unauthenticated value) unauthenticated,
-    required TResult Function(_Verified value) verified,
-    required TResult Function(_Unverified value) unverified,
-    required TResult Function(_AwaitingVerified value) awaitingVerified,
-    required TResult Function(_DonorFormCompleted value) donorFormCompleted,
-    required TResult Function(_DonorFormNotCompleted value)
+    required TResult Function(Initial value) initial,
+    required TResult Function(Authenticated value) authenticated,
+    required TResult Function(Unauthenticated value) unauthenticated,
+    required TResult Function(Verified value) verified,
+    required TResult Function(Unverified value) unverified,
+    required TResult Function(AwaitingVerified value) awaitingVerified,
+    required TResult Function(DonorFormCompleted value) donorFormCompleted,
+    required TResult Function(DonorFormNotCompleted value)
         donorFormNotCompleted,
   }) {
     return awaitingVerified(this);
@@ -1630,14 +1628,14 @@ class _$_AwaitingVerified implements _AwaitingVerified {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unauthenticated value)? unauthenticated,
-    TResult Function(_Verified value)? verified,
-    TResult Function(_Unverified value)? unverified,
-    TResult Function(_AwaitingVerified value)? awaitingVerified,
-    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
-    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
+    TResult Function(Initial value)? initial,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(Verified value)? verified,
+    TResult Function(Unverified value)? unverified,
+    TResult Function(AwaitingVerified value)? awaitingVerified,
+    TResult Function(DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(DonorFormNotCompleted value)? donorFormNotCompleted,
   }) {
     return awaitingVerified?.call(this);
   }
@@ -1645,14 +1643,14 @@ class _$_AwaitingVerified implements _AwaitingVerified {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unauthenticated value)? unauthenticated,
-    TResult Function(_Verified value)? verified,
-    TResult Function(_Unverified value)? unverified,
-    TResult Function(_AwaitingVerified value)? awaitingVerified,
-    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
-    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
+    TResult Function(Initial value)? initial,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(Verified value)? verified,
+    TResult Function(Unverified value)? unverified,
+    TResult Function(AwaitingVerified value)? awaitingVerified,
+    TResult Function(DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(DonorFormNotCompleted value)? donorFormNotCompleted,
     required TResult orElse(),
   }) {
     if (awaitingVerified != null) {
@@ -1662,33 +1660,33 @@ class _$_AwaitingVerified implements _AwaitingVerified {
   }
 }
 
-abstract class _AwaitingVerified implements AuthState {
-  const factory _AwaitingVerified() = _$_AwaitingVerified;
+abstract class AwaitingVerified implements AuthState {
+  const factory AwaitingVerified() = _$AwaitingVerified;
 }
 
 /// @nodoc
-abstract class _$$_DonorFormCompletedCopyWith<$Res> {
-  factory _$$_DonorFormCompletedCopyWith(_$_DonorFormCompleted value,
-          $Res Function(_$_DonorFormCompleted) then) =
-      __$$_DonorFormCompletedCopyWithImpl<$Res>;
+abstract class _$$DonorFormCompletedCopyWith<$Res> {
+  factory _$$DonorFormCompletedCopyWith(_$DonorFormCompleted value,
+          $Res Function(_$DonorFormCompleted) then) =
+      __$$DonorFormCompletedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_DonorFormCompletedCopyWithImpl<$Res>
+class __$$DonorFormCompletedCopyWithImpl<$Res>
     extends _$AuthStateCopyWithImpl<$Res>
-    implements _$$_DonorFormCompletedCopyWith<$Res> {
-  __$$_DonorFormCompletedCopyWithImpl(
-      _$_DonorFormCompleted _value, $Res Function(_$_DonorFormCompleted) _then)
-      : super(_value, (v) => _then(v as _$_DonorFormCompleted));
+    implements _$$DonorFormCompletedCopyWith<$Res> {
+  __$$DonorFormCompletedCopyWithImpl(
+      _$DonorFormCompleted _value, $Res Function(_$DonorFormCompleted) _then)
+      : super(_value, (v) => _then(v as _$DonorFormCompleted));
 
   @override
-  _$_DonorFormCompleted get _value => super._value as _$_DonorFormCompleted;
+  _$DonorFormCompleted get _value => super._value as _$DonorFormCompleted;
 }
 
 /// @nodoc
 
-class _$_DonorFormCompleted implements _DonorFormCompleted {
-  const _$_DonorFormCompleted();
+class _$DonorFormCompleted implements DonorFormCompleted {
+  const _$DonorFormCompleted();
 
   @override
   String toString() {
@@ -1698,7 +1696,7 @@ class _$_DonorFormCompleted implements _DonorFormCompleted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_DonorFormCompleted);
+        (other.runtimeType == runtimeType && other is _$DonorFormCompleted);
   }
 
   @override
@@ -1756,14 +1754,14 @@ class _$_DonorFormCompleted implements _DonorFormCompleted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Authenticated value) authenticated,
-    required TResult Function(_Unauthenticated value) unauthenticated,
-    required TResult Function(_Verified value) verified,
-    required TResult Function(_Unverified value) unverified,
-    required TResult Function(_AwaitingVerified value) awaitingVerified,
-    required TResult Function(_DonorFormCompleted value) donorFormCompleted,
-    required TResult Function(_DonorFormNotCompleted value)
+    required TResult Function(Initial value) initial,
+    required TResult Function(Authenticated value) authenticated,
+    required TResult Function(Unauthenticated value) unauthenticated,
+    required TResult Function(Verified value) verified,
+    required TResult Function(Unverified value) unverified,
+    required TResult Function(AwaitingVerified value) awaitingVerified,
+    required TResult Function(DonorFormCompleted value) donorFormCompleted,
+    required TResult Function(DonorFormNotCompleted value)
         donorFormNotCompleted,
   }) {
     return donorFormCompleted(this);
@@ -1772,14 +1770,14 @@ class _$_DonorFormCompleted implements _DonorFormCompleted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unauthenticated value)? unauthenticated,
-    TResult Function(_Verified value)? verified,
-    TResult Function(_Unverified value)? unverified,
-    TResult Function(_AwaitingVerified value)? awaitingVerified,
-    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
-    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
+    TResult Function(Initial value)? initial,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(Verified value)? verified,
+    TResult Function(Unverified value)? unverified,
+    TResult Function(AwaitingVerified value)? awaitingVerified,
+    TResult Function(DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(DonorFormNotCompleted value)? donorFormNotCompleted,
   }) {
     return donorFormCompleted?.call(this);
   }
@@ -1787,14 +1785,14 @@ class _$_DonorFormCompleted implements _DonorFormCompleted {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unauthenticated value)? unauthenticated,
-    TResult Function(_Verified value)? verified,
-    TResult Function(_Unverified value)? unverified,
-    TResult Function(_AwaitingVerified value)? awaitingVerified,
-    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
-    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
+    TResult Function(Initial value)? initial,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(Verified value)? verified,
+    TResult Function(Unverified value)? unverified,
+    TResult Function(AwaitingVerified value)? awaitingVerified,
+    TResult Function(DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(DonorFormNotCompleted value)? donorFormNotCompleted,
     required TResult orElse(),
   }) {
     if (donorFormCompleted != null) {
@@ -1804,34 +1802,33 @@ class _$_DonorFormCompleted implements _DonorFormCompleted {
   }
 }
 
-abstract class _DonorFormCompleted implements AuthState {
-  const factory _DonorFormCompleted() = _$_DonorFormCompleted;
+abstract class DonorFormCompleted implements AuthState {
+  const factory DonorFormCompleted() = _$DonorFormCompleted;
 }
 
 /// @nodoc
-abstract class _$$_DonorFormNotCompletedCopyWith<$Res> {
-  factory _$$_DonorFormNotCompletedCopyWith(_$_DonorFormNotCompleted value,
-          $Res Function(_$_DonorFormNotCompleted) then) =
-      __$$_DonorFormNotCompletedCopyWithImpl<$Res>;
+abstract class _$$DonorFormNotCompletedCopyWith<$Res> {
+  factory _$$DonorFormNotCompletedCopyWith(_$DonorFormNotCompleted value,
+          $Res Function(_$DonorFormNotCompleted) then) =
+      __$$DonorFormNotCompletedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_DonorFormNotCompletedCopyWithImpl<$Res>
+class __$$DonorFormNotCompletedCopyWithImpl<$Res>
     extends _$AuthStateCopyWithImpl<$Res>
-    implements _$$_DonorFormNotCompletedCopyWith<$Res> {
-  __$$_DonorFormNotCompletedCopyWithImpl(_$_DonorFormNotCompleted _value,
-      $Res Function(_$_DonorFormNotCompleted) _then)
-      : super(_value, (v) => _then(v as _$_DonorFormNotCompleted));
+    implements _$$DonorFormNotCompletedCopyWith<$Res> {
+  __$$DonorFormNotCompletedCopyWithImpl(_$DonorFormNotCompleted _value,
+      $Res Function(_$DonorFormNotCompleted) _then)
+      : super(_value, (v) => _then(v as _$DonorFormNotCompleted));
 
   @override
-  _$_DonorFormNotCompleted get _value =>
-      super._value as _$_DonorFormNotCompleted;
+  _$DonorFormNotCompleted get _value => super._value as _$DonorFormNotCompleted;
 }
 
 /// @nodoc
 
-class _$_DonorFormNotCompleted implements _DonorFormNotCompleted {
-  const _$_DonorFormNotCompleted();
+class _$DonorFormNotCompleted implements DonorFormNotCompleted {
+  const _$DonorFormNotCompleted();
 
   @override
   String toString() {
@@ -1841,7 +1838,7 @@ class _$_DonorFormNotCompleted implements _DonorFormNotCompleted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_DonorFormNotCompleted);
+        (other.runtimeType == runtimeType && other is _$DonorFormNotCompleted);
   }
 
   @override
@@ -1899,14 +1896,14 @@ class _$_DonorFormNotCompleted implements _DonorFormNotCompleted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Authenticated value) authenticated,
-    required TResult Function(_Unauthenticated value) unauthenticated,
-    required TResult Function(_Verified value) verified,
-    required TResult Function(_Unverified value) unverified,
-    required TResult Function(_AwaitingVerified value) awaitingVerified,
-    required TResult Function(_DonorFormCompleted value) donorFormCompleted,
-    required TResult Function(_DonorFormNotCompleted value)
+    required TResult Function(Initial value) initial,
+    required TResult Function(Authenticated value) authenticated,
+    required TResult Function(Unauthenticated value) unauthenticated,
+    required TResult Function(Verified value) verified,
+    required TResult Function(Unverified value) unverified,
+    required TResult Function(AwaitingVerified value) awaitingVerified,
+    required TResult Function(DonorFormCompleted value) donorFormCompleted,
+    required TResult Function(DonorFormNotCompleted value)
         donorFormNotCompleted,
   }) {
     return donorFormNotCompleted(this);
@@ -1915,14 +1912,14 @@ class _$_DonorFormNotCompleted implements _DonorFormNotCompleted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unauthenticated value)? unauthenticated,
-    TResult Function(_Verified value)? verified,
-    TResult Function(_Unverified value)? unverified,
-    TResult Function(_AwaitingVerified value)? awaitingVerified,
-    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
-    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
+    TResult Function(Initial value)? initial,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(Verified value)? verified,
+    TResult Function(Unverified value)? unverified,
+    TResult Function(AwaitingVerified value)? awaitingVerified,
+    TResult Function(DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(DonorFormNotCompleted value)? donorFormNotCompleted,
   }) {
     return donorFormNotCompleted?.call(this);
   }
@@ -1930,14 +1927,14 @@ class _$_DonorFormNotCompleted implements _DonorFormNotCompleted {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Authenticated value)? authenticated,
-    TResult Function(_Unauthenticated value)? unauthenticated,
-    TResult Function(_Verified value)? verified,
-    TResult Function(_Unverified value)? unverified,
-    TResult Function(_AwaitingVerified value)? awaitingVerified,
-    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
-    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
+    TResult Function(Initial value)? initial,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(Verified value)? verified,
+    TResult Function(Unverified value)? unverified,
+    TResult Function(AwaitingVerified value)? awaitingVerified,
+    TResult Function(DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(DonorFormNotCompleted value)? donorFormNotCompleted,
     required TResult orElse(),
   }) {
     if (donorFormNotCompleted != null) {
@@ -1947,6 +1944,6 @@ class _$_DonorFormNotCompleted implements _DonorFormNotCompleted {
   }
 }
 
-abstract class _DonorFormNotCompleted implements AuthState {
-  const factory _DonorFormNotCompleted() = _$_DonorFormNotCompleted;
+abstract class DonorFormNotCompleted implements AuthState {
+  const factory DonorFormNotCompleted() = _$DonorFormNotCompleted;
 }
