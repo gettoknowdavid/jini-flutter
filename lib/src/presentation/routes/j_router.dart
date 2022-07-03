@@ -5,4 +5,5 @@ class JRoutes {
   static final String splash = "/splash";
   static final String verification = "/verification";
   static final String donorRequirements = "/donorRequirements";
+  static final String profile = "/profile";
 }
