@@ -8,7 +8,7 @@ class JTheme {
 
   static final Color _primary = Color(0xFFF25774);
   static final Color _primaryDark = Color(0xFFF25774);
-  static final Color _secondary = Color(0xFF1723FD);
+  // static final Color _secondary = Color(0xFF1723FD);
   // static final Color _secondaryDark = Color(0xFF1D1340);
   static final Color _background = Color(0xFF090911);
   static const swatch = MaterialColor(0xFFF25774, {
