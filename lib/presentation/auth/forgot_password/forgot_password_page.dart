@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jini/application/auth/forgot_password/forgot_password_bloc.dart';
-import 'package:jini/presentation/core/common/app_colors.dart';
 import 'package:jini/presentation/core/common/image_resources.dart';
 import 'package:jini/presentation/core/widgets/j_back_button.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
@@ -18,6 +17,7 @@ class ForgotPasswordPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of<ForgotPasswordBloc>(context);
+    final theme = Theme.of(context);
 
     return BlocConsumer<ForgotPasswordBloc, ForgotPasswordState>(
       bloc: bloc,
@@ -35,7 +35,7 @@ class ForgotPasswordPage extends StatelessWidget {
                 ),
                 icon: Icon(PhosphorIcons.warningCircleBold),
                 snackPosition: SnackPosition.BOTTOM,
-                backgroundColor: AppColors.primary,
+                backgroundColor: theme.primaryColor,
                 duration: const Duration(seconds: 5),
               );
             },
@@ -100,7 +100,7 @@ class ForgotPasswordPage extends StatelessWidget {
                         JButton(
                           title: 'Submit',
                           loading: bloc.state.isSubmitting,
-                          indicatorColor: AppColors.primary,
+                          indicatorColor: theme.primaryColor,
                           onPressed: !bloc.state.isSubmitting
                               ? () =>
                                   bloc.add(ForgotPasswordEvent.submitPressed())
