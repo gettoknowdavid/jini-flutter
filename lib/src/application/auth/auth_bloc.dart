@@ -48,9 +48,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     _CheckDonorRequirementsMet e,
     Emitter<AuthState> emit,
   ) async {
-    final _donorEligbleEither = await _authFacade.donorRequirementsMet();
+    final _donorEligibleEither = await _authFacade.donorRequirementsMet();
     emit(
-      _donorEligbleEither.fold(
+      _donorEligibleEither.fold(
         (_) => const AuthState.donorFormNotCompleted(),
         (_) => const AuthState.donorFormCompleted(),
       ),
