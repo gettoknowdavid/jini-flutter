@@ -5,11 +5,10 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jini/application/auth/auth_bloc.dart';
 import 'package:jini/application/auth/sign_in/sign_in_bloc.dart';
-import 'package:jini/presentation/core/common/app_colors.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
+import 'package:jini/presentation/core/widgets/j_snackbars.dart';
 import 'package:jini/presentation/core/widgets/j_text_form_field.dart';
 import 'package:jini/presentation/routes/j_router.dart';
-import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class SignInForm extends StatelessWidget {
   const SignInForm({Key? key}) : super(key: key);
@@ -18,6 +17,7 @@ class SignInForm extends StatelessWidget {
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of<SignInBloc>(context);
     final authBloc = BlocProvider.of<AuthBloc>(context);
+    final theme = Theme.of(context);
 
     return BlocConsumer<SignInBloc, SignInState>(
       bloc: bloc,
@@ -26,16 +26,13 @@ class SignInForm extends StatelessWidget {
           () {},
           (either) => either.fold(
             (f) {
-              Get.snackbar(
-                'Authentication Failure',
-                f.maybeMap(
+              JSnackbars.errorSnackbar(
+                title: 'Authentication Failure',
+                message: f.maybeMap(
                   orElse: () => '',
                   serverError: (_) => 'Looks like there\'s a server error.',
                   invalidEmailOrPassword: (_) => 'Invalid email or password.',
                 ),
-                icon: Icon(PhosphorIcons.warningCircleBold),
-                snackPosition: SnackPosition.BOTTOM,
-                backgroundColor: AppColors.primary,
               );
             },
             (_) {
@@ -100,7 +97,7 @@ class SignInForm extends StatelessWidget {
               JButton(
                 title: 'Sign In',
                 loading: bloc.state.isSubmitting,
-                indicatorColor: AppColors.primary,
+                indicatorColor: theme.primaryColor,
                 onPressed: !bloc.state.isSubmitting
                     ? () => bloc.add(SignInEvent.signInPressed())
                     : null,
