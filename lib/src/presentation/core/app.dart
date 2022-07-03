@@ -9,6 +9,7 @@ import 'package:jini/src/presentation/auth/sign_up/sign_up_page.dart';
 import 'package:jini/src/presentation/auth/verification/verification_page.dart';
 import 'package:jini/src/presentation/core/layout/j_layout.dart';
 import 'package:jini/src/presentation/donor_requirements/donor_requirements_page.dart';
+import 'package:jini/src/presentation/profile/profile_page.dart';
 import 'package:jini/src/presentation/routes/j_router.dart';
 import 'package:jini/src/presentation/splash/splash_page.dart';
 
@@ -18,26 +19,24 @@ class JiniApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = ThemeData.dark();
-    // final _jRouter = getIt<JRouter>();
 
     return ScreenUtilInit(
       designSize: const Size(393, 830),
       minTextAdapt: true,
-      child: const JLayout(),
+      child: const SplashPage(),
       builder: (context, child) {
         return GetMaterialApp(
           title: 'Jini Donation',
           defaultTransition: Transition.fadeIn,
           transitionDuration: const Duration(milliseconds: 350),
-          home: JLayout(),
-          // routerDelegate: AutoRouterDelegate(_jRouter),
-          // routeInformationParser: _jRouter.defaultRouteParser(),
+          home: SplashPage(),
           getPages: [
+            GetPage(name: JRoutes.splash, page: () => SplashPage()),
             GetPage(name: JRoutes.layout, page: () => JLayout()),
             GetPage(name: JRoutes.signIn, page: () => SignInPage()),
             GetPage(name: JRoutes.signUp, page: () => SignUpPage()),
-            GetPage(name: JRoutes.splash, page: () => SplashPage()),
             GetPage(name: JRoutes.verification, page: () => VerificationPage()),
+            GetPage(name: JRoutes.profile, page: () => ProfilePage()),
             GetPage(
               name: JRoutes.donorRequirements,
               page: () => DonorRequirementsPage(),
