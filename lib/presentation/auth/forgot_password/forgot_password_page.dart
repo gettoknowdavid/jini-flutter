@@ -7,9 +7,9 @@ import 'package:jini/application/auth/forgot_password/forgot_password_bloc.dart'
 import 'package:jini/presentation/core/common/image_resources.dart';
 import 'package:jini/presentation/core/widgets/j_back_button.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
+import 'package:jini/presentation/core/widgets/j_snackbars.dart';
 import 'package:jini/presentation/core/widgets/j_text_form_field.dart';
 import 'package:jini/presentation/routes/j_router.dart';
-import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class ForgotPasswordPage extends StatelessWidget {
   const ForgotPasswordPage({Key? key}) : super(key: key);
@@ -26,17 +26,13 @@ class ForgotPasswordPage extends StatelessWidget {
           () {},
           (either) => either.fold(
             (f) {
-              Get.snackbar(
-                'Authentication Failure',
-                f.maybeMap(
+              JSnackbars.errorSnackbar(
+                title: 'Authentication Failure',
+                message: f.maybeMap(
                   orElse: () => '',
                   serverError: (_) => 'Looks like there\'s a server error.',
                   userNotFound: (_) => 'Oops! No user with this email exists.',
                 ),
-                icon: Icon(PhosphorIcons.warningCircleBold),
-                snackPosition: SnackPosition.BOTTOM,
-                backgroundColor: theme.primaryColor,
-                duration: const Duration(seconds: 5),
               );
             },
             (_) => Get.toNamed(JRoutes.checkEmail),
