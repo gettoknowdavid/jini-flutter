@@ -51,10 +51,8 @@ class _SignUpPageState extends State<SignUpPage> {
         );
       },
       child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          leading: const JBackButton(),
-        ),
+        extendBodyBehindAppBar: true,
+        appBar: AppBar(leading: const JBackButton()),
         body: Stack(
           alignment: Alignment.center,
           children: [
