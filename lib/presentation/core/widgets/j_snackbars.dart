@@ -12,6 +12,7 @@ class JSnackbars {
       icon: Icon(PhosphorIcons.warningCircleBold),
       snackPosition: SnackPosition.BOTTOM,
       backgroundColor: Colors.red,
+      duration: const Duration(seconds: 5),
     );
   }
 }
