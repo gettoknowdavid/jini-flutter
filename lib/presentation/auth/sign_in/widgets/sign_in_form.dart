@@ -71,13 +71,6 @@ class SignInForm extends StatelessWidget {
                 enabled: !bloc.state.isSubmitting,
                 isPassword: true,
                 onChanged: (p) => bloc.add(SignInEvent.passwordChanged(p)),
-                validator: (_) => bloc.state.password.value.fold(
-                  (f) => f.maybeMap(
-                    empty: (_) => 'Password cannot be empty',
-                    orElse: () => null,
-                  ),
-                  (_) => null,
-                ),
               ),
               16.verticalSpace,
               GestureDetector(
