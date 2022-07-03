@@ -20,6 +20,7 @@ mixin _$AuthEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() authCheckRequested,
     required TResult Function() authCheckVerified,
+    required TResult Function() checkDonorRequirementsMet,
     required TResult Function() sendVerifiedEmail,
     required TResult Function() authSignedOut,
   }) =>
@@ -28,6 +29,7 @@ mixin _$AuthEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authCheckRequested,
     TResult Function()? authCheckVerified,
+    TResult Function()? checkDonorRequirementsMet,
     TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
   }) =>
@@ -36,6 +38,7 @@ mixin _$AuthEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authCheckRequested,
     TResult Function()? authCheckVerified,
+    TResult Function()? checkDonorRequirementsMet,
     TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
     required TResult orElse(),
@@ -45,6 +48,8 @@ mixin _$AuthEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_AuthCheckRequested value) authCheckRequested,
     required TResult Function(_AuthCheckVerified value) authCheckVerified,
+    required TResult Function(_CheckDonorRequirementsMet value)
+        checkDonorRequirementsMet,
     required TResult Function(_SendVerifiedEmail value) sendVerifiedEmail,
     required TResult Function(_SignedOut value) authSignedOut,
   }) =>
@@ -53,6 +58,8 @@ mixin _$AuthEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_AuthCheckRequested value)? authCheckRequested,
     TResult Function(_AuthCheckVerified value)? authCheckVerified,
+    TResult Function(_CheckDonorRequirementsMet value)?
+        checkDonorRequirementsMet,
     TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
   }) =>
@@ -61,6 +68,8 @@ mixin _$AuthEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AuthCheckRequested value)? authCheckRequested,
     TResult Function(_AuthCheckVerified value)? authCheckVerified,
+    TResult Function(_CheckDonorRequirementsMet value)?
+        checkDonorRequirementsMet,
     TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
     required TResult orElse(),
@@ -126,6 +135,7 @@ class _$_AuthCheckRequested implements _AuthCheckRequested {
   TResult when<TResult extends Object?>({
     required TResult Function() authCheckRequested,
     required TResult Function() authCheckVerified,
+    required TResult Function() checkDonorRequirementsMet,
     required TResult Function() sendVerifiedEmail,
     required TResult Function() authSignedOut,
   }) {
@@ -137,6 +147,7 @@ class _$_AuthCheckRequested implements _AuthCheckRequested {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authCheckRequested,
     TResult Function()? authCheckVerified,
+    TResult Function()? checkDonorRequirementsMet,
     TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
   }) {
@@ -148,6 +159,7 @@ class _$_AuthCheckRequested implements _AuthCheckRequested {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authCheckRequested,
     TResult Function()? authCheckVerified,
+    TResult Function()? checkDonorRequirementsMet,
     TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
     required TResult orElse(),
@@ -163,6 +175,8 @@ class _$_AuthCheckRequested implements _AuthCheckRequested {
   TResult map<TResult extends Object?>({
     required TResult Function(_AuthCheckRequested value) authCheckRequested,
     required TResult Function(_AuthCheckVerified value) authCheckVerified,
+    required TResult Function(_CheckDonorRequirementsMet value)
+        checkDonorRequirementsMet,
     required TResult Function(_SendVerifiedEmail value) sendVerifiedEmail,
     required TResult Function(_SignedOut value) authSignedOut,
   }) {
@@ -174,6 +188,8 @@ class _$_AuthCheckRequested implements _AuthCheckRequested {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_AuthCheckRequested value)? authCheckRequested,
     TResult Function(_AuthCheckVerified value)? authCheckVerified,
+    TResult Function(_CheckDonorRequirementsMet value)?
+        checkDonorRequirementsMet,
     TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
   }) {
@@ -185,6 +201,8 @@ class _$_AuthCheckRequested implements _AuthCheckRequested {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AuthCheckRequested value)? authCheckRequested,
     TResult Function(_AuthCheckVerified value)? authCheckVerified,
+    TResult Function(_CheckDonorRequirementsMet value)?
+        checkDonorRequirementsMet,
     TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
     required TResult orElse(),
@@ -243,6 +261,7 @@ class _$_AuthCheckVerified implements _AuthCheckVerified {
   TResult when<TResult extends Object?>({
     required TResult Function() authCheckRequested,
     required TResult Function() authCheckVerified,
+    required TResult Function() checkDonorRequirementsMet,
     required TResult Function() sendVerifiedEmail,
     required TResult Function() authSignedOut,
   }) {
@@ -254,6 +273,7 @@ class _$_AuthCheckVerified implements _AuthCheckVerified {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authCheckRequested,
     TResult Function()? authCheckVerified,
+    TResult Function()? checkDonorRequirementsMet,
     TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
   }) {
@@ -265,6 +285,7 @@ class _$_AuthCheckVerified implements _AuthCheckVerified {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authCheckRequested,
     TResult Function()? authCheckVerified,
+    TResult Function()? checkDonorRequirementsMet,
     TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
     required TResult orElse(),
@@ -280,6 +301,8 @@ class _$_AuthCheckVerified implements _AuthCheckVerified {
   TResult map<TResult extends Object?>({
     required TResult Function(_AuthCheckRequested value) authCheckRequested,
     required TResult Function(_AuthCheckVerified value) authCheckVerified,
+    required TResult Function(_CheckDonorRequirementsMet value)
+        checkDonorRequirementsMet,
     required TResult Function(_SendVerifiedEmail value) sendVerifiedEmail,
     required TResult Function(_SignedOut value) authSignedOut,
   }) {
@@ -291,6 +314,8 @@ class _$_AuthCheckVerified implements _AuthCheckVerified {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_AuthCheckRequested value)? authCheckRequested,
     TResult Function(_AuthCheckVerified value)? authCheckVerified,
+    TResult Function(_CheckDonorRequirementsMet value)?
+        checkDonorRequirementsMet,
     TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
   }) {
@@ -302,6 +327,8 @@ class _$_AuthCheckVerified implements _AuthCheckVerified {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AuthCheckRequested value)? authCheckRequested,
     TResult Function(_AuthCheckVerified value)? authCheckVerified,
+    TResult Function(_CheckDonorRequirementsMet value)?
+        checkDonorRequirementsMet,
     TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
     required TResult orElse(),
@@ -315,6 +342,136 @@ class _$_AuthCheckVerified implements _AuthCheckVerified {
 
 abstract class _AuthCheckVerified implements AuthEvent {
   const factory _AuthCheckVerified() = _$_AuthCheckVerified;
+}
+
+/// @nodoc
+abstract class _$$_CheckDonorRequirementsMetCopyWith<$Res> {
+  factory _$$_CheckDonorRequirementsMetCopyWith(
+          _$_CheckDonorRequirementsMet value,
+          $Res Function(_$_CheckDonorRequirementsMet) then) =
+      __$$_CheckDonorRequirementsMetCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_CheckDonorRequirementsMetCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res>
+    implements _$$_CheckDonorRequirementsMetCopyWith<$Res> {
+  __$$_CheckDonorRequirementsMetCopyWithImpl(
+      _$_CheckDonorRequirementsMet _value,
+      $Res Function(_$_CheckDonorRequirementsMet) _then)
+      : super(_value, (v) => _then(v as _$_CheckDonorRequirementsMet));
+
+  @override
+  _$_CheckDonorRequirementsMet get _value =>
+      super._value as _$_CheckDonorRequirementsMet;
+}
+
+/// @nodoc
+
+class _$_CheckDonorRequirementsMet implements _CheckDonorRequirementsMet {
+  const _$_CheckDonorRequirementsMet();
+
+  @override
+  String toString() {
+    return 'AuthEvent.checkDonorRequirementsMet()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_CheckDonorRequirementsMet);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() authCheckRequested,
+    required TResult Function() authCheckVerified,
+    required TResult Function() checkDonorRequirementsMet,
+    required TResult Function() sendVerifiedEmail,
+    required TResult Function() authSignedOut,
+  }) {
+    return checkDonorRequirementsMet();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? authCheckRequested,
+    TResult Function()? authCheckVerified,
+    TResult Function()? checkDonorRequirementsMet,
+    TResult Function()? sendVerifiedEmail,
+    TResult Function()? authSignedOut,
+  }) {
+    return checkDonorRequirementsMet?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? authCheckRequested,
+    TResult Function()? authCheckVerified,
+    TResult Function()? checkDonorRequirementsMet,
+    TResult Function()? sendVerifiedEmail,
+    TResult Function()? authSignedOut,
+    required TResult orElse(),
+  }) {
+    if (checkDonorRequirementsMet != null) {
+      return checkDonorRequirementsMet();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AuthCheckRequested value) authCheckRequested,
+    required TResult Function(_AuthCheckVerified value) authCheckVerified,
+    required TResult Function(_CheckDonorRequirementsMet value)
+        checkDonorRequirementsMet,
+    required TResult Function(_SendVerifiedEmail value) sendVerifiedEmail,
+    required TResult Function(_SignedOut value) authSignedOut,
+  }) {
+    return checkDonorRequirementsMet(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_AuthCheckRequested value)? authCheckRequested,
+    TResult Function(_AuthCheckVerified value)? authCheckVerified,
+    TResult Function(_CheckDonorRequirementsMet value)?
+        checkDonorRequirementsMet,
+    TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
+    TResult Function(_SignedOut value)? authSignedOut,
+  }) {
+    return checkDonorRequirementsMet?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AuthCheckRequested value)? authCheckRequested,
+    TResult Function(_AuthCheckVerified value)? authCheckVerified,
+    TResult Function(_CheckDonorRequirementsMet value)?
+        checkDonorRequirementsMet,
+    TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
+    TResult Function(_SignedOut value)? authSignedOut,
+    required TResult orElse(),
+  }) {
+    if (checkDonorRequirementsMet != null) {
+      return checkDonorRequirementsMet(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CheckDonorRequirementsMet implements AuthEvent {
+  const factory _CheckDonorRequirementsMet() = _$_CheckDonorRequirementsMet;
 }
 
 /// @nodoc
@@ -360,6 +517,7 @@ class _$_SendVerifiedEmail implements _SendVerifiedEmail {
   TResult when<TResult extends Object?>({
     required TResult Function() authCheckRequested,
     required TResult Function() authCheckVerified,
+    required TResult Function() checkDonorRequirementsMet,
     required TResult Function() sendVerifiedEmail,
     required TResult Function() authSignedOut,
   }) {
@@ -371,6 +529,7 @@ class _$_SendVerifiedEmail implements _SendVerifiedEmail {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authCheckRequested,
     TResult Function()? authCheckVerified,
+    TResult Function()? checkDonorRequirementsMet,
     TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
   }) {
@@ -382,6 +541,7 @@ class _$_SendVerifiedEmail implements _SendVerifiedEmail {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authCheckRequested,
     TResult Function()? authCheckVerified,
+    TResult Function()? checkDonorRequirementsMet,
     TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
     required TResult orElse(),
@@ -397,6 +557,8 @@ class _$_SendVerifiedEmail implements _SendVerifiedEmail {
   TResult map<TResult extends Object?>({
     required TResult Function(_AuthCheckRequested value) authCheckRequested,
     required TResult Function(_AuthCheckVerified value) authCheckVerified,
+    required TResult Function(_CheckDonorRequirementsMet value)
+        checkDonorRequirementsMet,
     required TResult Function(_SendVerifiedEmail value) sendVerifiedEmail,
     required TResult Function(_SignedOut value) authSignedOut,
   }) {
@@ -408,6 +570,8 @@ class _$_SendVerifiedEmail implements _SendVerifiedEmail {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_AuthCheckRequested value)? authCheckRequested,
     TResult Function(_AuthCheckVerified value)? authCheckVerified,
+    TResult Function(_CheckDonorRequirementsMet value)?
+        checkDonorRequirementsMet,
     TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
   }) {
@@ -419,6 +583,8 @@ class _$_SendVerifiedEmail implements _SendVerifiedEmail {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AuthCheckRequested value)? authCheckRequested,
     TResult Function(_AuthCheckVerified value)? authCheckVerified,
+    TResult Function(_CheckDonorRequirementsMet value)?
+        checkDonorRequirementsMet,
     TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
     required TResult orElse(),
@@ -476,6 +642,7 @@ class _$_SignedOut implements _SignedOut {
   TResult when<TResult extends Object?>({
     required TResult Function() authCheckRequested,
     required TResult Function() authCheckVerified,
+    required TResult Function() checkDonorRequirementsMet,
     required TResult Function() sendVerifiedEmail,
     required TResult Function() authSignedOut,
   }) {
@@ -487,6 +654,7 @@ class _$_SignedOut implements _SignedOut {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authCheckRequested,
     TResult Function()? authCheckVerified,
+    TResult Function()? checkDonorRequirementsMet,
     TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
   }) {
@@ -498,6 +666,7 @@ class _$_SignedOut implements _SignedOut {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authCheckRequested,
     TResult Function()? authCheckVerified,
+    TResult Function()? checkDonorRequirementsMet,
     TResult Function()? sendVerifiedEmail,
     TResult Function()? authSignedOut,
     required TResult orElse(),
@@ -513,6 +682,8 @@ class _$_SignedOut implements _SignedOut {
   TResult map<TResult extends Object?>({
     required TResult Function(_AuthCheckRequested value) authCheckRequested,
     required TResult Function(_AuthCheckVerified value) authCheckVerified,
+    required TResult Function(_CheckDonorRequirementsMet value)
+        checkDonorRequirementsMet,
     required TResult Function(_SendVerifiedEmail value) sendVerifiedEmail,
     required TResult Function(_SignedOut value) authSignedOut,
   }) {
@@ -524,6 +695,8 @@ class _$_SignedOut implements _SignedOut {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_AuthCheckRequested value)? authCheckRequested,
     TResult Function(_AuthCheckVerified value)? authCheckVerified,
+    TResult Function(_CheckDonorRequirementsMet value)?
+        checkDonorRequirementsMet,
     TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
   }) {
@@ -535,6 +708,8 @@ class _$_SignedOut implements _SignedOut {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AuthCheckRequested value)? authCheckRequested,
     TResult Function(_AuthCheckVerified value)? authCheckVerified,
+    TResult Function(_CheckDonorRequirementsMet value)?
+        checkDonorRequirementsMet,
     TResult Function(_SendVerifiedEmail value)? sendVerifiedEmail,
     TResult Function(_SignedOut value)? authSignedOut,
     required TResult orElse(),
@@ -560,6 +735,8 @@ mixin _$AuthState {
     required TResult Function() verified,
     required TResult Function() unverified,
     required TResult Function() awaitingVerified,
+    required TResult Function() donorFormCompleted,
+    required TResult Function() donorFormNotCompleted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -570,6 +747,8 @@ mixin _$AuthState {
     TResult Function()? verified,
     TResult Function()? unverified,
     TResult Function()? awaitingVerified,
+    TResult Function()? donorFormCompleted,
+    TResult Function()? donorFormNotCompleted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -580,6 +759,8 @@ mixin _$AuthState {
     TResult Function()? verified,
     TResult Function()? unverified,
     TResult Function()? awaitingVerified,
+    TResult Function()? donorFormCompleted,
+    TResult Function()? donorFormNotCompleted,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -591,6 +772,9 @@ mixin _$AuthState {
     required TResult Function(_Verified value) verified,
     required TResult Function(_Unverified value) unverified,
     required TResult Function(_AwaitingVerified value) awaitingVerified,
+    required TResult Function(_DonorFormCompleted value) donorFormCompleted,
+    required TResult Function(_DonorFormNotCompleted value)
+        donorFormNotCompleted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -601,6 +785,8 @@ mixin _$AuthState {
     TResult Function(_Verified value)? verified,
     TResult Function(_Unverified value)? unverified,
     TResult Function(_AwaitingVerified value)? awaitingVerified,
+    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -611,6 +797,8 @@ mixin _$AuthState {
     TResult Function(_Verified value)? verified,
     TResult Function(_Unverified value)? unverified,
     TResult Function(_AwaitingVerified value)? awaitingVerified,
+    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -676,6 +864,8 @@ class _$_Initial implements _Initial {
     required TResult Function() verified,
     required TResult Function() unverified,
     required TResult Function() awaitingVerified,
+    required TResult Function() donorFormCompleted,
+    required TResult Function() donorFormNotCompleted,
   }) {
     return initial();
   }
@@ -689,6 +879,8 @@ class _$_Initial implements _Initial {
     TResult Function()? verified,
     TResult Function()? unverified,
     TResult Function()? awaitingVerified,
+    TResult Function()? donorFormCompleted,
+    TResult Function()? donorFormNotCompleted,
   }) {
     return initial?.call();
   }
@@ -702,6 +894,8 @@ class _$_Initial implements _Initial {
     TResult Function()? verified,
     TResult Function()? unverified,
     TResult Function()? awaitingVerified,
+    TResult Function()? donorFormCompleted,
+    TResult Function()? donorFormNotCompleted,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -719,6 +913,9 @@ class _$_Initial implements _Initial {
     required TResult Function(_Verified value) verified,
     required TResult Function(_Unverified value) unverified,
     required TResult Function(_AwaitingVerified value) awaitingVerified,
+    required TResult Function(_DonorFormCompleted value) donorFormCompleted,
+    required TResult Function(_DonorFormNotCompleted value)
+        donorFormNotCompleted,
   }) {
     return initial(this);
   }
@@ -732,6 +929,8 @@ class _$_Initial implements _Initial {
     TResult Function(_Verified value)? verified,
     TResult Function(_Unverified value)? unverified,
     TResult Function(_AwaitingVerified value)? awaitingVerified,
+    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
   }) {
     return initial?.call(this);
   }
@@ -745,6 +944,8 @@ class _$_Initial implements _Initial {
     TResult Function(_Verified value)? verified,
     TResult Function(_Unverified value)? unverified,
     TResult Function(_AwaitingVerified value)? awaitingVerified,
+    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -804,6 +1005,8 @@ class _$_Authenticated implements _Authenticated {
     required TResult Function() verified,
     required TResult Function() unverified,
     required TResult Function() awaitingVerified,
+    required TResult Function() donorFormCompleted,
+    required TResult Function() donorFormNotCompleted,
   }) {
     return authenticated();
   }
@@ -817,6 +1020,8 @@ class _$_Authenticated implements _Authenticated {
     TResult Function()? verified,
     TResult Function()? unverified,
     TResult Function()? awaitingVerified,
+    TResult Function()? donorFormCompleted,
+    TResult Function()? donorFormNotCompleted,
   }) {
     return authenticated?.call();
   }
@@ -830,6 +1035,8 @@ class _$_Authenticated implements _Authenticated {
     TResult Function()? verified,
     TResult Function()? unverified,
     TResult Function()? awaitingVerified,
+    TResult Function()? donorFormCompleted,
+    TResult Function()? donorFormNotCompleted,
     required TResult orElse(),
   }) {
     if (authenticated != null) {
@@ -847,6 +1054,9 @@ class _$_Authenticated implements _Authenticated {
     required TResult Function(_Verified value) verified,
     required TResult Function(_Unverified value) unverified,
     required TResult Function(_AwaitingVerified value) awaitingVerified,
+    required TResult Function(_DonorFormCompleted value) donorFormCompleted,
+    required TResult Function(_DonorFormNotCompleted value)
+        donorFormNotCompleted,
   }) {
     return authenticated(this);
   }
@@ -860,6 +1070,8 @@ class _$_Authenticated implements _Authenticated {
     TResult Function(_Verified value)? verified,
     TResult Function(_Unverified value)? unverified,
     TResult Function(_AwaitingVerified value)? awaitingVerified,
+    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
   }) {
     return authenticated?.call(this);
   }
@@ -873,6 +1085,8 @@ class _$_Authenticated implements _Authenticated {
     TResult Function(_Verified value)? verified,
     TResult Function(_Unverified value)? unverified,
     TResult Function(_AwaitingVerified value)? awaitingVerified,
+    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
     required TResult orElse(),
   }) {
     if (authenticated != null) {
@@ -933,6 +1147,8 @@ class _$_Unauthenticated implements _Unauthenticated {
     required TResult Function() verified,
     required TResult Function() unverified,
     required TResult Function() awaitingVerified,
+    required TResult Function() donorFormCompleted,
+    required TResult Function() donorFormNotCompleted,
   }) {
     return unauthenticated();
   }
@@ -946,6 +1162,8 @@ class _$_Unauthenticated implements _Unauthenticated {
     TResult Function()? verified,
     TResult Function()? unverified,
     TResult Function()? awaitingVerified,
+    TResult Function()? donorFormCompleted,
+    TResult Function()? donorFormNotCompleted,
   }) {
     return unauthenticated?.call();
   }
@@ -959,6 +1177,8 @@ class _$_Unauthenticated implements _Unauthenticated {
     TResult Function()? verified,
     TResult Function()? unverified,
     TResult Function()? awaitingVerified,
+    TResult Function()? donorFormCompleted,
+    TResult Function()? donorFormNotCompleted,
     required TResult orElse(),
   }) {
     if (unauthenticated != null) {
@@ -976,6 +1196,9 @@ class _$_Unauthenticated implements _Unauthenticated {
     required TResult Function(_Verified value) verified,
     required TResult Function(_Unverified value) unverified,
     required TResult Function(_AwaitingVerified value) awaitingVerified,
+    required TResult Function(_DonorFormCompleted value) donorFormCompleted,
+    required TResult Function(_DonorFormNotCompleted value)
+        donorFormNotCompleted,
   }) {
     return unauthenticated(this);
   }
@@ -989,6 +1212,8 @@ class _$_Unauthenticated implements _Unauthenticated {
     TResult Function(_Verified value)? verified,
     TResult Function(_Unverified value)? unverified,
     TResult Function(_AwaitingVerified value)? awaitingVerified,
+    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
   }) {
     return unauthenticated?.call(this);
   }
@@ -1002,6 +1227,8 @@ class _$_Unauthenticated implements _Unauthenticated {
     TResult Function(_Verified value)? verified,
     TResult Function(_Unverified value)? unverified,
     TResult Function(_AwaitingVerified value)? awaitingVerified,
+    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
     required TResult orElse(),
   }) {
     if (unauthenticated != null) {
@@ -1061,6 +1288,8 @@ class _$_Verified implements _Verified {
     required TResult Function() verified,
     required TResult Function() unverified,
     required TResult Function() awaitingVerified,
+    required TResult Function() donorFormCompleted,
+    required TResult Function() donorFormNotCompleted,
   }) {
     return verified();
   }
@@ -1074,6 +1303,8 @@ class _$_Verified implements _Verified {
     TResult Function()? verified,
     TResult Function()? unverified,
     TResult Function()? awaitingVerified,
+    TResult Function()? donorFormCompleted,
+    TResult Function()? donorFormNotCompleted,
   }) {
     return verified?.call();
   }
@@ -1087,6 +1318,8 @@ class _$_Verified implements _Verified {
     TResult Function()? verified,
     TResult Function()? unverified,
     TResult Function()? awaitingVerified,
+    TResult Function()? donorFormCompleted,
+    TResult Function()? donorFormNotCompleted,
     required TResult orElse(),
   }) {
     if (verified != null) {
@@ -1104,6 +1337,9 @@ class _$_Verified implements _Verified {
     required TResult Function(_Verified value) verified,
     required TResult Function(_Unverified value) unverified,
     required TResult Function(_AwaitingVerified value) awaitingVerified,
+    required TResult Function(_DonorFormCompleted value) donorFormCompleted,
+    required TResult Function(_DonorFormNotCompleted value)
+        donorFormNotCompleted,
   }) {
     return verified(this);
   }
@@ -1117,6 +1353,8 @@ class _$_Verified implements _Verified {
     TResult Function(_Verified value)? verified,
     TResult Function(_Unverified value)? unverified,
     TResult Function(_AwaitingVerified value)? awaitingVerified,
+    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
   }) {
     return verified?.call(this);
   }
@@ -1130,6 +1368,8 @@ class _$_Verified implements _Verified {
     TResult Function(_Verified value)? verified,
     TResult Function(_Unverified value)? unverified,
     TResult Function(_AwaitingVerified value)? awaitingVerified,
+    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
     required TResult orElse(),
   }) {
     if (verified != null) {
@@ -1189,6 +1429,8 @@ class _$_Unverified implements _Unverified {
     required TResult Function() verified,
     required TResult Function() unverified,
     required TResult Function() awaitingVerified,
+    required TResult Function() donorFormCompleted,
+    required TResult Function() donorFormNotCompleted,
   }) {
     return unverified();
   }
@@ -1202,6 +1444,8 @@ class _$_Unverified implements _Unverified {
     TResult Function()? verified,
     TResult Function()? unverified,
     TResult Function()? awaitingVerified,
+    TResult Function()? donorFormCompleted,
+    TResult Function()? donorFormNotCompleted,
   }) {
     return unverified?.call();
   }
@@ -1215,6 +1459,8 @@ class _$_Unverified implements _Unverified {
     TResult Function()? verified,
     TResult Function()? unverified,
     TResult Function()? awaitingVerified,
+    TResult Function()? donorFormCompleted,
+    TResult Function()? donorFormNotCompleted,
     required TResult orElse(),
   }) {
     if (unverified != null) {
@@ -1232,6 +1478,9 @@ class _$_Unverified implements _Unverified {
     required TResult Function(_Verified value) verified,
     required TResult Function(_Unverified value) unverified,
     required TResult Function(_AwaitingVerified value) awaitingVerified,
+    required TResult Function(_DonorFormCompleted value) donorFormCompleted,
+    required TResult Function(_DonorFormNotCompleted value)
+        donorFormNotCompleted,
   }) {
     return unverified(this);
   }
@@ -1245,6 +1494,8 @@ class _$_Unverified implements _Unverified {
     TResult Function(_Verified value)? verified,
     TResult Function(_Unverified value)? unverified,
     TResult Function(_AwaitingVerified value)? awaitingVerified,
+    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
   }) {
     return unverified?.call(this);
   }
@@ -1258,6 +1509,8 @@ class _$_Unverified implements _Unverified {
     TResult Function(_Verified value)? verified,
     TResult Function(_Unverified value)? unverified,
     TResult Function(_AwaitingVerified value)? awaitingVerified,
+    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
     required TResult orElse(),
   }) {
     if (unverified != null) {
@@ -1318,6 +1571,8 @@ class _$_AwaitingVerified implements _AwaitingVerified {
     required TResult Function() verified,
     required TResult Function() unverified,
     required TResult Function() awaitingVerified,
+    required TResult Function() donorFormCompleted,
+    required TResult Function() donorFormNotCompleted,
   }) {
     return awaitingVerified();
   }
@@ -1331,6 +1586,8 @@ class _$_AwaitingVerified implements _AwaitingVerified {
     TResult Function()? verified,
     TResult Function()? unverified,
     TResult Function()? awaitingVerified,
+    TResult Function()? donorFormCompleted,
+    TResult Function()? donorFormNotCompleted,
   }) {
     return awaitingVerified?.call();
   }
@@ -1344,6 +1601,8 @@ class _$_AwaitingVerified implements _AwaitingVerified {
     TResult Function()? verified,
     TResult Function()? unverified,
     TResult Function()? awaitingVerified,
+    TResult Function()? donorFormCompleted,
+    TResult Function()? donorFormNotCompleted,
     required TResult orElse(),
   }) {
     if (awaitingVerified != null) {
@@ -1361,6 +1620,9 @@ class _$_AwaitingVerified implements _AwaitingVerified {
     required TResult Function(_Verified value) verified,
     required TResult Function(_Unverified value) unverified,
     required TResult Function(_AwaitingVerified value) awaitingVerified,
+    required TResult Function(_DonorFormCompleted value) donorFormCompleted,
+    required TResult Function(_DonorFormNotCompleted value)
+        donorFormNotCompleted,
   }) {
     return awaitingVerified(this);
   }
@@ -1374,6 +1636,8 @@ class _$_AwaitingVerified implements _AwaitingVerified {
     TResult Function(_Verified value)? verified,
     TResult Function(_Unverified value)? unverified,
     TResult Function(_AwaitingVerified value)? awaitingVerified,
+    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
   }) {
     return awaitingVerified?.call(this);
   }
@@ -1387,6 +1651,8 @@ class _$_AwaitingVerified implements _AwaitingVerified {
     TResult Function(_Verified value)? verified,
     TResult Function(_Unverified value)? unverified,
     TResult Function(_AwaitingVerified value)? awaitingVerified,
+    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
     required TResult orElse(),
   }) {
     if (awaitingVerified != null) {
@@ -1398,4 +1664,289 @@ class _$_AwaitingVerified implements _AwaitingVerified {
 
 abstract class _AwaitingVerified implements AuthState {
   const factory _AwaitingVerified() = _$_AwaitingVerified;
+}
+
+/// @nodoc
+abstract class _$$_DonorFormCompletedCopyWith<$Res> {
+  factory _$$_DonorFormCompletedCopyWith(_$_DonorFormCompleted value,
+          $Res Function(_$_DonorFormCompleted) then) =
+      __$$_DonorFormCompletedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_DonorFormCompletedCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res>
+    implements _$$_DonorFormCompletedCopyWith<$Res> {
+  __$$_DonorFormCompletedCopyWithImpl(
+      _$_DonorFormCompleted _value, $Res Function(_$_DonorFormCompleted) _then)
+      : super(_value, (v) => _then(v as _$_DonorFormCompleted));
+
+  @override
+  _$_DonorFormCompleted get _value => super._value as _$_DonorFormCompleted;
+}
+
+/// @nodoc
+
+class _$_DonorFormCompleted implements _DonorFormCompleted {
+  const _$_DonorFormCompleted();
+
+  @override
+  String toString() {
+    return 'AuthState.donorFormCompleted()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_DonorFormCompleted);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() authenticated,
+    required TResult Function() unauthenticated,
+    required TResult Function() verified,
+    required TResult Function() unverified,
+    required TResult Function() awaitingVerified,
+    required TResult Function() donorFormCompleted,
+    required TResult Function() donorFormNotCompleted,
+  }) {
+    return donorFormCompleted();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? authenticated,
+    TResult Function()? unauthenticated,
+    TResult Function()? verified,
+    TResult Function()? unverified,
+    TResult Function()? awaitingVerified,
+    TResult Function()? donorFormCompleted,
+    TResult Function()? donorFormNotCompleted,
+  }) {
+    return donorFormCompleted?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? authenticated,
+    TResult Function()? unauthenticated,
+    TResult Function()? verified,
+    TResult Function()? unverified,
+    TResult Function()? awaitingVerified,
+    TResult Function()? donorFormCompleted,
+    TResult Function()? donorFormNotCompleted,
+    required TResult orElse(),
+  }) {
+    if (donorFormCompleted != null) {
+      return donorFormCompleted();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Authenticated value) authenticated,
+    required TResult Function(_Unauthenticated value) unauthenticated,
+    required TResult Function(_Verified value) verified,
+    required TResult Function(_Unverified value) unverified,
+    required TResult Function(_AwaitingVerified value) awaitingVerified,
+    required TResult Function(_DonorFormCompleted value) donorFormCompleted,
+    required TResult Function(_DonorFormNotCompleted value)
+        donorFormNotCompleted,
+  }) {
+    return donorFormCompleted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+    TResult Function(_Verified value)? verified,
+    TResult Function(_Unverified value)? unverified,
+    TResult Function(_AwaitingVerified value)? awaitingVerified,
+    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
+  }) {
+    return donorFormCompleted?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+    TResult Function(_Verified value)? verified,
+    TResult Function(_Unverified value)? unverified,
+    TResult Function(_AwaitingVerified value)? awaitingVerified,
+    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
+    required TResult orElse(),
+  }) {
+    if (donorFormCompleted != null) {
+      return donorFormCompleted(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DonorFormCompleted implements AuthState {
+  const factory _DonorFormCompleted() = _$_DonorFormCompleted;
+}
+
+/// @nodoc
+abstract class _$$_DonorFormNotCompletedCopyWith<$Res> {
+  factory _$$_DonorFormNotCompletedCopyWith(_$_DonorFormNotCompleted value,
+          $Res Function(_$_DonorFormNotCompleted) then) =
+      __$$_DonorFormNotCompletedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_DonorFormNotCompletedCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res>
+    implements _$$_DonorFormNotCompletedCopyWith<$Res> {
+  __$$_DonorFormNotCompletedCopyWithImpl(_$_DonorFormNotCompleted _value,
+      $Res Function(_$_DonorFormNotCompleted) _then)
+      : super(_value, (v) => _then(v as _$_DonorFormNotCompleted));
+
+  @override
+  _$_DonorFormNotCompleted get _value =>
+      super._value as _$_DonorFormNotCompleted;
+}
+
+/// @nodoc
+
+class _$_DonorFormNotCompleted implements _DonorFormNotCompleted {
+  const _$_DonorFormNotCompleted();
+
+  @override
+  String toString() {
+    return 'AuthState.donorFormNotCompleted()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_DonorFormNotCompleted);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() authenticated,
+    required TResult Function() unauthenticated,
+    required TResult Function() verified,
+    required TResult Function() unverified,
+    required TResult Function() awaitingVerified,
+    required TResult Function() donorFormCompleted,
+    required TResult Function() donorFormNotCompleted,
+  }) {
+    return donorFormNotCompleted();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? authenticated,
+    TResult Function()? unauthenticated,
+    TResult Function()? verified,
+    TResult Function()? unverified,
+    TResult Function()? awaitingVerified,
+    TResult Function()? donorFormCompleted,
+    TResult Function()? donorFormNotCompleted,
+  }) {
+    return donorFormNotCompleted?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? authenticated,
+    TResult Function()? unauthenticated,
+    TResult Function()? verified,
+    TResult Function()? unverified,
+    TResult Function()? awaitingVerified,
+    TResult Function()? donorFormCompleted,
+    TResult Function()? donorFormNotCompleted,
+    required TResult orElse(),
+  }) {
+    if (donorFormNotCompleted != null) {
+      return donorFormNotCompleted();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Authenticated value) authenticated,
+    required TResult Function(_Unauthenticated value) unauthenticated,
+    required TResult Function(_Verified value) verified,
+    required TResult Function(_Unverified value) unverified,
+    required TResult Function(_AwaitingVerified value) awaitingVerified,
+    required TResult Function(_DonorFormCompleted value) donorFormCompleted,
+    required TResult Function(_DonorFormNotCompleted value)
+        donorFormNotCompleted,
+  }) {
+    return donorFormNotCompleted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+    TResult Function(_Verified value)? verified,
+    TResult Function(_Unverified value)? unverified,
+    TResult Function(_AwaitingVerified value)? awaitingVerified,
+    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
+  }) {
+    return donorFormNotCompleted?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+    TResult Function(_Verified value)? verified,
+    TResult Function(_Unverified value)? unverified,
+    TResult Function(_AwaitingVerified value)? awaitingVerified,
+    TResult Function(_DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(_DonorFormNotCompleted value)? donorFormNotCompleted,
+    required TResult orElse(),
+  }) {
+    if (donorFormNotCompleted != null) {
+      return donorFormNotCompleted(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DonorFormNotCompleted implements AuthState {
+  const factory _DonorFormNotCompleted() = _$_DonorFormNotCompleted;
 }
