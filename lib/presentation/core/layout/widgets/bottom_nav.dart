@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jini/application/core/bottom_nav/bottom_nav_cubit.dart';
-import 'package:jini/presentation/core/common/app_colors.dart';
 
 class BottomNav extends StatelessWidget {
   const BottomNav({Key? key}) : super(key: key);
@@ -41,7 +40,7 @@ class BottomNav extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20).r,
                             boxShadow: [
                               BoxShadow(
-                                color: AppColors.secondaryDark.withOpacity(0.4),
+                                color: theme.primaryColor.withOpacity(0.25),
                                 spreadRadius: 1,
                                 blurRadius: 12,
                                 offset: Offset(0.w, 5.h),
