@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:jini/presentation/core/common/app_colors.dart';
+import 'package:jini/presentation/core/common/j_theme.dart';
 
 class JButton extends StatelessWidget {
   const JButton({
@@ -45,8 +45,8 @@ class JButton extends StatelessWidget {
       ),
       style: ElevatedButton.styleFrom(
         elevation: 16,
-        shadowColor: AppColors.swatch.shade700,
-        primary: backgroundColor ?? AppColors.primary,
+        shadowColor: JTheme.swatch.shade700,
+        primary: backgroundColor ?? Theme.of(context).primaryColor,
         padding: padding ?? EdgeInsets.all(20).r,
         textStyle: GoogleFonts.spaceGrotesk(
           color: textColor,
