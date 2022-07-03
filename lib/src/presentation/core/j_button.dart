@@ -47,7 +47,7 @@ class JButton extends StatelessWidget {
         elevation: 16,
         shadowColor: AppColors.swatch.shade700,
         primary: backgroundColor ?? AppColors.primary,
-        padding: padding ?? EdgeInsets.all(24).r,
+        padding: padding ?? EdgeInsets.all(20).r,
         textStyle: GoogleFonts.spaceGrotesk(
           color: textColor,
           fontSize: fontSize ?? 18.sp,
