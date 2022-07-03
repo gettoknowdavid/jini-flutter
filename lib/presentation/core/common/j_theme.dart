@@ -49,6 +49,7 @@ class JTheme {
     progressIndicatorTheme: ProgressIndicatorThemeData(
       color: _background,
     ),
+    indicatorColor: _primary,
     appBarTheme: AppBarTheme(
       backgroundColor: Colors.transparent,
       elevation: 0,
