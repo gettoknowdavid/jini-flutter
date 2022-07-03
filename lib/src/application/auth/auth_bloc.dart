@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:jini/src/domain/auth/i_auth_facade.dart';
+import 'package:jini/src/domain/mail/i_mail_facade.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';
@@ -10,8 +11,9 @@ part 'auth_bloc.freezed.dart';
 @injectable
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final IAuthFacade _authFacade;
+  final IMailFacade _mailFacade;
 
-  AuthBloc(this._authFacade) : super(Initial()) {
+  AuthBloc(this._authFacade, this._mailFacade) : super(Initial()) {
     on<_AuthCheckRequested>((event, emit) => _authCheckRequested(event, emit));
     on<_AuthCheckVerified>((event, emit) => _authCheckVerified(event, emit));
     on<_CheckDonorRequirementsMet>(
@@ -19,6 +21,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     );
     on<_SendVerifiedEmail>((event, emit) => _sendVerifiedEmail(event, emit));
     on<_SignedOut>((event, emit) => _signedOut(event, emit));
+    on<_OpenMailApp>((event, emit) => _openMailApp(event, emit));
   }
 
   _authCheckRequested(_AuthCheckRequested e, Emitter<AuthState> emit) async {
@@ -65,5 +68,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   _signedOut(_SignedOut e, Emitter<AuthState> emit) async {
     await _authFacade.signOut();
     emit(const AuthState.unauthenticated());
+  }
+
+  _openMailApp(_OpenMailApp e, Emitter<AuthState> emit) async {
+    await _mailFacade.openMailApp();
   }
 }
