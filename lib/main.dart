@@ -8,6 +8,7 @@ import 'package:injectable/injectable.dart';
 import 'package:jini/di/injection.dart';
 import 'package:jini/firebase_options.dart';
 import 'package:jini/src/application/auth/auth_bloc.dart';
+import 'package:jini/src/application/auth/forgot_password/forgot_password_bloc.dart';
 import 'package:jini/src/application/auth/sign_in/sign_in_bloc.dart';
 import 'package:jini/src/application/auth/sign_up/sign_up_bloc.dart';
 import 'package:jini/src/application/auth/verification/verification_cubit.dart';
@@ -45,6 +46,9 @@ void main() async {
         BlocProvider<ProfileBloc>(create: (context) => getIt<ProfileBloc>()),
         BlocProvider<VerificationCubit>(
           create: (context) => getIt<VerificationCubit>(),
+        ),
+        BlocProvider<ForgotPasswordBloc>(
+          create: (context) => getIt<ForgotPasswordBloc>(),
         ),
       ],
       child: JiniApp(),
