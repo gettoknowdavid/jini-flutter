@@ -7,13 +7,11 @@ class JButton extends StatelessWidget {
     required this.title,
     required this.onPressed,
     this.loading = false,
-    this.indicatorColor,
   }) : super(key: key);
 
   final String title;
   final void Function()? onPressed;
   final bool loading;
-  final Color? indicatorColor;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +27,7 @@ class JButton extends StatelessWidget {
               : SizedBox(
                   height: 18.w,
                   width: 18.w,
-                  child: CircularProgressIndicator(color: indicatorColor),
+                  child: const CircularProgressIndicator(),
                 ),
         ],
       ),
