@@ -16,35 +16,38 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
-  void initialization() async {
-    await Future.delayed(const Duration(seconds: 3));
-    FlutterNativeSplash.remove();
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    initialization();
-  }
-
   @override
   Widget build(BuildContext context) {
+    final bloc = BlocProvider.of<AuthBloc>(context);
+
     return BlocListener<AuthBloc, AuthState>(
-      listener: (context, state) {},
+      bloc: bloc,
+      listener: (context, state) {
+        Future.delayed(const Duration(seconds: 5)).then((_) {
+          state.maybeMap(
+            orElse: () => null,
+            authenticated: (_) => Get.offAllNamed(JRoutes.layout),
+            verified: (_) => Get.offAllNamed(JRoutes.layout),
+            unauthenticated: (_) => Get.offAllNamed(JRoutes.signIn),
+            unverified: (_) => Get.offAllNamed(JRoutes.verification),
+          );
+        });
+      },
       child: Scaffold(
         backgroundColor: AppColors.primaryDark,
-        body: Stack(
-          alignment: Alignment.center,
-          children: [
-            Opacity(
-              opacity: 0.6,
-              child: Image.asset(ImageResources.background, width: 1.sw),
-            ),
-            Image.asset(
-              ImageResources.logo,
-              width: 0.45.sw,
-            ),
-          ],
+        body: Container(
+          height: 1.sh,
+          width: 1.sw,
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              Opacity(
+                opacity: 0.6,
+                child: Image.asset(ImageResources.background),
+              ),
+              Image.asset(ImageResources.logo, width: 0.45.sw),
+            ],
+          ),
         ),
       ),
     );
