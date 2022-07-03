@@ -20,6 +20,7 @@ class SignInForm extends StatelessWidget {
     final authBloc = BlocProvider.of<AuthBloc>(context);
 
     return BlocConsumer<SignInBloc, SignInState>(
+      bloc: bloc,
       listener: (context, state) {
         state.authFailureOrSuccess.fold(
           () {},
@@ -40,12 +41,6 @@ class SignInForm extends StatelessWidget {
             (_) {
               authBloc.add(const AuthEvent.authCheckRequested());
               authBloc.add(const AuthEvent.authCheckVerified());
-              // authBloc.state.mapOrNull(
-              //   authenticated: (_) => Get.offAllNamed(JRoutes.layout),
-              //   verified: (_) => Get.offAllNamed(JRoutes.layout),
-              //   unauthenticated: (_) => Get.offAllNamed(JRoutes.signIn),
-              //   unverified: (_) => Get.offAllNamed(JRoutes.verification),
-              // );
               if (authBloc.state is Unverified) {
                 Get.offAllNamed(JRoutes.verification);
               } else {
@@ -90,7 +85,7 @@ class SignInForm extends StatelessWidget {
               ),
               16.verticalSpace,
               GestureDetector(
-                onTap: () {},
+                onTap: () => Get.toNamed(JRoutes.forgotPassword),
                 child: Text(
                   'Forgot Password?',
                   textAlign: TextAlign.right,
