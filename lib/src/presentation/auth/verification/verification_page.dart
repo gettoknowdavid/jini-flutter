@@ -29,6 +29,12 @@ class _VerificationPageState extends State<VerificationPage> {
   }
 
   @override
+  void dispose() {
+    timer?.cancel();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of<AuthBloc>(context);
 
@@ -39,19 +45,15 @@ class _VerificationPageState extends State<VerificationPage> {
           orElse: () => null,
           verified: (_) {
             timer?.cancel();
-            Get.offNamed(JRoutes.donorRequirements);
+            Get.offNamed(JRoutes.profile);
           },
           unauthenticated: (_) {
             timer = Timer.periodic(const Duration(seconds: 3), (_) {
-              print('object');
-              print('object1');
               bloc.add(const AuthEvent.authCheckVerified());
             });
           },
           awaitingVerified: (_) {
             timer = Timer.periodic(const Duration(seconds: 3), (_) {
-              print('object');
-              print('object1');
               bloc.add(const AuthEvent.authCheckVerified());
             });
           },
