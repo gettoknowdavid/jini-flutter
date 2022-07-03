@@ -60,6 +60,7 @@ dependencies:
   uuid: ^3.0.6
   dropdown_button2: ^1.6.2
   auto_route: ^4.2.0
+  open_mail_app: ^0.4.5
 
 flutter_native_splash:
   # color: "#F25774"
