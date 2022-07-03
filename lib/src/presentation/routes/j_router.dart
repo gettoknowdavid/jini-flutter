@@ -6,4 +6,6 @@ class JRoutes {
   static final String verification = "/verification";
   static final String donorRequirements = "/donorRequirements";
   static final String profile = "/profile";
+  static final String forgotPassword = "/forgotPassword";
+  static final String checkEmail = "/checkEmail";
 }
