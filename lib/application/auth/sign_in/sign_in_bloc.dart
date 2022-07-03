@@ -38,7 +38,7 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
     Either<AuthFailure, Unit> _r;
 
     final isEmailValid = state.email.isValid();
-    final isPasswordValid = state.password.isValid();
+    final isPasswordValid = state.password.getOrCrash() != null;
 
     if (isEmailValid && isPasswordValid) {
       emit(state.copyWith(isSubmitting: true, authFailureOrSuccess: none()));
