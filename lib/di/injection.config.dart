@@ -12,20 +12,19 @@ import 'package:internet_connection_checker/internet_connection_checker.dart'
     as _i9;
 import 'package:shared_preferences/shared_preferences.dart' as _i12;
 
-import '../src/application/auth/auth_bloc.dart' as _i17;
-import '../src/application/auth/forgot_password/forgot_password_bloc.dart'
-    as _i18;
-import '../src/application/auth/sign_in/sign_in_bloc.dart' as _i15;
-import '../src/application/auth/sign_up/sign_up_bloc.dart' as _i16;
-import '../src/application/core/bottom_nav/bottom_nav_cubit.dart' as _i3;
-import '../src/application/profile/profile_bloc.dart' as _i11;
-import '../src/domain/auth/i_auth_facade.dart' as _i13;
-import '../src/domain/mail/i_mail_facade.dart' as _i7;
-import '../src/infrastructure/auth/firebase_auth_facade.dart' as _i14;
-import '../src/infrastructure/auth/firebase_user_mapper.dart' as _i6;
-import '../src/infrastructure/auth/j_user_dtos.dart' as _i10;
-import '../src/infrastructure/core/firebase_injectable_module.dart' as _i19;
-import '../src/infrastructure/mail/open_mail_app_facade.dart' as _i8;
+import '../application/auth/auth_bloc.dart' as _i17;
+import '../application/auth/forgot_password/forgot_password_bloc.dart' as _i18;
+import '../application/auth/sign_in/sign_in_bloc.dart' as _i15;
+import '../application/auth/sign_up/sign_up_bloc.dart' as _i16;
+import '../application/core/bottom_nav/bottom_nav_cubit.dart' as _i3;
+import '../application/profile/profile_bloc.dart' as _i11;
+import '../domain/auth/i_auth_facade.dart' as _i13;
+import '../domain/mail/i_mail_facade.dart' as _i7;
+import '../infrastructure/auth/firebase_auth_facade.dart' as _i14;
+import '../infrastructure/auth/firebase_user_mapper.dart' as _i6;
+import '../infrastructure/auth/j_user_dtos.dart' as _i10;
+import '../infrastructure/core/firebase_injectable_module.dart' as _i19;
+import '../infrastructure/mail/open_mail_app_facade.dart' as _i8;
 import 'register_module.dart' as _i20; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars

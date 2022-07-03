@@ -7,13 +7,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:injectable/injectable.dart';
 import 'package:jini/di/injection.dart';
 import 'package:jini/firebase_options.dart';
-import 'package:jini/src/application/auth/auth_bloc.dart';
-import 'package:jini/src/application/auth/forgot_password/forgot_password_bloc.dart';
-import 'package:jini/src/application/auth/sign_in/sign_in_bloc.dart';
-import 'package:jini/src/application/auth/sign_up/sign_up_bloc.dart';
-import 'package:jini/src/application/core/bottom_nav/bottom_nav_cubit.dart';
-import 'package:jini/src/application/profile/profile_bloc.dart';
-import 'package:jini/src/presentation/core/app.dart';
+import 'package:jini/application/auth/auth_bloc.dart';
+import 'package:jini/application/auth/forgot_password/forgot_password_bloc.dart';
+import 'package:jini/application/auth/sign_in/sign_in_bloc.dart';
+import 'package:jini/application/auth/sign_up/sign_up_bloc.dart';
+import 'package:jini/application/core/bottom_nav/bottom_nav_cubit.dart';
+import 'package:jini/application/profile/profile_bloc.dart';
+import 'package:jini/presentation/core/app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
