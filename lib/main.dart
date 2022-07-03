@@ -38,7 +38,9 @@ void main() async {
         BlocProvider<SignInBloc>(create: (context) => getIt<SignInBloc>()),
         BlocProvider<SignUpBloc>(create: (context) => getIt<SignUpBloc>()),
         BlocProvider<AuthBloc>(create: (context) {
-          return getIt<AuthBloc>()..add(AuthEvent.authCheckRequested());
+          return getIt<AuthBloc>()
+            ..add(AuthEvent.authCheckRequested())
+            ..add(AuthEvent.checkDonorRequirementsMet());
         }),
       ],
       child: JiniApp(),
