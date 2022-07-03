@@ -43,20 +43,6 @@ class JButton extends StatelessWidget {
                 ),
         ],
       ),
-      style: ElevatedButton.styleFrom(
-        elevation: 16,
-        shadowColor: JTheme.swatch.shade700,
-        primary: backgroundColor ?? Theme.of(context).primaryColor,
-        padding: padding ?? EdgeInsets.all(20).r,
-        textStyle: GoogleFonts.spaceGrotesk(
-          color: textColor,
-          fontSize: fontSize ?? 18.sp,
-          fontWeight: FontWeight.w600,
-        ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(18.r),
-        ),
-      ),
     );
   }
 }
