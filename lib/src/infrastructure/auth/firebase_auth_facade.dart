@@ -8,13 +8,16 @@ import 'package:jini/src/domain/auth/value_objects.dart';
 import 'package:jini/src/infrastructure/auth/firebase_user_mapper.dart';
 import 'package:jini/src/infrastructure/auth/j_user_dtos.dart';
 
-final jUsersRef = JUserDtoCollectionReference();
-
 @LazySingleton(as: IAuthFacade)
 class FirebaseAuthFacade implements IAuthFacade {
-  FirebaseAuthFacade(this._firebaseAuth, this._firebaseUserMapper);
+  FirebaseAuthFacade(
+    this._firebaseAuth,
+    this._firebaseUserMapper,
+    this._jUserRef,
+  );
   final FirebaseAuth _firebaseAuth;
   final FirebaseUserMapper _firebaseUserMapper;
+  final JUserDtoCollectionReference _jUserRef;
 
   @override
   Future<Either<AuthFailure, Unit>> signIn({
@@ -72,7 +75,7 @@ class FirebaseAuthFacade implements IAuthFacade {
           initEdit: true,
         );
 
-        jUsersRef.doc(value.user!.uid).set(_user);
+        _jUserRef.doc(value.user!.uid).set(_user);
 
         _firebaseAuth.currentUser!.sendEmailVerification();
 
@@ -120,5 +123,16 @@ class FirebaseAuthFacade implements IAuthFacade {
   @override
   Future<void> sendVerificationEmail() async {
     return await _firebaseAuth.currentUser!.sendEmailVerification();
+  }
+
+  @override
+  Future<Either<AuthFailure, bool?>> donorRequirementsMet() async {
+    final _fUser = await _firebaseAuth.currentUser;
+    final _jUser = await jUsersRef.doc(_fUser?.uid).get().then((v) => v.data);
+    if (_jUser!.formComplete!) {
+      return right(true);
+    } else {
+      return left(const AuthFailure.donorNotEligible());
+    }
   }
 }
