@@ -9,6 +9,7 @@ import 'package:jini/common/app_colors.dart';
 import 'package:jini/common/image_resources.dart';
 import 'package:jini/di/injection.dart';
 import 'package:jini/src/application/auth/auth_bloc.dart';
+import 'package:jini/src/application/auth/verification/verification_cubit.dart';
 import 'package:jini/src/presentation/core/j_button.dart';
 import 'package:jini/src/presentation/routes/j_router.dart';
 
@@ -36,6 +37,7 @@ class _VerificationPageState extends State<VerificationPage> {
   @override
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of<AuthBloc>(context);
+    final cubit = getIt<VerificationCubit>();
 
     return BlocConsumer<AuthBloc, AuthState>(
       bloc: bloc,
@@ -79,14 +81,16 @@ class _VerificationPageState extends State<VerificationPage> {
                       18.verticalSpace,
                       JButton(
                         title: 'Open email app',
-                        onPressed: () {},
+                        onPressed: () async => await cubit.openMailApp(),
                       ),
                       20.verticalSpace,
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              bloc.add(AuthEvent.sendVerifiedEmail());
+                            },
                             child: Text('Resend Email'),
                             style: TextButton.styleFrom(
                               textStyle: GoogleFonts.spaceGrotesk(
@@ -97,7 +101,7 @@ class _VerificationPageState extends State<VerificationPage> {
                             ),
                           ),
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () => cubit.signOut(),
                             child: Text('Cancel'),
                             style: TextButton.styleFrom(
                               textStyle: GoogleFonts.spaceGrotesk(
