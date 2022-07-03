@@ -8,4 +8,5 @@ class AuthEvent with _$AuthEvent {
       _CheckDonorRequirementsMet;
   const factory AuthEvent.sendVerifiedEmail() = _SendVerifiedEmail;
   const factory AuthEvent.authSignedOut() = _SignedOut;
+  const factory AuthEvent.openMailApp() = _OpenMailApp;
 }
