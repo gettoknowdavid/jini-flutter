@@ -27,7 +27,9 @@ class JButton extends StatelessWidget {
               : SizedBox(
                   height: 18.w,
                   width: 18.w,
-                  child: const CircularProgressIndicator(),
+                  child: CircularProgressIndicator(
+                    color: Theme.of(context).primaryColor,
+                  ),
                 ),
         ],
       ),
