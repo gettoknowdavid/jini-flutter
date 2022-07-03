@@ -140,10 +140,10 @@ class SignUpForm extends StatelessWidget {
                 title: 'Sign Up',
                 loading: bloc.state.isSubmitting,
                 indicatorColor: AppColors.primary,
-                // onPressed: () => Get.toNamed(JRoutes.verification),
-                onPressed: !bloc.state.isSubmitting
-                    ? () => bloc.add(SignUpEvent.signUpPressed())
-                    : null,
+                onPressed: () => Get.toNamed(JRoutes.verification),
+                // onPressed: !bloc.state.isSubmitting
+                //     ? () => bloc.add(SignUpEvent.signUpPressed())
+                //     : null,
               ),
             ],
           ),
