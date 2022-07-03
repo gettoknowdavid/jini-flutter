@@ -10,7 +10,6 @@ abstract class IAuthFacade {
     required IPassword password,
     required IGender gender,
     required IBloodGroup bloodGroup,
-    required IUserType userType,
   });
 
   Future<Either<AuthFailure, Unit>> signIn({
