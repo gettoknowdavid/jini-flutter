@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jini/application/auth/auth_bloc.dart';
-import 'package:jini/presentation/core/common/app_colors.dart';
 import 'package:jini/presentation/core/common/image_resources.dart';
 import 'package:jini/presentation/core/widgets/j_back_button.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
@@ -73,7 +72,7 @@ class CheckEmailPage extends StatelessWidget {
                         'try another email address',
                         style: GoogleFonts.spaceGrotesk(
                           fontSize: 14.sp,
-                          color: AppColors.primary,
+                          color: Theme.of(context).primaryColor,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
