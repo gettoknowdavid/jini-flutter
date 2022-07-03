@@ -11,7 +11,7 @@ part 'auth_bloc.freezed.dart';
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final IAuthFacade _authFacade;
 
-  AuthBloc(this._authFacade) : super(_Initial()) {
+  AuthBloc(this._authFacade) : super(Initial()) {
     on<_AuthCheckRequested>((event, emit) => _authCheckRequested(event, emit));
     on<_AuthCheckVerified>((event, emit) => _authCheckVerified(event, emit));
     on<_CheckDonorRequirementsMet>(
@@ -35,8 +35,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     final _verifiedEither = await _authFacade.checkEmailVerified();
     emit(
       _verifiedEither.fold(
-        (_) => const AuthState.unverified(),
-        (_) => const AuthState.verified(),
+        () => const AuthState.unauthenticated(),
+        (either) => either.fold(
+          (_) => const AuthState.unverified(),
+          (_) => const AuthState.verified(),
+        ),
       ),
     );
   }
