@@ -109,7 +109,7 @@ flutter:
     - assets/images/splash-background-1.png
     - assets/images/blood-donation.png
     - assets/images/empty.png
-    - assets/images/forgot-email.png
+    - assets/images/forgot-password.png
     - assets/images/verify-email.png
     - assets/images/check-email.png
     - assets/images/onboarding-1.png
