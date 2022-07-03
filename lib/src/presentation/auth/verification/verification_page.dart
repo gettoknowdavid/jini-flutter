@@ -36,13 +36,22 @@ class _VerificationPageState extends State<VerificationPage> {
       bloc: bloc,
       listener: (context, state) {
         state.maybeMap(
+          orElse: () => null,
           verified: (_) {
             timer?.cancel();
             Get.offNamed(JRoutes.donorRequirements);
           },
-          orElse: () {
+          unauthenticated: (_) {
             timer = Timer.periodic(const Duration(seconds: 3), (_) {
               print('object');
+              print('object1');
+              bloc.add(const AuthEvent.authCheckVerified());
+            });
+          },
+          awaitingVerified: (_) {
+            timer = Timer.periodic(const Duration(seconds: 3), (_) {
+              print('object');
+              print('object1');
               bloc.add(const AuthEvent.authCheckVerified());
             });
           },
