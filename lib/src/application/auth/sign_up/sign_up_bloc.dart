@@ -82,7 +82,6 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
         password: state.password,
         gender: state.gender,
         bloodGroup: state.bloodGroup,
-        userType: state.userType,
       );
 
       emit(state.copyWith(isSubmitting: false, authFailureOrSuccess: some(_r)));
