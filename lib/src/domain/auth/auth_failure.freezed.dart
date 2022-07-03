@@ -24,6 +24,7 @@ mixin _$AuthFailure {
     required TResult Function() emailInUse,
     required TResult Function() invalidEmailOrPassword,
     required TResult Function() unableToUpdate,
+    required TResult Function() userNotFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,6 +35,7 @@ mixin _$AuthFailure {
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     TResult Function()? unableToUpdate,
+    TResult Function()? userNotFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +46,7 @@ mixin _$AuthFailure {
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     TResult Function()? unableToUpdate,
+    TResult Function()? userNotFound,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -56,6 +59,7 @@ mixin _$AuthFailure {
     required TResult Function(InvalidEmailOrPassword value)
         invalidEmailOrPassword,
     required TResult Function(UnableToUpdate value) unableToUpdate,
+    required TResult Function(UserNotFound value) userNotFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,6 +70,7 @@ mixin _$AuthFailure {
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult Function(UserNotFound value)? userNotFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -76,6 +81,7 @@ mixin _$AuthFailure {
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult Function(UserNotFound value)? userNotFound,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -143,6 +149,7 @@ class _$ServerError implements ServerError {
     required TResult Function() emailInUse,
     required TResult Function() invalidEmailOrPassword,
     required TResult Function() unableToUpdate,
+    required TResult Function() userNotFound,
   }) {
     return serverError();
   }
@@ -156,6 +163,7 @@ class _$ServerError implements ServerError {
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     TResult Function()? unableToUpdate,
+    TResult Function()? userNotFound,
   }) {
     return serverError?.call();
   }
@@ -169,6 +177,7 @@ class _$ServerError implements ServerError {
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     TResult Function()? unableToUpdate,
+    TResult Function()? userNotFound,
     required TResult orElse(),
   }) {
     if (serverError != null) {
@@ -187,6 +196,7 @@ class _$ServerError implements ServerError {
     required TResult Function(InvalidEmailOrPassword value)
         invalidEmailOrPassword,
     required TResult Function(UnableToUpdate value) unableToUpdate,
+    required TResult Function(UserNotFound value) userNotFound,
   }) {
     return serverError(this);
   }
@@ -200,6 +210,7 @@ class _$ServerError implements ServerError {
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult Function(UserNotFound value)? userNotFound,
   }) {
     return serverError?.call(this);
   }
@@ -213,6 +224,7 @@ class _$ServerError implements ServerError {
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult Function(UserNotFound value)? userNotFound,
     required TResult orElse(),
   }) {
     if (serverError != null) {
@@ -273,6 +285,7 @@ class _$EmailNotVerified implements EmailNotVerified {
     required TResult Function() emailInUse,
     required TResult Function() invalidEmailOrPassword,
     required TResult Function() unableToUpdate,
+    required TResult Function() userNotFound,
   }) {
     return emailNotVerified();
   }
@@ -286,6 +299,7 @@ class _$EmailNotVerified implements EmailNotVerified {
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     TResult Function()? unableToUpdate,
+    TResult Function()? userNotFound,
   }) {
     return emailNotVerified?.call();
   }
@@ -299,6 +313,7 @@ class _$EmailNotVerified implements EmailNotVerified {
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     TResult Function()? unableToUpdate,
+    TResult Function()? userNotFound,
     required TResult orElse(),
   }) {
     if (emailNotVerified != null) {
@@ -317,6 +332,7 @@ class _$EmailNotVerified implements EmailNotVerified {
     required TResult Function(InvalidEmailOrPassword value)
         invalidEmailOrPassword,
     required TResult Function(UnableToUpdate value) unableToUpdate,
+    required TResult Function(UserNotFound value) userNotFound,
   }) {
     return emailNotVerified(this);
   }
@@ -330,6 +346,7 @@ class _$EmailNotVerified implements EmailNotVerified {
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult Function(UserNotFound value)? userNotFound,
   }) {
     return emailNotVerified?.call(this);
   }
@@ -343,6 +360,7 @@ class _$EmailNotVerified implements EmailNotVerified {
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult Function(UserNotFound value)? userNotFound,
     required TResult orElse(),
   }) {
     if (emailNotVerified != null) {
@@ -403,6 +421,7 @@ class _$DonorNotEligible implements DonorNotEligible {
     required TResult Function() emailInUse,
     required TResult Function() invalidEmailOrPassword,
     required TResult Function() unableToUpdate,
+    required TResult Function() userNotFound,
   }) {
     return donorNotEligible();
   }
@@ -416,6 +435,7 @@ class _$DonorNotEligible implements DonorNotEligible {
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     TResult Function()? unableToUpdate,
+    TResult Function()? userNotFound,
   }) {
     return donorNotEligible?.call();
   }
@@ -429,6 +449,7 @@ class _$DonorNotEligible implements DonorNotEligible {
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     TResult Function()? unableToUpdate,
+    TResult Function()? userNotFound,
     required TResult orElse(),
   }) {
     if (donorNotEligible != null) {
@@ -447,6 +468,7 @@ class _$DonorNotEligible implements DonorNotEligible {
     required TResult Function(InvalidEmailOrPassword value)
         invalidEmailOrPassword,
     required TResult Function(UnableToUpdate value) unableToUpdate,
+    required TResult Function(UserNotFound value) userNotFound,
   }) {
     return donorNotEligible(this);
   }
@@ -460,6 +482,7 @@ class _$DonorNotEligible implements DonorNotEligible {
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult Function(UserNotFound value)? userNotFound,
   }) {
     return donorNotEligible?.call(this);
   }
@@ -473,6 +496,7 @@ class _$DonorNotEligible implements DonorNotEligible {
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult Function(UserNotFound value)? userNotFound,
     required TResult orElse(),
   }) {
     if (donorNotEligible != null) {
@@ -532,6 +556,7 @@ class _$EmailInUse implements EmailInUse {
     required TResult Function() emailInUse,
     required TResult Function() invalidEmailOrPassword,
     required TResult Function() unableToUpdate,
+    required TResult Function() userNotFound,
   }) {
     return emailInUse();
   }
@@ -545,6 +570,7 @@ class _$EmailInUse implements EmailInUse {
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     TResult Function()? unableToUpdate,
+    TResult Function()? userNotFound,
   }) {
     return emailInUse?.call();
   }
@@ -558,6 +584,7 @@ class _$EmailInUse implements EmailInUse {
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     TResult Function()? unableToUpdate,
+    TResult Function()? userNotFound,
     required TResult orElse(),
   }) {
     if (emailInUse != null) {
@@ -576,6 +603,7 @@ class _$EmailInUse implements EmailInUse {
     required TResult Function(InvalidEmailOrPassword value)
         invalidEmailOrPassword,
     required TResult Function(UnableToUpdate value) unableToUpdate,
+    required TResult Function(UserNotFound value) userNotFound,
   }) {
     return emailInUse(this);
   }
@@ -589,6 +617,7 @@ class _$EmailInUse implements EmailInUse {
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult Function(UserNotFound value)? userNotFound,
   }) {
     return emailInUse?.call(this);
   }
@@ -602,6 +631,7 @@ class _$EmailInUse implements EmailInUse {
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult Function(UserNotFound value)? userNotFound,
     required TResult orElse(),
   }) {
     if (emailInUse != null) {
@@ -663,6 +693,7 @@ class _$InvalidEmailOrPassword implements InvalidEmailOrPassword {
     required TResult Function() emailInUse,
     required TResult Function() invalidEmailOrPassword,
     required TResult Function() unableToUpdate,
+    required TResult Function() userNotFound,
   }) {
     return invalidEmailOrPassword();
   }
@@ -676,6 +707,7 @@ class _$InvalidEmailOrPassword implements InvalidEmailOrPassword {
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     TResult Function()? unableToUpdate,
+    TResult Function()? userNotFound,
   }) {
     return invalidEmailOrPassword?.call();
   }
@@ -689,6 +721,7 @@ class _$InvalidEmailOrPassword implements InvalidEmailOrPassword {
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     TResult Function()? unableToUpdate,
+    TResult Function()? userNotFound,
     required TResult orElse(),
   }) {
     if (invalidEmailOrPassword != null) {
@@ -707,6 +740,7 @@ class _$InvalidEmailOrPassword implements InvalidEmailOrPassword {
     required TResult Function(InvalidEmailOrPassword value)
         invalidEmailOrPassword,
     required TResult Function(UnableToUpdate value) unableToUpdate,
+    required TResult Function(UserNotFound value) userNotFound,
   }) {
     return invalidEmailOrPassword(this);
   }
@@ -720,6 +754,7 @@ class _$InvalidEmailOrPassword implements InvalidEmailOrPassword {
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult Function(UserNotFound value)? userNotFound,
   }) {
     return invalidEmailOrPassword?.call(this);
   }
@@ -733,6 +768,7 @@ class _$InvalidEmailOrPassword implements InvalidEmailOrPassword {
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult Function(UserNotFound value)? userNotFound,
     required TResult orElse(),
   }) {
     if (invalidEmailOrPassword != null) {
@@ -793,6 +829,7 @@ class _$UnableToUpdate implements UnableToUpdate {
     required TResult Function() emailInUse,
     required TResult Function() invalidEmailOrPassword,
     required TResult Function() unableToUpdate,
+    required TResult Function() userNotFound,
   }) {
     return unableToUpdate();
   }
@@ -806,6 +843,7 @@ class _$UnableToUpdate implements UnableToUpdate {
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     TResult Function()? unableToUpdate,
+    TResult Function()? userNotFound,
   }) {
     return unableToUpdate?.call();
   }
@@ -819,6 +857,7 @@ class _$UnableToUpdate implements UnableToUpdate {
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     TResult Function()? unableToUpdate,
+    TResult Function()? userNotFound,
     required TResult orElse(),
   }) {
     if (unableToUpdate != null) {
@@ -837,6 +876,7 @@ class _$UnableToUpdate implements UnableToUpdate {
     required TResult Function(InvalidEmailOrPassword value)
         invalidEmailOrPassword,
     required TResult Function(UnableToUpdate value) unableToUpdate,
+    required TResult Function(UserNotFound value) userNotFound,
   }) {
     return unableToUpdate(this);
   }
@@ -850,6 +890,7 @@ class _$UnableToUpdate implements UnableToUpdate {
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult Function(UserNotFound value)? userNotFound,
   }) {
     return unableToUpdate?.call(this);
   }
@@ -863,6 +904,7 @@ class _$UnableToUpdate implements UnableToUpdate {
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult Function(UserNotFound value)? userNotFound,
     required TResult orElse(),
   }) {
     if (unableToUpdate != null) {
@@ -874,4 +916,139 @@ class _$UnableToUpdate implements UnableToUpdate {
 
 abstract class UnableToUpdate implements AuthFailure {
   const factory UnableToUpdate() = _$UnableToUpdate;
+}
+
+/// @nodoc
+abstract class _$$UserNotFoundCopyWith<$Res> {
+  factory _$$UserNotFoundCopyWith(
+          _$UserNotFound value, $Res Function(_$UserNotFound) then) =
+      __$$UserNotFoundCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UserNotFoundCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
+    implements _$$UserNotFoundCopyWith<$Res> {
+  __$$UserNotFoundCopyWithImpl(
+      _$UserNotFound _value, $Res Function(_$UserNotFound) _then)
+      : super(_value, (v) => _then(v as _$UserNotFound));
+
+  @override
+  _$UserNotFound get _value => super._value as _$UserNotFound;
+}
+
+/// @nodoc
+
+class _$UserNotFound implements UserNotFound {
+  const _$UserNotFound();
+
+  @override
+  String toString() {
+    return 'AuthFailure.userNotFound()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UserNotFound);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() serverError,
+    required TResult Function() emailNotVerified,
+    required TResult Function() donorNotEligible,
+    required TResult Function() emailInUse,
+    required TResult Function() invalidEmailOrPassword,
+    required TResult Function() unableToUpdate,
+    required TResult Function() userNotFound,
+  }) {
+    return userNotFound();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? serverError,
+    TResult Function()? emailNotVerified,
+    TResult Function()? donorNotEligible,
+    TResult Function()? emailInUse,
+    TResult Function()? invalidEmailOrPassword,
+    TResult Function()? unableToUpdate,
+    TResult Function()? userNotFound,
+  }) {
+    return userNotFound?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? serverError,
+    TResult Function()? emailNotVerified,
+    TResult Function()? donorNotEligible,
+    TResult Function()? emailInUse,
+    TResult Function()? invalidEmailOrPassword,
+    TResult Function()? unableToUpdate,
+    TResult Function()? userNotFound,
+    required TResult orElse(),
+  }) {
+    if (userNotFound != null) {
+      return userNotFound();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(EmailNotVerified value) emailNotVerified,
+    required TResult Function(DonorNotEligible value) donorNotEligible,
+    required TResult Function(EmailInUse value) emailInUse,
+    required TResult Function(InvalidEmailOrPassword value)
+        invalidEmailOrPassword,
+    required TResult Function(UnableToUpdate value) unableToUpdate,
+    required TResult Function(UserNotFound value) userNotFound,
+  }) {
+    return userNotFound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ServerError value)? serverError,
+    TResult Function(EmailNotVerified value)? emailNotVerified,
+    TResult Function(DonorNotEligible value)? donorNotEligible,
+    TResult Function(EmailInUse value)? emailInUse,
+    TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
+    TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult Function(UserNotFound value)? userNotFound,
+  }) {
+    return userNotFound?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ServerError value)? serverError,
+    TResult Function(EmailNotVerified value)? emailNotVerified,
+    TResult Function(DonorNotEligible value)? donorNotEligible,
+    TResult Function(EmailInUse value)? emailInUse,
+    TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
+    TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult Function(UserNotFound value)? userNotFound,
+    required TResult orElse(),
+  }) {
+    if (userNotFound != null) {
+      return userNotFound(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserNotFound implements AuthFailure {
+  const factory UserNotFound() = _$UserNotFound;
 }
