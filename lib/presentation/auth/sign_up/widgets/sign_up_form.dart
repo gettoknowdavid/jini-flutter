@@ -19,7 +19,6 @@ class SignUpForm extends StatelessWidget {
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of<SignUpBloc>(context);
     final authBloc = BlocProvider.of<AuthBloc>(context);
-    final theme = Theme.of(context);
 
     return BlocConsumer<SignUpBloc, SignUpState>(
       listener: (context, state) {
@@ -136,11 +135,9 @@ class SignUpForm extends StatelessWidget {
               JButton(
                 title: 'Sign Up',
                 loading: bloc.state.isSubmitting,
-                indicatorColor: theme.primaryColor,
-                onPressed: () => Get.toNamed(JRoutes.verification),
-                // onPressed: !bloc.state.isSubmitting
-                //     ? () => bloc.add(SignUpEvent.signUpPressed())
-                //     : null,
+                onPressed: !bloc.state.isSubmitting
+                    ? () => bloc.add(SignUpEvent.signUpPressed())
+                    : null,
               ),
             ],
           ),
