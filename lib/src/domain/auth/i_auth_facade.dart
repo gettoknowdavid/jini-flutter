@@ -17,6 +17,10 @@ abstract class IAuthFacade {
     required IPassword password,
   });
 
+  Future<Either<AuthFailure, Unit>> resetPassword({
+    required IEmailAddress email,
+  });
+
   Future<Either<AuthFailure, Unit>> updateUser(JUser jUser);
 
   Future<Option<JUser?>> getUser();
