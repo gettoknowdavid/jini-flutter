@@ -17,7 +17,6 @@ class SignInForm extends StatelessWidget {
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of<SignInBloc>(context);
     final authBloc = BlocProvider.of<AuthBloc>(context);
-    final theme = Theme.of(context);
 
     return BlocConsumer<SignInBloc, SignInState>(
       bloc: bloc,
@@ -97,7 +96,6 @@ class SignInForm extends StatelessWidget {
               JButton(
                 title: 'Sign In',
                 loading: bloc.state.isSubmitting,
-                indicatorColor: theme.primaryColor,
                 onPressed: !bloc.state.isSubmitting
                     ? () => bloc.add(SignInEvent.signInPressed())
                     : null,
