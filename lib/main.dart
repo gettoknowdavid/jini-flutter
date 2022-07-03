@@ -3,7 +3,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:injectable/injectable.dart';
 import 'package:jini/di/injection.dart';
@@ -16,8 +15,7 @@ import 'package:jini/src/application/profile/profile_bloc.dart';
 import 'package:jini/src/presentation/core/app.dart';
 
 void main() async {
-  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
-  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   await ScreenUtil.ensureScreenSize();
 
@@ -39,7 +37,9 @@ void main() async {
         BlocProvider<SignInBloc>(create: (context) => getIt<SignInBloc>()),
         BlocProvider<SignUpBloc>(create: (context) => getIt<SignUpBloc>()),
         BlocProvider<AuthBloc>(create: (context) {
-          return getIt<AuthBloc>()..add(AuthEvent.authCheckRequested());
+          return getIt<AuthBloc>()
+            ..add(AuthEvent.authCheckRequested())
+            ..add(AuthEvent.authCheckVerified());
         }),
         BlocProvider<ProfileBloc>(create: (context) => getIt<ProfileBloc>()),
       ],
