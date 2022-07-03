@@ -70,7 +70,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Create Account',
+                      'Create a new Account',
                       style: GoogleFonts.spaceGrotesk(
                         fontSize: 40.sp,
                         fontWeight: FontWeight.w600,
