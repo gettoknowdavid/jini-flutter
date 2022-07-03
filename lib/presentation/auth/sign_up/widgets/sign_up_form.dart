@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:jini/application/auth/auth_bloc.dart';
 import 'package:jini/application/auth/sign_up/sign_up_bloc.dart';
 import 'package:jini/domain/core/blood_group.dart';
 import 'package:jini/domain/core/gender.dart';
-import 'package:jini/presentation/core/common/app_colors.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
+import 'package:jini/presentation/core/widgets/j_dropdown.dart';
 import 'package:jini/presentation/core/widgets/j_text_form_field.dart';
 import 'package:jini/presentation/routes/j_router.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
@@ -20,6 +19,7 @@ class SignUpForm extends StatelessWidget {
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of<SignUpBloc>(context);
     final authBloc = BlocProvider.of<AuthBloc>(context);
+    final theme = Theme.of(context);
 
     return BlocConsumer<SignUpBloc, SignUpState>(
       listener: (context, state) {
@@ -36,7 +36,7 @@ class SignUpForm extends StatelessWidget {
                 ),
                 icon: Icon(PhosphorIcons.warningCircleBold),
                 snackPosition: SnackPosition.BOTTOM,
-                backgroundColor: AppColors.primary,
+                backgroundColor: theme.primaryColor,
               );
             },
             (r) {
@@ -139,7 +139,7 @@ class SignUpForm extends StatelessWidget {
               JButton(
                 title: 'Sign Up',
                 loading: bloc.state.isSubmitting,
-                indicatorColor: AppColors.primary,
+                indicatorColor: theme.primaryColor,
                 onPressed: () => Get.toNamed(JRoutes.verification),
                 // onPressed: !bloc.state.isSubmitting
                 //     ? () => bloc.add(SignUpEvent.signUpPressed())
@@ -149,50 +149,6 @@ class SignUpForm extends StatelessWidget {
           ),
         );
       },
-    );
-  }
-}
-
-class JDropdown<T> extends StatelessWidget {
-  const JDropdown({
-    Key? key,
-    required this.hint,
-    required this.value,
-    required this.onChanged,
-    required this.items,
-    this.validator,
-  }) : super(key: key);
-
-  final T? value;
-  final void Function(T?) onChanged;
-  final String? Function(T?)? validator;
-  final List<DropdownMenuItem<T>> items;
-  final String hint;
-
-  @override
-  Widget build(BuildContext context) {
-    return DropdownButtonFormField<T>(
-      borderRadius: BorderRadius.circular(18.r),
-      dropdownColor: AppColors.primary,
-      hint: Text(hint),
-      value: value,
-      onChanged: onChanged,
-      validator: validator,
-      autovalidateMode: AutovalidateMode.onUserInteraction,
-      decoration: InputDecoration(
-        contentPadding: EdgeInsets.fromLTRB(18, 22, 18, 22).r,
-        border: OutlineInputBorder(
-          borderSide: BorderSide.none,
-          borderRadius: BorderRadius.circular(18.r),
-        ),
-        fillColor: Colors.white24,
-        filled: true,
-      ),
-      items: items,
-      style: GoogleFonts.spaceGrotesk(
-        fontSize: 16.sp,
-        fontWeight: FontWeight.w500,
-      ),
     );
   }
 }
