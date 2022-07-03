@@ -138,4 +138,20 @@ class FirebaseAuthFacade implements IAuthFacade {
       return left(const AuthFailure.donorNotEligible());
     }
   }
+
+  @override
+  Future<Either<AuthFailure, Unit>> resetPassword({
+    required IEmailAddress email,
+  }) async {
+    try {
+      await _firebaseAuth.sendPasswordResetEmail(email: email.getOrCrash()!);
+      return right(unit);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        return left(const AuthFailure.userNotFound());
+      } else {
+        return left(const AuthFailure.serverError());
+      }
+    }
+  }
 }
