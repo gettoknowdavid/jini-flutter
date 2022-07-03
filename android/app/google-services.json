@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "599361383872",
+    "project_id": "jini-firebase",
+    "storage_bucket": "jini-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599361383872:android:788e6f2e8488f19bbcac25",
+        "android_client_info": {
+          "package_name": "com.example.jini"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "599361383872-2sbj3vd991tagpvltq1n6ealrlh8v2ic.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjbiA3KWacle6qfn54-OnO5DseNAQJBU8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "599361383872-2sbj3vd991tagpvltq1n6ealrlh8v2ic.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
