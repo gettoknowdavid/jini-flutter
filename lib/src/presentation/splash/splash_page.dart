@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/route_manager.dart';
 import 'package:jini/common/app_colors.dart';
 import 'package:jini/common/image_resources.dart';
