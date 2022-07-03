@@ -7,7 +7,6 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jini/di/injection.dart';
 import 'package:jini/application/auth/auth_bloc.dart';
-import 'package:jini/presentation/core/common/app_colors.dart';
 import 'package:jini/presentation/core/common/image_resources.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
 import 'package:jini/presentation/routes/j_router.dart';
@@ -93,7 +92,6 @@ class _VerificationPageState extends State<VerificationPage> {
                             style: TextButton.styleFrom(
                               textStyle: GoogleFonts.spaceGrotesk(
                                 fontSize: 14.sp,
-                                color: AppColors.swatch.shade900,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
@@ -105,7 +103,6 @@ class _VerificationPageState extends State<VerificationPage> {
                             style: TextButton.styleFrom(
                               textStyle: GoogleFonts.spaceGrotesk(
                                 fontSize: 14.sp,
-                                color: AppColors.swatch.shade900,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
