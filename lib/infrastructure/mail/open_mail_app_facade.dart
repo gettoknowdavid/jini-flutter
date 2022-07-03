@@ -1,8 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:injectable/injectable.dart';
 import 'package:jini/domain/mail/i_mail_facade.dart';
-import 'package:jini/presentation/core/common/app_colors.dart';
+import 'package:jini/presentation/core/widgets/j_dialogs.dart';
 import 'package:open_mail_app/open_mail_app.dart';
 
 @LazySingleton(as: IMailFacade)
@@ -12,25 +10,10 @@ class OpenMailAppFacade implements IMailFacade {
     final _result = await OpenMailApp.openMailApp();
 
     if (!_result.didOpen && !_result.canOpen) {
-      Get.defaultDialog(
-        title: 'Oops!',
-        middleText: 'No mail apps installed',
-        textConfirm: 'OK',
-        onConfirm: () => Get.back(),
-        confirmTextColor: Colors.white,
-        buttonColor: AppColors.primary,
-        barrierDismissible: true,
-      );
+      JDialogs.noMailAppDialog();
     } else if (!_result.didOpen && _result.canOpen) {
-      Get.defaultDialog(
-        title: 'Open Mail App',
-        middleText: 'Please select your preferred mail application',
-        textConfirm: 'Cancel',
-        onConfirm: () => Get.back(),
-        confirmTextColor: Colors.white,
-        buttonColor: AppColors.primary,
-        barrierDismissible: true,
-        content: MailAppPickerDialog(mailApps: _result.options),
+      JDialogs.mailAppOptionsDialog(
+        MailAppPickerDialog(mailApps: _result.options),
       );
     }
   }
