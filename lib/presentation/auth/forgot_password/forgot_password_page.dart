@@ -17,7 +17,6 @@ class ForgotPasswordPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of<ForgotPasswordBloc>(context);
-    final theme = Theme.of(context);
 
     return BlocConsumer<ForgotPasswordBloc, ForgotPasswordState>(
       bloc: bloc,
@@ -96,7 +95,6 @@ class ForgotPasswordPage extends StatelessWidget {
                         JButton(
                           title: 'Submit',
                           loading: bloc.state.isSubmitting,
-                          indicatorColor: theme.primaryColor,
                           onPressed: !bloc.state.isSubmitting
                               ? () =>
                                   bloc.add(ForgotPasswordEvent.submitPressed())
