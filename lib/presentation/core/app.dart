@@ -22,6 +22,7 @@ class JiniApp extends StatelessWidget {
           home: SplashPage(),
           getPages: JRoutes.pages,
           theme: JTheme.theme,
+          color: JTheme.swatch,
         );
       },
     );
