@@ -20,6 +20,7 @@ mixin _$AuthFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() serverError,
     required TResult Function() emailNotVerified,
+    required TResult Function() donorNotEligible,
     required TResult Function() emailInUse,
     required TResult Function() invalidEmailOrPassword,
     required TResult Function() unableToUpdate,
@@ -29,6 +30,7 @@ mixin _$AuthFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? serverError,
     TResult Function()? emailNotVerified,
+    TResult Function()? donorNotEligible,
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     TResult Function()? unableToUpdate,
@@ -38,6 +40,7 @@ mixin _$AuthFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? serverError,
     TResult Function()? emailNotVerified,
+    TResult Function()? donorNotEligible,
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     TResult Function()? unableToUpdate,
@@ -48,6 +51,7 @@ mixin _$AuthFailure {
   TResult map<TResult extends Object?>({
     required TResult Function(ServerError value) serverError,
     required TResult Function(EmailNotVerified value) emailNotVerified,
+    required TResult Function(DonorNotEligible value) donorNotEligible,
     required TResult Function(EmailInUse value) emailInUse,
     required TResult Function(InvalidEmailOrPassword value)
         invalidEmailOrPassword,
@@ -58,6 +62,7 @@ mixin _$AuthFailure {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailNotVerified value)? emailNotVerified,
+    TResult Function(DonorNotEligible value)? donorNotEligible,
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     TResult Function(UnableToUpdate value)? unableToUpdate,
@@ -67,6 +72,7 @@ mixin _$AuthFailure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailNotVerified value)? emailNotVerified,
+    TResult Function(DonorNotEligible value)? donorNotEligible,
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     TResult Function(UnableToUpdate value)? unableToUpdate,
@@ -133,6 +139,7 @@ class _$ServerError implements ServerError {
   TResult when<TResult extends Object?>({
     required TResult Function() serverError,
     required TResult Function() emailNotVerified,
+    required TResult Function() donorNotEligible,
     required TResult Function() emailInUse,
     required TResult Function() invalidEmailOrPassword,
     required TResult Function() unableToUpdate,
@@ -145,6 +152,7 @@ class _$ServerError implements ServerError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? serverError,
     TResult Function()? emailNotVerified,
+    TResult Function()? donorNotEligible,
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     TResult Function()? unableToUpdate,
@@ -157,6 +165,7 @@ class _$ServerError implements ServerError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? serverError,
     TResult Function()? emailNotVerified,
+    TResult Function()? donorNotEligible,
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     TResult Function()? unableToUpdate,
@@ -173,6 +182,7 @@ class _$ServerError implements ServerError {
   TResult map<TResult extends Object?>({
     required TResult Function(ServerError value) serverError,
     required TResult Function(EmailNotVerified value) emailNotVerified,
+    required TResult Function(DonorNotEligible value) donorNotEligible,
     required TResult Function(EmailInUse value) emailInUse,
     required TResult Function(InvalidEmailOrPassword value)
         invalidEmailOrPassword,
@@ -186,6 +196,7 @@ class _$ServerError implements ServerError {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailNotVerified value)? emailNotVerified,
+    TResult Function(DonorNotEligible value)? donorNotEligible,
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     TResult Function(UnableToUpdate value)? unableToUpdate,
@@ -198,6 +209,7 @@ class _$ServerError implements ServerError {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailNotVerified value)? emailNotVerified,
+    TResult Function(DonorNotEligible value)? donorNotEligible,
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     TResult Function(UnableToUpdate value)? unableToUpdate,
@@ -257,6 +269,7 @@ class _$EmailNotVerified implements EmailNotVerified {
   TResult when<TResult extends Object?>({
     required TResult Function() serverError,
     required TResult Function() emailNotVerified,
+    required TResult Function() donorNotEligible,
     required TResult Function() emailInUse,
     required TResult Function() invalidEmailOrPassword,
     required TResult Function() unableToUpdate,
@@ -269,6 +282,7 @@ class _$EmailNotVerified implements EmailNotVerified {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? serverError,
     TResult Function()? emailNotVerified,
+    TResult Function()? donorNotEligible,
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     TResult Function()? unableToUpdate,
@@ -281,6 +295,7 @@ class _$EmailNotVerified implements EmailNotVerified {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? serverError,
     TResult Function()? emailNotVerified,
+    TResult Function()? donorNotEligible,
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     TResult Function()? unableToUpdate,
@@ -297,6 +312,7 @@ class _$EmailNotVerified implements EmailNotVerified {
   TResult map<TResult extends Object?>({
     required TResult Function(ServerError value) serverError,
     required TResult Function(EmailNotVerified value) emailNotVerified,
+    required TResult Function(DonorNotEligible value) donorNotEligible,
     required TResult Function(EmailInUse value) emailInUse,
     required TResult Function(InvalidEmailOrPassword value)
         invalidEmailOrPassword,
@@ -310,6 +326,7 @@ class _$EmailNotVerified implements EmailNotVerified {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailNotVerified value)? emailNotVerified,
+    TResult Function(DonorNotEligible value)? donorNotEligible,
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     TResult Function(UnableToUpdate value)? unableToUpdate,
@@ -322,6 +339,7 @@ class _$EmailNotVerified implements EmailNotVerified {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailNotVerified value)? emailNotVerified,
+    TResult Function(DonorNotEligible value)? donorNotEligible,
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     TResult Function(UnableToUpdate value)? unableToUpdate,
@@ -336,6 +354,136 @@ class _$EmailNotVerified implements EmailNotVerified {
 
 abstract class EmailNotVerified implements AuthFailure {
   const factory EmailNotVerified() = _$EmailNotVerified;
+}
+
+/// @nodoc
+abstract class _$$DonorNotEligibleCopyWith<$Res> {
+  factory _$$DonorNotEligibleCopyWith(
+          _$DonorNotEligible value, $Res Function(_$DonorNotEligible) then) =
+      __$$DonorNotEligibleCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$DonorNotEligibleCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res>
+    implements _$$DonorNotEligibleCopyWith<$Res> {
+  __$$DonorNotEligibleCopyWithImpl(
+      _$DonorNotEligible _value, $Res Function(_$DonorNotEligible) _then)
+      : super(_value, (v) => _then(v as _$DonorNotEligible));
+
+  @override
+  _$DonorNotEligible get _value => super._value as _$DonorNotEligible;
+}
+
+/// @nodoc
+
+class _$DonorNotEligible implements DonorNotEligible {
+  const _$DonorNotEligible();
+
+  @override
+  String toString() {
+    return 'AuthFailure.donorNotEligible()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$DonorNotEligible);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() serverError,
+    required TResult Function() emailNotVerified,
+    required TResult Function() donorNotEligible,
+    required TResult Function() emailInUse,
+    required TResult Function() invalidEmailOrPassword,
+    required TResult Function() unableToUpdate,
+  }) {
+    return donorNotEligible();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? serverError,
+    TResult Function()? emailNotVerified,
+    TResult Function()? donorNotEligible,
+    TResult Function()? emailInUse,
+    TResult Function()? invalidEmailOrPassword,
+    TResult Function()? unableToUpdate,
+  }) {
+    return donorNotEligible?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? serverError,
+    TResult Function()? emailNotVerified,
+    TResult Function()? donorNotEligible,
+    TResult Function()? emailInUse,
+    TResult Function()? invalidEmailOrPassword,
+    TResult Function()? unableToUpdate,
+    required TResult orElse(),
+  }) {
+    if (donorNotEligible != null) {
+      return donorNotEligible();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(EmailNotVerified value) emailNotVerified,
+    required TResult Function(DonorNotEligible value) donorNotEligible,
+    required TResult Function(EmailInUse value) emailInUse,
+    required TResult Function(InvalidEmailOrPassword value)
+        invalidEmailOrPassword,
+    required TResult Function(UnableToUpdate value) unableToUpdate,
+  }) {
+    return donorNotEligible(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ServerError value)? serverError,
+    TResult Function(EmailNotVerified value)? emailNotVerified,
+    TResult Function(DonorNotEligible value)? donorNotEligible,
+    TResult Function(EmailInUse value)? emailInUse,
+    TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
+    TResult Function(UnableToUpdate value)? unableToUpdate,
+  }) {
+    return donorNotEligible?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ServerError value)? serverError,
+    TResult Function(EmailNotVerified value)? emailNotVerified,
+    TResult Function(DonorNotEligible value)? donorNotEligible,
+    TResult Function(EmailInUse value)? emailInUse,
+    TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
+    TResult Function(UnableToUpdate value)? unableToUpdate,
+    required TResult orElse(),
+  }) {
+    if (donorNotEligible != null) {
+      return donorNotEligible(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DonorNotEligible implements AuthFailure {
+  const factory DonorNotEligible() = _$DonorNotEligible;
 }
 
 /// @nodoc
@@ -380,6 +528,7 @@ class _$EmailInUse implements EmailInUse {
   TResult when<TResult extends Object?>({
     required TResult Function() serverError,
     required TResult Function() emailNotVerified,
+    required TResult Function() donorNotEligible,
     required TResult Function() emailInUse,
     required TResult Function() invalidEmailOrPassword,
     required TResult Function() unableToUpdate,
@@ -392,6 +541,7 @@ class _$EmailInUse implements EmailInUse {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? serverError,
     TResult Function()? emailNotVerified,
+    TResult Function()? donorNotEligible,
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     TResult Function()? unableToUpdate,
@@ -404,6 +554,7 @@ class _$EmailInUse implements EmailInUse {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? serverError,
     TResult Function()? emailNotVerified,
+    TResult Function()? donorNotEligible,
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     TResult Function()? unableToUpdate,
@@ -420,6 +571,7 @@ class _$EmailInUse implements EmailInUse {
   TResult map<TResult extends Object?>({
     required TResult Function(ServerError value) serverError,
     required TResult Function(EmailNotVerified value) emailNotVerified,
+    required TResult Function(DonorNotEligible value) donorNotEligible,
     required TResult Function(EmailInUse value) emailInUse,
     required TResult Function(InvalidEmailOrPassword value)
         invalidEmailOrPassword,
@@ -433,6 +585,7 @@ class _$EmailInUse implements EmailInUse {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailNotVerified value)? emailNotVerified,
+    TResult Function(DonorNotEligible value)? donorNotEligible,
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     TResult Function(UnableToUpdate value)? unableToUpdate,
@@ -445,6 +598,7 @@ class _$EmailInUse implements EmailInUse {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailNotVerified value)? emailNotVerified,
+    TResult Function(DonorNotEligible value)? donorNotEligible,
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     TResult Function(UnableToUpdate value)? unableToUpdate,
@@ -505,6 +659,7 @@ class _$InvalidEmailOrPassword implements InvalidEmailOrPassword {
   TResult when<TResult extends Object?>({
     required TResult Function() serverError,
     required TResult Function() emailNotVerified,
+    required TResult Function() donorNotEligible,
     required TResult Function() emailInUse,
     required TResult Function() invalidEmailOrPassword,
     required TResult Function() unableToUpdate,
@@ -517,6 +672,7 @@ class _$InvalidEmailOrPassword implements InvalidEmailOrPassword {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? serverError,
     TResult Function()? emailNotVerified,
+    TResult Function()? donorNotEligible,
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     TResult Function()? unableToUpdate,
@@ -529,6 +685,7 @@ class _$InvalidEmailOrPassword implements InvalidEmailOrPassword {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? serverError,
     TResult Function()? emailNotVerified,
+    TResult Function()? donorNotEligible,
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     TResult Function()? unableToUpdate,
@@ -545,6 +702,7 @@ class _$InvalidEmailOrPassword implements InvalidEmailOrPassword {
   TResult map<TResult extends Object?>({
     required TResult Function(ServerError value) serverError,
     required TResult Function(EmailNotVerified value) emailNotVerified,
+    required TResult Function(DonorNotEligible value) donorNotEligible,
     required TResult Function(EmailInUse value) emailInUse,
     required TResult Function(InvalidEmailOrPassword value)
         invalidEmailOrPassword,
@@ -558,6 +716,7 @@ class _$InvalidEmailOrPassword implements InvalidEmailOrPassword {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailNotVerified value)? emailNotVerified,
+    TResult Function(DonorNotEligible value)? donorNotEligible,
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     TResult Function(UnableToUpdate value)? unableToUpdate,
@@ -570,6 +729,7 @@ class _$InvalidEmailOrPassword implements InvalidEmailOrPassword {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailNotVerified value)? emailNotVerified,
+    TResult Function(DonorNotEligible value)? donorNotEligible,
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     TResult Function(UnableToUpdate value)? unableToUpdate,
@@ -629,6 +789,7 @@ class _$UnableToUpdate implements UnableToUpdate {
   TResult when<TResult extends Object?>({
     required TResult Function() serverError,
     required TResult Function() emailNotVerified,
+    required TResult Function() donorNotEligible,
     required TResult Function() emailInUse,
     required TResult Function() invalidEmailOrPassword,
     required TResult Function() unableToUpdate,
@@ -641,6 +802,7 @@ class _$UnableToUpdate implements UnableToUpdate {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? serverError,
     TResult Function()? emailNotVerified,
+    TResult Function()? donorNotEligible,
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     TResult Function()? unableToUpdate,
@@ -653,6 +815,7 @@ class _$UnableToUpdate implements UnableToUpdate {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? serverError,
     TResult Function()? emailNotVerified,
+    TResult Function()? donorNotEligible,
     TResult Function()? emailInUse,
     TResult Function()? invalidEmailOrPassword,
     TResult Function()? unableToUpdate,
@@ -669,6 +832,7 @@ class _$UnableToUpdate implements UnableToUpdate {
   TResult map<TResult extends Object?>({
     required TResult Function(ServerError value) serverError,
     required TResult Function(EmailNotVerified value) emailNotVerified,
+    required TResult Function(DonorNotEligible value) donorNotEligible,
     required TResult Function(EmailInUse value) emailInUse,
     required TResult Function(InvalidEmailOrPassword value)
         invalidEmailOrPassword,
@@ -682,6 +846,7 @@ class _$UnableToUpdate implements UnableToUpdate {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailNotVerified value)? emailNotVerified,
+    TResult Function(DonorNotEligible value)? donorNotEligible,
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     TResult Function(UnableToUpdate value)? unableToUpdate,
@@ -694,6 +859,7 @@ class _$UnableToUpdate implements UnableToUpdate {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailNotVerified value)? emailNotVerified,
+    TResult Function(DonorNotEligible value)? donorNotEligible,
     TResult Function(EmailInUse value)? emailInUse,
     TResult Function(InvalidEmailOrPassword value)? invalidEmailOrPassword,
     TResult Function(UnableToUpdate value)? unableToUpdate,
