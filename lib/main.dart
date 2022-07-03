@@ -12,6 +12,7 @@ import 'package:jini/src/application/auth/auth_bloc.dart';
 import 'package:jini/src/application/auth/sign_in/sign_in_bloc.dart';
 import 'package:jini/src/application/auth/sign_up/sign_up_bloc.dart';
 import 'package:jini/src/application/core/bottom_nav/bottom_nav_cubit.dart';
+import 'package:jini/src/application/profile/profile_bloc.dart';
 import 'package:jini/src/presentation/core/app.dart';
 
 void main() async {
@@ -38,10 +39,9 @@ void main() async {
         BlocProvider<SignInBloc>(create: (context) => getIt<SignInBloc>()),
         BlocProvider<SignUpBloc>(create: (context) => getIt<SignUpBloc>()),
         BlocProvider<AuthBloc>(create: (context) {
-          return getIt<AuthBloc>()
-            ..add(AuthEvent.authCheckRequested())
-            ..add(AuthEvent.checkDonorRequirementsMet());
+          return getIt<AuthBloc>()..add(AuthEvent.authCheckRequested());
         }),
+        BlocProvider<ProfileBloc>(create: (context) => getIt<ProfileBloc>()),
       ],
       child: JiniApp(),
     ),
