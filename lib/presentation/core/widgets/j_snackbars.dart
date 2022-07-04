@@ -6,6 +6,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class JSnackbars {
   JSnackbars._();
 
+  static get closeAll => Get.closeAllSnackbars();
+
   static errorSnackbar({required String title, required String message}) {
     return Get.snackbar(
       title,
