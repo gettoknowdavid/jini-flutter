@@ -35,6 +35,7 @@ class SignInForm extends StatelessWidget {
               );
             },
             (_) {
+              Get.closeAllSnackbars();
               authBloc.add(const AuthEvent.authCheckRequested());
               authBloc.add(const AuthEvent.authCheckVerified());
               if (authBloc.state is Unverified) {
