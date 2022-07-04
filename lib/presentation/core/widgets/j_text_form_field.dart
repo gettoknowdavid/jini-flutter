@@ -9,7 +9,7 @@ class JTextFormField extends StatefulWidget {
     this.hint,
     this.isPassword = false,
     this.keyboardType,
-    this.color,
+    this.color = Colors.white24,
     this.autocorrect = false,
     this.onChanged,
     this.validator,
@@ -51,7 +51,7 @@ class _JTextFormFieldState extends State<JTextFormField> {
           border: InputBorder.none,
           contentPadding: EdgeInsets.fromLTRB(18, 22, 18, 22).r,
           hintText: widget.hint,
-          fillColor: widget.color ?? Colors.white24,
+          fillColor: widget.color,
           filled: true,
           errorMaxLines: 3,
           suffixIcon: !widget.isPassword
