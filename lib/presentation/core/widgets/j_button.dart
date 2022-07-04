@@ -20,7 +20,7 @@ class JButton extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(title),
+          Text(loading ? 'Loading...' : title),
           10.horizontalSpace,
           !loading
               ? const SizedBox()
