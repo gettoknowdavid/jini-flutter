@@ -37,12 +37,12 @@ class _JLayoutState extends State<JLayout> {
           unauthenticated: (_) => Get.offAllNamed(JRoutes.signIn),
         );
       },
-      child: BlocBuilder<BottomNavCubit, Widget>(
+      child: BlocBuilder<BottomNavCubit, BottomNavState>(
         builder: (context, state) {
           return Scaffold(
-            appBar: AppBar(),
+            appBar: AppBar(title: Text(state.title)),
             drawer: Drawer(),
-            body: state,
+            body: state.body,
             bottomNavigationBar: BottomNav(),
           );
         },

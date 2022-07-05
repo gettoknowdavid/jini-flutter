@@ -10,7 +10,6 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of<AuthBloc>(context);
     return Scaffold(
-      appBar: AppBar(title: Text(title)),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

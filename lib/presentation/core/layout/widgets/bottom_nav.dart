@@ -12,7 +12,7 @@ class BottomNav extends StatelessWidget {
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of<BottomNavCubit>(context);
 
-    return BlocBuilder<BottomNavCubit, Widget>(
+    return BlocBuilder<BottomNavCubit, BottomNavState>(
       builder: (context, state) {
         final itemsLength = bloc.items.length;
 
