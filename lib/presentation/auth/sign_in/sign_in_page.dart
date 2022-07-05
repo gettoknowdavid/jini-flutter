@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jini/application/core/theme/theme_cubit.dart';
 import 'package:jini/presentation/auth/sign_in/widgets/sign_in_form.dart';
 import 'package:jini/presentation/core/common/image_resources.dart';
+import 'package:jini/presentation/core/widgets/j_theme_switch.dart';
 import 'package:jini/presentation/routes/j_router.dart';
-import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({Key? key}) : super(key: key);
@@ -18,7 +16,7 @@ class SignInPage extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        actions: [ThemeSwitch()],
+        actions: [JThemeSwitch()],
       ),
       body: Stack(
         alignment: Alignment.center,
@@ -55,31 +53,6 @@ class SignInPage extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-class ThemeSwitch extends StatelessWidget {
-  const ThemeSwitch({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<ThemeCubit, ThemeMode>(
-      bloc: BlocProvider.of<ThemeCubit>(context),
-      builder: (context, state) {
-        final Brightness _b = Theme.of(context).brightness;
-        final isDark = state == ThemeMode.dark ? true : false;
-
-        return IconButton(
-          onPressed: () => context.read<ThemeCubit>().updateTheme(_b),
-          icon: Icon(
-            isDark ? PhosphorIcons.sunBold : PhosphorIcons.moonBold,
-            color: isDark ? Colors.white : Colors.black,
-          ),
-        );
-      },
     );
   }
 }
