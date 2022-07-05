@@ -18,23 +18,7 @@ class SignInPage extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        actions: [
-          BlocBuilder<ThemeCubit, ThemeMode>(
-            bloc: BlocProvider.of<ThemeCubit>(context),
-            builder: (context, state) {
-              final Brightness _b = Theme.of(context).brightness;
-              final isDark = state == ThemeMode.dark ? true : false;
-
-              return IconButton(
-                onPressed: () => context.read<ThemeCubit>().updateTheme(_b),
-                icon: Icon(
-                  isDark ? PhosphorIcons.sunBold : PhosphorIcons.moonBold,
-                  color: isDark ? Colors.white : Colors.black,
-                ),
-              );
-            },
-          ),
-        ],
+        actions: [ThemeSwitch()],
       ),
       body: Stack(
         alignment: Alignment.center,
@@ -46,10 +30,7 @@ class SignInPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Text(
-                    'Welcome \nBack!',
-                    style: textTheme.headlineLarge,
-                  ),
+                  Text('Welcome \nBack!', style: textTheme.headlineLarge),
                   4.verticalSpace,
                   Text(
                     'Welcome back. You have been missed. \nPlease, sign into your account.',
@@ -74,6 +55,31 @@ class SignInPage extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class ThemeSwitch extends StatelessWidget {
+  const ThemeSwitch({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<ThemeCubit, ThemeMode>(
+      bloc: BlocProvider.of<ThemeCubit>(context),
+      builder: (context, state) {
+        final Brightness _b = Theme.of(context).brightness;
+        final isDark = state == ThemeMode.dark ? true : false;
+
+        return IconButton(
+          onPressed: () => context.read<ThemeCubit>().updateTheme(_b),
+          icon: Icon(
+            isDark ? PhosphorIcons.sunBold : PhosphorIcons.moonBold,
+            color: isDark ? Colors.white : Colors.black,
+          ),
+        );
+      },
     );
   }
 }
