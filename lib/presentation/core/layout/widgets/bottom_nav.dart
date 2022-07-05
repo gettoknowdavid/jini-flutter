@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jini/application/core/bottom_nav/bottom_nav_cubit.dart';
 import 'package:jini/presentation/core/layout/widgets/bottom_nav_button.dart';
 import 'package:jini/presentation/core/layout/widgets/request_button.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BottomNav extends StatelessWidget {
   const BottomNav({Key? key}) : super(key: key);
@@ -16,6 +17,7 @@ class BottomNav extends StatelessWidget {
         final itemsLength = bloc.items.length;
 
         return Container(
+          height: 0.12.sh,
           child: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
             currentIndex: bloc.currentIndex,
