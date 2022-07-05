@@ -90,6 +90,9 @@ class JTheme {
             titleMedium: _baseLight.textTheme.displaySmall?.copyWith(
               color: Colors.black87,
             ),
+            titleSmall: _baseLight.textTheme.titleSmall?.copyWith(
+              fontWeight: FontWeight.w500,
+            ),
           )
           .apply(fontFamily: GoogleFonts.spaceGrotesk().fontFamily),
     );
@@ -128,6 +131,9 @@ class JTheme {
             ),
             titleMedium: _baseDark.textTheme.displaySmall?.copyWith(
               color: Colors.white70,
+            ),
+            titleSmall: _baseDark.textTheme.titleSmall?.copyWith(
+              fontWeight: FontWeight.w500,
             ),
           )
           .apply(fontFamily: GoogleFonts.spaceGrotesk().fontFamily),
