@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jini/presentation/auth/sign_in/widgets/sign_in_form.dart';
 import 'package:jini/presentation/core/common/image_resources.dart';
+import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/widgets/j_theme_switch.dart';
 import 'package:jini/presentation/routes/j_router.dart';
 
@@ -16,27 +16,32 @@ class SignInPage extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        actions: [JThemeSwitch()],
+        actions: [
+          JThemeSwitch(),
+        ],
       ),
       body: Stack(
         alignment: Alignment.center,
         children: [
-          Opacity(opacity: 0.2, child: Image.asset(ImageResources.background)),
+          Opacity(
+            opacity: 0.2,
+            child: Image.asset(ImageResources.background),
+          ),
           Center(
             child: SingleChildScrollView(
-              padding: EdgeInsets.symmetric(horizontal: 18.r),
+              padding: JScreenUtil.GLOBAL_PADDING,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text('Welcome \nBack!', style: textTheme.headlineLarge),
-                  4.verticalSpace,
+                  JScreenUtil.vSpace(4),
                   Text(
                     'Welcome back. You have been missed. \nPlease, sign into your account.',
                     style: textTheme.titleMedium,
                   ),
-                  30.verticalSpace,
+                  JScreenUtil.vSpace(30),
                   SignInForm(),
-                  16.verticalSpace,
+                  JScreenUtil.vSpace(16),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
