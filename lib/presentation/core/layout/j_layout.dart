@@ -40,6 +40,8 @@ class _JLayoutState extends State<JLayout> {
       child: BlocBuilder<BottomNavCubit, Widget>(
         builder: (context, state) {
           return Scaffold(
+            appBar: AppBar(),
+            drawer: Drawer(),
             body: state,
             bottomNavigationBar: BottomNav(),
           );
