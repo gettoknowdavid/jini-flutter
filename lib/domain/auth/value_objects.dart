@@ -10,7 +10,8 @@ class IEmailAddress extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
 
   factory IEmailAddress(String input) {
-    return IEmailAddress._(validateEmailAddress(input.toLowerCase().trim()));
+    final _input = input.toLowerCase().trim();
+    return IEmailAddress._(validateEmailAddress(_input));
   }
 
   const IEmailAddress._(this.value);
