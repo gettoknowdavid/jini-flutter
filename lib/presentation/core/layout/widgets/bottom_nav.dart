@@ -32,36 +32,52 @@ class BottomNav extends StatelessWidget {
                   label: bloc.items[i].title,
                   icon: i == 1
                       ? RequestButton(bloc: bloc, i: i, theme: theme)
-                      : Stack(
-                          clipBehavior: Clip.none,
-                          alignment: Alignment.center,
-                          children: [
-                            Icon(bloc.items[i].icon),
-                            Positioned(
-                              bottom: -14.h,
-                              child: AnimatedOpacity(
-                                duration: const Duration(milliseconds: 350),
-                                opacity: bloc.currentIndex == i ? 1.0 : 0.0,
-                                child: Container(
-                                  height: 3.h,
-                                  width: 30.sp,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.vertical(
-                                      top: Radius.circular(19.r),
-                                    ),
-                                    color: Colors.pinkAccent,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+                      : BottomNavButton(bloc: bloc, i: i),
                 )
             ],
           ),
         );
       },
     );
+  }
+}
+
+class BottomNavButton extends StatelessWidget {
+  const BottomNavButton({
+    Key? key,
+    required this.bloc,
+    required this.i,
+  }) : super(key: key);
+
+  final BottomNavCubit bloc;
+  final int i;
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+        clipBehavior: Clip.none,
+        alignment: Alignment.center,
+        children: [
+          Icon(bloc.items[i].icon),
+          Positioned(
+            bottom: -14.h,
+            child: AnimatedOpacity(
+              duration: const Duration(milliseconds: 350),
+              opacity: bloc.currentIndex == i ? 1.0 : 0.0,
+              child: Container(
+                height: 3.h,
+                width: 30.sp,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.vertical(
+                    top: Radius.circular(19.r),
+                  ),
+                  color: Colors.pinkAccent,
+                ),
+              ),
+            ),
+          ),
+        ],
+      );
   }
 }
 
