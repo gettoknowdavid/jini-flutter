@@ -7,6 +7,7 @@ class JTheme {
   JTheme._();
 
   static final Color _white = Color(0xFFFFFFFF);
+  static final Color _black = Color(0xFF000000);
   static final Color _primary = Color(0xFFF25774);
   static final Color _primaryDark = Color(0xFFF25774);
   static final Color _backgroundDark = Color(0xFF090911);
@@ -82,7 +83,14 @@ class JTheme {
         color: _backgroundLight,
       ),
       textTheme: _baseLight.textTheme
-          .copyWith()
+          .copyWith(
+            headlineLarge: _baseLight.textTheme.displaySmall?.copyWith(
+              color: _black,
+            ),
+            titleMedium: _baseLight.textTheme.displaySmall?.copyWith(
+              color: Colors.black87,
+            ),
+          )
           .apply(fontFamily: GoogleFonts.spaceGrotesk().fontFamily),
     );
   }
@@ -114,7 +122,14 @@ class JTheme {
         color: _backgroundDark,
       ),
       textTheme: _baseDark.textTheme
-          .copyWith()
+          .copyWith(
+            headlineLarge: _baseDark.textTheme.displaySmall?.copyWith(
+              color: _white,
+            ),
+            titleMedium: _baseDark.textTheme.displaySmall?.copyWith(
+              color: Colors.white70,
+            ),
+          )
           .apply(fontFamily: GoogleFonts.spaceGrotesk().fontFamily),
     );
   }
