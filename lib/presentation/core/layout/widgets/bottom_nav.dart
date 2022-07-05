@@ -9,7 +9,6 @@ class BottomNav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of<BottomNavCubit>(context);
-    final theme = Theme.of(context);
 
     return BlocBuilder<BottomNavCubit, Widget>(
       builder: (context, state) {
@@ -31,8 +30,8 @@ class BottomNav extends StatelessWidget {
                   backgroundColor: Colors.grey[100],
                   label: bloc.items[i].title,
                   icon: i == 1
-                      ? RequestButton(bloc: bloc, i: i, theme: theme)
-                      : BottomNavButton(bloc: bloc, i: i),
+                      ? RequestButton(item: bloc.items[i])
+                      : BottomNavButton(item: bloc.items[i]),
                 )
             ],
           ),
@@ -43,74 +42,65 @@ class BottomNav extends StatelessWidget {
 }
 
 class BottomNavButton extends StatelessWidget {
-  const BottomNavButton({
-    Key? key,
-    required this.bloc,
-    required this.i,
-  }) : super(key: key);
+  const BottomNavButton({Key? key, required this.item}) : super(key: key);
 
-  final BottomNavCubit bloc;
-  final int i;
+  final BottomNavItem item;
 
   @override
   Widget build(BuildContext context) {
+    final bloc = BlocProvider.of<BottomNavCubit>(context);
+    final index = bloc.items.indexOf(item);
+
     return Stack(
-        clipBehavior: Clip.none,
-        alignment: Alignment.center,
-        children: [
-          Icon(bloc.items[i].icon),
-          Positioned(
-            bottom: -14.h,
-            child: AnimatedOpacity(
-              duration: const Duration(milliseconds: 350),
-              opacity: bloc.currentIndex == i ? 1.0 : 0.0,
-              child: Container(
-                height: 3.h,
-                width: 30.sp,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.vertical(
-                    top: Radius.circular(19.r),
-                  ),
-                  color: Colors.pinkAccent,
-                ),
+      clipBehavior: Clip.none,
+      alignment: Alignment.center,
+      children: [
+        Icon(item.icon),
+        Positioned(
+          bottom: -14.h,
+          child: AnimatedOpacity(
+            duration: const Duration(milliseconds: 350),
+            opacity: bloc.currentIndex == index ? 1.0 : 0.0,
+            child: Container(
+              height: 3.h,
+              width: 30.sp,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.vertical(top: Radius.circular(19.r)),
+                color: Colors.pinkAccent,
               ),
             ),
           ),
-        ],
-      );
+        ),
+      ],
+    );
   }
 }
 
 class RequestButton extends StatelessWidget {
-  const RequestButton({
-    Key? key,
-    required this.bloc,
-    required this.i,
-    required this.theme,
-  }) : super(key: key);
+  const RequestButton({Key? key, required this.item}) : super(key: key);
 
-  final BottomNavCubit bloc;
-  final int i;
-  final ThemeData theme;
+  final BottomNavItem item;
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Container(
-        height: 60.w,
-        width: 60.w,
-        child: Icon(bloc.items[i].icon, color: Colors.white),
-        decoration: BoxDecoration(
-          color: theme.primaryColor,
-          borderRadius: BorderRadius.circular(20).r,
-          boxShadow: [
-            BoxShadow(
-              color: theme.primaryColor.withOpacity(0.25),
-              spreadRadius: 1,
-              blurRadius: 12,
-              offset: Offset(0.w, 5.h),
-            ),
-          ],
-        ),
-      );
+      height: 60.w,
+      width: 60.w,
+      child: Icon(item.icon, color: Colors.white),
+      decoration: BoxDecoration(
+        color: theme.primaryColor,
+        borderRadius: BorderRadius.circular(20).r,
+        boxShadow: [
+          BoxShadow(
+            color: theme.primaryColor.withOpacity(0.25),
+            spreadRadius: 1,
+            blurRadius: 12,
+            offset: Offset(0.w, 5.h),
+          ),
+        ],
+      ),
+    );
   }
 }
