@@ -6,6 +6,10 @@ class JDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Drawer();
+    return Container(
+      height: 0.9.sh,
+      alignment: Alignment.topLeft,
+      child: Drawer(),
+    );
   }
 }
