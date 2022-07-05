@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:jini/application/auth/auth_bloc.dart';
 import 'package:jini/application/auth/sign_in/sign_in_bloc.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
@@ -15,6 +14,7 @@ class SignInForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     final bloc = BlocProvider.of<SignInBloc>(context);
     final authBloc = BlocProvider.of<AuthBloc>(context);
 
@@ -66,27 +66,23 @@ class SignInForm extends StatelessWidget {
                   (_) => null,
                 ),
               ),
-              14.verticalSpace,
+              20.verticalSpace,
               JTextFormField(
                 hint: 'Password',
                 enabled: !bloc.state.isSubmitting,
                 isPassword: true,
                 onChanged: (p) => bloc.add(SignInEvent.passwordChanged(p)),
               ),
-              16.verticalSpace,
+              20.verticalSpace,
               GestureDetector(
                 onTap: () => Get.toNamed(JRoutes.forgotPassword),
                 child: Text(
                   'Forgot Password?',
                   textAlign: TextAlign.right,
-                  style: GoogleFonts.spaceGrotesk(
-                    color: Colors.white60,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 14.sp,
-                  ),
+                  style: textTheme.titleSmall,
                 ),
               ),
-              40.verticalSpace,
+              30.verticalSpace,
               JButton(
                 title: 'Sign In',
                 loading: bloc.state.isSubmitting,
