@@ -62,7 +62,7 @@ class SignInPage extends StatelessWidget {
                   ),
                   30.verticalSpace,
                   SignInForm(),
-                  20.verticalSpace,
+                  16.verticalSpace,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
