@@ -31,7 +31,7 @@ class IName extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
 
   factory IName(String input) {
-    return IName._(validateStringNotEmpty(input));
+    return IName._(validateStringNotEmpty(input.toSentenceCase));
   }
 
   const IName._(this.value);
@@ -105,4 +105,9 @@ class IPhone extends ValueObject<String> {
   }
 
   const IPhone._(this.value);
+}
+
+extension CapExtension on String {
+  String get toSentenceCase =>
+      this.split(" ").map((s) => s.toUpperCase()).join(" ");
 }
