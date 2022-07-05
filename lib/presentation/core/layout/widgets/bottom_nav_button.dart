@@ -27,8 +27,10 @@ class BottomNavButton extends StatelessWidget {
               height: 3.h,
               width: 30.sp,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.vertical(top: Radius.circular(19.r)),
-                color: Colors.pinkAccent,
+                borderRadius: BorderRadius.vertical(top: Radius.circular(18.r)),
+                gradient: LinearGradient(
+                  colors: [Color(0xffff78a9), Color(0xffdf1b49)],
+                ),
               ),
             ),
           ),
