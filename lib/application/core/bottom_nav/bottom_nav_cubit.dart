@@ -20,8 +20,8 @@ class BottomNavCubit extends Cubit<BottomNavState> {
       case 0:
         emit(
           BottomNavState(
-            title: 'Home',
-            body: const ProfilePage(title: 'Home'),
+            title: 'Jini App',
+            body: const ProfilePage(title: 'Jini App'),
           ),
         );
         break;
@@ -33,7 +33,7 @@ class BottomNavCubit extends Cubit<BottomNavState> {
           ),
         );
         break;
-      case 3:
+      case 2:
         emit(
           BottomNavState(
             title: 'Events',
@@ -52,7 +52,7 @@ class BottomNavCubit extends Cubit<BottomNavState> {
   }
 
   List<BottomNavItem> items = [
-    BottomNavItem(title: 'Home', icon: PhosphorIcons.houseSimpleBold),
+    BottomNavItem(title: 'Jini App', icon: PhosphorIcons.houseSimpleBold),
     BottomNavItem(title: 'Make Request', icon: PhosphorIcons.dropBold),
     BottomNavItem(title: 'Events', icon: PhosphorIcons.calendarBold),
   ];
