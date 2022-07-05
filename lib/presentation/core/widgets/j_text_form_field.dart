@@ -51,7 +51,6 @@ class _JTextFormFieldState extends State<JTextFormField> {
           border: InputBorder.none,
           contentPadding: EdgeInsets.fromLTRB(18, 22, 18, 22).r,
           hintText: widget.hint,
-          hintStyle: GoogleFonts.spaceGrotesk(fontWeight: FontWeight.w500),
           filled: true,
           errorMaxLines: 3,
           suffixIcon: !widget.isPassword
