@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:jini/application/auth/auth_bloc.dart';
 import 'package:jini/application/core/bottom_nav/bottom_nav_cubit.dart';
 import 'package:jini/presentation/core/layout/widgets/bottom_nav.dart';
+import 'package:jini/presentation/core/layout/widgets/j_drawer.dart';
 import 'package:jini/presentation/routes/j_router.dart';
 
 class JLayout extends StatefulWidget {
@@ -41,7 +42,7 @@ class _JLayoutState extends State<JLayout> {
         builder: (context, state) {
           return Scaffold(
             appBar: AppBar(title: Text(state.title)),
-            drawer: Drawer(),
+            drawer: JDrawer(),
             body: state.body,
             bottomNavigationBar: BottomNav(),
           );
