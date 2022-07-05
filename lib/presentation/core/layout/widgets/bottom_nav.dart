@@ -30,7 +30,7 @@ class BottomNav extends StatelessWidget {
                 BottomNavigationBarItem(
                   backgroundColor: Colors.grey[100],
                   label: bloc.items[i].title,
-                  icon: i == 2
+                  icon: i == 1
                       ? Container(
                           height: 60.w,
                           width: 60.w,
