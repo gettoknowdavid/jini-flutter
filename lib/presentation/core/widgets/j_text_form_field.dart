@@ -46,16 +46,12 @@ class _JTextFormFieldState extends State<JTextFormField> {
         style: GoogleFonts.spaceGrotesk(
           fontSize: 16.sp,
           fontWeight: FontWeight.w500,
-          color: widget.enabled ? Colors.white70 : Colors.white10,
         ),
         decoration: InputDecoration(
           border: InputBorder.none,
           contentPadding: EdgeInsets.fromLTRB(18, 22, 18, 22).r,
           hintText: widget.hint,
-          hintStyle: GoogleFonts.spaceGrotesk(
-            color: widget.enabled ? Colors.white70 : Colors.white10,
-          ),
-          fillColor: widget.enabled ? widget.color : Colors.white12,
+          hintStyle: GoogleFonts.spaceGrotesk(fontWeight: FontWeight.w500),
           filled: true,
           errorMaxLines: 3,
           suffixIcon: !widget.isPassword
