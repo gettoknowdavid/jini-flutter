@@ -31,23 +31,7 @@ class BottomNav extends StatelessWidget {
                   backgroundColor: Colors.grey[100],
                   label: bloc.items[i].title,
                   icon: i == 1
-                      ? Container(
-                          height: 60.w,
-                          width: 60.w,
-                          child: Icon(bloc.items[i].icon, color: Colors.white),
-                          decoration: BoxDecoration(
-                            color: theme.primaryColor,
-                            borderRadius: BorderRadius.circular(20).r,
-                            boxShadow: [
-                              BoxShadow(
-                                color: theme.primaryColor.withOpacity(0.25),
-                                spreadRadius: 1,
-                                blurRadius: 12,
-                                offset: Offset(0.w, 5.h),
-                              ),
-                            ],
-                          ),
-                        )
+                      ? RequestButton(bloc: bloc, i: i, theme: theme)
                       : Stack(
                           clipBehavior: Clip.none,
                           alignment: Alignment.center,
@@ -78,5 +62,39 @@ class BottomNav extends StatelessWidget {
         );
       },
     );
+  }
+}
+
+class RequestButton extends StatelessWidget {
+  const RequestButton({
+    Key? key,
+    required this.bloc,
+    required this.i,
+    required this.theme,
+  }) : super(key: key);
+
+  final BottomNavCubit bloc;
+  final int i;
+  final ThemeData theme;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        height: 60.w,
+        width: 60.w,
+        child: Icon(bloc.items[i].icon, color: Colors.white),
+        decoration: BoxDecoration(
+          color: theme.primaryColor,
+          borderRadius: BorderRadius.circular(20).r,
+          boxShadow: [
+            BoxShadow(
+              color: theme.primaryColor.withOpacity(0.25),
+              spreadRadius: 1,
+              blurRadius: 12,
+              offset: Offset(0.w, 5.h),
+            ),
+          ],
+        ),
+      );
   }
 }
