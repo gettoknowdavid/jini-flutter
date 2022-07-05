@@ -22,7 +22,6 @@ class RequestButton extends StatelessWidget {
       child: Icon(item.icon, color: Colors.white),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(18).r,
-        border: Border.all(),
         boxShadow: [
           BoxShadow(
             color: theme.primaryColor.withOpacity(0.25),
