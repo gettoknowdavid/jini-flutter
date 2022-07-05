@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jini/application/core/theme/theme_cubit.dart';
+import 'package:jini/di/injection.dart';
 import 'package:jini/presentation/auth/sign_in/widgets/sign_in_form.dart';
 import 'package:jini/presentation/core/common/image_resources.dart';
 import 'package:jini/presentation/routes/j_router.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:provider/provider.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);
@@ -29,6 +34,26 @@ class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        actions: [
+          BlocBuilder<ThemeCubit, ThemeMode>(
+            bloc: BlocProvider.of<ThemeCubit>(context),
+            builder: (context, state) {
+              final Brightness _b = Theme.of(context).brightness;
+              final isDark = state == ThemeMode.dark ? true : false;
+
+              return IconButton(
+                onPressed: () => context.read<ThemeCubit>().updateTheme(_b),
+                icon: Icon(
+                  isDark ? PhosphorIcons.sunBold : PhosphorIcons.moonBold,
+                  color: isDark ? Colors.white : Colors.black,
+                ),
+              );
+            },
+          ),
+        ],
+      ),
       body: Stack(
         alignment: Alignment.center,
         children: [
