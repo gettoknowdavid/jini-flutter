@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jini/application/core/bottom_nav/bottom_nav_cubit.dart';
 
@@ -9,15 +10,19 @@ class RequestButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bloc = BlocProvider.of<BottomNavCubit>(context);
+    final index = bloc.items.indexOf(item);
+    final isCurrent = bloc.currentIndex == index;
     final theme = Theme.of(context);
 
-    return Container(
-      height: 60.w,
-      width: 60.w,
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 250),
+      height: isCurrent ? 60.w : 54.w,
+      width: isCurrent ? 60.w : 54.w,
       child: Icon(item.icon, color: Colors.white),
       decoration: BoxDecoration(
-        color: theme.primaryColor,
         borderRadius: BorderRadius.circular(18).r,
+        border: Border.all(),
         boxShadow: [
           BoxShadow(
             color: theme.primaryColor.withOpacity(0.25),
