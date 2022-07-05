@@ -48,10 +48,7 @@ class SignInPage extends StatelessWidget {
                 children: [
                   Text(
                     'Welcome \nBack!',
-                    style: textTheme.headlineLarge?.copyWith(
-                      fontWeight: FontWeight.w600,
-                      height: 1.2.sp,
-                    ),
+                    style: textTheme.headlineLarge,
                   ),
                   4.verticalSpace,
                   Text(
