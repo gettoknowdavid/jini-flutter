@@ -53,9 +53,7 @@ class SignInPage extends StatelessWidget {
                   4.verticalSpace,
                   Text(
                     'Welcome back. You have been missed. \nPlease, sign into your account.',
-                    style: textTheme.titleMedium?.copyWith(
-                      letterSpacing: -0.5.sp,
-                    ),
+                    style: textTheme.titleMedium,
                   ),
                   30.verticalSpace,
                   SignInForm(),
