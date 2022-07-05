@@ -59,6 +59,12 @@ class JTheme {
         textStyle: GoogleFonts.spaceGrotesk(color: _primary),
       ),
     ),
+    drawerTheme: DrawerThemeData(
+      backgroundColor: _primary,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(18).r,
+      ),
+    ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         elevation: 16,
