@@ -91,6 +91,7 @@ class JTheme {
             ),
             titleMedium: _baseLight.textTheme.displaySmall?.copyWith(
               color: Colors.black87,
+              letterSpacing: -0.5.sp,
             ),
             titleSmall: _baseLight.textTheme.titleSmall?.copyWith(
               fontWeight: FontWeight.w500,
@@ -135,6 +136,7 @@ class JTheme {
             ),
             titleMedium: _baseDark.textTheme.displaySmall?.copyWith(
               color: Colors.white70,
+              letterSpacing: -0.5.sp,
             ),
             titleSmall: _baseDark.textTheme.titleSmall?.copyWith(
               fontWeight: FontWeight.w500,
