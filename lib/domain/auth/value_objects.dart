@@ -20,7 +20,7 @@ class IPassword extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
 
   factory IPassword(String input) {
-    return IPassword._(validatePassword(input));
+    return IPassword._(validatePassword(input.trim()));
   }
 
   const IPassword._(this.value);
