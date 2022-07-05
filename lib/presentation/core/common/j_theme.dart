@@ -8,84 +8,123 @@ class JTheme {
 
   static final Color _primary = Color(0xFFF25774);
   static final Color _primaryDark = Color(0xFFF25774);
-  // static final Color _secondary = Color(0xFF1723FD);
-  // static final Color _secondaryDark = Color(0xFF1D1340);
-  static final Color _background = Color(0xFF090911);
-  static const swatch = MaterialColor(0xFFF25774, {
-    50: Color.fromRGBO(250, 99, 147, .1),
-    100: Color.fromRGBO(250, 99, 147, .2),
-    200: Color.fromRGBO(250, 99, 147, .3),
-    300: Color.fromRGBO(250, 99, 147, .4),
-    400: Color.fromRGBO(250, 99, 147, .5),
-    500: Color.fromRGBO(250, 99, 147, .6),
-    600: Color.fromRGBO(250, 99, 147, .7),
-    700: Color.fromRGBO(250, 99, 147, .8),
-    800: Color.fromRGBO(250, 99, 147, .9),
-    900: Color.fromRGBO(250, 99, 147, 1),
+  static final Color _backgroundDark = Color(0xFF090911);
+  static final Color _backgroundLight = Color(0xFFECEAEA);
+  static final swatch = MaterialColor(0xFFF25774, {
+    50: const Color.fromRGBO(250, 99, 147, .1),
+    100: const Color.fromRGBO(250, 99, 147, .2),
+    200: const Color.fromRGBO(250, 99, 147, .3),
+    300: const Color.fromRGBO(250, 99, 147, .4),
+    400: const Color.fromRGBO(250, 99, 147, .5),
+    500: const Color.fromRGBO(250, 99, 147, .6),
+    600: const Color.fromRGBO(250, 99, 147, .7),
+    700: const Color.fromRGBO(250, 99, 147, .8),
+    800: const Color.fromRGBO(250, 99, 147, .9),
+    900: const Color.fromRGBO(250, 99, 147, 1),
   });
 
-  static final ThemeData theme = ThemeData(
-    colorScheme: ColorScheme.dark().copyWith(
-      primary: _primary,
-      onPrimary: Colors.white,
-      secondary: _primary,
-      onSecondary: Colors.white,
-      background: _background,
-      onBackground: Colors.white,
-      error: swatch.shade900,
-      onError: Colors.white,
-      surface: _background,
-      onSurface: Colors.white,
-      brightness: Brightness.dark,
-    ),
-    primarySwatch: swatch,
-    primaryColor: _primary,
-    primaryColorDark: _primaryDark,
-    canvasColor: _background,
-    backgroundColor: _background,
-    scaffoldBackgroundColor: _background,
-    brightness: Brightness.dark,
-    fontFamily: GoogleFonts.spaceGrotesk().fontFamily,
-    progressIndicatorTheme: ProgressIndicatorThemeData(
-      color: _background,
-    ),
-    indicatorColor: _primary,
-    appBarTheme: AppBarTheme(
-      backgroundColor: Colors.transparent,
-      elevation: 0,
-    ),
-    textButtonTheme: TextButtonThemeData(
-      style: TextButton.styleFrom(
-        textStyle: GoogleFonts.spaceGrotesk(color: _primary),
-      ),
-    ),
-    drawerTheme: DrawerThemeData(
-      backgroundColor: _primary,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.horizontal(right: Radius.circular(18)).r,
-      ),
-    ),
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        elevation: 16,
-        shadowColor: swatch.shade700,
-        primary: _primary,
-        padding: EdgeInsets.all(20).r,
-        textStyle: GoogleFonts.spaceGrotesk(
-          color: Colors.white,
-          fontSize: 18.sp,
-          fontWeight: FontWeight.w600,
-        ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(18.r),
-        ),
-      ),
-    ),
-    pageTransitionsTheme: PageTransitionsTheme(
-      builders: {
-        TargetPlatform.iOS: NoShadowCupertinoPageTransitionsBuilder(),
-        TargetPlatform.android: ZoomPageTransitionsBuilder(),
-      },
+  static final _appBarTheme = AppBarTheme(
+    backgroundColor: Colors.transparent,
+    elevation: 0,
+  );
+
+  static final _textButtonTheme = TextButtonThemeData(
+    style: TextButton.styleFrom(
+      textStyle: GoogleFonts.spaceGrotesk(color: _primary),
     ),
   );
+
+  static final _pageTransitionsTheme = PageTransitionsTheme(
+    builders: {
+      TargetPlatform.iOS: NoShadowCupertinoPageTransitionsBuilder(),
+      TargetPlatform.android: ZoomPageTransitionsBuilder(),
+    },
+  );
+
+  static final _drawerTheme = DrawerThemeData(
+    elevation: 20,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.horizontal(right: Radius.circular(18)).r,
+    ),
+  );
+
+  static final _elevatedButtonTheme = ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      elevation: 16,
+      shadowColor: swatch.shade700,
+      primary: _primary,
+      padding: EdgeInsets.all(20).r,
+      textStyle: GoogleFonts.spaceGrotesk(
+        color: Colors.white,
+        fontSize: 18.sp,
+        fontWeight: FontWeight.w600,
+      ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(18.r),
+      ),
+    ),
+  );
+
+  static get lightTheme {
+    final ThemeData _baseLight = ThemeData.light();
+
+    return _baseLight.copyWith(
+      colorScheme: ColorScheme.light().copyWith(
+        primary: _primary,
+        onPrimary: Colors.white,
+        secondary: _primary,
+        onSecondary: Colors.white,
+        error: swatch.shade900,
+        onError: Colors.white,
+      ),
+      primaryColor: _primary,
+      brightness: Brightness.light,
+      primaryColorDark: _primaryDark,
+      canvasColor: _backgroundLight,
+      backgroundColor: _backgroundLight,
+      scaffoldBackgroundColor: _backgroundLight,
+      progressIndicatorTheme: ProgressIndicatorThemeData(
+        color: _backgroundLight,
+      ),
+      indicatorColor: _primary,
+      appBarTheme: _appBarTheme,
+      textButtonTheme: _textButtonTheme,
+      drawerTheme: _drawerTheme,
+      elevatedButtonTheme: _elevatedButtonTheme,
+      pageTransitionsTheme: _pageTransitionsTheme,
+    );
+  }
+
+  static get darkTheme {
+    final ThemeData _baseDark = ThemeData.dark();
+    return _baseDark.copyWith(
+      colorScheme: ColorScheme.dark().copyWith(
+        primary: _primary,
+        onPrimary: Colors.white,
+        secondary: _primary,
+        onSecondary: Colors.white,
+        background: _backgroundDark,
+        onBackground: Colors.white,
+        error: swatch.shade900,
+        onError: Colors.white,
+        surface: _backgroundLight,
+        onSurface: Colors.white,
+      ),
+      brightness: Brightness.dark,
+      primaryColor: _primary,
+      primaryColorDark: _primaryDark,
+      canvasColor: _backgroundDark,
+      backgroundColor: _backgroundDark,
+      scaffoldBackgroundColor: _backgroundDark,
+      progressIndicatorTheme: ProgressIndicatorThemeData(
+        color: _backgroundDark,
+      ),
+      indicatorColor: _primary,
+      appBarTheme: _appBarTheme,
+      textButtonTheme: _textButtonTheme,
+      drawerTheme: _drawerTheme,
+      elevatedButtonTheme: _elevatedButtonTheme,
+      pageTransitionsTheme: _pageTransitionsTheme,
+    );
+  }
 }
