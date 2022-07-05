@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:jini/application/auth/sign_up/sign_up_bloc.dart';
 import 'package:jini/presentation/auth/sign_up/widgets/sign_up_form.dart';
 import 'package:jini/presentation/core/common/image_resources.dart';
+import 'package:jini/presentation/core/common/j_error_messages.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/widgets/j_back_button.dart';
 
@@ -24,8 +25,8 @@ class SignUpPage extends StatelessWidget {
                 'Sign Up Failed',
                 f.maybeMap(
                   orElse: () => '',
-                  emailInUse: (_) => 'Seems like this email is already in use.',
-                  serverError: (_) => 'Seems there\'s a server error.',
+                  emailInUse: (_) => JErrorMessages.emailInUse,
+                  serverError: (_) => JErrorMessages.serverError,
                 ),
               );
             },
