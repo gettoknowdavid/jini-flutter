@@ -1,35 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jini/application/auth/sign_up/sign_up_bloc.dart';
 import 'package:jini/presentation/auth/sign_up/widgets/sign_up_form.dart';
 import 'package:jini/presentation/core/common/image_resources.dart';
+import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/widgets/j_back_button.dart';
 
-class SignUpPage extends StatefulWidget {
+class SignUpPage extends StatelessWidget {
   const SignUpPage({Key? key}) : super(key: key);
 
   @override
-  State<SignUpPage> createState() => _SignUpPageState();
-}
-
-class _SignUpPageState extends State<SignUpPage> {
-  void initialization() async {
-    await Future.delayed(const Duration(seconds: 5));
-    FlutterNativeSplash.remove();
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    initialization();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+
     return BlocListener<SignUpBloc, SignUpState>(
       listener: (context, state) {
         state.authFailureOrSuccess.fold(
@@ -40,9 +24,8 @@ class _SignUpPageState extends State<SignUpPage> {
                 'Sign Up Failed',
                 f.maybeMap(
                   orElse: () => '',
-                  emailInUse: (_) =>
-                      'The email you provided is already in use.',
-                  serverError: (_) => 'Looks like there\'s a server error.',
+                  emailInUse: (_) => 'Seems like this email is already in use.',
+                  serverError: (_) => 'Seems there\'s a server error.',
                 ),
               );
             },
@@ -52,7 +35,9 @@ class _SignUpPageState extends State<SignUpPage> {
       },
       child: Scaffold(
         extendBodyBehindAppBar: true,
-        appBar: AppBar(leading: const JBackButton()),
+        appBar: AppBar(
+          leading: const JBackButton(),
+        ),
         body: Stack(
           alignment: Alignment.center,
           children: [
@@ -62,30 +47,21 @@ class _SignUpPageState extends State<SignUpPage> {
             ),
             Center(
               child: SingleChildScrollView(
-                padding: EdgeInsets.symmetric(horizontal: 18.r),
+                padding: JScreenUtil.GLOBAL_PADDING,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       'Create a new Account',
-                      style: GoogleFonts.spaceGrotesk(
-                        fontSize: 40.sp,
-                        fontWeight: FontWeight.w600,
-                        letterSpacing: -1.sp,
-                        height: 1.2.sp,
-                      ),
+                      style: textTheme.headlineLarge,
                     ),
+                    JScreenUtil.vSpace(4),
                     Text(
                       'Sign up to create your new account.',
-                      style: GoogleFonts.spaceGrotesk(
-                        color: Colors.white60,
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.w400,
-                        letterSpacing: -0.5.sp,
-                      ),
+                      style: textTheme.titleMedium,
                     ),
-                    20.verticalSpace,
+                    JScreenUtil.vSpace(30),
                     SignUpForm(),
                   ],
                 ),
