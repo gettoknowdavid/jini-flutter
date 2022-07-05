@@ -17,7 +17,7 @@ class RequestButton extends StatelessWidget {
       child: Icon(item.icon, color: Colors.white),
       decoration: BoxDecoration(
         color: theme.primaryColor,
-        borderRadius: BorderRadius.circular(20).r,
+        borderRadius: BorderRadius.circular(18).r,
         boxShadow: [
           BoxShadow(
             color: theme.primaryColor.withOpacity(0.25),
@@ -26,6 +26,11 @@ class RequestButton extends StatelessWidget {
             offset: Offset(0.w, 5.h),
           ),
         ],
+        gradient: LinearGradient(
+          colors: [Color(0xffff78a9), Color(0xffdf1b49)],
+          begin: Alignment.centerLeft,
+          end: Alignment.bottomRight,
+        ),
       ),
     );
   }
