@@ -28,7 +28,7 @@ class JiniApp extends StatelessWidget {
               theme: JTheme.lightTheme,
               darkTheme: JTheme.darkTheme,
               themeMode: state,
-              color: JTheme.swatch,
+              color: Theme.of(context).primaryColor,
             );
           },
         );
