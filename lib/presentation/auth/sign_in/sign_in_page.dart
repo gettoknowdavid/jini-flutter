@@ -33,6 +33,8 @@ class _SignInPageState extends State<SignInPage> {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -66,23 +68,19 @@ class _SignInPageState extends State<SignInPage> {
                 children: [
                   Text(
                     'Welcome \nBack!',
-                    style: GoogleFonts.spaceGrotesk(
-                      fontSize: 40.sp,
+                    style: textTheme.headlineLarge?.copyWith(
                       fontWeight: FontWeight.w600,
-                      letterSpacing: -1.sp,
                       height: 1.2.sp,
                     ),
                   ),
+                  4.verticalSpace,
                   Text(
                     'Welcome back. You have been missed. \nPlease, sign into your account.',
-                    style: GoogleFonts.spaceGrotesk(
-                      color: Colors.white60,
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w400,
+                    style: textTheme.titleMedium?.copyWith(
                       letterSpacing: -0.5.sp,
                     ),
                   ),
-                  46.verticalSpace,
+                  30.verticalSpace,
                   SignInForm(),
                   20.verticalSpace,
                   Row(
