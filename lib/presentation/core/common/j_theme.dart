@@ -62,7 +62,7 @@ class JTheme {
     drawerTheme: DrawerThemeData(
       backgroundColor: _primary,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(18).r,
+        borderRadius: BorderRadius.horizontal(right: Radius.circular(18)).r,
       ),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
