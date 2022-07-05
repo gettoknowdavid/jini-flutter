@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:jini/application/auth/auth_bloc.dart';
 import 'package:jini/application/auth/sign_in/sign_in_bloc.dart';
+import 'package:jini/presentation/core/common/j_error_messages.dart';
+import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
 import 'package:jini/presentation/core/widgets/j_snackbars.dart';
 import 'package:jini/presentation/core/widgets/j_text_form_field.dart';
@@ -29,8 +30,9 @@ class SignInForm extends StatelessWidget {
                 title: 'Authentication Failure',
                 message: f.maybeMap(
                   orElse: () => '',
-                  serverError: (_) => 'Looks like there\'s a server error.',
-                  invalidEmailOrPassword: (_) => 'Invalid email or password.',
+                  serverError: (_) => JErrorMessages.serverError,
+                  invalidEmailOrPassword: (_) =>
+                      JErrorMessages.invalidEmailOrPassword,
                 ),
               );
             },
@@ -59,21 +61,20 @@ class SignInForm extends StatelessWidget {
                 keyboardType: TextInputType.emailAddress,
                 onChanged: (e) => bloc.add(SignInEvent.emailChanged(e)),
                 validator: (_) => bloc.state.email.value.fold(
-                  (f) => f.maybeMap(
-                    invalidEmail: (_) => 'Invalid Email',
-                    orElse: () => null,
+                  (f) => f.mapOrNull(
+                    invalidEmail: (_) => JErrorMessages.invalidEmail,
                   ),
                   (_) => null,
                 ),
               ),
-              20.verticalSpace,
+              JScreenUtil.vSpace(20),
               JTextFormField(
                 hint: 'Password',
                 enabled: !bloc.state.isSubmitting,
                 isPassword: true,
                 onChanged: (p) => bloc.add(SignInEvent.passwordChanged(p)),
               ),
-              20.verticalSpace,
+              JScreenUtil.vSpace(20),
               GestureDetector(
                 onTap: () => Get.toNamed(JRoutes.forgotPassword),
                 child: Text(
@@ -82,7 +83,7 @@ class SignInForm extends StatelessWidget {
                   style: textTheme.titleSmall,
                 ),
               ),
-              30.verticalSpace,
+              JScreenUtil.vSpace(30),
               JButton(
                 title: 'Sign In',
                 loading: bloc.state.isSubmitting,
