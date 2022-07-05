@@ -86,6 +86,8 @@ class JTheme {
           .copyWith(
             headlineLarge: _baseLight.textTheme.displaySmall?.copyWith(
               color: _black,
+              fontWeight: FontWeight.w600,
+              height: 1.2.sp,
             ),
             titleMedium: _baseLight.textTheme.displaySmall?.copyWith(
               color: Colors.black87,
@@ -128,6 +130,8 @@ class JTheme {
           .copyWith(
             headlineLarge: _baseDark.textTheme.displaySmall?.copyWith(
               color: _white,
+              fontWeight: FontWeight.w600,
+              height: 1.2.sp,
             ),
             titleMedium: _baseDark.textTheme.displaySmall?.copyWith(
               color: Colors.white70,
