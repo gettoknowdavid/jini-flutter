@@ -17,16 +17,10 @@ class BottomNavCubit extends Cubit<Widget> {
         emit(ProfilePage(title: 'Home'));
         break;
       case 1:
-        emit(ProfilePage(title: 'Profile'));
-        break;
-      case 2:
         emit(ProfilePage(title: 'Make Request'));
         break;
       case 3:
         emit(ProfilePage(title: 'Events'));
-        break;
-      case 4:
-        emit(ProfilePage(title: 'About'));
         break;
       default:
         emit(ProfilePage(title: 'Home'));
@@ -35,10 +29,8 @@ class BottomNavCubit extends Cubit<Widget> {
 
   List<BottomNavItem> items = [
     BottomNavItem(title: 'Home', icon: PhosphorIcons.houseSimpleBold),
-    BottomNavItem(title: 'Profile', icon: PhosphorIcons.userBold),
     BottomNavItem(title: 'Make Request', icon: PhosphorIcons.dropBold),
     BottomNavItem(title: 'Events', icon: PhosphorIcons.calendarBold),
-    BottomNavItem(title: 'About', icon: PhosphorIcons.infoBold),
   ];
 }
 
