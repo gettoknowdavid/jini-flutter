@@ -2,12 +2,11 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:jini/di/injection.dart';
 import 'package:jini/application/auth/auth_bloc.dart';
 import 'package:jini/presentation/core/common/image_resources.dart';
+import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
 import 'package:jini/presentation/routes/j_router.dart';
 
@@ -34,6 +33,7 @@ class _VerificationPageState extends State<VerificationPage> {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     final bloc = BlocProvider.of<AuthBloc>(context);
 
     return BlocConsumer<AuthBloc, AuthState>(
@@ -67,20 +67,20 @@ class _VerificationPageState extends State<VerificationPage> {
                 child: Image.asset(ImageResources.background),
               ),
               Padding(
-                padding: EdgeInsets.fromLTRB(18, 0, 18, 0).r,
+                padding: JScreenUtil.GLOBAL_PADDING,
                 child: Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      10.verticalSpace,
+                      JScreenUtil.vSpace(10),
                       Image.asset(ImageResources.verifyEmail),
-                      18.verticalSpace,
+                      JScreenUtil.vSpace(18),
                       JButton(
                         title: 'Open email app',
                         onPressed: () => bloc.add(AuthEvent.openMailApp()),
                       ),
-                      20.verticalSpace,
+                      JScreenUtil.vSpace(20),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -90,21 +90,16 @@ class _VerificationPageState extends State<VerificationPage> {
                             },
                             child: Text('Resend Email'),
                             style: TextButton.styleFrom(
-                              textStyle: GoogleFonts.spaceGrotesk(
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w600,
-                              ),
+                              textStyle: textTheme.titleSmall,
                             ),
                           ),
                           TextButton(
-                            onPressed: () =>
-                                bloc.add(AuthEvent.authSignedOut()),
+                            onPressed: () {
+                              bloc.add(AuthEvent.authSignedOut());
+                            },
                             child: Text('Cancel'),
                             style: TextButton.styleFrom(
-                              textStyle: GoogleFonts.spaceGrotesk(
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w600,
-                              ),
+                              textStyle: textTheme.titleSmall,
                             ),
                           ),
                         ],
