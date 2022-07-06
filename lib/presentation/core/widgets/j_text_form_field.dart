@@ -7,6 +7,7 @@ class JTextFormField extends StatefulWidget {
   const JTextFormField({
     Key? key,
     this.hint,
+    this.label,
     this.isPassword = false,
     this.keyboardType,
     this.color = Colors.white24,
@@ -17,6 +18,7 @@ class JTextFormField extends StatefulWidget {
   }) : super(key: key);
 
   final String? hint;
+  final String? label;
   final bool isPassword;
   final TextInputType? keyboardType;
   final Color? color;
@@ -49,8 +51,9 @@ class _JTextFormFieldState extends State<JTextFormField> {
         ),
         decoration: InputDecoration(
           border: InputBorder.none,
-          contentPadding: EdgeInsets.fromLTRB(18, 24, 18, 24).r,
+          contentPadding: EdgeInsets.all(18).r,
           hintText: widget.hint,
+          labelText: widget.label,
           filled: true,
           errorMaxLines: 5,
           suffixIcon: !widget.isPassword
