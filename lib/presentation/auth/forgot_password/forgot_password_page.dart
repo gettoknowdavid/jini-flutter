@@ -73,7 +73,8 @@ class ForgotPasswordPage extends StatelessWidget {
                         Image.asset(ImageResources.forgotPassword),
                         JScreenUtil.vSpace(20),
                         JTextFormField(
-                          hint: 'Email address',
+                          label: 'Email address',
+                          hint: 'johndoe@example.com',
                           enabled: !bloc.state.isSubmitting,
                           keyboardType: TextInputType.emailAddress,
                           onChanged: (e) {
