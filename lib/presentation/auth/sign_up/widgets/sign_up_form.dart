@@ -3,12 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:jini/application/auth/auth_bloc.dart';
 import 'package:jini/application/auth/sign_up/sign_up_bloc.dart';
-import 'package:jini/domain/core/blood_group.dart';
-import 'package:jini/domain/core/gender.dart';
 import 'package:jini/presentation/core/common/j_error_messages.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
-import 'package:jini/presentation/core/widgets/j_dropdown.dart';
 import 'package:jini/presentation/core/widgets/j_snackbars.dart';
 import 'package:jini/presentation/core/widgets/j_text_form_field.dart';
 import 'package:jini/presentation/routes/j_router.dart';
@@ -85,48 +82,6 @@ class SignUpForm extends StatelessWidget {
                   ),
                   (_) => null,
                 ),
-              ),
-              JScreenUtil.vSpace(20),
-              JDropdown<Gender>(
-                hint: 'Select your gender',
-                value: state.gender.getOrCrash(),
-                onChanged: (e) {
-                  bloc.add(SignUpEvent.genderChanged(e!));
-                },
-                validator: (_) => bloc.state.gender.value.fold(
-                  (f) => f.maybeMap(
-                    orElse: () => null,
-                    nullValue: (_) => 'Select your gender',
-                  ),
-                  (_) => null,
-                ),
-                items: Gender.values.map((gender) {
-                  return DropdownMenuItem<Gender>(
-                    value: gender,
-                    child: Text(gender.value),
-                  );
-                }).toList(),
-              ),
-              JScreenUtil.vSpace(20),
-              JDropdown<BloodGroup>(
-                hint: 'Select your blood group',
-                value: state.bloodGroup.getOrCrash(),
-                onChanged: (e) {
-                  bloc.add(SignUpEvent.bloodGroupChanged(e!));
-                },
-                validator: (_) => bloc.state.bloodGroup.value.fold(
-                  (f) => f.maybeMap(
-                    orElse: () => null,
-                    nullValue: (_) => 'Select your blood group',
-                  ),
-                  (_) => null,
-                ),
-                items: BloodGroup.values.map((bloodGroup) {
-                  return DropdownMenuItem<BloodGroup>(
-                    value: bloodGroup,
-                    child: Text(bloodGroup.value),
-                  );
-                }).toList(),
               ),
               JScreenUtil.vSpace(30),
               JButton(
