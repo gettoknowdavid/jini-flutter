@@ -47,7 +47,7 @@ class SignUpForm extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               JTextFormField(
-                hint: 'Name',
+                hint: 'Full Name',
                 enabled: !bloc.state.isSubmitting,
                 onChanged: (e) => bloc.add(SignUpEvent.nameChanged(e)),
                 validator: (_) => bloc.state.name.value.fold(
