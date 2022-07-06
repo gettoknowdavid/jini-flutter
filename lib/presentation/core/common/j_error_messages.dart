@@ -7,6 +7,8 @@ class JErrorMessages {
   static const String invalidEmailOrPassword =
       'Oops! Looks like an invalid email or password.';
   static const String nameRequired = 'Your name is required';
+  static const String emailRequired = 'Your email is required';
+  static const String passwordRequired = 'Your password is required';
   static const String invalidEmail = 'Oops! Invalid email';
   static const String invalidPassword =
       'Password must contain: \n - Minimum 8 characters \n - At least 1 uppercase letter  \n - At least 1 digit  \n - At least 1 special character.';
