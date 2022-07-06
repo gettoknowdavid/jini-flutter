@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class JTextFormField extends StatefulWidget {
@@ -37,7 +36,7 @@ class _JTextFormFieldState extends State<JTextFormField> {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(18.r),
+      borderRadius: JScreenUtil.BORDER_RADIUS,
       child: TextFormField(
         keyboardType: widget.keyboardType,
         autocorrect: widget.autocorrect,
@@ -45,13 +44,10 @@ class _JTextFormFieldState extends State<JTextFormField> {
         onChanged: widget.onChanged,
         validator: widget.validator,
         enabled: widget.enabled,
-        style: GoogleFonts.spaceGrotesk(
-          fontSize: 16.sp,
-          fontWeight: FontWeight.w500,
-        ),
+        style: Theme.of(context).textTheme.titleMedium,
         decoration: InputDecoration(
           border: InputBorder.none,
-          contentPadding: EdgeInsets.all(18).r,
+          contentPadding: JScreenUtil.TEXTFIELD_PADDING,
           hintText: widget.hint,
           labelText: widget.label,
           filled: true,
@@ -64,7 +60,7 @@ class _JTextFormFieldState extends State<JTextFormField> {
                         ? PhosphorIcons.eyeSlashBold
                         : PhosphorIcons.eyeBold,
                   ),
-                  padding: EdgeInsets.symmetric(horizontal: 18).r,
+                  padding: JScreenUtil.GLOBAL_PADDING,
                   onPressed: () => setState(() => _isObscure = !_isObscure),
                 ),
         ),
