@@ -12,7 +12,7 @@ class SignInState with _$SignInState {
 
   factory SignInState.initial() => SignInState(
         email: IEmailAddress(''),
-        password: IPassword(''),
+        password: IPassword('', isSignIn: true),
         showErrorMessages: false,
         isSubmitting: false,
         authFailureOrSuccess: none(),
