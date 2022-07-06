@@ -12,10 +12,11 @@ class JSnackbars {
     return Get.snackbar(
       title,
       message,
-      icon: Icon(PhosphorIcons.warningCircleBold),
+      icon: Icon(PhosphorIcons.warningCircleBold, color: Colors.white),
       snackPosition: SnackPosition.BOTTOM,
       margin: EdgeInsets.all(18).r,
       backgroundColor: Colors.red,
+      colorText: Colors.white,
       duration: const Duration(seconds: 5),
     );
   }
