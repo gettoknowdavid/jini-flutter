@@ -51,7 +51,6 @@ class SignUpPage extends StatelessWidget {
                 padding: JScreenUtil.GLOBAL_PADDING,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
-                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       'Create a new Account',
