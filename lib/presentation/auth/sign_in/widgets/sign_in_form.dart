@@ -56,7 +56,8 @@ class SignInForm extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               JTextFormField(
-                hint: 'Email address',
+                label: 'Email address',
+                hint: 'johndoe@example.com',
                 enabled: !bloc.state.isSubmitting,
                 keyboardType: TextInputType.emailAddress,
                 onChanged: (e) => bloc.add(SignInEvent.emailChanged(e)),
@@ -69,7 +70,8 @@ class SignInForm extends StatelessWidget {
               ),
               JScreenUtil.vSpace(20),
               JTextFormField(
-                hint: 'Password',
+                label: 'Password',
+                hint: 'Your password',
                 enabled: !bloc.state.isSubmitting,
                 isPassword: true,
                 onChanged: (p) => bloc.add(SignInEvent.passwordChanged(p)),
