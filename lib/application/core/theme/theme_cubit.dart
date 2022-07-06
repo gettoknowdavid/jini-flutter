@@ -7,8 +7,6 @@ class ThemeCubit extends Cubit<ThemeMode> {
   ThemeCubit() : super(ThemeMode.light);
 
   void updateTheme(Brightness brightness) {
-    // final _b = WidgetsBinding.instance.platformDispatcher.platformBrightness;
-
     switch (brightness) {
       case Brightness.light:
         _setTheme(ThemeMode.dark);
