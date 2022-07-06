@@ -29,7 +29,7 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
 
   _passwordChanged(PasswordChanged e, Emitter<SignInState> emit) async {
     emit(state.copyWith(
-      password: IPassword(e.password),
+      password: IPassword(e.password, isSignIn: true),
       authFailureOrSuccess: none(),
     ));
   }
