@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jini/application/auth/auth_bloc.dart';
 import 'package:jini/presentation/core/common/image_resources.dart';
+import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/widgets/j_back_button.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
 
@@ -13,6 +14,7 @@ class CheckEmailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     final bloc = BlocProvider.of<AuthBloc>(context);
 
     return Scaffold(
@@ -26,30 +28,25 @@ class CheckEmailPage extends StatelessWidget {
             child: Image.asset(ImageResources.background),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(18, 0, 18, 0).r,
+            padding: JScreenUtil.GLOBAL_PADDING,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 const Spacer(),
-                30.verticalSpace,
+                JScreenUtil.vSpace(30),
                 Text(
                   'Check your mail',
-                  style: GoogleFonts.spaceGrotesk(
-                    fontSize: 40.sp,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: -1.sp,
-                    height: 1.2.sp,
-                  ),
+                  style: textTheme.headlineLarge,
                 ),
-                10.verticalSpace,
+                JScreenUtil.vSpace(10),
                 Text(
                   "We have sent the password recovery \ninstructions to your mail.",
-                  style: GoogleFonts.spaceGrotesk(fontSize: 16.sp),
+                  style: textTheme.titleMedium,
                 ),
-                20.verticalSpace,
+                JScreenUtil.vSpace(20),
                 Image.asset(ImageResources.checkMail),
-                20.verticalSpace,
+                JScreenUtil.vSpace(20),
                 JButton(
                   title: 'Open mail app',
                   onPressed: () => bloc.add(AuthEvent.openMailApp()),
@@ -61,26 +58,21 @@ class CheckEmailPage extends StatelessWidget {
                     Text(
                       'No mail yet? Check your spam filter, or',
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w500,
-                        height: 0.sp,
-                      ),
+                      style: textTheme.titleSmall,
                     ),
-                    TextButton(
+                    JScreenUtil.vSpace(6),
+                    GestureDetector(
                       child: Text(
                         'try another email address',
-                        style: GoogleFonts.spaceGrotesk(
-                          fontSize: 14.sp,
+                        style: textTheme.titleSmall?.copyWith(
                           color: Theme.of(context).primaryColor,
-                          fontWeight: FontWeight.w500,
                         ),
                       ),
-                      onPressed: () => Get.back(),
+                      onTap: () => Get.back(),
                     ),
                   ],
                 ),
-                30.verticalSpace,
+                JScreenUtil.vSpace(40)
               ],
             ),
           ),
