@@ -47,7 +47,8 @@ class SignUpForm extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               JTextFormField(
-                hint: 'Full Name',
+                label: 'Full Name',
+                hint: 'John Doe',
                 enabled: !bloc.state.isSubmitting,
                 onChanged: (e) => bloc.add(SignUpEvent.nameChanged(e)),
                 validator: (_) => bloc.state.name.value.fold(
@@ -59,7 +60,8 @@ class SignUpForm extends StatelessWidget {
               ),
               JScreenUtil.vSpace(20),
               JTextFormField(
-                hint: 'Email address',
+                label: 'Email address',
+                hint: 'johndoe@example.com',
                 enabled: !bloc.state.isSubmitting,
                 keyboardType: TextInputType.emailAddress,
                 onChanged: (e) => bloc.add(SignUpEvent.emailChanged(e)),
@@ -72,7 +74,8 @@ class SignUpForm extends StatelessWidget {
               ),
               JScreenUtil.vSpace(20),
               JTextFormField(
-                hint: 'Password',
+                label: 'Password',
+                hint: 'Your password',
                 enabled: !bloc.state.isSubmitting,
                 isPassword: true,
                 onChanged: (e) => bloc.add(SignUpEvent.passwordChanged(e)),
