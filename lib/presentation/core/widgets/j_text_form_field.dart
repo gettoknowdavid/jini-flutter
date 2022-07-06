@@ -52,7 +52,7 @@ class _JTextFormFieldState extends State<JTextFormField> {
           contentPadding: EdgeInsets.fromLTRB(18, 24, 18, 24).r,
           hintText: widget.hint,
           filled: true,
-          errorMaxLines: 3,
+          errorMaxLines: 5,
           suffixIcon: !widget.isPassword
               ? const SizedBox()
               : IconButton(
