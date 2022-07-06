@@ -19,12 +19,20 @@ class IEmailAddress extends ValueObject<String> {
 
 class IPassword extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
+  final bool isSignIn;
 
-  factory IPassword(String input) {
-    return IPassword._(validatePassword(input.trim()));
+  factory IPassword(String input, {bool isSignIn = false}) {
+    if (isSignIn) {
+      return IPassword._(
+        validateStringNotEmpty(input.trim()),
+        isSignIn: isSignIn,
+      );
+    } else {
+      return IPassword._(validatePassword(input.trim()), isSignIn: isSignIn);
+    }
   }
 
-  const IPassword._(this.value);
+  const IPassword._(this.value, {this.isSignIn = false});
 }
 
 class IName extends ValueObject<String> {
