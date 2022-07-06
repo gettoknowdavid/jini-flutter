@@ -31,8 +31,8 @@ mixin _$JUserDto {
   String? get city => throw _privateConstructorUsedError;
   String? get avatar => throw _privateConstructorUsedError;
   Geo? get location => throw _privateConstructorUsedError;
-  BloodGroup get bloodGroup => throw _privateConstructorUsedError;
-  UserType get userType => throw _privateConstructorUsedError;
+  BloodGroup? get bloodGroup => throw _privateConstructorUsedError;
+  UserType? get userType => throw _privateConstructorUsedError;
   bool? get eligible => throw _privateConstructorUsedError;
   bool? get formComplete => throw _privateConstructorUsedError;
   bool? get initEdit => throw _privateConstructorUsedError;
@@ -59,8 +59,8 @@ abstract class $JUserDtoCopyWith<$Res> {
       String? city,
       String? avatar,
       Geo? location,
-      BloodGroup bloodGroup,
-      UserType userType,
+      BloodGroup? bloodGroup,
+      UserType? userType,
       bool? eligible,
       bool? formComplete,
       bool? initEdit});
@@ -141,11 +141,11 @@ class _$JUserDtoCopyWithImpl<$Res> implements $JUserDtoCopyWith<$Res> {
       bloodGroup: bloodGroup == freezed
           ? _value.bloodGroup
           : bloodGroup // ignore: cast_nullable_to_non_nullable
-              as BloodGroup,
+              as BloodGroup?,
       userType: userType == freezed
           ? _value.userType
           : userType // ignore: cast_nullable_to_non_nullable
-              as UserType,
+              as UserType?,
       eligible: eligible == freezed
           ? _value.eligible
           : eligible // ignore: cast_nullable_to_non_nullable
@@ -180,8 +180,8 @@ abstract class _$$_JUserDtoCopyWith<$Res> implements $JUserDtoCopyWith<$Res> {
       String? city,
       String? avatar,
       Geo? location,
-      BloodGroup bloodGroup,
-      UserType userType,
+      BloodGroup? bloodGroup,
+      UserType? userType,
       bool? eligible,
       bool? formComplete,
       bool? initEdit});
@@ -264,11 +264,11 @@ class __$$_JUserDtoCopyWithImpl<$Res> extends _$JUserDtoCopyWithImpl<$Res>
       bloodGroup: bloodGroup == freezed
           ? _value.bloodGroup
           : bloodGroup // ignore: cast_nullable_to_non_nullable
-              as BloodGroup,
+              as BloodGroup?,
       userType: userType == freezed
           ? _value.userType
           : userType // ignore: cast_nullable_to_non_nullable
-              as UserType,
+              as UserType?,
       eligible: eligible == freezed
           ? _value.eligible
           : eligible // ignore: cast_nullable_to_non_nullable
@@ -300,8 +300,8 @@ class _$_JUserDto implements _JUserDto {
       this.city,
       this.avatar,
       this.location,
-      required this.bloodGroup,
-      required this.userType,
+      this.bloodGroup,
+      this.userType,
       this.eligible,
       this.formComplete,
       this.initEdit});
@@ -332,9 +332,9 @@ class _$_JUserDto implements _JUserDto {
   @override
   final Geo? location;
   @override
-  final BloodGroup bloodGroup;
+  final BloodGroup? bloodGroup;
   @override
-  final UserType userType;
+  final UserType? userType;
   @override
   final bool? eligible;
   @override
@@ -417,8 +417,8 @@ abstract class _JUserDto implements JUserDto {
       final String? city,
       final String? avatar,
       final Geo? location,
-      required final BloodGroup bloodGroup,
-      required final UserType userType,
+      final BloodGroup? bloodGroup,
+      final UserType? userType,
       final bool? eligible,
       final bool? formComplete,
       final bool? initEdit}) = _$_JUserDto;
@@ -448,9 +448,9 @@ abstract class _JUserDto implements JUserDto {
   @override
   Geo? get location => throw _privateConstructorUsedError;
   @override
-  BloodGroup get bloodGroup => throw _privateConstructorUsedError;
+  BloodGroup? get bloodGroup => throw _privateConstructorUsedError;
   @override
-  UserType get userType => throw _privateConstructorUsedError;
+  UserType? get userType => throw _privateConstructorUsedError;
   @override
   bool? get eligible => throw _privateConstructorUsedError;
   @override
