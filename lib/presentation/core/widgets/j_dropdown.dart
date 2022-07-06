@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jini/presentation/core/common/j_screen_util.dart';
 
 class JDropdown<T> extends StatelessWidget {
   const JDropdown({
@@ -22,24 +21,20 @@ class JDropdown<T> extends StatelessWidget {
   Widget build(BuildContext context) {
     return DropdownButtonFormField<T>(
       items: items,
-      borderRadius: BorderRadius.circular(18.r),
+      borderRadius: JScreenUtil.BORDER_RADIUS,
       dropdownColor: Theme.of(context).primaryColor,
       hint: Text(hint),
       value: value,
       onChanged: onChanged,
       validator: validator,
       autovalidateMode: AutovalidateMode.onUserInteraction,
-      style: GoogleFonts.spaceGrotesk(
-        fontSize: 16.sp,
-        fontWeight: FontWeight.w500,
-      ),
+      style: Theme.of(context).textTheme.titleMedium,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.white24,
-        contentPadding: EdgeInsets.fromLTRB(18, 22, 18, 22).r,
+        contentPadding: JScreenUtil.CONTENT_PADDING,
         border: OutlineInputBorder(
           borderSide: BorderSide.none,
-          borderRadius: BorderRadius.circular(18.r),
+          borderRadius: JScreenUtil.BORDER_RADIUS,
         ),
       ),
     );
