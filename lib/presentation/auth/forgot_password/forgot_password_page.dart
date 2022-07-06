@@ -41,7 +41,9 @@ class ForgotPasswordPage extends StatelessWidget {
       builder: (context, state) {
         return Scaffold(
           extendBodyBehindAppBar: true,
-          appBar: AppBar(leading: const JBackButton()),
+          appBar: AppBar(
+            leading: const JBackButton(),
+          ),
           body: Stack(
             alignment: Alignment.center,
             children: [
@@ -55,7 +57,6 @@ class ForgotPasswordPage extends StatelessWidget {
                   child: Form(
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         Text(
@@ -85,7 +86,7 @@ class ForgotPasswordPage extends StatelessWidget {
                             (_) => null,
                           ),
                         ),
-                        JScreenUtil.vSpace(20),
+                        JScreenUtil.vSpace(30),
                         JButton(
                           title: 'Submit',
                           loading: bloc.state.isSubmitting,
