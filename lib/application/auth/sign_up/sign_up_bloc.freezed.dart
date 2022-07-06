@@ -1020,8 +1020,6 @@ mixin _$SignUpState {
   IName get name => throw _privateConstructorUsedError;
   IEmailAddress get email => throw _privateConstructorUsedError;
   IPassword get password => throw _privateConstructorUsedError;
-  IGender get gender => throw _privateConstructorUsedError;
-  IBloodGroup get bloodGroup => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
   Option<Either<AuthFailure, Unit>> get authFailureOrSuccess =>
@@ -1041,8 +1039,6 @@ abstract class $SignUpStateCopyWith<$Res> {
       {IName name,
       IEmailAddress email,
       IPassword password,
-      IGender gender,
-      IBloodGroup bloodGroup,
       bool showErrorMessages,
       bool isSubmitting,
       Option<Either<AuthFailure, Unit>> authFailureOrSuccess});
@@ -1061,8 +1057,6 @@ class _$SignUpStateCopyWithImpl<$Res> implements $SignUpStateCopyWith<$Res> {
     Object? name = freezed,
     Object? email = freezed,
     Object? password = freezed,
-    Object? gender = freezed,
-    Object? bloodGroup = freezed,
     Object? showErrorMessages = freezed,
     Object? isSubmitting = freezed,
     Object? authFailureOrSuccess = freezed,
@@ -1080,14 +1074,6 @@ class _$SignUpStateCopyWithImpl<$Res> implements $SignUpStateCopyWith<$Res> {
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as IPassword,
-      gender: gender == freezed
-          ? _value.gender
-          : gender // ignore: cast_nullable_to_non_nullable
-              as IGender,
-      bloodGroup: bloodGroup == freezed
-          ? _value.bloodGroup
-          : bloodGroup // ignore: cast_nullable_to_non_nullable
-              as IBloodGroup,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -1115,8 +1101,6 @@ abstract class _$$_SignUpStateCopyWith<$Res>
       {IName name,
       IEmailAddress email,
       IPassword password,
-      IGender gender,
-      IBloodGroup bloodGroup,
       bool showErrorMessages,
       bool isSubmitting,
       Option<Either<AuthFailure, Unit>> authFailureOrSuccess});
@@ -1137,8 +1121,6 @@ class __$$_SignUpStateCopyWithImpl<$Res> extends _$SignUpStateCopyWithImpl<$Res>
     Object? name = freezed,
     Object? email = freezed,
     Object? password = freezed,
-    Object? gender = freezed,
-    Object? bloodGroup = freezed,
     Object? showErrorMessages = freezed,
     Object? isSubmitting = freezed,
     Object? authFailureOrSuccess = freezed,
@@ -1156,14 +1138,6 @@ class __$$_SignUpStateCopyWithImpl<$Res> extends _$SignUpStateCopyWithImpl<$Res>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as IPassword,
-      gender: gender == freezed
-          ? _value.gender
-          : gender // ignore: cast_nullable_to_non_nullable
-              as IGender,
-      bloodGroup: bloodGroup == freezed
-          ? _value.bloodGroup
-          : bloodGroup // ignore: cast_nullable_to_non_nullable
-              as IBloodGroup,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -1187,8 +1161,6 @@ class _$_SignUpState implements _SignUpState {
       {required this.name,
       required this.email,
       required this.password,
-      required this.gender,
-      required this.bloodGroup,
       required this.showErrorMessages,
       required this.isSubmitting,
       required this.authFailureOrSuccess});
@@ -1200,10 +1172,6 @@ class _$_SignUpState implements _SignUpState {
   @override
   final IPassword password;
   @override
-  final IGender gender;
-  @override
-  final IBloodGroup bloodGroup;
-  @override
   final bool showErrorMessages;
   @override
   final bool isSubmitting;
@@ -1212,7 +1180,7 @@ class _$_SignUpState implements _SignUpState {
 
   @override
   String toString() {
-    return 'SignUpState(name: $name, email: $email, password: $password, gender: $gender, bloodGroup: $bloodGroup, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, authFailureOrSuccess: $authFailureOrSuccess)';
+    return 'SignUpState(name: $name, email: $email, password: $password, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, authFailureOrSuccess: $authFailureOrSuccess)';
   }
 
   @override
@@ -1223,9 +1191,6 @@ class _$_SignUpState implements _SignUpState {
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.email, email) &&
             const DeepCollectionEquality().equals(other.password, password) &&
-            const DeepCollectionEquality().equals(other.gender, gender) &&
-            const DeepCollectionEquality()
-                .equals(other.bloodGroup, bloodGroup) &&
             const DeepCollectionEquality()
                 .equals(other.showErrorMessages, showErrorMessages) &&
             const DeepCollectionEquality()
@@ -1240,8 +1205,6 @@ class _$_SignUpState implements _SignUpState {
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(email),
       const DeepCollectionEquality().hash(password),
-      const DeepCollectionEquality().hash(gender),
-      const DeepCollectionEquality().hash(bloodGroup),
       const DeepCollectionEquality().hash(showErrorMessages),
       const DeepCollectionEquality().hash(isSubmitting),
       const DeepCollectionEquality().hash(authFailureOrSuccess));
@@ -1257,8 +1220,6 @@ abstract class _SignUpState implements SignUpState {
       {required final IName name,
       required final IEmailAddress email,
       required final IPassword password,
-      required final IGender gender,
-      required final IBloodGroup bloodGroup,
       required final bool showErrorMessages,
       required final bool isSubmitting,
       required final Option<Either<AuthFailure, Unit>>
@@ -1270,10 +1231,6 @@ abstract class _SignUpState implements SignUpState {
   IEmailAddress get email => throw _privateConstructorUsedError;
   @override
   IPassword get password => throw _privateConstructorUsedError;
-  @override
-  IGender get gender => throw _privateConstructorUsedError;
-  @override
-  IBloodGroup get bloodGroup => throw _privateConstructorUsedError;
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
