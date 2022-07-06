@@ -16,6 +16,7 @@ class ForgotPasswordPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _formKey = GlobalKey<FormState>();
     final bloc = BlocProvider.of<ForgotPasswordBloc>(context);
 
     return BlocConsumer<ForgotPasswordBloc, ForgotPasswordState>(
@@ -55,6 +56,7 @@ class ForgotPasswordPage extends StatelessWidget {
                 child: SingleChildScrollView(
                   padding: JScreenUtil.GLOBAL_PADDING,
                   child: Form(
+                    key: _formKey,
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -83,6 +85,7 @@ class ForgotPasswordPage extends StatelessWidget {
                           validator: (_) => bloc.state.email.value.fold(
                             (f) => f.mapOrNull(
                               invalidEmail: (_) => JErrorMessages.invalidEmail,
+                              empty: (_) => JErrorMessages.emailRequired,
                             ),
                             (_) => null,
                           ),
@@ -91,11 +94,11 @@ class ForgotPasswordPage extends StatelessWidget {
                         JButton(
                           title: 'Submit',
                           loading: bloc.state.isSubmitting,
-                          onPressed: !bloc.state.isSubmitting
-                              ? () {
-                                  bloc.add(ForgotPasswordEvent.submitPressed());
-                                }
-                              : null,
+                          onPressed: () {
+                            if (_formKey.currentState!.validate()) {
+                              bloc.add(ForgotPasswordEvent.submitPressed());
+                            }
+                          },
                         ),
                       ],
                     ),
