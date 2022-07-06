@@ -19,7 +19,7 @@ class JButton extends StatelessWidget {
       height: 66.h,
       width: 1.sw,
       decoration: loading
-          ? BoxDecoration()
+          ? const BoxDecoration()
           : BoxDecoration(
               borderRadius: BorderRadius.circular(18).r,
               gradient: LinearGradient(
@@ -29,7 +29,7 @@ class JButton extends StatelessWidget {
               ),
             ),
       child: ElevatedButton(
-        onPressed: onPressed,
+        onPressed: loading ? null : onPressed,
         style: ElevatedButton.styleFrom(primary: Colors.transparent),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
