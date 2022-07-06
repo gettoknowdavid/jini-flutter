@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:jini/application/auth/auth_bloc.dart';
 import 'package:jini/application/auth/sign_up/sign_up_bloc.dart';
 import 'package:jini/domain/core/blood_group.dart';
 import 'package:jini/domain/core/gender.dart';
+import 'package:jini/presentation/core/common/j_error_messages.dart';
+import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
 import 'package:jini/presentation/core/widgets/j_dropdown.dart';
 import 'package:jini/presentation/core/widgets/j_snackbars.dart';
@@ -30,8 +31,8 @@ class SignUpForm extends StatelessWidget {
                 title: 'Sign Up Error',
                 message: f.maybeMap(
                   orElse: () => '',
-                  emailInUse: (_) => 'Email is already in use.',
-                  serverError: (_) => 'Looks like there\'s a server error.',
+                  emailInUse: (_) => JErrorMessages.emailInUse,
+                  serverError: (_) => JErrorMessages.serverError,
                 ),
               );
             },
@@ -53,43 +54,39 @@ class SignUpForm extends StatelessWidget {
                 enabled: !bloc.state.isSubmitting,
                 onChanged: (e) => bloc.add(SignUpEvent.nameChanged(e)),
                 validator: (_) => bloc.state.name.value.fold(
-                  (f) => f.maybeMap(
-                    orElse: () => null,
-                    empty: (_) => 'Name is required',
+                  (f) => f.mapOrNull(
+                    empty: (_) => JErrorMessages.nameRequired,
                   ),
                   (_) => null,
                 ),
               ),
-              12.verticalSpace,
+              JScreenUtil.vSpace(20),
               JTextFormField(
                 hint: 'Email address',
                 enabled: !bloc.state.isSubmitting,
                 keyboardType: TextInputType.emailAddress,
                 onChanged: (e) => bloc.add(SignUpEvent.emailChanged(e)),
                 validator: (_) => bloc.state.email.value.fold(
-                  (f) => f.maybeMap(
-                    orElse: () => null,
-                    invalidEmail: (_) => 'Invalid Email',
+                  (f) => f.mapOrNull(
+                    invalidEmail: (_) => JErrorMessages.invalidEmail,
                   ),
                   (_) => null,
                 ),
               ),
-              12.verticalSpace,
+              JScreenUtil.vSpace(20),
               JTextFormField(
                 hint: 'Password',
                 enabled: !bloc.state.isSubmitting,
                 isPassword: true,
                 onChanged: (e) => bloc.add(SignUpEvent.passwordChanged(e)),
                 validator: (_) => bloc.state.password.value.fold(
-                  (f) => f.maybeMap(
-                    orElse: () => null,
-                    invalidPassword: (_) =>
-                        'Must contain at least 8 characters, one uppercase letter, one digit & one special character.',
+                  (f) => f.mapOrNull(
+                    invalidPassword: (_) => JErrorMessages.invalidPassword,
                   ),
                   (_) => null,
                 ),
               ),
-              12.verticalSpace,
+              JScreenUtil.vSpace(20),
               JDropdown<Gender>(
                 hint: 'Select your gender',
                 value: state.gender.getOrCrash(),
@@ -110,7 +107,7 @@ class SignUpForm extends StatelessWidget {
                   );
                 }).toList(),
               ),
-              12.verticalSpace,
+              JScreenUtil.vSpace(20),
               JDropdown<BloodGroup>(
                 hint: 'Select your blood group',
                 value: state.bloodGroup.getOrCrash(),
@@ -131,7 +128,7 @@ class SignUpForm extends StatelessWidget {
                   );
                 }).toList(),
               ),
-              20.verticalSpace,
+              JScreenUtil.vSpace(30),
               JButton(
                 title: 'Sign Up',
                 loading: bloc.state.isSubmitting,
