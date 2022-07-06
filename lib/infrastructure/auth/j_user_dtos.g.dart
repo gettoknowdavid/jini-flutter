@@ -327,8 +327,8 @@ class JUserDtoQueryDocumentSnapshot extends FirestoreQueryDocumentSnapshot
 //       location: json['location'] == null
 //           ? null
 //           : Geo.fromJson(json['location'] as Map<String, dynamic>),
-//       bloodGroup: $enumDecode(_$BloodGroupEnumMap, json['bloodGroup']),
-//       userType: $enumDecode(_$UserTypeEnumMap, json['userType']),
+//       bloodGroup: $enumDecodeNullable(_$BloodGroupEnumMap, json['bloodGroup']),
+//       userType: $enumDecodeNullable(_$UserTypeEnumMap, json['userType']),
 //       eligible: json['eligible'] as bool?,
 //       formComplete: json['formComplete'] as bool?,
 //       initEdit: json['initEdit'] as bool?,
@@ -389,8 +389,8 @@ _$_JUserDto _$$_JUserDtoFromJson(Map<String, dynamic> json) => _$_JUserDto(
       location: json['location'] == null
           ? null
           : Geo.fromJson(json['location'] as Map<String, dynamic>),
-      bloodGroup: $enumDecode(_$BloodGroupEnumMap, json['bloodGroup']),
-      userType: $enumDecode(_$UserTypeEnumMap, json['userType']),
+      bloodGroup: $enumDecodeNullable(_$BloodGroupEnumMap, json['bloodGroup']),
+      userType: $enumDecodeNullable(_$UserTypeEnumMap, json['userType']),
       eligible: json['eligible'] as bool?,
       formComplete: json['formComplete'] as bool?,
       initEdit: json['initEdit'] as bool?,
