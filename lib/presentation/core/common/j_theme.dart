@@ -40,7 +40,6 @@ class JTheme {
 
   static final _elevatedButtonTheme = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-      elevation: 16,
       shadowColor: _primary.withOpacity(0.7),
       primary: _primary,
       padding: EdgeInsets.all(20).r,
