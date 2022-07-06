@@ -15,6 +15,7 @@ class SignInForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _signInFormKey = GlobalKey<FormState>();
     final textTheme = Theme.of(context).textTheme;
     final bloc = BlocProvider.of<SignInBloc>(context);
     final authBloc = BlocProvider.of<AuthBloc>(context);
@@ -51,7 +52,7 @@ class SignInForm extends StatelessWidget {
       },
       builder: (context, state) {
         return Form(
-          autovalidateMode: AutovalidateMode.onUserInteraction,
+          key: _signInFormKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -64,6 +65,7 @@ class SignInForm extends StatelessWidget {
                 validator: (_) => bloc.state.email.value.fold(
                   (f) => f.mapOrNull(
                     invalidEmail: (_) => JErrorMessages.invalidEmail,
+                    empty: (_) => JErrorMessages.emailRequired,
                   ),
                   (_) => null,
                 ),
@@ -75,6 +77,12 @@ class SignInForm extends StatelessWidget {
                 enabled: !bloc.state.isSubmitting,
                 isPassword: true,
                 onChanged: (p) => bloc.add(SignInEvent.passwordChanged(p)),
+                validator: (_) => bloc.state.password.value.fold(
+                  (f) => f.mapOrNull(
+                    empty: (_) => JErrorMessages.passwordRequired,
+                  ),
+                  (_) => null,
+                ),
               ),
               JScreenUtil.vSpace(20),
               GestureDetector(
@@ -89,9 +97,11 @@ class SignInForm extends StatelessWidget {
               JButton(
                 title: 'Sign In',
                 loading: bloc.state.isSubmitting,
-                onPressed: !bloc.state.isSubmitting
-                    ? () => bloc.add(SignInEvent.signInPressed())
-                    : null,
+                onPressed: () {
+                  if (_signInFormKey.currentState!.validate()) {
+                    bloc.add(SignInEvent.signInPressed());
+                  }
+                },
               ),
             ],
           ),
