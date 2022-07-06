@@ -69,6 +69,7 @@ class SignUpForm extends StatelessWidget {
                 validator: (_) => bloc.state.email.value.fold(
                   (f) => f.mapOrNull(
                     invalidEmail: (_) => JErrorMessages.invalidEmail,
+                    empty: (_) => JErrorMessages.emailRequired,
                   ),
                   (_) => null,
                 ),
@@ -83,6 +84,7 @@ class SignUpForm extends StatelessWidget {
                 validator: (_) => bloc.state.password.value.fold(
                   (f) => f.mapOrNull(
                     invalidPassword: (_) => JErrorMessages.invalidPassword,
+                    empty: (_) => JErrorMessages.passwordRequired,
                   ),
                   (_) => null,
                 ),
@@ -91,13 +93,11 @@ class SignUpForm extends StatelessWidget {
               JButton(
                 title: 'Sign Up',
                 loading: bloc.state.isSubmitting,
-                onPressed: !bloc.state.isSubmitting
-                    ? () {
-                        if (_signUpFormKey.currentState!.validate()) {
-                          bloc.add(SignUpEvent.signUpPressed());
-                        }
-                      }
-                    : null,
+                onPressed: () {
+                  if (_signUpFormKey.currentState!.validate()) {
+                    bloc.add(SignUpEvent.signUpPressed());
+                  }
+                },
               ),
             ],
           ),
