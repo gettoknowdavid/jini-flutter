@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jini/application/auth/forgot_password/forgot_password_bloc.dart';
 import 'package:jini/presentation/core/common/image_resources.dart';
+import 'package:jini/presentation/core/common/j_error_messages.dart';
+import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/widgets/j_back_button.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
 import 'package:jini/presentation/core/widgets/j_snackbars.dart';
@@ -26,11 +26,11 @@ class ForgotPasswordPage extends StatelessWidget {
           (either) => either.fold(
             (f) {
               JSnackbars.errorSnackbar(
-                title: 'Authentication Failure',
+                title: 'Error',
                 message: f.maybeMap(
                   orElse: () => '',
-                  serverError: (_) => 'Looks like there\'s a server error.',
-                  userNotFound: (_) => 'Oops! No user with this email exists.',
+                  serverError: (_) => JErrorMessages.serverError,
+                  userNotFound: (_) => JErrorMessages.usrNotFound,
                 ),
               );
             },
@@ -51,7 +51,7 @@ class ForgotPasswordPage extends StatelessWidget {
               ),
               Center(
                 child: SingleChildScrollView(
-                  padding: EdgeInsets.all(18).r,
+                  padding: JScreenUtil.GLOBAL_PADDING,
                   child: Form(
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     child: Column(
@@ -60,22 +60,17 @@ class ForgotPasswordPage extends StatelessWidget {
                       children: [
                         Text(
                           'Forgot \nPassword?',
-                          style: GoogleFonts.spaceGrotesk(
-                            fontSize: 40.sp,
-                            fontWeight: FontWeight.w600,
-                            letterSpacing: -1.sp,
-                            height: 1.2.sp,
-                          ),
+                          style: Theme.of(context).textTheme.headlineLarge,
                         ),
-                        10.verticalSpace,
+                        JScreenUtil.vSpace(10),
                         Text(
                           "Don't worry! It happens. " +
                               "\nWe just need the address linked with your account.",
-                          style: GoogleFonts.spaceGrotesk(fontSize: 16.sp),
+                          style: Theme.of(context).textTheme.titleMedium,
                         ),
-                        20.verticalSpace,
+                        JScreenUtil.vSpace(20),
                         Image.asset(ImageResources.forgotPassword),
-                        20.verticalSpace,
+                        JScreenUtil.vSpace(20),
                         JTextFormField(
                           hint: 'Email address',
                           enabled: !bloc.state.isSubmitting,
@@ -84,20 +79,20 @@ class ForgotPasswordPage extends StatelessWidget {
                             bloc.add(ForgotPasswordEvent.emailChanged(e));
                           },
                           validator: (_) => bloc.state.email.value.fold(
-                            (f) => f.maybeMap(
-                              invalidEmail: (_) => 'Invalid Email',
-                              orElse: () => null,
+                            (f) => f.mapOrNull(
+                              invalidEmail: (_) => JErrorMessages.invalidEmail,
                             ),
                             (_) => null,
                           ),
                         ),
-                        20.verticalSpace,
+                        JScreenUtil.vSpace(20),
                         JButton(
                           title: 'Submit',
                           loading: bloc.state.isSubmitting,
                           onPressed: !bloc.state.isSubmitting
-                              ? () =>
-                                  bloc.add(ForgotPasswordEvent.submitPressed())
+                              ? () {
+                                  bloc.add(ForgotPasswordEvent.submitPressed());
+                                }
                               : null,
                         ),
                       ],
