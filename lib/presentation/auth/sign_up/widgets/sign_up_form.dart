@@ -15,6 +15,7 @@ class SignUpForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _signUpFormKey = GlobalKey<FormState>();
     final bloc = BlocProvider.of<SignUpBloc>(context);
     final authBloc = BlocProvider.of<AuthBloc>(context);
 
@@ -42,7 +43,7 @@ class SignUpForm extends StatelessWidget {
       },
       builder: (context, state) {
         return Form(
-          autovalidateMode: AutovalidateMode.onUserInteraction,
+          key: _signUpFormKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -91,7 +92,11 @@ class SignUpForm extends StatelessWidget {
                 title: 'Sign Up',
                 loading: bloc.state.isSubmitting,
                 onPressed: !bloc.state.isSubmitting
-                    ? () => bloc.add(SignUpEvent.signUpPressed())
+                    ? () {
+                        if (_signUpFormKey.currentState!.validate()) {
+                          bloc.add(SignUpEvent.signUpPressed());
+                        }
+                      }
                     : null,
               ),
             ],
