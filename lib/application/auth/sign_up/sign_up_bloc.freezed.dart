@@ -21,8 +21,6 @@ mixin _$SignUpEvent {
     required TResult Function(String name) nameChanged,
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordChanged,
-    required TResult Function(Gender? gender) genderChanged,
-    required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
     required TResult Function() signUpPressed,
   }) =>
       throw _privateConstructorUsedError;
@@ -31,8 +29,6 @@ mixin _$SignUpEvent {
     TResult Function(String name)? nameChanged,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
-    TResult Function(Gender? gender)? genderChanged,
-    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function()? signUpPressed,
   }) =>
       throw _privateConstructorUsedError;
@@ -41,8 +37,6 @@ mixin _$SignUpEvent {
     TResult Function(String name)? nameChanged,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
-    TResult Function(Gender? gender)? genderChanged,
-    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function()? signUpPressed,
     required TResult orElse(),
   }) =>
@@ -52,8 +46,6 @@ mixin _$SignUpEvent {
     required TResult Function(NameChanged value) nameChanged,
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(GenderChanged value) genderChanged,
-    required TResult Function(BloodGroupChanged value) bloodGroupChanged,
     required TResult Function(SignUpPressed value) signUpPressed,
   }) =>
       throw _privateConstructorUsedError;
@@ -62,8 +54,6 @@ mixin _$SignUpEvent {
     TResult Function(NameChanged value)? nameChanged,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(GenderChanged value)? genderChanged,
-    TResult Function(BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(SignUpPressed value)? signUpPressed,
   }) =>
       throw _privateConstructorUsedError;
@@ -72,8 +62,6 @@ mixin _$SignUpEvent {
     TResult Function(NameChanged value)? nameChanged,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(GenderChanged value)? genderChanged,
-    TResult Function(BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(SignUpPressed value)? signUpPressed,
     required TResult orElse(),
   }) =>
@@ -163,8 +151,6 @@ class _$NameChanged implements NameChanged {
     required TResult Function(String name) nameChanged,
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordChanged,
-    required TResult Function(Gender? gender) genderChanged,
-    required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
     required TResult Function() signUpPressed,
   }) {
     return nameChanged(name);
@@ -176,8 +162,6 @@ class _$NameChanged implements NameChanged {
     TResult Function(String name)? nameChanged,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
-    TResult Function(Gender? gender)? genderChanged,
-    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function()? signUpPressed,
   }) {
     return nameChanged?.call(name);
@@ -189,8 +173,6 @@ class _$NameChanged implements NameChanged {
     TResult Function(String name)? nameChanged,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
-    TResult Function(Gender? gender)? genderChanged,
-    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function()? signUpPressed,
     required TResult orElse(),
   }) {
@@ -206,8 +188,6 @@ class _$NameChanged implements NameChanged {
     required TResult Function(NameChanged value) nameChanged,
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(GenderChanged value) genderChanged,
-    required TResult Function(BloodGroupChanged value) bloodGroupChanged,
     required TResult Function(SignUpPressed value) signUpPressed,
   }) {
     return nameChanged(this);
@@ -219,8 +199,6 @@ class _$NameChanged implements NameChanged {
     TResult Function(NameChanged value)? nameChanged,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(GenderChanged value)? genderChanged,
-    TResult Function(BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(SignUpPressed value)? signUpPressed,
   }) {
     return nameChanged?.call(this);
@@ -232,8 +210,6 @@ class _$NameChanged implements NameChanged {
     TResult Function(NameChanged value)? nameChanged,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(GenderChanged value)? genderChanged,
-    TResult Function(BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(SignUpPressed value)? signUpPressed,
     required TResult orElse(),
   }) {
@@ -320,8 +296,6 @@ class _$EmailChanged implements EmailChanged {
     required TResult Function(String name) nameChanged,
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordChanged,
-    required TResult Function(Gender? gender) genderChanged,
-    required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
     required TResult Function() signUpPressed,
   }) {
     return emailChanged(email);
@@ -333,8 +307,6 @@ class _$EmailChanged implements EmailChanged {
     TResult Function(String name)? nameChanged,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
-    TResult Function(Gender? gender)? genderChanged,
-    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function()? signUpPressed,
   }) {
     return emailChanged?.call(email);
@@ -346,8 +318,6 @@ class _$EmailChanged implements EmailChanged {
     TResult Function(String name)? nameChanged,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
-    TResult Function(Gender? gender)? genderChanged,
-    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function()? signUpPressed,
     required TResult orElse(),
   }) {
@@ -363,8 +333,6 @@ class _$EmailChanged implements EmailChanged {
     required TResult Function(NameChanged value) nameChanged,
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(GenderChanged value) genderChanged,
-    required TResult Function(BloodGroupChanged value) bloodGroupChanged,
     required TResult Function(SignUpPressed value) signUpPressed,
   }) {
     return emailChanged(this);
@@ -376,8 +344,6 @@ class _$EmailChanged implements EmailChanged {
     TResult Function(NameChanged value)? nameChanged,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(GenderChanged value)? genderChanged,
-    TResult Function(BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(SignUpPressed value)? signUpPressed,
   }) {
     return emailChanged?.call(this);
@@ -389,8 +355,6 @@ class _$EmailChanged implements EmailChanged {
     TResult Function(NameChanged value)? nameChanged,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(GenderChanged value)? genderChanged,
-    TResult Function(BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(SignUpPressed value)? signUpPressed,
     required TResult orElse(),
   }) {
@@ -478,8 +442,6 @@ class _$PasswordChanged implements PasswordChanged {
     required TResult Function(String name) nameChanged,
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordChanged,
-    required TResult Function(Gender? gender) genderChanged,
-    required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
     required TResult Function() signUpPressed,
   }) {
     return passwordChanged(password);
@@ -491,8 +453,6 @@ class _$PasswordChanged implements PasswordChanged {
     TResult Function(String name)? nameChanged,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
-    TResult Function(Gender? gender)? genderChanged,
-    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function()? signUpPressed,
   }) {
     return passwordChanged?.call(password);
@@ -504,8 +464,6 @@ class _$PasswordChanged implements PasswordChanged {
     TResult Function(String name)? nameChanged,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
-    TResult Function(Gender? gender)? genderChanged,
-    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function()? signUpPressed,
     required TResult orElse(),
   }) {
@@ -521,8 +479,6 @@ class _$PasswordChanged implements PasswordChanged {
     required TResult Function(NameChanged value) nameChanged,
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(GenderChanged value) genderChanged,
-    required TResult Function(BloodGroupChanged value) bloodGroupChanged,
     required TResult Function(SignUpPressed value) signUpPressed,
   }) {
     return passwordChanged(this);
@@ -534,8 +490,6 @@ class _$PasswordChanged implements PasswordChanged {
     TResult Function(NameChanged value)? nameChanged,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(GenderChanged value)? genderChanged,
-    TResult Function(BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(SignUpPressed value)? signUpPressed,
   }) {
     return passwordChanged?.call(this);
@@ -547,8 +501,6 @@ class _$PasswordChanged implements PasswordChanged {
     TResult Function(NameChanged value)? nameChanged,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(GenderChanged value)? genderChanged,
-    TResult Function(BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(SignUpPressed value)? signUpPressed,
     required TResult orElse(),
   }) {
@@ -565,324 +517,6 @@ abstract class PasswordChanged implements SignUpEvent {
   String get password => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$PasswordChangedCopyWith<_$PasswordChanged> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$GenderChangedCopyWith<$Res> {
-  factory _$$GenderChangedCopyWith(
-          _$GenderChanged value, $Res Function(_$GenderChanged) then) =
-      __$$GenderChangedCopyWithImpl<$Res>;
-  $Res call({Gender? gender});
-}
-
-/// @nodoc
-class __$$GenderChangedCopyWithImpl<$Res>
-    extends _$SignUpEventCopyWithImpl<$Res>
-    implements _$$GenderChangedCopyWith<$Res> {
-  __$$GenderChangedCopyWithImpl(
-      _$GenderChanged _value, $Res Function(_$GenderChanged) _then)
-      : super(_value, (v) => _then(v as _$GenderChanged));
-
-  @override
-  _$GenderChanged get _value => super._value as _$GenderChanged;
-
-  @override
-  $Res call({
-    Object? gender = freezed,
-  }) {
-    return _then(_$GenderChanged(
-      gender == freezed
-          ? _value.gender
-          : gender // ignore: cast_nullable_to_non_nullable
-              as Gender?,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$GenderChanged implements GenderChanged {
-  const _$GenderChanged(this.gender);
-
-  @override
-  final Gender? gender;
-
-  @override
-  String toString() {
-    return 'SignUpEvent.genderChanged(gender: $gender)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GenderChanged &&
-            const DeepCollectionEquality().equals(other.gender, gender));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(gender));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$GenderChangedCopyWith<_$GenderChanged> get copyWith =>
-      __$$GenderChangedCopyWithImpl<_$GenderChanged>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String name) nameChanged,
-    required TResult Function(String email) emailChanged,
-    required TResult Function(String password) passwordChanged,
-    required TResult Function(Gender? gender) genderChanged,
-    required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
-    required TResult Function() signUpPressed,
-  }) {
-    return genderChanged(gender);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String name)? nameChanged,
-    TResult Function(String email)? emailChanged,
-    TResult Function(String password)? passwordChanged,
-    TResult Function(Gender? gender)? genderChanged,
-    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
-    TResult Function()? signUpPressed,
-  }) {
-    return genderChanged?.call(gender);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String name)? nameChanged,
-    TResult Function(String email)? emailChanged,
-    TResult Function(String password)? passwordChanged,
-    TResult Function(Gender? gender)? genderChanged,
-    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
-    TResult Function()? signUpPressed,
-    required TResult orElse(),
-  }) {
-    if (genderChanged != null) {
-      return genderChanged(gender);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(NameChanged value) nameChanged,
-    required TResult Function(EmailChanged value) emailChanged,
-    required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(GenderChanged value) genderChanged,
-    required TResult Function(BloodGroupChanged value) bloodGroupChanged,
-    required TResult Function(SignUpPressed value) signUpPressed,
-  }) {
-    return genderChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NameChanged value)? nameChanged,
-    TResult Function(EmailChanged value)? emailChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(GenderChanged value)? genderChanged,
-    TResult Function(BloodGroupChanged value)? bloodGroupChanged,
-    TResult Function(SignUpPressed value)? signUpPressed,
-  }) {
-    return genderChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(NameChanged value)? nameChanged,
-    TResult Function(EmailChanged value)? emailChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(GenderChanged value)? genderChanged,
-    TResult Function(BloodGroupChanged value)? bloodGroupChanged,
-    TResult Function(SignUpPressed value)? signUpPressed,
-    required TResult orElse(),
-  }) {
-    if (genderChanged != null) {
-      return genderChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GenderChanged implements SignUpEvent {
-  const factory GenderChanged(final Gender? gender) = _$GenderChanged;
-
-  Gender? get gender => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$$GenderChangedCopyWith<_$GenderChanged> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$BloodGroupChangedCopyWith<$Res> {
-  factory _$$BloodGroupChangedCopyWith(
-          _$BloodGroupChanged value, $Res Function(_$BloodGroupChanged) then) =
-      __$$BloodGroupChangedCopyWithImpl<$Res>;
-  $Res call({BloodGroup bloodGroup});
-}
-
-/// @nodoc
-class __$$BloodGroupChangedCopyWithImpl<$Res>
-    extends _$SignUpEventCopyWithImpl<$Res>
-    implements _$$BloodGroupChangedCopyWith<$Res> {
-  __$$BloodGroupChangedCopyWithImpl(
-      _$BloodGroupChanged _value, $Res Function(_$BloodGroupChanged) _then)
-      : super(_value, (v) => _then(v as _$BloodGroupChanged));
-
-  @override
-  _$BloodGroupChanged get _value => super._value as _$BloodGroupChanged;
-
-  @override
-  $Res call({
-    Object? bloodGroup = freezed,
-  }) {
-    return _then(_$BloodGroupChanged(
-      bloodGroup == freezed
-          ? _value.bloodGroup
-          : bloodGroup // ignore: cast_nullable_to_non_nullable
-              as BloodGroup,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$BloodGroupChanged implements BloodGroupChanged {
-  const _$BloodGroupChanged(this.bloodGroup);
-
-  @override
-  final BloodGroup bloodGroup;
-
-  @override
-  String toString() {
-    return 'SignUpEvent.bloodGroupChanged(bloodGroup: $bloodGroup)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$BloodGroupChanged &&
-            const DeepCollectionEquality()
-                .equals(other.bloodGroup, bloodGroup));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(bloodGroup));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$BloodGroupChangedCopyWith<_$BloodGroupChanged> get copyWith =>
-      __$$BloodGroupChangedCopyWithImpl<_$BloodGroupChanged>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String name) nameChanged,
-    required TResult Function(String email) emailChanged,
-    required TResult Function(String password) passwordChanged,
-    required TResult Function(Gender? gender) genderChanged,
-    required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
-    required TResult Function() signUpPressed,
-  }) {
-    return bloodGroupChanged(bloodGroup);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String name)? nameChanged,
-    TResult Function(String email)? emailChanged,
-    TResult Function(String password)? passwordChanged,
-    TResult Function(Gender? gender)? genderChanged,
-    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
-    TResult Function()? signUpPressed,
-  }) {
-    return bloodGroupChanged?.call(bloodGroup);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String name)? nameChanged,
-    TResult Function(String email)? emailChanged,
-    TResult Function(String password)? passwordChanged,
-    TResult Function(Gender? gender)? genderChanged,
-    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
-    TResult Function()? signUpPressed,
-    required TResult orElse(),
-  }) {
-    if (bloodGroupChanged != null) {
-      return bloodGroupChanged(bloodGroup);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(NameChanged value) nameChanged,
-    required TResult Function(EmailChanged value) emailChanged,
-    required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(GenderChanged value) genderChanged,
-    required TResult Function(BloodGroupChanged value) bloodGroupChanged,
-    required TResult Function(SignUpPressed value) signUpPressed,
-  }) {
-    return bloodGroupChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NameChanged value)? nameChanged,
-    TResult Function(EmailChanged value)? emailChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(GenderChanged value)? genderChanged,
-    TResult Function(BloodGroupChanged value)? bloodGroupChanged,
-    TResult Function(SignUpPressed value)? signUpPressed,
-  }) {
-    return bloodGroupChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(NameChanged value)? nameChanged,
-    TResult Function(EmailChanged value)? emailChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(GenderChanged value)? genderChanged,
-    TResult Function(BloodGroupChanged value)? bloodGroupChanged,
-    TResult Function(SignUpPressed value)? signUpPressed,
-    required TResult orElse(),
-  }) {
-    if (bloodGroupChanged != null) {
-      return bloodGroupChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class BloodGroupChanged implements SignUpEvent {
-  const factory BloodGroupChanged(final BloodGroup bloodGroup) =
-      _$BloodGroupChanged;
-
-  BloodGroup get bloodGroup => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$$BloodGroupChangedCopyWith<_$BloodGroupChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -930,8 +564,6 @@ class _$SignUpPressed implements SignUpPressed {
     required TResult Function(String name) nameChanged,
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordChanged,
-    required TResult Function(Gender? gender) genderChanged,
-    required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
     required TResult Function() signUpPressed,
   }) {
     return signUpPressed();
@@ -943,8 +575,6 @@ class _$SignUpPressed implements SignUpPressed {
     TResult Function(String name)? nameChanged,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
-    TResult Function(Gender? gender)? genderChanged,
-    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function()? signUpPressed,
   }) {
     return signUpPressed?.call();
@@ -956,8 +586,6 @@ class _$SignUpPressed implements SignUpPressed {
     TResult Function(String name)? nameChanged,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
-    TResult Function(Gender? gender)? genderChanged,
-    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function()? signUpPressed,
     required TResult orElse(),
   }) {
@@ -973,8 +601,6 @@ class _$SignUpPressed implements SignUpPressed {
     required TResult Function(NameChanged value) nameChanged,
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(GenderChanged value) genderChanged,
-    required TResult Function(BloodGroupChanged value) bloodGroupChanged,
     required TResult Function(SignUpPressed value) signUpPressed,
   }) {
     return signUpPressed(this);
@@ -986,8 +612,6 @@ class _$SignUpPressed implements SignUpPressed {
     TResult Function(NameChanged value)? nameChanged,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(GenderChanged value)? genderChanged,
-    TResult Function(BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(SignUpPressed value)? signUpPressed,
   }) {
     return signUpPressed?.call(this);
@@ -999,8 +623,6 @@ class _$SignUpPressed implements SignUpPressed {
     TResult Function(NameChanged value)? nameChanged,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(GenderChanged value)? genderChanged,
-    TResult Function(BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(SignUpPressed value)? signUpPressed,
     required TResult orElse(),
   }) {
