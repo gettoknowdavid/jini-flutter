@@ -14,11 +14,9 @@ class FirebaseAuthFacade implements IAuthFacade {
   FirebaseAuthFacade(
     this._firebaseAuth,
     this._firebaseUserMapper,
-    this._jUserRef,
   );
   final FirebaseAuth _firebaseAuth;
   final FirebaseUserMapper _firebaseUserMapper;
-  final JUserDtoCollectionReference _jUserRef;
 
   @override
   Future<Either<AuthFailure, Unit>> signIn({
@@ -68,7 +66,7 @@ class FirebaseAuthFacade implements IAuthFacade {
           initEdit: true,
         );
 
-        _jUserRef.doc(value.user!.uid).set(_user);
+        jUsersRef.doc(value.user!.uid).set(_user);
 
         _firebaseAuth.currentUser!.sendEmailVerification();
 
