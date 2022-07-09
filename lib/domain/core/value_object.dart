@@ -25,6 +25,11 @@ abstract class ValueObject<T> {
 
   @override
   String toString() => 'Value($value)';
+
+  @override
+  bool operator ==(Object other) {
+    return super == other;
+  }
 }
 
 class Uid extends ValueObject<String> {
