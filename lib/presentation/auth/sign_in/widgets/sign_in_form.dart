@@ -8,7 +8,7 @@ import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
 import 'package:jini/presentation/core/widgets/j_snackbars.dart';
 import 'package:jini/presentation/core/widgets/j_text_form_field.dart';
-import 'package:jini/presentation/routes/j_router.dart';
+import 'package:jini/presentation/core/routes/j_router.dart';
 
 class SignInForm extends StatelessWidget {
   const SignInForm({Key? key}) : super(key: key);
