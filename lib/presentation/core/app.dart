@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jini/application/core/theme/theme_cubit.dart';
 import 'package:jini/presentation/core/common/j_theme.dart';
-import 'package:jini/presentation/routes/j_router.dart';
+import 'package:jini/presentation/core/routes/j_router.dart';
 import 'package:jini/presentation/splash/splash_page.dart';
 
 class JiniApp extends StatelessWidget {
