@@ -7,8 +7,9 @@ import 'package:jini/di/injection.dart';
 import 'package:jini/application/auth/auth_bloc.dart';
 import 'package:jini/presentation/core/common/image_resources.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
+import 'package:jini/presentation/core/widgets/j_background.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
-import 'package:jini/presentation/routes/j_router.dart';
+import 'package:jini/presentation/core/routes/j_router.dart';
 
 class VerificationPage extends StatefulWidget {
   const VerificationPage({Key? key}) : super(key: key);
@@ -62,12 +63,9 @@ class _VerificationPageState extends State<VerificationPage> {
           body: Stack(
             alignment: Alignment.center,
             children: [
-              Opacity(
-                opacity: 0.2,
-                child: Image.asset(ImageResources.background),
-              ),
+              const JBackground(),
               Padding(
-                padding: JScreenUtil.GLOBAL_PADDING,
+                padding: JScreenUtil.globalPadding,
                 child: Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -88,7 +86,7 @@ class _VerificationPageState extends State<VerificationPage> {
                             onPressed: () {
                               bloc.add(AuthEvent.sendVerifiedEmail());
                             },
-                            child: Text('Resend Email'),
+                            child: const Text('Resend Email'),
                             style: TextButton.styleFrom(
                               textStyle: textTheme.titleSmall,
                             ),
@@ -97,7 +95,7 @@ class _VerificationPageState extends State<VerificationPage> {
                             onPressed: () {
                               bloc.add(AuthEvent.authSignedOut());
                             },
-                            child: Text('Cancel'),
+                            child: const Text('Cancel'),
                             style: TextButton.styleFrom(
                               textStyle: textTheme.titleSmall,
                             ),
