@@ -5,8 +5,6 @@ import 'package:injectable/injectable.dart';
 import 'package:jini/domain/auth/auth_failure.dart';
 import 'package:jini/domain/auth/i_auth_facade.dart';
 import 'package:jini/domain/auth/value_objects.dart';
-import 'package:jini/domain/core/blood_group.dart';
-import 'package:jini/domain/core/gender.dart';
 
 part 'sign_up_event.dart';
 part 'sign_up_state.dart';
