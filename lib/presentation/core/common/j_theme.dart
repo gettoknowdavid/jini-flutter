@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jini/presentation/core/common/j_screen_util.dart';
 
 class JTheme {
   JTheme._();
@@ -11,7 +12,7 @@ class JTheme {
   static final Color _primary = Color(0xFFF25774);
   static final Color _primaryDark = Color(0xFFF25774);
   static final Color _backgroundDark = Color(0xFF090911);
-  static final Color _backgroundLight = Color(0xFFECEAEA);
+  static final Color _backgroundLight = Color(0xFFFFFFFF);
 
   static final _appBarTheme = AppBarTheme(
     backgroundColor: Colors.transparent,
@@ -40,7 +41,7 @@ class JTheme {
 
   static final _elevatedButtonTheme = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-      shadowColor: _primary.withOpacity(0.7),
+      shadowColor: Colors.black12,
       primary: _primary,
       padding: EdgeInsets.all(20).r,
       textStyle: GoogleFonts.spaceGrotesk(
@@ -48,9 +49,7 @@ class JTheme {
         fontSize: 18.sp,
         fontWeight: FontWeight.w600,
       ),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(18.r),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: JScreenUtil.borderRadius),
     ),
   );
 
