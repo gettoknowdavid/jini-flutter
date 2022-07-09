@@ -21,7 +21,7 @@ class JDropdown<T> extends StatelessWidget {
   Widget build(BuildContext context) {
     return DropdownButtonFormField<T>(
       items: items,
-      borderRadius: JScreenUtil.BORDER_RADIUS,
+      borderRadius: JScreenUtil.borderRadius,
       dropdownColor: Theme.of(context).primaryColor,
       hint: Text(hint),
       value: value,
@@ -31,10 +31,10 @@ class JDropdown<T> extends StatelessWidget {
       style: Theme.of(context).textTheme.titleMedium,
       decoration: InputDecoration(
         filled: true,
-        contentPadding: JScreenUtil.CONTENT_PADDING,
+        contentPadding: JScreenUtil.contentRadius,
         border: OutlineInputBorder(
           borderSide: BorderSide.none,
-          borderRadius: JScreenUtil.BORDER_RADIUS,
+          borderRadius: JScreenUtil.borderRadius,
         ),
       ),
     );
