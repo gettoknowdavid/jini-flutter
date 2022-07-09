@@ -3,10 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:jini/application/auth/sign_up/sign_up_bloc.dart';
 import 'package:jini/presentation/auth/sign_up/widgets/sign_up_form.dart';
-import 'package:jini/presentation/core/common/image_resources.dart';
 import 'package:jini/presentation/core/common/j_error_messages.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/widgets/j_back_button.dart';
+import 'package:jini/presentation/core/widgets/j_background.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -42,13 +42,10 @@ class SignUpPage extends StatelessWidget {
         body: Stack(
           alignment: Alignment.center,
           children: [
-            Opacity(
-              opacity: 0.2,
-              child: Image.asset(ImageResources.background),
-            ),
+            const JBackground(),
             Center(
               child: SingleChildScrollView(
-                padding: JScreenUtil.GLOBAL_PADDING,
+                padding: JScreenUtil.globalPadding,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
@@ -62,7 +59,7 @@ class SignUpPage extends StatelessWidget {
                       style: textTheme.titleMedium,
                     ),
                     JScreenUtil.vSpace(30),
-                    SignUpForm(),
+                    const SignUpForm(),
                   ],
                 ),
               ),
