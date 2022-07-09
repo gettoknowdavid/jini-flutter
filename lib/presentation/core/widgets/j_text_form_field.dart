@@ -35,35 +35,54 @@ class _JTextFormFieldState extends State<JTextFormField> {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: JScreenUtil.BORDER_RADIUS,
-      child: TextFormField(
-        keyboardType: widget.keyboardType,
-        autocorrect: widget.autocorrect,
-        obscureText: widget.isPassword ? !_isObscure : _isObscure,
-        onChanged: widget.onChanged,
-        validator: widget.validator,
-        enabled: widget.enabled,
-        style: Theme.of(context).textTheme.titleMedium,
-        decoration: InputDecoration(
-          border: InputBorder.none,
-          contentPadding: JScreenUtil.TEXTFIELD_PADDING,
-          hintText: widget.hint,
-          labelText: widget.label,
-          filled: true,
-          errorMaxLines: 5,
-          suffixIcon: !widget.isPassword
-              ? const SizedBox()
-              : IconButton(
-                  icon: Icon(
-                    _isObscure
-                        ? PhosphorIcons.eyeSlashBold
-                        : PhosphorIcons.eyeBold,
-                  ),
-                  padding: JScreenUtil.GLOBAL_PADDING,
-                  onPressed: () => setState(() => _isObscure = !_isObscure),
-                ),
+    return TextFormField(
+      keyboardType: widget.keyboardType,
+      autocorrect: widget.autocorrect,
+      obscureText: widget.isPassword ? !_isObscure : _isObscure,
+      onChanged: widget.onChanged,
+      validator: widget.validator,
+      enabled: widget.enabled,
+      style: Theme.of(context).textTheme.titleMedium,
+      decoration: InputDecoration(
+        contentPadding: JScreenUtil.textFieldPadding,
+        hintText: widget.hint,
+        labelText: widget.label,
+        filled: true,
+        errorMaxLines: 5,
+        border: OutlineInputBorder(
+          borderRadius: JScreenUtil.borderRadius,
+          borderSide: BorderSide(
+            color: Theme.of(context).brightness == Brightness.light
+                ? Colors.black12
+                : Colors.white12,
+          ),
         ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: JScreenUtil.borderRadius,
+          borderSide: BorderSide(
+            color: Theme.of(context).brightness == Brightness.light
+                ? Colors.black12
+                : Colors.white12,
+          ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: JScreenUtil.borderRadius,
+          borderSide: BorderSide(
+            color: Theme.of(context).brightness == Brightness.light
+                ? Colors.black12
+                : Colors.white12,
+          ),
+        ),
+        suffixIcon: !widget.isPassword
+            ? const SizedBox()
+            : GestureDetector(
+                child: Icon(
+                  _isObscure
+                      ? PhosphorIcons.eyeSlashBold
+                      : PhosphorIcons.eyeBold,
+                ),
+                onTap: () => setState(() => _isObscure = !_isObscure),
+              ),
       ),
     );
   }
