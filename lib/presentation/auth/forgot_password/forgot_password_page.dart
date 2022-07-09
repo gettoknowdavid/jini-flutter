@@ -5,11 +5,12 @@ import 'package:jini/application/auth/forgot_password/forgot_password_bloc.dart'
 import 'package:jini/presentation/core/common/image_resources.dart';
 import 'package:jini/presentation/core/common/j_error_messages.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
+import 'package:jini/presentation/core/routes/j_router.dart';
 import 'package:jini/presentation/core/widgets/j_back_button.dart';
+import 'package:jini/presentation/core/widgets/j_background.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
 import 'package:jini/presentation/core/widgets/j_snackbars.dart';
 import 'package:jini/presentation/core/widgets/j_text_form_field.dart';
-import 'package:jini/presentation/routes/j_router.dart';
 
 class ForgotPasswordPage extends StatelessWidget {
   const ForgotPasswordPage({Key? key}) : super(key: key);
@@ -48,13 +49,10 @@ class ForgotPasswordPage extends StatelessWidget {
           body: Stack(
             alignment: Alignment.center,
             children: [
-              Opacity(
-                opacity: 0.2,
-                child: Image.asset(ImageResources.background),
-              ),
+              const JBackground(),
               Center(
                 child: SingleChildScrollView(
-                  padding: JScreenUtil.GLOBAL_PADDING,
+                  padding: JScreenUtil.globalPadding,
                   child: Form(
                     key: _formKey,
                     autovalidateMode: AutovalidateMode.onUserInteraction,
