@@ -85,12 +85,12 @@ class FirebaseAuthFacade implements IAuthFacade {
 
   @override
   Future<Option<JUser?>> getUser() async {
-    final _fUser = await _firebaseAuth.currentUser;
+    final _fUser = _firebaseAuth.currentUser;
     if (_fUser != null) {
       final _jUser = await jUsersRef.doc(_fUser.uid).get().then((v) => v.data);
-      return await optionOf(_firebaseUserMapper.toDomain(_jUser));
+      return optionOf(_firebaseUserMapper.toDomain(_jUser));
     } else {
-      return await optionOf(_firebaseUserMapper.toDomain(null));
+      return optionOf(_firebaseUserMapper.toDomain(null));
     }
   }
 
@@ -106,7 +106,7 @@ class FirebaseAuthFacade implements IAuthFacade {
   Future<Option<Either<AuthFailure, bool?>>> checkEmailVerified() async {
     if (_firebaseAuth.currentUser != null) {
       await _firebaseAuth.currentUser!.reload();
-      final _value = await _firebaseAuth.currentUser!.emailVerified;
+      final _value = _firebaseAuth.currentUser!.emailVerified;
       if (_value) {
         return optionOf(right(_value));
       } else {
@@ -124,7 +124,7 @@ class FirebaseAuthFacade implements IAuthFacade {
 
   @override
   Future<Either<AuthFailure, bool?>> donorRequirementsMet() async {
-    final _fUser = await _firebaseAuth.currentUser;
+    final _fUser = _firebaseAuth.currentUser;
     final _jUser = await jUsersRef.doc(_fUser?.uid).get().then((v) => v.data);
     if (_jUser!.formComplete!) {
       return right(true);
