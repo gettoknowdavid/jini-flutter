@@ -4,16 +4,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class JScreenUtil {
   JScreenUtil._();
 
-  static final GLOBAL_PADDING = const EdgeInsets.symmetric(
+  static final globalPadding = const EdgeInsets.symmetric(
     horizontal: 18,
     vertical: 20,
   ).r;
 
-  static final TEXTFIELD_PADDING = const EdgeInsets.all(18).r;
+  static final textFieldPadding = const EdgeInsets.fromLTRB(18, 24, 18, 24).r;
 
-  static final BORDER_RADIUS = BorderRadius.circular(18).r;
+  static final borderRadius = BorderRadius.circular(18).r;
 
-  static final CONTENT_PADDING = const EdgeInsets.fromLTRB(18, 22, 18, 22).r;
+  static final contentRadius = const EdgeInsets.fromLTRB(18, 22, 18, 22).r;
 
   static vSpace(num height) => ScreenUtil().setVerticalSpacing(height);
 
