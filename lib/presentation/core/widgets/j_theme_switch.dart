@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jini/application/core/theme/theme_cubit.dart';
+import 'package:jini/application/core/settings/settings_bloc.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class JThemeSwitch extends StatelessWidget {
@@ -8,14 +8,16 @@ class JThemeSwitch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ThemeCubit, ThemeMode>(
-      bloc: BlocProvider.of<ThemeCubit>(context),
+    final bloc = BlocProvider.of<SettingsBloc>(context);
+    return BlocBuilder<SettingsBloc, SettingsState>(
+      bloc: bloc,
       builder: (context, state) {
         final Brightness _b = Theme.of(context).brightness;
-        final isDark = state == ThemeMode.dark ? true : false;
+        final ThemeMode _mode = state.settings.themeMode;
+        final isDark = _mode == ThemeMode.dark ? true : false;
 
         return IconButton(
-          onPressed: () => context.read<ThemeCubit>().updateTheme(_b),
+          onPressed: () => bloc.add(ThemeChanged(_b)),
           icon: Icon(
             isDark ? PhosphorIcons.sunBold : PhosphorIcons.moonBold,
             color: isDark ? Colors.white : Colors.black,
