@@ -5,6 +5,7 @@ import 'package:jini/application/auth/auth_bloc.dart';
 import 'package:jini/presentation/core/common/image_resources.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/widgets/j_back_button.dart';
+import 'package:jini/presentation/core/widgets/j_background.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
 
 class CheckEmailPage extends StatelessWidget {
@@ -21,12 +22,9 @@ class CheckEmailPage extends StatelessWidget {
       body: Stack(
         alignment: Alignment.center,
         children: [
-          Opacity(
-            opacity: 0.2,
-            child: Image.asset(ImageResources.background),
-          ),
+          const JBackground(),
           Padding(
-            padding: JScreenUtil.GLOBAL_PADDING,
+            padding: JScreenUtil.globalPadding,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
