@@ -13,11 +13,6 @@ class JTheme {
   static final Color _backgroundDark = Color(0xFF090911);
   static final Color _backgroundLight = Color(0xFFFFFFFF);
 
-  static final _appBarTheme = AppBarTheme(
-    backgroundColor: Colors.transparent,
-    elevation: 0,
-  );
-
   static final _textButtonTheme = TextButtonThemeData(
     style: TextButton.styleFrom(
       textStyle: GoogleFonts.spaceGrotesk(color: _primary),
@@ -70,13 +65,17 @@ class JTheme {
       backgroundColor: _backgroundLight,
       scaffoldBackgroundColor: _backgroundLight,
       indicatorColor: _primary,
-      appBarTheme: _appBarTheme,
       textButtonTheme: _textButtonTheme,
       drawerTheme: _drawerTheme,
       elevatedButtonTheme: _elevatedButtonTheme,
       pageTransitionsTheme: _pageTransitionsTheme,
       progressIndicatorTheme: ProgressIndicatorThemeData(
         color: _backgroundLight,
+      ),
+      appBarTheme: AppBarTheme(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        iconTheme: _baseLight.iconTheme,
       ),
       textTheme: _baseLight.textTheme
           .copyWith(
@@ -115,13 +114,17 @@ class JTheme {
       backgroundColor: _backgroundDark,
       scaffoldBackgroundColor: _backgroundDark,
       indicatorColor: _primary,
-      appBarTheme: _appBarTheme,
       textButtonTheme: _textButtonTheme,
       drawerTheme: _drawerTheme,
       elevatedButtonTheme: _elevatedButtonTheme,
       pageTransitionsTheme: _pageTransitionsTheme,
       progressIndicatorTheme: ProgressIndicatorThemeData(
         color: _backgroundDark,
+      ),
+      appBarTheme: AppBarTheme(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        iconTheme: _baseDark.iconTheme,
       ),
       textTheme: _baseDark.textTheme
           .copyWith(
