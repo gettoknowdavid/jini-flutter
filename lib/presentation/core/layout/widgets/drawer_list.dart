@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
+import 'package:jini/application/auth/auth_bloc.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/routes/j_router.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
-
 class DrawerItem {
-  DrawerItem(this.icon, this.title, this.route);
+  DrawerItem(this.icon, this.title, [this.route]);
 
   final IconData icon;
   final String title;
-  final String route;
+  final String? route;
 }
 
 final List<DrawerItem> drawerItems = <DrawerItem>[
@@ -20,7 +22,7 @@ final List<DrawerItem> drawerItems = <DrawerItem>[
   DrawerItem(PhosphorIcons.question, 'FAQs', JRoutes.checkEmail),
   DrawerItem(PhosphorIcons.lifebuoy, 'Help & Support', JRoutes.checkEmail),
   DrawerItem(PhosphorIcons.keyhole, 'Privacy Policy', JRoutes.checkEmail),
-  DrawerItem(PhosphorIcons.signOut, 'Sign Out', JRoutes.checkEmail),
+  DrawerItem(PhosphorIcons.signOut, 'Sign Out'),
 ];
 
 class DrawerList extends StatelessWidget {
@@ -30,6 +32,7 @@ class DrawerList extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final textTheme = theme.textTheme;
+    final authBloc = BlocProvider.of<AuthBloc>(context);
 
     return ListView.separated(
       padding: EdgeInsets.zero,
@@ -38,8 +41,12 @@ class DrawerList extends StatelessWidget {
       shrinkWrap: true,
       itemBuilder: (context, index) {
         final item = drawerItems[index];
+
         return ListTile(
           key: Key(index.toString()),
+          onTap: index == 7
+              ? () => authBloc.add(AuthEvent.authSignedOut())
+              : () => Get.toNamed(item.route!),
           dense: true,
           leading: Icon(item.icon, color: theme.primaryColor),
           style: ListTileStyle.drawer,
