@@ -24,7 +24,10 @@ class JLayout extends StatelessWidget {
         builder: (context, state) {
           return Scaffold(
             appBar: AppBar(
-              title: Text(state.title),
+              title: Text(
+                state.title,
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
               actions: [
                 const JThemeSwitch(),
               ],
