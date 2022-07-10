@@ -44,7 +44,7 @@ class _VerificationPageState extends State<VerificationPage> {
           orElse: () => null,
           verified: (_) {
             timer?.cancel();
-            Get.offNamed(JRoutes.profile);
+            Get.offNamed(JRoutes.profilePage);
           },
           unauthenticated: (_) {
             timer = Timer.periodic(const Duration(seconds: 3), (_) {
