@@ -32,7 +32,7 @@ class JDrawer extends StatelessWidget {
               Row(
                 children: [
                   GestureDetector(
-                    onTap: () => Get.toNamed(JRoutes.profile),
+                    onTap: () => Get.toNamed(JRoutes.profilePage),
                     child: CircleAvatar(
                       radius: JScreenUtil.sw(0.07),
                       child: Text('DM'),
