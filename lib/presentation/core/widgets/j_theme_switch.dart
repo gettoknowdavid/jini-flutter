@@ -20,7 +20,6 @@ class JThemeSwitch extends StatelessWidget {
           onPressed: () => bloc.add(ThemeChanged(_b)),
           icon: Icon(
             isDark ? PhosphorIcons.sunBold : PhosphorIcons.moonBold,
-            color: isDark ? Colors.white : Colors.black,
           ),
         );
       },
