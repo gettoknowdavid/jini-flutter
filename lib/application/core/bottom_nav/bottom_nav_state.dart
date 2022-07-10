@@ -9,6 +9,6 @@ class BottomNavState with _$BottomNavState {
 
   factory BottomNavState.initial() => BottomNavState(
         title: 'Jini App',
-        body: const ProfilePage(title: 'Home'),
+        body: const HomePage(),
       );
 }
