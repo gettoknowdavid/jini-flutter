@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/layout/widgets/drawer_list.dart';
+import 'package:jini/presentation/core/routes/j_router.dart';
 import 'package:jini/presentation/core/widgets/j_back_button.dart';
 
 class JDrawer extends StatelessWidget {
@@ -29,7 +31,13 @@ class JDrawer extends StatelessWidget {
               JScreenUtil.vSpace(20),
               Row(
                 children: [
-                  CircleAvatar(radius: JScreenUtil.sw(0.07)),
+                  GestureDetector(
+                    onTap: () => Get.toNamed(JRoutes.profile),
+                    child: CircleAvatar(
+                      radius: JScreenUtil.sw(0.07),
+                      child: Text('DM'),
+                    ),
+                  ),
                   JScreenUtil.hSpace(10),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
