@@ -1,3 +1,4 @@
+import 'package:division/division.dart';
 import 'package:flutter/material.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
 
@@ -16,17 +17,24 @@ class ProfileDetailsItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final textTheme = theme.textTheme;
 
-    return ListTile(
-      contentPadding: JScreenUtil.padFromLTRB(18, 4, 18, 4),
-      leading: Icon(
-        icon,
-        color: theme.primaryColor,
+    return Parent(
+      style: ParentStyle()..padding(all: JScreenUtil.r(18)),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(icon, color: theme.primaryColor),
+          JScreenUtil.hSpace(20),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Txt(title, style: TxtStyle()..fontSize(12)),
+              JScreenUtil.vSpace(4),
+              Txt(value, style: TxtStyle()..fontSize(16)),
+            ],
+          ),
+        ],
       ),
-      minLeadingWidth: JScreenUtil.w(20),
-      title: Text(title, style: textTheme.bodySmall),
-      subtitle: Text(value, style: textTheme.titleMedium),
     );
   }
 }
