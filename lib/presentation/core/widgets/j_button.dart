@@ -23,7 +23,10 @@ class JButton extends StatelessWidget {
           : BoxDecoration(
               borderRadius: BorderRadius.circular(18).r,
               gradient: LinearGradient(
-                colors: [Color(0xffff78a9), Color(0xffdf1b49)],
+                colors: [
+                  Theme.of(context).primaryColor,
+                  Theme.of(context).primaryColorDark,
+                ],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),
