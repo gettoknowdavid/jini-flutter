@@ -31,7 +31,10 @@ class RequestButton extends StatelessWidget {
           ),
         ],
         gradient: LinearGradient(
-          colors: [Color(0xffff78a9), Color(0xffdf1b49)],
+          colors: [
+            Theme.of(context).primaryColor,
+            Theme.of(context).primaryColorDark,
+          ],
           begin: Alignment.centerLeft,
           end: Alignment.bottomRight,
         ),
