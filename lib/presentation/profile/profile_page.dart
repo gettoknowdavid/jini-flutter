@@ -36,19 +36,7 @@ class ProfilePage extends StatelessWidget {
                       ..fontSize(JScreenUtil.fontSize(32)),
                   ),
                   JScreenUtil.vSpace(4),
-                  Txt(
-                    'knowdavidmichael@gmail.com',
-                    style: TxtStyle()
-                      ..textColor(Colors.white70)
-                      ..fontSize(JScreenUtil.fontSize(14)),
-                  ),
-                  JScreenUtil.vSpace(4),
-                  Txt(
-                    '+234 816 028 5225',
-                    style: TxtStyle()
-                      ..textColor(Colors.white70)
-                      ..fontSize(JScreenUtil.fontSize(14)),
-                  ),
+                  JLocationWidget(),
                   JScreenUtil.vSpace(30),
                   const ProfileStats(),
                 ],
@@ -56,6 +44,18 @@ class ProfilePage extends StatelessWidget {
             ),
             JScreenUtil.vSpace(30),
             const ProfileBloodGroupWidget(),
+            JScreenUtil.vSpace(30),
+            const ProfileDetailsItem(
+              title: 'Email',
+              value: 'knowdavidmichael@gmail.com',
+              icon: PhosphorIcons.envelope,
+            ),
+            JScreenUtil.vSpace(10),
+            const ProfileDetailsItem(
+              title: 'Phone',
+              value: '+234 816 028 5225',
+              icon: PhosphorIcons.phone,
+            ),
             JScreenUtil.vSpace(10),
             const ProfileDetailsItem(
               title: 'Gender',
@@ -72,17 +72,48 @@ class ProfilePage extends StatelessWidget {
             const ProfileDetailsItem(
               title: 'Height',
               value: '6.2',
-              icon: PhosphorIcons.calendarBlank,
+              icon: PhosphorIcons.arrowsVertical,
             ),
             JScreenUtil.divider,
             const ProfileDetailsItem(
               title: 'Weight',
               value: '65.9',
-              icon: PhosphorIcons.genderIntersex,
+              icon: PhosphorIcons.arrowsHorizontal,
             ),
-            JScreenUtil.divider,
+            JScreenUtil.vSpace(30)
           ],
         ),
+      ),
+    );
+  }
+}
+
+class JLocationWidget extends StatelessWidget {
+  const JLocationWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Parent(
+      gesture: Gestures()..onTap(() {}),
+      style: ParentStyle()
+        ..padding(vertical: JScreenUtil.r(6))
+        ..ripple(true),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            PhosphorIcons.navigationArrow,
+            color: Colors.white,
+            size: JScreenUtil.fontSize(18),
+          ),
+          JScreenUtil.hSpace(6),
+          Txt(
+            'Port Harcourt, Nigeria',
+            style: TxtStyle()
+              ..textColor(Colors.white70)
+              ..fontSize(JScreenUtil.fontSize(16)),
+          ),
+        ],
       ),
     );
   }
