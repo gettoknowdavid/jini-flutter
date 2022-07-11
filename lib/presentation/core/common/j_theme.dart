@@ -9,7 +9,7 @@ class JTheme {
   static final Color _white = Color(0xFFFFFFFF);
   static final Color _black = Color(0xFF000000);
   static final Color _primary = Color(0xFFF25774);
-  static final Color _primaryDark = Color(0xFFF25774);
+  static final Color _primaryDark = Color(0xFFD1324F);
   static final Color _backgroundDark = Color(0xFF090911);
   static final Color _backgroundLight = Color(0xFFFFFFFF);
 
