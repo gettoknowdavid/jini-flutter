@@ -19,7 +19,10 @@ class ProfileDetailsItem extends StatelessWidget {
     final theme = Theme.of(context);
 
     return Parent(
-      style: ParentStyle()..padding(all: JScreenUtil.r(18)),
+      gesture: Gestures()..onTap(() {}),
+      style: ParentStyle()
+        ..padding(all: JScreenUtil.r(18))
+        ..ripple(true),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
