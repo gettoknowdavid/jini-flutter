@@ -4,7 +4,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:jini/presentation/event/event_page.dart';
 import 'package:jini/presentation/home/home_page.dart';
-import 'package:jini/presentation/profile/profile_page.dart';
 import 'package:jini/presentation/request/create_request_page.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
