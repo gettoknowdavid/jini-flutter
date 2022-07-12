@@ -11,7 +11,7 @@ part 'j_user_dtos.freezed.dart';
 part 'j_user_dtos.g.dart';
 
 @freezed
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(explicitToJson: true, createFactory: false)
 class JUserDto with _$JUserDto {
   factory JUserDto({
     required String uid,
