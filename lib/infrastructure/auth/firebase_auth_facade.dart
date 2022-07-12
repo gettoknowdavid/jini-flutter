@@ -97,7 +97,15 @@ class FirebaseAuthFacade implements IAuthFacade {
 
   @override
   Future<Either<AuthFailure, Unit>> updateUser(JUser jUser) async {
-    throw UnimplementedError();
+    try {
+      final jUserDto = JUserDto.fromDomain(jUser);
+
+      await jUsersRef.doc(jUserDto.uid).set(jUserDto);
+
+      return (right(unit));
+    } on FirebaseException catch (_) {
+      return left(const AuthFailure.serverError());
+    }
   }
 
   @override
