@@ -42,7 +42,8 @@ void main() async {
         BlocProvider<AuthBloc>(create: (context) {
           return getIt<AuthBloc>()
             ..add(AuthEvent.authCheckRequested())
-            ..add(AuthEvent.authCheckVerified());
+            ..add(AuthEvent.authCheckVerified())
+            ..add(AuthEvent.checkProfileCompleted());
         }),
         BlocProvider<ProfileBloc>(create: (context) => getIt<ProfileBloc>()),
         BlocProvider<ForgotPasswordBloc>(
