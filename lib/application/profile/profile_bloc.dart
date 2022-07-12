@@ -8,7 +8,11 @@ part 'profile_bloc.freezed.dart';
 
 @injectable
 class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
-  ProfileBloc() : super(_Initial()) {
-    on<ProfileEvent>((event, emit) {});
+  ProfileBloc() : super(ProfileState.initial()) {
+    on<_ProfileEditPressed>((event, emit) => _editPressed(event, emit));
+  }
+
+  _editPressed(_ProfileEditPressed e, Emitter<ProfileState> emit) async {
+    emit(state.copyWith(isEditing: e.value));
   }
 }
