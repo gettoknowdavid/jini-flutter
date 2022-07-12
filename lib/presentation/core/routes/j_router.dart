@@ -8,6 +8,7 @@ import 'package:jini/presentation/core/layout/j_layout.dart';
 import 'package:jini/presentation/donor_requirements/donor_requirements_page.dart';
 import 'package:jini/presentation/event/event_page.dart';
 import 'package:jini/presentation/home/home_page.dart';
+import 'package:jini/presentation/profile/edit_profile_page.dart';
 import 'package:jini/presentation/profile/profile_page.dart';
 import 'package:jini/presentation/request/create_request_page.dart';
 import 'package:jini/presentation/splash/splash_page.dart';
@@ -27,6 +28,7 @@ class JRoutes {
   static final String createRequestPage = "/create-request-page";
   static final String eventPage = "/event-page";
   static final String homePage = "/home-page";
+  static final String editProfilePage = "/edit-profile-page";
 
   static final List<GetPage<dynamic>>? pages = <GetPage<dynamic>>[
     GetPage(name: JRoutes.splash, page: () => SplashPage()),
@@ -41,5 +43,6 @@ class JRoutes {
     GetPage(name: JRoutes.createRequestPage, page: () => CreateRequestPage()),
     GetPage(name: JRoutes.profilePage, page: () => ProfilePage()),
     GetPage(name: JRoutes.eventPage, page: () => EventPage()),
+    GetPage(name: JRoutes.editProfilePage, page: () => EditProfilePage()),
   ];
 }
