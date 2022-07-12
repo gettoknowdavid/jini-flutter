@@ -1,6 +1,5 @@
 import 'package:division/division.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:jini/presentation/core/common/j_avatar.dart';
 import 'package:jini/presentation/core/common/j_location_widget.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
@@ -8,7 +7,9 @@ import 'package:jini/presentation/core/common/j_widget_styles.dart';
 import 'package:jini/presentation/core/widgets/j_back_button.dart';
 import 'package:jini/presentation/profile/widgets/profile_blood_group_widget.dart';
 import 'package:jini/presentation/profile/widgets/profile_details_item.dart';
+import 'package:jini/presentation/profile/widgets/profile_save_button.dart';
 import 'package:jini/presentation/profile/widgets/profile_stats.dart';
+import 'package:jini/presentation/profile/widgets/profile_user_name.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -16,12 +17,14 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool isEdit = Get.arguments;
+    // final bloc = BlocProvider.of<ProfileBloc>(context);
+    // bool isEditing = false;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         leading: const JBackButton(color: Colors.white),
+        actions: [const ProfileSaveButton()],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -33,12 +36,7 @@ class ProfilePage extends StatelessWidget {
                 children: [
                   const JAvatar(showBadge: true),
                   JScreenUtil.vSpace(30),
-                  Txt(
-                    'David Michael',
-                    style: TxtStyle()
-                      ..textColor(Colors.white)
-                      ..fontSize(JScreenUtil.fontSize(32)),
-                  ),
+                  const ProfileUserName(),
                   JScreenUtil.vSpace(4),
                   const JLocationWidget(),
                   JScreenUtil.vSpace(30),
