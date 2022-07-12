@@ -3,20 +3,24 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:jini/application/auth/auth_bloc.dart';
 import 'package:jini/application/core/bottom_nav/bottom_nav_cubit.dart';
+import 'package:jini/di/injection.dart';
 import 'package:jini/presentation/core/layout/widgets/bottom_nav.dart';
 import 'package:jini/presentation/core/layout/widgets/j_drawer.dart';
 import 'package:jini/presentation/core/routes/j_router.dart';
+import 'package:jini/presentation/core/widgets/j_dialogues.dart';
 import 'package:jini/presentation/core/widgets/j_theme_switch.dart';
 
 class JLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final authBloc = BlocProvider.of<AuthBloc>(context);
+
     return BlocListener<AuthBloc, AuthState>(
+      bloc: authBloc,
       listener: (context, authState) {
-        authState.maybeMap(
-          orElse: () => null,
-          initial: (_) {},
-          authenticated: (_) => Get.offNamed(JRoutes.layout),
+        authState.mapOrNull(
+          profileNotCompleted: (_) =>
+              Get.dialog(JDialogues.editProfile, barrierDismissible: false),
           unauthenticated: (_) => Get.offAllNamed(JRoutes.signIn),
         );
       },
