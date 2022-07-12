@@ -20,18 +20,21 @@ mixin _$ProfileEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(bool value) editPressed,
+    required TResult Function() profileUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(bool value)? editPressed,
+    TResult Function()? profileUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(bool value)? editPressed,
+    TResult Function()? profileUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$ProfileEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_ProfileEditPressed value) editPressed,
+    required TResult Function(_ProfileUpdated value) profileUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_ProfileEditPressed value)? editPressed,
+    TResult Function(_ProfileUpdated value)? profileUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_ProfileEditPressed value)? editPressed,
+    TResult Function(_ProfileUpdated value)? profileUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,6 +119,7 @@ class _$_Started implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(bool value) editPressed,
+    required TResult Function() profileUpdated,
   }) {
     return started();
   }
@@ -122,6 +129,7 @@ class _$_Started implements _Started {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(bool value)? editPressed,
+    TResult Function()? profileUpdated,
   }) {
     return started?.call();
   }
@@ -131,6 +139,7 @@ class _$_Started implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(bool value)? editPressed,
+    TResult Function()? profileUpdated,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -144,6 +153,7 @@ class _$_Started implements _Started {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_ProfileEditPressed value) editPressed,
+    required TResult Function(_ProfileUpdated value) profileUpdated,
   }) {
     return started(this);
   }
@@ -153,6 +163,7 @@ class _$_Started implements _Started {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_ProfileEditPressed value)? editPressed,
+    TResult Function(_ProfileUpdated value)? profileUpdated,
   }) {
     return started?.call(this);
   }
@@ -162,6 +173,7 @@ class _$_Started implements _Started {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_ProfileEditPressed value)? editPressed,
+    TResult Function(_ProfileUpdated value)? profileUpdated,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -243,6 +255,7 @@ class _$_ProfileEditPressed implements _ProfileEditPressed {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(bool value) editPressed,
+    required TResult Function() profileUpdated,
   }) {
     return editPressed(value);
   }
@@ -252,6 +265,7 @@ class _$_ProfileEditPressed implements _ProfileEditPressed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(bool value)? editPressed,
+    TResult Function()? profileUpdated,
   }) {
     return editPressed?.call(value);
   }
@@ -261,6 +275,7 @@ class _$_ProfileEditPressed implements _ProfileEditPressed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(bool value)? editPressed,
+    TResult Function()? profileUpdated,
     required TResult orElse(),
   }) {
     if (editPressed != null) {
@@ -274,6 +289,7 @@ class _$_ProfileEditPressed implements _ProfileEditPressed {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_ProfileEditPressed value) editPressed,
+    required TResult Function(_ProfileUpdated value) profileUpdated,
   }) {
     return editPressed(this);
   }
@@ -283,6 +299,7 @@ class _$_ProfileEditPressed implements _ProfileEditPressed {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_ProfileEditPressed value)? editPressed,
+    TResult Function(_ProfileUpdated value)? profileUpdated,
   }) {
     return editPressed?.call(this);
   }
@@ -292,6 +309,7 @@ class _$_ProfileEditPressed implements _ProfileEditPressed {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_ProfileEditPressed value)? editPressed,
+    TResult Function(_ProfileUpdated value)? profileUpdated,
     required TResult orElse(),
   }) {
     if (editPressed != null) {
@@ -311,8 +329,120 @@ abstract class _ProfileEditPressed implements ProfileEvent {
 }
 
 /// @nodoc
+abstract class _$$_ProfileUpdatedCopyWith<$Res> {
+  factory _$$_ProfileUpdatedCopyWith(
+          _$_ProfileUpdated value, $Res Function(_$_ProfileUpdated) then) =
+      __$$_ProfileUpdatedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_ProfileUpdatedCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res>
+    implements _$$_ProfileUpdatedCopyWith<$Res> {
+  __$$_ProfileUpdatedCopyWithImpl(
+      _$_ProfileUpdated _value, $Res Function(_$_ProfileUpdated) _then)
+      : super(_value, (v) => _then(v as _$_ProfileUpdated));
+
+  @override
+  _$_ProfileUpdated get _value => super._value as _$_ProfileUpdated;
+}
+
+/// @nodoc
+
+class _$_ProfileUpdated implements _ProfileUpdated {
+  const _$_ProfileUpdated();
+
+  @override
+  String toString() {
+    return 'ProfileEvent.profileUpdated()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_ProfileUpdated);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(bool value) editPressed,
+    required TResult Function() profileUpdated,
+  }) {
+    return profileUpdated();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(bool value)? editPressed,
+    TResult Function()? profileUpdated,
+  }) {
+    return profileUpdated?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(bool value)? editPressed,
+    TResult Function()? profileUpdated,
+    required TResult orElse(),
+  }) {
+    if (profileUpdated != null) {
+      return profileUpdated();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_ProfileEditPressed value) editPressed,
+    required TResult Function(_ProfileUpdated value) profileUpdated,
+  }) {
+    return profileUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_ProfileEditPressed value)? editPressed,
+    TResult Function(_ProfileUpdated value)? profileUpdated,
+  }) {
+    return profileUpdated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_ProfileEditPressed value)? editPressed,
+    TResult Function(_ProfileUpdated value)? profileUpdated,
+    required TResult orElse(),
+  }) {
+    if (profileUpdated != null) {
+      return profileUpdated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ProfileUpdated implements ProfileEvent {
+  const factory _ProfileUpdated() = _$_ProfileUpdated;
+}
+
+/// @nodoc
 mixin _$ProfileState {
   bool get isEditing => throw _privateConstructorUsedError;
+  IName get name => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ProfileStateCopyWith<ProfileState> get copyWith =>
@@ -324,7 +454,7 @@ abstract class $ProfileStateCopyWith<$Res> {
   factory $ProfileStateCopyWith(
           ProfileState value, $Res Function(ProfileState) then) =
       _$ProfileStateCopyWithImpl<$Res>;
-  $Res call({bool isEditing});
+  $Res call({bool isEditing, IName name});
 }
 
 /// @nodoc
@@ -338,12 +468,17 @@ class _$ProfileStateCopyWithImpl<$Res> implements $ProfileStateCopyWith<$Res> {
   @override
   $Res call({
     Object? isEditing = freezed,
+    Object? name = freezed,
   }) {
     return _then(_value.copyWith(
       isEditing: isEditing == freezed
           ? _value.isEditing
           : isEditing // ignore: cast_nullable_to_non_nullable
               as bool,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as IName,
     ));
   }
 }
@@ -355,7 +490,7 @@ abstract class _$$_ProfileStateCopyWith<$Res>
           _$_ProfileState value, $Res Function(_$_ProfileState) then) =
       __$$_ProfileStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isEditing});
+  $Res call({bool isEditing, IName name});
 }
 
 /// @nodoc
@@ -372,12 +507,17 @@ class __$$_ProfileStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isEditing = freezed,
+    Object? name = freezed,
   }) {
     return _then(_$_ProfileState(
       isEditing: isEditing == freezed
           ? _value.isEditing
           : isEditing // ignore: cast_nullable_to_non_nullable
               as bool,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as IName,
     ));
   }
 }
@@ -385,14 +525,16 @@ class __$$_ProfileStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ProfileState implements _ProfileState {
-  const _$_ProfileState({required this.isEditing});
+  const _$_ProfileState({required this.isEditing, required this.name});
 
   @override
   final bool isEditing;
+  @override
+  final IName name;
 
   @override
   String toString() {
-    return 'ProfileState(isEditing: $isEditing)';
+    return 'ProfileState(isEditing: $isEditing, name: $name)';
   }
 
   @override
@@ -400,12 +542,15 @@ class _$_ProfileState implements _ProfileState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ProfileState &&
-            const DeepCollectionEquality().equals(other.isEditing, isEditing));
+            const DeepCollectionEquality().equals(other.isEditing, isEditing) &&
+            const DeepCollectionEquality().equals(other.name, name));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(isEditing));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(isEditing),
+      const DeepCollectionEquality().hash(name));
 
   @JsonKey(ignore: true)
   @override
@@ -414,11 +559,14 @@ class _$_ProfileState implements _ProfileState {
 }
 
 abstract class _ProfileState implements ProfileState {
-  const factory _ProfileState({required final bool isEditing}) =
-      _$_ProfileState;
+  const factory _ProfileState(
+      {required final bool isEditing,
+      required final IName name}) = _$_ProfileState;
 
   @override
   bool get isEditing => throw _privateConstructorUsedError;
+  @override
+  IName get name => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_ProfileStateCopyWith<_$_ProfileState> get copyWith =>
