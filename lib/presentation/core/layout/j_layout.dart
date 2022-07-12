@@ -3,11 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:jini/application/auth/auth_bloc.dart';
 import 'package:jini/application/core/bottom_nav/bottom_nav_cubit.dart';
-import 'package:jini/di/injection.dart';
 import 'package:jini/presentation/core/layout/widgets/bottom_nav.dart';
 import 'package:jini/presentation/core/layout/widgets/j_drawer.dart';
 import 'package:jini/presentation/core/routes/j_router.dart';
-import 'package:jini/presentation/core/widgets/j_dialogues.dart';
+import 'package:jini/presentation/core/widgets/j_dialogs.dart';
 import 'package:jini/presentation/core/widgets/j_theme_switch.dart';
 
 class JLayout extends StatelessWidget {
@@ -20,7 +19,7 @@ class JLayout extends StatelessWidget {
       listener: (context, authState) {
         authState.mapOrNull(
           profileNotCompleted: (_) =>
-              Get.dialog(JDialogues.editProfile, barrierDismissible: false),
+              Get.dialog(JDialogs.editProfile, barrierDismissible: false),
           unauthenticated: (_) => Get.offAllNamed(JRoutes.signIn),
         );
       },
