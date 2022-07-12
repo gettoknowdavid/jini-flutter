@@ -313,27 +313,6 @@ class JUserDtoQueryDocumentSnapshot extends FirestoreQueryDocumentSnapshot
 // JsonSerializableGenerator
 // **************************************************************************
 
-// JUserDto _$JUserDtoFromJson(Map<String, dynamic> json) => JUserDto(
-//       uid: json['uid'] as String,
-//       name: json['name'] as String,
-//       gender: $enumDecodeNullable(_$GenderEnumMap, json['gender']),
-//       age: json['age'] as num?,
-//       height: json['height'] as num?,
-//       weight: json['weight'] as num?,
-//       email: json['email'] as String,
-//       phone: json['phone'] as String?,
-//       city: json['city'] as String?,
-//       avatar: json['avatar'] as String?,
-//       location: json['location'] == null
-//           ? null
-//           : Geo.fromJson(json['location'] as Map<String, dynamic>),
-//       bloodGroup: $enumDecodeNullable(_$BloodGroupEnumMap, json['bloodGroup']),
-//       userType: $enumDecodeNullable(_$UserTypeEnumMap, json['userType']),
-//       eligible: json['eligible'] as bool?,
-//       formComplete: json['formComplete'] as bool?,
-//       initEdit: json['initEdit'] as bool?,
-//     );
-
 Map<String, dynamic> _$JUserDtoToJson(JUserDto instance) => <String, dynamic>{
       'uid': instance.uid,
       'name': instance.name,
