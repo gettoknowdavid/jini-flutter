@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -22,6 +24,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<_SendVerifiedEmail>((event, emit) => _sendVerifiedEmail(event, emit));
     on<_SignedOut>((event, emit) => _signedOut(event, emit));
     on<_OpenMailApp>((event, emit) => _openMailApp(event, emit));
+    on<_CheckProfileCompleted>(
+      (event, emit) => _checkProfileCompleted(event, emit),
+    );
   }
 
   _authCheckRequested(_AuthCheckRequested e, Emitter<AuthState> emit) async {
@@ -72,5 +77,19 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   _openMailApp(_OpenMailApp e, Emitter<AuthState> emit) async {
     await _mailFacade.openMailApp();
+  }
+
+  _checkProfileCompleted(
+      _CheckProfileCompleted e, Emitter<AuthState> emit) async {
+    final _check = await _authFacade.isProfileComplete();
+    emit(
+      _check.fold(
+        () => const AuthState.unauthenticated(),
+        (either) => either.fold(
+          (l) => const AuthState.profileNotCompleted(),
+          (r) => const AuthState.profileCompleted(),
+        ),
+      ),
+    );
   }
 }
