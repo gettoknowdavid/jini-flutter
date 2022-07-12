@@ -21,6 +21,8 @@ abstract class IAuthFacade {
 
   Future<Either<AuthFailure, Unit>> updateUser(JUser jUser);
 
+  Future<Option<Either<AuthFailure, bool?>>> isProfileComplete();
+
   Future<Option<JUser?>> getUser();
 
   Future<void> sendVerificationEmail();
