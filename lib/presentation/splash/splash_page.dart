@@ -6,7 +6,7 @@ import 'package:jini/presentation/core/common/image_resources.dart';
 import 'package:jini/presentation/core/widgets/j_background.dart';
 import 'package:jini/presentation/core/routes/j_router.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jini/presentation/core/widgets/j_dialogues.dart';
+import 'package:jini/presentation/core/widgets/j_dialogs.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -18,7 +18,7 @@ class SplashPage extends StatelessWidget {
         Future.delayed(const Duration(seconds: 5)).then((_) {
           state.mapOrNull(
             profileNotCompleted: (_) =>
-                Get.dialog(JDialogues.editProfile, barrierDismissible: false),
+                Get.dialog(JDialogs.editProfile, barrierDismissible: false),
             authenticated: (_) => Get.offAllNamed(JRoutes.layout),
             verified: (_) => Get.offAllNamed(JRoutes.layout),
             unauthenticated: (_) => Get.offAllNamed(JRoutes.signIn),
