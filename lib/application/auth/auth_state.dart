@@ -10,4 +10,6 @@ class AuthState with _$AuthState {
   const factory AuthState.awaitingVerified() = AwaitingVerified;
   const factory AuthState.donorFormCompleted() = DonorFormCompleted;
   const factory AuthState.donorFormNotCompleted() = DonorFormNotCompleted;
+  const factory AuthState.profileCompleted() = ProfileCompleted;
+  const factory AuthState.profileNotCompleted() = ProfileNotCompleted;
 }
