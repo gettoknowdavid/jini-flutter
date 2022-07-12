@@ -63,7 +63,7 @@ class FirebaseAuthFacade implements IAuthFacade {
           email: _email,
           formComplete: false,
           userType: UserType.recipient,
-          initEdit: true,
+          initEdit: false,
         );
 
         jUsersRef.doc(value.user!.uid).set(_user);
@@ -144,6 +144,21 @@ class FirebaseAuthFacade implements IAuthFacade {
       } else {
         return left(const AuthFailure.serverError());
       }
+    }
+  }
+
+  @override
+  Future<Option<Either<AuthFailure, bool?>>> isProfileComplete() async {
+    if (_firebaseAuth.currentUser != null) {
+      final _fUser = _firebaseAuth.currentUser;
+      final _jUser = await jUsersRef.doc(_fUser?.uid).get().then((v) => v.data);
+      if (_jUser!.initEdit! == true) {
+        return optionOf(right(true));
+      } else {
+        return optionOf(left(const AuthFailure.donorNotEligible()));
+      }
+    } else {
+      return optionOf(null);
     }
   }
 }
