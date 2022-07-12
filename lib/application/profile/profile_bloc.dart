@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:jini/domain/auth/value_objects.dart';
 
 part 'profile_event.dart';
 part 'profile_state.dart';
