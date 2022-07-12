@@ -28,7 +28,7 @@ class JDrawer extends StatelessWidget {
                 alignment: Alignment.centerRight,
                 child: const JBackButton(),
               ),
-              JScreenUtil.vSpace(20),
+              JScreenUtil.vSpace(10),
               Row(
                 children: [
                   GestureDetector(
