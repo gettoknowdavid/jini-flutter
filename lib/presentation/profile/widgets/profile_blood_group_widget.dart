@@ -1,68 +1,193 @@
 import 'package:division/division.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:jini/application/profile/profile_bloc.dart';
+import 'package:jini/domain/core/blood_group.dart';
+import 'package:jini/infrastructure/auth/j_user_dtos.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/common/j_widget_styles.dart';
-import 'package:jini/presentation/profile/widgets/pencil_button.dart';
+import 'package:jini/presentation/core/widgets/j_button.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class ProfileBloodGroupWidget extends StatelessWidget {
   const ProfileBloodGroupWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     final bloc = BlocProvider.of<ProfileBloc>(context);
-    bool isEditing = bloc.state.isEditing;
 
     return BlocConsumer<ProfileBloc, ProfileState>(
       bloc: bloc,
-      listenWhen: (p, c) => p.isEditing != c.isEditing,
-      listener: (context, state) => isEditing = state.isEditing,
+      listenWhen: (p, c) => p.user.bloodGroup != c.user.bloodGroup,
+      listener: (context, state) => state.user.bloodGroup,
+      builder: (context, state) {
+        final user = JUserDto.fromDomain(bloc.state.user);
+
+        return Parent(
+          gesture: Gestures()
+            ..onTap(() => Get.bottomSheet(EditBloodGroupBottomSheet())),
+          style: ParentStyle()..padding(horizontal: JScreenUtil.r(18)),
+          child: user.bloodGroup == null
+              ? const _NullBloodGroupWidget()
+              : Row(
+                  children: [
+                    Parent(
+                      style: JWidgetStyles.bloodGroupWidgetStyles,
+                      child: Text(
+                        user.bloodGroup!.value,
+                        style: textTheme.titleLarge!.copyWith(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                    JScreenUtil.hSpace(20),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          user.bloodGroup!.desc,
+                          style: textTheme.titleLarge,
+                        ),
+                        JScreenUtil.vSpace(4),
+                        Text('Learn More', style: textTheme.caption),
+                      ],
+                    ),
+                  ],
+                ),
+        );
+      },
+    );
+  }
+}
+
+class _NullBloodGroupWidget extends StatelessWidget {
+  const _NullBloodGroupWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      contentPadding: EdgeInsets.zero,
+      title: Text('Select your blood group'),
+      leading: Parent(
+        style: JWidgetStyles.bloodGroupWidgetStyles,
+        child: Icon(PhosphorIcons.drop, color: Colors.white),
+      ),
+    );
+  }
+}
+
+final sheetStyle = (ThemeData theme) => ParentStyle()
+  ..borderRadius(
+    topLeft: JScreenUtil.r(30),
+    topRight: JScreenUtil.r(30),
+  )
+  ..padding(
+    horizontal: JScreenUtil.r(18),
+    vertical: JScreenUtil.r(22),
+  )
+  ..background.color(theme.canvasColor);
+
+class EditBloodGroupBottomSheet extends StatelessWidget {
+  const EditBloodGroupBottomSheet({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final bloc = BlocProvider.of<ProfileBloc>(context);
+    final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
+
+    _handleSave() {
+      bloc.add(ProfileEvent.profileUpdated());
+      bloc.add(ProfileEvent.editPressed(false));
+    }
+
+    return BlocConsumer<ProfileBloc, ProfileState>(
+      bloc: bloc,
+      listenWhen: (p, c) =>
+          p.saveFailureOrSuccessOption != c.saveFailureOrSuccessOption,
+      listener: (context, state) {
+        state.saveFailureOrSuccessOption.fold(
+          () => null,
+          (a) => a.fold((l) => null, (r) => Get.close(1)),
+        );
+      },
+      buildWhen: (p, c) =>
+          p.user.bloodGroup == p.user.bloodGroup || p.isSaving != c.isSaving,
       builder: (context, state) {
         return Parent(
-          style: ParentStyle()..padding(horizontal: JScreenUtil.r(18)),
-          child: Row(
-            children: [
-              Stack(
-                clipBehavior: Clip.none,
-                children: [
-                  Parent(
-                    style: JWidgetStyles.bloodGroupWidgetStyles,
-                    child: Txt(
-                      'A+',
-                      style: TxtStyle()
-                        ..textColor(Colors.white)
-                        ..fontSize(JScreenUtil.fontSize(26)),
-                    ),
-                  ),
-                  if (isEditing)
-                    Positioned(
-                      bottom: JScreenUtil.w(-5),
-                      right: JScreenUtil.w(-10),
-                      child: PencilButton(onTap: () {}, circle: true, size: 16),
-                    ),
-                ],
+          style: sheetStyle(theme),
+          child: Wrap(
+            alignment: WrapAlignment.center,
+            runSpacing: JScreenUtil.r(30),
+            children: <Widget>[
+              Text('Update your blood group', style: textTheme.titleLarge),
+              GridView.builder(
+                primary: false,
+                shrinkWrap: true,
+                itemCount: BloodGroup.values.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 4,
+                  crossAxisSpacing: JScreenUtil.r(10),
+                  mainAxisSpacing: JScreenUtil.r(10),
+                ),
+                itemBuilder: (context, i) {
+                  final _bloodGroup = BloodGroup.values[i];
+                  final _currentBG = bloc.state.user.bloodGroup!.getOrCrash();
+                  final _isSelected = _bloodGroup == _currentBG;
+
+                  return _BloodGroupItem(
+                    isSelected: _isSelected,
+                    bloodGroup: _bloodGroup,
+                    onSelect: () {
+                      bloc.add(ProfileEvent.bloodGroupChanged(_bloodGroup));
+                    },
+                  );
+                },
               ),
-              JScreenUtil.hSpace(20),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Txt(
-                    'A Positive',
-                    style: TxtStyle()..fontSize(JScreenUtil.fontSize(20)),
-                  ),
-                  JScreenUtil.vSpace(4),
-                  Txt(
-                    'Learn More',
-                    style: TxtStyle()..fontSize(JScreenUtil.fontSize(12)),
-                    gesture: Gestures()..onTap(() {}),
-                  ),
-                ],
+              JButton(
+                title: 'Save',
+                onPressed: _handleSave,
+                loading: bloc.state.isSaving,
               ),
             ],
           ),
         );
       },
+    );
+  }
+}
+
+class _BloodGroupItem extends StatelessWidget {
+  const _BloodGroupItem({
+    Key? key,
+    required this.bloodGroup,
+    required this.onSelect,
+    required this.isSelected,
+  }) : super(key: key);
+
+  final BloodGroup bloodGroup;
+  final void Function() onSelect;
+  final bool isSelected;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
+
+    return Parent(
+      gesture: Gestures()..onTap(onSelect),
+      style: ParentStyle(),
+      child: ElevatedButton(
+        onPressed: isSelected ? () {} : null,
+        child: Text(
+          bloodGroup.value,
+          style: textTheme.titleLarge?.copyWith(
+            color: isSelected ? Colors.white : Colors.grey.shade600,
+          ),
+        ),
+      ),
     );
   }
 }
