@@ -88,7 +88,7 @@ class FirebaseAuthFacade implements IAuthFacade {
       final _jUser = await jUsersRef.doc(_fUser.uid).get().then((v) => v.data);
       return optionOf(_firebaseUserMapper.toDomain(_jUser));
     } else {
-      return optionOf(_firebaseUserMapper.toDomain(null));
+      return optionOf(null);
     }
   }
 
