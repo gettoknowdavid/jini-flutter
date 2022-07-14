@@ -44,7 +44,7 @@ class JLocationWidget extends StatelessWidget {
                 ],
               ),
             ),
-            if (isEditing) PencilButton(onTap: () {}, size: 18),
+            if (isEditing) PencilButton(onTap: () {}, color: Colors.white),
           ],
         );
       },
