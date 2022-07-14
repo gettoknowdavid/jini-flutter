@@ -9,8 +9,8 @@ class JBackground extends StatelessWidget {
     return Image.asset(
       ImageResources.background,
       color: Theme.of(context).brightness == Brightness.light
-          ? const Color.fromRGBO(242, 87, 116, 0.1)
-          : const Color.fromRGBO(255, 255, 255, 0.1),
+          ? const Color.fromRGBO(242, 87, 116, 0.2)
+          : const Color.fromRGBO(255, 255, 255, 0.2),
       colorBlendMode: BlendMode.modulate,
     );
   }
