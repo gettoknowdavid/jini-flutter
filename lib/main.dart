@@ -45,7 +45,10 @@ void main() async {
             ..add(AuthEvent.authCheckVerified())
             ..add(AuthEvent.checkProfileCompleted());
         }),
-        BlocProvider<ProfileBloc>(create: (context) => getIt<ProfileBloc>()),
+        BlocProvider<ProfileBloc>(
+          create: (context) =>
+              getIt<ProfileBloc>()..add(const ProfileEvent.initialized()),
+        ),
         BlocProvider<ForgotPasswordBloc>(
           create: (context) => getIt<ForgotPasswordBloc>(),
         ),
