@@ -26,4 +26,10 @@ class JUser with _$JUser implements IEntity {
     bool? formComplete,
     bool? initEdit,
   }) = _JUser;
+
+  factory JUser.empty() => JUser(
+        uid: Uid(),
+        name: IName(''),
+        email: IEmailAddress(''),
+      );
 }
