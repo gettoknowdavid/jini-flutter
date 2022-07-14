@@ -48,15 +48,15 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i9.IMailFacade>(() => _i10.OpenMailAppFacade());
   gh.lazySingleton<_i11.InternetConnectionChecker>(
       () => registerModule.connection);
-  gh.factory<_i12.ProfileBloc>(() => _i12.ProfileBloc());
+  gh.factory<_i12.ProfileBloc>(() => _i12.ProfileBloc(get<_i7.IAuthFacade>()));
   gh.lazySingleton<_i13.SettingsMapper>(() => _i13.SettingsMapper());
   await gh.lazySingletonAsync<_i14.SharedPreferences>(
       () => registerModule.getPreferences,
       preResolve: true);
   gh.factory<_i15.SignInBloc>(() => _i15.SignInBloc(get<_i7.IAuthFacade>()));
   gh.factory<_i16.SignUpBloc>(() => _i16.SignUpBloc(get<_i7.IAuthFacade>()));
-  gh.factory<_i17.AuthBloc>(
-      () => _i17.AuthBloc(get<_i7.IAuthFacade>(), get<_i9.IMailFacade>()));
+  gh.factory<_i17.AuthBloc>(() => _i17.AuthBloc(get<_i7.IAuthFacade>(),
+      get<_i9.IMailFacade>(), get<_i14.SharedPreferences>()));
   gh.factory<_i18.ForgotPasswordBloc>(
       () => _i18.ForgotPasswordBloc(get<_i7.IAuthFacade>()));
   gh.lazySingleton<_i19.ISettingsFacade>(() => _i20.SettingsFacade(
