@@ -19,7 +19,7 @@ extension BloodGroupExtension on BloodGroup {
       case BloodGroup.bPlus:
         return 'B+';
       case BloodGroup.bMinus:
-        return 'B+';
+        return 'B-';
       case BloodGroup.oPlus:
         return 'O+';
       case BloodGroup.oMinus:
@@ -27,7 +27,32 @@ extension BloodGroupExtension on BloodGroup {
       case BloodGroup.abPlus:
         return 'AB+';
       case BloodGroup.abMinus:
-        return 'AB+';
+        return 'AB-';
+      default:
+        return '';
+    }
+  }
+}
+
+extension BloodGroupDExtension on BloodGroup {
+  String get desc {
+    switch (this) {
+      case BloodGroup.aPlus:
+        return 'A Positive';
+      case BloodGroup.aMinus:
+        return 'A Negative';
+      case BloodGroup.bPlus:
+        return 'B Positive';
+      case BloodGroup.bMinus:
+        return 'B Negative';
+      case BloodGroup.oPlus:
+        return 'O Positive';
+      case BloodGroup.oMinus:
+        return 'O Negative';
+      case BloodGroup.abPlus:
+        return 'AB Positive';
+      case BloodGroup.abMinus:
+        return 'AB Negative';
       default:
         return '';
     }
