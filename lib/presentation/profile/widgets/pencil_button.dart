@@ -9,13 +9,13 @@ class PencilButton extends StatelessWidget {
     this.size,
     required this.onTap,
     this.circle = false,
-    this.color = Colors.white
+    this.color,
   }) : super(key: key);
 
   final double? size;
   final void Function() onTap;
   final bool circle;
-  final Color color;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class PencilButton extends StatelessWidget {
       child: Icon(
         PhosphorIcons.pencil,
         size: JScreenUtil.fontSize(size ?? 20),
-        color: color,
+        color: color ?? theme.iconTheme.color,
       ),
     );
   }
