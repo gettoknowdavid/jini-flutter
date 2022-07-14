@@ -34,4 +34,10 @@ class JWidgetStyles {
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,
     );
+
+  static final unselectedBloodGroupStyles = ParentStyle()
+    ..height(JScreenUtil.w(60))
+    ..width(JScreenUtil.w(60))
+    ..borderRadius(all: JScreenUtil.r(12))
+    ..alignmentContent.center();
 }
