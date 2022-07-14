@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:jini/domain/auth/i_auth_facade.dart';
 import 'package:jini/domain/mail/i_mail_facade.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';
@@ -12,8 +13,9 @@ part 'auth_bloc.freezed.dart';
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final IAuthFacade _authFacade;
   final IMailFacade _mailFacade;
+  final SharedPreferences _pref;
 
-  AuthBloc(this._authFacade, this._mailFacade) : super(Initial()) {
+  AuthBloc(this._authFacade, this._mailFacade, this._pref) : super(Initial()) {
     on<_AuthCheckRequested>((event, emit) => _authCheckRequested(event, emit));
     on<_AuthCheckVerified>((event, emit) => _authCheckVerified(event, emit));
     on<_CheckDonorRequirementsMet>(
@@ -69,7 +71,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   _signedOut(_SignedOut e, Emitter<AuthState> emit) async {
-    await _authFacade.signOut();
+    await _authFacade.signOut().then((value) => _pref.clear());
     emit(const AuthState.unauthenticated());
   }
 
