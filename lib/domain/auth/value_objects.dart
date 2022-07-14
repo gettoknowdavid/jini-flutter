@@ -5,6 +5,7 @@ import 'package:jini/domain/core/gender.dart';
 import 'package:jini/domain/core/user_type.dart';
 import 'package:jini/domain/core/value_object.dart';
 import 'package:jini/domain/core/value_validators.dart';
+import 'package:intl/intl.dart' show toBeginningOfSentenceCase;
 
 class IEmailAddress extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
@@ -39,7 +40,8 @@ class IName extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
 
   factory IName(String input) {
-    return IName._(validateStringNotEmpty(input.toSentenceCase));
+    final _input = toBeginningOfSentenceCase(input);
+    return IName._(validateStringNotEmpty(_input!));
   }
 
   const IName._(this.value);
@@ -78,8 +80,15 @@ class IUserType extends ValueObject<UserType?> {
 class IAge extends ValueObject<num> {
   final Either<ValueFailure<num>, num> value;
 
-  factory IAge(num input) {
-    return IAge._(validateAge(input));
+  factory IAge(num input, [UserType? userType]) {
+    switch (userType) {
+      case UserType.donor:
+        return IAge._(validateAge(input));
+      case UserType.recipient:
+        return IAge._(right(input));
+      default:
+        return IAge._(right(input));
+    }
   }
 
   const IAge._(this.value);
@@ -88,8 +97,15 @@ class IAge extends ValueObject<num> {
 class IWeight extends ValueObject<num> {
   final Either<ValueFailure<num>, num> value;
 
-  factory IWeight(num input) {
-    return IWeight._(validateWeight(input));
+  factory IWeight(num input, [UserType? userType]) {
+    switch (userType) {
+      case UserType.donor:
+        return IWeight._(validateWeight(input));
+      case UserType.recipient:
+        return IWeight._(right(input));
+      default:
+        return IWeight._(right(input));
+    }
   }
 
   const IWeight._(this.value);
@@ -117,5 +133,5 @@ class IPhone extends ValueObject<String> {
 
 extension CapExtension on String {
   String get toSentenceCase =>
-      this.split(" ").map((s) => s.toUpperCase()).join(" ");
+      this.split(" ").map((s) => s[0].toUpperCase()).join(" ");
 }
