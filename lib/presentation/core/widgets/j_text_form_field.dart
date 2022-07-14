@@ -14,6 +14,7 @@ class JTextFormField extends StatefulWidget {
     this.onChanged,
     this.validator,
     this.enabled = true,
+    this.initialValue,
   }) : super(key: key);
 
   final String? hint;
@@ -25,6 +26,7 @@ class JTextFormField extends StatefulWidget {
   final void Function(String)? onChanged;
   final String? Function(String?)? validator;
   final bool enabled;
+  final String? initialValue;
 
   @override
   State<JTextFormField> createState() => _JTextFormFieldState();
@@ -36,6 +38,7 @@ class _JTextFormFieldState extends State<JTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      initialValue: widget.initialValue,
       keyboardType: widget.keyboardType,
       autocorrect: widget.autocorrect,
       obscureText: widget.isPassword ? !_isObscure : _isObscure,
