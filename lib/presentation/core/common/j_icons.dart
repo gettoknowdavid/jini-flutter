@@ -10,4 +10,6 @@ class JIcons {
     color: Colors.white,
     size: JScreenUtil.r(16),
   );
+
+  static final edit = Icon(PhosphorIcons.pencil, size: JScreenUtil.r(16));
 }
