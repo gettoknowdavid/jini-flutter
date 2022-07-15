@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dartz/dartz.dart';
 import 'package:jini/domain/core/blood_group.dart';
 import 'package:jini/domain/core/failures.dart';
@@ -34,6 +36,19 @@ class IPassword extends ValueObject<String> {
   }
 
   const IPassword._(this.value, {this.isSignIn = false});
+}
+
+class IAvatar extends ValueObject<File?> {
+  final Either<ValueFailure<File?>, File?> value;
+  factory IAvatar(File? input) {
+    if (input == null) {
+      return IAvatar._(left(ValueFailure.invalidPhotoUrl(failedValue: input)));
+    } else {
+      return IAvatar._(right(input));
+    }
+  }
+
+  const IAvatar._(this.value);
 }
 
 class IName extends ValueObject<String> {
