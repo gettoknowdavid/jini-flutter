@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:jini/application/profile/profile_bloc.dart';
 import 'package:jini/domain/core/blood_group.dart';
 import 'package:jini/infrastructure/auth/j_user_dtos.dart';
+import 'package:jini/presentation/core/common/j_icons.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/common/j_widget_styles.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
@@ -18,16 +19,18 @@ class ProfileBloodGroupWidget extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     final bloc = BlocProvider.of<ProfileBloc>(context);
 
+    _onTap() => Get.bottomSheet(const EditBloodGroupBottomSheet());
+
     return BlocConsumer<ProfileBloc, ProfileState>(
       bloc: bloc,
       listenWhen: (p, c) => p.user.bloodGroup != c.user.bloodGroup,
-      listener: (context, state) => state.user.bloodGroup,
+      listener: (context, state) => {state.user.bloodGroup},
       builder: (context, state) {
         final user = JUserDto.fromDomain(bloc.state.user);
+        bool isEditing = bloc.state.isEditing;
 
         return Parent(
-          gesture: Gestures()
-            ..onTap(() => Get.bottomSheet(EditBloodGroupBottomSheet())),
+          gesture: Gestures()..onTap(isEditing ? _onTap : () {}),
           style: ParentStyle()..padding(horizontal: JScreenUtil.r(18)),
           child: user.bloodGroup == null
               ? const _NullBloodGroupWidget()
@@ -43,17 +46,21 @@ class ProfileBloodGroupWidget extends StatelessWidget {
                       ),
                     ),
                     JScreenUtil.hSpace(20),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          user.bloodGroup!.desc,
-                          style: textTheme.titleLarge,
-                        ),
-                        JScreenUtil.vSpace(4),
-                        Text('Learn More', style: textTheme.caption),
-                      ],
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            user.bloodGroup!.desc,
+                            style: textTheme.titleLarge,
+                          ),
+                          JScreenUtil.vSpace(4),
+                          Text('Learn More', style: textTheme.caption),
+                        ],
+                      ),
                     ),
+                    JScreenUtil.hSpace(30),
+                    if (isEditing) JIcons.edit
                   ],
                 ),
         );
