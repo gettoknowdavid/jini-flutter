@@ -2,8 +2,8 @@ import 'package:division/division.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jini/application/profile/profile_bloc.dart';
+import 'package:jini/presentation/core/common/j_icons.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
-import 'package:jini/presentation/profile/widgets/pencil_button.dart';
 
 class ProfileDetailsItem extends StatelessWidget {
   const ProfileDetailsItem({
@@ -32,10 +32,10 @@ class ProfileDetailsItem extends StatelessWidget {
       listener: (context, state) => isEditing = state.isEditing,
       builder: (context, state) {
         return Parent(
-          gesture: Gestures()..onTap(onTap),
+          gesture: Gestures()..onTap(isEditing ? onTap : () {}),
           style: ParentStyle()
             ..padding(all: JScreenUtil.r(18))
-            ..ripple(true),
+            ..ripple(isEditing),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -53,7 +53,7 @@ class ProfileDetailsItem extends StatelessWidget {
                 ],
               ),
               const Spacer(),
-              if (isEditing) PencilButton(onTap: () {})
+              if (isEditing) JIcons.edit
             ],
           ),
         );
