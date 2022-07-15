@@ -1,6 +1,7 @@
 import 'package:division/division.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:jini/application/profile/profile_bloc.dart';
 import 'package:jini/domain/core/gender.dart';
 import 'package:jini/domain/core/user_type.dart';
@@ -83,7 +84,7 @@ class EditNameBottomSheet extends StatelessWidget {
       listener: (context, state) {
         state.saveFailureOrSuccessOption.fold(
           () => null,
-          (a) => a.fold((l) => null, (r) => null),
+          (a) => a.fold((l) => null, (r) => Get.close(1)),
         );
       },
       buildWhen: (p, c) =>
@@ -137,7 +138,7 @@ class EditUserTypeBottomSheet extends StatelessWidget {
       listener: (context, state) {
         state.saveFailureOrSuccessOption.fold(
           () => null,
-          (a) => a.fold((l) => null, (r) => null),
+          (a) => a.fold((l) => null, (r) => Get.close(1)),
         );
       },
       buildWhen: (p, c) =>
@@ -172,7 +173,6 @@ class EditUserTypeBottomSheet extends StatelessWidget {
   }
 }
 
-
 class EditPhoneBottomSheet extends StatelessWidget {
   const EditPhoneBottomSheet({Key? key}) : super(key: key);
 
@@ -201,7 +201,7 @@ class EditPhoneBottomSheet extends StatelessWidget {
       listener: (context, state) {
         state.saveFailureOrSuccessOption.fold(
           () => null,
-          (a) => a.fold((l) => null, (r) => null),
+          (a) => a.fold((l) => null, (r) => Get.close(1)),
         );
       },
       buildWhen: (p, c) =>
@@ -257,7 +257,7 @@ class EditGenderBottomSheet extends StatelessWidget {
       listener: (context, state) {
         state.saveFailureOrSuccessOption.fold(
           () => null,
-          (a) => a.fold((l) => null, (r) => null),
+          (a) => a.fold((l) => null, (r) => Get.close(1)),
         );
       },
       buildWhen: (p, c) =>
@@ -329,7 +329,7 @@ class EditAgeBottomSheet extends StatelessWidget {
       listener: (context, state) {
         state.saveFailureOrSuccessOption.fold(
           () => null,
-          (a) => a.fold((l) => null, (r) => null),
+          (a) => a.fold((l) => null, (r) => Get.close(1)),
         );
       },
       buildWhen: (p, c) {
@@ -382,7 +382,7 @@ class EditHeightBottomSheet extends StatelessWidget {
       listener: (context, state) {
         state.saveFailureOrSuccessOption.fold(
           () => null,
-          (a) => a.fold((l) => null, (r) => null),
+          (a) => a.fold((l) => null, (r) => Get.close(1)),
         );
       },
       buildWhen: (p, c) => p.isSaving != c.isSaving,
@@ -443,7 +443,7 @@ class EditWeightBottomSheet extends StatelessWidget {
       listener: (context, state) {
         state.saveFailureOrSuccessOption.fold(
           () => null,
-          (a) => a.fold((l) => null, (r) => null),
+          (a) => a.fold((l) => null, (r) => Get.close(1)),
         );
       },
       buildWhen: (p, c) {
