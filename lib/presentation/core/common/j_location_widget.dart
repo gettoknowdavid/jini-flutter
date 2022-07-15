@@ -2,8 +2,8 @@ import 'package:division/division.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jini/application/profile/profile_bloc.dart';
+import 'package:jini/presentation/core/common/j_icons.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
-import 'package:jini/presentation/profile/widgets/pencil_button.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class JLocationWidget extends StatelessWidget {
@@ -32,7 +32,7 @@ class JLocationWidget extends StatelessWidget {
                   Icon(
                     PhosphorIcons.navigationArrow,
                     color: Colors.white,
-                    size: JScreenUtil.fontSize(18),
+                    size: JScreenUtil.fontSize(16),
                   ),
                   JScreenUtil.hSpace(6),
                   Txt(
@@ -44,7 +44,7 @@ class JLocationWidget extends StatelessWidget {
                 ],
               ),
             ),
-            if (isEditing) PencilButton(onTap: () {}, color: Colors.white),
+            if (isEditing) JIcons.pencil,
           ],
         );
       },
