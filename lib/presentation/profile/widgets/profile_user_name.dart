@@ -13,20 +13,16 @@ class ProfileUserName extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of<ProfileBloc>(context);
-    bool isEditing = bloc.state.isEditing;
 
     _onTap() => Get.bottomSheet(const EditNameBottomSheet());
 
     return BlocConsumer<ProfileBloc, ProfileState>(
       bloc: bloc,
-      listenWhen: (p, c) =>
-          p.isSaving != c.isSaving || p.isEditing != c.isEditing,
-      listener: (context, state) => {
-        state.isSaving,
-        isEditing = state.isEditing,
-      },
+      listenWhen: (p, c) => p.isSaving != c.isSaving,
+      listener: (context, state) => state.isSaving,
       builder: (context, state) {
         final user = JUserDto.fromDomain(bloc.state.user);
+        bool isEditing = bloc.state.isEditing;
 
         return GestureDetector(
           onTap: isEditing ? _onTap : null,
