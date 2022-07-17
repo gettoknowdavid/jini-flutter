@@ -55,6 +55,13 @@ class JTheme {
     }),
   );
 
+  static final _popupMenuTheme = PopupMenuThemeData(
+    color: _backgroundDark,
+    shape: RoundedRectangleBorder(
+      borderRadius: JScreenUtil.borderRadius,
+    ),
+  );
+
   static get lightTheme {
     final ThemeData _baseLight = ThemeData.light();
 
@@ -79,6 +86,7 @@ class JTheme {
       elevatedButtonTheme: _elevatedButtonTheme,
       pageTransitionsTheme: _pageTransitionsTheme,
       radioTheme: _radioTheme,
+      popupMenuTheme: _popupMenuTheme,
       progressIndicatorTheme: ProgressIndicatorThemeData(
         color: _backgroundLight,
       ),
@@ -129,6 +137,7 @@ class JTheme {
       elevatedButtonTheme: _elevatedButtonTheme,
       pageTransitionsTheme: _pageTransitionsTheme,
       radioTheme: _radioTheme,
+      popupMenuTheme: _popupMenuTheme,
       progressIndicatorTheme: ProgressIndicatorThemeData(
         color: _backgroundDark,
       ),
