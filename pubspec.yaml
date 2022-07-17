@@ -59,6 +59,8 @@ dependencies:
   open_mail_app: ^0.4.5
   provider: ^6.0.3
   division: ^0.9.0
+  mime: ^1.0.2
+  image_picker: ^0.8.5+3
 
 dev_dependencies:
   flutter_test:
