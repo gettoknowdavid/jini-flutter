@@ -43,7 +43,7 @@ class JAvatar extends StatelessWidget {
               child: user.avatar != null
                   ? Image.network(user.avatar!)
                   : Txt(
-                      user.name[0],
+                      user.name != null ? user.name![0] : 'JI',
                       style: TxtStyle()
                         ..textColor(Colors.white)
                         ..fontSize(JScreenUtil.fontSize(36))
