@@ -1,5 +1,6 @@
+import 'dart:io';
+
 import 'package:dartz/dartz.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:jini/domain/core/blood_group.dart';
 import 'package:jini/domain/core/failures.dart';
 import 'package:jini/domain/core/gender.dart';
@@ -101,11 +102,11 @@ Either<ValueFailure<num>, num> validateWeight(num input) {
   }
 }
 
-Either<ValueFailure<XFile>, XFile> validatePhoto(XFile? input) {
-  final _fileEx = lookupMimeType(input!.path);
-    if (_fileEx == 'image/jpeg' || _fileEx == 'image/png') {
-      return right(input);
-    } else {
-      return left(ValueFailure.invalidPhotoType(failedValue: input));
-    }
+Either<ValueFailure<String>, String> validatePhoto(String? input) {
+  final _fileEx = lookupMimeType(input!);
+  if (_fileEx == 'image/jpeg' || _fileEx == 'image/png') {
+    return right(input);
+  } else {
+    return left(ValueFailure.invalidPhotoType(failedValue: input));
+  }
 }
