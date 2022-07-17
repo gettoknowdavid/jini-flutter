@@ -24,13 +24,13 @@ class ProfileDetailsItem extends StatelessWidget {
     final theme = Theme.of(context);
     final textTheme = theme.textTheme;
     final bloc = BlocProvider.of<ProfileBloc>(context);
-    bool isEditing = bloc.state.isEditing;
 
-    return BlocConsumer<ProfileBloc, ProfileState>(
+    return BlocBuilder<ProfileBloc, ProfileState>(
       bloc: bloc,
-      listenWhen: (p, c) => p.isEditing != c.isEditing,
-      listener: (context, state) => isEditing = state.isEditing,
+      buildWhen: (p, c) => p.isEditing != c.isEditing,
       builder: (context, state) {
+        bool isEditing = bloc.state.isEditing;
+
         return Parent(
           gesture: Gestures()..onTap(isEditing ? onTap : () {}),
           style: ParentStyle()
