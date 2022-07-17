@@ -21,12 +21,12 @@ JUserDto _$JUserDtoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$JUserDto {
   String get uid => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
   Gender? get gender => throw _privateConstructorUsedError;
   num? get age => throw _privateConstructorUsedError;
   num? get height => throw _privateConstructorUsedError;
   num? get weight => throw _privateConstructorUsedError;
-  String get email => throw _privateConstructorUsedError;
+  String? get email => throw _privateConstructorUsedError;
   String? get phone => throw _privateConstructorUsedError;
   String? get city => throw _privateConstructorUsedError;
   String? get avatar => throw _privateConstructorUsedError;
@@ -49,12 +49,12 @@ abstract class $JUserDtoCopyWith<$Res> {
       _$JUserDtoCopyWithImpl<$Res>;
   $Res call(
       {String uid,
-      String name,
+      String? name,
       Gender? gender,
       num? age,
       num? height,
       num? weight,
-      String email,
+      String? email,
       String? phone,
       String? city,
       String? avatar,
@@ -101,7 +101,7 @@ class _$JUserDtoCopyWithImpl<$Res> implements $JUserDtoCopyWith<$Res> {
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       gender: gender == freezed
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
@@ -121,7 +121,7 @@ class _$JUserDtoCopyWithImpl<$Res> implements $JUserDtoCopyWith<$Res> {
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       phone: phone == freezed
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
@@ -170,12 +170,12 @@ abstract class _$$_JUserDtoCopyWith<$Res> implements $JUserDtoCopyWith<$Res> {
   @override
   $Res call(
       {String uid,
-      String name,
+      String? name,
       Gender? gender,
       num? age,
       num? height,
       num? weight,
-      String email,
+      String? email,
       String? phone,
       String? city,
       String? avatar,
@@ -224,7 +224,7 @@ class __$$_JUserDtoCopyWithImpl<$Res> extends _$JUserDtoCopyWithImpl<$Res>
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       gender: gender == freezed
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
@@ -244,7 +244,7 @@ class __$$_JUserDtoCopyWithImpl<$Res> extends _$JUserDtoCopyWithImpl<$Res>
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       phone: phone == freezed
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
@@ -312,7 +312,7 @@ class _$_JUserDto implements _JUserDto {
   @override
   final String uid;
   @override
-  final String name;
+  final String? name;
   @override
   final Gender? gender;
   @override
@@ -322,7 +322,7 @@ class _$_JUserDto implements _JUserDto {
   @override
   final num? weight;
   @override
-  final String email;
+  final String? email;
   @override
   final String? phone;
   @override
@@ -407,12 +407,12 @@ class _$_JUserDto implements _JUserDto {
 abstract class _JUserDto implements JUserDto {
   factory _JUserDto(
       {required final String uid,
-      required final String name,
+      required final String? name,
       final Gender? gender,
       final num? age,
       final num? height,
       final num? weight,
-      required final String email,
+      required final String? email,
       final String? phone,
       final String? city,
       final String? avatar,
@@ -428,7 +428,7 @@ abstract class _JUserDto implements JUserDto {
   @override
   String get uid => throw _privateConstructorUsedError;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
   @override
   Gender? get gender => throw _privateConstructorUsedError;
   @override
@@ -438,7 +438,7 @@ abstract class _JUserDto implements JUserDto {
   @override
   num? get weight => throw _privateConstructorUsedError;
   @override
-  String get email => throw _privateConstructorUsedError;
+  String? get email => throw _privateConstructorUsedError;
   @override
   String? get phone => throw _privateConstructorUsedError;
   @override
