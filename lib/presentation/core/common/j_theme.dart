@@ -46,6 +46,15 @@ class JTheme {
     ),
   );
 
+  static final _radioTheme = RadioThemeData(
+    fillColor: MaterialStateProperty.resolveWith<Color>((states) {
+      if (states.contains(MaterialState.disabled)) {
+        return _primary.withOpacity(.32);
+      }
+      return _primary;
+    }),
+  );
+
   static get lightTheme {
     final ThemeData _baseLight = ThemeData.light();
 
@@ -69,6 +78,7 @@ class JTheme {
       drawerTheme: _drawerTheme,
       elevatedButtonTheme: _elevatedButtonTheme,
       pageTransitionsTheme: _pageTransitionsTheme,
+      radioTheme: _radioTheme,
       progressIndicatorTheme: ProgressIndicatorThemeData(
         color: _backgroundLight,
       ),
@@ -118,6 +128,7 @@ class JTheme {
       drawerTheme: _drawerTheme,
       elevatedButtonTheme: _elevatedButtonTheme,
       pageTransitionsTheme: _pageTransitionsTheme,
+      radioTheme: _radioTheme,
       progressIndicatorTheme: ProgressIndicatorThemeData(
         color: _backgroundDark,
       ),
