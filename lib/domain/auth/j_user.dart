@@ -18,7 +18,7 @@ class JUser with _$JUser implements IEntity {
     required IEmailAddress? email,
     IPhone? phone,
     String? city,
-    String? avatar,
+    IAvatar? avatar,
     Geo? location,
     IBloodGroup? bloodGroup,
     IUserType? userType,
