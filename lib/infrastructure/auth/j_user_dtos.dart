@@ -15,12 +15,12 @@ part 'j_user_dtos.g.dart';
 class JUserDto with _$JUserDto {
   factory JUserDto({
     required String uid,
-    required String name,
+    required String? name,
     Gender? gender,
     num? age,
     num? height,
     num? weight,
-    required String email,
+    required String? email,
     String? phone,
     String? city,
     String? avatar,
@@ -35,12 +35,12 @@ class JUserDto with _$JUserDto {
   factory JUserDto.fromDomain(JUser jUser) {
     return JUserDto(
       uid: jUser.uid.getOrCrash()!,
-      name: jUser.name.getOrCrash()!,
+      name: jUser.name != null ? jUser.name!.getOrCrash() : null,
       gender: jUser.gender != null ? jUser.gender!.getOrCrash() : null,
       age: jUser.age != null ? jUser.age!.getOrCrash() : null,
       height: jUser.height != null ? jUser.height!.getOrCrash() : null,
       weight: jUser.weight != null ? jUser.weight!.getOrCrash() : null,
-      email: jUser.email.getOrCrash()!,
+      email: jUser.email != null ? jUser.email!.getOrCrash() : null,
       phone: jUser.phone != null ? jUser.phone!.getOrCrash() : null,
       city: jUser.city,
       avatar: jUser.avatar,
