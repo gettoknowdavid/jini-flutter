@@ -356,12 +356,12 @@ const _$UserTypeEnumMap = {
 
 _$_JUserDto _$$_JUserDtoFromJson(Map<String, dynamic> json) => _$_JUserDto(
       uid: json['uid'] as String,
-      name: json['name'] as String,
+      name: json['name'] as String?,
       gender: $enumDecodeNullable(_$GenderEnumMap, json['gender']),
       age: json['age'] as num?,
       height: json['height'] as num?,
       weight: json['weight'] as num?,
-      email: json['email'] as String,
+      email: json['email'] as String?,
       phone: json['phone'] as String?,
       city: json['city'] as String?,
       avatar: json['avatar'] as String?,
