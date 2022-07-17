@@ -112,9 +112,16 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   }
 
   _avatarChanged(_AvatarChanged e, Emitter<ProfileState> emit) async {
+    final _file = await _mediaFacade.getImage();
+
     emit(
-      state.copyWith(
-        user: state.user.copyWith(avatar: IAvatar(e.avatar)),
+      _file.fold(
+        () => state,
+        (file) {
+          return state.copyWith(
+            user: state.user.copyWith(avatar: IAvatar(file!.path)),
+          );
+        },
       ),
     );
   }
