@@ -9,6 +9,7 @@ import 'package:jini/domain/auth/value_objects.dart';
 import 'package:jini/domain/core/blood_group.dart';
 import 'package:jini/domain/core/gender.dart';
 import 'package:jini/domain/core/user_type.dart';
+import 'package:jini/domain/media/i_media_facade.dart';
 
 part 'profile_event.dart';
 part 'profile_state.dart';
@@ -16,7 +17,10 @@ part 'profile_bloc.freezed.dart';
 
 @injectable
 class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
-  ProfileBloc(this._authFacade) : super(ProfileState.initial()) {
+  ProfileBloc(
+    this._authFacade,
+    this._mediaFacade,
+  ) : super(ProfileState.initial()) {
     on<_ProfileEditPressed>((event, emit) => _editPressed(event, emit));
     on<_Initialized>((event, emit) => _initialized(event, emit));
     on<_NameChanged>((event, emit) => _nameChanged(event, emit));
@@ -33,6 +37,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   }
 
   final IAuthFacade _authFacade;
+  final IMediaFacade _mediaFacade;
 
   _nameChanged(_NameChanged e, Emitter<ProfileState> emit) async {
     emit(
