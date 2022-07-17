@@ -47,4 +47,7 @@ class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.invalidPhotoUrl({
     required T failedValue,
   }) = InvalidPhotoUrl<T>;
+  const factory ValueFailure.invalidPhotoType({
+    required T failedValue,
+  }) = InvalidPhotoType<T>;
 }

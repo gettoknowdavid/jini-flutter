@@ -33,6 +33,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) invalidAge,
     required TResult Function(T failedValue) invalidPhotoUrl,
+    required TResult Function(T failedValue) invalidPhotoType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -52,6 +53,7 @@ mixin _$ValueFailure<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -71,6 +73,7 @@ mixin _$ValueFailure<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -91,6 +94,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidAge<T> value) invalidAge,
     required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
+    required TResult Function(InvalidPhotoType<T> value) invalidPhotoType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -110,6 +114,7 @@ mixin _$ValueFailure<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -129,6 +134,7 @@ mixin _$ValueFailure<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -229,6 +235,7 @@ class _$Empty<T> implements Empty<T> {
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) invalidAge,
     required TResult Function(T failedValue) invalidPhotoUrl,
+    required TResult Function(T failedValue) invalidPhotoType,
   }) {
     return empty(failedValue);
   }
@@ -251,6 +258,7 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
   }) {
     return empty?.call(failedValue);
   }
@@ -273,6 +281,7 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -299,6 +308,7 @@ class _$Empty<T> implements Empty<T> {
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidAge<T> value) invalidAge,
     required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
+    required TResult Function(InvalidPhotoType<T> value) invalidPhotoType,
   }) {
     return empty(this);
   }
@@ -321,6 +331,7 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
   }) {
     return empty?.call(this);
   }
@@ -343,6 +354,7 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -442,6 +454,7 @@ class _$NullValue<T> implements NullValue<T> {
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) invalidAge,
     required TResult Function(T failedValue) invalidPhotoUrl,
+    required TResult Function(T failedValue) invalidPhotoType,
   }) {
     return nullValue(failedValue);
   }
@@ -464,6 +477,7 @@ class _$NullValue<T> implements NullValue<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
   }) {
     return nullValue?.call(failedValue);
   }
@@ -486,6 +500,7 @@ class _$NullValue<T> implements NullValue<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (nullValue != null) {
@@ -512,6 +527,7 @@ class _$NullValue<T> implements NullValue<T> {
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidAge<T> value) invalidAge,
     required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
+    required TResult Function(InvalidPhotoType<T> value) invalidPhotoType,
   }) {
     return nullValue(this);
   }
@@ -534,6 +550,7 @@ class _$NullValue<T> implements NullValue<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
   }) {
     return nullValue?.call(this);
   }
@@ -556,6 +573,7 @@ class _$NullValue<T> implements NullValue<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (nullValue != null) {
@@ -655,6 +673,7 @@ class _$Multiline<T> implements Multiline<T> {
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) invalidAge,
     required TResult Function(T failedValue) invalidPhotoUrl,
+    required TResult Function(T failedValue) invalidPhotoType,
   }) {
     return multiline(failedValue);
   }
@@ -677,6 +696,7 @@ class _$Multiline<T> implements Multiline<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
   }) {
     return multiline?.call(failedValue);
   }
@@ -699,6 +719,7 @@ class _$Multiline<T> implements Multiline<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (multiline != null) {
@@ -725,6 +746,7 @@ class _$Multiline<T> implements Multiline<T> {
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidAge<T> value) invalidAge,
     required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
+    required TResult Function(InvalidPhotoType<T> value) invalidPhotoType,
   }) {
     return multiline(this);
   }
@@ -747,6 +769,7 @@ class _$Multiline<T> implements Multiline<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
   }) {
     return multiline?.call(this);
   }
@@ -769,6 +792,7 @@ class _$Multiline<T> implements Multiline<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (multiline != null) {
@@ -868,6 +892,7 @@ class _$AgeTooYoung<T> implements AgeTooYoung<T> {
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) invalidAge,
     required TResult Function(T failedValue) invalidPhotoUrl,
+    required TResult Function(T failedValue) invalidPhotoType,
   }) {
     return tooYoung(failedValue);
   }
@@ -890,6 +915,7 @@ class _$AgeTooYoung<T> implements AgeTooYoung<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
   }) {
     return tooYoung?.call(failedValue);
   }
@@ -912,6 +938,7 @@ class _$AgeTooYoung<T> implements AgeTooYoung<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (tooYoung != null) {
@@ -938,6 +965,7 @@ class _$AgeTooYoung<T> implements AgeTooYoung<T> {
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidAge<T> value) invalidAge,
     required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
+    required TResult Function(InvalidPhotoType<T> value) invalidPhotoType,
   }) {
     return tooYoung(this);
   }
@@ -960,6 +988,7 @@ class _$AgeTooYoung<T> implements AgeTooYoung<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
   }) {
     return tooYoung?.call(this);
   }
@@ -982,6 +1011,7 @@ class _$AgeTooYoung<T> implements AgeTooYoung<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (tooYoung != null) {
@@ -1081,6 +1111,7 @@ class _$AgeTooOld<T> implements AgeTooOld<T> {
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) invalidAge,
     required TResult Function(T failedValue) invalidPhotoUrl,
+    required TResult Function(T failedValue) invalidPhotoType,
   }) {
     return tooOld(failedValue);
   }
@@ -1103,6 +1134,7 @@ class _$AgeTooOld<T> implements AgeTooOld<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
   }) {
     return tooOld?.call(failedValue);
   }
@@ -1125,6 +1157,7 @@ class _$AgeTooOld<T> implements AgeTooOld<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (tooOld != null) {
@@ -1151,6 +1184,7 @@ class _$AgeTooOld<T> implements AgeTooOld<T> {
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidAge<T> value) invalidAge,
     required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
+    required TResult Function(InvalidPhotoType<T> value) invalidPhotoType,
   }) {
     return tooOld(this);
   }
@@ -1173,6 +1207,7 @@ class _$AgeTooOld<T> implements AgeTooOld<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
   }) {
     return tooOld?.call(this);
   }
@@ -1195,6 +1230,7 @@ class _$AgeTooOld<T> implements AgeTooOld<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (tooOld != null) {
@@ -1294,6 +1330,7 @@ class _$WeightTooSmall<T> implements WeightTooSmall<T> {
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) invalidAge,
     required TResult Function(T failedValue) invalidPhotoUrl,
+    required TResult Function(T failedValue) invalidPhotoType,
   }) {
     return weightTooSmall(failedValue);
   }
@@ -1316,6 +1353,7 @@ class _$WeightTooSmall<T> implements WeightTooSmall<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
   }) {
     return weightTooSmall?.call(failedValue);
   }
@@ -1338,6 +1376,7 @@ class _$WeightTooSmall<T> implements WeightTooSmall<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (weightTooSmall != null) {
@@ -1364,6 +1403,7 @@ class _$WeightTooSmall<T> implements WeightTooSmall<T> {
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidAge<T> value) invalidAge,
     required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
+    required TResult Function(InvalidPhotoType<T> value) invalidPhotoType,
   }) {
     return weightTooSmall(this);
   }
@@ -1386,6 +1426,7 @@ class _$WeightTooSmall<T> implements WeightTooSmall<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
   }) {
     return weightTooSmall?.call(this);
   }
@@ -1408,6 +1449,7 @@ class _$WeightTooSmall<T> implements WeightTooSmall<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (weightTooSmall != null) {
@@ -1508,6 +1550,7 @@ class _$WeightTooBig<T> implements WeightTooBig<T> {
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) invalidAge,
     required TResult Function(T failedValue) invalidPhotoUrl,
+    required TResult Function(T failedValue) invalidPhotoType,
   }) {
     return weightTooBig(failedValue);
   }
@@ -1530,6 +1573,7 @@ class _$WeightTooBig<T> implements WeightTooBig<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
   }) {
     return weightTooBig?.call(failedValue);
   }
@@ -1552,6 +1596,7 @@ class _$WeightTooBig<T> implements WeightTooBig<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (weightTooBig != null) {
@@ -1578,6 +1623,7 @@ class _$WeightTooBig<T> implements WeightTooBig<T> {
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidAge<T> value) invalidAge,
     required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
+    required TResult Function(InvalidPhotoType<T> value) invalidPhotoType,
   }) {
     return weightTooBig(this);
   }
@@ -1600,6 +1646,7 @@ class _$WeightTooBig<T> implements WeightTooBig<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
   }) {
     return weightTooBig?.call(this);
   }
@@ -1622,6 +1669,7 @@ class _$WeightTooBig<T> implements WeightTooBig<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (weightTooBig != null) {
@@ -1732,6 +1780,7 @@ class _$NumberTooLarge<T> implements NumberTooLarge<T> {
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) invalidAge,
     required TResult Function(T failedValue) invalidPhotoUrl,
+    required TResult Function(T failedValue) invalidPhotoType,
   }) {
     return numberTooLarge(failedValue, max);
   }
@@ -1754,6 +1803,7 @@ class _$NumberTooLarge<T> implements NumberTooLarge<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
   }) {
     return numberTooLarge?.call(failedValue, max);
   }
@@ -1776,6 +1826,7 @@ class _$NumberTooLarge<T> implements NumberTooLarge<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (numberTooLarge != null) {
@@ -1802,6 +1853,7 @@ class _$NumberTooLarge<T> implements NumberTooLarge<T> {
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidAge<T> value) invalidAge,
     required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
+    required TResult Function(InvalidPhotoType<T> value) invalidPhotoType,
   }) {
     return numberTooLarge(this);
   }
@@ -1824,6 +1876,7 @@ class _$NumberTooLarge<T> implements NumberTooLarge<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
   }) {
     return numberTooLarge?.call(this);
   }
@@ -1846,6 +1899,7 @@ class _$NumberTooLarge<T> implements NumberTooLarge<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (numberTooLarge != null) {
@@ -1958,6 +2012,7 @@ class _$ListTooLong<T> implements ListTooLong<T> {
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) invalidAge,
     required TResult Function(T failedValue) invalidPhotoUrl,
+    required TResult Function(T failedValue) invalidPhotoType,
   }) {
     return listTooLong(failedValue, max);
   }
@@ -1980,6 +2035,7 @@ class _$ListTooLong<T> implements ListTooLong<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
   }) {
     return listTooLong?.call(failedValue, max);
   }
@@ -2002,6 +2058,7 @@ class _$ListTooLong<T> implements ListTooLong<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (listTooLong != null) {
@@ -2028,6 +2085,7 @@ class _$ListTooLong<T> implements ListTooLong<T> {
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidAge<T> value) invalidAge,
     required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
+    required TResult Function(InvalidPhotoType<T> value) invalidPhotoType,
   }) {
     return listTooLong(this);
   }
@@ -2050,6 +2108,7 @@ class _$ListTooLong<T> implements ListTooLong<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
   }) {
     return listTooLong?.call(this);
   }
@@ -2072,6 +2131,7 @@ class _$ListTooLong<T> implements ListTooLong<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (listTooLong != null) {
@@ -2174,6 +2234,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) invalidAge,
     required TResult Function(T failedValue) invalidPhotoUrl,
+    required TResult Function(T failedValue) invalidPhotoType,
   }) {
     return invalidEmail(failedValue);
   }
@@ -2196,6 +2257,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
   }) {
     return invalidEmail?.call(failedValue);
   }
@@ -2218,6 +2280,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -2244,6 +2307,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidAge<T> value) invalidAge,
     required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
+    required TResult Function(InvalidPhotoType<T> value) invalidPhotoType,
   }) {
     return invalidEmail(this);
   }
@@ -2266,6 +2330,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
   }) {
     return invalidEmail?.call(this);
   }
@@ -2288,6 +2353,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -2388,6 +2454,7 @@ class _$InvalidPhone<T> implements InvalidPhone<T> {
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) invalidAge,
     required TResult Function(T failedValue) invalidPhotoUrl,
+    required TResult Function(T failedValue) invalidPhotoType,
   }) {
     return invalidPhone(failedValue);
   }
@@ -2410,6 +2477,7 @@ class _$InvalidPhone<T> implements InvalidPhone<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
   }) {
     return invalidPhone?.call(failedValue);
   }
@@ -2432,6 +2500,7 @@ class _$InvalidPhone<T> implements InvalidPhone<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (invalidPhone != null) {
@@ -2458,6 +2527,7 @@ class _$InvalidPhone<T> implements InvalidPhone<T> {
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidAge<T> value) invalidAge,
     required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
+    required TResult Function(InvalidPhotoType<T> value) invalidPhotoType,
   }) {
     return invalidPhone(this);
   }
@@ -2480,6 +2550,7 @@ class _$InvalidPhone<T> implements InvalidPhone<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
   }) {
     return invalidPhone?.call(this);
   }
@@ -2502,6 +2573,7 @@ class _$InvalidPhone<T> implements InvalidPhone<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (invalidPhone != null) {
@@ -2603,6 +2675,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) invalidAge,
     required TResult Function(T failedValue) invalidPhotoUrl,
+    required TResult Function(T failedValue) invalidPhotoType,
   }) {
     return invalidPassword(failedValue);
   }
@@ -2625,6 +2698,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
   }) {
     return invalidPassword?.call(failedValue);
   }
@@ -2647,6 +2721,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (invalidPassword != null) {
@@ -2673,6 +2748,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidAge<T> value) invalidAge,
     required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
+    required TResult Function(InvalidPhotoType<T> value) invalidPhotoType,
   }) {
     return invalidPassword(this);
   }
@@ -2695,6 +2771,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
   }) {
     return invalidPassword?.call(this);
   }
@@ -2717,6 +2794,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (invalidPassword != null) {
@@ -2817,6 +2895,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) invalidAge,
     required TResult Function(T failedValue) invalidPhotoUrl,
+    required TResult Function(T failedValue) invalidPhotoType,
   }) {
     return shortPassword(failedValue);
   }
@@ -2839,6 +2918,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
   }) {
     return shortPassword?.call(failedValue);
   }
@@ -2861,6 +2941,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (shortPassword != null) {
@@ -2887,6 +2968,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidAge<T> value) invalidAge,
     required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
+    required TResult Function(InvalidPhotoType<T> value) invalidPhotoType,
   }) {
     return shortPassword(this);
   }
@@ -2909,6 +2991,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
   }) {
     return shortPassword?.call(this);
   }
@@ -2931,6 +3014,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (shortPassword != null) {
@@ -3031,6 +3115,7 @@ class _$InvalidAge<T> implements InvalidAge<T> {
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) invalidAge,
     required TResult Function(T failedValue) invalidPhotoUrl,
+    required TResult Function(T failedValue) invalidPhotoType,
   }) {
     return invalidAge(failedValue);
   }
@@ -3053,6 +3138,7 @@ class _$InvalidAge<T> implements InvalidAge<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
   }) {
     return invalidAge?.call(failedValue);
   }
@@ -3075,6 +3161,7 @@ class _$InvalidAge<T> implements InvalidAge<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (invalidAge != null) {
@@ -3101,6 +3188,7 @@ class _$InvalidAge<T> implements InvalidAge<T> {
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidAge<T> value) invalidAge,
     required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
+    required TResult Function(InvalidPhotoType<T> value) invalidPhotoType,
   }) {
     return invalidAge(this);
   }
@@ -3123,6 +3211,7 @@ class _$InvalidAge<T> implements InvalidAge<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
   }) {
     return invalidAge?.call(this);
   }
@@ -3145,6 +3234,7 @@ class _$InvalidAge<T> implements InvalidAge<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (invalidAge != null) {
@@ -3245,6 +3335,7 @@ class _$InvalidPhotoUrl<T> implements InvalidPhotoUrl<T> {
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) invalidAge,
     required TResult Function(T failedValue) invalidPhotoUrl,
+    required TResult Function(T failedValue) invalidPhotoType,
   }) {
     return invalidPhotoUrl(failedValue);
   }
@@ -3267,6 +3358,7 @@ class _$InvalidPhotoUrl<T> implements InvalidPhotoUrl<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
   }) {
     return invalidPhotoUrl?.call(failedValue);
   }
@@ -3289,6 +3381,7 @@ class _$InvalidPhotoUrl<T> implements InvalidPhotoUrl<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidAge,
     TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (invalidPhotoUrl != null) {
@@ -3315,6 +3408,7 @@ class _$InvalidPhotoUrl<T> implements InvalidPhotoUrl<T> {
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidAge<T> value) invalidAge,
     required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
+    required TResult Function(InvalidPhotoType<T> value) invalidPhotoType,
   }) {
     return invalidPhotoUrl(this);
   }
@@ -3337,6 +3431,7 @@ class _$InvalidPhotoUrl<T> implements InvalidPhotoUrl<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
   }) {
     return invalidPhotoUrl?.call(this);
   }
@@ -3359,6 +3454,7 @@ class _$InvalidPhotoUrl<T> implements InvalidPhotoUrl<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidAge<T> value)? invalidAge,
     TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
     required TResult orElse(),
   }) {
     if (invalidPhotoUrl != null) {
@@ -3375,5 +3471,226 @@ abstract class InvalidPhotoUrl<T> implements ValueFailure<T> {
   T get failedValue => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$InvalidPhotoUrlCopyWith<T, _$InvalidPhotoUrl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$InvalidPhotoTypeCopyWith<T, $Res> {
+  factory _$$InvalidPhotoTypeCopyWith(_$InvalidPhotoType<T> value,
+          $Res Function(_$InvalidPhotoType<T>) then) =
+      __$$InvalidPhotoTypeCopyWithImpl<T, $Res>;
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class __$$InvalidPhotoTypeCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$$InvalidPhotoTypeCopyWith<T, $Res> {
+  __$$InvalidPhotoTypeCopyWithImpl(
+      _$InvalidPhotoType<T> _value, $Res Function(_$InvalidPhotoType<T>) _then)
+      : super(_value, (v) => _then(v as _$InvalidPhotoType<T>));
+
+  @override
+  _$InvalidPhotoType<T> get _value => super._value as _$InvalidPhotoType<T>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(_$InvalidPhotoType<T>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InvalidPhotoType<T> implements InvalidPhotoType<T> {
+  const _$InvalidPhotoType({required this.failedValue});
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidPhotoType(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InvalidPhotoType<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$InvalidPhotoTypeCopyWith<T, _$InvalidPhotoType<T>> get copyWith =>
+      __$$InvalidPhotoTypeCopyWithImpl<T, _$InvalidPhotoType<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T? failedValue) empty,
+    required TResult Function(T? failedValue) nullValue,
+    required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) tooYoung,
+    required TResult Function(T failedValue) tooOld,
+    required TResult Function(T failedValue) weightTooSmall,
+    required TResult Function(T failedValue) weightTooBig,
+    required TResult Function(T failedValue, num max) numberTooLarge,
+    required TResult Function(T failedValue, int max) listTooLong,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) invalidPhone,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidAge,
+    required TResult Function(T failedValue) invalidPhotoUrl,
+    required TResult Function(T failedValue) invalidPhotoType,
+  }) {
+    return invalidPhotoType(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
+    TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? tooYoung,
+    TResult Function(T failedValue)? tooOld,
+    TResult Function(T failedValue)? weightTooSmall,
+    TResult Function(T failedValue)? weightTooBig,
+    TResult Function(T failedValue, num max)? numberTooLarge,
+    TResult Function(T failedValue, int max)? listTooLong,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? invalidPhone,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidAge,
+    TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
+  }) {
+    return invalidPhotoType?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
+    TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? tooYoung,
+    TResult Function(T failedValue)? tooOld,
+    TResult Function(T failedValue)? weightTooSmall,
+    TResult Function(T failedValue)? weightTooBig,
+    TResult Function(T failedValue, num max)? numberTooLarge,
+    TResult Function(T failedValue, int max)? listTooLong,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? invalidPhone,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidAge,
+    TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
+    required TResult orElse(),
+  }) {
+    if (invalidPhotoType != null) {
+      return invalidPhotoType(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(NullValue<T> value) nullValue,
+    required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(AgeTooYoung<T> value) tooYoung,
+    required TResult Function(AgeTooOld<T> value) tooOld,
+    required TResult Function(WeightTooSmall<T> value) weightTooSmall,
+    required TResult Function(WeightTooBig<T> value) weightTooBig,
+    required TResult Function(NumberTooLarge<T> value) numberTooLarge,
+    required TResult Function(ListTooLong<T> value) listTooLong,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidPhone<T> value) invalidPhone,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidAge<T> value) invalidAge,
+    required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
+    required TResult Function(InvalidPhotoType<T> value) invalidPhotoType,
+  }) {
+    return invalidPhotoType(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(Multiline<T> value)? multiline,
+    TResult Function(AgeTooYoung<T> value)? tooYoung,
+    TResult Function(AgeTooOld<T> value)? tooOld,
+    TResult Function(WeightTooSmall<T> value)? weightTooSmall,
+    TResult Function(WeightTooBig<T> value)? weightTooBig,
+    TResult Function(NumberTooLarge<T> value)? numberTooLarge,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPhone<T> value)? invalidPhone,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidAge<T> value)? invalidAge,
+    TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
+  }) {
+    return invalidPhotoType?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(Multiline<T> value)? multiline,
+    TResult Function(AgeTooYoung<T> value)? tooYoung,
+    TResult Function(AgeTooOld<T> value)? tooOld,
+    TResult Function(WeightTooSmall<T> value)? weightTooSmall,
+    TResult Function(WeightTooBig<T> value)? weightTooBig,
+    TResult Function(NumberTooLarge<T> value)? numberTooLarge,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPhone<T> value)? invalidPhone,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidAge<T> value)? invalidAge,
+    TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
+    required TResult orElse(),
+  }) {
+    if (invalidPhotoType != null) {
+      return invalidPhotoType(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidPhotoType<T> implements ValueFailure<T> {
+  const factory InvalidPhotoType({required final T failedValue}) =
+      _$InvalidPhotoType<T>;
+
+  T get failedValue => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$InvalidPhotoTypeCopyWith<T, _$InvalidPhotoType<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
