@@ -17,12 +17,12 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$JUser {
   Uid get uid => throw _privateConstructorUsedError;
-  IName get name => throw _privateConstructorUsedError;
+  IName? get name => throw _privateConstructorUsedError;
   IGender? get gender => throw _privateConstructorUsedError;
   IAge? get age => throw _privateConstructorUsedError;
   IHeight? get height => throw _privateConstructorUsedError;
   IWeight? get weight => throw _privateConstructorUsedError;
-  IEmailAddress get email => throw _privateConstructorUsedError;
+  IEmailAddress? get email => throw _privateConstructorUsedError;
   IPhone? get phone => throw _privateConstructorUsedError;
   String? get city => throw _privateConstructorUsedError;
   String? get avatar => throw _privateConstructorUsedError;
@@ -43,12 +43,12 @@ abstract class $JUserCopyWith<$Res> {
       _$JUserCopyWithImpl<$Res>;
   $Res call(
       {Uid uid,
-      IName name,
+      IName? name,
       IGender? gender,
       IAge? age,
       IHeight? height,
       IWeight? weight,
-      IEmailAddress email,
+      IEmailAddress? email,
       IPhone? phone,
       String? city,
       String? avatar,
@@ -95,7 +95,7 @@ class _$JUserCopyWithImpl<$Res> implements $JUserCopyWith<$Res> {
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as IName,
+              as IName?,
       gender: gender == freezed
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
@@ -115,7 +115,7 @@ class _$JUserCopyWithImpl<$Res> implements $JUserCopyWith<$Res> {
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as IEmailAddress,
+              as IEmailAddress?,
       phone: phone == freezed
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
@@ -163,12 +163,12 @@ abstract class _$$_JUserCopyWith<$Res> implements $JUserCopyWith<$Res> {
   @override
   $Res call(
       {Uid uid,
-      IName name,
+      IName? name,
       IGender? gender,
       IAge? age,
       IHeight? height,
       IWeight? weight,
-      IEmailAddress email,
+      IEmailAddress? email,
       IPhone? phone,
       String? city,
       String? avatar,
@@ -216,7 +216,7 @@ class __$$_JUserCopyWithImpl<$Res> extends _$JUserCopyWithImpl<$Res>
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as IName,
+              as IName?,
       gender: gender == freezed
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
@@ -236,7 +236,7 @@ class __$$_JUserCopyWithImpl<$Res> extends _$JUserCopyWithImpl<$Res>
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as IEmailAddress,
+              as IEmailAddress?,
       phone: phone == freezed
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
@@ -301,7 +301,7 @@ class _$_JUser implements _JUser {
   @override
   final Uid uid;
   @override
-  final IName name;
+  final IName? name;
   @override
   final IGender? gender;
   @override
@@ -311,7 +311,7 @@ class _$_JUser implements _JUser {
   @override
   final IWeight? weight;
   @override
-  final IEmailAddress email;
+  final IEmailAddress? email;
   @override
   final IPhone? phone;
   @override
@@ -390,12 +390,12 @@ class _$_JUser implements _JUser {
 abstract class _JUser implements JUser {
   const factory _JUser(
       {required final Uid uid,
-      required final IName name,
+      required final IName? name,
       final IGender? gender,
       final IAge? age,
       final IHeight? height,
       final IWeight? weight,
-      required final IEmailAddress email,
+      required final IEmailAddress? email,
       final IPhone? phone,
       final String? city,
       final String? avatar,
@@ -409,7 +409,7 @@ abstract class _JUser implements JUser {
   @override
   Uid get uid => throw _privateConstructorUsedError;
   @override
-  IName get name => throw _privateConstructorUsedError;
+  IName? get name => throw _privateConstructorUsedError;
   @override
   IGender? get gender => throw _privateConstructorUsedError;
   @override
@@ -419,7 +419,7 @@ abstract class _JUser implements JUser {
   @override
   IWeight? get weight => throw _privateConstructorUsedError;
   @override
-  IEmailAddress get email => throw _privateConstructorUsedError;
+  IEmailAddress? get email => throw _privateConstructorUsedError;
   @override
   IPhone? get phone => throw _privateConstructorUsedError;
   @override
