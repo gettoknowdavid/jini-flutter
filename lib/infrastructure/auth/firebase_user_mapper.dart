@@ -18,7 +18,7 @@ class FirebaseUserMapper {
       bloodGroup: user.bloodGroup == null ? null : IBloodGroup(user.bloodGroup),
       city: user.city == null ? null : user.city,
       eligible: user.eligible == null ? null : user.eligible,
-      email: IEmailAddress(user.email),
+      email:user.email == null ? null : IEmailAddress(user.email!),
       formComplete: user.formComplete == null ? null : user.formComplete,
       gender: user.gender == null ? null : IGender(user.gender!),
       height: user.height == null ? null : IHeight(user.height!),
@@ -26,7 +26,7 @@ class FirebaseUserMapper {
       location: user.location == null
           ? null
           : Geo(user.location!.latitude, user.location!.latitude),
-      name: IName(user.name),
+      name:user.name == null ? null : IName(user.name!),
       phone: user.phone == null ? null : IPhone(user.phone!),
       userType: IUserType(user.userType),
       weight:
