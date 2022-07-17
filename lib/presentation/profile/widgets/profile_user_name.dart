@@ -16,10 +16,9 @@ class ProfileUserName extends StatelessWidget {
 
     _onTap() => Get.bottomSheet(const EditNameBottomSheet());
 
-    return BlocConsumer<ProfileBloc, ProfileState>(
+    return BlocBuilder<ProfileBloc, ProfileState>(
       bloc: bloc,
-      listenWhen: (p, c) => p.isSaving != c.isSaving,
-      listener: (context, state) => state.isSaving,
+      buildWhen: (p, c) => p.isEditing != c.isEditing,
       builder: (context, state) {
         final user = JUserDto.fromDomain(bloc.state.user);
         bool isEditing = bloc.state.isEditing;
@@ -31,9 +30,11 @@ class ProfileUserName extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                user.name,
+                user.name!,
                 style: Theme.of(context).textTheme.headline5?.copyWith(
-                      fontSize: JScreenUtil.fontSize(32),
+                      fontSize: user.name != null
+                          ? JScreenUtil.fontSize(32)
+                          : JScreenUtil.fontSize(18),
                       color: Colors.white,
                     ),
               ),
