@@ -28,7 +28,7 @@ mixin _$ProfileEvent {
     required TResult Function(num age, UserType userType) ageChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
-    required TResult Function(String avatar) avatarChanged,
+    required TResult Function() avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
   }) =>
@@ -45,7 +45,7 @@ mixin _$ProfileEvent {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
-    TResult Function(String avatar)? avatarChanged,
+    TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
   }) =>
@@ -62,7 +62,7 @@ mixin _$ProfileEvent {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
-    TResult Function(String avatar)? avatarChanged,
+    TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     required TResult orElse(),
@@ -189,7 +189,7 @@ class _$_Initialized implements _Initialized {
     required TResult Function(num age, UserType userType) ageChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
-    required TResult Function(String avatar) avatarChanged,
+    required TResult Function() avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
   }) {
@@ -209,7 +209,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
-    TResult Function(String avatar)? avatarChanged,
+    TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
   }) {
@@ -229,7 +229,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
-    TResult Function(String avatar)? avatarChanged,
+    TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     required TResult orElse(),
@@ -384,7 +384,7 @@ class _$_NameChanged implements _NameChanged {
     required TResult Function(num age, UserType userType) ageChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
-    required TResult Function(String avatar) avatarChanged,
+    required TResult Function() avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
   }) {
@@ -404,7 +404,7 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
-    TResult Function(String avatar)? avatarChanged,
+    TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
   }) {
@@ -424,7 +424,7 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
-    TResult Function(String avatar)? avatarChanged,
+    TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     required TResult orElse(),
@@ -584,7 +584,7 @@ class _$_EmailChanged implements _EmailChanged {
     required TResult Function(num age, UserType userType) ageChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
-    required TResult Function(String avatar) avatarChanged,
+    required TResult Function() avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
   }) {
@@ -604,7 +604,7 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
-    TResult Function(String avatar)? avatarChanged,
+    TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
   }) {
@@ -624,7 +624,7 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
-    TResult Function(String avatar)? avatarChanged,
+    TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     required TResult orElse(),
@@ -784,7 +784,7 @@ class _$_PhoneChanged implements _PhoneChanged {
     required TResult Function(num age, UserType userType) ageChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
-    required TResult Function(String avatar) avatarChanged,
+    required TResult Function() avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
   }) {
@@ -804,7 +804,7 @@ class _$_PhoneChanged implements _PhoneChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
-    TResult Function(String avatar)? avatarChanged,
+    TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
   }) {
@@ -824,7 +824,7 @@ class _$_PhoneChanged implements _PhoneChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
-    TResult Function(String avatar)? avatarChanged,
+    TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     required TResult orElse(),
@@ -984,7 +984,7 @@ class _$_GenderChanged implements _GenderChanged {
     required TResult Function(num age, UserType userType) ageChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
-    required TResult Function(String avatar) avatarChanged,
+    required TResult Function() avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
   }) {
@@ -1004,7 +1004,7 @@ class _$_GenderChanged implements _GenderChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
-    TResult Function(String avatar)? avatarChanged,
+    TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
   }) {
@@ -1024,7 +1024,7 @@ class _$_GenderChanged implements _GenderChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
-    TResult Function(String avatar)? avatarChanged,
+    TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     required TResult orElse(),
@@ -1186,7 +1186,7 @@ class _$_BloodGroupChanged implements _BloodGroupChanged {
     required TResult Function(num age, UserType userType) ageChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
-    required TResult Function(String avatar) avatarChanged,
+    required TResult Function() avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
   }) {
@@ -1206,7 +1206,7 @@ class _$_BloodGroupChanged implements _BloodGroupChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
-    TResult Function(String avatar)? avatarChanged,
+    TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
   }) {
@@ -1226,7 +1226,7 @@ class _$_BloodGroupChanged implements _BloodGroupChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
-    TResult Function(String avatar)? avatarChanged,
+    TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     required TResult orElse(),
@@ -1387,7 +1387,7 @@ class _$_UserTypeChanged implements _UserTypeChanged {
     required TResult Function(num age, UserType userType) ageChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
-    required TResult Function(String avatar) avatarChanged,
+    required TResult Function() avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
   }) {
@@ -1407,7 +1407,7 @@ class _$_UserTypeChanged implements _UserTypeChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
-    TResult Function(String avatar)? avatarChanged,
+    TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
   }) {
@@ -1427,7 +1427,7 @@ class _$_UserTypeChanged implements _UserTypeChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
-    TResult Function(String avatar)? avatarChanged,
+    TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     required TResult orElse(),
@@ -1596,7 +1596,7 @@ class _$_AgeChanged implements _AgeChanged {
     required TResult Function(num age, UserType userType) ageChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
-    required TResult Function(String avatar) avatarChanged,
+    required TResult Function() avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
   }) {
@@ -1616,7 +1616,7 @@ class _$_AgeChanged implements _AgeChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
-    TResult Function(String avatar)? avatarChanged,
+    TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
   }) {
@@ -1636,7 +1636,7 @@ class _$_AgeChanged implements _AgeChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
-    TResult Function(String avatar)? avatarChanged,
+    TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     required TResult orElse(),
@@ -1798,7 +1798,7 @@ class _$_HeightChanged implements _HeightChanged {
     required TResult Function(num age, UserType userType) ageChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
-    required TResult Function(String avatar) avatarChanged,
+    required TResult Function() avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
   }) {
@@ -1818,7 +1818,7 @@ class _$_HeightChanged implements _HeightChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
-    TResult Function(String avatar)? avatarChanged,
+    TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
   }) {
@@ -1838,7 +1838,7 @@ class _$_HeightChanged implements _HeightChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
-    TResult Function(String avatar)? avatarChanged,
+    TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     required TResult orElse(),
@@ -2008,7 +2008,7 @@ class _$_WeightChanged implements _WeightChanged {
     required TResult Function(num age, UserType userType) ageChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
-    required TResult Function(String avatar) avatarChanged,
+    required TResult Function() avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
   }) {
@@ -2028,7 +2028,7 @@ class _$_WeightChanged implements _WeightChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
-    TResult Function(String avatar)? avatarChanged,
+    TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
   }) {
@@ -2048,7 +2048,7 @@ class _$_WeightChanged implements _WeightChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
-    TResult Function(String avatar)? avatarChanged,
+    TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     required TResult orElse(),
@@ -2140,7 +2140,6 @@ abstract class _$$_AvatarChangedCopyWith<$Res> {
   factory _$$_AvatarChangedCopyWith(
           _$_AvatarChanged value, $Res Function(_$_AvatarChanged) then) =
       __$$_AvatarChangedCopyWithImpl<$Res>;
-  $Res call({String avatar});
 }
 
 /// @nodoc
@@ -2153,49 +2152,26 @@ class __$$_AvatarChangedCopyWithImpl<$Res>
 
   @override
   _$_AvatarChanged get _value => super._value as _$_AvatarChanged;
-
-  @override
-  $Res call({
-    Object? avatar = freezed,
-  }) {
-    return _then(_$_AvatarChanged(
-      avatar == freezed
-          ? _value.avatar
-          : avatar // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$_AvatarChanged implements _AvatarChanged {
-  const _$_AvatarChanged(this.avatar);
-
-  @override
-  final String avatar;
+  const _$_AvatarChanged();
 
   @override
   String toString() {
-    return 'ProfileEvent.avatarChanged(avatar: $avatar)';
+    return 'ProfileEvent.avatarChanged()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_AvatarChanged &&
-            const DeepCollectionEquality().equals(other.avatar, avatar));
+        (other.runtimeType == runtimeType && other is _$_AvatarChanged);
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(avatar));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$_AvatarChangedCopyWith<_$_AvatarChanged> get copyWith =>
-      __$$_AvatarChangedCopyWithImpl<_$_AvatarChanged>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -2210,11 +2186,11 @@ class _$_AvatarChanged implements _AvatarChanged {
     required TResult Function(num age, UserType userType) ageChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
-    required TResult Function(String avatar) avatarChanged,
+    required TResult Function() avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
   }) {
-    return avatarChanged(avatar);
+    return avatarChanged();
   }
 
   @override
@@ -2230,11 +2206,11 @@ class _$_AvatarChanged implements _AvatarChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
-    TResult Function(String avatar)? avatarChanged,
+    TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
   }) {
-    return avatarChanged?.call(avatar);
+    return avatarChanged?.call();
   }
 
   @override
@@ -2250,13 +2226,13 @@ class _$_AvatarChanged implements _AvatarChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
-    TResult Function(String avatar)? avatarChanged,
+    TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     required TResult orElse(),
   }) {
     if (avatarChanged != null) {
-      return avatarChanged(avatar);
+      return avatarChanged();
     }
     return orElse();
   }
@@ -2327,12 +2303,7 @@ class _$_AvatarChanged implements _AvatarChanged {
 }
 
 abstract class _AvatarChanged implements ProfileEvent {
-  const factory _AvatarChanged(final String avatar) = _$_AvatarChanged;
-
-  String get avatar => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$$_AvatarChangedCopyWith<_$_AvatarChanged> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory _AvatarChanged() = _$_AvatarChanged;
 }
 
 /// @nodoc
@@ -2411,7 +2382,7 @@ class _$_ProfileEditPressed implements _ProfileEditPressed {
     required TResult Function(num age, UserType userType) ageChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
-    required TResult Function(String avatar) avatarChanged,
+    required TResult Function() avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
   }) {
@@ -2431,7 +2402,7 @@ class _$_ProfileEditPressed implements _ProfileEditPressed {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
-    TResult Function(String avatar)? avatarChanged,
+    TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
   }) {
@@ -2451,7 +2422,7 @@ class _$_ProfileEditPressed implements _ProfileEditPressed {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
-    TResult Function(String avatar)? avatarChanged,
+    TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     required TResult orElse(),
@@ -2587,7 +2558,7 @@ class _$_ProfileUpdated implements _ProfileUpdated {
     required TResult Function(num age, UserType userType) ageChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
-    required TResult Function(String avatar) avatarChanged,
+    required TResult Function() avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
   }) {
@@ -2607,7 +2578,7 @@ class _$_ProfileUpdated implements _ProfileUpdated {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
-    TResult Function(String avatar)? avatarChanged,
+    TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
   }) {
@@ -2627,7 +2598,7 @@ class _$_ProfileUpdated implements _ProfileUpdated {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
-    TResult Function(String avatar)? avatarChanged,
+    TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     required TResult orElse(),
@@ -2710,6 +2681,7 @@ abstract class _ProfileUpdated implements ProfileEvent {
 /// @nodoc
 mixin _$ProfileState {
   JUser get user => throw _privateConstructorUsedError;
+  File? get avatarFile => throw _privateConstructorUsedError;
   bool get isEditing => throw _privateConstructorUsedError;
   bool get isSaving => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
@@ -2728,6 +2700,7 @@ abstract class $ProfileStateCopyWith<$Res> {
       _$ProfileStateCopyWithImpl<$Res>;
   $Res call(
       {JUser user,
+      File? avatarFile,
       bool isEditing,
       bool isSaving,
       bool showErrorMessages,
@@ -2747,6 +2720,7 @@ class _$ProfileStateCopyWithImpl<$Res> implements $ProfileStateCopyWith<$Res> {
   @override
   $Res call({
     Object? user = freezed,
+    Object? avatarFile = freezed,
     Object? isEditing = freezed,
     Object? isSaving = freezed,
     Object? showErrorMessages = freezed,
@@ -2757,6 +2731,10 @@ class _$ProfileStateCopyWithImpl<$Res> implements $ProfileStateCopyWith<$Res> {
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as JUser,
+      avatarFile: avatarFile == freezed
+          ? _value.avatarFile
+          : avatarFile // ignore: cast_nullable_to_non_nullable
+              as File?,
       isEditing: isEditing == freezed
           ? _value.isEditing
           : isEditing // ignore: cast_nullable_to_non_nullable
@@ -2793,6 +2771,7 @@ abstract class _$$_ProfileStateCopyWith<$Res>
   @override
   $Res call(
       {JUser user,
+      File? avatarFile,
       bool isEditing,
       bool isSaving,
       bool showErrorMessages,
@@ -2816,6 +2795,7 @@ class __$$_ProfileStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? user = freezed,
+    Object? avatarFile = freezed,
     Object? isEditing = freezed,
     Object? isSaving = freezed,
     Object? showErrorMessages = freezed,
@@ -2826,6 +2806,10 @@ class __$$_ProfileStateCopyWithImpl<$Res>
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as JUser,
+      avatarFile: avatarFile == freezed
+          ? _value.avatarFile
+          : avatarFile // ignore: cast_nullable_to_non_nullable
+              as File?,
       isEditing: isEditing == freezed
           ? _value.isEditing
           : isEditing // ignore: cast_nullable_to_non_nullable
@@ -2851,6 +2835,7 @@ class __$$_ProfileStateCopyWithImpl<$Res>
 class _$_ProfileState implements _ProfileState {
   const _$_ProfileState(
       {required this.user,
+      required this.avatarFile,
       required this.isEditing,
       required this.isSaving,
       required this.showErrorMessages,
@@ -2858,6 +2843,8 @@ class _$_ProfileState implements _ProfileState {
 
   @override
   final JUser user;
+  @override
+  final File? avatarFile;
   @override
   final bool isEditing;
   @override
@@ -2869,7 +2856,7 @@ class _$_ProfileState implements _ProfileState {
 
   @override
   String toString() {
-    return 'ProfileState(user: $user, isEditing: $isEditing, isSaving: $isSaving, showErrorMessages: $showErrorMessages, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
+    return 'ProfileState(user: $user, avatarFile: $avatarFile, isEditing: $isEditing, isSaving: $isSaving, showErrorMessages: $showErrorMessages, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
   }
 
   @override
@@ -2878,6 +2865,8 @@ class _$_ProfileState implements _ProfileState {
         (other.runtimeType == runtimeType &&
             other is _$_ProfileState &&
             const DeepCollectionEquality().equals(other.user, user) &&
+            const DeepCollectionEquality()
+                .equals(other.avatarFile, avatarFile) &&
             const DeepCollectionEquality().equals(other.isEditing, isEditing) &&
             const DeepCollectionEquality().equals(other.isSaving, isSaving) &&
             const DeepCollectionEquality()
@@ -2890,6 +2879,7 @@ class _$_ProfileState implements _ProfileState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(user),
+      const DeepCollectionEquality().hash(avatarFile),
       const DeepCollectionEquality().hash(isEditing),
       const DeepCollectionEquality().hash(isSaving),
       const DeepCollectionEquality().hash(showErrorMessages),
@@ -2904,6 +2894,7 @@ class _$_ProfileState implements _ProfileState {
 abstract class _ProfileState implements ProfileState {
   const factory _ProfileState(
       {required final JUser user,
+      required final File? avatarFile,
       required final bool isEditing,
       required final bool isSaving,
       required final bool showErrorMessages,
@@ -2912,6 +2903,8 @@ abstract class _ProfileState implements ProfileState {
 
   @override
   JUser get user => throw _privateConstructorUsedError;
+  @override
+  File? get avatarFile => throw _privateConstructorUsedError;
   @override
   bool get isEditing => throw _privateConstructorUsedError;
   @override
