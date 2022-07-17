@@ -1,5 +1,7 @@
-import 'package:image_picker/image_picker.dart';
+import 'dart:io';
+
+import 'package:dartz/dartz.dart';
 
 abstract class IMediaFacade {
-  Future<XFile?> getImage();
+  Future<Option<File?>> getImage();
 }
