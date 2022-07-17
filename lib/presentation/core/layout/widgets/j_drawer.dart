@@ -57,7 +57,7 @@ class JDrawer extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            user.name,
+                            user.name!,
                             style: textTheme.titleMedium!.copyWith(
                               color: isDark ? Colors.white : Colors.black,
                               fontWeight: FontWeight.w600,
@@ -65,7 +65,7 @@ class JDrawer extends StatelessWidget {
                           ),
                           JScreenUtil.vSpace(2),
                           Text(
-                            user.email,
+                            user.email!,
                             style: textTheme.caption,
                           ),
                         ],
