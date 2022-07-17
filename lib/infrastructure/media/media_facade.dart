@@ -13,10 +13,7 @@ class MediaFacade implements IMediaFacade {
 
   @override
   Future<Option<File?>> getImage() async {
-    final _file = await _picker.pickImage(
-      source: ImageSource.gallery,
-      imageQuality: 60,
-    );
+    final XFile? _file = await _picker.pickImage(source: ImageSource.gallery);
 
     if (_file != null) {
       return optionOf(File(_file.path));
