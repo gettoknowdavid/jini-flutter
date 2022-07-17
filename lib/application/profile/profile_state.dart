@@ -4,6 +4,7 @@ part of 'profile_bloc.dart';
 class ProfileState with _$ProfileState {
   const factory ProfileState({
     required JUser user,
+    required File? avatarFile,
     required bool isEditing,
     required bool isSaving,
     required bool showErrorMessages,
@@ -12,6 +13,7 @@ class ProfileState with _$ProfileState {
 
   factory ProfileState.initial() => ProfileState(
         user: JUser.empty(),
+        avatarFile: null,
         isEditing: false,
         isSaving: false,
         showErrorMessages: false,
