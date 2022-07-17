@@ -2,6 +2,7 @@ import 'package:division/division.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
+import 'package:jini/application/auth/auth_bloc.dart';
 import 'package:jini/application/profile/profile_bloc.dart';
 import 'package:jini/domain/core/gender.dart';
 import 'package:jini/infrastructure/auth/j_user_dtos.dart';
@@ -26,6 +27,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of<ProfileBloc>(context);
+    final authBloc = BlocProvider.of<AuthBloc>(context);
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -37,7 +39,33 @@ class ProfilePage extends StatelessWidget {
             Get.back();
           },
         ),
-        actions: [const ProfileSaveButton()],
+        actions: [
+          PopupMenuButton(
+            icon: Icon(Icons.more_vert, color: Colors.white),
+            color: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: JScreenUtil.borderRadius,
+            ),
+            itemBuilder: (context) {
+              return [
+                PopupMenuItem<int>(value: 0, child: Text("Edit Account")),
+                PopupMenuItem<int>(value: 1, child: Text("Sign out")),
+              ];
+            },
+            onSelected: (value) {
+              switch (value) {
+                case 0:
+                  bloc.add(const ProfileEvent.editPressed(true));
+                  break;
+                case 1:
+                  authBloc.add(const AuthEvent.authSignedOut());
+                  break;
+                default:
+                  return null;
+              }
+            },
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
