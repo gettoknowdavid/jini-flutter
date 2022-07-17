@@ -28,6 +28,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     on<_HeightChanged>((event, emit) => _heightChanged(event, emit));
     on<_WeightChanged>((event, emit) => _weightChanged(event, emit));
     on<_UserTypeChanged>((event, emit) => _userTypeChanged(event, emit));
+    on<_AvatarChanged>((event, emit) => _avatarChanged(event, emit));
     on<_ProfileUpdated>((event, emit) => _profileUpdated(event, emit));
   }
 
@@ -101,6 +102,14 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     emit(
       state.copyWith(
         user: state.user.copyWith(weight: IWeight(e.weight, e.userType)),
+      ),
+    );
+  }
+
+  _avatarChanged(_AvatarChanged e, Emitter<ProfileState> emit) async {
+    emit(
+      state.copyWith(
+        user: state.user.copyWith(avatar: IAvatar(e.avatar)),
       ),
     );
   }
