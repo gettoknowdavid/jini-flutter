@@ -17,7 +17,7 @@ class ProfileEmailWidget extends StatelessWidget {
         final user = JUserDto.fromDomain(bloc.state.user);
 
         return Txt(
-          user.email,
+          user.email!,
           style: TxtStyle()
             ..textColor(Colors.white70)
             ..fontSize(JScreenUtil.fontSize(16)),
