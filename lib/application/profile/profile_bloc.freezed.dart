@@ -28,6 +28,7 @@ mixin _$ProfileEvent {
     required TResult Function(num age, UserType userType) ageChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
+    required TResult Function(String avatar) avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
   }) =>
@@ -44,6 +45,7 @@ mixin _$ProfileEvent {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(String avatar)? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
   }) =>
@@ -60,6 +62,7 @@ mixin _$ProfileEvent {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(String avatar)? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     required TResult orElse(),
@@ -77,6 +80,7 @@ mixin _$ProfileEvent {
     required TResult Function(_AgeChanged value) ageChanged,
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
+    required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
   }) =>
@@ -93,6 +97,7 @@ mixin _$ProfileEvent {
     TResult Function(_AgeChanged value)? ageChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
   }) =>
@@ -109,6 +114,7 @@ mixin _$ProfileEvent {
     TResult Function(_AgeChanged value)? ageChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     required TResult orElse(),
@@ -183,6 +189,7 @@ class _$_Initialized implements _Initialized {
     required TResult Function(num age, UserType userType) ageChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
+    required TResult Function(String avatar) avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
   }) {
@@ -202,6 +209,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(String avatar)? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
   }) {
@@ -221,6 +229,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(String avatar)? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     required TResult orElse(),
@@ -244,6 +253,7 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_AgeChanged value) ageChanged,
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
+    required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
   }) {
@@ -263,6 +273,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(_AgeChanged value)? ageChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
   }) {
@@ -282,6 +293,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(_AgeChanged value)? ageChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     required TResult orElse(),
@@ -372,6 +384,7 @@ class _$_NameChanged implements _NameChanged {
     required TResult Function(num age, UserType userType) ageChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
+    required TResult Function(String avatar) avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
   }) {
@@ -391,6 +404,7 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(String avatar)? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
   }) {
@@ -410,6 +424,7 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(String avatar)? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     required TResult orElse(),
@@ -433,6 +448,7 @@ class _$_NameChanged implements _NameChanged {
     required TResult Function(_AgeChanged value) ageChanged,
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
+    required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
   }) {
@@ -452,6 +468,7 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(_AgeChanged value)? ageChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
   }) {
@@ -471,6 +488,7 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(_AgeChanged value)? ageChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     required TResult orElse(),
@@ -566,6 +584,7 @@ class _$_EmailChanged implements _EmailChanged {
     required TResult Function(num age, UserType userType) ageChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
+    required TResult Function(String avatar) avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
   }) {
@@ -585,6 +604,7 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(String avatar)? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
   }) {
@@ -604,6 +624,7 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(String avatar)? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     required TResult orElse(),
@@ -627,6 +648,7 @@ class _$_EmailChanged implements _EmailChanged {
     required TResult Function(_AgeChanged value) ageChanged,
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
+    required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
   }) {
@@ -646,6 +668,7 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(_AgeChanged value)? ageChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
   }) {
@@ -665,6 +688,7 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(_AgeChanged value)? ageChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     required TResult orElse(),
@@ -760,6 +784,7 @@ class _$_PhoneChanged implements _PhoneChanged {
     required TResult Function(num age, UserType userType) ageChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
+    required TResult Function(String avatar) avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
   }) {
@@ -779,6 +804,7 @@ class _$_PhoneChanged implements _PhoneChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(String avatar)? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
   }) {
@@ -798,6 +824,7 @@ class _$_PhoneChanged implements _PhoneChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(String avatar)? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     required TResult orElse(),
@@ -821,6 +848,7 @@ class _$_PhoneChanged implements _PhoneChanged {
     required TResult Function(_AgeChanged value) ageChanged,
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
+    required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
   }) {
@@ -840,6 +868,7 @@ class _$_PhoneChanged implements _PhoneChanged {
     TResult Function(_AgeChanged value)? ageChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
   }) {
@@ -859,6 +888,7 @@ class _$_PhoneChanged implements _PhoneChanged {
     TResult Function(_AgeChanged value)? ageChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     required TResult orElse(),
@@ -954,6 +984,7 @@ class _$_GenderChanged implements _GenderChanged {
     required TResult Function(num age, UserType userType) ageChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
+    required TResult Function(String avatar) avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
   }) {
@@ -973,6 +1004,7 @@ class _$_GenderChanged implements _GenderChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(String avatar)? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
   }) {
@@ -992,6 +1024,7 @@ class _$_GenderChanged implements _GenderChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(String avatar)? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     required TResult orElse(),
@@ -1015,6 +1048,7 @@ class _$_GenderChanged implements _GenderChanged {
     required TResult Function(_AgeChanged value) ageChanged,
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
+    required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
   }) {
@@ -1034,6 +1068,7 @@ class _$_GenderChanged implements _GenderChanged {
     TResult Function(_AgeChanged value)? ageChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
   }) {
@@ -1053,6 +1088,7 @@ class _$_GenderChanged implements _GenderChanged {
     TResult Function(_AgeChanged value)? ageChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     required TResult orElse(),
@@ -1150,6 +1186,7 @@ class _$_BloodGroupChanged implements _BloodGroupChanged {
     required TResult Function(num age, UserType userType) ageChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
+    required TResult Function(String avatar) avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
   }) {
@@ -1169,6 +1206,7 @@ class _$_BloodGroupChanged implements _BloodGroupChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(String avatar)? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
   }) {
@@ -1188,6 +1226,7 @@ class _$_BloodGroupChanged implements _BloodGroupChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(String avatar)? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     required TResult orElse(),
@@ -1211,6 +1250,7 @@ class _$_BloodGroupChanged implements _BloodGroupChanged {
     required TResult Function(_AgeChanged value) ageChanged,
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
+    required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
   }) {
@@ -1230,6 +1270,7 @@ class _$_BloodGroupChanged implements _BloodGroupChanged {
     TResult Function(_AgeChanged value)? ageChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
   }) {
@@ -1249,6 +1290,7 @@ class _$_BloodGroupChanged implements _BloodGroupChanged {
     TResult Function(_AgeChanged value)? ageChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     required TResult orElse(),
@@ -1345,6 +1387,7 @@ class _$_UserTypeChanged implements _UserTypeChanged {
     required TResult Function(num age, UserType userType) ageChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
+    required TResult Function(String avatar) avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
   }) {
@@ -1364,6 +1407,7 @@ class _$_UserTypeChanged implements _UserTypeChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(String avatar)? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
   }) {
@@ -1383,6 +1427,7 @@ class _$_UserTypeChanged implements _UserTypeChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(String avatar)? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     required TResult orElse(),
@@ -1406,6 +1451,7 @@ class _$_UserTypeChanged implements _UserTypeChanged {
     required TResult Function(_AgeChanged value) ageChanged,
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
+    required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
   }) {
@@ -1425,6 +1471,7 @@ class _$_UserTypeChanged implements _UserTypeChanged {
     TResult Function(_AgeChanged value)? ageChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
   }) {
@@ -1444,6 +1491,7 @@ class _$_UserTypeChanged implements _UserTypeChanged {
     TResult Function(_AgeChanged value)? ageChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     required TResult orElse(),
@@ -1548,6 +1596,7 @@ class _$_AgeChanged implements _AgeChanged {
     required TResult Function(num age, UserType userType) ageChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
+    required TResult Function(String avatar) avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
   }) {
@@ -1567,6 +1616,7 @@ class _$_AgeChanged implements _AgeChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(String avatar)? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
   }) {
@@ -1586,6 +1636,7 @@ class _$_AgeChanged implements _AgeChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(String avatar)? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     required TResult orElse(),
@@ -1609,6 +1660,7 @@ class _$_AgeChanged implements _AgeChanged {
     required TResult Function(_AgeChanged value) ageChanged,
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
+    required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
   }) {
@@ -1628,6 +1680,7 @@ class _$_AgeChanged implements _AgeChanged {
     TResult Function(_AgeChanged value)? ageChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
   }) {
@@ -1647,6 +1700,7 @@ class _$_AgeChanged implements _AgeChanged {
     TResult Function(_AgeChanged value)? ageChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     required TResult orElse(),
@@ -1744,6 +1798,7 @@ class _$_HeightChanged implements _HeightChanged {
     required TResult Function(num age, UserType userType) ageChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
+    required TResult Function(String avatar) avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
   }) {
@@ -1763,6 +1818,7 @@ class _$_HeightChanged implements _HeightChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(String avatar)? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
   }) {
@@ -1782,6 +1838,7 @@ class _$_HeightChanged implements _HeightChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(String avatar)? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     required TResult orElse(),
@@ -1805,6 +1862,7 @@ class _$_HeightChanged implements _HeightChanged {
     required TResult Function(_AgeChanged value) ageChanged,
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
+    required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
   }) {
@@ -1824,6 +1882,7 @@ class _$_HeightChanged implements _HeightChanged {
     TResult Function(_AgeChanged value)? ageChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
   }) {
@@ -1843,6 +1902,7 @@ class _$_HeightChanged implements _HeightChanged {
     TResult Function(_AgeChanged value)? ageChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     required TResult orElse(),
@@ -1948,6 +2008,7 @@ class _$_WeightChanged implements _WeightChanged {
     required TResult Function(num age, UserType userType) ageChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
+    required TResult Function(String avatar) avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
   }) {
@@ -1967,6 +2028,7 @@ class _$_WeightChanged implements _WeightChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(String avatar)? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
   }) {
@@ -1986,6 +2048,7 @@ class _$_WeightChanged implements _WeightChanged {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(String avatar)? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     required TResult orElse(),
@@ -2009,6 +2072,7 @@ class _$_WeightChanged implements _WeightChanged {
     required TResult Function(_AgeChanged value) ageChanged,
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
+    required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
   }) {
@@ -2028,6 +2092,7 @@ class _$_WeightChanged implements _WeightChanged {
     TResult Function(_AgeChanged value)? ageChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
   }) {
@@ -2047,6 +2112,7 @@ class _$_WeightChanged implements _WeightChanged {
     TResult Function(_AgeChanged value)? ageChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     required TResult orElse(),
@@ -2066,6 +2132,206 @@ abstract class _WeightChanged implements ProfileEvent {
   UserType get userType => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$_WeightChangedCopyWith<_$_WeightChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_AvatarChangedCopyWith<$Res> {
+  factory _$$_AvatarChangedCopyWith(
+          _$_AvatarChanged value, $Res Function(_$_AvatarChanged) then) =
+      __$$_AvatarChangedCopyWithImpl<$Res>;
+  $Res call({String avatar});
+}
+
+/// @nodoc
+class __$$_AvatarChangedCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res>
+    implements _$$_AvatarChangedCopyWith<$Res> {
+  __$$_AvatarChangedCopyWithImpl(
+      _$_AvatarChanged _value, $Res Function(_$_AvatarChanged) _then)
+      : super(_value, (v) => _then(v as _$_AvatarChanged));
+
+  @override
+  _$_AvatarChanged get _value => super._value as _$_AvatarChanged;
+
+  @override
+  $Res call({
+    Object? avatar = freezed,
+  }) {
+    return _then(_$_AvatarChanged(
+      avatar == freezed
+          ? _value.avatar
+          : avatar // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_AvatarChanged implements _AvatarChanged {
+  const _$_AvatarChanged(this.avatar);
+
+  @override
+  final String avatar;
+
+  @override
+  String toString() {
+    return 'ProfileEvent.avatarChanged(avatar: $avatar)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_AvatarChanged &&
+            const DeepCollectionEquality().equals(other.avatar, avatar));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(avatar));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_AvatarChangedCopyWith<_$_AvatarChanged> get copyWith =>
+      __$$_AvatarChangedCopyWithImpl<_$_AvatarChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String email) emailChanged,
+    required TResult Function(String phone) phoneChanged,
+    required TResult Function(Gender gender) genderChanged,
+    required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
+    required TResult Function(UserType userType) userTypeChanged,
+    required TResult Function(num age, UserType userType) ageChanged,
+    required TResult Function(num height) heightChanged,
+    required TResult Function(num weight, UserType userType) weightChanged,
+    required TResult Function(String avatar) avatarChanged,
+    required TResult Function(bool value) editPressed,
+    required TResult Function() profileUpdated,
+  }) {
+    return avatarChanged(avatar);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String email)? emailChanged,
+    TResult Function(String phone)? phoneChanged,
+    TResult Function(Gender gender)? genderChanged,
+    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
+    TResult Function(UserType userType)? userTypeChanged,
+    TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(num height)? heightChanged,
+    TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(String avatar)? avatarChanged,
+    TResult Function(bool value)? editPressed,
+    TResult Function()? profileUpdated,
+  }) {
+    return avatarChanged?.call(avatar);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String email)? emailChanged,
+    TResult Function(String phone)? phoneChanged,
+    TResult Function(Gender gender)? genderChanged,
+    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
+    TResult Function(UserType userType)? userTypeChanged,
+    TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(num height)? heightChanged,
+    TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(String avatar)? avatarChanged,
+    TResult Function(bool value)? editPressed,
+    TResult Function()? profileUpdated,
+    required TResult orElse(),
+  }) {
+    if (avatarChanged != null) {
+      return avatarChanged(avatar);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_PhoneChanged value) phoneChanged,
+    required TResult Function(_GenderChanged value) genderChanged,
+    required TResult Function(_BloodGroupChanged value) bloodGroupChanged,
+    required TResult Function(_UserTypeChanged value) userTypeChanged,
+    required TResult Function(_AgeChanged value) ageChanged,
+    required TResult Function(_HeightChanged value) heightChanged,
+    required TResult Function(_WeightChanged value) weightChanged,
+    required TResult Function(_AvatarChanged value) avatarChanged,
+    required TResult Function(_ProfileEditPressed value) editPressed,
+    required TResult Function(_ProfileUpdated value) profileUpdated,
+  }) {
+    return avatarChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
+    TResult Function(_UserTypeChanged value)? userTypeChanged,
+    TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_HeightChanged value)? heightChanged,
+    TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
+    TResult Function(_ProfileEditPressed value)? editPressed,
+    TResult Function(_ProfileUpdated value)? profileUpdated,
+  }) {
+    return avatarChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
+    TResult Function(_UserTypeChanged value)? userTypeChanged,
+    TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_HeightChanged value)? heightChanged,
+    TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
+    TResult Function(_ProfileEditPressed value)? editPressed,
+    TResult Function(_ProfileUpdated value)? profileUpdated,
+    required TResult orElse(),
+  }) {
+    if (avatarChanged != null) {
+      return avatarChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AvatarChanged implements ProfileEvent {
+  const factory _AvatarChanged(final String avatar) = _$_AvatarChanged;
+
+  String get avatar => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_AvatarChangedCopyWith<_$_AvatarChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -2145,6 +2411,7 @@ class _$_ProfileEditPressed implements _ProfileEditPressed {
     required TResult Function(num age, UserType userType) ageChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
+    required TResult Function(String avatar) avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
   }) {
@@ -2164,6 +2431,7 @@ class _$_ProfileEditPressed implements _ProfileEditPressed {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(String avatar)? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
   }) {
@@ -2183,6 +2451,7 @@ class _$_ProfileEditPressed implements _ProfileEditPressed {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(String avatar)? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     required TResult orElse(),
@@ -2206,6 +2475,7 @@ class _$_ProfileEditPressed implements _ProfileEditPressed {
     required TResult Function(_AgeChanged value) ageChanged,
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
+    required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
   }) {
@@ -2225,6 +2495,7 @@ class _$_ProfileEditPressed implements _ProfileEditPressed {
     TResult Function(_AgeChanged value)? ageChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
   }) {
@@ -2244,6 +2515,7 @@ class _$_ProfileEditPressed implements _ProfileEditPressed {
     TResult Function(_AgeChanged value)? ageChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     required TResult orElse(),
@@ -2315,6 +2587,7 @@ class _$_ProfileUpdated implements _ProfileUpdated {
     required TResult Function(num age, UserType userType) ageChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
+    required TResult Function(String avatar) avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
   }) {
@@ -2334,6 +2607,7 @@ class _$_ProfileUpdated implements _ProfileUpdated {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(String avatar)? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
   }) {
@@ -2353,6 +2627,7 @@ class _$_ProfileUpdated implements _ProfileUpdated {
     TResult Function(num age, UserType userType)? ageChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(String avatar)? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     required TResult orElse(),
@@ -2376,6 +2651,7 @@ class _$_ProfileUpdated implements _ProfileUpdated {
     required TResult Function(_AgeChanged value) ageChanged,
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
+    required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
   }) {
@@ -2395,6 +2671,7 @@ class _$_ProfileUpdated implements _ProfileUpdated {
     TResult Function(_AgeChanged value)? ageChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
   }) {
@@ -2414,6 +2691,7 @@ class _$_ProfileUpdated implements _ProfileUpdated {
     TResult Function(_AgeChanged value)? ageChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     required TResult orElse(),
