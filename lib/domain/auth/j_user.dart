@@ -10,12 +10,12 @@ part 'j_user.freezed.dart';
 class JUser with _$JUser implements IEntity {
   const factory JUser({
     required Uid uid,
-    required IName name,
+    required IName? name,
     IGender? gender,
     IAge? age,
     IHeight? height,
     IWeight? weight,
-    required IEmailAddress email,
+    required IEmailAddress? email,
     IPhone? phone,
     String? city,
     String? avatar,
