@@ -64,13 +64,10 @@ class EditNameBottomSheet extends StatelessWidget {
     final bloc = BlocProvider.of<ProfileBloc>(context);
     final _editNameFormKey = GlobalKey<FormState>();
 
-    _handleSave() {
-      bloc.add(ProfileEvent.profileUpdated());
-      bloc.add(ProfileEvent.editPressed(false));
-    }
+    _handleSave() => bloc.add(ProfileEvent.profileUpdated());
 
     _validate(_) {
-      return bloc.state.user.name.value.fold(
+      return bloc.state.user.name?.value.fold(
         (f) => f.mapOrNull(empty: (_) => JErrorMessages.nameRequired),
         (_) => null,
       );
@@ -80,7 +77,7 @@ class EditNameBottomSheet extends StatelessWidget {
       bloc: bloc,
       listenWhen: (p, c) =>
           p.saveFailureOrSuccessOption != c.saveFailureOrSuccessOption ||
-          p.user.name.isValid() != p.user.name.isValid(),
+          p.user.name?.isValid() != p.user.name?.isValid(),
       listener: (context, state) {
         state.saveFailureOrSuccessOption.fold(
           () => null,
@@ -88,7 +85,7 @@ class EditNameBottomSheet extends StatelessWidget {
         );
       },
       buildWhen: (p, c) =>
-          p.user.name.isValid() == p.user.name.isValid() ||
+          p.user.name?.isValid() == p.user.name?.isValid() ||
           p.isSaving != c.isSaving,
       builder: (context, state) {
         final user = JUserDto.fromDomain(bloc.state.user);
@@ -107,7 +104,9 @@ class EditNameBottomSheet extends StatelessWidget {
               validator: _validate,
             ),
             loading: bloc.state.isSaving,
-            action: !bloc.state.user.name.isValid() || bloc.state.isSaving
+            action: bloc.state.user.name == null ||
+                    !bloc.state.user.name!.isValid() ||
+                    bloc.state.isSaving
                 ? null
                 : _handleSave,
           ),
@@ -126,10 +125,7 @@ class EditUserTypeBottomSheet extends StatelessWidget {
     final theme = Theme.of(context);
     final textTheme = theme.textTheme;
 
-    _handleSave() {
-      bloc.add(ProfileEvent.profileUpdated());
-      bloc.add(ProfileEvent.editPressed(false));
-    }
+    _handleSave() => bloc.add(ProfileEvent.profileUpdated());
 
     return BlocConsumer<ProfileBloc, ProfileState>(
       bloc: bloc,
@@ -181,10 +177,7 @@ class EditPhoneBottomSheet extends StatelessWidget {
     final _editPhoneFormKey = GlobalKey<FormState>();
     final bloc = BlocProvider.of<ProfileBloc>(context);
 
-    _handleSave() {
-      bloc.add(ProfileEvent.profileUpdated());
-      bloc.add(ProfileEvent.editPressed(false));
-    }
+    _handleSave() => bloc.add(ProfileEvent.profileUpdated());
 
     _validate(_) {
       return bloc.state.user.phone!.value.fold(
@@ -245,10 +238,7 @@ class EditGenderBottomSheet extends StatelessWidget {
     final theme = Theme.of(context);
     final textTheme = theme.textTheme;
 
-    _handleSave() {
-      bloc.add(ProfileEvent.profileUpdated());
-      bloc.add(ProfileEvent.editPressed(false));
-    }
+    _handleSave() => bloc.add(ProfileEvent.profileUpdated());
 
     return BlocConsumer<ProfileBloc, ProfileState>(
       bloc: bloc,
@@ -305,10 +295,7 @@ class EditAgeBottomSheet extends StatelessWidget {
             !bloc.state.user.age!.isValid() ||
             bloc.state.isSaving
         ? null
-        : () {
-            bloc.add(ProfileEvent.profileUpdated());
-            bloc.add(ProfileEvent.editPressed(false));
-          };
+        : () => bloc.add(ProfileEvent.profileUpdated());
 
     _validate(_) {
       return bloc.state.user.age?.value.fold(
@@ -369,10 +356,7 @@ class EditHeightBottomSheet extends StatelessWidget {
     final bloc = BlocProvider.of<ProfileBloc>(context);
     final user = JUserDto.fromDomain(bloc.state.user);
 
-    _handleSave() {
-      bloc.add(ProfileEvent.profileUpdated());
-      bloc.add(ProfileEvent.editPressed(false));
-    }
+    _handleSave() => bloc.add(ProfileEvent.profileUpdated());
 
     return BlocConsumer<ProfileBloc, ProfileState>(
       bloc: bloc,
@@ -419,10 +403,7 @@ class EditWeightBottomSheet extends StatelessWidget {
             !bloc.state.user.weight!.isValid() ||
             bloc.state.isSaving
         ? null
-        : () {
-            bloc.add(ProfileEvent.profileUpdated());
-            bloc.add(ProfileEvent.editPressed(false));
-          };
+        : () => bloc.add(ProfileEvent.profileUpdated());
 
     _validate(_) {
       return bloc.state.user.weight?.value.fold(
