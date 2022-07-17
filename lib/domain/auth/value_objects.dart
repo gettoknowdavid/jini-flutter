@@ -39,10 +39,10 @@ class IPassword extends ValueObject<String> {
   const IPassword._(this.value, {this.isSignIn = false});
 }
 
-class IAvatar extends ValueObject<XFile?> {
-  final Either<ValueFailure<XFile?>, XFile?> value;
+class IAvatar extends ValueObject<String?> {
+  final Either<ValueFailure<String?>, String?> value;
 
-  factory IAvatar(XFile? input) {
+  factory IAvatar(String? input) {
     return IAvatar._(validatePhoto(input));
   }
 
