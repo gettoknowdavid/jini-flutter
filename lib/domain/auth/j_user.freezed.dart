@@ -25,7 +25,7 @@ mixin _$JUser {
   IEmailAddress? get email => throw _privateConstructorUsedError;
   IPhone? get phone => throw _privateConstructorUsedError;
   String? get city => throw _privateConstructorUsedError;
-  String? get avatar => throw _privateConstructorUsedError;
+  IAvatar? get avatar => throw _privateConstructorUsedError;
   Geo? get location => throw _privateConstructorUsedError;
   IBloodGroup? get bloodGroup => throw _privateConstructorUsedError;
   IUserType? get userType => throw _privateConstructorUsedError;
@@ -51,7 +51,7 @@ abstract class $JUserCopyWith<$Res> {
       IEmailAddress? email,
       IPhone? phone,
       String? city,
-      String? avatar,
+      IAvatar? avatar,
       Geo? location,
       IBloodGroup? bloodGroup,
       IUserType? userType,
@@ -127,7 +127,7 @@ class _$JUserCopyWithImpl<$Res> implements $JUserCopyWith<$Res> {
       avatar: avatar == freezed
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as IAvatar?,
       location: location == freezed
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
@@ -171,7 +171,7 @@ abstract class _$$_JUserCopyWith<$Res> implements $JUserCopyWith<$Res> {
       IEmailAddress? email,
       IPhone? phone,
       String? city,
-      String? avatar,
+      IAvatar? avatar,
       Geo? location,
       IBloodGroup? bloodGroup,
       IUserType? userType,
@@ -248,7 +248,7 @@ class __$$_JUserCopyWithImpl<$Res> extends _$JUserCopyWithImpl<$Res>
       avatar: avatar == freezed
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as IAvatar?,
       location: location == freezed
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
@@ -317,7 +317,7 @@ class _$_JUser implements _JUser {
   @override
   final String? city;
   @override
-  final String? avatar;
+  final IAvatar? avatar;
   @override
   final Geo? location;
   @override
@@ -398,7 +398,7 @@ abstract class _JUser implements JUser {
       required final IEmailAddress? email,
       final IPhone? phone,
       final String? city,
-      final String? avatar,
+      final IAvatar? avatar,
       final Geo? location,
       final IBloodGroup? bloodGroup,
       final IUserType? userType,
@@ -425,7 +425,7 @@ abstract class _JUser implements JUser {
   @override
   String? get city => throw _privateConstructorUsedError;
   @override
-  String? get avatar => throw _privateConstructorUsedError;
+  IAvatar? get avatar => throw _privateConstructorUsedError;
   @override
   Geo? get location => throw _privateConstructorUsedError;
   @override
