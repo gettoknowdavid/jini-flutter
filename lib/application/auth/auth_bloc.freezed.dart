@@ -1086,6 +1086,8 @@ mixin _$AuthState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() notLoading,
     required TResult Function() authenticated,
     required TResult Function() unauthenticated,
     required TResult Function() verified,
@@ -1100,6 +1102,8 @@ mixin _$AuthState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? notLoading,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     TResult Function()? verified,
@@ -1114,6 +1118,8 @@ mixin _$AuthState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? notLoading,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     TResult Function()? verified,
@@ -1129,6 +1135,8 @@ mixin _$AuthState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
+    required TResult Function(AuthLoading value) loading,
+    required TResult Function(AuthNotLoading value) notLoading,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(Unauthenticated value) unauthenticated,
     required TResult Function(Verified value) verified,
@@ -1144,6 +1152,8 @@ mixin _$AuthState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Initial value)? initial,
+    TResult Function(AuthLoading value)? loading,
+    TResult Function(AuthNotLoading value)? notLoading,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Verified value)? verified,
@@ -1158,6 +1168,8 @@ mixin _$AuthState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
+    TResult Function(AuthLoading value)? loading,
+    TResult Function(AuthNotLoading value)? notLoading,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Verified value)? verified,
@@ -1226,6 +1238,8 @@ class _$Initial implements Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() notLoading,
     required TResult Function() authenticated,
     required TResult Function() unauthenticated,
     required TResult Function() verified,
@@ -1243,6 +1257,8 @@ class _$Initial implements Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? notLoading,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     TResult Function()? verified,
@@ -1260,6 +1276,8 @@ class _$Initial implements Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? notLoading,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     TResult Function()? verified,
@@ -1281,6 +1299,8 @@ class _$Initial implements Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
+    required TResult Function(AuthLoading value) loading,
+    required TResult Function(AuthNotLoading value) notLoading,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(Unauthenticated value) unauthenticated,
     required TResult Function(Verified value) verified,
@@ -1299,6 +1319,8 @@ class _$Initial implements Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Initial value)? initial,
+    TResult Function(AuthLoading value)? loading,
+    TResult Function(AuthNotLoading value)? notLoading,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Verified value)? verified,
@@ -1316,6 +1338,8 @@ class _$Initial implements Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
+    TResult Function(AuthLoading value)? loading,
+    TResult Function(AuthNotLoading value)? notLoading,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Verified value)? verified,
@@ -1336,6 +1360,336 @@ class _$Initial implements Initial {
 
 abstract class Initial implements AuthState {
   const factory Initial() = _$Initial;
+}
+
+/// @nodoc
+abstract class _$$AuthLoadingCopyWith<$Res> {
+  factory _$$AuthLoadingCopyWith(
+          _$AuthLoading value, $Res Function(_$AuthLoading) then) =
+      __$$AuthLoadingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AuthLoadingCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
+    implements _$$AuthLoadingCopyWith<$Res> {
+  __$$AuthLoadingCopyWithImpl(
+      _$AuthLoading _value, $Res Function(_$AuthLoading) _then)
+      : super(_value, (v) => _then(v as _$AuthLoading));
+
+  @override
+  _$AuthLoading get _value => super._value as _$AuthLoading;
+}
+
+/// @nodoc
+
+class _$AuthLoading implements AuthLoading {
+  const _$AuthLoading();
+
+  @override
+  String toString() {
+    return 'AuthState.loading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$AuthLoading);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() notLoading,
+    required TResult Function() authenticated,
+    required TResult Function() unauthenticated,
+    required TResult Function() verified,
+    required TResult Function() unverified,
+    required TResult Function() awaitingVerified,
+    required TResult Function() donorFormCompleted,
+    required TResult Function() donorFormNotCompleted,
+    required TResult Function() profileCompleted,
+    required TResult Function() profileNotCompleted,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? notLoading,
+    TResult Function()? authenticated,
+    TResult Function()? unauthenticated,
+    TResult Function()? verified,
+    TResult Function()? unverified,
+    TResult Function()? awaitingVerified,
+    TResult Function()? donorFormCompleted,
+    TResult Function()? donorFormNotCompleted,
+    TResult Function()? profileCompleted,
+    TResult Function()? profileNotCompleted,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? notLoading,
+    TResult Function()? authenticated,
+    TResult Function()? unauthenticated,
+    TResult Function()? verified,
+    TResult Function()? unverified,
+    TResult Function()? awaitingVerified,
+    TResult Function()? donorFormCompleted,
+    TResult Function()? donorFormNotCompleted,
+    TResult Function()? profileCompleted,
+    TResult Function()? profileNotCompleted,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(AuthLoading value) loading,
+    required TResult Function(AuthNotLoading value) notLoading,
+    required TResult Function(Authenticated value) authenticated,
+    required TResult Function(Unauthenticated value) unauthenticated,
+    required TResult Function(Verified value) verified,
+    required TResult Function(Unverified value) unverified,
+    required TResult Function(AwaitingVerified value) awaitingVerified,
+    required TResult Function(DonorFormCompleted value) donorFormCompleted,
+    required TResult Function(DonorFormNotCompleted value)
+        donorFormNotCompleted,
+    required TResult Function(ProfileCompleted value) profileCompleted,
+    required TResult Function(ProfileNotCompleted value) profileNotCompleted,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(AuthLoading value)? loading,
+    TResult Function(AuthNotLoading value)? notLoading,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(Verified value)? verified,
+    TResult Function(Unverified value)? unverified,
+    TResult Function(AwaitingVerified value)? awaitingVerified,
+    TResult Function(DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(DonorFormNotCompleted value)? donorFormNotCompleted,
+    TResult Function(ProfileCompleted value)? profileCompleted,
+    TResult Function(ProfileNotCompleted value)? profileNotCompleted,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(AuthLoading value)? loading,
+    TResult Function(AuthNotLoading value)? notLoading,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(Verified value)? verified,
+    TResult Function(Unverified value)? unverified,
+    TResult Function(AwaitingVerified value)? awaitingVerified,
+    TResult Function(DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(DonorFormNotCompleted value)? donorFormNotCompleted,
+    TResult Function(ProfileCompleted value)? profileCompleted,
+    TResult Function(ProfileNotCompleted value)? profileNotCompleted,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AuthLoading implements AuthState {
+  const factory AuthLoading() = _$AuthLoading;
+}
+
+/// @nodoc
+abstract class _$$AuthNotLoadingCopyWith<$Res> {
+  factory _$$AuthNotLoadingCopyWith(
+          _$AuthNotLoading value, $Res Function(_$AuthNotLoading) then) =
+      __$$AuthNotLoadingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AuthNotLoadingCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
+    implements _$$AuthNotLoadingCopyWith<$Res> {
+  __$$AuthNotLoadingCopyWithImpl(
+      _$AuthNotLoading _value, $Res Function(_$AuthNotLoading) _then)
+      : super(_value, (v) => _then(v as _$AuthNotLoading));
+
+  @override
+  _$AuthNotLoading get _value => super._value as _$AuthNotLoading;
+}
+
+/// @nodoc
+
+class _$AuthNotLoading implements AuthNotLoading {
+  const _$AuthNotLoading();
+
+  @override
+  String toString() {
+    return 'AuthState.notLoading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$AuthNotLoading);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() notLoading,
+    required TResult Function() authenticated,
+    required TResult Function() unauthenticated,
+    required TResult Function() verified,
+    required TResult Function() unverified,
+    required TResult Function() awaitingVerified,
+    required TResult Function() donorFormCompleted,
+    required TResult Function() donorFormNotCompleted,
+    required TResult Function() profileCompleted,
+    required TResult Function() profileNotCompleted,
+  }) {
+    return notLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? notLoading,
+    TResult Function()? authenticated,
+    TResult Function()? unauthenticated,
+    TResult Function()? verified,
+    TResult Function()? unverified,
+    TResult Function()? awaitingVerified,
+    TResult Function()? donorFormCompleted,
+    TResult Function()? donorFormNotCompleted,
+    TResult Function()? profileCompleted,
+    TResult Function()? profileNotCompleted,
+  }) {
+    return notLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? notLoading,
+    TResult Function()? authenticated,
+    TResult Function()? unauthenticated,
+    TResult Function()? verified,
+    TResult Function()? unverified,
+    TResult Function()? awaitingVerified,
+    TResult Function()? donorFormCompleted,
+    TResult Function()? donorFormNotCompleted,
+    TResult Function()? profileCompleted,
+    TResult Function()? profileNotCompleted,
+    required TResult orElse(),
+  }) {
+    if (notLoading != null) {
+      return notLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(AuthLoading value) loading,
+    required TResult Function(AuthNotLoading value) notLoading,
+    required TResult Function(Authenticated value) authenticated,
+    required TResult Function(Unauthenticated value) unauthenticated,
+    required TResult Function(Verified value) verified,
+    required TResult Function(Unverified value) unverified,
+    required TResult Function(AwaitingVerified value) awaitingVerified,
+    required TResult Function(DonorFormCompleted value) donorFormCompleted,
+    required TResult Function(DonorFormNotCompleted value)
+        donorFormNotCompleted,
+    required TResult Function(ProfileCompleted value) profileCompleted,
+    required TResult Function(ProfileNotCompleted value) profileNotCompleted,
+  }) {
+    return notLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(AuthLoading value)? loading,
+    TResult Function(AuthNotLoading value)? notLoading,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(Verified value)? verified,
+    TResult Function(Unverified value)? unverified,
+    TResult Function(AwaitingVerified value)? awaitingVerified,
+    TResult Function(DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(DonorFormNotCompleted value)? donorFormNotCompleted,
+    TResult Function(ProfileCompleted value)? profileCompleted,
+    TResult Function(ProfileNotCompleted value)? profileNotCompleted,
+  }) {
+    return notLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(AuthLoading value)? loading,
+    TResult Function(AuthNotLoading value)? notLoading,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(Verified value)? verified,
+    TResult Function(Unverified value)? unverified,
+    TResult Function(AwaitingVerified value)? awaitingVerified,
+    TResult Function(DonorFormCompleted value)? donorFormCompleted,
+    TResult Function(DonorFormNotCompleted value)? donorFormNotCompleted,
+    TResult Function(ProfileCompleted value)? profileCompleted,
+    TResult Function(ProfileNotCompleted value)? profileNotCompleted,
+    required TResult orElse(),
+  }) {
+    if (notLoading != null) {
+      return notLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AuthNotLoading implements AuthState {
+  const factory AuthNotLoading() = _$AuthNotLoading;
 }
 
 /// @nodoc
@@ -1379,6 +1733,8 @@ class _$Authenticated implements Authenticated {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() notLoading,
     required TResult Function() authenticated,
     required TResult Function() unauthenticated,
     required TResult Function() verified,
@@ -1396,6 +1752,8 @@ class _$Authenticated implements Authenticated {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? notLoading,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     TResult Function()? verified,
@@ -1413,6 +1771,8 @@ class _$Authenticated implements Authenticated {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? notLoading,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     TResult Function()? verified,
@@ -1434,6 +1794,8 @@ class _$Authenticated implements Authenticated {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
+    required TResult Function(AuthLoading value) loading,
+    required TResult Function(AuthNotLoading value) notLoading,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(Unauthenticated value) unauthenticated,
     required TResult Function(Verified value) verified,
@@ -1452,6 +1814,8 @@ class _$Authenticated implements Authenticated {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Initial value)? initial,
+    TResult Function(AuthLoading value)? loading,
+    TResult Function(AuthNotLoading value)? notLoading,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Verified value)? verified,
@@ -1469,6 +1833,8 @@ class _$Authenticated implements Authenticated {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
+    TResult Function(AuthLoading value)? loading,
+    TResult Function(AuthNotLoading value)? notLoading,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Verified value)? verified,
@@ -1533,6 +1899,8 @@ class _$Unauthenticated implements Unauthenticated {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() notLoading,
     required TResult Function() authenticated,
     required TResult Function() unauthenticated,
     required TResult Function() verified,
@@ -1550,6 +1918,8 @@ class _$Unauthenticated implements Unauthenticated {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? notLoading,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     TResult Function()? verified,
@@ -1567,6 +1937,8 @@ class _$Unauthenticated implements Unauthenticated {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? notLoading,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     TResult Function()? verified,
@@ -1588,6 +1960,8 @@ class _$Unauthenticated implements Unauthenticated {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
+    required TResult Function(AuthLoading value) loading,
+    required TResult Function(AuthNotLoading value) notLoading,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(Unauthenticated value) unauthenticated,
     required TResult Function(Verified value) verified,
@@ -1606,6 +1980,8 @@ class _$Unauthenticated implements Unauthenticated {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Initial value)? initial,
+    TResult Function(AuthLoading value)? loading,
+    TResult Function(AuthNotLoading value)? notLoading,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Verified value)? verified,
@@ -1623,6 +1999,8 @@ class _$Unauthenticated implements Unauthenticated {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
+    TResult Function(AuthLoading value)? loading,
+    TResult Function(AuthNotLoading value)? notLoading,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Verified value)? verified,
@@ -1685,6 +2063,8 @@ class _$Verified implements Verified {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() notLoading,
     required TResult Function() authenticated,
     required TResult Function() unauthenticated,
     required TResult Function() verified,
@@ -1702,6 +2082,8 @@ class _$Verified implements Verified {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? notLoading,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     TResult Function()? verified,
@@ -1719,6 +2101,8 @@ class _$Verified implements Verified {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? notLoading,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     TResult Function()? verified,
@@ -1740,6 +2124,8 @@ class _$Verified implements Verified {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
+    required TResult Function(AuthLoading value) loading,
+    required TResult Function(AuthNotLoading value) notLoading,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(Unauthenticated value) unauthenticated,
     required TResult Function(Verified value) verified,
@@ -1758,6 +2144,8 @@ class _$Verified implements Verified {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Initial value)? initial,
+    TResult Function(AuthLoading value)? loading,
+    TResult Function(AuthNotLoading value)? notLoading,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Verified value)? verified,
@@ -1775,6 +2163,8 @@ class _$Verified implements Verified {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
+    TResult Function(AuthLoading value)? loading,
+    TResult Function(AuthNotLoading value)? notLoading,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Verified value)? verified,
@@ -1838,6 +2228,8 @@ class _$Unverified implements Unverified {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() notLoading,
     required TResult Function() authenticated,
     required TResult Function() unauthenticated,
     required TResult Function() verified,
@@ -1855,6 +2247,8 @@ class _$Unverified implements Unverified {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? notLoading,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     TResult Function()? verified,
@@ -1872,6 +2266,8 @@ class _$Unverified implements Unverified {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? notLoading,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     TResult Function()? verified,
@@ -1893,6 +2289,8 @@ class _$Unverified implements Unverified {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
+    required TResult Function(AuthLoading value) loading,
+    required TResult Function(AuthNotLoading value) notLoading,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(Unauthenticated value) unauthenticated,
     required TResult Function(Verified value) verified,
@@ -1911,6 +2309,8 @@ class _$Unverified implements Unverified {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Initial value)? initial,
+    TResult Function(AuthLoading value)? loading,
+    TResult Function(AuthNotLoading value)? notLoading,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Verified value)? verified,
@@ -1928,6 +2328,8 @@ class _$Unverified implements Unverified {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
+    TResult Function(AuthLoading value)? loading,
+    TResult Function(AuthNotLoading value)? notLoading,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Verified value)? verified,
@@ -1992,6 +2394,8 @@ class _$AwaitingVerified implements AwaitingVerified {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() notLoading,
     required TResult Function() authenticated,
     required TResult Function() unauthenticated,
     required TResult Function() verified,
@@ -2009,6 +2413,8 @@ class _$AwaitingVerified implements AwaitingVerified {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? notLoading,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     TResult Function()? verified,
@@ -2026,6 +2432,8 @@ class _$AwaitingVerified implements AwaitingVerified {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? notLoading,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     TResult Function()? verified,
@@ -2047,6 +2455,8 @@ class _$AwaitingVerified implements AwaitingVerified {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
+    required TResult Function(AuthLoading value) loading,
+    required TResult Function(AuthNotLoading value) notLoading,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(Unauthenticated value) unauthenticated,
     required TResult Function(Verified value) verified,
@@ -2065,6 +2475,8 @@ class _$AwaitingVerified implements AwaitingVerified {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Initial value)? initial,
+    TResult Function(AuthLoading value)? loading,
+    TResult Function(AuthNotLoading value)? notLoading,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Verified value)? verified,
@@ -2082,6 +2494,8 @@ class _$AwaitingVerified implements AwaitingVerified {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
+    TResult Function(AuthLoading value)? loading,
+    TResult Function(AuthNotLoading value)? notLoading,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Verified value)? verified,
@@ -2146,6 +2560,8 @@ class _$DonorFormCompleted implements DonorFormCompleted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() notLoading,
     required TResult Function() authenticated,
     required TResult Function() unauthenticated,
     required TResult Function() verified,
@@ -2163,6 +2579,8 @@ class _$DonorFormCompleted implements DonorFormCompleted {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? notLoading,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     TResult Function()? verified,
@@ -2180,6 +2598,8 @@ class _$DonorFormCompleted implements DonorFormCompleted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? notLoading,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     TResult Function()? verified,
@@ -2201,6 +2621,8 @@ class _$DonorFormCompleted implements DonorFormCompleted {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
+    required TResult Function(AuthLoading value) loading,
+    required TResult Function(AuthNotLoading value) notLoading,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(Unauthenticated value) unauthenticated,
     required TResult Function(Verified value) verified,
@@ -2219,6 +2641,8 @@ class _$DonorFormCompleted implements DonorFormCompleted {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Initial value)? initial,
+    TResult Function(AuthLoading value)? loading,
+    TResult Function(AuthNotLoading value)? notLoading,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Verified value)? verified,
@@ -2236,6 +2660,8 @@ class _$DonorFormCompleted implements DonorFormCompleted {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
+    TResult Function(AuthLoading value)? loading,
+    TResult Function(AuthNotLoading value)? notLoading,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Verified value)? verified,
@@ -2300,6 +2726,8 @@ class _$DonorFormNotCompleted implements DonorFormNotCompleted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() notLoading,
     required TResult Function() authenticated,
     required TResult Function() unauthenticated,
     required TResult Function() verified,
@@ -2317,6 +2745,8 @@ class _$DonorFormNotCompleted implements DonorFormNotCompleted {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? notLoading,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     TResult Function()? verified,
@@ -2334,6 +2764,8 @@ class _$DonorFormNotCompleted implements DonorFormNotCompleted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? notLoading,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     TResult Function()? verified,
@@ -2355,6 +2787,8 @@ class _$DonorFormNotCompleted implements DonorFormNotCompleted {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
+    required TResult Function(AuthLoading value) loading,
+    required TResult Function(AuthNotLoading value) notLoading,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(Unauthenticated value) unauthenticated,
     required TResult Function(Verified value) verified,
@@ -2373,6 +2807,8 @@ class _$DonorFormNotCompleted implements DonorFormNotCompleted {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Initial value)? initial,
+    TResult Function(AuthLoading value)? loading,
+    TResult Function(AuthNotLoading value)? notLoading,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Verified value)? verified,
@@ -2390,6 +2826,8 @@ class _$DonorFormNotCompleted implements DonorFormNotCompleted {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
+    TResult Function(AuthLoading value)? loading,
+    TResult Function(AuthNotLoading value)? notLoading,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Verified value)? verified,
@@ -2454,6 +2892,8 @@ class _$ProfileCompleted implements ProfileCompleted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() notLoading,
     required TResult Function() authenticated,
     required TResult Function() unauthenticated,
     required TResult Function() verified,
@@ -2471,6 +2911,8 @@ class _$ProfileCompleted implements ProfileCompleted {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? notLoading,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     TResult Function()? verified,
@@ -2488,6 +2930,8 @@ class _$ProfileCompleted implements ProfileCompleted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? notLoading,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     TResult Function()? verified,
@@ -2509,6 +2953,8 @@ class _$ProfileCompleted implements ProfileCompleted {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
+    required TResult Function(AuthLoading value) loading,
+    required TResult Function(AuthNotLoading value) notLoading,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(Unauthenticated value) unauthenticated,
     required TResult Function(Verified value) verified,
@@ -2527,6 +2973,8 @@ class _$ProfileCompleted implements ProfileCompleted {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Initial value)? initial,
+    TResult Function(AuthLoading value)? loading,
+    TResult Function(AuthNotLoading value)? notLoading,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Verified value)? verified,
@@ -2544,6 +2992,8 @@ class _$ProfileCompleted implements ProfileCompleted {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
+    TResult Function(AuthLoading value)? loading,
+    TResult Function(AuthNotLoading value)? notLoading,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Verified value)? verified,
@@ -2608,6 +3058,8 @@ class _$ProfileNotCompleted implements ProfileNotCompleted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() notLoading,
     required TResult Function() authenticated,
     required TResult Function() unauthenticated,
     required TResult Function() verified,
@@ -2625,6 +3077,8 @@ class _$ProfileNotCompleted implements ProfileNotCompleted {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? notLoading,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     TResult Function()? verified,
@@ -2642,6 +3096,8 @@ class _$ProfileNotCompleted implements ProfileNotCompleted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? notLoading,
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     TResult Function()? verified,
@@ -2663,6 +3119,8 @@ class _$ProfileNotCompleted implements ProfileNotCompleted {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
+    required TResult Function(AuthLoading value) loading,
+    required TResult Function(AuthNotLoading value) notLoading,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(Unauthenticated value) unauthenticated,
     required TResult Function(Verified value) verified,
@@ -2681,6 +3139,8 @@ class _$ProfileNotCompleted implements ProfileNotCompleted {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Initial value)? initial,
+    TResult Function(AuthLoading value)? loading,
+    TResult Function(AuthNotLoading value)? notLoading,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Verified value)? verified,
@@ -2698,6 +3158,8 @@ class _$ProfileNotCompleted implements ProfileNotCompleted {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
+    TResult Function(AuthLoading value)? loading,
+    TResult Function(AuthNotLoading value)? notLoading,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Verified value)? verified,
