@@ -141,11 +141,12 @@ class EditBloodGroupBottomSheet extends StatelessWidget {
                 ),
                 itemBuilder: (context, i) {
                   final _bloodGroup = BloodGroup.values[i];
-                  final _currentBG = bloc.state.user.bloodGroup!.getOrCrash();
-                  final _isSelected = _bloodGroup == _currentBG;
+                  final _currentBG = bloc.state.user.bloodGroup;
 
                   return _BloodGroupItem(
-                    isSelected: _isSelected,
+                    isSelected: _currentBG == null
+                        ? false
+                        : _bloodGroup == _currentBG.getOrCrash(),
                     bloodGroup: _bloodGroup,
                     onSelect: () {
                       bloc.add(ProfileEvent.bloodGroupChanged(_bloodGroup));
