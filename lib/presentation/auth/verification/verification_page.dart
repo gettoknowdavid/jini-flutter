@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:jini/application/auth/auth_bloc.dart';
-import 'package:jini/application/profile/profile_bloc.dart';
 import 'package:jini/di/injection.dart';
 import 'package:jini/presentation/core/common/image_resources.dart';
 import 'package:jini/presentation/core/common/j_page.dart';
@@ -26,7 +25,6 @@ class _VerificationPageState extends State<VerificationPage> {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     final bloc = BlocProvider.of<AuthBloc>(context);
-    final profileBloc = BlocProvider.of<ProfileBloc>(context);
 
     return BlocConsumer<AuthBloc, AuthState>(
       bloc: bloc,
@@ -35,8 +33,7 @@ class _VerificationPageState extends State<VerificationPage> {
           orElse: () => null,
           verified: (_) {
             timer?.cancel();
-            profileBloc.add(const ProfileEvent.editPressed(true));
-            Get.offNamed(JRoutes.profilePage);
+            Get.offNamed(JRoutes.profileFormPage);
           },
           unauthenticated: (_) {
             timer = Timer.periodic(const Duration(seconds: 3), (_) {
@@ -47,10 +44,6 @@ class _VerificationPageState extends State<VerificationPage> {
             timer = Timer.periodic(const Duration(seconds: 3), (_) {
               bloc.add(const AuthEvent.authCheckVerified());
             });
-          },
-          profileNotCompleted: (_) {
-            timer?.cancel();
-            Get.offNamed(JRoutes.profilePage);
           },
         );
       },
