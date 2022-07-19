@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jini/application/auth/auth_bloc.dart';
 import 'package:jini/application/profile/profile_bloc.dart';
 
-
 class ProfileMenu extends StatelessWidget {
   const ProfileMenu({Key? key}) : super(key: key);
 
@@ -31,6 +30,7 @@ class ProfileMenu extends StatelessWidget {
             switch (value) {
               case 0:
                 bloc.add(ProfileEvent.editPressed(!isEditing));
+                bloc.add(ProfileEvent.profileUpdated());
                 break;
               case 1:
                 authBloc.add(const AuthEvent.authSignedOut());
