@@ -6,7 +6,6 @@ import 'package:jini/presentation/core/common/image_resources.dart';
 import 'package:jini/presentation/core/widgets/j_background.dart';
 import 'package:jini/presentation/core/routes/j_router.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jini/presentation/core/widgets/j_dialogs.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -14,13 +13,13 @@ class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocListener<AuthBloc, AuthState>(
+      listenWhen: (p, c) => p != c,
       listener: (context, state) {
-        Future.delayed(const Duration(seconds: 5)).then((_) {
+        Future.delayed(const Duration(seconds: 5), () {
           state.mapOrNull(
             profileNotCompleted: (_) =>
-                Get.dialog(JDialogs.editProfile, barrierDismissible: false),
+                Get.offAllNamed(JRoutes.profileFormPage),
             authenticated: (_) => Get.offAllNamed(JRoutes.layout),
-            verified: (_) => Get.offAllNamed(JRoutes.layout),
             unauthenticated: (_) => Get.offAllNamed(JRoutes.signIn),
             unverified: (_) => Get.offAllNamed(JRoutes.verification),
           );
