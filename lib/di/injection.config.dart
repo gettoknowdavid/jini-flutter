@@ -65,8 +65,10 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       get<_i10.IMailFacade>(), get<_i15.SharedPreferences>()));
   gh.factory<_i19.ForgotPasswordBloc>(
       () => _i19.ForgotPasswordBloc(get<_i8.IAuthFacade>()));
-  gh.lazySingleton<_i20.IMediaFacade>(
-      () => _i21.MediaFacade(get<_i12.ImagePicker>()));
+  gh.lazySingleton<_i20.IMediaFacade>(() => _i21.MediaFacade(
+      get<_i4.FirebaseAuth>(),
+      get<_i6.FirebaseStorage>(),
+      get<_i12.ImagePicker>()));
   gh.lazySingleton<_i22.ISettingsFacade>(() => _i23.SettingsFacade(
       get<_i15.SharedPreferences>(), get<_i14.SettingsMapper>()));
   gh.factory<_i24.ProfileBloc>(
