@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cloud_firestore_odm/cloud_firestore_odm.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:jini/domain/auth/j_user.dart';
 import 'package:jini/domain/core/blood_group.dart';
 import 'package:jini/domain/core/gender.dart';
@@ -46,7 +45,7 @@ class JUserDto with _$JUserDto {
       email: jUser.email != null ? jUser.email!.getOrCrash() : null,
       phone: jUser.phone != null ? jUser.phone!.getOrCrash() : null,
       city: jUser.city,
-      avatar: jUser.avatar != null ? jUser.avatar!.getOrCrash() : null,
+      avatar: jUser.avatar != null ? jUser.avatar! : null,
       location: jUser.location,
       bloodGroup:
           jUser.bloodGroup != null ? jUser.bloodGroup!.getOrCrash() : null,
