@@ -61,8 +61,8 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       preResolve: true);
   gh.factory<_i16.SignInBloc>(() => _i16.SignInBloc(get<_i8.IAuthFacade>()));
   gh.factory<_i17.SignUpBloc>(() => _i17.SignUpBloc(get<_i8.IAuthFacade>()));
-  gh.factory<_i18.AuthBloc>(() => _i18.AuthBloc(get<_i8.IAuthFacade>(),
-      get<_i10.IMailFacade>(), get<_i15.SharedPreferences>()));
+  gh.factory<_i18.AuthBloc>(
+      () => _i18.AuthBloc(get<_i8.IAuthFacade>(), get<_i10.IMailFacade>()));
   gh.factory<_i19.ForgotPasswordBloc>(
       () => _i19.ForgotPasswordBloc(get<_i8.IAuthFacade>()));
   gh.lazySingleton<_i20.IMediaFacade>(() => _i21.MediaFacade(
