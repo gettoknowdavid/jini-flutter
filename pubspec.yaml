@@ -96,6 +96,7 @@ flutter:
     - assets/google_fonts/
     - assets/images/logo.png
     - assets/images/background.png
+    - assets/images/pattern.png
     - assets/images/splash-background.png
     - assets/images/splash-background-1.png
     - assets/images/blood-donation.png
