@@ -2682,6 +2682,7 @@ abstract class _ProfileUpdated implements ProfileEvent {
 mixin _$ProfileState {
   JUser get user => throw _privateConstructorUsedError;
   File? get avatarFile => throw _privateConstructorUsedError;
+  bool get loading => throw _privateConstructorUsedError;
   bool get isEditing => throw _privateConstructorUsedError;
   bool get isSaving => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
@@ -2701,6 +2702,7 @@ abstract class $ProfileStateCopyWith<$Res> {
   $Res call(
       {JUser user,
       File? avatarFile,
+      bool loading,
       bool isEditing,
       bool isSaving,
       bool showErrorMessages,
@@ -2721,6 +2723,7 @@ class _$ProfileStateCopyWithImpl<$Res> implements $ProfileStateCopyWith<$Res> {
   $Res call({
     Object? user = freezed,
     Object? avatarFile = freezed,
+    Object? loading = freezed,
     Object? isEditing = freezed,
     Object? isSaving = freezed,
     Object? showErrorMessages = freezed,
@@ -2735,6 +2738,10 @@ class _$ProfileStateCopyWithImpl<$Res> implements $ProfileStateCopyWith<$Res> {
           ? _value.avatarFile
           : avatarFile // ignore: cast_nullable_to_non_nullable
               as File?,
+      loading: loading == freezed
+          ? _value.loading
+          : loading // ignore: cast_nullable_to_non_nullable
+              as bool,
       isEditing: isEditing == freezed
           ? _value.isEditing
           : isEditing // ignore: cast_nullable_to_non_nullable
@@ -2772,6 +2779,7 @@ abstract class _$$_ProfileStateCopyWith<$Res>
   $Res call(
       {JUser user,
       File? avatarFile,
+      bool loading,
       bool isEditing,
       bool isSaving,
       bool showErrorMessages,
@@ -2796,6 +2804,7 @@ class __$$_ProfileStateCopyWithImpl<$Res>
   $Res call({
     Object? user = freezed,
     Object? avatarFile = freezed,
+    Object? loading = freezed,
     Object? isEditing = freezed,
     Object? isSaving = freezed,
     Object? showErrorMessages = freezed,
@@ -2810,6 +2819,10 @@ class __$$_ProfileStateCopyWithImpl<$Res>
           ? _value.avatarFile
           : avatarFile // ignore: cast_nullable_to_non_nullable
               as File?,
+      loading: loading == freezed
+          ? _value.loading
+          : loading // ignore: cast_nullable_to_non_nullable
+              as bool,
       isEditing: isEditing == freezed
           ? _value.isEditing
           : isEditing // ignore: cast_nullable_to_non_nullable
@@ -2836,6 +2849,7 @@ class _$_ProfileState implements _ProfileState {
   const _$_ProfileState(
       {required this.user,
       required this.avatarFile,
+      required this.loading,
       required this.isEditing,
       required this.isSaving,
       required this.showErrorMessages,
@@ -2845,6 +2859,8 @@ class _$_ProfileState implements _ProfileState {
   final JUser user;
   @override
   final File? avatarFile;
+  @override
+  final bool loading;
   @override
   final bool isEditing;
   @override
@@ -2856,7 +2872,7 @@ class _$_ProfileState implements _ProfileState {
 
   @override
   String toString() {
-    return 'ProfileState(user: $user, avatarFile: $avatarFile, isEditing: $isEditing, isSaving: $isSaving, showErrorMessages: $showErrorMessages, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
+    return 'ProfileState(user: $user, avatarFile: $avatarFile, loading: $loading, isEditing: $isEditing, isSaving: $isSaving, showErrorMessages: $showErrorMessages, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
   }
 
   @override
@@ -2867,6 +2883,7 @@ class _$_ProfileState implements _ProfileState {
             const DeepCollectionEquality().equals(other.user, user) &&
             const DeepCollectionEquality()
                 .equals(other.avatarFile, avatarFile) &&
+            const DeepCollectionEquality().equals(other.loading, loading) &&
             const DeepCollectionEquality().equals(other.isEditing, isEditing) &&
             const DeepCollectionEquality().equals(other.isSaving, isSaving) &&
             const DeepCollectionEquality()
@@ -2880,6 +2897,7 @@ class _$_ProfileState implements _ProfileState {
       runtimeType,
       const DeepCollectionEquality().hash(user),
       const DeepCollectionEquality().hash(avatarFile),
+      const DeepCollectionEquality().hash(loading),
       const DeepCollectionEquality().hash(isEditing),
       const DeepCollectionEquality().hash(isSaving),
       const DeepCollectionEquality().hash(showErrorMessages),
@@ -2895,6 +2913,7 @@ abstract class _ProfileState implements ProfileState {
   const factory _ProfileState(
       {required final JUser user,
       required final File? avatarFile,
+      required final bool loading,
       required final bool isEditing,
       required final bool isSaving,
       required final bool showErrorMessages,
@@ -2905,6 +2924,8 @@ abstract class _ProfileState implements ProfileState {
   JUser get user => throw _privateConstructorUsedError;
   @override
   File? get avatarFile => throw _privateConstructorUsedError;
+  @override
+  bool get loading => throw _privateConstructorUsedError;
   @override
   bool get isEditing => throw _privateConstructorUsedError;
   @override
