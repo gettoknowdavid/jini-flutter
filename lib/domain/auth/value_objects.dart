@@ -39,15 +39,15 @@ class IPassword extends ValueObject<String> {
   const IPassword._(this.value, {this.isSignIn = false});
 }
 
-class IAvatar extends ValueObject<String?> {
-  final Either<ValueFailure<String?>, String?> value;
+// class IAvatar extends ValueObject<String?> {
+//   final Either<ValueFailure<String?>, String?> value;
 
-  factory IAvatar(String? input) {
-    return IAvatar._(validatePhoto(input));
-  }
+//   factory IAvatar(String? input) {
+//     return IAvatar._(right(input));
+//   }
 
-  const IAvatar._(this.value);
-}
+//   const IAvatar._(this.value);
+// }
 
 class IName extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
