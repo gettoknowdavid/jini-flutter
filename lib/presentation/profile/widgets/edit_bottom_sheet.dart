@@ -190,7 +190,9 @@ class EditPhoneBottomSheet extends StatelessWidget {
       bloc: bloc,
       listenWhen: (p, c) =>
           p.saveFailureOrSuccessOption != c.saveFailureOrSuccessOption ||
-          p.user.phone!.isValid() != p.user.phone!.isValid(),
+          p.user.phone != null ||
+          c.user.phone != null ||
+          p.user.phone!.isValid() != c.user.phone!.isValid(),
       listener: (context, state) {
         state.saveFailureOrSuccessOption.fold(
           () => null,
@@ -198,10 +200,14 @@ class EditPhoneBottomSheet extends StatelessWidget {
         );
       },
       buildWhen: (p, c) =>
+          p.user.phone != null ||
+          c.user.phone != null ||
           p.user.phone!.isValid() == p.user.phone!.isValid() ||
           p.isSaving != c.isSaving,
       builder: (context, state) {
-        final user = JUserDto.fromDomain(bloc.state.user);
+        final isSaving = bloc.state.isSaving;
+        final _user = bloc.state.user;
+        final user = JUserDto.fromDomain(_user);
 
         return Form(
           key: _editPhoneFormKey,
@@ -211,15 +217,13 @@ class EditPhoneBottomSheet extends StatelessWidget {
             loading: bloc.state.isSaving,
             field: JTextFormField(
               label: 'Phone',
-              initialValue: user.phone,
+              initialValue: user.phone ?? null,
               enabled: !bloc.state.isSaving,
               keyboardType: TextInputType.phone,
               onChanged: (e) => bloc.add(ProfileEvent.phoneChanged(e)),
               validator: _validate,
             ),
-            action: bloc.state.user.phone == null ||
-                    !bloc.state.user.phone!.isValid() ||
-                    bloc.state.isSaving
+            action: _user.phone == null || !_user.phone!.isValid() || isSaving
                 ? null
                 : _handleSave,
           ),
@@ -253,7 +257,7 @@ class EditGenderBottomSheet extends StatelessWidget {
       buildWhen: (p, c) =>
           p.user.gender == p.user.gender || p.isSaving != c.isSaving,
       builder: (context, state) {
-        final gender = bloc.state.user.gender!.getOrCrash();
+        final gender = bloc.state.user.gender;
 
         return Parent(
           style: sheetStyle(theme),
@@ -265,7 +269,7 @@ class EditGenderBottomSheet extends StatelessWidget {
               for (int i = 0; Gender.values.length > i; i++)
                 RadioListTile<Gender>(
                   value: Gender.values[i],
-                  groupValue: gender,
+                  groupValue: gender == null ? null : gender.getOrCrash(),
                   onChanged: (g) => bloc.add(ProfileEvent.genderChanged(g!)),
                   title: Text(Gender.values[i].value),
                 ),
