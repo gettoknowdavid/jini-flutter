@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
+import 'package:jini/application/profile/profile_bloc.dart';
 import 'package:jini/di/injection.dart';
 import 'package:jini/application/auth/auth_bloc.dart';
 import 'package:jini/presentation/core/common/image_resources.dart';
@@ -36,6 +37,7 @@ class _VerificationPageState extends State<VerificationPage> {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     final bloc = BlocProvider.of<AuthBloc>(context);
+    final profileBloc = BlocProvider.of<ProfileBloc>(context);
 
     return BlocConsumer<AuthBloc, AuthState>(
       bloc: bloc,
@@ -44,6 +46,7 @@ class _VerificationPageState extends State<VerificationPage> {
           orElse: () => null,
           verified: (_) {
             timer?.cancel();
+            profileBloc.add(const ProfileEvent.editPressed(true));
             Get.offNamed(JRoutes.profilePage);
           },
           unauthenticated: (_) {
