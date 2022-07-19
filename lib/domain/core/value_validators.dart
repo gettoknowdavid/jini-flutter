@@ -101,12 +101,3 @@ Either<ValueFailure<num>, num> validateWeight(num input) {
     return right(input);
   }
 }
-
-Either<ValueFailure<String>, String> validatePhoto(String? input) {
-  final _fileEx = lookupMimeType(input!);
-  if (_fileEx == 'image/jpeg' || _fileEx == 'image/png') {
-    return right(input);
-  } else {
-    return left(ValueFailure.invalidPhotoType(failedValue: input));
-  }
-}
