@@ -27,14 +27,13 @@ class SplashPage extends StatelessWidget {
         });
       },
       child: Scaffold(
-        backgroundColor: Theme.of(context).primaryColorDark,
         body: Container(
           height: 1.sh,
           width: 1.sw,
           child: Stack(
             alignment: Alignment.center,
             children: [
-              const JBackground(),
+              const JBackground(forSplashScreen: true),
               Image.asset(ImageResources.logo, width: 0.45.sw),
             ],
           ),
