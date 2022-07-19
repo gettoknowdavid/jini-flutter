@@ -30,7 +30,6 @@ class FirebaseAuthFacade implements IAuthFacade {
       return await _firebaseAuth
           .signInWithEmailAndPassword(email: _email, password: _password)
           .then((_) {
-        print(_);
         return right(unit);
       });
     } on FirebaseAuthException catch (e) {
