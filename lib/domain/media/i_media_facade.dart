@@ -1,10 +1,12 @@
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
-import 'package:firebase_storage/firebase_storage.dart';
+import 'package:jini/domain/media/media_failure.dart';
 
 abstract class IMediaFacade {
-  Future<Option<File?>> getImage();
+  Future<File?> getImage();
 
-  Future<void> upload(String path, String name, Reference reference);
+  Future<Either<MediaFailure, Unit>> upload(String path);
+
+  Future<Either<MediaFailure, String>> download();
 }
