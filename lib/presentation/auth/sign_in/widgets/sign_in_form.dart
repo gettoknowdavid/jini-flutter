@@ -50,16 +50,6 @@ class SignInForm extends StatelessWidget {
             );
           },
         ),
-        BlocListener<AuthBloc, AuthState>(
-          bloc: authBloc,
-          listenWhen: (p, c) => bloc.state.authFailureOrSuccess.isSome(),
-          listener: (context, state) {
-            state.mapOrNull(
-              profileNotCompleted: (value) =>
-                  Get.offNamed(JRoutes.editProfilePage),
-            );
-          },
-        ),
       ],
       child: BlocBuilder<SignInBloc, SignInState>(
         bloc: bloc,
