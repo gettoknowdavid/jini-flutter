@@ -5,7 +5,6 @@ import 'package:jini/presentation/auth/sign_up/widgets/sign_up_form.dart';
 import 'package:jini/presentation/core/common/j_page.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/widgets/j_back_button.dart';
-import 'package:jini/presentation/core/widgets/j_background.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -21,37 +20,29 @@ class SignUpPage extends StatelessWidget {
       builder: (context, state) {
         return JPage(
           loading: bloc.state.isSubmitting,
-          child: Scaffold(
-            extendBodyBehindAppBar: true,
-            appBar: AppBar(
-              leading: const JBackButton(),
-            ),
-            body: Stack(
-              alignment: Alignment.center,
-              children: [
-                const JBackground(),
-                Center(
-                  child: SingleChildScrollView(
-                    padding: JScreenUtil.globalPadding,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Text(
-                          'Create a new Account',
-                          style: textTheme.headlineLarge,
-                        ),
-                        JScreenUtil.vSpace(4),
-                        Text(
-                          'Sign up to create your new account.',
-                          style: textTheme.titleMedium,
-                        ),
-                        JScreenUtil.vSpace(30),
-                        const SignUpForm(),
-                      ],
-                    ),
+          extendBodyBehindAppBar: true,
+          appBar: AppBar(
+            leading: const JBackButton(),
+          ),
+          child: Center(
+            child: SingleChildScrollView(
+              padding: JScreenUtil.globalPadding,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                    'Create a new Account',
+                    style: textTheme.headlineLarge,
                   ),
-                ),
-              ],
+                  JScreenUtil.vSpace(4),
+                  Text(
+                    'Sign up to create your new account.',
+                    style: textTheme.titleMedium,
+                  ),
+                  JScreenUtil.vSpace(30),
+                  const SignUpForm(),
+                ],
+              ),
             ),
           ),
         );
