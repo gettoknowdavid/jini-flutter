@@ -48,6 +48,10 @@ class _VerificationPageState extends State<VerificationPage> {
               bloc.add(const AuthEvent.authCheckVerified());
             });
           },
+          profileNotCompleted: (_) {
+            timer?.cancel();
+            Get.offNamed(JRoutes.profilePage);
+          },
         );
       },
       builder: (context, state) {
