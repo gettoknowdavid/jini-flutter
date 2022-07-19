@@ -114,18 +114,30 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   }
 
   _avatarChanged(_AvatarChanged e, Emitter<ProfileState> emit) async {
+    Either<AuthFailure, Unit> failureOrSuccess;
+
     final _file = await _mediaFacade.getImage();
 
-    emit(
-      _file.fold(
-        () => state,
-        (file) {
-          return state.copyWith(
-            user: state.user.copyWith(avatar: IAvatar(file!.path)),
-          );
-        },
+    emit(state.copyWith(avatarFile: _file));
+
+    _mediaFacade.upload(_file!.path);
+
+    final _download = await _mediaFacade.download();
+
+    emit(_download.fold(
+      (l) => state,
+      (r) => state.copyWith(
+        user: state.user.copyWith(avatar: r),
       ),
-    );
+    ));
+
+    failureOrSuccess = await _authFacade.updateUser(state.user);
+
+    emit(state.copyWith(
+      avatarFile: null,
+      isSaving: false,
+      saveFailureOrSuccessOption: optionOf(failureOrSuccess),
+    ));
   }
 
   _editPressed(_ProfileEditPressed e, Emitter<ProfileState> emit) async {
