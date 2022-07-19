@@ -82,6 +82,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   _checkProfileCompleted(
       _CheckProfileCompleted e, Emitter<AuthState> emit) async {
     final _check = await _authFacade.isProfileComplete();
+    emit(const AuthState.loading());
+
     emit(
       _check.fold(
         () => const AuthState.unauthenticated(),
