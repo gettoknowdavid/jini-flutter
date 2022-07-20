@@ -23,6 +23,7 @@ mixin _$JUserDto {
   String get uid => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   Gender? get gender => throw _privateConstructorUsedError;
+  DateTime? get dob => throw _privateConstructorUsedError;
   num? get age => throw _privateConstructorUsedError;
   num? get height => throw _privateConstructorUsedError;
   num? get weight => throw _privateConstructorUsedError;
@@ -51,6 +52,7 @@ abstract class $JUserDtoCopyWith<$Res> {
       {String uid,
       String? name,
       Gender? gender,
+      DateTime? dob,
       num? age,
       num? height,
       num? weight,
@@ -79,6 +81,7 @@ class _$JUserDtoCopyWithImpl<$Res> implements $JUserDtoCopyWith<$Res> {
     Object? uid = freezed,
     Object? name = freezed,
     Object? gender = freezed,
+    Object? dob = freezed,
     Object? age = freezed,
     Object? height = freezed,
     Object? weight = freezed,
@@ -106,6 +109,10 @@ class _$JUserDtoCopyWithImpl<$Res> implements $JUserDtoCopyWith<$Res> {
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
               as Gender?,
+      dob: dob == freezed
+          ? _value.dob
+          : dob // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       age: age == freezed
           ? _value.age
           : age // ignore: cast_nullable_to_non_nullable
@@ -172,6 +179,7 @@ abstract class _$$_JUserDtoCopyWith<$Res> implements $JUserDtoCopyWith<$Res> {
       {String uid,
       String? name,
       Gender? gender,
+      DateTime? dob,
       num? age,
       num? height,
       num? weight,
@@ -202,6 +210,7 @@ class __$$_JUserDtoCopyWithImpl<$Res> extends _$JUserDtoCopyWithImpl<$Res>
     Object? uid = freezed,
     Object? name = freezed,
     Object? gender = freezed,
+    Object? dob = freezed,
     Object? age = freezed,
     Object? height = freezed,
     Object? weight = freezed,
@@ -229,6 +238,10 @@ class __$$_JUserDtoCopyWithImpl<$Res> extends _$JUserDtoCopyWithImpl<$Res>
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
               as Gender?,
+      dob: dob == freezed
+          ? _value.dob
+          : dob // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       age: age == freezed
           ? _value.age
           : age // ignore: cast_nullable_to_non_nullable
@@ -292,6 +305,7 @@ class _$_JUserDto implements _JUserDto {
       {required this.uid,
       required this.name,
       this.gender,
+      this.dob,
       this.age,
       this.height,
       this.weight,
@@ -315,6 +329,8 @@ class _$_JUserDto implements _JUserDto {
   final String? name;
   @override
   final Gender? gender;
+  @override
+  final DateTime? dob;
   @override
   final num? age;
   @override
@@ -344,7 +360,7 @@ class _$_JUserDto implements _JUserDto {
 
   @override
   String toString() {
-    return 'JUserDto(uid: $uid, name: $name, gender: $gender, age: $age, height: $height, weight: $weight, email: $email, phone: $phone, city: $city, avatar: $avatar, location: $location, bloodGroup: $bloodGroup, userType: $userType, eligible: $eligible, formComplete: $formComplete, initEdit: $initEdit)';
+    return 'JUserDto(uid: $uid, name: $name, gender: $gender, dob: $dob, age: $age, height: $height, weight: $weight, email: $email, phone: $phone, city: $city, avatar: $avatar, location: $location, bloodGroup: $bloodGroup, userType: $userType, eligible: $eligible, formComplete: $formComplete, initEdit: $initEdit)';
   }
 
   @override
@@ -355,6 +371,7 @@ class _$_JUserDto implements _JUserDto {
             const DeepCollectionEquality().equals(other.uid, uid) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.gender, gender) &&
+            const DeepCollectionEquality().equals(other.dob, dob) &&
             const DeepCollectionEquality().equals(other.age, age) &&
             const DeepCollectionEquality().equals(other.height, height) &&
             const DeepCollectionEquality().equals(other.weight, weight) &&
@@ -379,6 +396,7 @@ class _$_JUserDto implements _JUserDto {
       const DeepCollectionEquality().hash(uid),
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(gender),
+      const DeepCollectionEquality().hash(dob),
       const DeepCollectionEquality().hash(age),
       const DeepCollectionEquality().hash(height),
       const DeepCollectionEquality().hash(weight),
@@ -409,6 +427,7 @@ abstract class _JUserDto implements JUserDto {
       {required final String uid,
       required final String? name,
       final Gender? gender,
+      final DateTime? dob,
       final num? age,
       final num? height,
       final num? weight,
@@ -431,6 +450,8 @@ abstract class _JUserDto implements JUserDto {
   String? get name => throw _privateConstructorUsedError;
   @override
   Gender? get gender => throw _privateConstructorUsedError;
+  @override
+  DateTime? get dob => throw _privateConstructorUsedError;
   @override
   num? get age => throw _privateConstructorUsedError;
   @override
