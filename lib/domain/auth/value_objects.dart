@@ -107,6 +107,23 @@ class IAge extends ValueObject<num> {
   const IAge._(this.value);
 }
 
+class IDateOfBirth extends ValueObject<DateTime> {
+  final Either<ValueFailure<DateTime>, DateTime> value;
+
+  factory IDateOfBirth(DateTime input, [UserType? userType]) {
+    switch (userType) {
+      case UserType.donor:
+        return IDateOfBirth._(validateDOB(input));
+      case UserType.recipient:
+        return IDateOfBirth._(right(input));
+      default:
+        return IDateOfBirth._(right(input));
+    }
+  }
+
+  const IDateOfBirth._(this.value);
+}
+
 class IWeight extends ValueObject<num> {
   final Either<ValueFailure<num>, num> value;
 
