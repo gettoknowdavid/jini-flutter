@@ -13,10 +13,15 @@ class ProfileEvent with _$ProfileEvent {
       _UserTypeChanged;
   const factory ProfileEvent.ageChanged(num age, UserType userType) =
       _AgeChanged;
+  const factory ProfileEvent.dobChanged(DateTime dob, UserType userType) =
+      _DateOfBirthChanged;
   const factory ProfileEvent.heightChanged(num height) = _HeightChanged;
   const factory ProfileEvent.weightChanged(num weight, UserType userType) =
       _WeightChanged;
   const factory ProfileEvent.avatarChanged() = _AvatarChanged;
   const factory ProfileEvent.editPressed(bool value) = _ProfileEditPressed;
   const factory ProfileEvent.profileUpdated() = _ProfileUpdated;
+  const factory ProfileEvent.updateStepIndex(int step) = _UpdateStepIndex;
+  const factory ProfileEvent.stepForward() = _StepForward;
+  const factory ProfileEvent.stepBackward() = _StepBackward;
 }
