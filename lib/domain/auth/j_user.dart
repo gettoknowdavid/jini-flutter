@@ -12,6 +12,7 @@ class JUser with _$JUser implements IEntity {
     required Uid uid,
     required IName? name,
     IGender? gender,
+    IDateOfBirth? dob,
     IAge? age,
     IHeight? height,
     IWeight? weight,
