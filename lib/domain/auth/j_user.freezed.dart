@@ -19,6 +19,7 @@ mixin _$JUser {
   Uid get uid => throw _privateConstructorUsedError;
   IName? get name => throw _privateConstructorUsedError;
   IGender? get gender => throw _privateConstructorUsedError;
+  IDateOfBirth? get dob => throw _privateConstructorUsedError;
   IAge? get age => throw _privateConstructorUsedError;
   IHeight? get height => throw _privateConstructorUsedError;
   IWeight? get weight => throw _privateConstructorUsedError;
@@ -45,6 +46,7 @@ abstract class $JUserCopyWith<$Res> {
       {Uid uid,
       IName? name,
       IGender? gender,
+      IDateOfBirth? dob,
       IAge? age,
       IHeight? height,
       IWeight? weight,
@@ -73,6 +75,7 @@ class _$JUserCopyWithImpl<$Res> implements $JUserCopyWith<$Res> {
     Object? uid = freezed,
     Object? name = freezed,
     Object? gender = freezed,
+    Object? dob = freezed,
     Object? age = freezed,
     Object? height = freezed,
     Object? weight = freezed,
@@ -100,6 +103,10 @@ class _$JUserCopyWithImpl<$Res> implements $JUserCopyWith<$Res> {
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
               as IGender?,
+      dob: dob == freezed
+          ? _value.dob
+          : dob // ignore: cast_nullable_to_non_nullable
+              as IDateOfBirth?,
       age: age == freezed
           ? _value.age
           : age // ignore: cast_nullable_to_non_nullable
@@ -165,6 +172,7 @@ abstract class _$$_JUserCopyWith<$Res> implements $JUserCopyWith<$Res> {
       {Uid uid,
       IName? name,
       IGender? gender,
+      IDateOfBirth? dob,
       IAge? age,
       IHeight? height,
       IWeight? weight,
@@ -194,6 +202,7 @@ class __$$_JUserCopyWithImpl<$Res> extends _$JUserCopyWithImpl<$Res>
     Object? uid = freezed,
     Object? name = freezed,
     Object? gender = freezed,
+    Object? dob = freezed,
     Object? age = freezed,
     Object? height = freezed,
     Object? weight = freezed,
@@ -221,6 +230,10 @@ class __$$_JUserCopyWithImpl<$Res> extends _$JUserCopyWithImpl<$Res>
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
               as IGender?,
+      dob: dob == freezed
+          ? _value.dob
+          : dob // ignore: cast_nullable_to_non_nullable
+              as IDateOfBirth?,
       age: age == freezed
           ? _value.age
           : age // ignore: cast_nullable_to_non_nullable
@@ -284,6 +297,7 @@ class _$_JUser implements _JUser {
       {required this.uid,
       required this.name,
       this.gender,
+      this.dob,
       this.age,
       this.height,
       this.weight,
@@ -304,6 +318,8 @@ class _$_JUser implements _JUser {
   final IName? name;
   @override
   final IGender? gender;
+  @override
+  final IDateOfBirth? dob;
   @override
   final IAge? age;
   @override
@@ -333,7 +349,7 @@ class _$_JUser implements _JUser {
 
   @override
   String toString() {
-    return 'JUser(uid: $uid, name: $name, gender: $gender, age: $age, height: $height, weight: $weight, email: $email, phone: $phone, city: $city, avatar: $avatar, location: $location, bloodGroup: $bloodGroup, userType: $userType, eligible: $eligible, formComplete: $formComplete, initEdit: $initEdit)';
+    return 'JUser(uid: $uid, name: $name, gender: $gender, dob: $dob, age: $age, height: $height, weight: $weight, email: $email, phone: $phone, city: $city, avatar: $avatar, location: $location, bloodGroup: $bloodGroup, userType: $userType, eligible: $eligible, formComplete: $formComplete, initEdit: $initEdit)';
   }
 
   @override
@@ -344,6 +360,7 @@ class _$_JUser implements _JUser {
             const DeepCollectionEquality().equals(other.uid, uid) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.gender, gender) &&
+            const DeepCollectionEquality().equals(other.dob, dob) &&
             const DeepCollectionEquality().equals(other.age, age) &&
             const DeepCollectionEquality().equals(other.height, height) &&
             const DeepCollectionEquality().equals(other.weight, weight) &&
@@ -367,6 +384,7 @@ class _$_JUser implements _JUser {
       const DeepCollectionEquality().hash(uid),
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(gender),
+      const DeepCollectionEquality().hash(dob),
       const DeepCollectionEquality().hash(age),
       const DeepCollectionEquality().hash(height),
       const DeepCollectionEquality().hash(weight),
@@ -392,6 +410,7 @@ abstract class _JUser implements JUser {
       {required final Uid uid,
       required final IName? name,
       final IGender? gender,
+      final IDateOfBirth? dob,
       final IAge? age,
       final IHeight? height,
       final IWeight? weight,
@@ -412,6 +431,8 @@ abstract class _JUser implements JUser {
   IName? get name => throw _privateConstructorUsedError;
   @override
   IGender? get gender => throw _privateConstructorUsedError;
+  @override
+  IDateOfBirth? get dob => throw _privateConstructorUsedError;
   @override
   IAge? get age => throw _privateConstructorUsedError;
   @override
