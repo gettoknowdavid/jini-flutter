@@ -24,6 +24,7 @@ class SignInForm extends StatelessWidget {
       listeners: [
         BlocListener<SignInBloc, SignInState>(
           bloc: bloc,
+          listenWhen: (p, c) => p.isSubmitting != c.isSubmitting,
           listener: (context, state) {
             state.authFailureOrSuccess.fold(
               () {},
@@ -44,9 +45,20 @@ class SignInForm extends StatelessWidget {
                   authBloc.add(const AuthEvent.authCheckRequested());
                   authBloc.add(const AuthEvent.authCheckVerified());
                   authBloc.add(const AuthEvent.checkProfileCompleted());
-                  Get.offNamed(JRoutes.layout);
                 },
               ),
+            );
+          },
+        ),
+        BlocListener<AuthBloc, AuthState>(
+          bloc: authBloc,
+          listenWhen: (p, c) => p != c,
+          listener: (context, state) {
+            state.mapOrNull(
+              profileNotCompleted: (_) =>
+                  Get.offAllNamed(JRoutes.profileFormPage),
+              profileCompleted: (_) => Get.offAllNamed(JRoutes.layout),
+              unverified: (_) => Get.offAllNamed(JRoutes.verification),
             );
           },
         ),
