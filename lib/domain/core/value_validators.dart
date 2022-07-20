@@ -92,6 +92,19 @@ Either<ValueFailure<num>, num> validateAge(num input) {
   }
 }
 
+Either<ValueFailure<DateTime>, DateTime> validateDOB(DateTime input) {
+  final present = DateTime.now().year;
+  final difference = present - input.year;
+
+  if (difference < 17) {
+    return left(ValueFailure.tooYoung(failedValue: input));
+  } else if (difference > 60) {
+    return left(ValueFailure.tooOld(failedValue: input));
+  } else {
+    return right(input);
+  }
+}
+
 Either<ValueFailure<num>, num> validateWeight(num input) {
   if (input < 45) {
     return left(ValueFailure.weightTooSmall(failedValue: input));
