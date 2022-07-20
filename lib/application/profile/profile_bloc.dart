@@ -27,6 +27,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     on<_Initialized>((event, emit) => _initialized(event, emit));
     on<_NameChanged>((event, emit) => _nameChanged(event, emit));
     on<_EmailChanged>((event, emit) => _emailChanged(event, emit));
+    on<_DateOfBirthChanged>((event, emit) => _dobChanged(event, emit));
     on<_PhoneChanged>((event, emit) => _phoneChanged(event, emit));
     on<_BloodGroupChanged>((event, emit) => _bloodGroupChanged(event, emit));
     on<_GenderChanged>((event, emit) => _genderChanged(event, emit));
@@ -56,6 +57,14 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     emit(
       state.copyWith(
         user: state.user.copyWith(email: IEmailAddress(e.email)),
+      ),
+    );
+  }
+
+  _dobChanged(_DateOfBirthChanged e, Emitter<ProfileState> emit) async {
+    emit(
+      state.copyWith(
+        user: state.user.copyWith(dob: IDateOfBirth(e.dob, e.userType)),
       ),
     );
   }
