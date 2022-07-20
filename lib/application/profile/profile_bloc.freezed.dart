@@ -26,11 +26,15 @@ mixin _$ProfileEvent {
     required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
     required TResult Function(UserType userType) userTypeChanged,
     required TResult Function(num age, UserType userType) ageChanged,
+    required TResult Function(DateTime dob, UserType userType) dobChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function() avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
+    required TResult Function(int step) updateStepIndex,
+    required TResult Function() stepForward,
+    required TResult Function() stepBackward,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -43,11 +47,15 @@ mixin _$ProfileEvent {
     TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function(UserType userType)? userTypeChanged,
     TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,11 +68,15 @@ mixin _$ProfileEvent {
     TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function(UserType userType)? userTypeChanged,
     TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -78,11 +90,15 @@ mixin _$ProfileEvent {
     required TResult Function(_BloodGroupChanged value) bloodGroupChanged,
     required TResult Function(_UserTypeChanged value) userTypeChanged,
     required TResult Function(_AgeChanged value) ageChanged,
+    required TResult Function(_DateOfBirthChanged value) dobChanged,
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
+    required TResult Function(_UpdateStepIndex value) updateStepIndex,
+    required TResult Function(_StepForward value) stepForward,
+    required TResult Function(_StepBackward value) stepBackward,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -95,11 +111,15 @@ mixin _$ProfileEvent {
     TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(_UserTypeChanged value)? userTypeChanged,
     TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -112,11 +132,15 @@ mixin _$ProfileEvent {
     TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(_UserTypeChanged value)? userTypeChanged,
     TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -187,11 +211,15 @@ class _$_Initialized implements _Initialized {
     required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
     required TResult Function(UserType userType) userTypeChanged,
     required TResult Function(num age, UserType userType) ageChanged,
+    required TResult Function(DateTime dob, UserType userType) dobChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function() avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
+    required TResult Function(int step) updateStepIndex,
+    required TResult Function() stepForward,
+    required TResult Function() stepBackward,
   }) {
     return initialized();
   }
@@ -207,11 +235,15 @@ class _$_Initialized implements _Initialized {
     TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function(UserType userType)? userTypeChanged,
     TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
   }) {
     return initialized?.call();
   }
@@ -227,11 +259,15 @@ class _$_Initialized implements _Initialized {
     TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function(UserType userType)? userTypeChanged,
     TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -251,11 +287,15 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_BloodGroupChanged value) bloodGroupChanged,
     required TResult Function(_UserTypeChanged value) userTypeChanged,
     required TResult Function(_AgeChanged value) ageChanged,
+    required TResult Function(_DateOfBirthChanged value) dobChanged,
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
+    required TResult Function(_UpdateStepIndex value) updateStepIndex,
+    required TResult Function(_StepForward value) stepForward,
+    required TResult Function(_StepBackward value) stepBackward,
   }) {
     return initialized(this);
   }
@@ -271,11 +311,15 @@ class _$_Initialized implements _Initialized {
     TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(_UserTypeChanged value)? userTypeChanged,
     TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
   }) {
     return initialized?.call(this);
   }
@@ -291,11 +335,15 @@ class _$_Initialized implements _Initialized {
     TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(_UserTypeChanged value)? userTypeChanged,
     TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -382,11 +430,15 @@ class _$_NameChanged implements _NameChanged {
     required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
     required TResult Function(UserType userType) userTypeChanged,
     required TResult Function(num age, UserType userType) ageChanged,
+    required TResult Function(DateTime dob, UserType userType) dobChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function() avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
+    required TResult Function(int step) updateStepIndex,
+    required TResult Function() stepForward,
+    required TResult Function() stepBackward,
   }) {
     return nameChanged(name);
   }
@@ -402,11 +454,15 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function(UserType userType)? userTypeChanged,
     TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
   }) {
     return nameChanged?.call(name);
   }
@@ -422,11 +478,15 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function(UserType userType)? userTypeChanged,
     TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
     required TResult orElse(),
   }) {
     if (nameChanged != null) {
@@ -446,11 +506,15 @@ class _$_NameChanged implements _NameChanged {
     required TResult Function(_BloodGroupChanged value) bloodGroupChanged,
     required TResult Function(_UserTypeChanged value) userTypeChanged,
     required TResult Function(_AgeChanged value) ageChanged,
+    required TResult Function(_DateOfBirthChanged value) dobChanged,
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
+    required TResult Function(_UpdateStepIndex value) updateStepIndex,
+    required TResult Function(_StepForward value) stepForward,
+    required TResult Function(_StepBackward value) stepBackward,
   }) {
     return nameChanged(this);
   }
@@ -466,11 +530,15 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(_UserTypeChanged value)? userTypeChanged,
     TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
   }) {
     return nameChanged?.call(this);
   }
@@ -486,11 +554,15 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(_UserTypeChanged value)? userTypeChanged,
     TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
     required TResult orElse(),
   }) {
     if (nameChanged != null) {
@@ -582,11 +654,15 @@ class _$_EmailChanged implements _EmailChanged {
     required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
     required TResult Function(UserType userType) userTypeChanged,
     required TResult Function(num age, UserType userType) ageChanged,
+    required TResult Function(DateTime dob, UserType userType) dobChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function() avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
+    required TResult Function(int step) updateStepIndex,
+    required TResult Function() stepForward,
+    required TResult Function() stepBackward,
   }) {
     return emailChanged(email);
   }
@@ -602,11 +678,15 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function(UserType userType)? userTypeChanged,
     TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
   }) {
     return emailChanged?.call(email);
   }
@@ -622,11 +702,15 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function(UserType userType)? userTypeChanged,
     TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
     required TResult orElse(),
   }) {
     if (emailChanged != null) {
@@ -646,11 +730,15 @@ class _$_EmailChanged implements _EmailChanged {
     required TResult Function(_BloodGroupChanged value) bloodGroupChanged,
     required TResult Function(_UserTypeChanged value) userTypeChanged,
     required TResult Function(_AgeChanged value) ageChanged,
+    required TResult Function(_DateOfBirthChanged value) dobChanged,
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
+    required TResult Function(_UpdateStepIndex value) updateStepIndex,
+    required TResult Function(_StepForward value) stepForward,
+    required TResult Function(_StepBackward value) stepBackward,
   }) {
     return emailChanged(this);
   }
@@ -666,11 +754,15 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(_UserTypeChanged value)? userTypeChanged,
     TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
   }) {
     return emailChanged?.call(this);
   }
@@ -686,11 +778,15 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(_UserTypeChanged value)? userTypeChanged,
     TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
     required TResult orElse(),
   }) {
     if (emailChanged != null) {
@@ -782,11 +878,15 @@ class _$_PhoneChanged implements _PhoneChanged {
     required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
     required TResult Function(UserType userType) userTypeChanged,
     required TResult Function(num age, UserType userType) ageChanged,
+    required TResult Function(DateTime dob, UserType userType) dobChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function() avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
+    required TResult Function(int step) updateStepIndex,
+    required TResult Function() stepForward,
+    required TResult Function() stepBackward,
   }) {
     return phoneChanged(phone);
   }
@@ -802,11 +902,15 @@ class _$_PhoneChanged implements _PhoneChanged {
     TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function(UserType userType)? userTypeChanged,
     TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
   }) {
     return phoneChanged?.call(phone);
   }
@@ -822,11 +926,15 @@ class _$_PhoneChanged implements _PhoneChanged {
     TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function(UserType userType)? userTypeChanged,
     TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
     required TResult orElse(),
   }) {
     if (phoneChanged != null) {
@@ -846,11 +954,15 @@ class _$_PhoneChanged implements _PhoneChanged {
     required TResult Function(_BloodGroupChanged value) bloodGroupChanged,
     required TResult Function(_UserTypeChanged value) userTypeChanged,
     required TResult Function(_AgeChanged value) ageChanged,
+    required TResult Function(_DateOfBirthChanged value) dobChanged,
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
+    required TResult Function(_UpdateStepIndex value) updateStepIndex,
+    required TResult Function(_StepForward value) stepForward,
+    required TResult Function(_StepBackward value) stepBackward,
   }) {
     return phoneChanged(this);
   }
@@ -866,11 +978,15 @@ class _$_PhoneChanged implements _PhoneChanged {
     TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(_UserTypeChanged value)? userTypeChanged,
     TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
   }) {
     return phoneChanged?.call(this);
   }
@@ -886,11 +1002,15 @@ class _$_PhoneChanged implements _PhoneChanged {
     TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(_UserTypeChanged value)? userTypeChanged,
     TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
     required TResult orElse(),
   }) {
     if (phoneChanged != null) {
@@ -982,11 +1102,15 @@ class _$_GenderChanged implements _GenderChanged {
     required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
     required TResult Function(UserType userType) userTypeChanged,
     required TResult Function(num age, UserType userType) ageChanged,
+    required TResult Function(DateTime dob, UserType userType) dobChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function() avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
+    required TResult Function(int step) updateStepIndex,
+    required TResult Function() stepForward,
+    required TResult Function() stepBackward,
   }) {
     return genderChanged(gender);
   }
@@ -1002,11 +1126,15 @@ class _$_GenderChanged implements _GenderChanged {
     TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function(UserType userType)? userTypeChanged,
     TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
   }) {
     return genderChanged?.call(gender);
   }
@@ -1022,11 +1150,15 @@ class _$_GenderChanged implements _GenderChanged {
     TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function(UserType userType)? userTypeChanged,
     TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
     required TResult orElse(),
   }) {
     if (genderChanged != null) {
@@ -1046,11 +1178,15 @@ class _$_GenderChanged implements _GenderChanged {
     required TResult Function(_BloodGroupChanged value) bloodGroupChanged,
     required TResult Function(_UserTypeChanged value) userTypeChanged,
     required TResult Function(_AgeChanged value) ageChanged,
+    required TResult Function(_DateOfBirthChanged value) dobChanged,
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
+    required TResult Function(_UpdateStepIndex value) updateStepIndex,
+    required TResult Function(_StepForward value) stepForward,
+    required TResult Function(_StepBackward value) stepBackward,
   }) {
     return genderChanged(this);
   }
@@ -1066,11 +1202,15 @@ class _$_GenderChanged implements _GenderChanged {
     TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(_UserTypeChanged value)? userTypeChanged,
     TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
   }) {
     return genderChanged?.call(this);
   }
@@ -1086,11 +1226,15 @@ class _$_GenderChanged implements _GenderChanged {
     TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(_UserTypeChanged value)? userTypeChanged,
     TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
     required TResult orElse(),
   }) {
     if (genderChanged != null) {
@@ -1184,11 +1328,15 @@ class _$_BloodGroupChanged implements _BloodGroupChanged {
     required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
     required TResult Function(UserType userType) userTypeChanged,
     required TResult Function(num age, UserType userType) ageChanged,
+    required TResult Function(DateTime dob, UserType userType) dobChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function() avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
+    required TResult Function(int step) updateStepIndex,
+    required TResult Function() stepForward,
+    required TResult Function() stepBackward,
   }) {
     return bloodGroupChanged(bloodGroup);
   }
@@ -1204,11 +1352,15 @@ class _$_BloodGroupChanged implements _BloodGroupChanged {
     TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function(UserType userType)? userTypeChanged,
     TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
   }) {
     return bloodGroupChanged?.call(bloodGroup);
   }
@@ -1224,11 +1376,15 @@ class _$_BloodGroupChanged implements _BloodGroupChanged {
     TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function(UserType userType)? userTypeChanged,
     TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
     required TResult orElse(),
   }) {
     if (bloodGroupChanged != null) {
@@ -1248,11 +1404,15 @@ class _$_BloodGroupChanged implements _BloodGroupChanged {
     required TResult Function(_BloodGroupChanged value) bloodGroupChanged,
     required TResult Function(_UserTypeChanged value) userTypeChanged,
     required TResult Function(_AgeChanged value) ageChanged,
+    required TResult Function(_DateOfBirthChanged value) dobChanged,
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
+    required TResult Function(_UpdateStepIndex value) updateStepIndex,
+    required TResult Function(_StepForward value) stepForward,
+    required TResult Function(_StepBackward value) stepBackward,
   }) {
     return bloodGroupChanged(this);
   }
@@ -1268,11 +1428,15 @@ class _$_BloodGroupChanged implements _BloodGroupChanged {
     TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(_UserTypeChanged value)? userTypeChanged,
     TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
   }) {
     return bloodGroupChanged?.call(this);
   }
@@ -1288,11 +1452,15 @@ class _$_BloodGroupChanged implements _BloodGroupChanged {
     TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(_UserTypeChanged value)? userTypeChanged,
     TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
     required TResult orElse(),
   }) {
     if (bloodGroupChanged != null) {
@@ -1385,11 +1553,15 @@ class _$_UserTypeChanged implements _UserTypeChanged {
     required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
     required TResult Function(UserType userType) userTypeChanged,
     required TResult Function(num age, UserType userType) ageChanged,
+    required TResult Function(DateTime dob, UserType userType) dobChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function() avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
+    required TResult Function(int step) updateStepIndex,
+    required TResult Function() stepForward,
+    required TResult Function() stepBackward,
   }) {
     return userTypeChanged(userType);
   }
@@ -1405,11 +1577,15 @@ class _$_UserTypeChanged implements _UserTypeChanged {
     TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function(UserType userType)? userTypeChanged,
     TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
   }) {
     return userTypeChanged?.call(userType);
   }
@@ -1425,11 +1601,15 @@ class _$_UserTypeChanged implements _UserTypeChanged {
     TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function(UserType userType)? userTypeChanged,
     TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
     required TResult orElse(),
   }) {
     if (userTypeChanged != null) {
@@ -1449,11 +1629,15 @@ class _$_UserTypeChanged implements _UserTypeChanged {
     required TResult Function(_BloodGroupChanged value) bloodGroupChanged,
     required TResult Function(_UserTypeChanged value) userTypeChanged,
     required TResult Function(_AgeChanged value) ageChanged,
+    required TResult Function(_DateOfBirthChanged value) dobChanged,
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
+    required TResult Function(_UpdateStepIndex value) updateStepIndex,
+    required TResult Function(_StepForward value) stepForward,
+    required TResult Function(_StepBackward value) stepBackward,
   }) {
     return userTypeChanged(this);
   }
@@ -1469,11 +1653,15 @@ class _$_UserTypeChanged implements _UserTypeChanged {
     TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(_UserTypeChanged value)? userTypeChanged,
     TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
   }) {
     return userTypeChanged?.call(this);
   }
@@ -1489,11 +1677,15 @@ class _$_UserTypeChanged implements _UserTypeChanged {
     TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(_UserTypeChanged value)? userTypeChanged,
     TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
     required TResult orElse(),
   }) {
     if (userTypeChanged != null) {
@@ -1594,11 +1786,15 @@ class _$_AgeChanged implements _AgeChanged {
     required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
     required TResult Function(UserType userType) userTypeChanged,
     required TResult Function(num age, UserType userType) ageChanged,
+    required TResult Function(DateTime dob, UserType userType) dobChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function() avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
+    required TResult Function(int step) updateStepIndex,
+    required TResult Function() stepForward,
+    required TResult Function() stepBackward,
   }) {
     return ageChanged(age, userType);
   }
@@ -1614,11 +1810,15 @@ class _$_AgeChanged implements _AgeChanged {
     TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function(UserType userType)? userTypeChanged,
     TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
   }) {
     return ageChanged?.call(age, userType);
   }
@@ -1634,11 +1834,15 @@ class _$_AgeChanged implements _AgeChanged {
     TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function(UserType userType)? userTypeChanged,
     TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
     required TResult orElse(),
   }) {
     if (ageChanged != null) {
@@ -1658,11 +1862,15 @@ class _$_AgeChanged implements _AgeChanged {
     required TResult Function(_BloodGroupChanged value) bloodGroupChanged,
     required TResult Function(_UserTypeChanged value) userTypeChanged,
     required TResult Function(_AgeChanged value) ageChanged,
+    required TResult Function(_DateOfBirthChanged value) dobChanged,
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
+    required TResult Function(_UpdateStepIndex value) updateStepIndex,
+    required TResult Function(_StepForward value) stepForward,
+    required TResult Function(_StepBackward value) stepBackward,
   }) {
     return ageChanged(this);
   }
@@ -1678,11 +1886,15 @@ class _$_AgeChanged implements _AgeChanged {
     TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(_UserTypeChanged value)? userTypeChanged,
     TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
   }) {
     return ageChanged?.call(this);
   }
@@ -1698,11 +1910,15 @@ class _$_AgeChanged implements _AgeChanged {
     TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(_UserTypeChanged value)? userTypeChanged,
     TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
     required TResult orElse(),
   }) {
     if (ageChanged != null) {
@@ -1720,6 +1936,243 @@ abstract class _AgeChanged implements ProfileEvent {
   UserType get userType => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$_AgeChangedCopyWith<_$_AgeChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_DateOfBirthChangedCopyWith<$Res> {
+  factory _$$_DateOfBirthChangedCopyWith(_$_DateOfBirthChanged value,
+          $Res Function(_$_DateOfBirthChanged) then) =
+      __$$_DateOfBirthChangedCopyWithImpl<$Res>;
+  $Res call({DateTime dob, UserType userType});
+}
+
+/// @nodoc
+class __$$_DateOfBirthChangedCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res>
+    implements _$$_DateOfBirthChangedCopyWith<$Res> {
+  __$$_DateOfBirthChangedCopyWithImpl(
+      _$_DateOfBirthChanged _value, $Res Function(_$_DateOfBirthChanged) _then)
+      : super(_value, (v) => _then(v as _$_DateOfBirthChanged));
+
+  @override
+  _$_DateOfBirthChanged get _value => super._value as _$_DateOfBirthChanged;
+
+  @override
+  $Res call({
+    Object? dob = freezed,
+    Object? userType = freezed,
+  }) {
+    return _then(_$_DateOfBirthChanged(
+      dob == freezed
+          ? _value.dob
+          : dob // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      userType == freezed
+          ? _value.userType
+          : userType // ignore: cast_nullable_to_non_nullable
+              as UserType,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_DateOfBirthChanged implements _DateOfBirthChanged {
+  const _$_DateOfBirthChanged(this.dob, this.userType);
+
+  @override
+  final DateTime dob;
+  @override
+  final UserType userType;
+
+  @override
+  String toString() {
+    return 'ProfileEvent.dobChanged(dob: $dob, userType: $userType)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_DateOfBirthChanged &&
+            const DeepCollectionEquality().equals(other.dob, dob) &&
+            const DeepCollectionEquality().equals(other.userType, userType));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(dob),
+      const DeepCollectionEquality().hash(userType));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_DateOfBirthChangedCopyWith<_$_DateOfBirthChanged> get copyWith =>
+      __$$_DateOfBirthChangedCopyWithImpl<_$_DateOfBirthChanged>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String email) emailChanged,
+    required TResult Function(String phone) phoneChanged,
+    required TResult Function(Gender gender) genderChanged,
+    required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
+    required TResult Function(UserType userType) userTypeChanged,
+    required TResult Function(num age, UserType userType) ageChanged,
+    required TResult Function(DateTime dob, UserType userType) dobChanged,
+    required TResult Function(num height) heightChanged,
+    required TResult Function(num weight, UserType userType) weightChanged,
+    required TResult Function() avatarChanged,
+    required TResult Function(bool value) editPressed,
+    required TResult Function() profileUpdated,
+    required TResult Function(int step) updateStepIndex,
+    required TResult Function() stepForward,
+    required TResult Function() stepBackward,
+  }) {
+    return dobChanged(dob, userType);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String email)? emailChanged,
+    TResult Function(String phone)? phoneChanged,
+    TResult Function(Gender gender)? genderChanged,
+    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
+    TResult Function(UserType userType)? userTypeChanged,
+    TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
+    TResult Function(num height)? heightChanged,
+    TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function()? avatarChanged,
+    TResult Function(bool value)? editPressed,
+    TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
+  }) {
+    return dobChanged?.call(dob, userType);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String email)? emailChanged,
+    TResult Function(String phone)? phoneChanged,
+    TResult Function(Gender gender)? genderChanged,
+    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
+    TResult Function(UserType userType)? userTypeChanged,
+    TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
+    TResult Function(num height)? heightChanged,
+    TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function()? avatarChanged,
+    TResult Function(bool value)? editPressed,
+    TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
+    required TResult orElse(),
+  }) {
+    if (dobChanged != null) {
+      return dobChanged(dob, userType);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_PhoneChanged value) phoneChanged,
+    required TResult Function(_GenderChanged value) genderChanged,
+    required TResult Function(_BloodGroupChanged value) bloodGroupChanged,
+    required TResult Function(_UserTypeChanged value) userTypeChanged,
+    required TResult Function(_AgeChanged value) ageChanged,
+    required TResult Function(_DateOfBirthChanged value) dobChanged,
+    required TResult Function(_HeightChanged value) heightChanged,
+    required TResult Function(_WeightChanged value) weightChanged,
+    required TResult Function(_AvatarChanged value) avatarChanged,
+    required TResult Function(_ProfileEditPressed value) editPressed,
+    required TResult Function(_ProfileUpdated value) profileUpdated,
+    required TResult Function(_UpdateStepIndex value) updateStepIndex,
+    required TResult Function(_StepForward value) stepForward,
+    required TResult Function(_StepBackward value) stepBackward,
+  }) {
+    return dobChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
+    TResult Function(_UserTypeChanged value)? userTypeChanged,
+    TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
+    TResult Function(_HeightChanged value)? heightChanged,
+    TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
+    TResult Function(_ProfileEditPressed value)? editPressed,
+    TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
+  }) {
+    return dobChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
+    TResult Function(_UserTypeChanged value)? userTypeChanged,
+    TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
+    TResult Function(_HeightChanged value)? heightChanged,
+    TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
+    TResult Function(_ProfileEditPressed value)? editPressed,
+    TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
+    required TResult orElse(),
+  }) {
+    if (dobChanged != null) {
+      return dobChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DateOfBirthChanged implements ProfileEvent {
+  const factory _DateOfBirthChanged(
+      final DateTime dob, final UserType userType) = _$_DateOfBirthChanged;
+
+  DateTime get dob => throw _privateConstructorUsedError;
+  UserType get userType => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_DateOfBirthChangedCopyWith<_$_DateOfBirthChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1796,11 +2249,15 @@ class _$_HeightChanged implements _HeightChanged {
     required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
     required TResult Function(UserType userType) userTypeChanged,
     required TResult Function(num age, UserType userType) ageChanged,
+    required TResult Function(DateTime dob, UserType userType) dobChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function() avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
+    required TResult Function(int step) updateStepIndex,
+    required TResult Function() stepForward,
+    required TResult Function() stepBackward,
   }) {
     return heightChanged(height);
   }
@@ -1816,11 +2273,15 @@ class _$_HeightChanged implements _HeightChanged {
     TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function(UserType userType)? userTypeChanged,
     TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
   }) {
     return heightChanged?.call(height);
   }
@@ -1836,11 +2297,15 @@ class _$_HeightChanged implements _HeightChanged {
     TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function(UserType userType)? userTypeChanged,
     TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
     required TResult orElse(),
   }) {
     if (heightChanged != null) {
@@ -1860,11 +2325,15 @@ class _$_HeightChanged implements _HeightChanged {
     required TResult Function(_BloodGroupChanged value) bloodGroupChanged,
     required TResult Function(_UserTypeChanged value) userTypeChanged,
     required TResult Function(_AgeChanged value) ageChanged,
+    required TResult Function(_DateOfBirthChanged value) dobChanged,
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
+    required TResult Function(_UpdateStepIndex value) updateStepIndex,
+    required TResult Function(_StepForward value) stepForward,
+    required TResult Function(_StepBackward value) stepBackward,
   }) {
     return heightChanged(this);
   }
@@ -1880,11 +2349,15 @@ class _$_HeightChanged implements _HeightChanged {
     TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(_UserTypeChanged value)? userTypeChanged,
     TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
   }) {
     return heightChanged?.call(this);
   }
@@ -1900,11 +2373,15 @@ class _$_HeightChanged implements _HeightChanged {
     TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(_UserTypeChanged value)? userTypeChanged,
     TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
     required TResult orElse(),
   }) {
     if (heightChanged != null) {
@@ -2006,11 +2483,15 @@ class _$_WeightChanged implements _WeightChanged {
     required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
     required TResult Function(UserType userType) userTypeChanged,
     required TResult Function(num age, UserType userType) ageChanged,
+    required TResult Function(DateTime dob, UserType userType) dobChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function() avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
+    required TResult Function(int step) updateStepIndex,
+    required TResult Function() stepForward,
+    required TResult Function() stepBackward,
   }) {
     return weightChanged(weight, userType);
   }
@@ -2026,11 +2507,15 @@ class _$_WeightChanged implements _WeightChanged {
     TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function(UserType userType)? userTypeChanged,
     TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
   }) {
     return weightChanged?.call(weight, userType);
   }
@@ -2046,11 +2531,15 @@ class _$_WeightChanged implements _WeightChanged {
     TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function(UserType userType)? userTypeChanged,
     TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
     required TResult orElse(),
   }) {
     if (weightChanged != null) {
@@ -2070,11 +2559,15 @@ class _$_WeightChanged implements _WeightChanged {
     required TResult Function(_BloodGroupChanged value) bloodGroupChanged,
     required TResult Function(_UserTypeChanged value) userTypeChanged,
     required TResult Function(_AgeChanged value) ageChanged,
+    required TResult Function(_DateOfBirthChanged value) dobChanged,
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
+    required TResult Function(_UpdateStepIndex value) updateStepIndex,
+    required TResult Function(_StepForward value) stepForward,
+    required TResult Function(_StepBackward value) stepBackward,
   }) {
     return weightChanged(this);
   }
@@ -2090,11 +2583,15 @@ class _$_WeightChanged implements _WeightChanged {
     TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(_UserTypeChanged value)? userTypeChanged,
     TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
   }) {
     return weightChanged?.call(this);
   }
@@ -2110,11 +2607,15 @@ class _$_WeightChanged implements _WeightChanged {
     TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(_UserTypeChanged value)? userTypeChanged,
     TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
     required TResult orElse(),
   }) {
     if (weightChanged != null) {
@@ -2184,11 +2685,15 @@ class _$_AvatarChanged implements _AvatarChanged {
     required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
     required TResult Function(UserType userType) userTypeChanged,
     required TResult Function(num age, UserType userType) ageChanged,
+    required TResult Function(DateTime dob, UserType userType) dobChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function() avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
+    required TResult Function(int step) updateStepIndex,
+    required TResult Function() stepForward,
+    required TResult Function() stepBackward,
   }) {
     return avatarChanged();
   }
@@ -2204,11 +2709,15 @@ class _$_AvatarChanged implements _AvatarChanged {
     TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function(UserType userType)? userTypeChanged,
     TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
   }) {
     return avatarChanged?.call();
   }
@@ -2224,11 +2733,15 @@ class _$_AvatarChanged implements _AvatarChanged {
     TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function(UserType userType)? userTypeChanged,
     TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
     required TResult orElse(),
   }) {
     if (avatarChanged != null) {
@@ -2248,11 +2761,15 @@ class _$_AvatarChanged implements _AvatarChanged {
     required TResult Function(_BloodGroupChanged value) bloodGroupChanged,
     required TResult Function(_UserTypeChanged value) userTypeChanged,
     required TResult Function(_AgeChanged value) ageChanged,
+    required TResult Function(_DateOfBirthChanged value) dobChanged,
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
+    required TResult Function(_UpdateStepIndex value) updateStepIndex,
+    required TResult Function(_StepForward value) stepForward,
+    required TResult Function(_StepBackward value) stepBackward,
   }) {
     return avatarChanged(this);
   }
@@ -2268,11 +2785,15 @@ class _$_AvatarChanged implements _AvatarChanged {
     TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(_UserTypeChanged value)? userTypeChanged,
     TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
   }) {
     return avatarChanged?.call(this);
   }
@@ -2288,11 +2809,15 @@ class _$_AvatarChanged implements _AvatarChanged {
     TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(_UserTypeChanged value)? userTypeChanged,
     TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
     required TResult orElse(),
   }) {
     if (avatarChanged != null) {
@@ -2380,11 +2905,15 @@ class _$_ProfileEditPressed implements _ProfileEditPressed {
     required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
     required TResult Function(UserType userType) userTypeChanged,
     required TResult Function(num age, UserType userType) ageChanged,
+    required TResult Function(DateTime dob, UserType userType) dobChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function() avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
+    required TResult Function(int step) updateStepIndex,
+    required TResult Function() stepForward,
+    required TResult Function() stepBackward,
   }) {
     return editPressed(value);
   }
@@ -2400,11 +2929,15 @@ class _$_ProfileEditPressed implements _ProfileEditPressed {
     TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function(UserType userType)? userTypeChanged,
     TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
   }) {
     return editPressed?.call(value);
   }
@@ -2420,11 +2953,15 @@ class _$_ProfileEditPressed implements _ProfileEditPressed {
     TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function(UserType userType)? userTypeChanged,
     TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
     required TResult orElse(),
   }) {
     if (editPressed != null) {
@@ -2444,11 +2981,15 @@ class _$_ProfileEditPressed implements _ProfileEditPressed {
     required TResult Function(_BloodGroupChanged value) bloodGroupChanged,
     required TResult Function(_UserTypeChanged value) userTypeChanged,
     required TResult Function(_AgeChanged value) ageChanged,
+    required TResult Function(_DateOfBirthChanged value) dobChanged,
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
+    required TResult Function(_UpdateStepIndex value) updateStepIndex,
+    required TResult Function(_StepForward value) stepForward,
+    required TResult Function(_StepBackward value) stepBackward,
   }) {
     return editPressed(this);
   }
@@ -2464,11 +3005,15 @@ class _$_ProfileEditPressed implements _ProfileEditPressed {
     TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(_UserTypeChanged value)? userTypeChanged,
     TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
   }) {
     return editPressed?.call(this);
   }
@@ -2484,11 +3029,15 @@ class _$_ProfileEditPressed implements _ProfileEditPressed {
     TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(_UserTypeChanged value)? userTypeChanged,
     TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
     required TResult orElse(),
   }) {
     if (editPressed != null) {
@@ -2556,11 +3105,15 @@ class _$_ProfileUpdated implements _ProfileUpdated {
     required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
     required TResult Function(UserType userType) userTypeChanged,
     required TResult Function(num age, UserType userType) ageChanged,
+    required TResult Function(DateTime dob, UserType userType) dobChanged,
     required TResult Function(num height) heightChanged,
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function() avatarChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
+    required TResult Function(int step) updateStepIndex,
+    required TResult Function() stepForward,
+    required TResult Function() stepBackward,
   }) {
     return profileUpdated();
   }
@@ -2576,11 +3129,15 @@ class _$_ProfileUpdated implements _ProfileUpdated {
     TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function(UserType userType)? userTypeChanged,
     TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
   }) {
     return profileUpdated?.call();
   }
@@ -2596,11 +3153,15 @@ class _$_ProfileUpdated implements _ProfileUpdated {
     TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
     TResult Function(UserType userType)? userTypeChanged,
     TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
     TResult Function(num height)? heightChanged,
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function()? avatarChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
     required TResult orElse(),
   }) {
     if (profileUpdated != null) {
@@ -2620,11 +3181,15 @@ class _$_ProfileUpdated implements _ProfileUpdated {
     required TResult Function(_BloodGroupChanged value) bloodGroupChanged,
     required TResult Function(_UserTypeChanged value) userTypeChanged,
     required TResult Function(_AgeChanged value) ageChanged,
+    required TResult Function(_DateOfBirthChanged value) dobChanged,
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
+    required TResult Function(_UpdateStepIndex value) updateStepIndex,
+    required TResult Function(_StepForward value) stepForward,
+    required TResult Function(_StepBackward value) stepBackward,
   }) {
     return profileUpdated(this);
   }
@@ -2640,11 +3205,15 @@ class _$_ProfileUpdated implements _ProfileUpdated {
     TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(_UserTypeChanged value)? userTypeChanged,
     TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
   }) {
     return profileUpdated?.call(this);
   }
@@ -2660,11 +3229,15 @@ class _$_ProfileUpdated implements _ProfileUpdated {
     TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
     TResult Function(_UserTypeChanged value)? userTypeChanged,
     TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
     required TResult orElse(),
   }) {
     if (profileUpdated != null) {
@@ -2679,10 +3252,625 @@ abstract class _ProfileUpdated implements ProfileEvent {
 }
 
 /// @nodoc
+abstract class _$$_UpdateStepIndexCopyWith<$Res> {
+  factory _$$_UpdateStepIndexCopyWith(
+          _$_UpdateStepIndex value, $Res Function(_$_UpdateStepIndex) then) =
+      __$$_UpdateStepIndexCopyWithImpl<$Res>;
+  $Res call({int step});
+}
+
+/// @nodoc
+class __$$_UpdateStepIndexCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res>
+    implements _$$_UpdateStepIndexCopyWith<$Res> {
+  __$$_UpdateStepIndexCopyWithImpl(
+      _$_UpdateStepIndex _value, $Res Function(_$_UpdateStepIndex) _then)
+      : super(_value, (v) => _then(v as _$_UpdateStepIndex));
+
+  @override
+  _$_UpdateStepIndex get _value => super._value as _$_UpdateStepIndex;
+
+  @override
+  $Res call({
+    Object? step = freezed,
+  }) {
+    return _then(_$_UpdateStepIndex(
+      step == freezed
+          ? _value.step
+          : step // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_UpdateStepIndex implements _UpdateStepIndex {
+  const _$_UpdateStepIndex(this.step);
+
+  @override
+  final int step;
+
+  @override
+  String toString() {
+    return 'ProfileEvent.updateStepIndex(step: $step)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_UpdateStepIndex &&
+            const DeepCollectionEquality().equals(other.step, step));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(step));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_UpdateStepIndexCopyWith<_$_UpdateStepIndex> get copyWith =>
+      __$$_UpdateStepIndexCopyWithImpl<_$_UpdateStepIndex>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String email) emailChanged,
+    required TResult Function(String phone) phoneChanged,
+    required TResult Function(Gender gender) genderChanged,
+    required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
+    required TResult Function(UserType userType) userTypeChanged,
+    required TResult Function(num age, UserType userType) ageChanged,
+    required TResult Function(DateTime dob, UserType userType) dobChanged,
+    required TResult Function(num height) heightChanged,
+    required TResult Function(num weight, UserType userType) weightChanged,
+    required TResult Function() avatarChanged,
+    required TResult Function(bool value) editPressed,
+    required TResult Function() profileUpdated,
+    required TResult Function(int step) updateStepIndex,
+    required TResult Function() stepForward,
+    required TResult Function() stepBackward,
+  }) {
+    return updateStepIndex(step);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String email)? emailChanged,
+    TResult Function(String phone)? phoneChanged,
+    TResult Function(Gender gender)? genderChanged,
+    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
+    TResult Function(UserType userType)? userTypeChanged,
+    TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
+    TResult Function(num height)? heightChanged,
+    TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function()? avatarChanged,
+    TResult Function(bool value)? editPressed,
+    TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
+  }) {
+    return updateStepIndex?.call(step);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String email)? emailChanged,
+    TResult Function(String phone)? phoneChanged,
+    TResult Function(Gender gender)? genderChanged,
+    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
+    TResult Function(UserType userType)? userTypeChanged,
+    TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
+    TResult Function(num height)? heightChanged,
+    TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function()? avatarChanged,
+    TResult Function(bool value)? editPressed,
+    TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
+    required TResult orElse(),
+  }) {
+    if (updateStepIndex != null) {
+      return updateStepIndex(step);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_PhoneChanged value) phoneChanged,
+    required TResult Function(_GenderChanged value) genderChanged,
+    required TResult Function(_BloodGroupChanged value) bloodGroupChanged,
+    required TResult Function(_UserTypeChanged value) userTypeChanged,
+    required TResult Function(_AgeChanged value) ageChanged,
+    required TResult Function(_DateOfBirthChanged value) dobChanged,
+    required TResult Function(_HeightChanged value) heightChanged,
+    required TResult Function(_WeightChanged value) weightChanged,
+    required TResult Function(_AvatarChanged value) avatarChanged,
+    required TResult Function(_ProfileEditPressed value) editPressed,
+    required TResult Function(_ProfileUpdated value) profileUpdated,
+    required TResult Function(_UpdateStepIndex value) updateStepIndex,
+    required TResult Function(_StepForward value) stepForward,
+    required TResult Function(_StepBackward value) stepBackward,
+  }) {
+    return updateStepIndex(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
+    TResult Function(_UserTypeChanged value)? userTypeChanged,
+    TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
+    TResult Function(_HeightChanged value)? heightChanged,
+    TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
+    TResult Function(_ProfileEditPressed value)? editPressed,
+    TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
+  }) {
+    return updateStepIndex?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
+    TResult Function(_UserTypeChanged value)? userTypeChanged,
+    TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
+    TResult Function(_HeightChanged value)? heightChanged,
+    TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
+    TResult Function(_ProfileEditPressed value)? editPressed,
+    TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
+    required TResult orElse(),
+  }) {
+    if (updateStepIndex != null) {
+      return updateStepIndex(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateStepIndex implements ProfileEvent {
+  const factory _UpdateStepIndex(final int step) = _$_UpdateStepIndex;
+
+  int get step => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_UpdateStepIndexCopyWith<_$_UpdateStepIndex> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_StepForwardCopyWith<$Res> {
+  factory _$$_StepForwardCopyWith(
+          _$_StepForward value, $Res Function(_$_StepForward) then) =
+      __$$_StepForwardCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_StepForwardCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res>
+    implements _$$_StepForwardCopyWith<$Res> {
+  __$$_StepForwardCopyWithImpl(
+      _$_StepForward _value, $Res Function(_$_StepForward) _then)
+      : super(_value, (v) => _then(v as _$_StepForward));
+
+  @override
+  _$_StepForward get _value => super._value as _$_StepForward;
+}
+
+/// @nodoc
+
+class _$_StepForward implements _StepForward {
+  const _$_StepForward();
+
+  @override
+  String toString() {
+    return 'ProfileEvent.stepForward()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_StepForward);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String email) emailChanged,
+    required TResult Function(String phone) phoneChanged,
+    required TResult Function(Gender gender) genderChanged,
+    required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
+    required TResult Function(UserType userType) userTypeChanged,
+    required TResult Function(num age, UserType userType) ageChanged,
+    required TResult Function(DateTime dob, UserType userType) dobChanged,
+    required TResult Function(num height) heightChanged,
+    required TResult Function(num weight, UserType userType) weightChanged,
+    required TResult Function() avatarChanged,
+    required TResult Function(bool value) editPressed,
+    required TResult Function() profileUpdated,
+    required TResult Function(int step) updateStepIndex,
+    required TResult Function() stepForward,
+    required TResult Function() stepBackward,
+  }) {
+    return stepForward();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String email)? emailChanged,
+    TResult Function(String phone)? phoneChanged,
+    TResult Function(Gender gender)? genderChanged,
+    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
+    TResult Function(UserType userType)? userTypeChanged,
+    TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
+    TResult Function(num height)? heightChanged,
+    TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function()? avatarChanged,
+    TResult Function(bool value)? editPressed,
+    TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
+  }) {
+    return stepForward?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String email)? emailChanged,
+    TResult Function(String phone)? phoneChanged,
+    TResult Function(Gender gender)? genderChanged,
+    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
+    TResult Function(UserType userType)? userTypeChanged,
+    TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
+    TResult Function(num height)? heightChanged,
+    TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function()? avatarChanged,
+    TResult Function(bool value)? editPressed,
+    TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
+    required TResult orElse(),
+  }) {
+    if (stepForward != null) {
+      return stepForward();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_PhoneChanged value) phoneChanged,
+    required TResult Function(_GenderChanged value) genderChanged,
+    required TResult Function(_BloodGroupChanged value) bloodGroupChanged,
+    required TResult Function(_UserTypeChanged value) userTypeChanged,
+    required TResult Function(_AgeChanged value) ageChanged,
+    required TResult Function(_DateOfBirthChanged value) dobChanged,
+    required TResult Function(_HeightChanged value) heightChanged,
+    required TResult Function(_WeightChanged value) weightChanged,
+    required TResult Function(_AvatarChanged value) avatarChanged,
+    required TResult Function(_ProfileEditPressed value) editPressed,
+    required TResult Function(_ProfileUpdated value) profileUpdated,
+    required TResult Function(_UpdateStepIndex value) updateStepIndex,
+    required TResult Function(_StepForward value) stepForward,
+    required TResult Function(_StepBackward value) stepBackward,
+  }) {
+    return stepForward(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
+    TResult Function(_UserTypeChanged value)? userTypeChanged,
+    TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
+    TResult Function(_HeightChanged value)? heightChanged,
+    TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
+    TResult Function(_ProfileEditPressed value)? editPressed,
+    TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
+  }) {
+    return stepForward?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
+    TResult Function(_UserTypeChanged value)? userTypeChanged,
+    TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
+    TResult Function(_HeightChanged value)? heightChanged,
+    TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
+    TResult Function(_ProfileEditPressed value)? editPressed,
+    TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
+    required TResult orElse(),
+  }) {
+    if (stepForward != null) {
+      return stepForward(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _StepForward implements ProfileEvent {
+  const factory _StepForward() = _$_StepForward;
+}
+
+/// @nodoc
+abstract class _$$_StepBackwardCopyWith<$Res> {
+  factory _$$_StepBackwardCopyWith(
+          _$_StepBackward value, $Res Function(_$_StepBackward) then) =
+      __$$_StepBackwardCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_StepBackwardCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res>
+    implements _$$_StepBackwardCopyWith<$Res> {
+  __$$_StepBackwardCopyWithImpl(
+      _$_StepBackward _value, $Res Function(_$_StepBackward) _then)
+      : super(_value, (v) => _then(v as _$_StepBackward));
+
+  @override
+  _$_StepBackward get _value => super._value as _$_StepBackward;
+}
+
+/// @nodoc
+
+class _$_StepBackward implements _StepBackward {
+  const _$_StepBackward();
+
+  @override
+  String toString() {
+    return 'ProfileEvent.stepBackward()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_StepBackward);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String email) emailChanged,
+    required TResult Function(String phone) phoneChanged,
+    required TResult Function(Gender gender) genderChanged,
+    required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
+    required TResult Function(UserType userType) userTypeChanged,
+    required TResult Function(num age, UserType userType) ageChanged,
+    required TResult Function(DateTime dob, UserType userType) dobChanged,
+    required TResult Function(num height) heightChanged,
+    required TResult Function(num weight, UserType userType) weightChanged,
+    required TResult Function() avatarChanged,
+    required TResult Function(bool value) editPressed,
+    required TResult Function() profileUpdated,
+    required TResult Function(int step) updateStepIndex,
+    required TResult Function() stepForward,
+    required TResult Function() stepBackward,
+  }) {
+    return stepBackward();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String email)? emailChanged,
+    TResult Function(String phone)? phoneChanged,
+    TResult Function(Gender gender)? genderChanged,
+    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
+    TResult Function(UserType userType)? userTypeChanged,
+    TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
+    TResult Function(num height)? heightChanged,
+    TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function()? avatarChanged,
+    TResult Function(bool value)? editPressed,
+    TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
+  }) {
+    return stepBackward?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String email)? emailChanged,
+    TResult Function(String phone)? phoneChanged,
+    TResult Function(Gender gender)? genderChanged,
+    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
+    TResult Function(UserType userType)? userTypeChanged,
+    TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
+    TResult Function(num height)? heightChanged,
+    TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function()? avatarChanged,
+    TResult Function(bool value)? editPressed,
+    TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
+    required TResult orElse(),
+  }) {
+    if (stepBackward != null) {
+      return stepBackward();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_PhoneChanged value) phoneChanged,
+    required TResult Function(_GenderChanged value) genderChanged,
+    required TResult Function(_BloodGroupChanged value) bloodGroupChanged,
+    required TResult Function(_UserTypeChanged value) userTypeChanged,
+    required TResult Function(_AgeChanged value) ageChanged,
+    required TResult Function(_DateOfBirthChanged value) dobChanged,
+    required TResult Function(_HeightChanged value) heightChanged,
+    required TResult Function(_WeightChanged value) weightChanged,
+    required TResult Function(_AvatarChanged value) avatarChanged,
+    required TResult Function(_ProfileEditPressed value) editPressed,
+    required TResult Function(_ProfileUpdated value) profileUpdated,
+    required TResult Function(_UpdateStepIndex value) updateStepIndex,
+    required TResult Function(_StepForward value) stepForward,
+    required TResult Function(_StepBackward value) stepBackward,
+  }) {
+    return stepBackward(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
+    TResult Function(_UserTypeChanged value)? userTypeChanged,
+    TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
+    TResult Function(_HeightChanged value)? heightChanged,
+    TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
+    TResult Function(_ProfileEditPressed value)? editPressed,
+    TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
+  }) {
+    return stepBackward?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
+    TResult Function(_UserTypeChanged value)? userTypeChanged,
+    TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
+    TResult Function(_HeightChanged value)? heightChanged,
+    TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
+    TResult Function(_ProfileEditPressed value)? editPressed,
+    TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
+    required TResult orElse(),
+  }) {
+    if (stepBackward != null) {
+      return stepBackward(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _StepBackward implements ProfileEvent {
+  const factory _StepBackward() = _$_StepBackward;
+}
+
+/// @nodoc
 mixin _$ProfileState {
   JUser get user => throw _privateConstructorUsedError;
   File? get avatarFile => throw _privateConstructorUsedError;
   bool get loading => throw _privateConstructorUsedError;
+  int get activeStepIndex => throw _privateConstructorUsedError;
   bool get isEditing => throw _privateConstructorUsedError;
   bool get isSaving => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
@@ -2703,6 +3891,7 @@ abstract class $ProfileStateCopyWith<$Res> {
       {JUser user,
       File? avatarFile,
       bool loading,
+      int activeStepIndex,
       bool isEditing,
       bool isSaving,
       bool showErrorMessages,
@@ -2724,6 +3913,7 @@ class _$ProfileStateCopyWithImpl<$Res> implements $ProfileStateCopyWith<$Res> {
     Object? user = freezed,
     Object? avatarFile = freezed,
     Object? loading = freezed,
+    Object? activeStepIndex = freezed,
     Object? isEditing = freezed,
     Object? isSaving = freezed,
     Object? showErrorMessages = freezed,
@@ -2742,6 +3932,10 @@ class _$ProfileStateCopyWithImpl<$Res> implements $ProfileStateCopyWith<$Res> {
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
               as bool,
+      activeStepIndex: activeStepIndex == freezed
+          ? _value.activeStepIndex
+          : activeStepIndex // ignore: cast_nullable_to_non_nullable
+              as int,
       isEditing: isEditing == freezed
           ? _value.isEditing
           : isEditing // ignore: cast_nullable_to_non_nullable
@@ -2780,6 +3974,7 @@ abstract class _$$_ProfileStateCopyWith<$Res>
       {JUser user,
       File? avatarFile,
       bool loading,
+      int activeStepIndex,
       bool isEditing,
       bool isSaving,
       bool showErrorMessages,
@@ -2805,6 +4000,7 @@ class __$$_ProfileStateCopyWithImpl<$Res>
     Object? user = freezed,
     Object? avatarFile = freezed,
     Object? loading = freezed,
+    Object? activeStepIndex = freezed,
     Object? isEditing = freezed,
     Object? isSaving = freezed,
     Object? showErrorMessages = freezed,
@@ -2823,6 +4019,10 @@ class __$$_ProfileStateCopyWithImpl<$Res>
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
               as bool,
+      activeStepIndex: activeStepIndex == freezed
+          ? _value.activeStepIndex
+          : activeStepIndex // ignore: cast_nullable_to_non_nullable
+              as int,
       isEditing: isEditing == freezed
           ? _value.isEditing
           : isEditing // ignore: cast_nullable_to_non_nullable
@@ -2850,6 +4050,7 @@ class _$_ProfileState implements _ProfileState {
       {required this.user,
       required this.avatarFile,
       required this.loading,
+      required this.activeStepIndex,
       required this.isEditing,
       required this.isSaving,
       required this.showErrorMessages,
@@ -2862,6 +4063,8 @@ class _$_ProfileState implements _ProfileState {
   @override
   final bool loading;
   @override
+  final int activeStepIndex;
+  @override
   final bool isEditing;
   @override
   final bool isSaving;
@@ -2872,7 +4075,7 @@ class _$_ProfileState implements _ProfileState {
 
   @override
   String toString() {
-    return 'ProfileState(user: $user, avatarFile: $avatarFile, loading: $loading, isEditing: $isEditing, isSaving: $isSaving, showErrorMessages: $showErrorMessages, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
+    return 'ProfileState(user: $user, avatarFile: $avatarFile, loading: $loading, activeStepIndex: $activeStepIndex, isEditing: $isEditing, isSaving: $isSaving, showErrorMessages: $showErrorMessages, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
   }
 
   @override
@@ -2884,6 +4087,8 @@ class _$_ProfileState implements _ProfileState {
             const DeepCollectionEquality()
                 .equals(other.avatarFile, avatarFile) &&
             const DeepCollectionEquality().equals(other.loading, loading) &&
+            const DeepCollectionEquality()
+                .equals(other.activeStepIndex, activeStepIndex) &&
             const DeepCollectionEquality().equals(other.isEditing, isEditing) &&
             const DeepCollectionEquality().equals(other.isSaving, isSaving) &&
             const DeepCollectionEquality()
@@ -2898,6 +4103,7 @@ class _$_ProfileState implements _ProfileState {
       const DeepCollectionEquality().hash(user),
       const DeepCollectionEquality().hash(avatarFile),
       const DeepCollectionEquality().hash(loading),
+      const DeepCollectionEquality().hash(activeStepIndex),
       const DeepCollectionEquality().hash(isEditing),
       const DeepCollectionEquality().hash(isSaving),
       const DeepCollectionEquality().hash(showErrorMessages),
@@ -2914,6 +4120,7 @@ abstract class _ProfileState implements ProfileState {
       {required final JUser user,
       required final File? avatarFile,
       required final bool loading,
+      required final int activeStepIndex,
       required final bool isEditing,
       required final bool isSaving,
       required final bool showErrorMessages,
@@ -2926,6 +4133,8 @@ abstract class _ProfileState implements ProfileState {
   File? get avatarFile => throw _privateConstructorUsedError;
   @override
   bool get loading => throw _privateConstructorUsedError;
+  @override
+  int get activeStepIndex => throw _privateConstructorUsedError;
   @override
   bool get isEditing => throw _privateConstructorUsedError;
   @override

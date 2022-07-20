@@ -36,6 +36,9 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     on<_UserTypeChanged>((event, emit) => _userTypeChanged(event, emit));
     on<_AvatarChanged>((event, emit) => _avatarChanged(event, emit));
     on<_ProfileUpdated>((event, emit) => _profileUpdated(event, emit));
+    on<_UpdateStepIndex>((event, emit) => _updateStepIndex(event, emit));
+    on<_StepForward>((event, emit) => _stepForward(event, emit));
+    on<_StepBackward>((event, emit) => _stepBackward(event, emit));
   }
 
   final IAuthFacade _authFacade;
@@ -183,5 +186,33 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       showErrorMessages: true,
       saveFailureOrSuccessOption: optionOf(failureOrSuccess),
     ));
+  }
+
+  _stepForward(_StepForward e, Emitter<ProfileState> emit) async {
+    if (state.activeStepIndex < 5) {
+      emit(
+        state.copyWith(
+          activeStepIndex: state.activeStepIndex + 1,
+        ),
+      );
+    }
+  }
+
+  _stepBackward(_StepBackward e, Emitter<ProfileState> emit) async {
+    if (state.activeStepIndex != 0) {
+      emit(
+        state.copyWith(
+          activeStepIndex: state.activeStepIndex - 1,
+        ),
+      );
+    }
+  }
+
+  _updateStepIndex(_UpdateStepIndex e, Emitter<ProfileState> emit) async {
+    emit(
+      state.copyWith(
+        activeStepIndex: e.step,
+      ),
+    );
   }
 }
