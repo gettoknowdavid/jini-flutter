@@ -6,7 +6,6 @@ import 'package:jini/application/core/bottom_nav/bottom_nav_cubit.dart';
 import 'package:jini/presentation/core/layout/widgets/bottom_nav.dart';
 import 'package:jini/presentation/core/layout/widgets/j_drawer.dart';
 import 'package:jini/presentation/core/routes/j_router.dart';
-import 'package:jini/presentation/core/widgets/j_dialogs.dart';
 import 'package:jini/presentation/core/widgets/j_theme_switch.dart';
 
 class JLayout extends StatelessWidget {
@@ -18,8 +17,7 @@ class JLayout extends StatelessWidget {
       bloc: authBloc,
       listener: (context, authState) {
         authState.mapOrNull(
-          profileNotCompleted: (_) =>
-              Get.dialog(JDialogs.editProfile, barrierDismissible: false),
+          profileNotCompleted: (_) => Get.offAllNamed(JRoutes.profileFormPage),
           unauthenticated: (_) => Get.offAllNamed(JRoutes.signIn),
         );
       },
