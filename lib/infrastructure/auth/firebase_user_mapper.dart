@@ -14,6 +14,7 @@ class FirebaseUserMapper {
 
     return JUser(
       uid: Uid.fromUniqueString(user.uid),
+      dob: user.dob == null ? null : IDateOfBirth(user.dob!, user.userType!),
       age: user.age == null ? null : IAge(user.age!, user.userType!),
       bloodGroup: user.bloodGroup == null ? null : IBloodGroup(user.bloodGroup),
       city: user.city == null ? null : user.city,
