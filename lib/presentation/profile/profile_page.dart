@@ -2,8 +2,6 @@ import 'package:division/division.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-import 'package:jini/application/auth/auth_bloc.dart';
-
 import 'package:jini/application/profile/profile_bloc.dart';
 import 'package:jini/presentation/core/common/j_avatar.dart';
 import 'package:jini/presentation/core/common/j_location_widget.dart';
@@ -24,50 +22,48 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of<ProfileBloc>(context);
-    final authBloc = BlocProvider.of<AuthBloc>(context);
 
     return JPage(
+      extendBodyBehindAppBar: true,
       addGlobalPadding: false,
-      loading:
-          authBloc.state == const AuthState.loading() || bloc.state.isSaving,
-      child: Scaffold(
-        extendBodyBehindAppBar: true,
-        appBar: AppBar(
-          leading: JBackButton(
-            color: Colors.white,
-            onTap: () {
-              bloc.add(ProfileEvent.editPressed(false));
-              Get.back();
-            },
-          ),
-          actions: [const ProfileMenu()],
+      loading: bloc.state.isSaving,
+      appBar: AppBar(
+        leading: JBackButton(
+          color: Colors.white,
+          onTap: () {
+            bloc.add(ProfileEvent.editPressed(false));
+            Get.back();
+          },
         ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              Parent(
-                style: JWidgetStyles.headerStyles,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    const JAvatar(),
-                    JScreenUtil.vSpace(30),
-                    const ProfileUserName(),
-                    JScreenUtil.vSpace(4),
-                    const ProfileEmailWidget(),
-                    JScreenUtil.vSpace(4),
-                    const JLocationWidget(),
-                    JScreenUtil.vSpace(30),
-                    const ProfileStats(),
-                  ],
-                ),
+        actions: [
+          const ProfileMenu(),
+        ],
+      ),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Parent(
+              style: JWidgetStyles.headerStyles,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const JAvatar(),
+                  JScreenUtil.vSpace(30),
+                  const ProfileUserName(),
+                  JScreenUtil.vSpace(4),
+                  const ProfileEmailWidget(),
+                  JScreenUtil.vSpace(4),
+                  const JLocationWidget(),
+                  JScreenUtil.vSpace(30),
+                  const ProfileStats(),
+                ],
               ),
-              JScreenUtil.vSpace(30),
-              const ProfileBloodGroupWidget(),
-              JScreenUtil.vSpace(30),
-              const ProfileOtherDetails(),
-            ],
-          ),
+            ),
+            JScreenUtil.vSpace(30),
+            const ProfileBloodGroupWidget(),
+            JScreenUtil.vSpace(30),
+            const ProfileOtherDetails(),
+          ],
         ),
       ),
     );
