@@ -7,7 +7,6 @@ import 'package:jini/domain/core/gender.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/common/j_widget_styles.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
-import 'package:jini/presentation/profile/widgets/edit_bottom_sheet.dart';
 
 class GenderGrid extends StatelessWidget {
   const GenderGrid({Key? key}) : super(key: key);
