@@ -9,12 +9,14 @@ class JPage extends StatelessWidget {
     this.loading = false,
     this.appBar,
     this.extendBodyBehindAppBar = false,
+    this.addGlobalPadding = true,
   }) : super(key: key);
 
   final Widget child;
   final bool loading;
   final AppBar? appBar;
   final bool extendBodyBehindAppBar;
+  final bool addGlobalPadding;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,11 @@ class JPage extends StatelessWidget {
       body: Stack(
         children: [
           const JBackground(),
-          child,
+          Padding(
+            padding:
+                addGlobalPadding ? JScreenUtil.globalPadding : EdgeInsets.zero,
+            child: child,
+          ),
           if (loading)
             Align(
               alignment: Alignment.center,
