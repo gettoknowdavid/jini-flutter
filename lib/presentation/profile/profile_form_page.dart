@@ -293,6 +293,19 @@ class PhoneField extends StatelessWidget {
   }
 }
 
+class _StepTitle extends StatelessWidget {
+  const _StepTitle(this.value, {Key? key}) : super(key: key);
+  final String value;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      value,
+      style: Theme.of(context).textTheme.titleLarge,
+    );
+  }
+}
+
 class ProfileFormPage extends StatefulWidget {
   const ProfileFormPage({Key? key}) : super(key: key);
 
@@ -301,8 +314,6 @@ class ProfileFormPage extends StatefulWidget {
 }
 
 class _ProfileFormPageState extends State<ProfileFormPage> {
-  String dobString = '';
-
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -314,46 +325,31 @@ class _ProfileFormPageState extends State<ProfileFormPage> {
       Step(
         isActive: _index >= 0,
         state: _index <= 0 ? StepState.complete : StepState.indexed,
-        title: Text(
-          'What\'s your gender?',
-          style: textTheme.titleLarge,
-        ),
+        title: const _StepTitle('What\'s your gender?'),
         content: const GenderGrid(),
       ),
       Step(
         isActive: _index >= 1,
         state: _index <= 1 ? StepState.complete : StepState.indexed,
-        title: Text(
-          'How old are you?',
-          style: textTheme.titleLarge,
-        ),
+        title: const _StepTitle('How old are you?'),
         content: const DateOfBirthField(),
       ),
       Step(
         isActive: _index >= 2,
         state: _index <= 2 ? StepState.complete : StepState.indexed,
-        title: Text(
-          'What\'s your phone number?',
-          style: textTheme.titleLarge,
-        ),
+        title: const _StepTitle('What\'s your phone number?'),
         content: const PhoneField(),
       ),
       Step(
         isActive: _index >= 3,
         state: _index <= 3 ? StepState.complete : StepState.indexed,
-        title: Text(
-          'What\'s your blood group?',
-          style: textTheme.titleLarge,
-        ),
+        title: const _StepTitle('What\'s your blood group?'),
         content: const BloodGroupGrid(),
       ),
       Step(
         isActive: _index == 4,
         state: StepState.complete,
-        title: Text(
-          'Set your profile picture?',
-          style: textTheme.titleLarge,
-        ),
+        title: const _StepTitle('Set your profile picture?'),
         content: const AvatarField(),
       ),
     ];
