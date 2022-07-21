@@ -17,8 +17,12 @@ class MediaFacade implements IMediaFacade {
   final ImagePicker _picker;
 
   @override
-  Future<File?> getImage() async {
-    final XFile? _file = await _picker.pickImage(source: ImageSource.gallery);
+  Future<File?> getImage([ImageSource source = ImageSource.gallery]) async {
+    final XFile? _file = await _picker.pickImage(
+      source: source,
+      preferredCameraDevice: CameraDevice.front,
+      imageQuality: 50,
+    );
 
     if (_file != null) {
       return File(_file.path);
