@@ -10,6 +10,8 @@ import 'package:jini/presentation/core/common/j_error_messages.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
 import 'package:jini/presentation/core/widgets/j_text_form_field.dart';
+import 'package:jini/presentation/profile/profile_form_page.dart';
+import 'package:jini/presentation/profile/widgets/gender_grid.dart';
 
 final sheetStyle = (ThemeData theme) => ParentStyle()
   ..borderRadius(
@@ -142,11 +144,8 @@ class EditGenderBottomSheet extends StatelessWidget {
           (a) => a.fold((l) => null, (r) => Get.close(1)),
         );
       },
-      buildWhen: (p, c) =>
-          p.user.gender == p.user.gender || p.isSaving != c.isSaving,
+      buildWhen: (p, c) => p.isSaving != c.isSaving,
       builder: (context, state) {
-        final gender = bloc.state.user.gender;
-
         return Parent(
           style: sheetStyle(theme),
           child: Wrap(
@@ -154,13 +153,7 @@ class EditGenderBottomSheet extends StatelessWidget {
             runSpacing: JScreenUtil.r(30),
             children: <Widget>[
               Text('Update your gender', style: textTheme.titleLarge),
-              for (int i = 0; Gender.values.length > i; i++)
-                RadioListTile<Gender>(
-                  value: Gender.values[i],
-                  groupValue: gender == null ? null : gender.getOrCrash(),
-                  onChanged: (g) => bloc.add(ProfileEvent.genderChanged(g!)),
-                  title: Text(Gender.values[i].value),
-                ),
+              const GenderGrid(),
               JButton(
                 title: 'Save',
                 onPressed: _handleSave,
