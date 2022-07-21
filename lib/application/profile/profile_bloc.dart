@@ -174,6 +174,10 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
 
   _editPressed(_ProfileEditPressed e, Emitter<ProfileState> emit) async {
     final _userOption = await _authFacade.getUser();
+    if (e.value == false) {
+      emit(state.copyWith(isEditing: e.value));
+    }
+
     emit(
       _userOption.fold(
         () => state,
