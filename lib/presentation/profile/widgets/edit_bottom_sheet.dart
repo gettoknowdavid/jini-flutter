@@ -8,22 +8,12 @@ import 'package:jini/domain/core/user_type.dart';
 import 'package:jini/infrastructure/auth/j_user_dtos.dart';
 import 'package:jini/presentation/core/common/j_error_messages.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
+import 'package:jini/presentation/core/common/j_widget_styles.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
 import 'package:jini/presentation/core/widgets/j_text_form_field.dart';
 import 'package:jini/presentation/profile/profile_form_page.dart';
 import 'package:jini/presentation/profile/widgets/gender_grid.dart';
 import 'package:jini/presentation/profile/widgets/phone_field.dart';
-
-final sheetStyle = (ThemeData theme) => ParentStyle()
-  ..borderRadius(
-    topLeft: JScreenUtil.r(30),
-    topRight: JScreenUtil.r(30),
-  )
-  ..padding(
-    horizontal: JScreenUtil.r(18),
-    vertical: JScreenUtil.r(22),
-  )
-  ..background.color(theme.canvasColor);
 
 class EditAgeBottomSheet extends StatelessWidget {
   const EditAgeBottomSheet({Key? key}) : super(key: key);
@@ -111,7 +101,7 @@ class EditBottomSheet extends StatelessWidget {
     final textTheme = theme.textTheme;
 
     return Parent(
-      style: sheetStyle(theme),
+      style: JWidgetStyles.profileSheetStyle(theme),
       child: Wrap(
         alignment: WrapAlignment.center,
         runSpacing: JScreenUtil.r(30),
@@ -226,7 +216,6 @@ class EditNameBottomSheet extends StatelessWidget {
     );
   }
 }
-
 
 class EditWeightBottomSheet extends StatelessWidget {
   const EditWeightBottomSheet({Key? key}) : super(key: key);
