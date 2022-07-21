@@ -27,7 +27,7 @@ mixin _$JUser {
   IPhone? get phone => throw _privateConstructorUsedError;
   String? get city => throw _privateConstructorUsedError;
   String? get avatar => throw _privateConstructorUsedError;
-  Geo? get location => throw _privateConstructorUsedError;
+  ILocation? get location => throw _privateConstructorUsedError;
   IBloodGroup? get bloodGroup => throw _privateConstructorUsedError;
   IUserType? get userType => throw _privateConstructorUsedError;
   bool? get eligible => throw _privateConstructorUsedError;
@@ -54,7 +54,7 @@ abstract class $JUserCopyWith<$Res> {
       IPhone? phone,
       String? city,
       String? avatar,
-      Geo? location,
+      ILocation? location,
       IBloodGroup? bloodGroup,
       IUserType? userType,
       bool? eligible,
@@ -138,7 +138,7 @@ class _$JUserCopyWithImpl<$Res> implements $JUserCopyWith<$Res> {
       location: location == freezed
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
-              as Geo?,
+              as ILocation?,
       bloodGroup: bloodGroup == freezed
           ? _value.bloodGroup
           : bloodGroup // ignore: cast_nullable_to_non_nullable
@@ -180,7 +180,7 @@ abstract class _$$_JUserCopyWith<$Res> implements $JUserCopyWith<$Res> {
       IPhone? phone,
       String? city,
       String? avatar,
-      Geo? location,
+      ILocation? location,
       IBloodGroup? bloodGroup,
       IUserType? userType,
       bool? eligible,
@@ -265,7 +265,7 @@ class __$$_JUserCopyWithImpl<$Res> extends _$JUserCopyWithImpl<$Res>
       location: location == freezed
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
-              as Geo?,
+              as ILocation?,
       bloodGroup: bloodGroup == freezed
           ? _value.bloodGroup
           : bloodGroup // ignore: cast_nullable_to_non_nullable
@@ -335,7 +335,7 @@ class _$_JUser implements _JUser {
   @override
   final String? avatar;
   @override
-  final Geo? location;
+  final ILocation? location;
   @override
   final IBloodGroup? bloodGroup;
   @override
@@ -418,7 +418,7 @@ abstract class _JUser implements JUser {
       final IPhone? phone,
       final String? city,
       final String? avatar,
-      final Geo? location,
+      final ILocation? location,
       final IBloodGroup? bloodGroup,
       final IUserType? userType,
       final bool? eligible,
@@ -448,7 +448,7 @@ abstract class _JUser implements JUser {
   @override
   String? get avatar => throw _privateConstructorUsedError;
   @override
-  Geo? get location => throw _privateConstructorUsedError;
+  ILocation? get location => throw _privateConstructorUsedError;
   @override
   IBloodGroup? get bloodGroup => throw _privateConstructorUsedError;
   @override

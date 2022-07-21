@@ -20,7 +20,7 @@ class JUser with _$JUser implements IEntity {
     IPhone? phone,
     String? city,
     String? avatar,
-    Geo? location,
+    ILocation? location,
     IBloodGroup? bloodGroup,
     IUserType? userType,
     bool? eligible,
