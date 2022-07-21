@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/route_manager.dart';
 import 'package:jini/application/auth/auth_bloc.dart';
+import 'package:jini/application/profile/profile_bloc.dart';
 import 'package:jini/presentation/core/common/image_resources.dart';
 import 'package:jini/presentation/core/widgets/j_background.dart';
 import 'package:jini/presentation/core/routes/j_router.dart';
@@ -12,6 +13,7 @@ class SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final profileBloc = BlocProvider.of<ProfileBloc>(context);
     return BlocListener<AuthBloc, AuthState>(
       listenWhen: (p, c) => p != c,
       listener: (context, state) {
@@ -19,7 +21,10 @@ class SplashPage extends StatelessWidget {
           state.mapOrNull(
             profileNotCompleted: (_) =>
                 Get.offAllNamed(JRoutes.profileFormPage),
-            authenticated: (_) => Get.offAllNamed(JRoutes.layout),
+            authenticated: (_) {
+              profileBloc.add(const ProfileEvent.initialized());
+              Get.offAllNamed(JRoutes.layout);
+            },
             unauthenticated: (_) => Get.offAllNamed(JRoutes.signIn),
             unverified: (_) => Get.offAllNamed(JRoutes.verification),
           );
