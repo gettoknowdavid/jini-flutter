@@ -20,13 +20,13 @@ mixin _$ValueFailure<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T? failedValue) empty,
     required TResult Function(T? failedValue) nullValue,
+    required TResult Function(T? failedValue) unknownLocation,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
     required TResult Function(T failedValue) weightTooSmall,
     required TResult Function(T failedValue) weightTooBig,
     required TResult Function(T failedValue, num max) numberTooLarge,
-    required TResult Function(T failedValue, int max) listTooLong,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) invalidPhone,
     required TResult Function(T failedValue) invalidPassword,
@@ -40,13 +40,13 @@ mixin _$ValueFailure<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -60,13 +60,13 @@ mixin _$ValueFailure<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -81,13 +81,13 @@ mixin _$ValueFailure<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
     required TResult Function(NullValue<T> value) nullValue,
+    required TResult Function(UnknownLocation<T> value) unknownLocation,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
     required TResult Function(WeightTooSmall<T> value) weightTooSmall,
     required TResult Function(WeightTooBig<T> value) weightTooBig,
     required TResult Function(NumberTooLarge<T> value) numberTooLarge,
-    required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(InvalidPhone<T> value) invalidPhone,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
@@ -101,13 +101,13 @@ mixin _$ValueFailure<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -121,13 +121,13 @@ mixin _$ValueFailure<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -222,13 +222,13 @@ class _$Empty<T> implements Empty<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T? failedValue) empty,
     required TResult Function(T? failedValue) nullValue,
+    required TResult Function(T? failedValue) unknownLocation,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
     required TResult Function(T failedValue) weightTooSmall,
     required TResult Function(T failedValue) weightTooBig,
     required TResult Function(T failedValue, num max) numberTooLarge,
-    required TResult Function(T failedValue, int max) listTooLong,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) invalidPhone,
     required TResult Function(T failedValue) invalidPassword,
@@ -245,13 +245,13 @@ class _$Empty<T> implements Empty<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -268,13 +268,13 @@ class _$Empty<T> implements Empty<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -295,13 +295,13 @@ class _$Empty<T> implements Empty<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
     required TResult Function(NullValue<T> value) nullValue,
+    required TResult Function(UnknownLocation<T> value) unknownLocation,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
     required TResult Function(WeightTooSmall<T> value) weightTooSmall,
     required TResult Function(WeightTooBig<T> value) weightTooBig,
     required TResult Function(NumberTooLarge<T> value) numberTooLarge,
-    required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(InvalidPhone<T> value) invalidPhone,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
@@ -318,13 +318,13 @@ class _$Empty<T> implements Empty<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -341,13 +341,13 @@ class _$Empty<T> implements Empty<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -441,13 +441,13 @@ class _$NullValue<T> implements NullValue<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T? failedValue) empty,
     required TResult Function(T? failedValue) nullValue,
+    required TResult Function(T? failedValue) unknownLocation,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
     required TResult Function(T failedValue) weightTooSmall,
     required TResult Function(T failedValue) weightTooBig,
     required TResult Function(T failedValue, num max) numberTooLarge,
-    required TResult Function(T failedValue, int max) listTooLong,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) invalidPhone,
     required TResult Function(T failedValue) invalidPassword,
@@ -464,13 +464,13 @@ class _$NullValue<T> implements NullValue<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -487,13 +487,13 @@ class _$NullValue<T> implements NullValue<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -514,13 +514,13 @@ class _$NullValue<T> implements NullValue<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
     required TResult Function(NullValue<T> value) nullValue,
+    required TResult Function(UnknownLocation<T> value) unknownLocation,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
     required TResult Function(WeightTooSmall<T> value) weightTooSmall,
     required TResult Function(WeightTooBig<T> value) weightTooBig,
     required TResult Function(NumberTooLarge<T> value) numberTooLarge,
-    required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(InvalidPhone<T> value) invalidPhone,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
@@ -537,13 +537,13 @@ class _$NullValue<T> implements NullValue<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -560,13 +560,13 @@ class _$NullValue<T> implements NullValue<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -589,6 +589,226 @@ abstract class NullValue<T> implements ValueFailure<T> {
   T? get failedValue => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$NullValueCopyWith<T, _$NullValue<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UnknownLocationCopyWith<T, $Res> {
+  factory _$$UnknownLocationCopyWith(_$UnknownLocation<T> value,
+          $Res Function(_$UnknownLocation<T>) then) =
+      __$$UnknownLocationCopyWithImpl<T, $Res>;
+  $Res call({T? failedValue});
+}
+
+/// @nodoc
+class __$$UnknownLocationCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$$UnknownLocationCopyWith<T, $Res> {
+  __$$UnknownLocationCopyWithImpl(
+      _$UnknownLocation<T> _value, $Res Function(_$UnknownLocation<T>) _then)
+      : super(_value, (v) => _then(v as _$UnknownLocation<T>));
+
+  @override
+  _$UnknownLocation<T> get _value => super._value as _$UnknownLocation<T>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(_$UnknownLocation<T>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UnknownLocation<T> implements UnknownLocation<T> {
+  const _$UnknownLocation({this.failedValue});
+
+  @override
+  final T? failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.unknownLocation(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UnknownLocation<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$UnknownLocationCopyWith<T, _$UnknownLocation<T>> get copyWith =>
+      __$$UnknownLocationCopyWithImpl<T, _$UnknownLocation<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T? failedValue) empty,
+    required TResult Function(T? failedValue) nullValue,
+    required TResult Function(T? failedValue) unknownLocation,
+    required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) tooYoung,
+    required TResult Function(T failedValue) tooOld,
+    required TResult Function(T failedValue) weightTooSmall,
+    required TResult Function(T failedValue) weightTooBig,
+    required TResult Function(T failedValue, num max) numberTooLarge,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) invalidPhone,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidAge,
+    required TResult Function(T failedValue) invalidPhotoUrl,
+    required TResult Function(T failedValue) invalidPhotoType,
+  }) {
+    return unknownLocation(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
+    TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? tooYoung,
+    TResult Function(T failedValue)? tooOld,
+    TResult Function(T failedValue)? weightTooSmall,
+    TResult Function(T failedValue)? weightTooBig,
+    TResult Function(T failedValue, num max)? numberTooLarge,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? invalidPhone,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidAge,
+    TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
+  }) {
+    return unknownLocation?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T? failedValue)? empty,
+    TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
+    TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? tooYoung,
+    TResult Function(T failedValue)? tooOld,
+    TResult Function(T failedValue)? weightTooSmall,
+    TResult Function(T failedValue)? weightTooBig,
+    TResult Function(T failedValue, num max)? numberTooLarge,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? invalidPhone,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidAge,
+    TResult Function(T failedValue)? invalidPhotoUrl,
+    TResult Function(T failedValue)? invalidPhotoType,
+    required TResult orElse(),
+  }) {
+    if (unknownLocation != null) {
+      return unknownLocation(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(NullValue<T> value) nullValue,
+    required TResult Function(UnknownLocation<T> value) unknownLocation,
+    required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(AgeTooYoung<T> value) tooYoung,
+    required TResult Function(AgeTooOld<T> value) tooOld,
+    required TResult Function(WeightTooSmall<T> value) weightTooSmall,
+    required TResult Function(WeightTooBig<T> value) weightTooBig,
+    required TResult Function(NumberTooLarge<T> value) numberTooLarge,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidPhone<T> value) invalidPhone,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidAge<T> value) invalidAge,
+    required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
+    required TResult Function(InvalidPhotoType<T> value) invalidPhotoType,
+  }) {
+    return unknownLocation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
+    TResult Function(Multiline<T> value)? multiline,
+    TResult Function(AgeTooYoung<T> value)? tooYoung,
+    TResult Function(AgeTooOld<T> value)? tooOld,
+    TResult Function(WeightTooSmall<T> value)? weightTooSmall,
+    TResult Function(WeightTooBig<T> value)? weightTooBig,
+    TResult Function(NumberTooLarge<T> value)? numberTooLarge,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPhone<T> value)? invalidPhone,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidAge<T> value)? invalidAge,
+    TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
+  }) {
+    return unknownLocation?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
+    TResult Function(Multiline<T> value)? multiline,
+    TResult Function(AgeTooYoung<T> value)? tooYoung,
+    TResult Function(AgeTooOld<T> value)? tooOld,
+    TResult Function(WeightTooSmall<T> value)? weightTooSmall,
+    TResult Function(WeightTooBig<T> value)? weightTooBig,
+    TResult Function(NumberTooLarge<T> value)? numberTooLarge,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPhone<T> value)? invalidPhone,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidAge<T> value)? invalidAge,
+    TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
+    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
+    required TResult orElse(),
+  }) {
+    if (unknownLocation != null) {
+      return unknownLocation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UnknownLocation<T> implements ValueFailure<T> {
+  const factory UnknownLocation({final T? failedValue}) = _$UnknownLocation<T>;
+
+  T? get failedValue => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$UnknownLocationCopyWith<T, _$UnknownLocation<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -660,13 +880,13 @@ class _$Multiline<T> implements Multiline<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T? failedValue) empty,
     required TResult Function(T? failedValue) nullValue,
+    required TResult Function(T? failedValue) unknownLocation,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
     required TResult Function(T failedValue) weightTooSmall,
     required TResult Function(T failedValue) weightTooBig,
     required TResult Function(T failedValue, num max) numberTooLarge,
-    required TResult Function(T failedValue, int max) listTooLong,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) invalidPhone,
     required TResult Function(T failedValue) invalidPassword,
@@ -683,13 +903,13 @@ class _$Multiline<T> implements Multiline<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -706,13 +926,13 @@ class _$Multiline<T> implements Multiline<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -733,13 +953,13 @@ class _$Multiline<T> implements Multiline<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
     required TResult Function(NullValue<T> value) nullValue,
+    required TResult Function(UnknownLocation<T> value) unknownLocation,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
     required TResult Function(WeightTooSmall<T> value) weightTooSmall,
     required TResult Function(WeightTooBig<T> value) weightTooBig,
     required TResult Function(NumberTooLarge<T> value) numberTooLarge,
-    required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(InvalidPhone<T> value) invalidPhone,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
@@ -756,13 +976,13 @@ class _$Multiline<T> implements Multiline<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -779,13 +999,13 @@ class _$Multiline<T> implements Multiline<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -879,13 +1099,13 @@ class _$AgeTooYoung<T> implements AgeTooYoung<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T? failedValue) empty,
     required TResult Function(T? failedValue) nullValue,
+    required TResult Function(T? failedValue) unknownLocation,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
     required TResult Function(T failedValue) weightTooSmall,
     required TResult Function(T failedValue) weightTooBig,
     required TResult Function(T failedValue, num max) numberTooLarge,
-    required TResult Function(T failedValue, int max) listTooLong,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) invalidPhone,
     required TResult Function(T failedValue) invalidPassword,
@@ -902,13 +1122,13 @@ class _$AgeTooYoung<T> implements AgeTooYoung<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -925,13 +1145,13 @@ class _$AgeTooYoung<T> implements AgeTooYoung<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -952,13 +1172,13 @@ class _$AgeTooYoung<T> implements AgeTooYoung<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
     required TResult Function(NullValue<T> value) nullValue,
+    required TResult Function(UnknownLocation<T> value) unknownLocation,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
     required TResult Function(WeightTooSmall<T> value) weightTooSmall,
     required TResult Function(WeightTooBig<T> value) weightTooBig,
     required TResult Function(NumberTooLarge<T> value) numberTooLarge,
-    required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(InvalidPhone<T> value) invalidPhone,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
@@ -975,13 +1195,13 @@ class _$AgeTooYoung<T> implements AgeTooYoung<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -998,13 +1218,13 @@ class _$AgeTooYoung<T> implements AgeTooYoung<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -1098,13 +1318,13 @@ class _$AgeTooOld<T> implements AgeTooOld<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T? failedValue) empty,
     required TResult Function(T? failedValue) nullValue,
+    required TResult Function(T? failedValue) unknownLocation,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
     required TResult Function(T failedValue) weightTooSmall,
     required TResult Function(T failedValue) weightTooBig,
     required TResult Function(T failedValue, num max) numberTooLarge,
-    required TResult Function(T failedValue, int max) listTooLong,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) invalidPhone,
     required TResult Function(T failedValue) invalidPassword,
@@ -1121,13 +1341,13 @@ class _$AgeTooOld<T> implements AgeTooOld<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -1144,13 +1364,13 @@ class _$AgeTooOld<T> implements AgeTooOld<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -1171,13 +1391,13 @@ class _$AgeTooOld<T> implements AgeTooOld<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
     required TResult Function(NullValue<T> value) nullValue,
+    required TResult Function(UnknownLocation<T> value) unknownLocation,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
     required TResult Function(WeightTooSmall<T> value) weightTooSmall,
     required TResult Function(WeightTooBig<T> value) weightTooBig,
     required TResult Function(NumberTooLarge<T> value) numberTooLarge,
-    required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(InvalidPhone<T> value) invalidPhone,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
@@ -1194,13 +1414,13 @@ class _$AgeTooOld<T> implements AgeTooOld<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -1217,13 +1437,13 @@ class _$AgeTooOld<T> implements AgeTooOld<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -1317,13 +1537,13 @@ class _$WeightTooSmall<T> implements WeightTooSmall<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T? failedValue) empty,
     required TResult Function(T? failedValue) nullValue,
+    required TResult Function(T? failedValue) unknownLocation,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
     required TResult Function(T failedValue) weightTooSmall,
     required TResult Function(T failedValue) weightTooBig,
     required TResult Function(T failedValue, num max) numberTooLarge,
-    required TResult Function(T failedValue, int max) listTooLong,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) invalidPhone,
     required TResult Function(T failedValue) invalidPassword,
@@ -1340,13 +1560,13 @@ class _$WeightTooSmall<T> implements WeightTooSmall<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -1363,13 +1583,13 @@ class _$WeightTooSmall<T> implements WeightTooSmall<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -1390,13 +1610,13 @@ class _$WeightTooSmall<T> implements WeightTooSmall<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
     required TResult Function(NullValue<T> value) nullValue,
+    required TResult Function(UnknownLocation<T> value) unknownLocation,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
     required TResult Function(WeightTooSmall<T> value) weightTooSmall,
     required TResult Function(WeightTooBig<T> value) weightTooBig,
     required TResult Function(NumberTooLarge<T> value) numberTooLarge,
-    required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(InvalidPhone<T> value) invalidPhone,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
@@ -1413,13 +1633,13 @@ class _$WeightTooSmall<T> implements WeightTooSmall<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -1436,13 +1656,13 @@ class _$WeightTooSmall<T> implements WeightTooSmall<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -1537,13 +1757,13 @@ class _$WeightTooBig<T> implements WeightTooBig<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T? failedValue) empty,
     required TResult Function(T? failedValue) nullValue,
+    required TResult Function(T? failedValue) unknownLocation,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
     required TResult Function(T failedValue) weightTooSmall,
     required TResult Function(T failedValue) weightTooBig,
     required TResult Function(T failedValue, num max) numberTooLarge,
-    required TResult Function(T failedValue, int max) listTooLong,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) invalidPhone,
     required TResult Function(T failedValue) invalidPassword,
@@ -1560,13 +1780,13 @@ class _$WeightTooBig<T> implements WeightTooBig<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -1583,13 +1803,13 @@ class _$WeightTooBig<T> implements WeightTooBig<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -1610,13 +1830,13 @@ class _$WeightTooBig<T> implements WeightTooBig<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
     required TResult Function(NullValue<T> value) nullValue,
+    required TResult Function(UnknownLocation<T> value) unknownLocation,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
     required TResult Function(WeightTooSmall<T> value) weightTooSmall,
     required TResult Function(WeightTooBig<T> value) weightTooBig,
     required TResult Function(NumberTooLarge<T> value) numberTooLarge,
-    required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(InvalidPhone<T> value) invalidPhone,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
@@ -1633,13 +1853,13 @@ class _$WeightTooBig<T> implements WeightTooBig<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -1656,13 +1876,13 @@ class _$WeightTooBig<T> implements WeightTooBig<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -1767,13 +1987,13 @@ class _$NumberTooLarge<T> implements NumberTooLarge<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T? failedValue) empty,
     required TResult Function(T? failedValue) nullValue,
+    required TResult Function(T? failedValue) unknownLocation,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
     required TResult Function(T failedValue) weightTooSmall,
     required TResult Function(T failedValue) weightTooBig,
     required TResult Function(T failedValue, num max) numberTooLarge,
-    required TResult Function(T failedValue, int max) listTooLong,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) invalidPhone,
     required TResult Function(T failedValue) invalidPassword,
@@ -1790,13 +2010,13 @@ class _$NumberTooLarge<T> implements NumberTooLarge<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -1813,13 +2033,13 @@ class _$NumberTooLarge<T> implements NumberTooLarge<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -1840,13 +2060,13 @@ class _$NumberTooLarge<T> implements NumberTooLarge<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
     required TResult Function(NullValue<T> value) nullValue,
+    required TResult Function(UnknownLocation<T> value) unknownLocation,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
     required TResult Function(WeightTooSmall<T> value) weightTooSmall,
     required TResult Function(WeightTooBig<T> value) weightTooBig,
     required TResult Function(NumberTooLarge<T> value) numberTooLarge,
-    required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(InvalidPhone<T> value) invalidPhone,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
@@ -1863,13 +2083,13 @@ class _$NumberTooLarge<T> implements NumberTooLarge<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -1886,13 +2106,13 @@ class _$NumberTooLarge<T> implements NumberTooLarge<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -1918,238 +2138,6 @@ abstract class NumberTooLarge<T> implements ValueFailure<T> {
   num get max => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$NumberTooLargeCopyWith<T, _$NumberTooLarge<T>> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$ListTooLongCopyWith<T, $Res> {
-  factory _$$ListTooLongCopyWith(
-          _$ListTooLong<T> value, $Res Function(_$ListTooLong<T>) then) =
-      __$$ListTooLongCopyWithImpl<T, $Res>;
-  $Res call({T failedValue, int max});
-}
-
-/// @nodoc
-class __$$ListTooLongCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
-    implements _$$ListTooLongCopyWith<T, $Res> {
-  __$$ListTooLongCopyWithImpl(
-      _$ListTooLong<T> _value, $Res Function(_$ListTooLong<T>) _then)
-      : super(_value, (v) => _then(v as _$ListTooLong<T>));
-
-  @override
-  _$ListTooLong<T> get _value => super._value as _$ListTooLong<T>;
-
-  @override
-  $Res call({
-    Object? failedValue = freezed,
-    Object? max = freezed,
-  }) {
-    return _then(_$ListTooLong<T>(
-      failedValue: failedValue == freezed
-          ? _value.failedValue
-          : failedValue // ignore: cast_nullable_to_non_nullable
-              as T,
-      max: max == freezed
-          ? _value.max
-          : max // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ListTooLong<T> implements ListTooLong<T> {
-  const _$ListTooLong({required this.failedValue, required this.max});
-
-  @override
-  final T failedValue;
-  @override
-  final int max;
-
-  @override
-  String toString() {
-    return 'ValueFailure<$T>.listTooLong(failedValue: $failedValue, max: $max)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ListTooLong<T> &&
-            const DeepCollectionEquality()
-                .equals(other.failedValue, failedValue) &&
-            const DeepCollectionEquality().equals(other.max, max));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(failedValue),
-      const DeepCollectionEquality().hash(max));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$ListTooLongCopyWith<T, _$ListTooLong<T>> get copyWith =>
-      __$$ListTooLongCopyWithImpl<T, _$ListTooLong<T>>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(T? failedValue) empty,
-    required TResult Function(T? failedValue) nullValue,
-    required TResult Function(T failedValue) multiline,
-    required TResult Function(T failedValue) tooYoung,
-    required TResult Function(T failedValue) tooOld,
-    required TResult Function(T failedValue) weightTooSmall,
-    required TResult Function(T failedValue) weightTooBig,
-    required TResult Function(T failedValue, num max) numberTooLarge,
-    required TResult Function(T failedValue, int max) listTooLong,
-    required TResult Function(T failedValue) invalidEmail,
-    required TResult Function(T failedValue) invalidPhone,
-    required TResult Function(T failedValue) invalidPassword,
-    required TResult Function(T failedValue) shortPassword,
-    required TResult Function(T failedValue) invalidAge,
-    required TResult Function(T failedValue) invalidPhotoUrl,
-    required TResult Function(T failedValue) invalidPhotoType,
-  }) {
-    return listTooLong(failedValue, max);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T? failedValue)? empty,
-    TResult Function(T? failedValue)? nullValue,
-    TResult Function(T failedValue)? multiline,
-    TResult Function(T failedValue)? tooYoung,
-    TResult Function(T failedValue)? tooOld,
-    TResult Function(T failedValue)? weightTooSmall,
-    TResult Function(T failedValue)? weightTooBig,
-    TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
-    TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? invalidPhone,
-    TResult Function(T failedValue)? invalidPassword,
-    TResult Function(T failedValue)? shortPassword,
-    TResult Function(T failedValue)? invalidAge,
-    TResult Function(T failedValue)? invalidPhotoUrl,
-    TResult Function(T failedValue)? invalidPhotoType,
-  }) {
-    return listTooLong?.call(failedValue, max);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T? failedValue)? empty,
-    TResult Function(T? failedValue)? nullValue,
-    TResult Function(T failedValue)? multiline,
-    TResult Function(T failedValue)? tooYoung,
-    TResult Function(T failedValue)? tooOld,
-    TResult Function(T failedValue)? weightTooSmall,
-    TResult Function(T failedValue)? weightTooBig,
-    TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
-    TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? invalidPhone,
-    TResult Function(T failedValue)? invalidPassword,
-    TResult Function(T failedValue)? shortPassword,
-    TResult Function(T failedValue)? invalidAge,
-    TResult Function(T failedValue)? invalidPhotoUrl,
-    TResult Function(T failedValue)? invalidPhotoType,
-    required TResult orElse(),
-  }) {
-    if (listTooLong != null) {
-      return listTooLong(failedValue, max);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Empty<T> value) empty,
-    required TResult Function(NullValue<T> value) nullValue,
-    required TResult Function(Multiline<T> value) multiline,
-    required TResult Function(AgeTooYoung<T> value) tooYoung,
-    required TResult Function(AgeTooOld<T> value) tooOld,
-    required TResult Function(WeightTooSmall<T> value) weightTooSmall,
-    required TResult Function(WeightTooBig<T> value) weightTooBig,
-    required TResult Function(NumberTooLarge<T> value) numberTooLarge,
-    required TResult Function(ListTooLong<T> value) listTooLong,
-    required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(InvalidPhone<T> value) invalidPhone,
-    required TResult Function(InvalidPassword<T> value) invalidPassword,
-    required TResult Function(ShortPassword<T> value) shortPassword,
-    required TResult Function(InvalidAge<T> value) invalidAge,
-    required TResult Function(InvalidPhotoUrl<T> value) invalidPhotoUrl,
-    required TResult Function(InvalidPhotoType<T> value) invalidPhotoType,
-  }) {
-    return listTooLong(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Empty<T> value)? empty,
-    TResult Function(NullValue<T> value)? nullValue,
-    TResult Function(Multiline<T> value)? multiline,
-    TResult Function(AgeTooYoung<T> value)? tooYoung,
-    TResult Function(AgeTooOld<T> value)? tooOld,
-    TResult Function(WeightTooSmall<T> value)? weightTooSmall,
-    TResult Function(WeightTooBig<T> value)? weightTooBig,
-    TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidPhone<T> value)? invalidPhone,
-    TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(ShortPassword<T> value)? shortPassword,
-    TResult Function(InvalidAge<T> value)? invalidAge,
-    TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
-    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
-  }) {
-    return listTooLong?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Empty<T> value)? empty,
-    TResult Function(NullValue<T> value)? nullValue,
-    TResult Function(Multiline<T> value)? multiline,
-    TResult Function(AgeTooYoung<T> value)? tooYoung,
-    TResult Function(AgeTooOld<T> value)? tooOld,
-    TResult Function(WeightTooSmall<T> value)? weightTooSmall,
-    TResult Function(WeightTooBig<T> value)? weightTooBig,
-    TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(InvalidPhone<T> value)? invalidPhone,
-    TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(ShortPassword<T> value)? shortPassword,
-    TResult Function(InvalidAge<T> value)? invalidAge,
-    TResult Function(InvalidPhotoUrl<T> value)? invalidPhotoUrl,
-    TResult Function(InvalidPhotoType<T> value)? invalidPhotoType,
-    required TResult orElse(),
-  }) {
-    if (listTooLong != null) {
-      return listTooLong(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ListTooLong<T> implements ValueFailure<T> {
-  const factory ListTooLong(
-      {required final T failedValue,
-      required final int max}) = _$ListTooLong<T>;
-
-  T get failedValue => throw _privateConstructorUsedError;
-  int get max => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$$ListTooLongCopyWith<T, _$ListTooLong<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -2221,13 +2209,13 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T? failedValue) empty,
     required TResult Function(T? failedValue) nullValue,
+    required TResult Function(T? failedValue) unknownLocation,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
     required TResult Function(T failedValue) weightTooSmall,
     required TResult Function(T failedValue) weightTooBig,
     required TResult Function(T failedValue, num max) numberTooLarge,
-    required TResult Function(T failedValue, int max) listTooLong,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) invalidPhone,
     required TResult Function(T failedValue) invalidPassword,
@@ -2244,13 +2232,13 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -2267,13 +2255,13 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -2294,13 +2282,13 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
     required TResult Function(NullValue<T> value) nullValue,
+    required TResult Function(UnknownLocation<T> value) unknownLocation,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
     required TResult Function(WeightTooSmall<T> value) weightTooSmall,
     required TResult Function(WeightTooBig<T> value) weightTooBig,
     required TResult Function(NumberTooLarge<T> value) numberTooLarge,
-    required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(InvalidPhone<T> value) invalidPhone,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
@@ -2317,13 +2305,13 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -2340,13 +2328,13 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -2441,13 +2429,13 @@ class _$InvalidPhone<T> implements InvalidPhone<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T? failedValue) empty,
     required TResult Function(T? failedValue) nullValue,
+    required TResult Function(T? failedValue) unknownLocation,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
     required TResult Function(T failedValue) weightTooSmall,
     required TResult Function(T failedValue) weightTooBig,
     required TResult Function(T failedValue, num max) numberTooLarge,
-    required TResult Function(T failedValue, int max) listTooLong,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) invalidPhone,
     required TResult Function(T failedValue) invalidPassword,
@@ -2464,13 +2452,13 @@ class _$InvalidPhone<T> implements InvalidPhone<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -2487,13 +2475,13 @@ class _$InvalidPhone<T> implements InvalidPhone<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -2514,13 +2502,13 @@ class _$InvalidPhone<T> implements InvalidPhone<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
     required TResult Function(NullValue<T> value) nullValue,
+    required TResult Function(UnknownLocation<T> value) unknownLocation,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
     required TResult Function(WeightTooSmall<T> value) weightTooSmall,
     required TResult Function(WeightTooBig<T> value) weightTooBig,
     required TResult Function(NumberTooLarge<T> value) numberTooLarge,
-    required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(InvalidPhone<T> value) invalidPhone,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
@@ -2537,13 +2525,13 @@ class _$InvalidPhone<T> implements InvalidPhone<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -2560,13 +2548,13 @@ class _$InvalidPhone<T> implements InvalidPhone<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -2662,13 +2650,13 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T? failedValue) empty,
     required TResult Function(T? failedValue) nullValue,
+    required TResult Function(T? failedValue) unknownLocation,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
     required TResult Function(T failedValue) weightTooSmall,
     required TResult Function(T failedValue) weightTooBig,
     required TResult Function(T failedValue, num max) numberTooLarge,
-    required TResult Function(T failedValue, int max) listTooLong,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) invalidPhone,
     required TResult Function(T failedValue) invalidPassword,
@@ -2685,13 +2673,13 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -2708,13 +2696,13 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -2735,13 +2723,13 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
     required TResult Function(NullValue<T> value) nullValue,
+    required TResult Function(UnknownLocation<T> value) unknownLocation,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
     required TResult Function(WeightTooSmall<T> value) weightTooSmall,
     required TResult Function(WeightTooBig<T> value) weightTooBig,
     required TResult Function(NumberTooLarge<T> value) numberTooLarge,
-    required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(InvalidPhone<T> value) invalidPhone,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
@@ -2758,13 +2746,13 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -2781,13 +2769,13 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -2882,13 +2870,13 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T? failedValue) empty,
     required TResult Function(T? failedValue) nullValue,
+    required TResult Function(T? failedValue) unknownLocation,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
     required TResult Function(T failedValue) weightTooSmall,
     required TResult Function(T failedValue) weightTooBig,
     required TResult Function(T failedValue, num max) numberTooLarge,
-    required TResult Function(T failedValue, int max) listTooLong,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) invalidPhone,
     required TResult Function(T failedValue) invalidPassword,
@@ -2905,13 +2893,13 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -2928,13 +2916,13 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -2955,13 +2943,13 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
     required TResult Function(NullValue<T> value) nullValue,
+    required TResult Function(UnknownLocation<T> value) unknownLocation,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
     required TResult Function(WeightTooSmall<T> value) weightTooSmall,
     required TResult Function(WeightTooBig<T> value) weightTooBig,
     required TResult Function(NumberTooLarge<T> value) numberTooLarge,
-    required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(InvalidPhone<T> value) invalidPhone,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
@@ -2978,13 +2966,13 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -3001,13 +2989,13 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -3102,13 +3090,13 @@ class _$InvalidAge<T> implements InvalidAge<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T? failedValue) empty,
     required TResult Function(T? failedValue) nullValue,
+    required TResult Function(T? failedValue) unknownLocation,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
     required TResult Function(T failedValue) weightTooSmall,
     required TResult Function(T failedValue) weightTooBig,
     required TResult Function(T failedValue, num max) numberTooLarge,
-    required TResult Function(T failedValue, int max) listTooLong,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) invalidPhone,
     required TResult Function(T failedValue) invalidPassword,
@@ -3125,13 +3113,13 @@ class _$InvalidAge<T> implements InvalidAge<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -3148,13 +3136,13 @@ class _$InvalidAge<T> implements InvalidAge<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -3175,13 +3163,13 @@ class _$InvalidAge<T> implements InvalidAge<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
     required TResult Function(NullValue<T> value) nullValue,
+    required TResult Function(UnknownLocation<T> value) unknownLocation,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
     required TResult Function(WeightTooSmall<T> value) weightTooSmall,
     required TResult Function(WeightTooBig<T> value) weightTooBig,
     required TResult Function(NumberTooLarge<T> value) numberTooLarge,
-    required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(InvalidPhone<T> value) invalidPhone,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
@@ -3198,13 +3186,13 @@ class _$InvalidAge<T> implements InvalidAge<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -3221,13 +3209,13 @@ class _$InvalidAge<T> implements InvalidAge<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -3322,13 +3310,13 @@ class _$InvalidPhotoUrl<T> implements InvalidPhotoUrl<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T? failedValue) empty,
     required TResult Function(T? failedValue) nullValue,
+    required TResult Function(T? failedValue) unknownLocation,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
     required TResult Function(T failedValue) weightTooSmall,
     required TResult Function(T failedValue) weightTooBig,
     required TResult Function(T failedValue, num max) numberTooLarge,
-    required TResult Function(T failedValue, int max) listTooLong,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) invalidPhone,
     required TResult Function(T failedValue) invalidPassword,
@@ -3345,13 +3333,13 @@ class _$InvalidPhotoUrl<T> implements InvalidPhotoUrl<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -3368,13 +3356,13 @@ class _$InvalidPhotoUrl<T> implements InvalidPhotoUrl<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -3395,13 +3383,13 @@ class _$InvalidPhotoUrl<T> implements InvalidPhotoUrl<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
     required TResult Function(NullValue<T> value) nullValue,
+    required TResult Function(UnknownLocation<T> value) unknownLocation,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
     required TResult Function(WeightTooSmall<T> value) weightTooSmall,
     required TResult Function(WeightTooBig<T> value) weightTooBig,
     required TResult Function(NumberTooLarge<T> value) numberTooLarge,
-    required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(InvalidPhone<T> value) invalidPhone,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
@@ -3418,13 +3406,13 @@ class _$InvalidPhotoUrl<T> implements InvalidPhotoUrl<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -3441,13 +3429,13 @@ class _$InvalidPhotoUrl<T> implements InvalidPhotoUrl<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -3543,13 +3531,13 @@ class _$InvalidPhotoType<T> implements InvalidPhotoType<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T? failedValue) empty,
     required TResult Function(T? failedValue) nullValue,
+    required TResult Function(T? failedValue) unknownLocation,
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) tooYoung,
     required TResult Function(T failedValue) tooOld,
     required TResult Function(T failedValue) weightTooSmall,
     required TResult Function(T failedValue) weightTooBig,
     required TResult Function(T failedValue, num max) numberTooLarge,
-    required TResult Function(T failedValue, int max) listTooLong,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) invalidPhone,
     required TResult Function(T failedValue) invalidPassword,
@@ -3566,13 +3554,13 @@ class _$InvalidPhotoType<T> implements InvalidPhotoType<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -3589,13 +3577,13 @@ class _$InvalidPhotoType<T> implements InvalidPhotoType<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T? failedValue)? empty,
     TResult Function(T? failedValue)? nullValue,
+    TResult Function(T? failedValue)? unknownLocation,
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? tooYoung,
     TResult Function(T failedValue)? tooOld,
     TResult Function(T failedValue)? weightTooSmall,
     TResult Function(T failedValue)? weightTooBig,
     TResult Function(T failedValue, num max)? numberTooLarge,
-    TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? invalidPhone,
     TResult Function(T failedValue)? invalidPassword,
@@ -3616,13 +3604,13 @@ class _$InvalidPhotoType<T> implements InvalidPhotoType<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(Empty<T> value) empty,
     required TResult Function(NullValue<T> value) nullValue,
+    required TResult Function(UnknownLocation<T> value) unknownLocation,
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(AgeTooYoung<T> value) tooYoung,
     required TResult Function(AgeTooOld<T> value) tooOld,
     required TResult Function(WeightTooSmall<T> value) weightTooSmall,
     required TResult Function(WeightTooBig<T> value) weightTooBig,
     required TResult Function(NumberTooLarge<T> value) numberTooLarge,
-    required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(InvalidPhone<T> value) invalidPhone,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
@@ -3639,13 +3627,13 @@ class _$InvalidPhotoType<T> implements InvalidPhotoType<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
@@ -3662,13 +3650,13 @@ class _$InvalidPhotoType<T> implements InvalidPhotoType<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Empty<T> value)? empty,
     TResult Function(NullValue<T> value)? nullValue,
+    TResult Function(UnknownLocation<T> value)? unknownLocation,
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(AgeTooYoung<T> value)? tooYoung,
     TResult Function(AgeTooOld<T> value)? tooOld,
     TResult Function(WeightTooSmall<T> value)? weightTooSmall,
     TResult Function(WeightTooBig<T> value)? weightTooBig,
     TResult Function(NumberTooLarge<T> value)? numberTooLarge,
-    TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(InvalidPhone<T> value)? invalidPhone,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
