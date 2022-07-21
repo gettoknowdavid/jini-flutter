@@ -26,10 +26,9 @@ class BloodGroupGrid extends StatelessWidget {
 
     return BlocConsumer<ProfileBloc, ProfileState>(
       bloc: bloc,
-      listenWhen: (p, c) =>
-          p.saveFailureOrSuccessOption != c.saveFailureOrSuccessOption,
+      listenWhen: (p, c) => p.saveOption != c.saveOption,
       listener: (context, state) {
-        state.saveFailureOrSuccessOption.fold(
+        state.saveOption.fold(
           () => null,
           (a) => a.fold((l) => null, (r) => null),
         );
@@ -89,10 +88,9 @@ class _DateOfBirthFieldState extends State<DateOfBirthField> {
 
     return BlocConsumer<ProfileBloc, ProfileState>(
       bloc: bloc,
-      listenWhen: (p, c) =>
-          p.saveFailureOrSuccessOption != c.saveFailureOrSuccessOption,
+      listenWhen: (p, c) => p.saveOption != c.saveOption,
       listener: (context, state) {
-        state.saveFailureOrSuccessOption.fold(
+        state.saveOption.fold(
           () => null,
           (a) => a.fold((l) => null, (r) => null),
         );
@@ -141,10 +139,9 @@ class GenderGrid extends StatelessWidget {
 
     return BlocConsumer<ProfileBloc, ProfileState>(
       bloc: bloc,
-      listenWhen: (p, c) =>
-          p.saveFailureOrSuccessOption != c.saveFailureOrSuccessOption,
+      listenWhen: (p, c) => p.saveOption != c.saveOption,
       listener: (context, state) {
-        state.saveFailureOrSuccessOption.fold(
+        state.saveOption.fold(
           () => null,
           (a) => a.fold((l) => null, (r) => null),
         );
@@ -198,10 +195,9 @@ class AvatarField extends StatelessWidget {
 
     return BlocConsumer<ProfileBloc, ProfileState>(
       bloc: bloc,
-      listenWhen: (p, c) =>
-          p.saveFailureOrSuccessOption != c.saveFailureOrSuccessOption,
+      listenWhen: (p, c) => p.saveOption != c.saveOption,
       listener: (context, state) {
-        state.saveFailureOrSuccessOption.fold(
+        state.saveOption.fold(
           () => null,
           (a) => a.fold((l) => null, (r) => null),
         );
@@ -265,10 +261,9 @@ class PhoneField extends StatelessWidget {
     return BlocConsumer<ProfileBloc, ProfileState>(
       bloc: bloc,
       listenWhen: (p, c) =>
-          p.saveFailureOrSuccessOption != c.saveFailureOrSuccessOption ||
-          p.user.phone != c.user.phone,
+          p.saveOption != c.saveOption || p.user.phone != c.user.phone,
       listener: (context, state) {
-        state.saveFailureOrSuccessOption.fold(
+        state.saveOption.fold(
           () => null,
           (a) => a.fold((l) => null, (r) => null),
         );
