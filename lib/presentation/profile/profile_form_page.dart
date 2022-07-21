@@ -12,67 +12,11 @@ import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/widgets/j_dialogs.dart';
 import 'package:jini/presentation/core/widgets/j_text_form_field.dart';
 import 'package:jini/presentation/core/widgets/j_theme_switch.dart';
+import 'package:jini/presentation/profile/widgets/blood_group_grid.dart';
 import 'package:jini/presentation/profile/widgets/gender_grid.dart';
 import 'package:jini/presentation/profile/widgets/phone_field.dart';
 import 'package:jini/presentation/profile/widgets/stepper_controls.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
-
-class BloodGroupGrid extends StatelessWidget {
-  const BloodGroupGrid({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final textTheme = theme.textTheme;
-    final bloc = BlocProvider.of<ProfileBloc>(context);
-
-    return BlocConsumer<ProfileBloc, ProfileState>(
-      bloc: bloc,
-      listenWhen: (p, c) => p.saveOption != c.saveOption,
-      listener: (context, state) {
-        state.saveOption.fold(
-          () => null,
-          (a) => a.fold((l) => null, (r) => null),
-        );
-      },
-      buildWhen: (p, c) => p.user.bloodGroup != c.user.bloodGroup,
-      builder: (context, state) {
-        return GridView.builder(
-          primary: false,
-          shrinkWrap: true,
-          itemCount: BloodGroup.values.length,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
-            mainAxisExtent: JScreenUtil.sh(0.08),
-            crossAxisSpacing: JScreenUtil.r(10),
-            mainAxisSpacing: JScreenUtil.r(10),
-          ),
-          itemBuilder: (context, i) {
-            final _bg = BloodGroup.values[i];
-            final _cBg = bloc.state.user.bloodGroup;
-            final selected = _cBg == null ? false : _bg == _cBg.getOrCrash();
-
-            return Parent(
-              gesture: Gestures()
-                ..onTap(() => bloc.add(ProfileEvent.bloodGroupChanged(_bg))),
-              style: ParentStyle()
-                ..alignmentContent.center()
-                ..borderRadius(all: JScreenUtil.r(10))
-                ..background
-                    .color(selected ? theme.primaryColor : theme.disabledColor),
-              child: Text(
-                _bg.value,
-                style: textTheme.titleMedium?.copyWith(
-                  color: selected ? Colors.white : textTheme.bodyLarge?.color,
-                ),
-              ),
-            );
-          },
-        );
-      },
-    );
-  }
-}
 
 class DateOfBirthField extends StatefulWidget {
   const DateOfBirthField({Key? key}) : super(key: key);
@@ -130,8 +74,6 @@ class _DateOfBirthFieldState extends State<DateOfBirthField> {
   }
 }
 
-
-
 class AvatarField extends StatelessWidget {
   const AvatarField({Key? key}) : super(key: key);
 
@@ -188,8 +130,6 @@ class AvatarField extends StatelessWidget {
     );
   }
 }
-
-
 
 class _StepTitle extends StatelessWidget {
   const _StepTitle(this.value, {Key? key}) : super(key: key);
