@@ -22,7 +22,78 @@ final sheetStyle = (ThemeData theme) => ParentStyle()
   )
   ..background.color(theme.canvasColor);
 
+class EditAgeBottomSheet extends StatelessWidget {
+  const EditAgeBottomSheet({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final bloc = BlocProvider.of<ProfileBloc>(context);
+    final _editAgeFormKey = GlobalKey<FormState>();
+    final user = JUserDto.fromDomain(bloc.state.user);
+
+    _handleSave() => bloc.state.user.age == null ||
+            !bloc.state.user.age!.isValid() ||
+            bloc.state.isSaving
+        ? null
+        : () => bloc.add(ProfileEvent.profileUpdated());
+
+    _validate(_) {
+      return bloc.state.user.age?.value.fold(
+        (f) => f.mapOrNull(
+          tooYoung: (_) => JErrorMessages.tooYoung,
+          tooOld: (_) => JErrorMessages.tooOld,
+        ),
+        (_) => null,
+      );
+    }
+
+    return BlocConsumer<ProfileBloc, ProfileState>(
+      bloc: bloc,
+      listenWhen: (p, c) {
+        return p.saveOption != c.saveOption ||
+            p.user.age?.isValid() != p.user.age?.isValid();
+      },
+      listener: (context, state) {
+        state.saveOption.fold(
+          () => null,
+          (a) => a.fold((l) => null, (r) => Get.close(1)),
+        );
+      },
+      buildWhen: (p, c) {
+        return p.user.age?.isValid() == p.user.age?.isValid() ||
+            p.isSaving != c.isSaving;
+      },
+      builder: (context, state) {
+        return Form(
+          key: _editAgeFormKey,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
+          child: EditBottomSheet(
+            title: 'age',
+            field: JTextFormField(
+              label: 'Age',
+              initialValue: user.age?.toString(),
+              enabled: !bloc.state.isSaving,
+              onChanged: (e) => bloc.add(
+                ProfileEvent.ageChanged(num.parse(e), user.userType!),
+              ),
+              keyboardType: TextInputType.number,
+              validator: user.userType == UserType.donor ? _validate : null,
+            ),
+            loading: bloc.state.isSaving,
+            action: _handleSave(),
+          ),
+        );
+      },
+    );
+  }
+}
+
 class EditBottomSheet extends StatelessWidget {
+  final JTextFormField field;
+
+  final void Function()? action;
+  final String title;
+  final bool loading;
   const EditBottomSheet({
     Key? key,
     required this.field,
@@ -30,11 +101,6 @@ class EditBottomSheet extends StatelessWidget {
     required this.title,
     this.loading = false,
   }) : super(key: key);
-
-  final JTextFormField field;
-  final void Function()? action;
-  final String title;
-  final bool loading;
 
   @override
   Widget build(BuildContext context) {
@@ -52,6 +118,100 @@ class EditBottomSheet extends StatelessWidget {
           JButton(title: 'Save', onPressed: action, loading: loading),
         ],
       ),
+    );
+  }
+}
+
+class EditGenderBottomSheet extends StatelessWidget {
+  const EditGenderBottomSheet({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final bloc = BlocProvider.of<ProfileBloc>(context);
+    final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
+
+    _handleSave() => bloc.add(ProfileEvent.profileUpdated());
+
+    return BlocConsumer<ProfileBloc, ProfileState>(
+      bloc: bloc,
+      listenWhen: (p, c) => p.saveOption != c.saveOption,
+      listener: (context, state) {
+        state.saveOption.fold(
+          () => null,
+          (a) => a.fold((l) => null, (r) => Get.close(1)),
+        );
+      },
+      buildWhen: (p, c) =>
+          p.user.gender == p.user.gender || p.isSaving != c.isSaving,
+      builder: (context, state) {
+        final gender = bloc.state.user.gender;
+
+        return Parent(
+          style: sheetStyle(theme),
+          child: Wrap(
+            alignment: WrapAlignment.center,
+            runSpacing: JScreenUtil.r(30),
+            children: <Widget>[
+              Text('Update your gender', style: textTheme.titleLarge),
+              for (int i = 0; Gender.values.length > i; i++)
+                RadioListTile<Gender>(
+                  value: Gender.values[i],
+                  groupValue: gender == null ? null : gender.getOrCrash(),
+                  onChanged: (g) => bloc.add(ProfileEvent.genderChanged(g!)),
+                  title: Text(Gender.values[i].value),
+                ),
+              JButton(
+                title: 'Save',
+                onPressed: _handleSave,
+                loading: bloc.state.isSaving,
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+}
+
+class EditHeightBottomSheet extends StatelessWidget {
+  const EditHeightBottomSheet({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final bloc = BlocProvider.of<ProfileBloc>(context);
+    final user = JUserDto.fromDomain(bloc.state.user);
+
+    _handleSave() => bloc.add(ProfileEvent.profileUpdated());
+
+    return BlocConsumer<ProfileBloc, ProfileState>(
+      bloc: bloc,
+      listenWhen: (p, c) {
+        return p.saveOption != c.saveOption;
+      },
+      listener: (context, state) {
+        state.saveOption.fold(
+          () => null,
+          (a) => a.fold((l) => null, (r) => Get.close(1)),
+        );
+      },
+      buildWhen: (p, c) => p.isSaving != c.isSaving,
+      builder: (context, state) {
+        return EditBottomSheet(
+          title: 'height',
+          field: JTextFormField(
+            label: 'Height',
+            initialValue: user.height?.toString(),
+            enabled: !bloc.state.isSaving,
+            onChanged: (e) => bloc.add(
+              ProfileEvent.heightChanged(num.parse(e)),
+            ),
+            keyboardType: TextInputType.number,
+          ),
+          loading: bloc.state.isSaving,
+          action: _handleSave,
+        );
+      },
     );
   }
 }
@@ -109,58 +269,6 @@ class EditNameBottomSheet extends StatelessWidget {
                     bloc.state.isSaving
                 ? null
                 : _handleSave,
-          ),
-        );
-      },
-    );
-  }
-}
-
-class EditUserTypeBottomSheet extends StatelessWidget {
-  const EditUserTypeBottomSheet({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final bloc = BlocProvider.of<ProfileBloc>(context);
-    final theme = Theme.of(context);
-    final textTheme = theme.textTheme;
-
-    _handleSave() => bloc.add(ProfileEvent.profileUpdated());
-
-    return BlocConsumer<ProfileBloc, ProfileState>(
-      bloc: bloc,
-      listenWhen: (p, c) => p.saveOption != c.saveOption,
-      listener: (context, state) {
-        state.saveOption.fold(
-          () => null,
-          (a) => a.fold((l) => null, (r) => Get.close(1)),
-        );
-      },
-      buildWhen: (p, c) =>
-          p.user.userType == p.user.userType || p.isSaving != c.isSaving,
-      builder: (context, state) {
-        final userType = bloc.state.user.userType!.getOrCrash();
-
-        return Parent(
-          style: sheetStyle(theme),
-          child: Wrap(
-            alignment: WrapAlignment.center,
-            runSpacing: JScreenUtil.r(30),
-            children: <Widget>[
-              Text('Update your account type', style: textTheme.titleLarge),
-              for (int i = 0; UserType.values.length > i; i++)
-                RadioListTile<UserType>(
-                  value: UserType.values[i],
-                  groupValue: userType,
-                  onChanged: (t) => bloc.add(ProfileEvent.userTypeChanged(t!)),
-                  title: Text(UserType.values[i].value),
-                ),
-              JButton(
-                title: 'Save',
-                onPressed: _handleSave,
-                loading: bloc.state.isSaving,
-              ),
-            ],
           ),
         );
       },
@@ -232,8 +340,8 @@ class EditPhoneBottomSheet extends StatelessWidget {
   }
 }
 
-class EditGenderBottomSheet extends StatelessWidget {
-  const EditGenderBottomSheet({Key? key}) : super(key: key);
+class EditUserTypeBottomSheet extends StatelessWidget {
+  const EditUserTypeBottomSheet({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -253,9 +361,9 @@ class EditGenderBottomSheet extends StatelessWidget {
         );
       },
       buildWhen: (p, c) =>
-          p.user.gender == p.user.gender || p.isSaving != c.isSaving,
+          p.user.userType == p.user.userType || p.isSaving != c.isSaving,
       builder: (context, state) {
-        final gender = bloc.state.user.gender;
+        final userType = bloc.state.user.userType!.getOrCrash();
 
         return Parent(
           style: sheetStyle(theme),
@@ -263,13 +371,13 @@ class EditGenderBottomSheet extends StatelessWidget {
             alignment: WrapAlignment.center,
             runSpacing: JScreenUtil.r(30),
             children: <Widget>[
-              Text('Update your gender', style: textTheme.titleLarge),
-              for (int i = 0; Gender.values.length > i; i++)
-                RadioListTile<Gender>(
-                  value: Gender.values[i],
-                  groupValue: gender == null ? null : gender.getOrCrash(),
-                  onChanged: (g) => bloc.add(ProfileEvent.genderChanged(g!)),
-                  title: Text(Gender.values[i].value),
+              Text('Update your account type', style: textTheme.titleLarge),
+              for (int i = 0; UserType.values.length > i; i++)
+                RadioListTile<UserType>(
+                  value: UserType.values[i],
+                  groupValue: userType,
+                  onChanged: (t) => bloc.add(ProfileEvent.userTypeChanged(t!)),
+                  title: Text(UserType.values[i].value),
                 ),
               JButton(
                 title: 'Save',
@@ -278,114 +386,6 @@ class EditGenderBottomSheet extends StatelessWidget {
               ),
             ],
           ),
-        );
-      },
-    );
-  }
-}
-
-class EditAgeBottomSheet extends StatelessWidget {
-  const EditAgeBottomSheet({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final bloc = BlocProvider.of<ProfileBloc>(context);
-    final _editAgeFormKey = GlobalKey<FormState>();
-    final user = JUserDto.fromDomain(bloc.state.user);
-
-    _handleSave() => bloc.state.user.age == null ||
-            !bloc.state.user.age!.isValid() ||
-            bloc.state.isSaving
-        ? null
-        : () => bloc.add(ProfileEvent.profileUpdated());
-
-    _validate(_) {
-      return bloc.state.user.age?.value.fold(
-        (f) => f.mapOrNull(
-          tooYoung: (_) => JErrorMessages.tooYoung,
-          tooOld: (_) => JErrorMessages.tooOld,
-        ),
-        (_) => null,
-      );
-    }
-
-    return BlocConsumer<ProfileBloc, ProfileState>(
-      bloc: bloc,
-      listenWhen: (p, c) {
-        return p.saveOption != c.saveOption ||
-            p.user.age?.isValid() != p.user.age?.isValid();
-      },
-      listener: (context, state) {
-        state.saveOption.fold(
-          () => null,
-          (a) => a.fold((l) => null, (r) => Get.close(1)),
-        );
-      },
-      buildWhen: (p, c) {
-        return p.user.age?.isValid() == p.user.age?.isValid() ||
-            p.isSaving != c.isSaving;
-      },
-      builder: (context, state) {
-        return Form(
-          key: _editAgeFormKey,
-          autovalidateMode: AutovalidateMode.onUserInteraction,
-          child: EditBottomSheet(
-            title: 'age',
-            field: JTextFormField(
-              label: 'Age',
-              initialValue: user.age?.toString(),
-              enabled: !bloc.state.isSaving,
-              onChanged: (e) => bloc.add(
-                ProfileEvent.ageChanged(num.parse(e), user.userType!),
-              ),
-              keyboardType: TextInputType.number,
-              validator: user.userType == UserType.donor ? _validate : null,
-            ),
-            loading: bloc.state.isSaving,
-            action: _handleSave(),
-          ),
-        );
-      },
-    );
-  }
-}
-
-class EditHeightBottomSheet extends StatelessWidget {
-  const EditHeightBottomSheet({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final bloc = BlocProvider.of<ProfileBloc>(context);
-    final user = JUserDto.fromDomain(bloc.state.user);
-
-    _handleSave() => bloc.add(ProfileEvent.profileUpdated());
-
-    return BlocConsumer<ProfileBloc, ProfileState>(
-      bloc: bloc,
-      listenWhen: (p, c) {
-        return p.saveOption != c.saveOption;
-      },
-      listener: (context, state) {
-        state.saveOption.fold(
-          () => null,
-          (a) => a.fold((l) => null, (r) => Get.close(1)),
-        );
-      },
-      buildWhen: (p, c) => p.isSaving != c.isSaving,
-      builder: (context, state) {
-        return EditBottomSheet(
-          title: 'height',
-          field: JTextFormField(
-            label: 'Height',
-            initialValue: user.height?.toString(),
-            enabled: !bloc.state.isSaving,
-            onChanged: (e) => bloc.add(
-              ProfileEvent.heightChanged(num.parse(e)),
-            ),
-            keyboardType: TextInputType.number,
-          ),
-          loading: bloc.state.isSaving,
-          action: _handleSave,
         );
       },
     );
