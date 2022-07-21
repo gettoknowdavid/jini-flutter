@@ -1,10 +1,13 @@
 import 'package:division/division.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:jini/application/profile/profile_bloc.dart';
 import 'package:jini/domain/core/blood_group.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/common/j_widget_styles.dart';
+import 'package:jini/presentation/core/widgets/j_button.dart';
+import 'package:jini/presentation/profile/widgets/profile_blood_group_widget.dart';
 
 class BloodGroupGrid extends StatelessWidget {
   const BloodGroupGrid({Key? key}) : super(key: key);
@@ -16,12 +19,15 @@ class BloodGroupGrid extends StatelessWidget {
     final bloc = BlocProvider.of<ProfileBloc>(context);
 
     return BlocConsumer<ProfileBloc, ProfileState>(
-       bloc: bloc,
+      bloc: bloc,
       listenWhen: (p, c) => p.saveOption != c.saveOption,
       listener: (context, state) {
         state.saveOption.fold(
           () => null,
-          (a) => a.fold((l) => null, (r) => null),
+          (a) => a.fold(
+            (l) => null,
+            (r) => Get.isBottomSheetOpen! ? Get.close(1) : null,
+          ),
         );
       },
       buildWhen: (p, c) => p.user.bloodGroup != c.user.bloodGroup,
@@ -53,6 +59,45 @@ class BloodGroupGrid extends StatelessWidget {
               ),
             );
           },
+        );
+      },
+    );
+  }
+}
+
+class EditBloodGroupBottomSheet extends StatelessWidget {
+  const EditBloodGroupBottomSheet({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final bloc = BlocProvider.of<ProfileBloc>(context);
+    final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
+
+    _handleSave() {
+      bloc.add(ProfileEvent.profileUpdated());
+      bloc.add(ProfileEvent.editPressed(false));
+    }
+
+    return BlocBuilder<ProfileBloc, ProfileState>(
+      bloc: bloc,
+      buildWhen: (p, c) => p.isSaving != c.isSaving,
+      builder: (context, state) {
+        return Parent(
+          style: sheetStyle(theme),
+          child: Wrap(
+            alignment: WrapAlignment.center,
+            runSpacing: JScreenUtil.r(30),
+            children: <Widget>[
+              Text('Update your blood group', style: textTheme.titleLarge),
+              const BloodGroupGrid(),
+              JButton(
+                title: 'Save',
+                onPressed: _handleSave,
+                loading: bloc.state.isSaving,
+              ),
+            ],
+          ),
         );
       },
     );
