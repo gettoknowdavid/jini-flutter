@@ -27,6 +27,7 @@ class ProfilePage extends StatelessWidget {
     final authBloc = BlocProvider.of<AuthBloc>(context);
 
     return JPage(
+      addGlobalPadding: false,
       loading:
           authBloc.state == const AuthState.loading() || bloc.state.isSaving,
       child: Scaffold(
