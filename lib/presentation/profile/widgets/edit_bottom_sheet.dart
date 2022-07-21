@@ -124,48 +124,6 @@ class EditBottomSheet extends StatelessWidget {
   }
 }
 
-class EditGenderBottomSheet extends StatelessWidget {
-  const EditGenderBottomSheet({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final bloc = BlocProvider.of<ProfileBloc>(context);
-    final theme = Theme.of(context);
-    final textTheme = theme.textTheme;
-
-    _handleSave() => bloc.add(ProfileEvent.profileUpdated());
-
-    return BlocConsumer<ProfileBloc, ProfileState>(
-      bloc: bloc,
-      listenWhen: (p, c) => p.saveOption != c.saveOption,
-      listener: (context, state) {
-        state.saveOption.fold(
-          () => null,
-          (a) => a.fold((l) => null, (r) => Get.close(1)),
-        );
-      },
-      buildWhen: (p, c) => p.isSaving != c.isSaving,
-      builder: (context, state) {
-        return Parent(
-          style: sheetStyle(theme),
-          child: Wrap(
-            alignment: WrapAlignment.center,
-            runSpacing: JScreenUtil.r(30),
-            children: <Widget>[
-              Text('Update your gender', style: textTheme.titleLarge),
-              const GenderGrid(),
-              JButton(
-                title: 'Save',
-                onPressed: _handleSave,
-                loading: bloc.state.isSaving,
-              ),
-            ],
-          ),
-        );
-      },
-    );
-  }
-}
 
 class EditHeightBottomSheet extends StatelessWidget {
   const EditHeightBottomSheet({Key? key}) : super(key: key);
