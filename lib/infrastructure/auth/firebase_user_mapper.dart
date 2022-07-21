@@ -26,7 +26,7 @@ class FirebaseUserMapper {
       initEdit: user.initEdit == null ? null : user.initEdit,
       location: user.location == null
           ? null
-          : Geo(user.location!.latitude, user.location!.latitude),
+          : ILocation(Geo(user.location!.latitude, user.location!.latitude)),
       avatar: user.avatar == null ? null : user.avatar!,
       name: user.name == null ? null : IName(user.name!),
       phone: user.phone == null ? null : IPhone(user.phone!),
