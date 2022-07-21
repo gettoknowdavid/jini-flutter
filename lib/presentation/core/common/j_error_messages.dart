@@ -9,7 +9,7 @@ class JErrorMessages {
   static const String nameRequired = 'Your name is required';
   static const String emailRequired = 'Your email is required';
   static const String passwordRequired = 'Your password is required';
-  static const String tooYoung = 'Donor must be older than 16 years of age.';
+  static const String tooYoung = 'Donor must be older than 17 years of age.';
   static const String tooOld = 'Donor must be younger than 60 years of age.';
   static const String weightTooSmall = 'Donor must weigh more than 45kg.';
   static const String weightTooBig = 'Donor must not weigh more than 150kg.';
