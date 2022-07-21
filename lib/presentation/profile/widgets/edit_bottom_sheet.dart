@@ -12,6 +12,7 @@ import 'package:jini/presentation/core/widgets/j_button.dart';
 import 'package:jini/presentation/core/widgets/j_text_form_field.dart';
 import 'package:jini/presentation/profile/profile_form_page.dart';
 import 'package:jini/presentation/profile/widgets/gender_grid.dart';
+import 'package:jini/presentation/profile/widgets/phone_field.dart';
 
 final sheetStyle = (ThemeData theme) => ParentStyle()
   ..borderRadius(
@@ -91,7 +92,7 @@ class EditAgeBottomSheet extends StatelessWidget {
 }
 
 class EditBottomSheet extends StatelessWidget {
-  final JTextFormField field;
+  final Widget field;
 
   final void Function()? action;
   final String title;
@@ -123,7 +124,6 @@ class EditBottomSheet extends StatelessWidget {
     );
   }
 }
-
 
 class EditHeightBottomSheet extends StatelessWidget {
   const EditHeightBottomSheet({Key? key}) : super(key: key);
@@ -218,70 +218,6 @@ class EditNameBottomSheet extends StatelessWidget {
             action: bloc.state.user.name == null ||
                     !bloc.state.user.name!.isValid() ||
                     bloc.state.isSaving
-                ? null
-                : _handleSave,
-          ),
-        );
-      },
-    );
-  }
-}
-
-class EditPhoneBottomSheet extends StatelessWidget {
-  const EditPhoneBottomSheet({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final _editPhoneFormKey = GlobalKey<FormState>();
-    final bloc = BlocProvider.of<ProfileBloc>(context);
-
-    _handleSave() => bloc.add(ProfileEvent.profileUpdated());
-
-    _validate(_) {
-      return bloc.state.user.phone!.value.fold(
-        (f) => f.mapOrNull(invalidPhone: (_) => JErrorMessages.invalidPhone),
-        (_) => null,
-      );
-    }
-
-    return BlocConsumer<ProfileBloc, ProfileState>(
-      bloc: bloc,
-      listenWhen: (p, c) =>
-          p.saveOption != c.saveOption ||
-          p.user.phone != null ||
-          c.user.phone != null ||
-          p.user.phone!.isValid() != c.user.phone!.isValid(),
-      listener: (context, state) {
-        state.saveOption.fold(
-          () => null,
-          (a) => a.fold((l) => null, (r) => Get.close(1)),
-        );
-      },
-      buildWhen: (p, c) =>
-          p.user.phone != null ||
-          c.user.phone != null ||
-          p.user.phone!.isValid() == p.user.phone!.isValid() ||
-          p.isSaving != c.isSaving,
-      builder: (context, state) {
-        final isSaving = bloc.state.isSaving;
-        final _user = bloc.state.user;
-        final user = JUserDto.fromDomain(_user);
-
-        return Form(
-          key: _editPhoneFormKey,
-          autovalidateMode: AutovalidateMode.onUserInteraction,
-          child: EditBottomSheet(
-            title: 'phone',
-            loading: bloc.state.isSaving,
-            field: JTextFormField(
-              label: 'Phone',
-              initialValue: user.phone ?? null,
-              enabled: !bloc.state.isSaving,
-              keyboardType: TextInputType.phone,
-              onChanged: (e) => bloc.add(ProfileEvent.phoneChanged(e)),
-              validator: _validate,
-            ),
-            action: _user.phone == null || !_user.phone!.isValid() || isSaving
                 ? null
                 : _handleSave,
           ),
