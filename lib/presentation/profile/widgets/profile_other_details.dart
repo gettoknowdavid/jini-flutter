@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
+import 'package:jini/presentation/core/common/date_formatter.dart';
+import 'package:jini/presentation/profile/widgets/date_of_birth_field.dart';
 import 'package:jini/presentation/profile/widgets/gender_grid.dart';
 import 'package:jini/presentation/profile/widgets/phone_field.dart';
 import 'package:jini/presentation/profile/widgets/user_type_grid.dart';
@@ -58,10 +60,10 @@ class ProfileOtherDetails extends StatelessWidget {
             ),
             JScreenUtil.divider,
             ProfileDetailsItem(
-              title: 'Age',
+              title: 'Date of Birth',
               icon: PhosphorIcons.calendarBlank,
-              value: user.age == 0 ? null : user.age?.toString(),
-              onTap: () => Get.bottomSheet(const EditAgeBottomSheet()),
+              value: user.dob == null ? null : dateFormat(user.dob!),
+              onTap: () => Get.bottomSheet(const EditDOBBottomSheet()),
             ),
             JScreenUtil.divider,
             ProfileDetailsItem(
