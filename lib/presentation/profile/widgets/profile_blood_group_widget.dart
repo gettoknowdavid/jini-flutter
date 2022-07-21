@@ -9,6 +9,7 @@ import 'package:jini/presentation/core/common/j_icons.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/common/j_widget_styles.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
+import 'package:jini/presentation/profile/widgets/blood_group_grid.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class ProfileBloodGroupWidget extends StatelessWidget {
@@ -96,75 +97,7 @@ final sheetStyle = (ThemeData theme) => ParentStyle()
   )
   ..background.color(theme.canvasColor);
 
-class EditBloodGroupBottomSheet extends StatelessWidget {
-  const EditBloodGroupBottomSheet({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    final bloc = BlocProvider.of<ProfileBloc>(context);
-    final theme = Theme.of(context);
-    final textTheme = theme.textTheme;
-
-    _handleSave() {
-      bloc.add(ProfileEvent.profileUpdated());
-      bloc.add(ProfileEvent.editPressed(false));
-    }
-
-    return BlocConsumer<ProfileBloc, ProfileState>(
-      bloc: bloc,
-      listenWhen: (p, c) => p.saveOption != c.saveOption,
-      listener: (context, state) {
-        state.saveOption.fold(
-          () => null,
-          (a) => a.fold((l) => null, (r) => Get.close(1)),
-        );
-      },
-      buildWhen: (p, c) =>
-          p.user.bloodGroup == p.user.bloodGroup || p.isSaving != c.isSaving,
-      builder: (context, state) {
-        return Parent(
-          style: sheetStyle(theme),
-          child: Wrap(
-            alignment: WrapAlignment.center,
-            runSpacing: JScreenUtil.r(30),
-            children: <Widget>[
-              Text('Update your blood group', style: textTheme.titleLarge),
-              GridView.builder(
-                primary: false,
-                shrinkWrap: true,
-                itemCount: BloodGroup.values.length,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 4,
-                  crossAxisSpacing: JScreenUtil.r(10),
-                  mainAxisSpacing: JScreenUtil.r(10),
-                ),
-                itemBuilder: (context, i) {
-                  final _bloodGroup = BloodGroup.values[i];
-                  final _currentBG = bloc.state.user.bloodGroup;
-
-                  return _BloodGroupItem(
-                    isSelected: _currentBG == null
-                        ? false
-                        : _bloodGroup == _currentBG.getOrCrash(),
-                    bloodGroup: _bloodGroup,
-                    onSelect: () {
-                      bloc.add(ProfileEvent.bloodGroupChanged(_bloodGroup));
-                    },
-                  );
-                },
-              ),
-              JButton(
-                title: 'Save',
-                onPressed: _handleSave,
-                loading: bloc.state.isSaving,
-              ),
-            ],
-          ),
-        );
-      },
-    );
-  }
-}
 
 class _BloodGroupItem extends StatelessWidget {
   const _BloodGroupItem({
