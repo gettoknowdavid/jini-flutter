@@ -13,6 +13,7 @@ import 'package:jini/presentation/core/widgets/j_dialogs.dart';
 import 'package:jini/presentation/core/widgets/j_text_form_field.dart';
 import 'package:jini/presentation/core/widgets/j_theme_switch.dart';
 import 'package:jini/presentation/profile/widgets/gender_grid.dart';
+import 'package:jini/presentation/profile/widgets/phone_field.dart';
 import 'package:jini/presentation/profile/widgets/stepper_controls.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
@@ -188,50 +189,7 @@ class AvatarField extends StatelessWidget {
   }
 }
 
-class PhoneField extends StatelessWidget {
-  const PhoneField({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    final _editPhoneFormKey = GlobalKey<FormState>();
-    final bloc = BlocProvider.of<ProfileBloc>(context);
-
-    _validate(_) {
-      return bloc.state.user.phone!.value.fold(
-        (f) => f.mapOrNull(invalidPhone: (_) => JErrorMessages.invalidPhone),
-        (_) => null,
-      );
-    }
-
-    return BlocConsumer<ProfileBloc, ProfileState>(
-      bloc: bloc,
-      listenWhen: (p, c) =>
-          p.saveOption != c.saveOption || p.user.phone != c.user.phone,
-      listener: (context, state) {
-        state.saveOption.fold(
-          () => null,
-          (a) => a.fold((l) => null, (r) => null),
-        );
-      },
-      buildWhen: (p, c) => p.user.phone != c.user.phone,
-      builder: (context, state) {
-        return Form(
-          key: _editPhoneFormKey,
-          autovalidateMode: AutovalidateMode.onUserInteraction,
-          child: JTextFormField(
-            label: 'Phone',
-            hint: 'Add your phone number',
-            initialValue: bloc.state.user.phone?.getOrCrash() ?? null,
-            enabled: !bloc.state.isSaving,
-            keyboardType: TextInputType.phone,
-            onChanged: (e) => bloc.add(ProfileEvent.phoneChanged(e)),
-            validator: _validate,
-          ),
-        );
-      },
-    );
-  }
-}
 
 class _StepTitle extends StatelessWidget {
   const _StepTitle(this.value, {Key? key}) : super(key: key);
