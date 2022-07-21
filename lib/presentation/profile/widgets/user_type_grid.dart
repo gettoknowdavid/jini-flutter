@@ -7,7 +7,6 @@ import 'package:jini/domain/core/user_type.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/common/j_widget_styles.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
-import 'package:jini/presentation/profile/widgets/profile_blood_group_widget.dart';
 
 class EditUserTypeBottomSheet extends StatelessWidget {
   const EditUserTypeBottomSheet({Key? key}) : super(key: key);
@@ -31,7 +30,7 @@ class EditUserTypeBottomSheet extends StatelessWidget {
       },
       buildWhen: (p, c) => p.isSaving != c.isSaving,
       builder: (context, state) => Parent(
-        style: sheetStyle(theme),
+        style: JWidgetStyles.profileSheetStyle(theme),
         child: Wrap(
           alignment: WrapAlignment.center,
           runSpacing: JScreenUtil.r(30),
