@@ -7,7 +7,6 @@ import 'package:jini/domain/core/blood_group.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/common/j_widget_styles.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
-import 'package:jini/presentation/profile/widgets/profile_blood_group_widget.dart';
 
 class BloodGroupGrid extends StatelessWidget {
   const BloodGroupGrid({Key? key}) : super(key: key);
@@ -84,7 +83,7 @@ class EditBloodGroupBottomSheet extends StatelessWidget {
       buildWhen: (p, c) => p.isSaving != c.isSaving,
       builder: (context, state) {
         return Parent(
-          style: sheetStyle(theme),
+          style: JWidgetStyles.profileSheetStyle(theme),
           child: Wrap(
             alignment: WrapAlignment.center,
             runSpacing: JScreenUtil.r(30),
