@@ -22,6 +22,11 @@ class JWidgetStyles {
       bottom: JScreenUtil.radius(30),
     );
 
+  static final profileSheetStyle = (ThemeData theme) => ParentStyle()
+    ..borderRadius(topLeft: JScreenUtil.r(30), topRight: JScreenUtil.r(30))
+    ..padding(horizontal: JScreenUtil.r(18), vertical: JScreenUtil.r(22))
+    ..background.color(theme.canvasColor);
+
   static final bloodGroupWidgetStyles = ParentStyle()
     ..height(JScreenUtil.w(60))
     ..width(JScreenUtil.w(60))
@@ -44,5 +49,7 @@ class JWidgetStyles {
         ..alignmentContent.center()
         ..borderRadius(all: JScreenUtil.r(10))
         ..padding(all: JScreenUtil.r(14))
-        ..background.color(selected ? theme.primaryColor : theme.disabledColor);
+        ..background.color(
+          selected ? theme.primaryColor : theme.disabledColor,
+        );
 }
