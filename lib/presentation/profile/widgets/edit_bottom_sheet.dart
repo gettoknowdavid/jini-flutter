@@ -76,10 +76,10 @@ class EditNameBottomSheet extends StatelessWidget {
     return BlocConsumer<ProfileBloc, ProfileState>(
       bloc: bloc,
       listenWhen: (p, c) =>
-          p.saveFailureOrSuccessOption != c.saveFailureOrSuccessOption ||
+          p.saveOption != c.saveOption ||
           p.user.name?.isValid() != p.user.name?.isValid(),
       listener: (context, state) {
-        state.saveFailureOrSuccessOption.fold(
+        state.saveOption.fold(
           () => null,
           (a) => a.fold((l) => null, (r) => Get.close(1)),
         );
@@ -129,10 +129,9 @@ class EditUserTypeBottomSheet extends StatelessWidget {
 
     return BlocConsumer<ProfileBloc, ProfileState>(
       bloc: bloc,
-      listenWhen: (p, c) =>
-          p.saveFailureOrSuccessOption != c.saveFailureOrSuccessOption,
+      listenWhen: (p, c) => p.saveOption != c.saveOption,
       listener: (context, state) {
-        state.saveFailureOrSuccessOption.fold(
+        state.saveOption.fold(
           () => null,
           (a) => a.fold((l) => null, (r) => Get.close(1)),
         );
@@ -189,12 +188,12 @@ class EditPhoneBottomSheet extends StatelessWidget {
     return BlocConsumer<ProfileBloc, ProfileState>(
       bloc: bloc,
       listenWhen: (p, c) =>
-          p.saveFailureOrSuccessOption != c.saveFailureOrSuccessOption ||
+          p.saveOption != c.saveOption ||
           p.user.phone != null ||
           c.user.phone != null ||
           p.user.phone!.isValid() != c.user.phone!.isValid(),
       listener: (context, state) {
-        state.saveFailureOrSuccessOption.fold(
+        state.saveOption.fold(
           () => null,
           (a) => a.fold((l) => null, (r) => Get.close(1)),
         );
@@ -246,10 +245,9 @@ class EditGenderBottomSheet extends StatelessWidget {
 
     return BlocConsumer<ProfileBloc, ProfileState>(
       bloc: bloc,
-      listenWhen: (p, c) =>
-          p.saveFailureOrSuccessOption != c.saveFailureOrSuccessOption,
+      listenWhen: (p, c) => p.saveOption != c.saveOption,
       listener: (context, state) {
-        state.saveFailureOrSuccessOption.fold(
+        state.saveOption.fold(
           () => null,
           (a) => a.fold((l) => null, (r) => Get.close(1)),
         );
@@ -314,11 +312,11 @@ class EditAgeBottomSheet extends StatelessWidget {
     return BlocConsumer<ProfileBloc, ProfileState>(
       bloc: bloc,
       listenWhen: (p, c) {
-        return p.saveFailureOrSuccessOption != c.saveFailureOrSuccessOption ||
+        return p.saveOption != c.saveOption ||
             p.user.age?.isValid() != p.user.age?.isValid();
       },
       listener: (context, state) {
-        state.saveFailureOrSuccessOption.fold(
+        state.saveOption.fold(
           () => null,
           (a) => a.fold((l) => null, (r) => Get.close(1)),
         );
@@ -365,10 +363,10 @@ class EditHeightBottomSheet extends StatelessWidget {
     return BlocConsumer<ProfileBloc, ProfileState>(
       bloc: bloc,
       listenWhen: (p, c) {
-        return p.saveFailureOrSuccessOption != c.saveFailureOrSuccessOption;
+        return p.saveOption != c.saveOption;
       },
       listener: (context, state) {
-        state.saveFailureOrSuccessOption.fold(
+        state.saveOption.fold(
           () => null,
           (a) => a.fold((l) => null, (r) => Get.close(1)),
         );
@@ -422,11 +420,11 @@ class EditWeightBottomSheet extends StatelessWidget {
     return BlocConsumer<ProfileBloc, ProfileState>(
       bloc: bloc,
       listenWhen: (p, c) {
-        return p.saveFailureOrSuccessOption != c.saveFailureOrSuccessOption ||
+        return p.saveOption != c.saveOption ||
             p.user.weight?.isValid() != p.user.weight?.isValid();
       },
       listener: (context, state) {
-        state.saveFailureOrSuccessOption.fold(
+        state.saveOption.fold(
           () => null,
           (a) => a.fold((l) => null, (r) => Get.close(1)),
         );
