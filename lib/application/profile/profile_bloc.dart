@@ -150,7 +150,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     emit(state.copyWith(
       avatarFile: null,
       isSaving: false,
-      saveFailureOrSuccessOption: optionOf(failureOrSuccess),
+      saveOption: optionOf(failureOrSuccess),
     ));
   }
 
@@ -160,7 +160,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     emit(state.copyWith(
       user: state.user.copyWith(initEdit: e.initEdit),
       isSaving: true,
-      saveFailureOrSuccessOption: none(),
+      saveOption: none(),
     ));
 
     failureOrSuccess = await _authFacade.updateUser(state.user);
@@ -168,7 +168,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     emit(state.copyWith(
       isSaving: false,
       showErrorMessages: true,
-      saveFailureOrSuccessOption: optionOf(failureOrSuccess),
+      saveOption: optionOf(failureOrSuccess),
     ));
   }
 
@@ -205,7 +205,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
 
     emit(state.copyWith(
       isSaving: true,
-      saveFailureOrSuccessOption: none(),
+      saveOption: none(),
     ));
 
     failureOrSuccess = await _authFacade.updateUser(state.user);
@@ -213,7 +213,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     emit(state.copyWith(
       isSaving: false,
       showErrorMessages: true,
-      saveFailureOrSuccessOption: optionOf(failureOrSuccess),
+      saveOption: optionOf(failureOrSuccess),
     ));
   }
 
