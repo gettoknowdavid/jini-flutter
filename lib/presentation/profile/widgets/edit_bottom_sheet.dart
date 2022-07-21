@@ -227,57 +227,6 @@ class EditNameBottomSheet extends StatelessWidget {
   }
 }
 
-class EditUserTypeBottomSheet extends StatelessWidget {
-  const EditUserTypeBottomSheet({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final bloc = BlocProvider.of<ProfileBloc>(context);
-    final theme = Theme.of(context);
-    final textTheme = theme.textTheme;
-
-    _handleSave() => bloc.add(ProfileEvent.profileUpdated());
-
-    return BlocConsumer<ProfileBloc, ProfileState>(
-      bloc: bloc,
-      listenWhen: (p, c) => p.saveOption != c.saveOption,
-      listener: (context, state) {
-        state.saveOption.fold(
-          () => null,
-          (a) => a.fold((l) => null, (r) => Get.close(1)),
-        );
-      },
-      buildWhen: (p, c) =>
-          p.user.userType == p.user.userType || p.isSaving != c.isSaving,
-      builder: (context, state) {
-        final userType = bloc.state.user.userType!.getOrCrash();
-
-        return Parent(
-          style: sheetStyle(theme),
-          child: Wrap(
-            alignment: WrapAlignment.center,
-            runSpacing: JScreenUtil.r(30),
-            children: <Widget>[
-              Text('Update your account type', style: textTheme.titleLarge),
-              for (int i = 0; UserType.values.length > i; i++)
-                RadioListTile<UserType>(
-                  value: UserType.values[i],
-                  groupValue: userType,
-                  onChanged: (t) => bloc.add(ProfileEvent.userTypeChanged(t!)),
-                  title: Text(UserType.values[i].value),
-                ),
-              JButton(
-                title: 'Save',
-                onPressed: _handleSave,
-                loading: bloc.state.isSaving,
-              ),
-            ],
-          ),
-        );
-      },
-    );
-  }
-}
 
 class EditWeightBottomSheet extends StatelessWidget {
   const EditWeightBottomSheet({Key? key}) : super(key: key);
