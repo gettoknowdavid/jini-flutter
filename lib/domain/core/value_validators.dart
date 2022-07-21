@@ -27,7 +27,7 @@ Either<ValueFailure<DateTime>, DateTime> validateDOB(DateTime input) {
   final present = DateTime.now().year;
   final difference = present - input.year;
 
-  if (difference < 17) {
+  if (difference < 18) {
     return left(ValueFailure.tooYoung(failedValue: input));
   } else if (difference > 60) {
     return left(ValueFailure.tooOld(failedValue: input));
