@@ -59,7 +59,6 @@ class JAvatar extends StatelessWidget {
                 ),
               ),
             ),
-            if (bloc.state.isSaving) const CircularProgressIndicator.adaptive(),
             if (isEditing && isForProfile)
               Positioned(
                 bottom: JScreenUtil.w(1),
