@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:jini/application/profile/profile_bloc.dart';
 import 'package:jini/domain/core/user_type.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
+import 'package:jini/presentation/core/common/j_widget_styles.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
 import 'package:jini/presentation/profile/widgets/profile_blood_group_widget.dart';
 
@@ -90,12 +91,7 @@ class UserTypeGrid extends StatelessWidget {
             return Parent(
               gesture: Gestures()
                 ..onTap(() => bloc.add(ProfileEvent.userTypeChanged(_userT))),
-              style: ParentStyle()
-                ..alignmentContent.center()
-                ..borderRadius(all: JScreenUtil.r(10))
-                ..padding(all: JScreenUtil.r(14))
-                ..background
-                    .color(selected ? theme.primaryColor : theme.disabledColor),
+              style: JWidgetStyles.selectItemsStyles(selected, theme),
               child: Text(
                 _userT.value,
                 style: textTheme.bodyLarge?.copyWith(
