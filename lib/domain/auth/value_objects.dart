@@ -1,14 +1,55 @@
-import 'dart:io';
-
 import 'package:dartz/dartz.dart';
-import 'package:image_picker/image_picker.dart';
+import 'package:intl/intl.dart' show toBeginningOfSentenceCase;
 import 'package:jini/domain/core/blood_group.dart';
 import 'package:jini/domain/core/failures.dart';
 import 'package:jini/domain/core/gender.dart';
 import 'package:jini/domain/core/user_type.dart';
 import 'package:jini/domain/core/value_object.dart';
 import 'package:jini/domain/core/value_validators.dart';
-import 'package:intl/intl.dart' show toBeginningOfSentenceCase;
+
+class IAge extends ValueObject<num> {
+  final Either<ValueFailure<num>, num> value;
+
+  factory IAge(num input, [UserType? userType]) {
+    switch (userType) {
+      case UserType.donor:
+        return IAge._(validateAge(input));
+      case UserType.recipient:
+        return IAge._(right(input));
+      default:
+        return IAge._(right(input));
+    }
+  }
+
+  const IAge._(this.value);
+}
+
+class IBloodGroup extends ValueObject<BloodGroup?> {
+  final Either<ValueFailure<BloodGroup?>, BloodGroup?> value;
+
+  factory IBloodGroup(BloodGroup? input) {
+    return IBloodGroup._(validateBloodGroupNotNull(input));
+  }
+
+  const IBloodGroup._(this.value);
+}
+
+class IDateOfBirth extends ValueObject<DateTime> {
+  final Either<ValueFailure<DateTime>, DateTime> value;
+
+  factory IDateOfBirth(DateTime input, [UserType? userType]) {
+    switch (userType) {
+      case UserType.donor:
+        return IDateOfBirth._(validateDOB(input));
+      case UserType.recipient:
+        return IDateOfBirth._(right(input));
+      default:
+        return IDateOfBirth._(right(input));
+    }
+  }
+
+  const IDateOfBirth._(this.value);
+}
 
 class IEmailAddress extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
@@ -19,6 +60,37 @@ class IEmailAddress extends ValueObject<String> {
   }
 
   const IEmailAddress._(this.value);
+}
+
+class IGender extends ValueObject<Gender?> {
+  final Either<ValueFailure<Gender?>, Gender?> value;
+
+  factory IGender(Gender? input) {
+    return IGender._(validateGenderNotNull(input));
+  }
+
+  const IGender._(this.value);
+}
+
+class IHeight extends ValueObject<num> {
+  final Either<ValueFailure<num>, num> value;
+
+  factory IHeight(num input) {
+    return IHeight._(right(input));
+  }
+
+  const IHeight._(this.value);
+}
+
+class IName extends ValueObject<String> {
+  final Either<ValueFailure<String>, String> value;
+
+  factory IName(String input) {
+    final _input = toBeginningOfSentenceCase(input);
+    return IName._(validateStringNotEmpty(_input!));
+  }
+
+  const IName._(this.value);
 }
 
 class IPassword extends ValueObject<String> {
@@ -39,45 +111,14 @@ class IPassword extends ValueObject<String> {
   const IPassword._(this.value, {this.isSignIn = false});
 }
 
-// class IAvatar extends ValueObject<String?> {
-//   final Either<ValueFailure<String?>, String?> value;
-
-//   factory IAvatar(String? input) {
-//     return IAvatar._(right(input));
-//   }
-
-//   const IAvatar._(this.value);
-// }
-
-class IName extends ValueObject<String> {
+class IPhone extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
 
-  factory IName(String input) {
-    final _input = toBeginningOfSentenceCase(input);
-    return IName._(validateStringNotEmpty(_input!));
+  factory IPhone(String input) {
+    return IPhone._(validatePhone(input));
   }
 
-  const IName._(this.value);
-}
-
-class IBloodGroup extends ValueObject<BloodGroup?> {
-  final Either<ValueFailure<BloodGroup?>, BloodGroup?> value;
-
-  factory IBloodGroup(BloodGroup? input) {
-    return IBloodGroup._(validateBloodGroupNotNull(input));
-  }
-
-  const IBloodGroup._(this.value);
-}
-
-class IGender extends ValueObject<Gender?> {
-  final Either<ValueFailure<Gender?>, Gender?> value;
-
-  factory IGender(Gender? input) {
-    return IGender._(validateGenderNotNull(input));
-  }
-
-  const IGender._(this.value);
+  const IPhone._(this.value);
 }
 
 class IUserType extends ValueObject<UserType?> {
@@ -88,40 +129,6 @@ class IUserType extends ValueObject<UserType?> {
   }
 
   const IUserType._(this.value);
-}
-
-class IAge extends ValueObject<num> {
-  final Either<ValueFailure<num>, num> value;
-
-  factory IAge(num input, [UserType? userType]) {
-    switch (userType) {
-      case UserType.donor:
-        return IAge._(validateAge(input));
-      case UserType.recipient:
-        return IAge._(right(input));
-      default:
-        return IAge._(right(input));
-    }
-  }
-
-  const IAge._(this.value);
-}
-
-class IDateOfBirth extends ValueObject<DateTime> {
-  final Either<ValueFailure<DateTime>, DateTime> value;
-
-  factory IDateOfBirth(DateTime input, [UserType? userType]) {
-    switch (userType) {
-      case UserType.donor:
-        return IDateOfBirth._(validateDOB(input));
-      case UserType.recipient:
-        return IDateOfBirth._(right(input));
-      default:
-        return IDateOfBirth._(right(input));
-    }
-  }
-
-  const IDateOfBirth._(this.value);
 }
 
 class IWeight extends ValueObject<num> {
@@ -139,26 +146,6 @@ class IWeight extends ValueObject<num> {
   }
 
   const IWeight._(this.value);
-}
-
-class IHeight extends ValueObject<num> {
-  final Either<ValueFailure<num>, num> value;
-
-  factory IHeight(num input) {
-    return IHeight._(right(input));
-  }
-
-  const IHeight._(this.value);
-}
-
-class IPhone extends ValueObject<String> {
-  final Either<ValueFailure<String>, String> value;
-
-  factory IPhone(String input) {
-    return IPhone._(validatePhone(input));
-  }
-
-  const IPhone._(this.value);
 }
 
 extension CapExtension on String {
