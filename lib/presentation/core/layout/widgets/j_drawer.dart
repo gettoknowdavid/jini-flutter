@@ -16,8 +16,6 @@ class JDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final textTheme = theme.textTheme;
-    final brightness = theme.brightness;
-    final isDark = brightness == Brightness.dark ? true : false;
     final bloc = BlocProvider.of<ProfileBloc>(context);
 
     return Container(
