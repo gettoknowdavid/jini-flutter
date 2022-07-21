@@ -18,7 +18,9 @@ class ProfileEvent with _$ProfileEvent {
   const factory ProfileEvent.heightChanged(num height) = _HeightChanged;
   const factory ProfileEvent.weightChanged(num weight, UserType userType) =
       _WeightChanged;
-  const factory ProfileEvent.avatarChanged() = _AvatarChanged;
+  const factory ProfileEvent.avatarChanged([ImageSource? source]) =
+      _AvatarChanged;
+  const factory ProfileEvent.initChanged(bool initEdit) = _InitChanged;
   const factory ProfileEvent.editPressed(bool value) = _ProfileEditPressed;
   const factory ProfileEvent.profileUpdated() = _ProfileUpdated;
   const factory ProfileEvent.updateStepIndex(int step) = _UpdateStepIndex;
