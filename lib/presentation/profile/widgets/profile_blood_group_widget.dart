@@ -8,7 +8,6 @@ import 'package:jini/infrastructure/auth/j_user_dtos.dart';
 import 'package:jini/presentation/core/common/j_icons.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/common/j_widget_styles.dart';
-import 'package:jini/presentation/core/widgets/j_button.dart';
 import 'package:jini/presentation/profile/widgets/blood_group_grid.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
@@ -81,52 +80,6 @@ class _NullBloodGroupWidget extends StatelessWidget {
       leading: Parent(
         style: JWidgetStyles.bloodGroupWidgetStyles,
         child: Icon(PhosphorIcons.drop, color: Colors.white),
-      ),
-    );
-  }
-}
-
-final sheetStyle = (ThemeData theme) => ParentStyle()
-  ..borderRadius(
-    topLeft: JScreenUtil.r(30),
-    topRight: JScreenUtil.r(30),
-  )
-  ..padding(
-    horizontal: JScreenUtil.r(18),
-    vertical: JScreenUtil.r(22),
-  )
-  ..background.color(theme.canvasColor);
-
-
-
-class _BloodGroupItem extends StatelessWidget {
-  const _BloodGroupItem({
-    Key? key,
-    required this.bloodGroup,
-    required this.onSelect,
-    required this.isSelected,
-  }) : super(key: key);
-
-  final BloodGroup bloodGroup;
-  final void Function() onSelect;
-  final bool isSelected;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final textTheme = theme.textTheme;
-
-    return Parent(
-      gesture: Gestures()..onTap(onSelect),
-      style: ParentStyle(),
-      child: ElevatedButton(
-        onPressed: isSelected ? () {} : null,
-        child: Text(
-          bloodGroup.value,
-          style: textTheme.titleLarge?.copyWith(
-            color: isSelected ? Colors.white : Colors.grey.shade600,
-          ),
-        ),
       ),
     );
   }
