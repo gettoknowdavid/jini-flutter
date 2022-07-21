@@ -32,6 +32,21 @@ class JDialogs {
     );
   }
 
+  static profileCompleteDialog() {
+    return Get.defaultDialog(
+      title: 'Profile Updated',
+      middleText: 'Thank you for telling us more about yourself. ' +
+          'Click \'Okay\' to view your profile or ' +
+          'click \'Home\' to go home.',
+      onConfirm: () => Get.offAllNamed(JRoutes.profilePage),
+      onCancel: () => Get.offAllNamed(JRoutes.layout),
+      confirmTextColor: Colors.white,
+      textConfirm: 'Okay',
+      textCancel: 'Home',
+      barrierDismissible: false,
+    );
+  }
+
   static const editProfile = const _EditProfileDialog();
 }
 
