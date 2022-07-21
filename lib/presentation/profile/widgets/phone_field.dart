@@ -23,12 +23,14 @@ class PhoneField extends StatelessWidget {
 
     return BlocConsumer<ProfileBloc, ProfileState>(
       bloc: bloc,
-      listenWhen: (p, c) =>
-          p.saveOption != c.saveOption || p.user.phone != c.user.phone,
+      listenWhen: (p, c) => p.saveOption != c.saveOption,
       listener: (context, state) {
         state.saveOption.fold(
           () => null,
-          (a) => a.fold((l) => null, (r) => null),
+          (a) => a.fold(
+            (l) => null,
+            (r) => Get.isBottomSheetOpen! ? Get.close(1) : null,
+          ),
         );
       },
       buildWhen: (p, c) => p.user.phone != c.user.phone,
@@ -56,42 +58,25 @@ class EditPhoneBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _editPhoneFormKey = GlobalKey<FormState>();
     final bloc = BlocProvider.of<ProfileBloc>(context);
 
     _handleSave() => bloc.add(ProfileEvent.profileUpdated());
 
-    return BlocConsumer<ProfileBloc, ProfileState>(
+    return BlocBuilder<ProfileBloc, ProfileState>(
       bloc: bloc,
-      listenWhen: (p, c) =>
-          p.saveOption != c.saveOption ||
-          p.user.phone!.isValid() != c.user.phone!.isValid(),
-      listener: (context, state) {
-        state.saveOption.fold(
-          () => null,
-          (a) => a.fold((l) => null, (r) => Get.close(1)),
-        );
-      },
       buildWhen: (p, c) =>
-          p.user.phone != null ||
-          c.user.phone != null ||
-          p.user.phone!.isValid() == p.user.phone!.isValid() ||
+          p.user.phone!.isValid() != c.user.phone!.isValid() ||
           p.isSaving != c.isSaving,
       builder: (context, state) {
-        final isSaving = bloc.state.isSaving;
         final _user = bloc.state.user;
 
-        return Form(
-          key: _editPhoneFormKey,
-          autovalidateMode: AutovalidateMode.onUserInteraction,
-          child: EditBottomSheet(
-            title: 'phone',
-            loading: bloc.state.isSaving,
-            field: const PhoneField(),
-            action: _user.phone == null || !_user.phone!.isValid() || isSaving
-                ? null
-                : _handleSave,
-          ),
+        return EditBottomSheet(
+          title: 'phone',
+          loading: bloc.state.isSaving,
+          field: const PhoneField(),
+          action: _user.phone == null || !_user.phone!.isValid()
+              ? null
+              : _handleSave,
         );
       },
     );
