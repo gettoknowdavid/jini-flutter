@@ -1,9 +1,12 @@
 import 'package:division/division.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:jini/application/profile/profile_bloc.dart';
 import 'package:jini/domain/core/gender.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
+import 'package:jini/presentation/core/widgets/j_button.dart';
+import 'package:jini/presentation/profile/widgets/edit_bottom_sheet.dart';
 
 class GenderGrid extends StatelessWidget {
   const GenderGrid({Key? key}) : super(key: key);
@@ -57,6 +60,49 @@ class GenderGrid extends StatelessWidget {
               ),
             );
           },
+        );
+      },
+    );
+  }
+}
+
+class EditGenderBottomSheet extends StatelessWidget {
+  const EditGenderBottomSheet({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final bloc = BlocProvider.of<ProfileBloc>(context);
+    final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
+
+    _handleSave() => bloc.add(ProfileEvent.profileUpdated());
+
+    return BlocConsumer<ProfileBloc, ProfileState>(
+      bloc: bloc,
+      listenWhen: (p, c) => p.saveOption != c.saveOption,
+      listener: (context, state) {
+        state.saveOption.fold(
+          () => null,
+          (a) => a.fold((l) => null, (r) => Get.close(1)),
+        );
+      },
+      buildWhen: (p, c) => p.isSaving != c.isSaving,
+      builder: (context, state) {
+        return Parent(
+          style: sheetStyle(theme),
+          child: Wrap(
+            alignment: WrapAlignment.center,
+            runSpacing: JScreenUtil.r(30),
+            children: <Widget>[
+              Text('Update your gender', style: textTheme.titleLarge),
+              const GenderGrid(),
+              JButton(
+                title: 'Save',
+                onPressed: _handleSave,
+                loading: bloc.state.isSaving,
+              ),
+            ],
+          ),
         );
       },
     );
