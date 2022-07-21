@@ -1,7 +1,6 @@
 import 'package:division/division.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:jini/application/profile/profile_bloc.dart';
@@ -10,7 +9,7 @@ import 'package:jini/domain/core/gender.dart';
 import 'package:jini/presentation/core/common/j_error_messages.dart';
 import 'package:jini/presentation/core/common/j_page.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
-import 'package:jini/presentation/core/routes/j_router.dart';
+import 'package:jini/presentation/core/widgets/j_dialogs.dart';
 import 'package:jini/presentation/core/widgets/j_text_form_field.dart';
 import 'package:jini/presentation/core/widgets/j_theme_switch.dart';
 import 'package:jini/presentation/profile/widgets/stepper_controls.dart';
@@ -195,8 +194,6 @@ class AvatarField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final textTheme = theme.textTheme;
     final bloc = BlocProvider.of<ProfileBloc>(context);
 
     return BlocConsumer<ProfileBloc, ProfileState>(
@@ -384,6 +381,7 @@ class _ProfileFormPageState extends State<ProfileFormPage> {
                 buildWhen: (p, c) => p.activeStepIndex != c.activeStepIndex,
                 builder: (context, state) {
                   return Stepper(
+                    steps: _steps,
                     currentStep: _index,
                     physics: ScrollPhysics(),
                     onStepTapped: (i) {
@@ -394,19 +392,7 @@ class _ProfileFormPageState extends State<ProfileFormPage> {
                         bloc.add(const ProfileEvent.profileUpdated());
                         bloc.add(const ProfileEvent.initChanged(true));
                         bloc.add(const ProfileEvent.initialized());
-                        Get.defaultDialog(
-                          title: 'Profile Updated',
-                          middleText:
-                              'Thank you for telling us more about yourself. ' +
-                                  'Click \'Okay\' to view your profile or ' +
-                                  'click \'Home\' to go home.',
-                          onConfirm: () => Get.offAllNamed(JRoutes.profilePage),
-                          onCancel: () => Get.offAllNamed(JRoutes.layout),
-                          confirmTextColor: Colors.white,
-                          textConfirm: 'Okay',
-                          textCancel: 'Home',
-                          barrierDismissible: false,
-                        );
+                        JDialogs.profileCompleteDialog();
                       } else {
                         bloc.add(const ProfileEvent.profileUpdated());
                         bloc.add(const ProfileEvent.stepForward());
@@ -419,7 +405,6 @@ class _ProfileFormPageState extends State<ProfileFormPage> {
                       controls: controls,
                       isLastStep: _index == (_steps.length - 1),
                     ),
-                    steps: _steps,
                   );
                 },
               ),
