@@ -10,7 +10,7 @@ class ProfileState with _$ProfileState {
     required bool isEditing,
     required bool isSaving,
     required bool showErrorMessages,
-    required Option<Either<AuthFailure, Unit>> saveFailureOrSuccessOption,
+    required Option<Either<AuthFailure, Unit>> saveOption,
   }) = _ProfileState;
 
   factory ProfileState.initial() => ProfileState(
@@ -21,6 +21,6 @@ class ProfileState with _$ProfileState {
         isEditing: false,
         isSaving: false,
         showErrorMessages: false,
-        saveFailureOrSuccessOption: none(),
+        saveOption: none(),
       );
 }
