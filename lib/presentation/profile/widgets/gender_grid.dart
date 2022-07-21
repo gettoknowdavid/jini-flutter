@@ -85,7 +85,7 @@ class EditGenderBottomSheet extends StatelessWidget {
       buildWhen: (p, c) => p.isSaving != c.isSaving,
       builder: (context, state) {
         return Parent(
-          style: sheetStyle(theme),
+          style: JWidgetStyles.profileSheetStyle(theme),
           child: Wrap(
             alignment: WrapAlignment.center,
             runSpacing: JScreenUtil.r(30),
