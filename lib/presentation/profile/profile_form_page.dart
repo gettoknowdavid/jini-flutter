@@ -1,78 +1,17 @@
-import 'package:division/division.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:intl/intl.dart';
 import 'package:jini/application/profile/profile_bloc.dart';
-import 'package:jini/domain/core/blood_group.dart';
-import 'package:jini/domain/core/gender.dart';
-import 'package:jini/presentation/core/common/j_error_messages.dart';
 import 'package:jini/presentation/core/common/j_page.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/widgets/j_dialogs.dart';
-import 'package:jini/presentation/core/widgets/j_text_form_field.dart';
 import 'package:jini/presentation/core/widgets/j_theme_switch.dart';
 import 'package:jini/presentation/profile/widgets/blood_group_grid.dart';
+import 'package:jini/presentation/profile/widgets/date_of_birth_field.dart';
 import 'package:jini/presentation/profile/widgets/gender_grid.dart';
 import 'package:jini/presentation/profile/widgets/phone_field.dart';
 import 'package:jini/presentation/profile/widgets/stepper_controls.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
-
-class DateOfBirthField extends StatefulWidget {
-  const DateOfBirthField({Key? key}) : super(key: key);
-
-  @override
-  State<DateOfBirthField> createState() => _DateOfBirthFieldState();
-}
-
-class _DateOfBirthFieldState extends State<DateOfBirthField> {
-  TextEditingController dobController = TextEditingController();
-
-  @override
-  Widget build(BuildContext context) {
-    final bloc = BlocProvider.of<ProfileBloc>(context);
-
-    return BlocConsumer<ProfileBloc, ProfileState>(
-      bloc: bloc,
-      listenWhen: (p, c) => p.saveOption != c.saveOption,
-      listener: (context, state) {
-        state.saveOption.fold(
-          () => null,
-          (a) => a.fold((l) => null, (r) => null),
-        );
-      },
-      buildWhen: (p, c) => p.user.dob != c.user.dob,
-      builder: (context, state) {
-        return JTextFormField(
-          label: 'Date of birth',
-          hint: 'Select date of birth',
-          controller: dobController,
-          onTap: () async {
-            DateTime? pickedDate = await showDatePicker(
-              context: context,
-              initialDate: bloc.state.user.dob?.getOrCrash() ?? DateTime.now(),
-              firstDate: DateTime(1800),
-              lastDate: DateTime(2101),
-            );
-
-            if (pickedDate != null) {
-              final formattedDate = DateFormat('yyyy-MM-dd').format(pickedDate);
-              bloc.add(ProfileEvent.dobChanged(
-                  pickedDate, bloc.state.user.userType!.getOrCrash()!));
-              setState(() => dobController.text = formattedDate);
-            }
-          },
-        );
-      },
-    );
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    dobController.dispose();
-  }
-}
 
 class AvatarField extends StatelessWidget {
   const AvatarField({Key? key}) : super(key: key);
