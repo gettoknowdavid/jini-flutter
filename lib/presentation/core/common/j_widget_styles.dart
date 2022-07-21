@@ -38,4 +38,11 @@ class JWidgetStyles {
     ..width(JScreenUtil.w(60))
     ..borderRadius(all: JScreenUtil.r(12))
     ..alignmentContent.center();
+
+  static final selectItemsStyles =
+      (bool selected, ThemeData theme) => ParentStyle()
+        ..alignmentContent.center()
+        ..borderRadius(all: JScreenUtil.r(10))
+        ..padding(all: JScreenUtil.r(14))
+        ..background.color(selected ? theme.primaryColor : theme.disabledColor);
 }
