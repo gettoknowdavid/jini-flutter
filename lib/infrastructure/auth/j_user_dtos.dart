@@ -46,7 +46,7 @@ class JUserDto with _$JUserDto {
       phone: jUser.phone != null ? jUser.phone!.getOrCrash() : null,
       city: jUser.city,
       avatar: jUser.avatar != null ? jUser.avatar! : null,
-      location: jUser.location,
+      location: jUser.location != null ? jUser.location!.getOrCrash() : null,
       bloodGroup:
           jUser.bloodGroup != null ? jUser.bloodGroup!.getOrCrash() : null,
       userType: jUser.userType != null ? jUser.userType!.getOrCrash() : null,
