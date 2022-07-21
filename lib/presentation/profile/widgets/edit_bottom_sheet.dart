@@ -3,83 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:jini/application/profile/profile_bloc.dart';
-import 'package:jini/domain/core/gender.dart';
-import 'package:jini/domain/core/user_type.dart';
 import 'package:jini/infrastructure/auth/j_user_dtos.dart';
 import 'package:jini/presentation/core/common/j_error_messages.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/common/j_widget_styles.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
 import 'package:jini/presentation/core/widgets/j_text_form_field.dart';
-import 'package:jini/presentation/profile/profile_form_page.dart';
-import 'package:jini/presentation/profile/widgets/gender_grid.dart';
-import 'package:jini/presentation/profile/widgets/phone_field.dart';
-
-class EditAgeBottomSheet extends StatelessWidget {
-  const EditAgeBottomSheet({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final bloc = BlocProvider.of<ProfileBloc>(context);
-    final _editAgeFormKey = GlobalKey<FormState>();
-    final user = JUserDto.fromDomain(bloc.state.user);
-
-    _handleSave() => bloc.state.user.age == null ||
-            !bloc.state.user.age!.isValid() ||
-            bloc.state.isSaving
-        ? null
-        : () => bloc.add(ProfileEvent.profileUpdated());
-
-    _validate(_) {
-      return bloc.state.user.age?.value.fold(
-        (f) => f.mapOrNull(
-          tooYoung: (_) => JErrorMessages.tooYoung,
-          tooOld: (_) => JErrorMessages.tooOld,
-        ),
-        (_) => null,
-      );
-    }
-
-    return BlocConsumer<ProfileBloc, ProfileState>(
-      bloc: bloc,
-      listenWhen: (p, c) {
-        return p.saveOption != c.saveOption ||
-            p.user.age?.isValid() != p.user.age?.isValid();
-      },
-      listener: (context, state) {
-        state.saveOption.fold(
-          () => null,
-          (a) => a.fold((l) => null, (r) => Get.close(1)),
-        );
-      },
-      buildWhen: (p, c) {
-        return p.user.age?.isValid() == p.user.age?.isValid() ||
-            p.isSaving != c.isSaving;
-      },
-      builder: (context, state) {
-        return Form(
-          key: _editAgeFormKey,
-          autovalidateMode: AutovalidateMode.onUserInteraction,
-          child: EditBottomSheet(
-            title: 'age',
-            field: JTextFormField(
-              label: 'Age',
-              initialValue: user.age?.toString(),
-              enabled: !bloc.state.isSaving,
-              onChanged: (e) => bloc.add(
-                ProfileEvent.ageChanged(num.parse(e), user.userType!),
-              ),
-              keyboardType: TextInputType.number,
-              validator: user.userType == UserType.donor ? _validate : null,
-            ),
-            loading: bloc.state.isSaving,
-            action: _handleSave(),
-          ),
-        );
-      },
-    );
-  }
-}
 
 class EditBottomSheet extends StatelessWidget {
   final Widget field;
@@ -127,9 +56,7 @@ class EditHeightBottomSheet extends StatelessWidget {
 
     return BlocConsumer<ProfileBloc, ProfileState>(
       bloc: bloc,
-      listenWhen: (p, c) {
-        return p.saveOption != c.saveOption;
-      },
+      listenWhen: (p, c) => p.saveOption != c.saveOption,
       listener: (context, state) {
         state.saveOption.fold(
           () => null,
@@ -144,10 +71,10 @@ class EditHeightBottomSheet extends StatelessWidget {
             label: 'Height',
             initialValue: user.height?.toString(),
             enabled: !bloc.state.isSaving,
+            keyboardType: TextInputType.number,
             onChanged: (e) => bloc.add(
               ProfileEvent.heightChanged(num.parse(e)),
             ),
-            keyboardType: TextInputType.number,
           ),
           loading: bloc.state.isSaving,
           action: _handleSave,
@@ -186,7 +113,7 @@ class EditNameBottomSheet extends StatelessWidget {
         );
       },
       buildWhen: (p, c) =>
-          p.user.name?.isValid() == p.user.name?.isValid() ||
+          p.user.name?.isValid() != c.user.name?.isValid() ||
           p.isSaving != c.isSaving,
       builder: (context, state) {
         final user = JUserDto.fromDomain(bloc.state.user);
@@ -224,7 +151,6 @@ class EditWeightBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of<ProfileBloc>(context);
     final _editWeightFormKey = GlobalKey<FormState>();
-    final user = JUserDto.fromDomain(bloc.state.user);
 
     _handleSave() => bloc.state.user.weight == null ||
             !bloc.state.user.weight!.isValid() ||
@@ -244,10 +170,9 @@ class EditWeightBottomSheet extends StatelessWidget {
 
     return BlocConsumer<ProfileBloc, ProfileState>(
       bloc: bloc,
-      listenWhen: (p, c) {
-        return p.saveOption != c.saveOption ||
-            p.user.weight?.isValid() != p.user.weight?.isValid();
-      },
+      listenWhen: (p, c) =>
+          p.saveOption != c.saveOption ||
+          p.user.weight?.isValid() != p.user.weight?.isValid(),
       listener: (context, state) {
         state.saveOption.fold(
           () => null,
@@ -259,6 +184,8 @@ class EditWeightBottomSheet extends StatelessWidget {
             p.isSaving != c.isSaving;
       },
       builder: (context, state) {
+        final user = JUserDto.fromDomain(bloc.state.user);
+
         return Form(
           key: _editWeightFormKey,
           autovalidateMode: AutovalidateMode.onUserInteraction,
