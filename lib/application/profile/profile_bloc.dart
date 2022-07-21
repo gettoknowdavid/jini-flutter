@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:injectable/injectable.dart';
 import 'package:jini/domain/auth/auth_failure.dart';
 import 'package:jini/domain/auth/i_auth_facade.dart';
@@ -36,6 +37,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     on<_WeightChanged>((event, emit) => _weightChanged(event, emit));
     on<_UserTypeChanged>((event, emit) => _userTypeChanged(event, emit));
     on<_AvatarChanged>((event, emit) => _avatarChanged(event, emit));
+    on<_InitChanged>((event, emit) => _initChanged(event, emit));
     on<_ProfileUpdated>((event, emit) => _profileUpdated(event, emit));
     on<_UpdateStepIndex>((event, emit) => _updateStepIndex(event, emit));
     on<_StepForward>((event, emit) => _stepForward(event, emit));
@@ -128,7 +130,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   _avatarChanged(_AvatarChanged e, Emitter<ProfileState> emit) async {
     Either<AuthFailure, Unit> failureOrSuccess;
 
-    final _file = await _mediaFacade.getImage();
+    final _file = await _mediaFacade.getImage(e.source ?? ImageSource.gallery);
 
     emit(state.copyWith(avatarFile: _file));
 
@@ -148,6 +150,24 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     emit(state.copyWith(
       avatarFile: null,
       isSaving: false,
+      saveFailureOrSuccessOption: optionOf(failureOrSuccess),
+    ));
+  }
+
+  _initChanged(_InitChanged e, Emitter<ProfileState> emit) async {
+    Either<AuthFailure, Unit> failureOrSuccess;
+
+    emit(state.copyWith(
+      user: state.user.copyWith(initEdit: e.initEdit),
+      isSaving: true,
+      saveFailureOrSuccessOption: none(),
+    ));
+
+    failureOrSuccess = await _authFacade.updateUser(state.user);
+
+    emit(state.copyWith(
+      isSaving: false,
+      showErrorMessages: true,
       saveFailureOrSuccessOption: optionOf(failureOrSuccess),
     ));
   }
@@ -198,22 +218,27 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   }
 
   _stepForward(_StepForward e, Emitter<ProfileState> emit) async {
-    if (state.activeStepIndex < 5) {
+    int _index = state.activeStepIndex;
+    if (_index < 5) {
       emit(
         state.copyWith(
-          activeStepIndex: state.activeStepIndex + 1,
+          activeStepIndex: _index + 1,
         ),
       );
     }
   }
 
   _stepBackward(_StepBackward e, Emitter<ProfileState> emit) async {
-    if (state.activeStepIndex != 0) {
+    int _index = state.activeStepIndex;
+
+    if (_index > 0) {
       emit(
         state.copyWith(
-          activeStepIndex: state.activeStepIndex - 1,
+          activeStepIndex: _index -= 1,
         ),
       );
+    } else {
+      return;
     }
   }
 
