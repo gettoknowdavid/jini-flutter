@@ -4241,7 +4241,7 @@ mixin _$ProfileState {
   bool get isEditing => throw _privateConstructorUsedError;
   bool get isSaving => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
-  Option<Either<AuthFailure, Unit>> get saveFailureOrSuccessOption =>
+  Option<Either<AuthFailure, Unit>> get saveOption =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -4262,7 +4262,7 @@ abstract class $ProfileStateCopyWith<$Res> {
       bool isEditing,
       bool isSaving,
       bool showErrorMessages,
-      Option<Either<AuthFailure, Unit>> saveFailureOrSuccessOption});
+      Option<Either<AuthFailure, Unit>> saveOption});
 
   $JUserCopyWith<$Res> get user;
 }
@@ -4284,7 +4284,7 @@ class _$ProfileStateCopyWithImpl<$Res> implements $ProfileStateCopyWith<$Res> {
     Object? isEditing = freezed,
     Object? isSaving = freezed,
     Object? showErrorMessages = freezed,
-    Object? saveFailureOrSuccessOption = freezed,
+    Object? saveOption = freezed,
   }) {
     return _then(_value.copyWith(
       user: user == freezed
@@ -4315,9 +4315,9 @@ class _$ProfileStateCopyWithImpl<$Res> implements $ProfileStateCopyWith<$Res> {
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
-          ? _value.saveFailureOrSuccessOption
-          : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+      saveOption: saveOption == freezed
+          ? _value.saveOption
+          : saveOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<AuthFailure, Unit>>,
     ));
   }
@@ -4345,7 +4345,7 @@ abstract class _$$_ProfileStateCopyWith<$Res>
       bool isEditing,
       bool isSaving,
       bool showErrorMessages,
-      Option<Either<AuthFailure, Unit>> saveFailureOrSuccessOption});
+      Option<Either<AuthFailure, Unit>> saveOption});
 
   @override
   $JUserCopyWith<$Res> get user;
@@ -4371,7 +4371,7 @@ class __$$_ProfileStateCopyWithImpl<$Res>
     Object? isEditing = freezed,
     Object? isSaving = freezed,
     Object? showErrorMessages = freezed,
-    Object? saveFailureOrSuccessOption = freezed,
+    Object? saveOption = freezed,
   }) {
     return _then(_$_ProfileState(
       user: user == freezed
@@ -4402,9 +4402,9 @@ class __$$_ProfileStateCopyWithImpl<$Res>
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
-          ? _value.saveFailureOrSuccessOption
-          : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+      saveOption: saveOption == freezed
+          ? _value.saveOption
+          : saveOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<AuthFailure, Unit>>,
     ));
   }
@@ -4421,7 +4421,7 @@ class _$_ProfileState implements _ProfileState {
       required this.isEditing,
       required this.isSaving,
       required this.showErrorMessages,
-      required this.saveFailureOrSuccessOption});
+      required this.saveOption});
 
   @override
   final JUser user;
@@ -4438,11 +4438,11 @@ class _$_ProfileState implements _ProfileState {
   @override
   final bool showErrorMessages;
   @override
-  final Option<Either<AuthFailure, Unit>> saveFailureOrSuccessOption;
+  final Option<Either<AuthFailure, Unit>> saveOption;
 
   @override
   String toString() {
-    return 'ProfileState(user: $user, avatarFile: $avatarFile, loading: $loading, activeStepIndex: $activeStepIndex, isEditing: $isEditing, isSaving: $isSaving, showErrorMessages: $showErrorMessages, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
+    return 'ProfileState(user: $user, avatarFile: $avatarFile, loading: $loading, activeStepIndex: $activeStepIndex, isEditing: $isEditing, isSaving: $isSaving, showErrorMessages: $showErrorMessages, saveOption: $saveOption)';
   }
 
   @override
@@ -4460,8 +4460,8 @@ class _$_ProfileState implements _ProfileState {
             const DeepCollectionEquality().equals(other.isSaving, isSaving) &&
             const DeepCollectionEquality()
                 .equals(other.showErrorMessages, showErrorMessages) &&
-            const DeepCollectionEquality().equals(
-                other.saveFailureOrSuccessOption, saveFailureOrSuccessOption));
+            const DeepCollectionEquality()
+                .equals(other.saveOption, saveOption));
   }
 
   @override
@@ -4474,7 +4474,7 @@ class _$_ProfileState implements _ProfileState {
       const DeepCollectionEquality().hash(isEditing),
       const DeepCollectionEquality().hash(isSaving),
       const DeepCollectionEquality().hash(showErrorMessages),
-      const DeepCollectionEquality().hash(saveFailureOrSuccessOption));
+      const DeepCollectionEquality().hash(saveOption));
 
   @JsonKey(ignore: true)
   @override
@@ -4484,15 +4484,15 @@ class _$_ProfileState implements _ProfileState {
 
 abstract class _ProfileState implements ProfileState {
   const factory _ProfileState(
-      {required final JUser user,
-      required final File? avatarFile,
-      required final bool loading,
-      required final int activeStepIndex,
-      required final bool isEditing,
-      required final bool isSaving,
-      required final bool showErrorMessages,
-      required final Option<Either<AuthFailure, Unit>>
-          saveFailureOrSuccessOption}) = _$_ProfileState;
+          {required final JUser user,
+          required final File? avatarFile,
+          required final bool loading,
+          required final int activeStepIndex,
+          required final bool isEditing,
+          required final bool isSaving,
+          required final bool showErrorMessages,
+          required final Option<Either<AuthFailure, Unit>> saveOption}) =
+      _$_ProfileState;
 
   @override
   JUser get user => throw _privateConstructorUsedError;
@@ -4509,7 +4509,7 @@ abstract class _ProfileState implements ProfileState {
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
-  Option<Either<AuthFailure, Unit>> get saveFailureOrSuccessOption =>
+  Option<Either<AuthFailure, Unit>> get saveOption =>
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
