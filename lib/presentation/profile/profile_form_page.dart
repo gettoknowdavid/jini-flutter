@@ -414,41 +414,10 @@ class _ProfileFormPageState extends State<ProfileFormPage> {
                     onStepCancel: () {
                       bloc.add(ProfileEvent.stepBackward());
                     },
-                    controlsBuilder: (context, controls) {
-                      final isLastStep = _index == (_steps.length - 1);
-                      return Container(
-                        padding: JScreenUtil.padSymmetric(vertical: 20),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            if (_index > 0)
-                              Parent(
-                                style: ParentStyle()
-                                  ..circle()
-                                  ..alignmentContent.center()
-                                  ..background.color(theme.primaryColor),
-                                child: IconButton(
-                                  onPressed: controls.onStepCancel,
-                                  icon: Icon(PhosphorIcons.arrowBendUpLeft),
-                                ),
-                              ),
-                            JScreenUtil.hSpace(20),
-                            Parent(
-                              style: ParentStyle()
-                                ..circle()
-                                ..alignmentContent.center()
-                                ..background.color(theme.primaryColor),
-                              child: IconButton(
-                                onPressed: controls.onStepContinue,
-                                icon: Icon(isLastStep
-                                    ? PhosphorIcons.check
-                                    : PhosphorIcons.arrowBendUpRight),
-                              ),
-                            ),
-                          ],
-                        ),
-                      );
-                    },
+                    controlsBuilder: (context, controls) => StepperControls(
+                      controls: controls,
+                      isLastStep: _index == (_steps.length - 1),
+                    ),
                     steps: _steps,
                   );
                 },
@@ -457,6 +426,66 @@ class _ProfileFormPageState extends State<ProfileFormPage> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class StepperControls extends StatelessWidget {
+  const StepperControls({
+    Key? key,
+    required this.controls,
+    required this.isLastStep,
+  }) : super(key: key);
+
+  final ControlsDetails controls;
+  final bool isLastStep;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
+    final bloc = BlocProvider.of<ProfileBloc>(context);
+    int _index = 0;
+
+    return BlocConsumer<ProfileBloc, ProfileState>(
+      bloc: bloc,
+      listenWhen: (p, c) => p.activeStepIndex != c.activeStepIndex,
+      listener: (context, state) => _index = state.activeStepIndex,
+      buildWhen: (p, c) => p.activeStepIndex != c.activeStepIndex,
+      builder: (context, state) {
+        return Container(
+          padding: JScreenUtil.padSymmetric(vertical: 20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              if (_index > 0)
+                Parent(
+                  style: ParentStyle()
+                    ..circle()
+                    ..alignmentContent.center()
+                    ..background.color(theme.primaryColor),
+                  child: IconButton(
+                    onPressed: controls.onStepCancel,
+                    icon: Icon(PhosphorIcons.arrowBendUpLeft),
+                  ),
+                ),
+              JScreenUtil.hSpace(20),
+              Parent(
+                style: ParentStyle()
+                  ..circle()
+                  ..alignmentContent.center()
+                  ..background.color(theme.primaryColor),
+                child: IconButton(
+                  onPressed: controls.onStepContinue,
+                  icon: Icon(isLastStep
+                      ? PhosphorIcons.check
+                      : PhosphorIcons.arrowBendUpRight),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }
