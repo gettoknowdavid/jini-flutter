@@ -112,10 +112,9 @@ class EditBloodGroupBottomSheet extends StatelessWidget {
 
     return BlocConsumer<ProfileBloc, ProfileState>(
       bloc: bloc,
-      listenWhen: (p, c) =>
-          p.saveFailureOrSuccessOption != c.saveFailureOrSuccessOption,
+      listenWhen: (p, c) => p.saveOption != c.saveOption,
       listener: (context, state) {
-        state.saveFailureOrSuccessOption.fold(
+        state.saveOption.fold(
           () => null,
           (a) => a.fold((l) => null, (r) => Get.close(1)),
         );
