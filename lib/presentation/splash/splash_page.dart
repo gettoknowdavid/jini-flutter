@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/route_manager.dart';
 import 'package:jini/application/auth/auth_bloc.dart';
 import 'package:jini/application/profile/profile_bloc.dart';
 import 'package:jini/presentation/core/common/image_resources.dart';
-import 'package:jini/presentation/core/widgets/j_background.dart';
 import 'package:jini/presentation/core/routes/j_router.dart';
+import 'package:jini/presentation/core/widgets/j_background.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SplashPage extends StatelessWidget {
@@ -19,14 +18,22 @@ class SplashPage extends StatelessWidget {
       listener: (context, state) {
         Future.delayed(const Duration(seconds: 5), () {
           state.mapOrNull(
-            profileNotCompleted: (_) =>
-                Get.offAllNamed(JRoutes.profileFormPage),
+            profileNotCompleted: (_) => Navigator.pushReplacementNamed(
+              context,
+              JRouter.profileFormPage,
+            ),
             authenticated: (_) {
               profileBloc.add(const ProfileEvent.initialized());
-              Get.offAllNamed(JRoutes.layout);
+              Navigator.pushReplacementNamed(context, JRouter.layout);
             },
-            unauthenticated: (_) => Get.offAllNamed(JRoutes.signIn),
-            unverified: (_) => Get.offAllNamed(JRoutes.verification),
+            unauthenticated: (_) => Navigator.pushReplacementNamed(
+              context,
+              JRouter.signIn,
+            ),
+            unverified: (_) => Navigator.pushReplacementNamed(
+              context,
+              JRouter.verification,
+            ),
           );
         });
       },
