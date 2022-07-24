@@ -1,7 +1,6 @@
 import 'package:division/division.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
 import 'package:jini/application/profile/profile_bloc.dart';
 import 'package:jini/domain/core/blood_group.dart';
 import 'package:jini/infrastructure/auth/j_user_dtos.dart';
@@ -19,7 +18,10 @@ class ProfileBloodGroupWidget extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     final bloc = BlocProvider.of<ProfileBloc>(context);
 
-    _onTap() => Get.bottomSheet(const EditBloodGroupBottomSheet());
+    _onTap() => showBottomSheet(
+          context: context,
+          builder: (context) => const EditBloodGroupBottomSheet(),
+        );
 
     return BlocConsumer<ProfileBloc, ProfileState>(
       bloc: bloc,
