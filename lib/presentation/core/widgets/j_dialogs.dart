@@ -1,50 +1,64 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
 import 'package:division/division.dart';
 import 'package:jini/application/profile/profile_bloc.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
-import 'package:jini/presentation/core/routes/j_router.dart';
 
 class JDialogs {
   JDialogs._();
 
-  static noMailAppDialog() {
-    return Get.defaultDialog(
-      title: 'Oops!',
-      middleText: 'No mail apps installed',
-      textConfirm: 'OK',
-      onConfirm: () => Get.back(),
-      confirmTextColor: Colors.white,
-      barrierDismissible: true,
+  static noMailAppDialog(BuildContext context) async {
+    return await showDialog(
+      context: context,
+      builder: (context) {
+        return Container();
+      },
+      // title: 'Oops!',
+      // middleText: 'No mail apps installed',
+      // textConfirm: 'OK',
+      // onConfirm: () => Get.back(),
+      // confirmTextColor: Colors.white,
+      // barrierDismissible: true,
     );
   }
 
-  static mailAppOptionsDialog(Widget? content) {
-    return Get.defaultDialog(
-      title: 'Open Mail App',
-      middleText: 'Please select your preferred mail application',
-      textConfirm: 'Cancel',
-      onConfirm: () => Get.back(),
-      confirmTextColor: Colors.white,
-      barrierDismissible: true,
-      content: content,
+  static mailAppOptionsDialog(BuildContext context, Widget? content) async {
+    return await showDialog(
+      context: context,
+      builder: (context) {
+        return Container();
+      },
     );
+    // return Get.defaultDialog(
+    //   title: 'Open Mail App',
+    //   middleText: 'Please select your preferred mail application',
+    //   textConfirm: 'Cancel',
+    //   onConfirm: () => Get.back(),
+    //   confirmTextColor: Colors.white,
+    //   barrierDismissible: true,
+    //   content: content,
+    // );
   }
 
-  static profileCompleteDialog() {
-    return Get.defaultDialog(
-      title: 'Profile Updated',
-      middleText: 'Thank you for telling us more about yourself. ' +
-          'Click \'Okay\' to view your profile or ' +
-          'click \'Home\' to go home.',
-      onConfirm: () => Get.offAllNamed(JRoutes.profilePage),
-      onCancel: () => Get.offAllNamed(JRoutes.layout),
-      confirmTextColor: Colors.white,
-      textConfirm: 'Okay',
-      textCancel: 'Home',
-      barrierDismissible: false,
+  static profileCompleteDialog(BuildContext context) async {
+    return await showDialog(
+      context: context,
+      builder: (context) {
+        return Container();
+      },
     );
+    // return Get.defaultDialog(
+    //   title: 'Profile Updated',
+    //   middleText: 'Thank you for telling us more about yourself. ' +
+    //       'Click \'Okay\' to view your profile or ' +
+    //       'click \'Home\' to go home.',
+    //   onConfirm: () => Get.offAllNamed(JRoutes.profilePage),
+    //   onCancel: () => Get.offAllNamed(JRoutes.layout),
+    //   confirmTextColor: Colors.white,
+    //   textConfirm: 'Okay',
+    //   textCancel: 'Home',
+    //   barrierDismissible: false,
+    // );
   }
 
   static const editProfile = const _EditProfileDialog();
@@ -92,7 +106,6 @@ class _EditProfileDialog extends StatelessWidget {
                 gesture: Gestures()
                   ..onTap(() {
                     bloc.add(const ProfileEvent.editPressed(true));
-                    Get.offAndToNamed(JRoutes.profilePage, arguments: true);
                   }),
                 style: TxtStyle()
                   ..alignment.center()
