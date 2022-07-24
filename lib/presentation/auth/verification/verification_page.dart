@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
 import 'package:jini/application/auth/auth_bloc.dart';
 import 'package:jini/di/injection.dart';
 import 'package:jini/presentation/core/common/image_resources.dart';
@@ -33,7 +32,7 @@ class _VerificationPageState extends State<VerificationPage> {
           orElse: () => null,
           verified: (_) {
             timer?.cancel();
-            Get.offNamed(JRoutes.profileFormPage);
+            Navigator.pushReplacementNamed(context, JRouter.profileFormPage);
           },
           unauthenticated: (_) {
             timer = Timer.periodic(const Duration(seconds: 3), (_) {
