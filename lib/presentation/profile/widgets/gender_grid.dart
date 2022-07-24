@@ -1,7 +1,6 @@
 import 'package:division/division.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
 import 'package:jini/application/profile/profile_bloc.dart';
 import 'package:jini/domain/core/gender.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
@@ -78,7 +77,10 @@ class EditGenderBottomSheet extends StatelessWidget {
       listener: (context, state) {
         state.saveOption.fold(
           () => null,
-          (a) => a.fold((l) => null, (r) => Get.close(1)),
+          (a) => a.fold(
+            (l) => null,
+            (r) => Navigator.of(context).pop(),
+          ),
         );
       },
       buildWhen: (p, c) => p.isSaving != c.isSaving,
