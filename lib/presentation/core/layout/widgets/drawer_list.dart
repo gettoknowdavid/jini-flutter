@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
 import 'package:jini/application/auth/auth_bloc.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/routes/j_router.dart';
@@ -46,7 +45,7 @@ class DrawerList extends StatelessWidget {
           key: Key(index.toString()),
           onTap: index == 7
               ? () => authBloc.add(AuthEvent.authSignedOut())
-              : () => Get.toNamed(item.route!),
+              : () => Navigator.pushNamed(context, item.route!),
           dense: true,
           leading: Icon(item.icon, color: theme.primaryColor),
           style: ListTileStyle.drawer,
