@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
 import 'package:jini/application/profile/profile_bloc.dart';
 import 'package:jini/infrastructure/auth/j_user_dtos.dart';
 import 'package:jini/presentation/core/common/j_avatar.dart';
@@ -40,7 +39,10 @@ class JDrawer extends StatelessWidget {
                   final user = JUserDto.fromDomain(bloc.state.user);
 
                   return GestureDetector(
-                    onTap: () => Get.toNamed(JRoutes.profilePage),
+                    onTap: () => Navigator.pushNamed(
+                      context,
+                      JRouter.profilePage,
+                    ),
                     child: Row(
                       children: [
                         const JAvatar(isForProfile: false, radius: 0.07),
