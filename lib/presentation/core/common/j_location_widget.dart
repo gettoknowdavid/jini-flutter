@@ -1,9 +1,12 @@
 import 'package:division/division.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:jini/application/profile/profile_bloc.dart';
 import 'package:jini/presentation/core/common/j_icons.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
+import 'package:jini/presentation/core/common/j_widget_styles.dart';
+import 'package:jini/presentation/core/widgets/j_button.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class JLocationWidget extends StatelessWidget {
@@ -18,11 +21,26 @@ class JLocationWidget extends StatelessWidget {
       listenWhen: (p, c) => p.isEditing != c.isEditing,
       listener: (context, state) => isEditing = state.isEditing,
       builder: (context, state) {
+        final _user = bloc.state.user;
+
+        if (_user.city == null) {
+          return Txt(
+            'Set location',
+            gesture: Gestures()
+              ..onTap(() => Get.bottomSheet(const EditLocationBottomSheet())),
+            style: TxtStyle()
+              ..italic()
+              ..textColor(Colors.white70)
+              ..fontSize(JScreenUtil.fontSize(16)),
+          );
+        }
+
         return Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Parent(
-              gesture: Gestures()..onTap(() {}),
+              gesture: Gestures()
+                ..onTap(() => Get.bottomSheet(const EditLocationBottomSheet())),
               style: ParentStyle()
                 ..padding(vertical: JScreenUtil.r(6))
                 ..ripple(true),
@@ -36,7 +54,7 @@ class JLocationWidget extends StatelessWidget {
                   ),
                   JScreenUtil.hSpace(6),
                   Txt(
-                    'Port Harcourt, Nigeria',
+                    _user.city!,
                     style: TxtStyle()
                       ..textColor(Colors.white70)
                       ..fontSize(JScreenUtil.fontSize(16)),
@@ -46,6 +64,50 @@ class JLocationWidget extends StatelessWidget {
             ),
             if (isEditing) JIcons.pencil,
           ],
+        );
+      },
+    );
+  }
+}
+
+class EditLocationBottomSheet extends StatelessWidget {
+  const EditLocationBottomSheet({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final bloc = BlocProvider.of<ProfileBloc>(context);
+    final theme = Theme.of(context);
+
+    return BlocBuilder<ProfileBloc, ProfileState>(
+      bloc: bloc,
+      builder: (context, state) {
+        return Parent(
+          style: JWidgetStyles.profileSheetStyle(theme),
+          child: Wrap(
+            alignment: WrapAlignment.center,
+            runSpacing: JScreenUtil.r(30),
+            children: <Widget>[
+              JButton(
+                title: 'Use Current Location',
+                onPressed: () => bloc.add(const ProfileEvent.locationChanged()),
+                loading: false,
+              ),
+              Container(
+                width: JScreenUtil.sw(1),
+                child: ElevatedButton(
+                  child: const Text('Pick from map'),
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.transparent,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: JScreenUtil.borderRadius,
+                      side: BorderSide(color: theme.primaryColor),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         );
       },
     );
