@@ -1,7 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:jini/domain/auth/j_user.dart';
 import 'package:jini/domain/auth/value_objects.dart';
-import 'package:jini/domain/core/geo.dart';
 import 'package:jini/domain/core/value_object.dart';
 import 'package:jini/infrastructure/auth/j_user_dtos.dart';
 
@@ -24,9 +23,7 @@ class FirebaseUserMapper {
       gender: user.gender == null ? null : IGender(user.gender!),
       height: user.height == null ? null : IHeight(user.height!),
       initEdit: user.initEdit == null ? null : user.initEdit,
-      location: user.location == null
-          ? null
-          : ILocation(Geo(user.location!.latitude, user.location!.latitude)),
+      location: user.location == null ? null : ILocation(user.location!),
       avatar: user.avatar == null ? null : user.avatar!,
       name: user.name == null ? null : IName(user.name!),
       phone: user.phone == null ? null : IPhone(user.phone!),
