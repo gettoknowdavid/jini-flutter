@@ -63,6 +63,12 @@ class JRouter {
         throw FormatException("Route not found");
     }
   }
+
+  static List<Route> generateInitialRoutes(String name) {
+    return <Route>[
+      MaterialPageRoute(builder: (_) => const SplashPage()),
+    ];
+  }
 }
 
 class RouteException implements Exception {
