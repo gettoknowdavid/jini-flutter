@@ -3,13 +3,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:division/division.dart';
 import 'package:jini/application/profile/profile_bloc.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
+import 'package:jini/presentation/core/routes/j_router.dart';
 
 class JDialogs {
   JDialogs._();
 
-  static noMailAppDialog(BuildContext context) async {
+  static noMailAppDialog() async {
     return await showDialog(
-      context: context,
+      context: JRouter.key.currentContext!,
       builder: (context) {
         return Container();
       },
@@ -22,9 +23,9 @@ class JDialogs {
     );
   }
 
-  static mailAppOptionsDialog(BuildContext context, Widget? content) async {
+  static mailAppOptionsDialog(Widget? content) async {
     return await showDialog(
-      context: context,
+      context: JRouter.key.currentContext!,
       builder: (context) {
         return Container();
       },
@@ -40,9 +41,9 @@ class JDialogs {
     // );
   }
 
-  static profileCompleteDialog(BuildContext context) async {
+  static profileCompleteDialog() async {
     return await showDialog(
-      context: context,
+      context: JRouter.key.currentContext!,
       builder: (context) {
         return Container();
       },
