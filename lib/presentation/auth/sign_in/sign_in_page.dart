@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
 import 'package:jini/application/auth/sign_in/sign_in_bloc.dart';
 import 'package:jini/presentation/auth/sign_in/widgets/sign_in_form.dart';
 import 'package:jini/presentation/core/common/j_page.dart';
@@ -49,7 +48,10 @@ class SignInPage extends StatelessWidget {
                   children: [
                     const Text('Don\'t have an account?'),
                     TextButton(
-                      onPressed: () => Get.toNamed(JRoutes.signUp),
+                      onPressed: () => Navigator.pushNamed(
+                        context,
+                        JRouter.signUp,
+                      ),
                       child: Text('Sign Up'),
                     ),
                   ],
