@@ -15,13 +15,13 @@ class DrawerItem {
 }
 
 final List<DrawerItem> drawerItems = <DrawerItem>[
-  DrawerItem(PhosphorIcons.magnifyingGlass, 'Find a Donor', JRoutes.checkEmail),
-  DrawerItem(PhosphorIcons.drop, 'Blood Requests', JRoutes.checkEmail),
-  DrawerItem(PhosphorIcons.firstAid, 'Donation Centers', JRoutes.checkEmail),
-  DrawerItem(PhosphorIcons.clock, 'My Appointments', JRoutes.checkEmail),
-  DrawerItem(PhosphorIcons.question, 'FAQs', JRoutes.checkEmail),
-  DrawerItem(PhosphorIcons.lifebuoy, 'Help & Support', JRoutes.checkEmail),
-  DrawerItem(PhosphorIcons.keyhole, 'Privacy Policy', JRoutes.checkEmail),
+  DrawerItem(PhosphorIcons.magnifyingGlass, 'Find a Donor', JRouter.checkEmail),
+  DrawerItem(PhosphorIcons.drop, 'Blood Requests', JRouter.checkEmail),
+  DrawerItem(PhosphorIcons.firstAid, 'Donation Centers', JRouter.checkEmail),
+  DrawerItem(PhosphorIcons.clock, 'My Appointments', JRouter.checkEmail),
+  DrawerItem(PhosphorIcons.question, 'FAQs', JRouter.checkEmail),
+  DrawerItem(PhosphorIcons.lifebuoy, 'Help & Support', JRouter.checkEmail),
+  DrawerItem(PhosphorIcons.keyhole, 'Privacy Policy', JRouter.checkEmail),
   DrawerItem(PhosphorIcons.signOut, 'Sign Out'),
 ];
 
