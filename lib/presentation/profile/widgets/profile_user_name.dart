@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
 import 'package:jini/application/profile/profile_bloc.dart';
 import 'package:jini/infrastructure/auth/j_user_dtos.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
@@ -14,7 +13,10 @@ class ProfileUserName extends StatelessWidget {
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of<ProfileBloc>(context);
 
-    _onTap() => Get.bottomSheet(const EditNameBottomSheet());
+    _onTap() => showBottomSheet(
+          context: context,
+          builder: (context) => const EditNameBottomSheet(),
+        );
 
     return BlocBuilder<ProfileBloc, ProfileState>(
       bloc: bloc,
