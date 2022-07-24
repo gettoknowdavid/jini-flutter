@@ -1,7 +1,6 @@
 import 'package:division/division.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
 import 'package:jini/application/profile/profile_bloc.dart';
 import 'package:jini/presentation/core/common/j_avatar.dart';
 import 'package:jini/presentation/core/common/j_location_widget.dart';
@@ -32,7 +31,7 @@ class ProfilePage extends StatelessWidget {
           color: Colors.white,
           onTap: () {
             bloc.add(ProfileEvent.editPressed(false));
-            Get.back();
+            Navigator.of(context).pop();
           },
         ),
         actions: [
