@@ -14,6 +14,8 @@ import 'package:jini/presentation/request/create_request_page.dart';
 import 'package:jini/presentation/splash/splash_page.dart';
 
 class JRouter {
+  static final key = GlobalKey<NavigatorState>();
+
   static const String splash = "/";
   static const String signIn = "/signIn";
   static const String signUp = "/signUp";
