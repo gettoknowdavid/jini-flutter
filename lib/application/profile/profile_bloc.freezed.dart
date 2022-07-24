@@ -31,6 +31,7 @@ mixin _$ProfileEvent {
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function(ImageSource? source) avatarChanged,
     required TResult Function(bool initEdit) initChanged,
+    required TResult Function(GeoPoint? geo) locationChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
     required TResult Function(int step) updateStepIndex,
@@ -53,6 +54,7 @@ mixin _$ProfileEvent {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -75,6 +77,7 @@ mixin _$ProfileEvent {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -98,6 +101,7 @@ mixin _$ProfileEvent {
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_InitChanged value) initChanged,
+    required TResult Function(_LocationChanged value) locationChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
     required TResult Function(_UpdateStepIndex value) updateStepIndex,
@@ -120,6 +124,7 @@ mixin _$ProfileEvent {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -142,6 +147,7 @@ mixin _$ProfileEvent {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -222,6 +228,7 @@ class _$_Initialized implements _Initialized {
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function(ImageSource? source) avatarChanged,
     required TResult Function(bool initEdit) initChanged,
+    required TResult Function(GeoPoint? geo) locationChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
     required TResult Function(int step) updateStepIndex,
@@ -247,6 +254,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -272,6 +280,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -301,6 +310,7 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_InitChanged value) initChanged,
+    required TResult Function(_LocationChanged value) locationChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
     required TResult Function(_UpdateStepIndex value) updateStepIndex,
@@ -326,6 +336,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -351,6 +362,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -447,6 +459,7 @@ class _$_NameChanged implements _NameChanged {
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function(ImageSource? source) avatarChanged,
     required TResult Function(bool initEdit) initChanged,
+    required TResult Function(GeoPoint? geo) locationChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
     required TResult Function(int step) updateStepIndex,
@@ -472,6 +485,7 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -497,6 +511,7 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -526,6 +541,7 @@ class _$_NameChanged implements _NameChanged {
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_InitChanged value) initChanged,
+    required TResult Function(_LocationChanged value) locationChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
     required TResult Function(_UpdateStepIndex value) updateStepIndex,
@@ -551,6 +567,7 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -576,6 +593,7 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -677,6 +695,7 @@ class _$_EmailChanged implements _EmailChanged {
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function(ImageSource? source) avatarChanged,
     required TResult Function(bool initEdit) initChanged,
+    required TResult Function(GeoPoint? geo) locationChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
     required TResult Function(int step) updateStepIndex,
@@ -702,6 +721,7 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -727,6 +747,7 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -756,6 +777,7 @@ class _$_EmailChanged implements _EmailChanged {
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_InitChanged value) initChanged,
+    required TResult Function(_LocationChanged value) locationChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
     required TResult Function(_UpdateStepIndex value) updateStepIndex,
@@ -781,6 +803,7 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -806,6 +829,7 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -907,6 +931,7 @@ class _$_PhoneChanged implements _PhoneChanged {
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function(ImageSource? source) avatarChanged,
     required TResult Function(bool initEdit) initChanged,
+    required TResult Function(GeoPoint? geo) locationChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
     required TResult Function(int step) updateStepIndex,
@@ -932,6 +957,7 @@ class _$_PhoneChanged implements _PhoneChanged {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -957,6 +983,7 @@ class _$_PhoneChanged implements _PhoneChanged {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -986,6 +1013,7 @@ class _$_PhoneChanged implements _PhoneChanged {
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_InitChanged value) initChanged,
+    required TResult Function(_LocationChanged value) locationChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
     required TResult Function(_UpdateStepIndex value) updateStepIndex,
@@ -1011,6 +1039,7 @@ class _$_PhoneChanged implements _PhoneChanged {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -1036,6 +1065,7 @@ class _$_PhoneChanged implements _PhoneChanged {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -1137,6 +1167,7 @@ class _$_GenderChanged implements _GenderChanged {
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function(ImageSource? source) avatarChanged,
     required TResult Function(bool initEdit) initChanged,
+    required TResult Function(GeoPoint? geo) locationChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
     required TResult Function(int step) updateStepIndex,
@@ -1162,6 +1193,7 @@ class _$_GenderChanged implements _GenderChanged {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -1187,6 +1219,7 @@ class _$_GenderChanged implements _GenderChanged {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -1216,6 +1249,7 @@ class _$_GenderChanged implements _GenderChanged {
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_InitChanged value) initChanged,
+    required TResult Function(_LocationChanged value) locationChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
     required TResult Function(_UpdateStepIndex value) updateStepIndex,
@@ -1241,6 +1275,7 @@ class _$_GenderChanged implements _GenderChanged {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -1266,6 +1301,7 @@ class _$_GenderChanged implements _GenderChanged {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -1369,6 +1405,7 @@ class _$_BloodGroupChanged implements _BloodGroupChanged {
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function(ImageSource? source) avatarChanged,
     required TResult Function(bool initEdit) initChanged,
+    required TResult Function(GeoPoint? geo) locationChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
     required TResult Function(int step) updateStepIndex,
@@ -1394,6 +1431,7 @@ class _$_BloodGroupChanged implements _BloodGroupChanged {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -1419,6 +1457,7 @@ class _$_BloodGroupChanged implements _BloodGroupChanged {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -1448,6 +1487,7 @@ class _$_BloodGroupChanged implements _BloodGroupChanged {
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_InitChanged value) initChanged,
+    required TResult Function(_LocationChanged value) locationChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
     required TResult Function(_UpdateStepIndex value) updateStepIndex,
@@ -1473,6 +1513,7 @@ class _$_BloodGroupChanged implements _BloodGroupChanged {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -1498,6 +1539,7 @@ class _$_BloodGroupChanged implements _BloodGroupChanged {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -1600,6 +1642,7 @@ class _$_UserTypeChanged implements _UserTypeChanged {
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function(ImageSource? source) avatarChanged,
     required TResult Function(bool initEdit) initChanged,
+    required TResult Function(GeoPoint? geo) locationChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
     required TResult Function(int step) updateStepIndex,
@@ -1625,6 +1668,7 @@ class _$_UserTypeChanged implements _UserTypeChanged {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -1650,6 +1694,7 @@ class _$_UserTypeChanged implements _UserTypeChanged {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -1679,6 +1724,7 @@ class _$_UserTypeChanged implements _UserTypeChanged {
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_InitChanged value) initChanged,
+    required TResult Function(_LocationChanged value) locationChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
     required TResult Function(_UpdateStepIndex value) updateStepIndex,
@@ -1704,6 +1750,7 @@ class _$_UserTypeChanged implements _UserTypeChanged {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -1729,6 +1776,7 @@ class _$_UserTypeChanged implements _UserTypeChanged {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -1839,6 +1887,7 @@ class _$_AgeChanged implements _AgeChanged {
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function(ImageSource? source) avatarChanged,
     required TResult Function(bool initEdit) initChanged,
+    required TResult Function(GeoPoint? geo) locationChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
     required TResult Function(int step) updateStepIndex,
@@ -1864,6 +1913,7 @@ class _$_AgeChanged implements _AgeChanged {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -1889,6 +1939,7 @@ class _$_AgeChanged implements _AgeChanged {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -1918,6 +1969,7 @@ class _$_AgeChanged implements _AgeChanged {
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_InitChanged value) initChanged,
+    required TResult Function(_LocationChanged value) locationChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
     required TResult Function(_UpdateStepIndex value) updateStepIndex,
@@ -1943,6 +1995,7 @@ class _$_AgeChanged implements _AgeChanged {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -1968,6 +2021,7 @@ class _$_AgeChanged implements _AgeChanged {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -2082,6 +2136,7 @@ class _$_DateOfBirthChanged implements _DateOfBirthChanged {
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function(ImageSource? source) avatarChanged,
     required TResult Function(bool initEdit) initChanged,
+    required TResult Function(GeoPoint? geo) locationChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
     required TResult Function(int step) updateStepIndex,
@@ -2107,6 +2162,7 @@ class _$_DateOfBirthChanged implements _DateOfBirthChanged {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -2132,6 +2188,7 @@ class _$_DateOfBirthChanged implements _DateOfBirthChanged {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -2161,6 +2218,7 @@ class _$_DateOfBirthChanged implements _DateOfBirthChanged {
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_InitChanged value) initChanged,
+    required TResult Function(_LocationChanged value) locationChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
     required TResult Function(_UpdateStepIndex value) updateStepIndex,
@@ -2186,6 +2244,7 @@ class _$_DateOfBirthChanged implements _DateOfBirthChanged {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -2211,6 +2270,7 @@ class _$_DateOfBirthChanged implements _DateOfBirthChanged {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -2314,6 +2374,7 @@ class _$_HeightChanged implements _HeightChanged {
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function(ImageSource? source) avatarChanged,
     required TResult Function(bool initEdit) initChanged,
+    required TResult Function(GeoPoint? geo) locationChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
     required TResult Function(int step) updateStepIndex,
@@ -2339,6 +2400,7 @@ class _$_HeightChanged implements _HeightChanged {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -2364,6 +2426,7 @@ class _$_HeightChanged implements _HeightChanged {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -2393,6 +2456,7 @@ class _$_HeightChanged implements _HeightChanged {
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_InitChanged value) initChanged,
+    required TResult Function(_LocationChanged value) locationChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
     required TResult Function(_UpdateStepIndex value) updateStepIndex,
@@ -2418,6 +2482,7 @@ class _$_HeightChanged implements _HeightChanged {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -2443,6 +2508,7 @@ class _$_HeightChanged implements _HeightChanged {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -2554,6 +2620,7 @@ class _$_WeightChanged implements _WeightChanged {
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function(ImageSource? source) avatarChanged,
     required TResult Function(bool initEdit) initChanged,
+    required TResult Function(GeoPoint? geo) locationChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
     required TResult Function(int step) updateStepIndex,
@@ -2579,6 +2646,7 @@ class _$_WeightChanged implements _WeightChanged {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -2604,6 +2672,7 @@ class _$_WeightChanged implements _WeightChanged {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -2633,6 +2702,7 @@ class _$_WeightChanged implements _WeightChanged {
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_InitChanged value) initChanged,
+    required TResult Function(_LocationChanged value) locationChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
     required TResult Function(_UpdateStepIndex value) updateStepIndex,
@@ -2658,6 +2728,7 @@ class _$_WeightChanged implements _WeightChanged {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -2683,6 +2754,7 @@ class _$_WeightChanged implements _WeightChanged {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -2786,6 +2858,7 @@ class _$_AvatarChanged implements _AvatarChanged {
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function(ImageSource? source) avatarChanged,
     required TResult Function(bool initEdit) initChanged,
+    required TResult Function(GeoPoint? geo) locationChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
     required TResult Function(int step) updateStepIndex,
@@ -2811,6 +2884,7 @@ class _$_AvatarChanged implements _AvatarChanged {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -2836,6 +2910,7 @@ class _$_AvatarChanged implements _AvatarChanged {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -2865,6 +2940,7 @@ class _$_AvatarChanged implements _AvatarChanged {
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_InitChanged value) initChanged,
+    required TResult Function(_LocationChanged value) locationChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
     required TResult Function(_UpdateStepIndex value) updateStepIndex,
@@ -2890,6 +2966,7 @@ class _$_AvatarChanged implements _AvatarChanged {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -2915,6 +2992,7 @@ class _$_AvatarChanged implements _AvatarChanged {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -3016,6 +3094,7 @@ class _$_InitChanged implements _InitChanged {
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function(ImageSource? source) avatarChanged,
     required TResult Function(bool initEdit) initChanged,
+    required TResult Function(GeoPoint? geo) locationChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
     required TResult Function(int step) updateStepIndex,
@@ -3041,6 +3120,7 @@ class _$_InitChanged implements _InitChanged {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -3066,6 +3146,7 @@ class _$_InitChanged implements _InitChanged {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -3095,6 +3176,7 @@ class _$_InitChanged implements _InitChanged {
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_InitChanged value) initChanged,
+    required TResult Function(_LocationChanged value) locationChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
     required TResult Function(_UpdateStepIndex value) updateStepIndex,
@@ -3120,6 +3202,7 @@ class _$_InitChanged implements _InitChanged {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -3145,6 +3228,7 @@ class _$_InitChanged implements _InitChanged {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -3165,6 +3249,242 @@ abstract class _InitChanged implements ProfileEvent {
   bool get initEdit => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$_InitChangedCopyWith<_$_InitChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_LocationChangedCopyWith<$Res> {
+  factory _$$_LocationChangedCopyWith(
+          _$_LocationChanged value, $Res Function(_$_LocationChanged) then) =
+      __$$_LocationChangedCopyWithImpl<$Res>;
+  $Res call({GeoPoint? geo});
+}
+
+/// @nodoc
+class __$$_LocationChangedCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res>
+    implements _$$_LocationChangedCopyWith<$Res> {
+  __$$_LocationChangedCopyWithImpl(
+      _$_LocationChanged _value, $Res Function(_$_LocationChanged) _then)
+      : super(_value, (v) => _then(v as _$_LocationChanged));
+
+  @override
+  _$_LocationChanged get _value => super._value as _$_LocationChanged;
+
+  @override
+  $Res call({
+    Object? geo = freezed,
+  }) {
+    return _then(_$_LocationChanged(
+      geo == freezed
+          ? _value.geo
+          : geo // ignore: cast_nullable_to_non_nullable
+              as GeoPoint?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_LocationChanged implements _LocationChanged {
+  const _$_LocationChanged([this.geo]);
+
+  @override
+  final GeoPoint? geo;
+
+  @override
+  String toString() {
+    return 'ProfileEvent.locationChanged(geo: $geo)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_LocationChanged &&
+            const DeepCollectionEquality().equals(other.geo, geo));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(geo));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_LocationChangedCopyWith<_$_LocationChanged> get copyWith =>
+      __$$_LocationChangedCopyWithImpl<_$_LocationChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String email) emailChanged,
+    required TResult Function(String phone) phoneChanged,
+    required TResult Function(Gender gender) genderChanged,
+    required TResult Function(BloodGroup bloodGroup) bloodGroupChanged,
+    required TResult Function(UserType userType) userTypeChanged,
+    required TResult Function(num age, UserType userType) ageChanged,
+    required TResult Function(DateTime dob, UserType userType) dobChanged,
+    required TResult Function(num height) heightChanged,
+    required TResult Function(num weight, UserType userType) weightChanged,
+    required TResult Function(ImageSource? source) avatarChanged,
+    required TResult Function(bool initEdit) initChanged,
+    required TResult Function(GeoPoint? geo) locationChanged,
+    required TResult Function(bool value) editPressed,
+    required TResult Function() profileUpdated,
+    required TResult Function(int step) updateStepIndex,
+    required TResult Function() stepForward,
+    required TResult Function() stepBackward,
+  }) {
+    return locationChanged(geo);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String email)? emailChanged,
+    TResult Function(String phone)? phoneChanged,
+    TResult Function(Gender gender)? genderChanged,
+    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
+    TResult Function(UserType userType)? userTypeChanged,
+    TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
+    TResult Function(num height)? heightChanged,
+    TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(ImageSource? source)? avatarChanged,
+    TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
+    TResult Function(bool value)? editPressed,
+    TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
+  }) {
+    return locationChanged?.call(geo);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String email)? emailChanged,
+    TResult Function(String phone)? phoneChanged,
+    TResult Function(Gender gender)? genderChanged,
+    TResult Function(BloodGroup bloodGroup)? bloodGroupChanged,
+    TResult Function(UserType userType)? userTypeChanged,
+    TResult Function(num age, UserType userType)? ageChanged,
+    TResult Function(DateTime dob, UserType userType)? dobChanged,
+    TResult Function(num height)? heightChanged,
+    TResult Function(num weight, UserType userType)? weightChanged,
+    TResult Function(ImageSource? source)? avatarChanged,
+    TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
+    TResult Function(bool value)? editPressed,
+    TResult Function()? profileUpdated,
+    TResult Function(int step)? updateStepIndex,
+    TResult Function()? stepForward,
+    TResult Function()? stepBackward,
+    required TResult orElse(),
+  }) {
+    if (locationChanged != null) {
+      return locationChanged(geo);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_PhoneChanged value) phoneChanged,
+    required TResult Function(_GenderChanged value) genderChanged,
+    required TResult Function(_BloodGroupChanged value) bloodGroupChanged,
+    required TResult Function(_UserTypeChanged value) userTypeChanged,
+    required TResult Function(_AgeChanged value) ageChanged,
+    required TResult Function(_DateOfBirthChanged value) dobChanged,
+    required TResult Function(_HeightChanged value) heightChanged,
+    required TResult Function(_WeightChanged value) weightChanged,
+    required TResult Function(_AvatarChanged value) avatarChanged,
+    required TResult Function(_InitChanged value) initChanged,
+    required TResult Function(_LocationChanged value) locationChanged,
+    required TResult Function(_ProfileEditPressed value) editPressed,
+    required TResult Function(_ProfileUpdated value) profileUpdated,
+    required TResult Function(_UpdateStepIndex value) updateStepIndex,
+    required TResult Function(_StepForward value) stepForward,
+    required TResult Function(_StepBackward value) stepBackward,
+  }) {
+    return locationChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
+    TResult Function(_UserTypeChanged value)? userTypeChanged,
+    TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
+    TResult Function(_HeightChanged value)? heightChanged,
+    TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
+    TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
+    TResult Function(_ProfileEditPressed value)? editPressed,
+    TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
+  }) {
+    return locationChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_BloodGroupChanged value)? bloodGroupChanged,
+    TResult Function(_UserTypeChanged value)? userTypeChanged,
+    TResult Function(_AgeChanged value)? ageChanged,
+    TResult Function(_DateOfBirthChanged value)? dobChanged,
+    TResult Function(_HeightChanged value)? heightChanged,
+    TResult Function(_WeightChanged value)? weightChanged,
+    TResult Function(_AvatarChanged value)? avatarChanged,
+    TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
+    TResult Function(_ProfileEditPressed value)? editPressed,
+    TResult Function(_ProfileUpdated value)? profileUpdated,
+    TResult Function(_UpdateStepIndex value)? updateStepIndex,
+    TResult Function(_StepForward value)? stepForward,
+    TResult Function(_StepBackward value)? stepBackward,
+    required TResult orElse(),
+  }) {
+    if (locationChanged != null) {
+      return locationChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LocationChanged implements ProfileEvent {
+  const factory _LocationChanged([final GeoPoint? geo]) = _$_LocationChanged;
+
+  GeoPoint? get geo => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_LocationChangedCopyWith<_$_LocationChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -3247,6 +3567,7 @@ class _$_ProfileEditPressed implements _ProfileEditPressed {
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function(ImageSource? source) avatarChanged,
     required TResult Function(bool initEdit) initChanged,
+    required TResult Function(GeoPoint? geo) locationChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
     required TResult Function(int step) updateStepIndex,
@@ -3272,6 +3593,7 @@ class _$_ProfileEditPressed implements _ProfileEditPressed {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -3297,6 +3619,7 @@ class _$_ProfileEditPressed implements _ProfileEditPressed {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -3326,6 +3649,7 @@ class _$_ProfileEditPressed implements _ProfileEditPressed {
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_InitChanged value) initChanged,
+    required TResult Function(_LocationChanged value) locationChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
     required TResult Function(_UpdateStepIndex value) updateStepIndex,
@@ -3351,6 +3675,7 @@ class _$_ProfileEditPressed implements _ProfileEditPressed {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -3376,6 +3701,7 @@ class _$_ProfileEditPressed implements _ProfileEditPressed {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -3453,6 +3779,7 @@ class _$_ProfileUpdated implements _ProfileUpdated {
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function(ImageSource? source) avatarChanged,
     required TResult Function(bool initEdit) initChanged,
+    required TResult Function(GeoPoint? geo) locationChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
     required TResult Function(int step) updateStepIndex,
@@ -3478,6 +3805,7 @@ class _$_ProfileUpdated implements _ProfileUpdated {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -3503,6 +3831,7 @@ class _$_ProfileUpdated implements _ProfileUpdated {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -3532,6 +3861,7 @@ class _$_ProfileUpdated implements _ProfileUpdated {
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_InitChanged value) initChanged,
+    required TResult Function(_LocationChanged value) locationChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
     required TResult Function(_UpdateStepIndex value) updateStepIndex,
@@ -3557,6 +3887,7 @@ class _$_ProfileUpdated implements _ProfileUpdated {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -3582,6 +3913,7 @@ class _$_ProfileUpdated implements _ProfileUpdated {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -3678,6 +4010,7 @@ class _$_UpdateStepIndex implements _UpdateStepIndex {
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function(ImageSource? source) avatarChanged,
     required TResult Function(bool initEdit) initChanged,
+    required TResult Function(GeoPoint? geo) locationChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
     required TResult Function(int step) updateStepIndex,
@@ -3703,6 +4036,7 @@ class _$_UpdateStepIndex implements _UpdateStepIndex {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -3728,6 +4062,7 @@ class _$_UpdateStepIndex implements _UpdateStepIndex {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -3757,6 +4092,7 @@ class _$_UpdateStepIndex implements _UpdateStepIndex {
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_InitChanged value) initChanged,
+    required TResult Function(_LocationChanged value) locationChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
     required TResult Function(_UpdateStepIndex value) updateStepIndex,
@@ -3782,6 +4118,7 @@ class _$_UpdateStepIndex implements _UpdateStepIndex {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -3807,6 +4144,7 @@ class _$_UpdateStepIndex implements _UpdateStepIndex {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -3884,6 +4222,7 @@ class _$_StepForward implements _StepForward {
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function(ImageSource? source) avatarChanged,
     required TResult Function(bool initEdit) initChanged,
+    required TResult Function(GeoPoint? geo) locationChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
     required TResult Function(int step) updateStepIndex,
@@ -3909,6 +4248,7 @@ class _$_StepForward implements _StepForward {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -3934,6 +4274,7 @@ class _$_StepForward implements _StepForward {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -3963,6 +4304,7 @@ class _$_StepForward implements _StepForward {
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_InitChanged value) initChanged,
+    required TResult Function(_LocationChanged value) locationChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
     required TResult Function(_UpdateStepIndex value) updateStepIndex,
@@ -3988,6 +4330,7 @@ class _$_StepForward implements _StepForward {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -4013,6 +4356,7 @@ class _$_StepForward implements _StepForward {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -4085,6 +4429,7 @@ class _$_StepBackward implements _StepBackward {
     required TResult Function(num weight, UserType userType) weightChanged,
     required TResult Function(ImageSource? source) avatarChanged,
     required TResult Function(bool initEdit) initChanged,
+    required TResult Function(GeoPoint? geo) locationChanged,
     required TResult Function(bool value) editPressed,
     required TResult Function() profileUpdated,
     required TResult Function(int step) updateStepIndex,
@@ -4110,6 +4455,7 @@ class _$_StepBackward implements _StepBackward {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -4135,6 +4481,7 @@ class _$_StepBackward implements _StepBackward {
     TResult Function(num weight, UserType userType)? weightChanged,
     TResult Function(ImageSource? source)? avatarChanged,
     TResult Function(bool initEdit)? initChanged,
+    TResult Function(GeoPoint? geo)? locationChanged,
     TResult Function(bool value)? editPressed,
     TResult Function()? profileUpdated,
     TResult Function(int step)? updateStepIndex,
@@ -4164,6 +4511,7 @@ class _$_StepBackward implements _StepBackward {
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AvatarChanged value) avatarChanged,
     required TResult Function(_InitChanged value) initChanged,
+    required TResult Function(_LocationChanged value) locationChanged,
     required TResult Function(_ProfileEditPressed value) editPressed,
     required TResult Function(_ProfileUpdated value) profileUpdated,
     required TResult Function(_UpdateStepIndex value) updateStepIndex,
@@ -4189,6 +4537,7 @@ class _$_StepBackward implements _StepBackward {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
@@ -4214,6 +4563,7 @@ class _$_StepBackward implements _StepBackward {
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AvatarChanged value)? avatarChanged,
     TResult Function(_InitChanged value)? initChanged,
+    TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_ProfileEditPressed value)? editPressed,
     TResult Function(_ProfileUpdated value)? profileUpdated,
     TResult Function(_UpdateStepIndex value)? updateStepIndex,
