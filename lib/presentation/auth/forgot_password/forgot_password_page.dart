@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
 import 'package:jini/application/auth/forgot_password/forgot_password_bloc.dart';
 import 'package:jini/presentation/core/common/image_resources.dart';
 import 'package:jini/presentation/core/common/j_error_messages.dart';
@@ -36,7 +35,7 @@ class ForgotPasswordPage extends StatelessWidget {
                 ),
               );
             },
-            (_) => Get.toNamed(JRoutes.checkEmail),
+            (_) => Navigator.pushNamed(context, JRouter.checkEmail),
           ),
         );
       },
