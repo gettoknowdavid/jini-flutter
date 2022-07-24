@@ -1,9 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:intl/intl.dart' show toBeginningOfSentenceCase;
 import 'package:jini/domain/core/blood_group.dart';
 import 'package:jini/domain/core/failures.dart';
 import 'package:jini/domain/core/gender.dart';
-import 'package:jini/domain/core/geo.dart';
 import 'package:jini/domain/core/user_type.dart';
 import 'package:jini/domain/core/value_object.dart';
 import 'package:jini/domain/core/value_validators.dart';
@@ -25,10 +25,10 @@ class IAge extends ValueObject<num> {
   const IAge._(this.value);
 }
 
-class ILocation extends ValueObject<Geo> {
-  final Either<ValueFailure<Geo>, Geo> value;
+class ILocation extends ValueObject<GeoPoint> {
+  final Either<ValueFailure<GeoPoint>, GeoPoint> value;
 
-  factory ILocation(Geo? input) {
+  factory ILocation(GeoPoint? input) {
     if (input == null) {
       return ILocation._(
         left(ValueFailure.unknownLocation(failedValue: input)),
