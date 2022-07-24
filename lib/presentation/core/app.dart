@@ -24,6 +24,7 @@ class JiniApp extends StatelessWidget {
               themeMode: state.settings.themeMode,
               color: Theme.of(context).primaryColor,
               onGenerateTitle: (context) => 'Jini',
+              navigatorKey: JRouter.key,
               onGenerateRoute: JRouter.generateRoute,
               onGenerateInitialRoutes: JRouter.generateInitialRoutes,
             );
