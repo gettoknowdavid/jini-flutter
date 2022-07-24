@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
 import 'package:jini/application/auth/auth_bloc.dart';
 import 'package:jini/application/auth/sign_in/sign_in_bloc.dart';
 import 'package:jini/presentation/core/common/j_error_messages.dart';
@@ -55,10 +54,18 @@ class SignInForm extends StatelessWidget {
           listenWhen: (p, c) => p != c,
           listener: (context, state) {
             state.mapOrNull(
-              profileNotCompleted: (_) =>
-                  Get.offAllNamed(JRoutes.profileFormPage),
-              profileCompleted: (_) => Get.offAllNamed(JRoutes.layout),
-              unverified: (_) => Get.offAllNamed(JRoutes.verification),
+              profileNotCompleted: (_) => Navigator.pushReplacementNamed(
+                context,
+                JRouter.profileFormPage,
+              ),
+              profileCompleted: (_) => Navigator.pushReplacementNamed(
+                context,
+                JRouter.layout,
+              ),
+              unverified: (_) => Navigator.pushReplacementNamed(
+                context,
+                JRouter.verification,
+              ),
             );
           },
         ),
@@ -101,7 +108,10 @@ class SignInForm extends StatelessWidget {
                 ),
                 JScreenUtil.vSpace(20),
                 GestureDetector(
-                  onTap: () => Get.toNamed(JRoutes.forgotPassword),
+                  onTap: () => Navigator.pushNamed(
+                    context,
+                    JRouter.forgotPassword,
+                  ),
                   child: Text(
                     'Forgot Password?',
                     textAlign: TextAlign.right,
