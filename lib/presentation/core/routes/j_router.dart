@@ -1,11 +1,10 @@
-import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 import 'package:jini/presentation/auth/check_email/check_email_page.dart';
 import 'package:jini/presentation/auth/forgot_password/forgot_password_page.dart';
 import 'package:jini/presentation/auth/sign_in/sign_in_page.dart';
 import 'package:jini/presentation/auth/sign_up/sign_up_page.dart';
 import 'package:jini/presentation/auth/verification/verification_page.dart';
 import 'package:jini/presentation/core/layout/j_layout.dart';
-import 'package:jini/presentation/donor_requirements/donor_requirements_page.dart';
 import 'package:jini/presentation/event/event_page.dart';
 import 'package:jini/presentation/home/home_page.dart';
 import 'package:jini/presentation/map/map_page.dart';
@@ -14,80 +13,59 @@ import 'package:jini/presentation/profile/profile_page.dart';
 import 'package:jini/presentation/request/create_request_page.dart';
 import 'package:jini/presentation/splash/splash_page.dart';
 
-class JRoutes {
-  JRoutes._();
+class JRouter {
+  static const String splash = "/";
+  static const String signIn = "/signIn";
+  static const String signUp = "/signUp";
+  static const String layout = "/layout";
+  static const String verification = "/verification";
+  static const String forgotPassword = "/forgotPassword";
+  static const String checkEmail = "/checkEmail";
+  static const String profilePage = "/profile-page";
+  static const String createRequestPage = "/create-request-page";
+  static const String eventPage = "/event-page";
+  static const String homePage = "/home-page";
+  static const String profileFormPage = "/profile-form-page";
+  static const String mapPage = "/map-page";
 
-  static final String splash = "/";
-  static final String signIn = "/signIn";
-  static final String signUp = "/signUp";
-  static final String layout = "/layout";
-  static final String verification = "/verification";
-  static final String donorReq = "/donorRequirements";
-  static final String forgotPassword = "/forgotPassword";
-  static final String checkEmail = "/checkEmail";
-  static final String profilePage = "/profile-page";
-  static final String createRequestPage = "/create-request-page";
-  static final String eventPage = "/event-page";
-  static final String homePage = "/home-page";
-  static final String profileFormPage = "/profile-form-page";
-  static final String mapPage = "/map-page";
+  JRouter._();
 
-  static final List<GetPage<dynamic>>? pages = <GetPage<dynamic>>[
-    GetPage(
-      name: JRoutes.splash,
-      page: () => const SplashPage(),
-    ),
-    GetPage(
-      name: JRoutes.layout,
-      page: () => const JLayout(),
-    ),
-    GetPage(
-      name: JRoutes.signIn,
-      page: () => const SignInPage(),
-    ),
-    GetPage(
-      name: JRoutes.signUp,
-      page: () => const SignUpPage(),
-    ),
-    GetPage(
-      name: JRoutes.verification,
-      page: () => const VerificationPage(),
-    ),
-    GetPage(
-      name: JRoutes.donorReq,
-      page: () => const DonorRequirementsPage(),
-    ),
-    GetPage(
-      name: JRoutes.forgotPassword,
-      page: () => const ForgotPasswordPage(),
-    ),
-    GetPage(
-      name: JRoutes.checkEmail,
-      page: () => const CheckEmailPage(),
-    ),
-    GetPage(
-      name: JRoutes.homePage,
-      page: () => const HomePage(),
-    ),
-    GetPage(
-      name: JRoutes.createRequestPage,
-      page: () => const CreateRequestPage(),
-    ),
-    GetPage(
-      name: JRoutes.profilePage,
-      page: () => const ProfilePage(),
-    ),
-    GetPage(
-      name: JRoutes.eventPage,
-      page: () => const EventPage(),
-    ),
-    GetPage(
-      name: JRoutes.profileFormPage,
-      page: () => const ProfileFormPage(),
-    ),
-    GetPage(
-      name: JRoutes.mapPage,
-      page: () => const MapPage(),
-    ),
-  ];
+  static Route<dynamic> generateRoute(RouteSettings settings) {
+    switch (settings.name) {
+      case splash:
+        return MaterialPageRoute(builder: (_) => const SplashPage());
+      case signIn:
+        return MaterialPageRoute(builder: (_) => const SignInPage());
+      case signUp:
+        return MaterialPageRoute(builder: (_) => const SignUpPage());
+      case layout:
+        return MaterialPageRoute(builder: (_) => const JLayout());
+      case verification:
+        return MaterialPageRoute(builder: (_) => const VerificationPage());
+      case forgotPassword:
+        return MaterialPageRoute(builder: (_) => const ForgotPasswordPage());
+      case checkEmail:
+        return MaterialPageRoute(builder: (_) => const CheckEmailPage());
+      case profilePage:
+        return MaterialPageRoute(builder: (_) => const ProfilePage());
+      case createRequestPage:
+        return MaterialPageRoute(builder: (_) => const CreateRequestPage());
+      case eventPage:
+        return MaterialPageRoute(builder: (_) => const EventPage());
+      case homePage:
+        return MaterialPageRoute(builder: (_) => const HomePage());
+      case profileFormPage:
+        return MaterialPageRoute(builder: (_) => const ProfileFormPage());
+      case mapPage:
+        return MaterialPageRoute(builder: (_) => const MapPage());
+
+      default:
+        throw FormatException("Route not found");
+    }
+  }
+}
+
+class RouteException implements Exception {
+  final String message;
+  const RouteException(this.message);
 }
