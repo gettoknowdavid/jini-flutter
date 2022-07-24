@@ -21,6 +21,7 @@ class ProfileEvent with _$ProfileEvent {
   const factory ProfileEvent.avatarChanged([ImageSource? source]) =
       _AvatarChanged;
   const factory ProfileEvent.initChanged(bool initEdit) = _InitChanged;
+  const factory ProfileEvent.locationChanged([GeoPoint? geo]) = _LocationChanged;
   const factory ProfileEvent.editPressed(bool value) = _ProfileEditPressed;
   const factory ProfileEvent.profileUpdated() = _ProfileUpdated;
   const factory ProfileEvent.updateStepIndex(int step) = _UpdateStepIndex;
