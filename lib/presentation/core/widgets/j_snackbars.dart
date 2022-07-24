@@ -1,23 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:phosphor_flutter/phosphor_flutter.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jini/presentation/core/routes/j_router.dart';
 
 class JSnackbars {
   JSnackbars._();
 
-  static get closeAll => {Get.closeCurrentSnackbar(), Get.closeAllSnackbars()};
+  static get closeAll {
+    ScaffoldMessenger.of(JRouter.key.currentContext!).removeCurrentSnackBar();
+    ScaffoldMessenger.of(JRouter.key.currentContext!).clearSnackBars();
+  }
 
   static errorSnackbar({required String title, required String message}) {
-    return Get.snackbar(
-      title,
-      message,
-      icon: Icon(PhosphorIcons.warningCircleBold, color: Colors.white),
-      snackPosition: SnackPosition.BOTTOM,
-      margin: EdgeInsets.all(18).r,
-      backgroundColor: Colors.red,
-      colorText: Colors.white,
-      duration: const Duration(seconds: 5),
+    return ScaffoldMessenger.of(JRouter.key.currentContext!).showSnackBar(
+      SnackBar(
+        content: Container(),
+      ),
     );
+    // return Get.snackbar(
+    //   title,
+    //   message,
+    //   icon: Icon(PhosphorIcons.warningCircleBold, color: Colors.white),
+    //   snackPosition: SnackPosition.BOTTOM,
+    //   margin: EdgeInsets.all(18).r,
+    //   backgroundColor: Colors.red,
+    //   colorText: Colors.white,
+    //   duration: const Duration(seconds: 5),
+    // );
   }
 }
