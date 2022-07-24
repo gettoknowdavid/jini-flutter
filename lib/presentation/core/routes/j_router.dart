@@ -8,6 +8,7 @@ import 'package:jini/presentation/core/layout/j_layout.dart';
 import 'package:jini/presentation/donor_requirements/donor_requirements_page.dart';
 import 'package:jini/presentation/event/event_page.dart';
 import 'package:jini/presentation/home/home_page.dart';
+import 'package:jini/presentation/map/map_page.dart';
 import 'package:jini/presentation/profile/profile_form_page.dart';
 import 'package:jini/presentation/profile/profile_page.dart';
 import 'package:jini/presentation/request/create_request_page.dart';
@@ -29,20 +30,64 @@ class JRoutes {
   static final String eventPage = "/event-page";
   static final String homePage = "/home-page";
   static final String profileFormPage = "/profile-form-page";
+  static final String mapPage = "/map-page";
 
   static final List<GetPage<dynamic>>? pages = <GetPage<dynamic>>[
-    GetPage(name: JRoutes.splash, page: () => SplashPage()),
-    GetPage(name: JRoutes.layout, page: () => JLayout()),
-    GetPage(name: JRoutes.signIn, page: () => SignInPage()),
-    GetPage(name: JRoutes.signUp, page: () => SignUpPage()),
-    GetPage(name: JRoutes.verification, page: () => VerificationPage()),
-    GetPage(name: JRoutes.donorReq, page: () => DonorRequirementsPage()),
-    GetPage(name: JRoutes.forgotPassword, page: () => ForgotPasswordPage()),
-    GetPage(name: JRoutes.checkEmail, page: () => CheckEmailPage()),
-    GetPage(name: JRoutes.homePage, page: () => HomePage()),
-    GetPage(name: JRoutes.createRequestPage, page: () => CreateRequestPage()),
-    GetPage(name: JRoutes.profilePage, page: () => ProfilePage()),
-    GetPage(name: JRoutes.eventPage, page: () => EventPage()),
-    GetPage(name: JRoutes.profileFormPage, page: () => ProfileFormPage()),
+    GetPage(
+      name: JRoutes.splash,
+      page: () => const SplashPage(),
+    ),
+    GetPage(
+      name: JRoutes.layout,
+      page: () => const JLayout(),
+    ),
+    GetPage(
+      name: JRoutes.signIn,
+      page: () => const SignInPage(),
+    ),
+    GetPage(
+      name: JRoutes.signUp,
+      page: () => const SignUpPage(),
+    ),
+    GetPage(
+      name: JRoutes.verification,
+      page: () => const VerificationPage(),
+    ),
+    GetPage(
+      name: JRoutes.donorReq,
+      page: () => const DonorRequirementsPage(),
+    ),
+    GetPage(
+      name: JRoutes.forgotPassword,
+      page: () => const ForgotPasswordPage(),
+    ),
+    GetPage(
+      name: JRoutes.checkEmail,
+      page: () => const CheckEmailPage(),
+    ),
+    GetPage(
+      name: JRoutes.homePage,
+      page: () => const HomePage(),
+    ),
+    GetPage(
+      name: JRoutes.createRequestPage,
+      page: () => const CreateRequestPage(),
+    ),
+    GetPage(
+      name: JRoutes.profilePage,
+      page: () => const ProfilePage(),
+    ),
+    GetPage(
+      name: JRoutes.eventPage,
+      page: () => const EventPage(),
+    ),
+    GetPage(
+      name: JRoutes.profileFormPage,
+      page: () => const ProfileFormPage(),
+    ),
+    GetPage(
+      name: JRoutes.mapPage,
+      page: () => const MapPage(),
+    ),
   ];
 }
