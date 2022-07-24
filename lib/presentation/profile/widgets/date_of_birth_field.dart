@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
 import 'package:jini/application/profile/profile_bloc.dart';
 import 'package:jini/presentation/core/common/date_formatter.dart';
 import 'package:jini/presentation/core/common/j_error_messages.dart';
@@ -47,7 +46,7 @@ class _DateOfBirthFieldState extends State<DateOfBirthField> {
           () => null,
           (a) => a.fold(
             (l) => null,
-            (r) => Get.isBottomSheetOpen! ? Get.close(1) : null,
+            (r) => Navigator.of(context).pop(),
           ),
         );
       },
