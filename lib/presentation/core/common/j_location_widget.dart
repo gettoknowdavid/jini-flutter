@@ -1,7 +1,6 @@
 import 'package:division/division.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
 import 'package:jini/application/profile/profile_bloc.dart';
 import 'package:jini/presentation/core/common/j_icons.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
@@ -27,7 +26,12 @@ class JLocationWidget extends StatelessWidget {
           return Txt(
             'Set location',
             gesture: Gestures()
-              ..onTap(() => Get.bottomSheet(const EditLocationBottomSheet())),
+              ..onTap(
+                () => showBottomSheet(
+                  context: context,
+                  builder: (context) => const EditLocationBottomSheet(),
+                ),
+              ),
             style: TxtStyle()
               ..italic()
               ..textColor(Colors.white70)
@@ -40,7 +44,12 @@ class JLocationWidget extends StatelessWidget {
           children: [
             Parent(
               gesture: Gestures()
-                ..onTap(() => Get.bottomSheet(const EditLocationBottomSheet())),
+                ..onTap(
+                  () => showBottomSheet(
+                    context: context,
+                    builder: (context) => const EditLocationBottomSheet(),
+                  ),
+                ),
               style: ParentStyle()
                 ..padding(vertical: JScreenUtil.r(6))
                 ..ripple(true),
