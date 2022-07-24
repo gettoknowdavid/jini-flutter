@@ -41,7 +41,6 @@ dependencies:
   cloud_firestore_odm: ^1.0.0-dev.22
   google_fonts: ^3.0.1
   flutter_screenutil: ^5.5.3+2
-  get: ^4.6.5
   phosphor_flutter: ^1.4.0
   firebase_analytics: ^9.1.10
   bloc: ^8.0.3
