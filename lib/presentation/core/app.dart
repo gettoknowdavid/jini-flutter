@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart' as flutter_bloc;
-import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jini/application/core/settings/settings_bloc.dart';
 import 'package:jini/presentation/core/common/j_theme.dart';
@@ -19,16 +18,14 @@ class JiniApp extends StatelessWidget {
       builder: (context, child) {
         return flutter_bloc.BlocBuilder<SettingsBloc, SettingsState>(
           builder: (context, state) {
-            return GetMaterialApp(
-              title: 'Jini Donation',
-              defaultTransition: Transition.fadeIn,
-              transitionDuration: const Duration(milliseconds: 350),
-              home: SplashPage(),
-              getPages: JRoutes.pages,
+            return MaterialApp(
               theme: JTheme.lightTheme,
               darkTheme: JTheme.darkTheme,
               themeMode: state.settings.themeMode,
               color: Theme.of(context).primaryColor,
+              onGenerateTitle: (context) => 'Jini',
+              onGenerateRoute: JRouter.generateRoute,
+              onGenerateInitialRoutes: JRouter.generateInitialRoutes,
             );
           },
         );
