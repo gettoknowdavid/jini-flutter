@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class JBackButton extends StatelessWidget {
@@ -14,7 +13,7 @@ class JBackButton extends StatelessWidget {
       icon: Icon(PhosphorIcons.arrowBendUpLeftBold),
       color: color ?? Theme.of(context).primaryColor,
       tooltip: MaterialLocalizations.of(context).backButtonTooltip,
-      onPressed: onTap ?? () => Get.back(),
+      onPressed: onTap ?? () => Navigator.pop(context),
     );
   }
 }
