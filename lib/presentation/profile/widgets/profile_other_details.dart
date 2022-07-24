@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
 import 'package:jini/presentation/core/common/date_formatter.dart';
 import 'package:jini/presentation/profile/widgets/date_of_birth_field.dart';
 import 'package:jini/presentation/profile/widgets/gender_grid.dart';
@@ -42,42 +41,60 @@ class ProfileOtherDetails extends StatelessWidget {
               title: 'Account Type',
               icon: PhosphorIcons.user,
               value: user.userType!.value,
-              onTap: () => Get.bottomSheet(const EditUserTypeBottomSheet()),
+              onTap: () => showBottomSheet(
+                context: context,
+                builder: (context) => const EditUserTypeBottomSheet(),
+              ),
             ),
             JScreenUtil.vSpace(10),
             ProfileDetailsItem(
               title: 'Phone',
               icon: PhosphorIcons.phone,
               value: user.phone,
-              onTap: () => Get.bottomSheet(const EditPhoneBottomSheet()),
+              onTap: () => showBottomSheet(
+                context: context,
+                builder: (context) => const EditPhoneBottomSheet(),
+              ),
             ),
             JScreenUtil.vSpace(10),
             ProfileDetailsItem(
               title: 'Gender',
               icon: PhosphorIcons.genderIntersex,
               value: user.gender?.value,
-              onTap: () => Get.bottomSheet(const EditGenderBottomSheet()),
+              onTap: () => showBottomSheet(
+                context: context,
+                builder: (context) => const EditGenderBottomSheet(),
+              ),
             ),
             JScreenUtil.divider,
             ProfileDetailsItem(
               title: 'Date of Birth',
               icon: PhosphorIcons.calendarBlank,
               value: user.dob == null ? null : dateFormat(user.dob!),
-              onTap: () => Get.bottomSheet(const EditDOBBottomSheet()),
+              onTap: () => showBottomSheet(
+                context: context,
+                builder: (context) => const EditDOBBottomSheet(),
+              ),
             ),
             JScreenUtil.divider,
             ProfileDetailsItem(
               title: 'Height',
               icon: PhosphorIcons.arrowsVertical,
               value: user.height == 0 ? null : user.height?.toString(),
-              onTap: () => Get.bottomSheet(const EditHeightBottomSheet()),
+              onTap: () => showBottomSheet(
+                context: context,
+                builder: (context) => const EditHeightBottomSheet(),
+              ),
             ),
             JScreenUtil.divider,
             ProfileDetailsItem(
               title: 'Weight',
               icon: PhosphorIcons.arrowsHorizontal,
               value: user.weight == null ? null : user.weight?.toString(),
-              onTap: () => Get.bottomSheet(const EditWeightBottomSheet()),
+              onTap: () => showBottomSheet(
+                context: context,
+                builder: (context) => const EditWeightBottomSheet(),
+              ),
             ),
             JScreenUtil.vSpace(30)
           ],
