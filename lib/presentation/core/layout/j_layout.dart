@@ -9,6 +9,8 @@ import 'package:jini/presentation/core/routes/j_router.dart';
 import 'package:jini/presentation/core/widgets/j_theme_switch.dart';
 
 class JLayout extends StatelessWidget {
+  const JLayout({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final authBloc = BlocProvider.of<AuthBloc>(context);
