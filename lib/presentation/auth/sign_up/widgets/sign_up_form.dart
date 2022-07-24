@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
 import 'package:jini/application/auth/auth_bloc.dart';
 import 'package:jini/application/auth/sign_up/sign_up_bloc.dart';
 import 'package:jini/presentation/core/common/j_error_messages.dart';
@@ -36,7 +35,7 @@ class SignUpForm extends StatelessWidget {
             },
             (r) {
               authBloc.add(const AuthEvent.sendVerifiedEmail());
-              Get.offAllNamed(JRoutes.verification);
+              Navigator.pushReplacementNamed(context, JRouter.verification);
             },
           ),
         );
