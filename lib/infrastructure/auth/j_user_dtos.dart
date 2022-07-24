@@ -4,14 +4,17 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:jini/domain/auth/j_user.dart';
 import 'package:jini/domain/core/blood_group.dart';
 import 'package:jini/domain/core/gender.dart';
-import 'package:jini/domain/core/geo.dart';
 import 'package:jini/domain/core/user_type.dart';
 
 part 'j_user_dtos.freezed.dart';
 part 'j_user_dtos.g.dart';
 
+// @JsonSerializable(explicitToJson: true, createFactory: false)
+const firestoreSerializable =
+    JsonSerializable(explicitToJson: true, createFactory: false);
+
 @freezed
-@JsonSerializable(explicitToJson: true, createFactory: false)
+@firestoreSerializable
 class JUserDto with _$JUserDto {
   factory JUserDto({
     required String uid,
@@ -25,7 +28,7 @@ class JUserDto with _$JUserDto {
     String? phone,
     String? city,
     String? avatar,
-    Geo? location,
+    @GeoConverter() GeoPoint? location,
     BloodGroup? bloodGroup,
     UserType? userType,
     bool? eligible,
@@ -34,6 +37,9 @@ class JUserDto with _$JUserDto {
   }) = _JUserDto;
 
   factory JUserDto.fromDomain(JUser jUser) {
+    final _geo = jUser.location!.getOrCrash();
+    final _bloodGroup = jUser.bloodGroup!.getOrCrash();
+
     return JUserDto(
       uid: jUser.uid.getOrCrash()!,
       name: jUser.name != null ? jUser.name!.getOrCrash() : null,
@@ -46,9 +52,8 @@ class JUserDto with _$JUserDto {
       phone: jUser.phone != null ? jUser.phone!.getOrCrash() : null,
       city: jUser.city,
       avatar: jUser.avatar != null ? jUser.avatar! : null,
-      location: jUser.location != null ? jUser.location!.getOrCrash() : null,
-      bloodGroup:
-          jUser.bloodGroup != null ? jUser.bloodGroup!.getOrCrash() : null,
+      location: jUser.location != null ? _geo : null,
+      bloodGroup: jUser.bloodGroup != null ? _bloodGroup : null,
       userType: jUser.userType != null ? jUser.userType!.getOrCrash() : null,
       eligible: jUser.eligible,
       formComplete: jUser.formComplete,
@@ -64,3 +69,13 @@ class JUserDto with _$JUserDto {
 
 @Collection<JUserDto>('users')
 final jUsersRef = JUserDtoCollectionReference();
+
+class GeoConverter implements JsonConverter<GeoPoint, GeoPoint> {
+  const GeoConverter();
+
+  @override
+  GeoPoint fromJson(GeoPoint json) => GeoPoint(json.latitude, json.longitude);
+
+  @override
+  GeoPoint toJson(GeoPoint geo) => geo;
+}
