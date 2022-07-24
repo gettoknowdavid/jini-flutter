@@ -1,7 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:jini/domain/auth/value_objects.dart';
 import 'package:jini/domain/core/entity.dart';
-import 'package:jini/domain/core/geo.dart';
 import 'package:jini/domain/core/value_object.dart';
 
 part 'j_user.freezed.dart';
