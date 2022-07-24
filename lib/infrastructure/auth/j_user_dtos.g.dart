@@ -41,6 +41,9 @@ abstract class JUserDtoCollectionReference
   }
 
   @override
+  CollectionReference<JUserDto> get reference;
+
+  @override
   JUserDtoDocumentReference doc([String? id]);
 
   /// Add a new document to this collection with the specified data,
@@ -202,6 +205,95 @@ abstract class JUserDtoQuery implements QueryReference<JUserDtoQuerySnapshot> {
 
   @override
   JUserDtoQuery limitToLast(int limit);
+
+  /// Perform an order query based on a [FieldPath].
+  ///
+  /// This method is considered unsafe as it does check that the field path
+  /// maps to a valid property or that parameters such as [isEqualTo] receive
+  /// a value of the correct type.
+  ///
+  /// If possible, instead use the more explicit variant of order queries:
+  ///
+  /// **AVOID**:
+  /// ```dart
+  /// collection.orderByFieldPath(
+  ///   FieldPath.fromString('title'),
+  ///   startAt: 'title',
+  /// );
+  /// ```
+  ///
+  /// **PREFER**:
+  /// ```dart
+  /// collection.orderByTitle(startAt: 'title');
+  /// ```
+  JUserDtoQuery orderByFieldPath(
+    FieldPath fieldPath, {
+    bool descending = false,
+    Object? startAt,
+    Object? startAfter,
+    Object? endAt,
+    Object? endBefore,
+    JUserDtoDocumentSnapshot? startAtDocument,
+    JUserDtoDocumentSnapshot? endAtDocument,
+    JUserDtoDocumentSnapshot? endBeforeDocument,
+    JUserDtoDocumentSnapshot? startAfterDocument,
+  });
+
+  /// Perform a where query based on a [FieldPath].
+  ///
+  /// This method is considered unsafe as it does check that the field path
+  /// maps to a valid property or that parameters such as [isEqualTo] receive
+  /// a value of the correct type.
+  ///
+  /// If possible, instead use the more explicit variant of where queries:
+  ///
+  /// **AVOID**:
+  /// ```dart
+  /// collection.whereFieldPath(FieldPath.fromString('title'), isEqualTo: 'title');
+  /// ```
+  ///
+  /// **PREFER**:
+  /// ```dart
+  /// collection.whereTitle(isEqualTo: 'title');
+  /// ```
+  JUserDtoQuery whereFieldPath(
+    FieldPath fieldPath, {
+    Object? isEqualTo,
+    Object? isNotEqualTo,
+    Object? isLessThan,
+    Object? isLessThanOrEqualTo,
+    Object? isGreaterThan,
+    Object? isGreaterThanOrEqualTo,
+    Object? arrayContains,
+    List<Object?>? arrayContainsAny,
+    List<Object?>? whereIn,
+    List<Object?>? whereNotIn,
+    bool? isNull,
+  });
+
+  JUserDtoQuery whereDocumentId({
+    String? isEqualTo,
+    String? isNotEqualTo,
+    String? isLessThan,
+    String? isLessThanOrEqualTo,
+    String? isGreaterThan,
+    String? isGreaterThanOrEqualTo,
+    bool? isNull,
+    List<String>? whereIn,
+    List<String>? whereNotIn,
+  });
+
+  JUserDtoQuery orderByDocumentId({
+    bool descending = false,
+    String startAt,
+    String startAfter,
+    String endAt,
+    String endBefore,
+    JUserDtoDocumentSnapshot? startAtDocument,
+    JUserDtoDocumentSnapshot? endAtDocument,
+    JUserDtoDocumentSnapshot? endBeforeDocument,
+    JUserDtoDocumentSnapshot? startAfterDocument,
+  });
 }
 
 class _$JUserDtoQuery extends QueryReference<JUserDtoQuerySnapshot>
@@ -265,6 +357,152 @@ class _$JUserDtoQuery extends QueryReference<JUserDtoQuerySnapshot>
     );
   }
 
+  JUserDtoQuery orderByFieldPath(
+    FieldPath fieldPath, {
+    bool descending = false,
+    Object? startAt = _sentinel,
+    Object? startAfter = _sentinel,
+    Object? endAt = _sentinel,
+    Object? endBefore = _sentinel,
+    JUserDtoDocumentSnapshot? startAtDocument,
+    JUserDtoDocumentSnapshot? endAtDocument,
+    JUserDtoDocumentSnapshot? endBeforeDocument,
+    JUserDtoDocumentSnapshot? startAfterDocument,
+  }) {
+    var query = reference.orderBy(fieldPath, descending: descending);
+
+    if (startAtDocument != null) {
+      query = query.startAtDocument(startAtDocument.snapshot);
+    }
+    if (startAfterDocument != null) {
+      query = query.startAfterDocument(startAfterDocument.snapshot);
+    }
+    if (endAtDocument != null) {
+      query = query.endAtDocument(endAtDocument.snapshot);
+    }
+    if (endBeforeDocument != null) {
+      query = query.endBeforeDocument(endBeforeDocument.snapshot);
+    }
+
+    if (startAt != _sentinel) {
+      query = query.startAt([startAt]);
+    }
+    if (startAfter != _sentinel) {
+      query = query.startAfter([startAfter]);
+    }
+    if (endAt != _sentinel) {
+      query = query.endAt([endAt]);
+    }
+    if (endBefore != _sentinel) {
+      query = query.endBefore([endBefore]);
+    }
+
+    return _$JUserDtoQuery(query, _collection);
+  }
+
+  JUserDtoQuery whereFieldPath(
+    FieldPath fieldPath, {
+    Object? isEqualTo,
+    Object? isNotEqualTo,
+    Object? isLessThan,
+    Object? isLessThanOrEqualTo,
+    Object? isGreaterThan,
+    Object? isGreaterThanOrEqualTo,
+    Object? arrayContains,
+    List<Object?>? arrayContainsAny,
+    List<Object?>? whereIn,
+    List<Object?>? whereNotIn,
+    bool? isNull,
+  }) {
+    return _$JUserDtoQuery(
+      reference.where(
+        fieldPath,
+        isEqualTo: isEqualTo,
+        isNotEqualTo: isNotEqualTo,
+        isLessThan: isLessThan,
+        isLessThanOrEqualTo: isLessThanOrEqualTo,
+        isGreaterThan: isGreaterThan,
+        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
+        arrayContains: arrayContains,
+        arrayContainsAny: arrayContainsAny,
+        whereIn: whereIn,
+        whereNotIn: whereNotIn,
+        isNull: isNull,
+      ),
+      _collection,
+    );
+  }
+
+  JUserDtoQuery whereDocumentId({
+    String? isEqualTo,
+    String? isNotEqualTo,
+    String? isLessThan,
+    String? isLessThanOrEqualTo,
+    String? isGreaterThan,
+    String? isGreaterThanOrEqualTo,
+    bool? isNull,
+    List<String>? whereIn,
+    List<String>? whereNotIn,
+  }) {
+    return _$JUserDtoQuery(
+      reference.where(
+        FieldPath.documentId,
+        isEqualTo: isEqualTo,
+        isNotEqualTo: isNotEqualTo,
+        isLessThan: isLessThan,
+        isLessThanOrEqualTo: isLessThanOrEqualTo,
+        isGreaterThan: isGreaterThan,
+        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
+        isNull: isNull,
+        whereIn: whereIn,
+        whereNotIn: whereNotIn,
+      ),
+      _collection,
+    );
+  }
+
+  JUserDtoQuery orderByDocumentId({
+    bool descending = false,
+    Object? startAt = _sentinel,
+    Object? startAfter = _sentinel,
+    Object? endAt = _sentinel,
+    Object? endBefore = _sentinel,
+    JUserDtoDocumentSnapshot? startAtDocument,
+    JUserDtoDocumentSnapshot? endAtDocument,
+    JUserDtoDocumentSnapshot? endBeforeDocument,
+    JUserDtoDocumentSnapshot? startAfterDocument,
+  }) {
+    var query = reference.orderBy(FieldPath.documentId, descending: descending);
+
+    if (startAtDocument != null) {
+      query = query.startAtDocument(startAtDocument.snapshot);
+    }
+    if (startAfterDocument != null) {
+      query = query.startAfterDocument(startAfterDocument.snapshot);
+    }
+    if (endAtDocument != null) {
+      query = query.endAtDocument(endAtDocument.snapshot);
+    }
+    if (endBeforeDocument != null) {
+      query = query.endBeforeDocument(endBeforeDocument.snapshot);
+    }
+
+    if (startAt != _sentinel) {
+      query = query.startAt([startAt]);
+    }
+    if (startAfter != _sentinel) {
+      query = query.startAfter([startAfter]);
+    }
+    if (endAt != _sentinel) {
+      query = query.endAt([endAt]);
+    }
+    if (endBefore != _sentinel) {
+      query = query.endBefore([endBefore]);
+    }
+
+    return _$JUserDtoQuery(query, _collection);
+  }
+
   @override
   bool operator ==(Object other) {
     return other is _$JUserDtoQuery &&
@@ -325,7 +563,8 @@ Map<String, dynamic> _$JUserDtoToJson(JUserDto instance) => <String, dynamic>{
       'phone': instance.phone,
       'city': instance.city,
       'avatar': instance.avatar,
-      'location': instance.location?.toJson(),
+      'location': _$JsonConverterToJson<GeoPoint, GeoPoint>(
+          instance.location, const GeoConverter().toJson),
       'bloodGroup': _$BloodGroupEnumMap[instance.bloodGroup],
       'userType': _$UserTypeEnumMap[instance.userType],
       'eligible': instance.eligible,
@@ -338,6 +577,12 @@ const _$GenderEnumMap = {
   Gender.female: 'female',
   Gender.other: 'other',
 };
+
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) =>
+    value == null ? null : toJson(value);
 
 const _$BloodGroupEnumMap = {
   BloodGroup.aPlus: 'aPlus',
@@ -367,9 +612,8 @@ _$_JUserDto _$$_JUserDtoFromJson(Map<String, dynamic> json) => _$_JUserDto(
       phone: json['phone'] as String?,
       city: json['city'] as String?,
       avatar: json['avatar'] as String?,
-      location: json['location'] == null
-          ? null
-          : Geo.fromJson(json['location'] as Map<String, dynamic>),
+      location: _$JsonConverterFromJson<GeoPoint, GeoPoint>(
+          json['location'], const GeoConverter().fromJson),
       bloodGroup: $enumDecodeNullable(_$BloodGroupEnumMap, json['bloodGroup']),
       userType: $enumDecodeNullable(_$UserTypeEnumMap, json['userType']),
       eligible: json['eligible'] as bool?,
@@ -390,10 +634,17 @@ Map<String, dynamic> _$$_JUserDtoToJson(_$_JUserDto instance) =>
       'phone': instance.phone,
       'city': instance.city,
       'avatar': instance.avatar,
-      'location': instance.location,
+      'location': _$JsonConverterToJson<GeoPoint, GeoPoint>(
+          instance.location, const GeoConverter().toJson),
       'bloodGroup': _$BloodGroupEnumMap[instance.bloodGroup],
       'userType': _$UserTypeEnumMap[instance.userType],
       'eligible': instance.eligible,
       'formComplete': instance.formComplete,
       'initEdit': instance.initEdit,
     };
+
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) =>
+    json == null ? null : fromJson(json as Json);

@@ -31,7 +31,8 @@ mixin _$JUserDto {
   String? get phone => throw _privateConstructorUsedError;
   String? get city => throw _privateConstructorUsedError;
   String? get avatar => throw _privateConstructorUsedError;
-  Geo? get location => throw _privateConstructorUsedError;
+  @GeoConverter()
+  GeoPoint? get location => throw _privateConstructorUsedError;
   BloodGroup? get bloodGroup => throw _privateConstructorUsedError;
   UserType? get userType => throw _privateConstructorUsedError;
   bool? get eligible => throw _privateConstructorUsedError;
@@ -60,7 +61,7 @@ abstract class $JUserDtoCopyWith<$Res> {
       String? phone,
       String? city,
       String? avatar,
-      Geo? location,
+      @GeoConverter() GeoPoint? location,
       BloodGroup? bloodGroup,
       UserType? userType,
       bool? eligible,
@@ -144,7 +145,7 @@ class _$JUserDtoCopyWithImpl<$Res> implements $JUserDtoCopyWith<$Res> {
       location: location == freezed
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
-              as Geo?,
+              as GeoPoint?,
       bloodGroup: bloodGroup == freezed
           ? _value.bloodGroup
           : bloodGroup // ignore: cast_nullable_to_non_nullable
@@ -187,7 +188,7 @@ abstract class _$$_JUserDtoCopyWith<$Res> implements $JUserDtoCopyWith<$Res> {
       String? phone,
       String? city,
       String? avatar,
-      Geo? location,
+      @GeoConverter() GeoPoint? location,
       BloodGroup? bloodGroup,
       UserType? userType,
       bool? eligible,
@@ -273,7 +274,7 @@ class __$$_JUserDtoCopyWithImpl<$Res> extends _$JUserDtoCopyWithImpl<$Res>
       location: location == freezed
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
-              as Geo?,
+              as GeoPoint?,
       bloodGroup: bloodGroup == freezed
           ? _value.bloodGroup
           : bloodGroup // ignore: cast_nullable_to_non_nullable
@@ -313,7 +314,7 @@ class _$_JUserDto implements _JUserDto {
       this.phone,
       this.city,
       this.avatar,
-      this.location,
+      @GeoConverter() this.location,
       this.bloodGroup,
       this.userType,
       this.eligible,
@@ -346,7 +347,8 @@ class _$_JUserDto implements _JUserDto {
   @override
   final String? avatar;
   @override
-  final Geo? location;
+  @GeoConverter()
+  final GeoPoint? location;
   @override
   final BloodGroup? bloodGroup;
   @override
@@ -435,7 +437,7 @@ abstract class _JUserDto implements JUserDto {
       final String? phone,
       final String? city,
       final String? avatar,
-      final Geo? location,
+      @GeoConverter() final GeoPoint? location,
       final BloodGroup? bloodGroup,
       final UserType? userType,
       final bool? eligible,
@@ -467,7 +469,8 @@ abstract class _JUserDto implements JUserDto {
   @override
   String? get avatar => throw _privateConstructorUsedError;
   @override
-  Geo? get location => throw _privateConstructorUsedError;
+  @GeoConverter()
+  GeoPoint? get location => throw _privateConstructorUsedError;
   @override
   BloodGroup? get bloodGroup => throw _privateConstructorUsedError;
   @override
