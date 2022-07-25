@@ -7,11 +7,13 @@ class JButton extends StatelessWidget {
     required this.title,
     required this.onPressed,
     this.loading = false,
+    this.disabled = false,
   }) : super(key: key);
 
   final String title;
   final void Function()? onPressed;
   final bool loading;
+  final bool disabled;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,7 @@ class JButton extends StatelessWidget {
               ),
             ),
       child: ElevatedButton(
-        onPressed: loading ? null : onPressed,
+        onPressed: loading || disabled ? null : onPressed,
         style: ElevatedButton.styleFrom(primary: Colors.transparent),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
