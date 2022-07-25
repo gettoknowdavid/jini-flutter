@@ -163,8 +163,8 @@ class _ProfileFormPageState extends State<ProfileFormPage> {
                     onStepContinue: () {
                       if (_index == (_steps.length - 1)) {
                         bloc.add(const ProfileEvent.profileUpdated());
-                        // bloc.add(const ProfileEvent.initChanged(true));
-                        // bloc.add(const ProfileEvent.initialized());
+                        bloc.add(const ProfileEvent.initChanged(true));
+                        bloc.add(const ProfileEvent.initialized());
                         JDialogs.profileCompleteDialog(context);
                       } else {
                         bloc.add(const ProfileEvent.profileUpdated());
