@@ -18,50 +18,57 @@ class JBottomSheets {
   }
 
   static editLocation(BuildContext context) {
-    return showBottomSheet(
+    return showModalBottomSheet(
       context: context,
+      backgroundColor: Colors.transparent,
       builder: (context) => const EditLocationBottomSheet(),
     );
   }
 
   static editUserType(BuildContext context) {
-    return showBottomSheet(
+    return showModalBottomSheet(
       context: context,
+      backgroundColor: Colors.transparent,
       builder: (context) => const EditUserTypeBottomSheet(),
     );
   }
 
   static editPhone(BuildContext context) {
-    return showBottomSheet(
+    return showModalBottomSheet(
       context: context,
+      backgroundColor: Colors.transparent,
       builder: (context) => const EditPhoneBottomSheet(),
     );
   }
 
   static editGender(BuildContext context) {
-    return showBottomSheet(
+    return showModalBottomSheet(
       context: context,
+      backgroundColor: Colors.transparent,
       builder: (context) => const EditGenderBottomSheet(),
     );
   }
 
   static editDateOfBirth(BuildContext context) {
-    return showBottomSheet(
+    return showModalBottomSheet(
       context: context,
+      backgroundColor: Colors.transparent,
       builder: (context) => const EditDOBBottomSheet(),
     );
   }
 
   static editHeight(BuildContext context) {
-    return showBottomSheet(
+    return showModalBottomSheet(
       context: context,
+      backgroundColor: Colors.transparent,
       builder: (context) => const EditHeightBottomSheet(),
     );
   }
 
   static editWeight(BuildContext context) {
-    return showBottomSheet(
+    return showModalBottomSheet(
       context: context,
+      backgroundColor: Colors.transparent,
       builder: (context) => const EditWeightBottomSheet(),
     );
   }
