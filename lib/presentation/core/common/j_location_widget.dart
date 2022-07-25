@@ -6,6 +6,7 @@ import 'package:jini/presentation/core/common/j_icons.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/widgets/j_bottom_sheets.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
+import 'package:jini/presentation/core/widgets/j_outlined_button.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class JLocationWidget extends StatelessWidget {
@@ -103,20 +104,7 @@ class EditLocationBottomSheet extends StatelessWidget {
                       bloc.add(const ProfileEvent.locationChanged()),
                   loading: false,
                 ),
-                Container(
-                  width: JScreenUtil.sw(1),
-                  child: ElevatedButton(
-                    child: const Text('Pick from map'),
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.transparent,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: JScreenUtil.borderRadius,
-                        side: BorderSide(color: theme.primaryColor),
-                      ),
-                    ),
-                  ),
-                ),
+                JOutlinedButton(title: 'Pick from map', onPressed: () {}),
               ],
             ),
           ),
