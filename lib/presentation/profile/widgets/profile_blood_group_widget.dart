@@ -7,7 +7,7 @@ import 'package:jini/infrastructure/auth/j_user_dtos.dart';
 import 'package:jini/presentation/core/common/j_icons.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/common/j_widget_styles.dart';
-import 'package:jini/presentation/profile/widgets/blood_group_grid.dart';
+import 'package:jini/presentation/core/widgets/j_bottom_sheets.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class ProfileBloodGroupWidget extends StatelessWidget {
@@ -18,10 +18,7 @@ class ProfileBloodGroupWidget extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     final bloc = BlocProvider.of<ProfileBloc>(context);
 
-    _onTap() => showBottomSheet(
-          context: context,
-          builder: (context) => const EditBloodGroupBottomSheet(),
-        );
+    _onTap() => JBottomSheets.editBloodGroup(context);
 
     return BlocConsumer<ProfileBloc, ProfileState>(
       bloc: bloc,
