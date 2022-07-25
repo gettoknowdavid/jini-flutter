@@ -33,7 +33,7 @@ class EditBottomSheet extends StatelessWidget {
       padding: MediaQuery.of(context).viewInsets,
       child: Parent(
         style: ParentStyle()
-          ..height(height ?? JScreenUtil.sh(0.2))
+          ..height(height ?? JScreenUtil.sh(0.35))
           ..borderRadius(
               topLeft: JScreenUtil.r(30), topRight: JScreenUtil.r(30))
           ..padding(horizontal: JScreenUtil.r(18), vertical: JScreenUtil.r(22))
