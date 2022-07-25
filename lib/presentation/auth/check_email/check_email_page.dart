@@ -20,54 +20,51 @@ class CheckEmailPage extends StatelessWidget {
       appBar: AppBar(
         leading: const JBackButton(),
       ),
-      child: Padding(
-        padding: JScreenUtil.globalPadding,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const Spacer(),
-            JScreenUtil.vSpace(30),
-            Text(
-              'Check your mail',
-              style: textTheme.headlineLarge,
-            ),
-            JScreenUtil.vSpace(10),
-            Text(
-              "We have sent the password recovery \ninstructions to your mail.",
-              style: textTheme.titleMedium,
-            ),
-            JScreenUtil.vSpace(20),
-            Image.asset(ImageResources.checkMail),
-            JScreenUtil.vSpace(20),
-            JButton(
-              title: 'Open mail app',
-              onPressed: () => bloc.add(AuthEvent.openMailApp()),
-            ),
-            const Spacer(),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'No mail yet? Check your spam filter, or',
-                  textAlign: TextAlign.center,
-                  style: textTheme.titleSmall,
-                ),
-                JScreenUtil.vSpace(6),
-                GestureDetector(
-                  child: Text(
-                    'try another email address',
-                    style: textTheme.titleSmall?.copyWith(
-                      color: Theme.of(context).primaryColor,
-                    ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          const Spacer(),
+          JScreenUtil.vSpace(30),
+          Text(
+            'Check your mail',
+            style: textTheme.headlineLarge,
+          ),
+          JScreenUtil.vSpace(10),
+          Text(
+            "We have sent the password recovery \ninstructions to your mail.",
+            style: textTheme.titleMedium,
+          ),
+          JScreenUtil.vSpace(20),
+          Image.asset(ImageResources.checkMail),
+          JScreenUtil.vSpace(20),
+          JButton(
+            title: 'Open mail app',
+            onPressed: () => bloc.add(AuthEvent.openMailApp()),
+          ),
+          const Spacer(),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'No mail yet? Check your spam filter, or',
+                textAlign: TextAlign.center,
+                style: textTheme.titleSmall,
+              ),
+              JScreenUtil.vSpace(6),
+              GestureDetector(
+                child: Text(
+                  'try another email address',
+                  style: textTheme.titleSmall?.copyWith(
+                    color: Theme.of(context).primaryColor,
                   ),
-                  onTap: () => Navigator.pop(context),
                 ),
-              ],
-            ),
-            JScreenUtil.vSpace(40)
-          ],
-        ),
+                onTap: () => Navigator.pop(context),
+              ),
+            ],
+          ),
+          JScreenUtil.vSpace(40)
+        ],
       ),
     );
   }
