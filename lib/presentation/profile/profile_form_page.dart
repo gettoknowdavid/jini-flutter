@@ -26,7 +26,10 @@ class AvatarField extends StatelessWidget {
       listener: (context, state) {
         state.saveOption.fold(
           () => null,
-          (a) => a.fold((l) => null, (r) => null),
+          (a) => a.fold(
+            (l) => null,
+            (r) => bloc.add(const ProfileEvent.initialized()),
+          ),
         );
       },
       buildWhen: (p, c) => p.user.avatar != c.user.avatar,
