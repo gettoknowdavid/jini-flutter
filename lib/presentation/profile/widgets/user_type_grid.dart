@@ -5,7 +5,7 @@ import 'package:jini/application/profile/profile_bloc.dart';
 import 'package:jini/domain/core/user_type.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/common/j_widget_styles.dart';
-import 'package:jini/presentation/core/widgets/j_button.dart';
+import 'package:jini/presentation/profile/widgets/edit_bottom_sheet.dart';
 
 class EditUserTypeBottomSheet extends StatelessWidget {
   const EditUserTypeBottomSheet({Key? key}) : super(key: key);
@@ -13,8 +13,6 @@ class EditUserTypeBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of<ProfileBloc>(context);
-    final theme = Theme.of(context);
-    final textTheme = theme.textTheme;
 
     _handleSave() => bloc.add(ProfileEvent.profileUpdated());
 
@@ -31,21 +29,11 @@ class EditUserTypeBottomSheet extends StatelessWidget {
         );
       },
       buildWhen: (p, c) => p.isSaving != c.isSaving,
-      builder: (context, state) => Parent(
-        style: JWidgetStyles.profileSheetStyle(theme),
-        child: Wrap(
-          alignment: WrapAlignment.center,
-          runSpacing: JScreenUtil.r(30),
-          children: <Widget>[
-            Text('Update your account type', style: textTheme.titleLarge),
-            const UserTypeGrid(),
-            JButton(
-              title: 'Save',
-              onPressed: _handleSave,
-              loading: bloc.state.isSaving,
-            ),
-          ],
-        ),
+      builder: (context, state) => EditBottomSheet(
+        title: 'account type',
+        action: _handleSave,
+        field: const UserTypeGrid(),
+        loading: bloc.state.isSaving,
       ),
     );
   }
