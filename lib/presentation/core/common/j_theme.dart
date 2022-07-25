@@ -47,6 +47,18 @@ class JTheme {
     ),
   );
 
+  static final _outlinedButtonTheme = OutlinedButtonThemeData(
+    style: OutlinedButton.styleFrom(
+      primary: _primary,
+      padding: EdgeInsets.all(20).r,
+      textStyle: GoogleFonts.spaceGrotesk(
+        fontSize: 18.sp,
+        fontWeight: FontWeight.w600,
+      ),
+      shape: RoundedRectangleBorder(borderRadius: JScreenUtil.borderRadius),
+    ),
+  );
+
   static final _radioTheme = RadioThemeData(
     fillColor: MaterialStateProperty.resolveWith<Color>((states) {
       if (states.contains(MaterialState.disabled)) {
@@ -79,6 +91,7 @@ class JTheme {
       textButtonTheme: _textButtonTheme,
       drawerTheme: _drawerTheme,
       elevatedButtonTheme: _elevatedButtonTheme,
+      outlinedButtonTheme: _outlinedButtonTheme,
       pageTransitionsTheme: _pageTransitionsTheme,
       radioTheme: _radioTheme,
       popupMenuTheme: PopupMenuThemeData(
@@ -139,6 +152,7 @@ class JTheme {
       textButtonTheme: _textButtonTheme,
       drawerTheme: _drawerTheme,
       elevatedButtonTheme: _elevatedButtonTheme,
+      outlinedButtonTheme: _outlinedButtonTheme,
       pageTransitionsTheme: _pageTransitionsTheme,
       radioTheme: _radioTheme,
       popupMenuTheme: PopupMenuThemeData(
