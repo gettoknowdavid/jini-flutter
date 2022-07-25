@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/routes/j_router.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class JSnackbars {
   JSnackbars._();
@@ -10,20 +12,52 @@ class JSnackbars {
   }
 
   static errorSnackbar({required String title, required String message}) {
-    return ScaffoldMessenger.of(JRouter.key.currentContext!).showSnackBar(
+    final context = JRouter.key.currentContext!;
+    final textTheme = Theme.of(context).textTheme;
+
+    return ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Container(),
+        clipBehavior: Clip.none,
+        backgroundColor: Colors.transparent,
+        content: Container(
+          height: JScreenUtil.sh(0.14),
+          alignment: Alignment.center,
+          padding: JScreenUtil.globalPadding,
+          decoration: BoxDecoration(
+            color: Colors.red,
+            borderRadius: JScreenUtil.borderRadius,
+          ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const Icon(PhosphorIcons.warningCircle, color: Colors.white),
+              JScreenUtil.hSpace(20),
+              Flexible(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: textTheme.titleLarge?.copyWith(
+                        fontSize: JScreenUtil.fontSize(16),
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                    JScreenUtil.vSpace(10),
+                    Text(
+                      message,
+                      style: textTheme.bodyLarge?.copyWith(
+                        fontSize: JScreenUtil.fontSize(14),
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
-    // return Get.snackbar(
-    //   title,
-    //   message,
-    //   icon: Icon(PhosphorIcons.warningCircleBold, color: Colors.white),
-    //   snackPosition: SnackPosition.BOTTOM,
-    //   margin: EdgeInsets.all(18).r,
-    //   backgroundColor: Colors.red,
-    //   colorText: Colors.white,
-    //   duration: const Duration(seconds: 5),
-    // );
   }
 }
