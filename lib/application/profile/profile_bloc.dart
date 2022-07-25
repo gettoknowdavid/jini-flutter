@@ -136,24 +136,28 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
 
     emit(state.copyWith(avatarFile: _file));
 
-    _mediaFacade.upload(_file!.path);
+    if (_file != null) {
+      _mediaFacade.upload(_file.path);
 
-    final _download = await _mediaFacade.download();
+      final _download = await _mediaFacade.download();
 
-    emit(_download.fold(
-      (l) => state,
-      (r) => state.copyWith(
-        user: state.user.copyWith(avatar: r),
-      ),
-    ));
+      emit(_download.fold(
+        (l) => state,
+        (r) => state.copyWith(
+          user: state.user.copyWith(avatar: r),
+        ),
+      ));
 
-    failureOrSuccess = await _authFacade.updateUser(state.user);
+      failureOrSuccess = await _authFacade.updateUser(state.user);
 
-    emit(state.copyWith(
-      avatarFile: null,
-      isSaving: false,
-      saveOption: optionOf(failureOrSuccess),
-    ));
+      emit(state.copyWith(
+        avatarFile: null,
+        isSaving: false,
+        saveOption: optionOf(failureOrSuccess),
+      ));
+    } else {
+      emit(state);
+    }
   }
 
   _initChanged(_InitChanged e, Emitter<ProfileState> emit) async {
