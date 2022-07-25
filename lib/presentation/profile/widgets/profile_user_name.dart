@@ -21,7 +21,7 @@ class ProfileUserName extends StatelessWidget {
         bool isEditing = bloc.state.isEditing;
 
         return GestureDetector(
-          onTap: isEditing ? JBottomSheets.editName(context) : null,
+          onTap: isEditing ? () => JBottomSheets.editName(context) : null,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
