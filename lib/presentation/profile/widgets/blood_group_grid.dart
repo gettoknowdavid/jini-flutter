@@ -8,7 +8,8 @@ import 'package:jini/presentation/core/common/j_widget_styles.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
 
 class BloodGroupGrid extends StatelessWidget {
-  const BloodGroupGrid({Key? key}) : super(key: key);
+  const BloodGroupGrid({Key? key, this.isInitEdit = false}) : super(key: key);
+  final bool isInitEdit;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class BloodGroupGrid extends StatelessWidget {
           () => null,
           (a) => a.fold(
             (l) => null,
-            (r) => Navigator.of(context).pop(),
+            (r) => isInitEdit ? null : Navigator.of(context).pop(),
           ),
         );
       },
