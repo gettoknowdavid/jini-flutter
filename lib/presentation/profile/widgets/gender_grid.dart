@@ -5,7 +5,7 @@ import 'package:jini/application/profile/profile_bloc.dart';
 import 'package:jini/domain/core/gender.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/common/j_widget_styles.dart';
-import 'package:jini/presentation/core/widgets/j_button.dart';
+import 'package:jini/presentation/profile/widgets/edit_bottom_sheet.dart';
 
 class GenderGrid extends StatelessWidget {
   const GenderGrid({Key? key}) : super(key: key);
@@ -66,8 +66,6 @@ class EditGenderBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of<ProfileBloc>(context);
-    final theme = Theme.of(context);
-    final textTheme = theme.textTheme;
 
     _handleSave() => bloc.add(ProfileEvent.profileUpdated());
 
@@ -85,21 +83,12 @@ class EditGenderBottomSheet extends StatelessWidget {
       },
       buildWhen: (p, c) => p.isSaving != c.isSaving,
       builder: (context, state) {
-        return Parent(
-          style: JWidgetStyles.profileSheetStyle(theme),
-          child: Wrap(
-            alignment: WrapAlignment.center,
-            runSpacing: JScreenUtil.r(30),
-            children: <Widget>[
-              Text('Update your gender', style: textTheme.titleLarge),
-              const GenderGrid(),
-              JButton(
-                title: 'Save',
-                onPressed: _handleSave,
-                loading: bloc.state.isSaving,
-              ),
-            ],
-          ),
+        return EditBottomSheet(
+          title: 'gender',
+          loading: bloc.state.isSaving,
+          height: JScreenUtil.sh(0.4),
+          field: const GenderGrid(),
+          action: _handleSave,
         );
       },
     );
