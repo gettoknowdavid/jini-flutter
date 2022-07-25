@@ -6,6 +6,7 @@ import 'package:jini/domain/core/blood_group.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/common/j_widget_styles.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
+import 'package:jini/presentation/profile/widgets/edit_bottom_sheet.dart';
 
 class BloodGroupGrid extends StatelessWidget {
   const BloodGroupGrid({Key? key, this.isInitEdit = false}) : super(key: key);
@@ -70,8 +71,6 @@ class EditBloodGroupBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of<ProfileBloc>(context);
-    final theme = Theme.of(context);
-    final textTheme = theme.textTheme;
 
     _handleSave() {
       bloc.add(ProfileEvent.profileUpdated());
@@ -82,21 +81,12 @@ class EditBloodGroupBottomSheet extends StatelessWidget {
       bloc: bloc,
       buildWhen: (p, c) => p.isSaving != c.isSaving,
       builder: (context, state) {
-        return Parent(
-          style: JWidgetStyles.profileSheetStyle(theme),
-          child: Wrap(
-            alignment: WrapAlignment.center,
-            runSpacing: JScreenUtil.r(30),
-            children: <Widget>[
-              Text('Update your blood group', style: textTheme.titleLarge),
-              const BloodGroupGrid(),
-              JButton(
-                title: 'Save',
-                onPressed: _handleSave,
-                loading: bloc.state.isSaving,
-              ),
-            ],
-          ),
+        return EditBottomSheet(
+          field: const BloodGroupGrid(),
+          action: _handleSave,
+          title: 'blood group',
+          loading: bloc.state.isSaving,
+          height: JScreenUtil.sh(0.55),
         );
       },
     );
