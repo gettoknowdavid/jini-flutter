@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jini/presentation/core/common/j_avatar.dart';
 import 'package:jini/presentation/core/common/j_location_widget.dart';
 import 'package:jini/presentation/profile/widgets/blood_group_grid.dart';
 import 'package:jini/presentation/profile/widgets/date_of_birth_field.dart';
@@ -9,6 +10,15 @@ import 'package:jini/presentation/profile/widgets/user_type_grid.dart';
 
 class JBottomSheets {
   JBottomSheets._();
+
+  static imageSource(BuildContext context) {
+    return showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      builder: (context) => const ImageSourceBottomSheet(),
+    );
+  }
 
   static editName(BuildContext context) {
     return showModalBottomSheet(
