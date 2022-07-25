@@ -84,32 +84,42 @@ class EditLocationBottomSheet extends StatelessWidget {
     return BlocBuilder<ProfileBloc, ProfileState>(
       bloc: bloc,
       builder: (context, state) {
-        return Parent(
-          style: JWidgetStyles.profileSheetStyle(theme),
-          child: Wrap(
-            alignment: WrapAlignment.center,
-            runSpacing: JScreenUtil.r(30),
-            children: <Widget>[
-              JButton(
-                title: 'Use Current Location',
-                onPressed: () => bloc.add(const ProfileEvent.locationChanged()),
-                loading: false,
-              ),
-              Container(
-                width: JScreenUtil.sw(1),
-                child: ElevatedButton(
-                  child: const Text('Pick from map'),
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.transparent,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: JScreenUtil.borderRadius,
-                      side: BorderSide(color: theme.primaryColor),
+        return Padding(
+          padding: MediaQuery.of(context).viewInsets,
+          child: Parent(
+            style: ParentStyle()
+              ..height(JScreenUtil.sh(0.26))
+              ..borderRadius(
+                  topLeft: JScreenUtil.r(30), topRight: JScreenUtil.r(30))
+              ..padding(
+                  horizontal: JScreenUtil.r(18), vertical: JScreenUtil.r(22))
+              ..background.color(theme.canvasColor),
+            child: Wrap(
+              alignment: WrapAlignment.center,
+              runSpacing: JScreenUtil.r(30),
+              children: <Widget>[
+                JButton(
+                  title: 'Use Current Location',
+                  onPressed: () =>
+                      bloc.add(const ProfileEvent.locationChanged()),
+                  loading: false,
+                ),
+                Container(
+                  width: JScreenUtil.sw(1),
+                  child: ElevatedButton(
+                    child: const Text('Pick from map'),
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.transparent,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: JScreenUtil.borderRadius,
+                        side: BorderSide(color: theme.primaryColor),
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         );
       },
