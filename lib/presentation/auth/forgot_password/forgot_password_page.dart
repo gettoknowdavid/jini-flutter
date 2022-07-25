@@ -47,7 +47,6 @@ class ForgotPasswordPage extends StatelessWidget {
           ),
           child: Center(
             child: SingleChildScrollView(
-              padding: JScreenUtil.globalPadding,
               child: Form(
                 key: _formKey,
                 autovalidateMode: AutovalidateMode.onUserInteraction,
