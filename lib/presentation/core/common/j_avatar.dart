@@ -1,6 +1,7 @@
 import 'package:division/division.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:jini/application/profile/profile_bloc.dart';
 import 'package:jini/domain/core/user_type.dart';
 import 'package:jini/infrastructure/auth/j_user_dtos.dart';
@@ -112,6 +113,7 @@ class ImageSourceBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bloc = BlocProvider.of<ProfileBloc>(context);
     final theme = Theme.of(context);
 
     return Padding(
@@ -127,9 +129,17 @@ class ImageSourceBottomSheet extends StatelessWidget {
           alignment: WrapAlignment.center,
           runSpacing: JScreenUtil.r(30),
           children: <Widget>[
-            JButton(title: 'Take a picture', onPressed: () {}),
+            JButton(
+              title: 'Take a picture',
+              onPressed: () => bloc.add(const ProfileEvent.avatarChanged(
+                ImageSource.camera,
+              )),
+            ),
             JScreenUtil.vSpace(20),
-            JOutlinedButton(title: 'Pick from Gallery', onPressed: () {}),
+            JOutlinedButton(
+              title: 'Pick from Gallery',
+              onPressed: () => bloc.add(const ProfileEvent.avatarChanged()),
+            ),
           ],
         ),
       ),
