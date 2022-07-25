@@ -122,14 +122,13 @@ class SignInForm extends StatelessWidget {
                 JButton(
                   title: 'Sign In',
                   loading: bloc.state.isSubmitting,
-                  onPressed: (!bloc.state.email.isValid() ||
-                          bloc.state.password.getOrCrash() == null)
-                      ? null
-                      : () {
-                          if (_signInFormKey.currentState!.validate()) {
-                            bloc.add(SignInEvent.signInPressed());
-                          }
-                        },
+                  disabled: !bloc.state.email.isValid() ||
+                      bloc.state.password.getOrCrash() == null,
+                  onPressed: () {
+                    if (_signInFormKey.currentState!.validate()) {
+                      bloc.add(SignInEvent.signInPressed());
+                    }
+                  },
                 ),
               ],
             ),
