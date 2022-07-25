@@ -92,6 +92,9 @@ class SignUpForm extends StatelessWidget {
               JButton(
                 title: 'Sign Up',
                 loading: bloc.state.isSubmitting,
+                disabled: !bloc.state.name.isValid() ||
+                    !bloc.state.email.isValid() ||
+                    !bloc.state.password.isValid(),
                 onPressed: () {
                   if (_signUpFormKey.currentState!.validate()) {
                     bloc.add(SignUpEvent.signUpPressed());

@@ -20,7 +20,7 @@ class JButton extends StatelessWidget {
     return Container(
       height: 68.h,
       width: 1.sw,
-      decoration: loading || onPressed == null
+      decoration: loading || disabled || onPressed == null
           ? const BoxDecoration()
           : BoxDecoration(
               borderRadius: BorderRadius.circular(18).r,
