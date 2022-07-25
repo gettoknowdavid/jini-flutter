@@ -13,8 +13,9 @@ class ProfileUserName extends StatelessWidget {
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of<ProfileBloc>(context);
 
-    _onTap() => showBottomSheet(
+    _onTap() => showModalBottomSheet(
           context: context,
+          backgroundColor: Colors.transparent,
           builder: (context) => const EditNameBottomSheet(),
         );
 
