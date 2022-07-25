@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jini/application/profile/profile_bloc.dart';
 import 'package:jini/infrastructure/auth/j_user_dtos.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
-import 'package:jini/presentation/profile/widgets/edit_bottom_sheet.dart';
+import 'package:jini/presentation/core/widgets/j_bottom_sheets.dart';
 import 'package:jini/presentation/core/common/j_icons.dart';
 
 class ProfileUserName extends StatelessWidget {
@@ -13,12 +13,6 @@ class ProfileUserName extends StatelessWidget {
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of<ProfileBloc>(context);
 
-    _onTap() => showModalBottomSheet(
-          context: context,
-          backgroundColor: Colors.transparent,
-          builder: (context) => const EditNameBottomSheet(),
-        );
-
     return BlocBuilder<ProfileBloc, ProfileState>(
       bloc: bloc,
       buildWhen: (p, c) => p.isEditing != c.isEditing,
@@ -27,7 +21,7 @@ class ProfileUserName extends StatelessWidget {
         bool isEditing = bloc.state.isEditing;
 
         return GestureDetector(
-          onTap: isEditing ? _onTap : null,
+          onTap: isEditing ? JBottomSheets.editName(context) : null,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
