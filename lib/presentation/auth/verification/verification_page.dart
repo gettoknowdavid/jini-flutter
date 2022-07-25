@@ -48,46 +48,43 @@ class _VerificationPageState extends State<VerificationPage> {
       },
       builder: (context, state) {
         return JPage(
-          child: Padding(
-            padding: JScreenUtil.globalPadding,
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  JScreenUtil.vSpace(10),
-                  Image.asset(ImageResources.verifyEmail),
-                  JScreenUtil.vSpace(18),
-                  JButton(
-                    title: 'Open email app',
-                    onPressed: () => bloc.add(AuthEvent.openMailApp()),
-                  ),
-                  JScreenUtil.vSpace(20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      TextButton(
-                        onPressed: () {
-                          bloc.add(AuthEvent.sendVerifiedEmail());
-                        },
-                        child: const Text('Resend Email'),
-                        style: TextButton.styleFrom(
-                          textStyle: textTheme.titleSmall,
-                        ),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                JScreenUtil.vSpace(10),
+                Image.asset(ImageResources.verifyEmail),
+                JScreenUtil.vSpace(18),
+                JButton(
+                  title: 'Open email app',
+                  onPressed: () => bloc.add(AuthEvent.openMailApp()),
+                ),
+                JScreenUtil.vSpace(20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    TextButton(
+                      onPressed: () {
+                        bloc.add(AuthEvent.sendVerifiedEmail());
+                      },
+                      child: const Text('Resend Email'),
+                      style: TextButton.styleFrom(
+                        textStyle: textTheme.titleSmall,
                       ),
-                      TextButton(
-                        onPressed: () {
-                          bloc.add(AuthEvent.authSignedOut());
-                        },
-                        child: const Text('Cancel'),
-                        style: TextButton.styleFrom(
-                          textStyle: textTheme.titleSmall,
-                        ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        bloc.add(AuthEvent.authSignedOut());
+                      },
+                      child: const Text('Cancel'),
+                      style: TextButton.styleFrom(
+                        textStyle: textTheme.titleSmall,
                       ),
-                    ],
-                  ),
-                ],
-              ),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ),
         );
