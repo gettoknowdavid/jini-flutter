@@ -23,6 +23,7 @@ class JWidgetStyles {
     );
 
   static final profileSheetStyle = (ThemeData theme) => ParentStyle()
+    ..height(JScreenUtil.sh(0.2))
     ..borderRadius(topLeft: JScreenUtil.r(30), topRight: JScreenUtil.r(30))
     ..padding(horizontal: JScreenUtil.r(18), vertical: JScreenUtil.r(22))
     ..background.color(theme.canvasColor);
