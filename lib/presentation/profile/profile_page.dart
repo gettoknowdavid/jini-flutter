@@ -10,7 +10,7 @@ import 'package:jini/presentation/core/common/j_widget_styles.dart';
 import 'package:jini/presentation/core/widgets/j_back_button.dart';
 import 'package:jini/presentation/profile/widgets/profile_blood_group_widget.dart';
 import 'package:jini/presentation/profile/widgets/profile_email_widget.dart';
-import 'package:jini/presentation/profile/widgets/profile_menu.dart';
+import 'package:jini/presentation/profile/widgets/profile_actions_menu.dart';
 import 'package:jini/presentation/profile/widgets/profile_other_details.dart';
 import 'package:jini/presentation/profile/widgets/profile_stats.dart';
 import 'package:jini/presentation/profile/widgets/profile_user_name.dart';
@@ -35,7 +35,7 @@ class ProfilePage extends StatelessWidget {
           },
         ),
         actions: [
-          const ProfileMenu(),
+          const ProfileActionsMenu(),
         ],
       ),
       child: SingleChildScrollView(
