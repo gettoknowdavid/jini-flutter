@@ -14,7 +14,7 @@ class JBackground extends StatelessWidget {
       color: forSplashScreen
           ? null
           : Theme.of(context).brightness == Brightness.light
-              ? const Color.fromRGBO(242, 87, 116, 0.25)
+              ? const Color.fromRGBO(242, 87, 116, 0.12)
               : const Color.fromRGBO(255, 255, 255, 0.25),
       colorBlendMode: BlendMode.modulate,
       height: JScreenUtil.sh(1),
