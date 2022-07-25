@@ -9,6 +9,14 @@ import 'package:jini/presentation/profile/widgets/user_type_grid.dart';
 class JBottomSheets {
   JBottomSheets._();
 
+  static editName(BuildContext context) {
+    return showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      builder: (context) => const EditNameBottomSheet(),
+    );
+  }
+
   static editLocation(BuildContext context) {
     return showBottomSheet(
       context: context,
