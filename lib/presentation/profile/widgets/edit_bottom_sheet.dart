@@ -5,21 +5,22 @@ import 'package:jini/application/profile/profile_bloc.dart';
 import 'package:jini/infrastructure/auth/j_user_dtos.dart';
 import 'package:jini/presentation/core/common/j_error_messages.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
-import 'package:jini/presentation/core/common/j_widget_styles.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
 import 'package:jini/presentation/core/widgets/j_text_form_field.dart';
 
 class EditBottomSheet extends StatelessWidget {
   final Widget field;
-
+  final double? height;
   final void Function()? action;
   final String title;
   final bool loading;
+
   const EditBottomSheet({
     Key? key,
     required this.field,
     required this.action,
     required this.title,
+    this.height,
     this.loading = false,
   }) : super(key: key);
 
@@ -28,16 +29,24 @@ class EditBottomSheet extends StatelessWidget {
     final theme = Theme.of(context);
     final textTheme = theme.textTheme;
 
-    return Parent(
-      style: JWidgetStyles.profileSheetStyle(theme),
-      child: Wrap(
-        alignment: WrapAlignment.center,
-        runSpacing: JScreenUtil.r(30),
-        children: <Widget>[
-          Text('Update your $title', style: textTheme.titleLarge),
-          field,
-          JButton(title: 'Save', onPressed: action, loading: loading),
-        ],
+    return Padding(
+      padding: MediaQuery.of(context).viewInsets,
+      child: Parent(
+        style: ParentStyle()
+          ..height(height ?? JScreenUtil.sh(0.2))
+          ..borderRadius(
+              topLeft: JScreenUtil.r(30), topRight: JScreenUtil.r(30))
+          ..padding(horizontal: JScreenUtil.r(18), vertical: JScreenUtil.r(22))
+          ..background.color(theme.canvasColor),
+        child: Wrap(
+          alignment: WrapAlignment.center,
+          runSpacing: JScreenUtil.r(30),
+          children: <Widget>[
+            Text('Update your $title', style: textTheme.titleLarge),
+            field,
+            JButton(title: 'Save', onPressed: action, loading: loading),
+          ],
+        ),
       ),
     );
   }
