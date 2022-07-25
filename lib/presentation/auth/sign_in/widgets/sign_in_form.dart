@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jini/application/auth/auth_bloc.dart';
 import 'package:jini/application/auth/sign_in/sign_in_bloc.dart';
+import 'package:jini/application/profile/profile_bloc.dart';
 import 'package:jini/presentation/core/common/j_error_messages.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
@@ -18,6 +19,7 @@ class SignInForm extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     final bloc = BlocProvider.of<SignInBloc>(context);
     final authBloc = BlocProvider.of<AuthBloc>(context);
+    final profileBloc = BlocProvider.of<ProfileBloc>(context);
 
     return MultiBlocListener(
       listeners: [
@@ -44,6 +46,7 @@ class SignInForm extends StatelessWidget {
                   authBloc.add(const AuthEvent.authCheckRequested());
                   authBloc.add(const AuthEvent.authCheckVerified());
                   authBloc.add(const AuthEvent.checkProfileCompleted());
+                  profileBloc.add(const ProfileEvent.initialized());
                 },
               ),
             );
