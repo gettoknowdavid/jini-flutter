@@ -26,7 +26,6 @@ class SignUpPage extends StatelessWidget {
           ),
           child: Center(
             child: SingleChildScrollView(
-              padding: JScreenUtil.globalPadding,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
