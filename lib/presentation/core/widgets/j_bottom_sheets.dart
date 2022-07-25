@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:jini/presentation/core/common/j_location_widget.dart';
-import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/profile/widgets/blood_group_grid.dart';
 import 'package:jini/presentation/profile/widgets/date_of_birth_field.dart';
 import 'package:jini/presentation/profile/widgets/edit_bottom_sheet.dart';
