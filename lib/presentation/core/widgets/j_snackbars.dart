@@ -6,13 +6,14 @@ import 'package:phosphor_flutter/phosphor_flutter.dart';
 class JSnackbars {
   JSnackbars._();
 
+  static final context = JRouter.key.currentContext!;
+
   static get closeAll {
-    ScaffoldMessenger.of(JRouter.key.currentContext!).removeCurrentSnackBar();
-    ScaffoldMessenger.of(JRouter.key.currentContext!).clearSnackBars();
+    ScaffoldMessenger.of(context).removeCurrentSnackBar();
+    ScaffoldMessenger.of(context).clearSnackBars();
   }
 
   static errorSnackbar({required String title, required String message}) {
-    final context = JRouter.key.currentContext!;
     final textTheme = Theme.of(context).textTheme;
 
     return ScaffoldMessenger.of(context).showSnackBar(
