@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jini/application/auth/auth_bloc.dart';
 import 'package:jini/application/profile/profile_bloc.dart';
 
-class ProfileMenu extends StatelessWidget {
-  const ProfileMenu({Key? key}) : super(key: key);
+class ProfileActionsMenu extends StatelessWidget {
+  const ProfileActionsMenu({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
