@@ -5,7 +5,9 @@ import 'package:jini/application/profile/profile_bloc.dart';
 import 'package:jini/domain/core/user_type.dart';
 import 'package:jini/infrastructure/auth/j_user_dtos.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
+import 'package:jini/presentation/core/widgets/j_bottom_sheets.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
+import 'package:jini/presentation/core/widgets/j_outlined_button.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class JAvatar extends StatelessWidget {
@@ -36,7 +38,7 @@ class JAvatar extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: (isForProfile && isEditing)
-                  ? () => bloc.add(const ProfileEvent.avatarChanged())
+                  ? () => JBottomSheets.imageSource(context)
                   : null,
               child: CircleAvatar(
                 radius: JScreenUtil.sw(radius + 0.005),
@@ -116,7 +118,7 @@ class ImageSourceBottomSheet extends StatelessWidget {
       padding: MediaQuery.of(context).viewInsets,
       child: Parent(
         style: ParentStyle()
-          ..height(JScreenUtil.sh(0.4))
+          ..height(JScreenUtil.sh(0.27))
           ..borderRadius(
               topLeft: JScreenUtil.r(30), topRight: JScreenUtil.r(30))
           ..padding(horizontal: JScreenUtil.r(18), vertical: JScreenUtil.r(22))
@@ -125,9 +127,9 @@ class ImageSourceBottomSheet extends StatelessWidget {
           alignment: WrapAlignment.center,
           runSpacing: JScreenUtil.r(30),
           children: <Widget>[
-            OutlinedButton(onPressed: () {}, child: Text('Pick from Gallery')),
-            JScreenUtil.vSpace(20),
             JButton(title: 'Take a picture', onPressed: () {}),
+            JScreenUtil.vSpace(20),
+            JOutlinedButton(title: 'Pick from Gallery', onPressed: () {}),
           ],
         ),
       ),
