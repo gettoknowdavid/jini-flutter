@@ -86,6 +86,7 @@ class ForgotPasswordPage extends StatelessWidget {
                     JButton(
                       title: 'Submit',
                       loading: bloc.state.isSubmitting,
+                      disabled: !bloc.state.email.isValid(),
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           bloc.add(ForgotPasswordEvent.submitPressed());
