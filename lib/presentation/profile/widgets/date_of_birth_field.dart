@@ -7,8 +7,13 @@ import 'package:jini/presentation/core/widgets/j_text_form_field.dart';
 import 'package:jini/presentation/profile/widgets/edit_bottom_sheet.dart';
 
 class DateOfBirthField extends StatefulWidget {
-  const DateOfBirthField({Key? key, this.validate = false}) : super(key: key);
+  const DateOfBirthField({
+    Key? key,
+    this.validate = false,
+    this.isInitEdit = false,
+  }) : super(key: key);
   final bool validate;
+  final bool isInitEdit;
 
   @override
   State<DateOfBirthField> createState() => _DateOfBirthFieldState();
@@ -46,7 +51,7 @@ class _DateOfBirthFieldState extends State<DateOfBirthField> {
           () => null,
           (a) => a.fold(
             (l) => null,
-            (r) => Navigator.of(context).pop(),
+            (r) => widget.isInitEdit ? null : Navigator.of(context).pop(),
           ),
         );
       },
