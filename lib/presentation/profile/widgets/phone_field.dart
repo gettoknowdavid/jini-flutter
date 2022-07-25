@@ -6,7 +6,8 @@ import 'package:jini/presentation/core/widgets/j_text_form_field.dart';
 import 'package:jini/presentation/profile/widgets/edit_bottom_sheet.dart';
 
 class PhoneField extends StatelessWidget {
-  const PhoneField({Key? key}) : super(key: key);
+  const PhoneField({Key? key, this.isInitEdit = false}) : super(key: key);
+  final bool isInitEdit;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class PhoneField extends StatelessWidget {
           () => null,
           (a) => a.fold(
             (l) => null,
-            (r) => Navigator.of(context).pop(),
+            (r) => isInitEdit ? null : Navigator.of(context).pop(),
           ),
         );
       },
