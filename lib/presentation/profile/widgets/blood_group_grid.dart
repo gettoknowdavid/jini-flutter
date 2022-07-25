@@ -5,7 +5,6 @@ import 'package:jini/application/profile/profile_bloc.dart';
 import 'package:jini/domain/core/blood_group.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/common/j_widget_styles.dart';
-import 'package:jini/presentation/core/widgets/j_button.dart';
 import 'package:jini/presentation/profile/widgets/edit_bottom_sheet.dart';
 
 class BloodGroupGrid extends StatelessWidget {
