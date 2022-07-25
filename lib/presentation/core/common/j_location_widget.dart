@@ -40,7 +40,9 @@ class JLocationWidget extends StatelessWidget {
           children: [
             Parent(
               gesture: Gestures()
-                ..onTap(() => JBottomSheets.editLocation(context)),
+                ..onTap(isEditing
+                    ? () => JBottomSheets.editLocation(context)
+                    : () {}),
               style: ParentStyle()
                 ..padding(vertical: JScreenUtil.r(6))
                 ..ripple(true),
@@ -62,6 +64,7 @@ class JLocationWidget extends StatelessWidget {
                 ],
               ),
             ),
+            JScreenUtil.hSpace(6),
             if (isEditing) JIcons.pencil,
           ],
         );
