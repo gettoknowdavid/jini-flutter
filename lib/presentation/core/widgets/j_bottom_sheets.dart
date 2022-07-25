@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jini/presentation/core/common/j_location_widget.dart';
+import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/profile/widgets/blood_group_grid.dart';
 import 'package:jini/presentation/profile/widgets/date_of_birth_field.dart';
 import 'package:jini/presentation/profile/widgets/edit_bottom_sheet.dart';
@@ -14,6 +15,7 @@ class JBottomSheets {
     return showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
+      isScrollControlled: true,
       builder: (context) => const EditNameBottomSheet(),
     );
   }
@@ -22,6 +24,7 @@ class JBottomSheets {
     return showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
+      isScrollControlled: true,
       builder: (context) => const EditLocationBottomSheet(),
     );
   }
@@ -30,6 +33,7 @@ class JBottomSheets {
     return showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
+      isScrollControlled: true,
       builder: (context) => const EditBloodGroupBottomSheet(),
     );
   }
@@ -38,6 +42,7 @@ class JBottomSheets {
     return showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
+      isScrollControlled: true,
       builder: (context) => const EditUserTypeBottomSheet(),
     );
   }
@@ -46,6 +51,7 @@ class JBottomSheets {
     return showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
+      isScrollControlled: true,
       builder: (context) => const EditPhoneBottomSheet(),
     );
   }
@@ -54,6 +60,7 @@ class JBottomSheets {
     return showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
+      isScrollControlled: true,
       builder: (context) => const EditGenderBottomSheet(),
     );
   }
@@ -62,6 +69,7 @@ class JBottomSheets {
     return showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
+      isScrollControlled: true,
       builder: (context) => const EditDOBBottomSheet(),
     );
   }
@@ -70,6 +78,7 @@ class JBottomSheets {
     return showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
+      isScrollControlled: true,
       builder: (context) => const EditHeightBottomSheet(),
     );
   }
@@ -78,6 +87,7 @@ class JBottomSheets {
     return showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
+      isScrollControlled: true,
       builder: (context) => const EditWeightBottomSheet(),
     );
   }
