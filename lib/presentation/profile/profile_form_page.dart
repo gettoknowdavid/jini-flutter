@@ -109,19 +109,19 @@ class _ProfileFormPageState extends State<ProfileFormPage> {
         isActive: _index >= 1,
         state: _index <= 1 ? StepState.complete : StepState.indexed,
         title: const _StepTitle('How old are you?'),
-        content: const DateOfBirthField(),
+        content: const DateOfBirthField(isInitEdit: true),
       ),
       Step(
         isActive: _index >= 2,
         state: _index <= 2 ? StepState.complete : StepState.indexed,
         title: const _StepTitle('What\'s your phone number?'),
-        content: const PhoneField(),
+        content: const PhoneField(isInitEdit: true),
       ),
       Step(
         isActive: _index >= 3,
         state: _index <= 3 ? StepState.complete : StepState.indexed,
         title: const _StepTitle('What\'s your blood group?'),
-        content: const BloodGroupGrid(),
+        content: const BloodGroupGrid(isInitEdit: true),
       ),
       Step(
         isActive: _index == 4,
@@ -163,9 +163,9 @@ class _ProfileFormPageState extends State<ProfileFormPage> {
                     onStepContinue: () {
                       if (_index == (_steps.length - 1)) {
                         bloc.add(const ProfileEvent.profileUpdated());
-                        bloc.add(const ProfileEvent.initChanged(true));
-                        bloc.add(const ProfileEvent.initialized());
-                        JDialogs.profileCompleteDialog();
+                        // bloc.add(const ProfileEvent.initChanged(true));
+                        // bloc.add(const ProfileEvent.initialized());
+                        JDialogs.profileCompleteDialog(context);
                       } else {
                         bloc.add(const ProfileEvent.profileUpdated());
                         bloc.add(const ProfileEvent.stepForward());
