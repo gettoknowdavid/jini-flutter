@@ -29,9 +29,8 @@ class FirebaseAuthFacade implements IAuthFacade {
     try {
       return await _firebaseAuth
           .signInWithEmailAndPassword(email: _email, password: _password)
-          .then((_) {
-        return right(unit);
-      });
+          .timeout(const Duration(seconds: 10))
+          .then((_) => right(unit));
     } on FirebaseAuthException catch (e) {
       if (e.code == 'wrong-password' || e.code == 'user-not-found') {
         return left(const AuthFailure.invalidEmailOrPassword());
