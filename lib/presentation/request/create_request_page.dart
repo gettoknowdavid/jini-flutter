@@ -3,14 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jini/application/create_request/create_request_bloc.dart';
 import 'package:jini/domain/core/blood_group.dart';
-import 'package:jini/infrastructure/auth/j_user_dtos.dart';
 import 'package:jini/presentation/core/common/image_resources.dart';
 import 'package:jini/presentation/core/common/j_error_messages.dart';
 import 'package:jini/presentation/core/common/j_screen_util.dart';
 import 'package:jini/presentation/core/common/j_widget_styles.dart';
 import 'package:jini/presentation/core/widgets/j_button.dart';
 import 'package:jini/presentation/core/widgets/j_snackbars.dart';
-import 'package:jini/presentation/profile/widgets/blood_group_grid.dart';
 
 class CreateRequestPage extends StatelessWidget {
   const CreateRequestPage({Key? key}) : super(key: key);
