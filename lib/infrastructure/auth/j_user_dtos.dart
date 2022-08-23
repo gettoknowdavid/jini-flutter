@@ -10,8 +10,10 @@ part 'j_user_dtos.freezed.dart';
 part 'j_user_dtos.g.dart';
 
 // @JsonSerializable(explicitToJson: true, createFactory: false)
-const firestoreSerializable =
-    JsonSerializable(explicitToJson: true, createFactory: false);
+const firestoreSerializable = JsonSerializable(
+  explicitToJson: true,
+  createFactory: false,
+);
 
 @freezed
 @firestoreSerializable
