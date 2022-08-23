@@ -5,7 +5,7 @@ class CreateRequestState with _$CreateRequestState {
   const factory CreateRequestState({
     required JUser user,
     required IBloodGroup bloodGroup,
-    required DateTime timeAdded,
+    required DateTime createdAt,
     required bool isCreating,
     required bool showErrorMessages,
     required Option<Either<RequestFailure, Unit>> createOption,
@@ -14,7 +14,7 @@ class CreateRequestState with _$CreateRequestState {
   factory CreateRequestState.initial() => CreateRequestState(
         user: JUser.empty(),
         bloodGroup: IBloodGroup(null),
-        timeAdded: DateTime.now(),
+        createdAt: DateTime.now(),
         isCreating: false,
         showErrorMessages: false,
         createOption: none(),
