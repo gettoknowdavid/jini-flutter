@@ -6,6 +6,7 @@ import 'package:jini/domain/auth/j_user.dart';
 import 'package:jini/domain/core/blood_group.dart';
 import 'package:jini/domain/core/value_object.dart';
 import 'package:jini/domain/request/i_request_facade.dart';
+import 'package:jini/domain/request/request.dart';
 import 'package:jini/domain/request/request_failure.dart';
 
 part 'create_request_event.dart';
@@ -15,13 +16,26 @@ part 'create_request_bloc.freezed.dart';
 class CreateRequestBloc extends Bloc<CreateRequestEvent, CreateRequestState> {
   CreateRequestBloc(this._authFacade, this._requestFacade)
       : super(CreateRequestState.initial()) {
-    on<CreateRequestEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+    on<_Started>((e, emit) => _initialized(e, emit));
+    on<_BloodGroupSelected>((e, emit) => _bloodGroupSelected(e, emit));
+    on<_CreatePressed>((e, emit) => _createPressed(e, emit));
   }
 
   final IAuthFacade _authFacade;
   final IRequestFacade _requestFacade;
+
+  _initialized(_Started e, Emitter<CreateRequestState> emit) async {
+    final userOption = await _authFacade.getUser();
+
+    emit(userOption.fold(
+      () => state,
+      (initialUser) => state.copyWith(
+        isCreating: true,
+        user: initialUser!,
+        createOption: none(),
+      ),
+    ));
+  }
 
   _bloodGroupSelected(
     _BloodGroupSelected e,
@@ -40,6 +54,21 @@ class CreateRequestBloc extends Bloc<CreateRequestEvent, CreateRequestState> {
     emit(state.copyWith(
       isCreating: true,
       createOption: none(),
+    ));
+
+    final request = Request(
+      uid: Uid(),
+      user: state.user,
+      bloodGroup: state.bloodGroup,
+      createdAt: state.createdAt,
+    );
+
+    failureOrSuccess = await _requestFacade.createRequest(request: request);
+
+    emit(state.copyWith(
+      isCreating: false,
+      showErrorMessages: true,
+      createOption: optionOf(failureOrSuccess),
     ));
   }
 }
