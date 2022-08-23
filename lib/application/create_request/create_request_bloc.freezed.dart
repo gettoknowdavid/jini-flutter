@@ -448,6 +448,7 @@ mixin _$CreateRequestState {
   JUser get user => throw _privateConstructorUsedError;
   IBloodGroup get bloodGroup => throw _privateConstructorUsedError;
   DateTime get timeAdded => throw _privateConstructorUsedError;
+  bool get isCreating => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
   Option<Either<RequestFailure, Unit>> get createOption =>
       throw _privateConstructorUsedError;
@@ -466,6 +467,7 @@ abstract class $CreateRequestStateCopyWith<$Res> {
       {JUser user,
       IBloodGroup bloodGroup,
       DateTime timeAdded,
+      bool isCreating,
       bool showErrorMessages,
       Option<Either<RequestFailure, Unit>> createOption});
 
@@ -486,6 +488,7 @@ class _$CreateRequestStateCopyWithImpl<$Res>
     Object? user = freezed,
     Object? bloodGroup = freezed,
     Object? timeAdded = freezed,
+    Object? isCreating = freezed,
     Object? showErrorMessages = freezed,
     Object? createOption = freezed,
   }) {
@@ -502,6 +505,10 @@ class _$CreateRequestStateCopyWithImpl<$Res>
           ? _value.timeAdded
           : timeAdded // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      isCreating: isCreating == freezed
+          ? _value.isCreating
+          : isCreating // ignore: cast_nullable_to_non_nullable
+              as bool,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -532,6 +539,7 @@ abstract class _$$_CreateRequestStateCopyWith<$Res>
       {JUser user,
       IBloodGroup bloodGroup,
       DateTime timeAdded,
+      bool isCreating,
       bool showErrorMessages,
       Option<Either<RequestFailure, Unit>> createOption});
 
@@ -555,6 +563,7 @@ class __$$_CreateRequestStateCopyWithImpl<$Res>
     Object? user = freezed,
     Object? bloodGroup = freezed,
     Object? timeAdded = freezed,
+    Object? isCreating = freezed,
     Object? showErrorMessages = freezed,
     Object? createOption = freezed,
   }) {
@@ -571,6 +580,10 @@ class __$$_CreateRequestStateCopyWithImpl<$Res>
           ? _value.timeAdded
           : timeAdded // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      isCreating: isCreating == freezed
+          ? _value.isCreating
+          : isCreating // ignore: cast_nullable_to_non_nullable
+              as bool,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -590,6 +603,7 @@ class _$_CreateRequestState implements _CreateRequestState {
       {required this.user,
       required this.bloodGroup,
       required this.timeAdded,
+      required this.isCreating,
       required this.showErrorMessages,
       required this.createOption});
 
@@ -600,13 +614,15 @@ class _$_CreateRequestState implements _CreateRequestState {
   @override
   final DateTime timeAdded;
   @override
+  final bool isCreating;
+  @override
   final bool showErrorMessages;
   @override
   final Option<Either<RequestFailure, Unit>> createOption;
 
   @override
   String toString() {
-    return 'CreateRequestState(user: $user, bloodGroup: $bloodGroup, timeAdded: $timeAdded, showErrorMessages: $showErrorMessages, createOption: $createOption)';
+    return 'CreateRequestState(user: $user, bloodGroup: $bloodGroup, timeAdded: $timeAdded, isCreating: $isCreating, showErrorMessages: $showErrorMessages, createOption: $createOption)';
   }
 
   @override
@@ -619,6 +635,8 @@ class _$_CreateRequestState implements _CreateRequestState {
                 .equals(other.bloodGroup, bloodGroup) &&
             const DeepCollectionEquality().equals(other.timeAdded, timeAdded) &&
             const DeepCollectionEquality()
+                .equals(other.isCreating, isCreating) &&
+            const DeepCollectionEquality()
                 .equals(other.showErrorMessages, showErrorMessages) &&
             const DeepCollectionEquality()
                 .equals(other.createOption, createOption));
@@ -630,6 +648,7 @@ class _$_CreateRequestState implements _CreateRequestState {
       const DeepCollectionEquality().hash(user),
       const DeepCollectionEquality().hash(bloodGroup),
       const DeepCollectionEquality().hash(timeAdded),
+      const DeepCollectionEquality().hash(isCreating),
       const DeepCollectionEquality().hash(showErrorMessages),
       const DeepCollectionEquality().hash(createOption));
 
@@ -645,6 +664,7 @@ abstract class _CreateRequestState implements CreateRequestState {
           {required final JUser user,
           required final IBloodGroup bloodGroup,
           required final DateTime timeAdded,
+          required final bool isCreating,
           required final bool showErrorMessages,
           required final Option<Either<RequestFailure, Unit>> createOption}) =
       _$_CreateRequestState;
@@ -655,6 +675,8 @@ abstract class _CreateRequestState implements CreateRequestState {
   IBloodGroup get bloodGroup => throw _privateConstructorUsedError;
   @override
   DateTime get timeAdded => throw _privateConstructorUsedError;
+  @override
+  bool get isCreating => throw _privateConstructorUsedError;
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
