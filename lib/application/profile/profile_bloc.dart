@@ -13,6 +13,7 @@ import 'package:jini/domain/auth/value_objects.dart';
 import 'package:jini/domain/core/blood_group.dart';
 import 'package:jini/domain/core/gender.dart';
 import 'package:jini/domain/core/user_type.dart';
+import 'package:jini/domain/core/value_object.dart';
 import 'package:jini/domain/location/i_location_facade.dart';
 import 'package:jini/domain/media/i_media_facade.dart';
 
