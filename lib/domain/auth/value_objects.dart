@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:intl/intl.dart' show toBeginningOfSentenceCase;
-import 'package:jini/domain/core/blood_group.dart';
 import 'package:jini/domain/core/failures.dart';
 import 'package:jini/domain/core/gender.dart';
 import 'package:jini/domain/core/user_type.dart';
