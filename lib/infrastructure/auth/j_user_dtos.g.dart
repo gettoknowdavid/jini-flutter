@@ -551,26 +551,38 @@ class JUserDtoQueryDocumentSnapshot extends FirestoreQueryDocumentSnapshot
 // JsonSerializableGenerator
 // **************************************************************************
 
-Map<String, dynamic> _$JUserDtoToJson(JUserDto instance) => <String, dynamic>{
-      'uid': instance.uid,
-      'name': instance.name,
-      'gender': _$GenderEnumMap[instance.gender],
-      'dob': instance.dob?.toIso8601String(),
-      'age': instance.age,
-      'height': instance.height,
-      'weight': instance.weight,
-      'email': instance.email,
-      'phone': instance.phone,
-      'city': instance.city,
-      'avatar': instance.avatar,
-      'location': _$JsonConverterToJson<GeoPoint, GeoPoint>(
-          instance.location, const GeoConverter().toJson),
-      'bloodGroup': _$BloodGroupEnumMap[instance.bloodGroup],
-      'userType': _$UserTypeEnumMap[instance.userType],
-      'eligible': instance.eligible,
-      'formComplete': instance.formComplete,
-      'initEdit': instance.initEdit,
-    };
+Map<String, dynamic> _$JUserDtoToJson(JUserDto instance) {
+  final val = <String, dynamic>{
+    'uid': instance.uid,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('name', instance.name);
+  writeNotNull('gender', _$GenderEnumMap[instance.gender]);
+  writeNotNull('dob', instance.dob?.toIso8601String());
+  writeNotNull('age', instance.age);
+  writeNotNull('height', instance.height);
+  writeNotNull('weight', instance.weight);
+  writeNotNull('email', instance.email);
+  writeNotNull('phone', instance.phone);
+  writeNotNull('city', instance.city);
+  writeNotNull('avatar', instance.avatar);
+  writeNotNull(
+      'location',
+      _$JsonConverterToJson<GeoPoint, GeoPoint>(
+          instance.location, const GeoConverter().toJson));
+  writeNotNull('bloodGroup', _$BloodGroupEnumMap[instance.bloodGroup]);
+  writeNotNull('userType', _$UserTypeEnumMap[instance.userType]);
+  writeNotNull('eligible', instance.eligible);
+  writeNotNull('formComplete', instance.formComplete);
+  writeNotNull('initEdit', instance.initEdit);
+  return val;
+}
 
 const _$GenderEnumMap = {
   Gender.male: 'male',
