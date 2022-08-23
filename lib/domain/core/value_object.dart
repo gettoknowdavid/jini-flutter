@@ -1,7 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:jini/domain/core/blood_group.dart';
 import 'package:jini/domain/core/errors.dart';
 import 'package:jini/domain/core/failures.dart';
+import 'package:jini/domain/core/value_validators.dart';
 import 'package:uuid/uuid.dart';
 
 @immutable
@@ -43,4 +45,14 @@ class Uid extends ValueObject<String> {
   }
 
   const Uid._(this.value);
+}
+
+class IBloodGroup extends ValueObject<BloodGroup?> {
+  final Either<ValueFailure<BloodGroup?>, BloodGroup?> value;
+
+  factory IBloodGroup(BloodGroup? input) {
+    return IBloodGroup._(validateBloodGroupNotNull(input));
+  }
+
+  const IBloodGroup._(this.value);
 }
