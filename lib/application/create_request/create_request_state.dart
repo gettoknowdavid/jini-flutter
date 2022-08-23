@@ -4,9 +4,17 @@ part of 'create_request_bloc.dart';
 class CreateRequestState with _$CreateRequestState {
   const factory CreateRequestState({
     required JUser user,
+    required IBloodGroup bloodGroup,
     required DateTime timeAdded,
-      required bool showErrorMessages,
-  }) =_CreateRequestState;
+    required bool showErrorMessages,
+    required Option<Either<RequestFailure, Unit>> createOption,
+  }) = _CreateRequestState;
 
-  const factory CreateRequestState.initial() => CreateRequestState();
+  factory CreateRequestState.initial() => CreateRequestState(
+        user: JUser.empty(),
+        bloodGroup: IBloodGroup(null),
+        timeAdded: DateTime.now(),
+        showErrorMessages: false,
+        createOption: none(),
+      );
 }
