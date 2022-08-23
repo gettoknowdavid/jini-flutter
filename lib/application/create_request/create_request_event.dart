@@ -6,4 +6,6 @@ class CreateRequestEvent with _$CreateRequestEvent {
 
   const factory CreateRequestEvent.bloodGroupSelected(BloodGroup bloodGroup) =
       _BloodGroupSelected;
+
+  const factory CreateRequestEvent.createSaved() = _CreatePressed;
 }
