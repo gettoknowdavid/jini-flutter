@@ -30,9 +30,7 @@ class CreateRequestBloc extends Bloc<CreateRequestEvent, CreateRequestState> {
     emit(userOption.fold(
       () => state,
       (initialUser) => state.copyWith(
-        isCreating: true,
         user: initialUser!,
-        createOption: none(),
       ),
     ));
   }
@@ -58,7 +56,10 @@ class CreateRequestBloc extends Bloc<CreateRequestEvent, CreateRequestState> {
 
     final request = Request(
       uid: Uid(),
-      user: state.user,
+      userUid: state.user.uid,
+      userName: state.user.name!,
+      userLocation: state.user.location!,
+      userAvatar: state.user.avatar,
       bloodGroup: state.bloodGroup,
       createdAt: state.createdAt,
     );
