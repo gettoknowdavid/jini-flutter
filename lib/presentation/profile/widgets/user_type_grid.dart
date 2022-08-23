@@ -56,7 +56,7 @@ class UserTypeGrid extends StatelessWidget {
           () => null,
           (a) => a.fold(
             (l) => null,
-            (r) => Navigator.of(context).pop(),
+            (r) => null,
           ),
         );
       },
