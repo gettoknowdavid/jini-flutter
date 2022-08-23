@@ -58,8 +58,7 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i8.IAuthFacade>(() => _i9.FirebaseAuthFacade(
       get<_i4.FirebaseAuth>(), get<_i7.FirebaseUserMapper>()));
   gh.lazySingleton<_i10.IMailFacade>(() => _i11.OpenMailAppFacade());
-  gh.lazySingleton<_i12.IRequestFacade>(() => _i13.RequestFacade(
-      get<_i5.FirebaseFirestore>(), get<_i4.FirebaseAuth>()));
+  gh.lazySingleton<_i12.IRequestFacade>(() => _i13.RequestFacade());
   gh.lazySingleton<_i14.ImagePicker>(() => registerModule.imagePicker);
   gh.lazySingleton<_i15.InternetConnectionChecker>(
       () => registerModule.connection);
