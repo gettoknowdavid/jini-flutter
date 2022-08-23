@@ -19,4 +19,5 @@ class JErrorMessages {
   static const String invalidPassword =
       'Password must contain: \n - Minimum 8 characters \n - At least 1 uppercase letter  \n - At least 1 digit  \n - At least 1 special character.';
   static const String usrNotFound = 'Oops! No user with this email exists.';
+  static const String requestAlreadyExists = 'Oops! Looks like you have already made a request like this.';
 }
