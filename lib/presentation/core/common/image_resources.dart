@@ -7,4 +7,5 @@ class ImageResources {
   static const String verifyEmail = "assets/images/verify-email.png";
   static const String forgotPassword = "assets/images/forgot-password.png";
   static const String checkMail = "assets/images/check-email.png";
+  static const String bloodDonation = "assets/images/blood-donation.png";
 }
