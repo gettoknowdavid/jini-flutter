@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:jini/domain/auth/j_user.dart';
 import 'package:jini/domain/core/value_object.dart';
 import 'package:jini/domain/request/request.dart';
 import 'package:jini/domain/request/request_failure.dart';
