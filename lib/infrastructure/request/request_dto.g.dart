@@ -555,7 +555,10 @@ class RequestDtoQueryDocumentSnapshot extends FirestoreQueryDocumentSnapshot
 Map<String, dynamic> _$RequestDtoToJson(RequestDto instance) =>
     <String, dynamic>{
       'uid': instance.uid,
-      'user': instance.user.toJson(),
+      'userUid': instance.userUid,
+      'userName': instance.userName,
+      'userLocation': const GeoConverter().toJson(instance.userLocation),
+      'userAvatar': instance.userAvatar,
       'bloodGroup': _$BloodGroupEnumMap[instance.bloodGroup]!,
       'createdAt': instance.createdAt.toIso8601String(),
     };
@@ -574,7 +577,11 @@ const _$BloodGroupEnumMap = {
 _$_RequestDto _$$_RequestDtoFromJson(Map<String, dynamic> json) =>
     _$_RequestDto(
       uid: json['uid'] as String,
-      user: JUserDto.fromJson(json['user'] as Map<String, dynamic>),
+      userUid: json['userUid'] as String,
+      userName: json['userName'] as String,
+      userLocation:
+          const GeoConverter().fromJson(json['userLocation'] as GeoPoint),
+      userAvatar: json['userAvatar'] as String?,
       bloodGroup: $enumDecode(_$BloodGroupEnumMap, json['bloodGroup']),
       createdAt: DateTime.parse(json['createdAt'] as String),
     );
@@ -582,7 +589,10 @@ _$_RequestDto _$$_RequestDtoFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$_RequestDtoToJson(_$_RequestDto instance) =>
     <String, dynamic>{
       'uid': instance.uid,
-      'user': instance.user,
+      'userUid': instance.userUid,
+      'userName': instance.userName,
+      'userLocation': const GeoConverter().toJson(instance.userLocation),
+      'userAvatar': instance.userAvatar,
       'bloodGroup': _$BloodGroupEnumMap[instance.bloodGroup]!,
       'createdAt': instance.createdAt.toIso8601String(),
     };
