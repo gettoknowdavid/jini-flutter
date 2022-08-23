@@ -17,9 +17,12 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$Request {
   Uid get uid => throw _privateConstructorUsedError;
-  JUser get user => throw _privateConstructorUsedError;
+  Uid get userUid => throw _privateConstructorUsedError;
+  IName get userName => throw _privateConstructorUsedError;
+  ILocation get userLocation => throw _privateConstructorUsedError;
   IBloodGroup get bloodGroup => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
+  String? get userAvatar => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $RequestCopyWith<Request> get copyWith => throw _privateConstructorUsedError;
@@ -29,9 +32,14 @@ mixin _$Request {
 abstract class $RequestCopyWith<$Res> {
   factory $RequestCopyWith(Request value, $Res Function(Request) then) =
       _$RequestCopyWithImpl<$Res>;
-  $Res call({Uid uid, JUser user, IBloodGroup bloodGroup, DateTime createdAt});
-
-  $JUserCopyWith<$Res> get user;
+  $Res call(
+      {Uid uid,
+      Uid userUid,
+      IName userName,
+      ILocation userLocation,
+      IBloodGroup bloodGroup,
+      DateTime createdAt,
+      String? userAvatar});
 }
 
 /// @nodoc
@@ -45,19 +53,30 @@ class _$RequestCopyWithImpl<$Res> implements $RequestCopyWith<$Res> {
   @override
   $Res call({
     Object? uid = freezed,
-    Object? user = freezed,
+    Object? userUid = freezed,
+    Object? userName = freezed,
+    Object? userLocation = freezed,
     Object? bloodGroup = freezed,
     Object? createdAt = freezed,
+    Object? userAvatar = freezed,
   }) {
     return _then(_value.copyWith(
       uid: uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as Uid,
-      user: user == freezed
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as JUser,
+      userUid: userUid == freezed
+          ? _value.userUid
+          : userUid // ignore: cast_nullable_to_non_nullable
+              as Uid,
+      userName: userName == freezed
+          ? _value.userName
+          : userName // ignore: cast_nullable_to_non_nullable
+              as IName,
+      userLocation: userLocation == freezed
+          ? _value.userLocation
+          : userLocation // ignore: cast_nullable_to_non_nullable
+              as ILocation,
       bloodGroup: bloodGroup == freezed
           ? _value.bloodGroup
           : bloodGroup // ignore: cast_nullable_to_non_nullable
@@ -66,14 +85,11 @@ class _$RequestCopyWithImpl<$Res> implements $RequestCopyWith<$Res> {
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      userAvatar: userAvatar == freezed
+          ? _value.userAvatar
+          : userAvatar // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
-  }
-
-  @override
-  $JUserCopyWith<$Res> get user {
-    return $JUserCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value));
-    });
   }
 }
 
@@ -83,10 +99,14 @@ abstract class _$$_RequestCopyWith<$Res> implements $RequestCopyWith<$Res> {
           _$_Request value, $Res Function(_$_Request) then) =
       __$$_RequestCopyWithImpl<$Res>;
   @override
-  $Res call({Uid uid, JUser user, IBloodGroup bloodGroup, DateTime createdAt});
-
-  @override
-  $JUserCopyWith<$Res> get user;
+  $Res call(
+      {Uid uid,
+      Uid userUid,
+      IName userName,
+      ILocation userLocation,
+      IBloodGroup bloodGroup,
+      DateTime createdAt,
+      String? userAvatar});
 }
 
 /// @nodoc
@@ -101,19 +121,30 @@ class __$$_RequestCopyWithImpl<$Res> extends _$RequestCopyWithImpl<$Res>
   @override
   $Res call({
     Object? uid = freezed,
-    Object? user = freezed,
+    Object? userUid = freezed,
+    Object? userName = freezed,
+    Object? userLocation = freezed,
     Object? bloodGroup = freezed,
     Object? createdAt = freezed,
+    Object? userAvatar = freezed,
   }) {
     return _then(_$_Request(
       uid: uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as Uid,
-      user: user == freezed
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as JUser,
+      userUid: userUid == freezed
+          ? _value.userUid
+          : userUid // ignore: cast_nullable_to_non_nullable
+              as Uid,
+      userName: userName == freezed
+          ? _value.userName
+          : userName // ignore: cast_nullable_to_non_nullable
+              as IName,
+      userLocation: userLocation == freezed
+          ? _value.userLocation
+          : userLocation // ignore: cast_nullable_to_non_nullable
+              as ILocation,
       bloodGroup: bloodGroup == freezed
           ? _value.bloodGroup
           : bloodGroup // ignore: cast_nullable_to_non_nullable
@@ -122,6 +153,10 @@ class __$$_RequestCopyWithImpl<$Res> extends _$RequestCopyWithImpl<$Res>
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      userAvatar: userAvatar == freezed
+          ? _value.userAvatar
+          : userAvatar // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -131,22 +166,31 @@ class __$$_RequestCopyWithImpl<$Res> extends _$RequestCopyWithImpl<$Res>
 class _$_Request implements _Request {
   const _$_Request(
       {required this.uid,
-      required this.user,
+      required this.userUid,
+      required this.userName,
+      required this.userLocation,
       required this.bloodGroup,
-      required this.createdAt});
+      required this.createdAt,
+      this.userAvatar});
 
   @override
   final Uid uid;
   @override
-  final JUser user;
+  final Uid userUid;
+  @override
+  final IName userName;
+  @override
+  final ILocation userLocation;
   @override
   final IBloodGroup bloodGroup;
   @override
   final DateTime createdAt;
+  @override
+  final String? userAvatar;
 
   @override
   String toString() {
-    return 'Request(uid: $uid, user: $user, bloodGroup: $bloodGroup, createdAt: $createdAt)';
+    return 'Request(uid: $uid, userUid: $userUid, userName: $userName, userLocation: $userLocation, bloodGroup: $bloodGroup, createdAt: $createdAt, userAvatar: $userAvatar)';
   }
 
   @override
@@ -155,19 +199,27 @@ class _$_Request implements _Request {
         (other.runtimeType == runtimeType &&
             other is _$_Request &&
             const DeepCollectionEquality().equals(other.uid, uid) &&
-            const DeepCollectionEquality().equals(other.user, user) &&
+            const DeepCollectionEquality().equals(other.userUid, userUid) &&
+            const DeepCollectionEquality().equals(other.userName, userName) &&
+            const DeepCollectionEquality()
+                .equals(other.userLocation, userLocation) &&
             const DeepCollectionEquality()
                 .equals(other.bloodGroup, bloodGroup) &&
-            const DeepCollectionEquality().equals(other.createdAt, createdAt));
+            const DeepCollectionEquality().equals(other.createdAt, createdAt) &&
+            const DeepCollectionEquality()
+                .equals(other.userAvatar, userAvatar));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(uid),
-      const DeepCollectionEquality().hash(user),
+      const DeepCollectionEquality().hash(userUid),
+      const DeepCollectionEquality().hash(userName),
+      const DeepCollectionEquality().hash(userLocation),
       const DeepCollectionEquality().hash(bloodGroup),
-      const DeepCollectionEquality().hash(createdAt));
+      const DeepCollectionEquality().hash(createdAt),
+      const DeepCollectionEquality().hash(userAvatar));
 
   @JsonKey(ignore: true)
   @override
@@ -178,18 +230,27 @@ class _$_Request implements _Request {
 abstract class _Request implements Request {
   const factory _Request(
       {required final Uid uid,
-      required final JUser user,
+      required final Uid userUid,
+      required final IName userName,
+      required final ILocation userLocation,
       required final IBloodGroup bloodGroup,
-      required final DateTime createdAt}) = _$_Request;
+      required final DateTime createdAt,
+      final String? userAvatar}) = _$_Request;
 
   @override
   Uid get uid => throw _privateConstructorUsedError;
   @override
-  JUser get user => throw _privateConstructorUsedError;
+  Uid get userUid => throw _privateConstructorUsedError;
+  @override
+  IName get userName => throw _privateConstructorUsedError;
+  @override
+  ILocation get userLocation => throw _privateConstructorUsedError;
   @override
   IBloodGroup get bloodGroup => throw _privateConstructorUsedError;
   @override
   DateTime get createdAt => throw _privateConstructorUsedError;
+  @override
+  String? get userAvatar => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_RequestCopyWith<_$_Request> get copyWith =>
