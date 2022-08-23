@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:injectable/injectable.dart';
 import 'package:jini/application/core/settings/settings_bloc.dart';
+import 'package:jini/application/create_request/create_request_bloc.dart';
 import 'package:jini/di/injection.dart';
 import 'package:jini/firebase_options.dart';
 import 'package:jini/application/auth/auth_bloc.dart';
@@ -51,6 +52,10 @@ void main() async {
         ),
         BlocProvider<ForgotPasswordBloc>(
           create: (context) => getIt<ForgotPasswordBloc>(),
+        ),
+        BlocProvider<CreateRequestBloc>(
+          create: (context) => getIt<CreateRequestBloc>()
+            ..add(const CreateRequestEvent.started()),
         ),
       ],
       child: JiniApp(),
