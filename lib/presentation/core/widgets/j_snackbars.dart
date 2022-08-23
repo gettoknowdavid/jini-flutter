@@ -20,6 +20,7 @@ class JSnackbars {
       SnackBar(
         clipBehavior: Clip.none,
         backgroundColor: Colors.transparent,
+        padding: JScreenUtil.padSymmetric(horizontal: 18),
         content: Container(
           height: JScreenUtil.sh(0.14),
           alignment: Alignment.center,
@@ -69,6 +70,7 @@ class JSnackbars {
       SnackBar(
         clipBehavior: Clip.none,
         backgroundColor: Colors.transparent,
+        padding: JScreenUtil.padSymmetric(horizontal: 18),
         content: Container(
           height: JScreenUtil.sh(0.14),
           alignment: Alignment.center,
