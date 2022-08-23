@@ -20,21 +20,21 @@ mixin _$CreateRequestEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(BloodGroup bloodGroup) bloodGroupSelected,
-    required TResult Function() createSaved,
+    required TResult Function() createPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(BloodGroup bloodGroup)? bloodGroupSelected,
-    TResult Function()? createSaved,
+    TResult Function()? createPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(BloodGroup bloodGroup)? bloodGroupSelected,
-    TResult Function()? createSaved,
+    TResult Function()? createPressed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -42,21 +42,21 @@ mixin _$CreateRequestEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_BloodGroupSelected value) bloodGroupSelected,
-    required TResult Function(_CreatePressed value) createSaved,
+    required TResult Function(_CreatePressed value) createPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_BloodGroupSelected value)? bloodGroupSelected,
-    TResult Function(_CreatePressed value)? createSaved,
+    TResult Function(_CreatePressed value)? createPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_BloodGroupSelected value)? bloodGroupSelected,
-    TResult Function(_CreatePressed value)? createSaved,
+    TResult Function(_CreatePressed value)? createPressed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -121,7 +121,7 @@ class _$_Started implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(BloodGroup bloodGroup) bloodGroupSelected,
-    required TResult Function() createSaved,
+    required TResult Function() createPressed,
   }) {
     return started();
   }
@@ -131,7 +131,7 @@ class _$_Started implements _Started {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(BloodGroup bloodGroup)? bloodGroupSelected,
-    TResult Function()? createSaved,
+    TResult Function()? createPressed,
   }) {
     return started?.call();
   }
@@ -141,7 +141,7 @@ class _$_Started implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(BloodGroup bloodGroup)? bloodGroupSelected,
-    TResult Function()? createSaved,
+    TResult Function()? createPressed,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -155,7 +155,7 @@ class _$_Started implements _Started {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_BloodGroupSelected value) bloodGroupSelected,
-    required TResult Function(_CreatePressed value) createSaved,
+    required TResult Function(_CreatePressed value) createPressed,
   }) {
     return started(this);
   }
@@ -165,7 +165,7 @@ class _$_Started implements _Started {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_BloodGroupSelected value)? bloodGroupSelected,
-    TResult Function(_CreatePressed value)? createSaved,
+    TResult Function(_CreatePressed value)? createPressed,
   }) {
     return started?.call(this);
   }
@@ -175,7 +175,7 @@ class _$_Started implements _Started {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_BloodGroupSelected value)? bloodGroupSelected,
-    TResult Function(_CreatePressed value)? createSaved,
+    TResult Function(_CreatePressed value)? createPressed,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -258,7 +258,7 @@ class _$_BloodGroupSelected implements _BloodGroupSelected {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(BloodGroup bloodGroup) bloodGroupSelected,
-    required TResult Function() createSaved,
+    required TResult Function() createPressed,
   }) {
     return bloodGroupSelected(bloodGroup);
   }
@@ -268,7 +268,7 @@ class _$_BloodGroupSelected implements _BloodGroupSelected {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(BloodGroup bloodGroup)? bloodGroupSelected,
-    TResult Function()? createSaved,
+    TResult Function()? createPressed,
   }) {
     return bloodGroupSelected?.call(bloodGroup);
   }
@@ -278,7 +278,7 @@ class _$_BloodGroupSelected implements _BloodGroupSelected {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(BloodGroup bloodGroup)? bloodGroupSelected,
-    TResult Function()? createSaved,
+    TResult Function()? createPressed,
     required TResult orElse(),
   }) {
     if (bloodGroupSelected != null) {
@@ -292,7 +292,7 @@ class _$_BloodGroupSelected implements _BloodGroupSelected {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_BloodGroupSelected value) bloodGroupSelected,
-    required TResult Function(_CreatePressed value) createSaved,
+    required TResult Function(_CreatePressed value) createPressed,
   }) {
     return bloodGroupSelected(this);
   }
@@ -302,7 +302,7 @@ class _$_BloodGroupSelected implements _BloodGroupSelected {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_BloodGroupSelected value)? bloodGroupSelected,
-    TResult Function(_CreatePressed value)? createSaved,
+    TResult Function(_CreatePressed value)? createPressed,
   }) {
     return bloodGroupSelected?.call(this);
   }
@@ -312,7 +312,7 @@ class _$_BloodGroupSelected implements _BloodGroupSelected {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_BloodGroupSelected value)? bloodGroupSelected,
-    TResult Function(_CreatePressed value)? createSaved,
+    TResult Function(_CreatePressed value)? createPressed,
     required TResult orElse(),
   }) {
     if (bloodGroupSelected != null) {
@@ -358,7 +358,7 @@ class _$_CreatePressed implements _CreatePressed {
 
   @override
   String toString() {
-    return 'CreateRequestEvent.createSaved()';
+    return 'CreateRequestEvent.createPressed()';
   }
 
   @override
@@ -375,9 +375,9 @@ class _$_CreatePressed implements _CreatePressed {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(BloodGroup bloodGroup) bloodGroupSelected,
-    required TResult Function() createSaved,
+    required TResult Function() createPressed,
   }) {
-    return createSaved();
+    return createPressed();
   }
 
   @override
@@ -385,9 +385,9 @@ class _$_CreatePressed implements _CreatePressed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(BloodGroup bloodGroup)? bloodGroupSelected,
-    TResult Function()? createSaved,
+    TResult Function()? createPressed,
   }) {
-    return createSaved?.call();
+    return createPressed?.call();
   }
 
   @override
@@ -395,11 +395,11 @@ class _$_CreatePressed implements _CreatePressed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(BloodGroup bloodGroup)? bloodGroupSelected,
-    TResult Function()? createSaved,
+    TResult Function()? createPressed,
     required TResult orElse(),
   }) {
-    if (createSaved != null) {
-      return createSaved();
+    if (createPressed != null) {
+      return createPressed();
     }
     return orElse();
   }
@@ -409,9 +409,9 @@ class _$_CreatePressed implements _CreatePressed {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_BloodGroupSelected value) bloodGroupSelected,
-    required TResult Function(_CreatePressed value) createSaved,
+    required TResult Function(_CreatePressed value) createPressed,
   }) {
-    return createSaved(this);
+    return createPressed(this);
   }
 
   @override
@@ -419,9 +419,9 @@ class _$_CreatePressed implements _CreatePressed {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_BloodGroupSelected value)? bloodGroupSelected,
-    TResult Function(_CreatePressed value)? createSaved,
+    TResult Function(_CreatePressed value)? createPressed,
   }) {
-    return createSaved?.call(this);
+    return createPressed?.call(this);
   }
 
   @override
@@ -429,11 +429,11 @@ class _$_CreatePressed implements _CreatePressed {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_BloodGroupSelected value)? bloodGroupSelected,
-    TResult Function(_CreatePressed value)? createSaved,
+    TResult Function(_CreatePressed value)? createPressed,
     required TResult orElse(),
   }) {
-    if (createSaved != null) {
-      return createSaved(this);
+    if (createPressed != null) {
+      return createPressed(this);
     }
     return orElse();
   }
