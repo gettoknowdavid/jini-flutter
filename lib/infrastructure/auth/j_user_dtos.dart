@@ -5,6 +5,7 @@ import 'package:jini/domain/auth/j_user.dart';
 import 'package:jini/domain/core/blood_group.dart';
 import 'package:jini/domain/core/gender.dart';
 import 'package:jini/domain/core/user_type.dart';
+import 'package:jini/infrastructure/core/geo_point_converter.dart';
 
 part 'j_user_dtos.freezed.dart';
 part 'j_user_dtos.g.dart';
@@ -13,6 +14,7 @@ part 'j_user_dtos.g.dart';
 const firestoreSerializable = JsonSerializable(
   explicitToJson: true,
   createFactory: false,
+  includeIfNull: false,
 );
 
 @freezed
@@ -72,12 +74,3 @@ class JUserDto with _$JUserDto {
 @Collection<JUserDto>('users')
 final jUsersRef = JUserDtoCollectionReference();
 
-class GeoConverter implements JsonConverter<GeoPoint, GeoPoint> {
-  const GeoConverter();
-
-  @override
-  GeoPoint fromJson(GeoPoint json) => GeoPoint(json.latitude, json.longitude);
-
-  @override
-  GeoPoint toJson(GeoPoint geo) => geo;
-}
