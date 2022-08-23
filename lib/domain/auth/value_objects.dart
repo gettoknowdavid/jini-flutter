@@ -41,15 +41,7 @@ class ILocation extends ValueObject<GeoPoint> {
   const ILocation._(this.value);
 }
 
-class IBloodGroup extends ValueObject<BloodGroup?> {
-  final Either<ValueFailure<BloodGroup?>, BloodGroup?> value;
 
-  factory IBloodGroup(BloodGroup? input) {
-    return IBloodGroup._(validateBloodGroupNotNull(input));
-  }
-
-  const IBloodGroup._(this.value);
-}
 
 class IDateOfBirth extends ValueObject<DateTime> {
   final Either<ValueFailure<DateTime>, DateTime> value;
