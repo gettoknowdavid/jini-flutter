@@ -61,4 +61,53 @@ class JSnackbars {
       ),
     );
   }
+
+  static successSnackbar({required String title, required String message}) {
+    final textTheme = Theme.of(context).textTheme;
+
+    return ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        clipBehavior: Clip.none,
+        backgroundColor: Colors.transparent,
+        content: Container(
+          height: JScreenUtil.sh(0.14),
+          alignment: Alignment.center,
+          padding: JScreenUtil.globalPadding,
+          decoration: BoxDecoration(
+            color: Colors.green,
+            borderRadius: JScreenUtil.borderRadius,
+          ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const Icon(PhosphorIcons.checkCircle, color: Colors.white),
+              JScreenUtil.hSpace(20),
+              Flexible(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: textTheme.titleLarge?.copyWith(
+                        fontSize: JScreenUtil.fontSize(16),
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                    JScreenUtil.vSpace(10),
+                    Text(
+                      message,
+                      style: textTheme.bodyLarge?.copyWith(
+                        fontSize: JScreenUtil.fontSize(14),
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }
