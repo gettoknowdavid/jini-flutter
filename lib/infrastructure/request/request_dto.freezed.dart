@@ -21,7 +21,11 @@ RequestDto _$RequestDtoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$RequestDto {
   String get uid => throw _privateConstructorUsedError;
-  JUserDto get user => throw _privateConstructorUsedError;
+  String get userUid => throw _privateConstructorUsedError;
+  String get userName => throw _privateConstructorUsedError;
+  @GeoConverter()
+  GeoPoint get userLocation => throw _privateConstructorUsedError;
+  String? get userAvatar => throw _privateConstructorUsedError;
   BloodGroup get bloodGroup => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
 
@@ -37,9 +41,13 @@ abstract class $RequestDtoCopyWith<$Res> {
           RequestDto value, $Res Function(RequestDto) then) =
       _$RequestDtoCopyWithImpl<$Res>;
   $Res call(
-      {String uid, JUserDto user, BloodGroup bloodGroup, DateTime createdAt});
-
-  $JUserDtoCopyWith<$Res> get user;
+      {String uid,
+      String userUid,
+      String userName,
+      @GeoConverter() GeoPoint userLocation,
+      String? userAvatar,
+      BloodGroup bloodGroup,
+      DateTime createdAt});
 }
 
 /// @nodoc
@@ -53,7 +61,10 @@ class _$RequestDtoCopyWithImpl<$Res> implements $RequestDtoCopyWith<$Res> {
   @override
   $Res call({
     Object? uid = freezed,
-    Object? user = freezed,
+    Object? userUid = freezed,
+    Object? userName = freezed,
+    Object? userLocation = freezed,
+    Object? userAvatar = freezed,
     Object? bloodGroup = freezed,
     Object? createdAt = freezed,
   }) {
@@ -62,10 +73,22 @@ class _$RequestDtoCopyWithImpl<$Res> implements $RequestDtoCopyWith<$Res> {
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
-      user: user == freezed
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as JUserDto,
+      userUid: userUid == freezed
+          ? _value.userUid
+          : userUid // ignore: cast_nullable_to_non_nullable
+              as String,
+      userName: userName == freezed
+          ? _value.userName
+          : userName // ignore: cast_nullable_to_non_nullable
+              as String,
+      userLocation: userLocation == freezed
+          ? _value.userLocation
+          : userLocation // ignore: cast_nullable_to_non_nullable
+              as GeoPoint,
+      userAvatar: userAvatar == freezed
+          ? _value.userAvatar
+          : userAvatar // ignore: cast_nullable_to_non_nullable
+              as String?,
       bloodGroup: bloodGroup == freezed
           ? _value.bloodGroup
           : bloodGroup // ignore: cast_nullable_to_non_nullable
@@ -75,13 +98,6 @@ class _$RequestDtoCopyWithImpl<$Res> implements $RequestDtoCopyWith<$Res> {
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
     ));
-  }
-
-  @override
-  $JUserDtoCopyWith<$Res> get user {
-    return $JUserDtoCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value));
-    });
   }
 }
 
@@ -93,10 +109,13 @@ abstract class _$$_RequestDtoCopyWith<$Res>
       __$$_RequestDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String uid, JUserDto user, BloodGroup bloodGroup, DateTime createdAt});
-
-  @override
-  $JUserDtoCopyWith<$Res> get user;
+      {String uid,
+      String userUid,
+      String userName,
+      @GeoConverter() GeoPoint userLocation,
+      String? userAvatar,
+      BloodGroup bloodGroup,
+      DateTime createdAt});
 }
 
 /// @nodoc
@@ -112,7 +131,10 @@ class __$$_RequestDtoCopyWithImpl<$Res> extends _$RequestDtoCopyWithImpl<$Res>
   @override
   $Res call({
     Object? uid = freezed,
-    Object? user = freezed,
+    Object? userUid = freezed,
+    Object? userName = freezed,
+    Object? userLocation = freezed,
+    Object? userAvatar = freezed,
     Object? bloodGroup = freezed,
     Object? createdAt = freezed,
   }) {
@@ -121,10 +143,22 @@ class __$$_RequestDtoCopyWithImpl<$Res> extends _$RequestDtoCopyWithImpl<$Res>
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
-      user: user == freezed
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as JUserDto,
+      userUid: userUid == freezed
+          ? _value.userUid
+          : userUid // ignore: cast_nullable_to_non_nullable
+              as String,
+      userName: userName == freezed
+          ? _value.userName
+          : userName // ignore: cast_nullable_to_non_nullable
+              as String,
+      userLocation: userLocation == freezed
+          ? _value.userLocation
+          : userLocation // ignore: cast_nullable_to_non_nullable
+              as GeoPoint,
+      userAvatar: userAvatar == freezed
+          ? _value.userAvatar
+          : userAvatar // ignore: cast_nullable_to_non_nullable
+              as String?,
       bloodGroup: bloodGroup == freezed
           ? _value.bloodGroup
           : bloodGroup // ignore: cast_nullable_to_non_nullable
@@ -142,7 +176,10 @@ class __$$_RequestDtoCopyWithImpl<$Res> extends _$RequestDtoCopyWithImpl<$Res>
 class _$_RequestDto implements _RequestDto {
   _$_RequestDto(
       {required this.uid,
-      required this.user,
+      required this.userUid,
+      required this.userName,
+      @GeoConverter() required this.userLocation,
+      this.userAvatar,
       required this.bloodGroup,
       required this.createdAt});
 
@@ -152,7 +189,14 @@ class _$_RequestDto implements _RequestDto {
   @override
   final String uid;
   @override
-  final JUserDto user;
+  final String userUid;
+  @override
+  final String userName;
+  @override
+  @GeoConverter()
+  final GeoPoint userLocation;
+  @override
+  final String? userAvatar;
   @override
   final BloodGroup bloodGroup;
   @override
@@ -160,7 +204,7 @@ class _$_RequestDto implements _RequestDto {
 
   @override
   String toString() {
-    return 'RequestDto(uid: $uid, user: $user, bloodGroup: $bloodGroup, createdAt: $createdAt)';
+    return 'RequestDto(uid: $uid, userUid: $userUid, userName: $userName, userLocation: $userLocation, userAvatar: $userAvatar, bloodGroup: $bloodGroup, createdAt: $createdAt)';
   }
 
   @override
@@ -169,7 +213,12 @@ class _$_RequestDto implements _RequestDto {
         (other.runtimeType == runtimeType &&
             other is _$_RequestDto &&
             const DeepCollectionEquality().equals(other.uid, uid) &&
-            const DeepCollectionEquality().equals(other.user, user) &&
+            const DeepCollectionEquality().equals(other.userUid, userUid) &&
+            const DeepCollectionEquality().equals(other.userName, userName) &&
+            const DeepCollectionEquality()
+                .equals(other.userLocation, userLocation) &&
+            const DeepCollectionEquality()
+                .equals(other.userAvatar, userAvatar) &&
             const DeepCollectionEquality()
                 .equals(other.bloodGroup, bloodGroup) &&
             const DeepCollectionEquality().equals(other.createdAt, createdAt));
@@ -180,7 +229,10 @@ class _$_RequestDto implements _RequestDto {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(uid),
-      const DeepCollectionEquality().hash(user),
+      const DeepCollectionEquality().hash(userUid),
+      const DeepCollectionEquality().hash(userName),
+      const DeepCollectionEquality().hash(userLocation),
+      const DeepCollectionEquality().hash(userAvatar),
       const DeepCollectionEquality().hash(bloodGroup),
       const DeepCollectionEquality().hash(createdAt));
 
@@ -198,7 +250,10 @@ class _$_RequestDto implements _RequestDto {
 abstract class _RequestDto implements RequestDto {
   factory _RequestDto(
       {required final String uid,
-      required final JUserDto user,
+      required final String userUid,
+      required final String userName,
+      @GeoConverter() required final GeoPoint userLocation,
+      final String? userAvatar,
       required final BloodGroup bloodGroup,
       required final DateTime createdAt}) = _$_RequestDto;
 
@@ -208,7 +263,14 @@ abstract class _RequestDto implements RequestDto {
   @override
   String get uid => throw _privateConstructorUsedError;
   @override
-  JUserDto get user => throw _privateConstructorUsedError;
+  String get userUid => throw _privateConstructorUsedError;
+  @override
+  String get userName => throw _privateConstructorUsedError;
+  @override
+  @GeoConverter()
+  GeoPoint get userLocation => throw _privateConstructorUsedError;
+  @override
+  String? get userAvatar => throw _privateConstructorUsedError;
   @override
   BloodGroup get bloodGroup => throw _privateConstructorUsedError;
   @override
